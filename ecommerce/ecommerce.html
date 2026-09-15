@@ -39,11 +39,6 @@
     rel="stylesheet"
     href="../ecommerce.css"
   >
-
-  <link
-    rel="icon"
-    href="./manifest.json"
-  >
 </head>
 
 <body>
@@ -159,11 +154,13 @@
 
     <section
       class="storefront__categories"
-      aria-label="Product categories"
+      aria-labelledby="categories-heading"
     >
 
       <div class="section-heading">
-        <h2>Categories</h2>
+        <h2 id="categories-heading">
+          Categories
+        </h2>
       </div>
 
       <nav
@@ -182,13 +179,11 @@
     <section
       class="storefront__products"
       id="products-section"
-      aria-label="Products"
+      aria-labelledby="products-heading"
     >
 
       <div class="section-heading">
-        <h2
-          id="products-heading"
-        >
+        <h2 id="products-heading">
           Products
         </h2>
       </div>
@@ -204,6 +199,7 @@
         hidden
       >
         <h3>No products available</h3>
+
         <p>
           Products will appear here when this business adds them.
         </p>
@@ -216,12 +212,14 @@
   <aside
     class="cart-panel"
     id="cart-panel"
-    aria-label="Shopping cart"
     aria-hidden="true"
     hidden
   >
 
-    <div class="cart-panel__backdrop" id="cart-backdrop"></div>
+    <div
+      class="cart-panel__backdrop"
+      id="cart-backdrop"
+    ></div>
 
     <div
       class="cart-panel__dialog"
@@ -257,7 +255,9 @@
         id="cart-empty"
         hidden
       >
-        <p>Your cart is empty.</p>
+        <p>
+          Your cart is empty.
+        </p>
       </div>
 
       <div
@@ -268,12 +268,18 @@
 
         <div class="cart-summary__row">
           <span>Items</span>
-          <strong id="cart-item-count">0</strong>
+
+          <strong id="cart-item-count">
+            0
+          </strong>
         </div>
 
         <div class="cart-summary__row">
           <span>Total</span>
-          <strong id="cart-total">₹0</strong>
+
+          <strong id="cart-total">
+            ₹0
+          </strong>
         </div>
 
       </div>
@@ -284,7 +290,7 @@
         id="whatsapp-order-button"
         disabled
       >
-        <span>Submit Order on WhatsApp</span>
+        Submit Order on WhatsApp
       </button>
 
     </div>
@@ -300,9 +306,7 @@
     aria-expanded="false"
     hidden
   >
-    <span
-      class="cart-floating-button__label"
-    >
+    <span class="cart-floating-button__label">
       Cart
     </span>
 
@@ -322,7 +326,7 @@
     hidden
     aria-label="Install this business app"
   >
-    <span>Install App</span>
+    Install App
   </button>
 
   <div
@@ -384,7 +388,9 @@
     aria-live="polite"
     aria-busy="true"
   >
+
     <div class="loading-overlay__content">
+
       <div
         class="loading-spinner"
         aria-hidden="true"
@@ -393,19 +399,21 @@
       <p id="loading-message">
         Loading business...
       </p>
+
     </div>
+
   </div>
 
-  <div
+  <section
     class="error-state"
     id="application-error"
     hidden
-    role="alert"
+    aria-labelledby="application-error-title"
   >
 
     <div class="error-state__content">
 
-      <h2>
+      <h2 id="application-error-title">
         Unable to load this business
       </h2>
 
@@ -422,14 +430,14 @@
 
     </div>
 
-  </div>
+  </section>
 
-  <footer
-    class="business-footer"
-  >
+  <footer class="business-footer">
+
     <p>
       Powered by Vidhwaan
     </p>
+
   </footer>
 
   <script
