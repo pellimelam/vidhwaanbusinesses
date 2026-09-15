@@ -12,23 +12,305 @@
   },
   "location": {
     "verified": true,
-    "latitude": 14.242348999999999,
-    "longitude": 79.738389,
-    "verifiedAt": "2026-09-15T13:27:23.703Z"
+    "latitude": 17.4107,
+    "longitude": 78.4614,
+    "verifiedAt": "2026-09-15T05:19:07.534Z"
   },
   "categories": [
     {
-      "id": "cat-b49cd0df-a71e-4de0-bd96-5a4b45d493cc",
+      "id": "cat-263100d6-0b2e-4911-ab59-c4bce71e7e52",
       "name": "Grocery",
       "items": [
         {
-          "id": "item-48b4545f-bb71-4e1e-a53d-e546ac072c10",
+          "id": "item-2c7a4f4f-4162-4a50-b056-e771944f82e9",
           "name": "Rice",
           "price": 30,
           "quantity": 1,
           "unit": "kg",
           "description": "Rice",
           "youtubeUrl": "https://youtube.com/shorts/8JXcgIOjdNc"
+        },
+        {
+          "id": "item-b8afe8bb-a60a-4650-bdd0-a16266cb3b5d",
+          "name": "Wheat flour",
+          "price": 45,
+          "quantity": 1,
+          "unit": "kg",
+          "description": "Wheat flour",
+          "youtubeUrl": "https://youtube.com/shorts/7WqFPSsWOFI"
+        },
+        {
+          "id": "item-14635b9a-c704-40cf-b545-e90d33b1823d",
+          "name": "Cooking oil",
+          "price": 90,
+          "quantity": 1,
+          "unit": "Litre",
+          "description": "Cooking oil",
+          "youtubeUrl": "https://youtube.com/shorts/pxwo5eez_3c?feature=share"
+        },
+        {
+          "id": "item-8b02e1fa-6a56-48ff-a2fc-69541eaa26fd",
+          "name": "Toor dal",
+          "price": 35,
+          "quantity": 1,
+          "unit": "kg",
+          "description": "Toor dal",
+          "youtubeUrl": "https://youtube.com/shorts/JUbuzNczsZM"
+        },
+        {
+          "id": "item-55895744-c9e5-4a3e-a3b4-085914ddff7b",
+          "name": "Sugar",
+          "price": 25,
+          "quantity": 1,
+          "unit": "kg",
+          "description": "Sugar",
+          "youtubeUrl": "https://youtube.com/shorts/GiRu8ufRoX0"
+        }
+      ]
+    },
+    {
+      "id": "cat-9f614869-104c-45b3-83ea-b045c1709867",
+      "name": "Clothing",
+      "items": [
+        {
+          "id": "item-88321b13-9073-4f95-b8f5-853fb4e43380",
+          "name": "T-Shirt",
+          "price": 200,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "T-Shirt",
+          "youtubeUrl": "https://youtube.com/shorts/VH0eTAy2LWM"
+        },
+        {
+          "id": "item-78495a2f-817a-4ac6-a172-70376e0b7198",
+          "name": "Casual Shirt",
+          "price": 250,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Casual Shirt",
+          "youtubeUrl": "https://youtube.com/shorts/v8cgdQF74FI"
+        },
+        {
+          "id": "item-c550e628-0716-4e57-91a8-b31f201cda8c",
+          "name": "Saree",
+          "price": 500,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Saree",
+          "youtubeUrl": "https://youtube.com/shorts/_mdjogUl8as"
+        },
+        {
+          "id": "item-0e273d00-3dbf-4614-80ab-6caaf9e0a7c4",
+          "name": "Kurti",
+          "price": 350,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Kurti",
+          "youtubeUrl": "https://youtube.com/shorts/mceFSlFF9jM"
+        },
+        {
+          "id": "item-617631a0-1dd7-4692-b176-7288ba4769f9",
+          "name": "Salwar Suit",
+          "price": 450,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Salwar Suit",
+          "youtubeUrl": "https://youtube.com/shorts/M69viVaXXP8"
+        }
+      ]
+    },
+    {
+      "id": "cat-729b5e49-8b49-4545-8ddd-0f3d70ab9dda",
+      "name": "Food",
+      "items": [
+        {
+          "id": "item-ee3eb35f-c64a-4937-8619-459e41ced4f4",
+          "name": "Vegetables",
+          "price": 50,
+          "quantity": 1,
+          "unit": "Kit",
+          "description": "Vegetables",
+          "youtubeUrl": "https://youtube.com/shorts/8BTHmSOeik0"
+        },
+        {
+          "id": "item-cee21047-a92f-473d-94bc-44c6c2f2a5d6",
+          "name": "Fruits",
+          "price": 80,
+          "quantity": 1,
+          "unit": "kit",
+          "description": "Fruits",
+          "youtubeUrl": "https://youtube.com/shorts/SBL5YjfHhT8"
+        },
+        {
+          "id": "item-0caa801c-f2d0-4679-8f2c-02b26ae02d14",
+          "name": "Milk",
+          "price": 25,
+          "quantity": 1,
+          "unit": "litre",
+          "description": "Milk",
+          "youtubeUrl": "https://youtube.com/shorts/S4P3Uu51_4w"
+        },
+        {
+          "id": "item-5545aaf9-a4c0-474e-bfcb-d00cd64efee9",
+          "name": "Eggs",
+          "price": 60,
+          "quantity": 30,
+          "unit": "piece",
+          "description": "Eggs",
+          "youtubeUrl": "https://youtube.com/shorts/n-3DkwJXvLA"
+        },
+        {
+          "id": "item-f8aa350e-1381-4ea4-a5f5-dbef116b35dc",
+          "name": "Bread",
+          "price": 10,
+          "quantity": 1,
+          "unit": "packet",
+          "description": "Bread",
+          "youtubeUrl": "https://youtube.com/shorts/v0dWZU48xqs"
+        }
+      ]
+    },
+    {
+      "id": "cat-0d3e041f-df71-4d18-95ce-9f1b7efe21ac",
+      "name": "Electronics",
+      "items": [
+        {
+          "id": "item-aa1fc3b1-d019-47ee-9014-df16094c4592",
+          "name": "Smartphone",
+          "price": 5000,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Smartphone",
+          "youtubeUrl": "https://youtube.com/shorts/DjeqiVo9kL4"
+        },
+        {
+          "id": "item-ddb91e9e-54de-49bc-a23c-e16289fcbb8b",
+          "name": "Laptop",
+          "price": 15000,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Laptop",
+          "youtubeUrl": "https://youtube.com/shorts/67Z6LU7sh9E"
+        },
+        {
+          "id": "item-c061c213-2c4f-4bc7-a698-65b413e8afce",
+          "name": "Smart TV",
+          "price": 5000,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Smart TV",
+          "youtubeUrl": "https://youtube.com/shorts/eySbv4UwS5Q?feature=share"
+        },
+        {
+          "id": "item-0f56e83a-df3b-4ea6-8d23-67c65540c62b",
+          "name": "Refrigerator",
+          "price": 5000,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Refrigerator",
+          "youtubeUrl": "https://youtube.com/shorts/Og550UZh7PM"
+        },
+        {
+          "id": "item-1d01d45c-86b1-4d81-8552-b083643f7f2a",
+          "name": "Washing Machine",
+          "price": 4000,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Washing Machine",
+          "youtubeUrl": "https://youtube.com/shorts/71u5D-dAxy4"
+        }
+      ]
+    },
+    {
+      "id": "cat-16ffb41a-d282-4362-8498-c73344453c26",
+      "name": "Home & Kitchen",
+      "items": [
+        {
+          "id": "item-ad6b911a-232d-47b4-87ae-5d5ba6bfd5d5",
+          "name": "Gas Stove",
+          "price": 400,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Gas Stove",
+          "youtubeUrl": "https://youtube.com/shorts/QXAeoV2hht0"
+        },
+        {
+          "id": "item-d38c38f4-2997-49d9-bf29-f879e4b804f2",
+          "name": "Pressure Cooker",
+          "price": 300,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Pressure Cooker",
+          "youtubeUrl": "https://youtube.com/shorts/wqwG57I64xI"
+        },
+        {
+          "id": "item-69f990e1-038d-4e09-8a79-e8c4e09986ab",
+          "name": "Mixer Grinder",
+          "price": 1500,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Mixer Grinder",
+          "youtubeUrl": "https://youtube.com/shorts/6B3Fe8KvNYI"
+        },
+        {
+          "id": "item-80d1bfbb-a513-41b5-9a0c-cfed4a6ad264",
+          "name": "Non-Stick Cookware Set",
+          "price": 600,
+          "quantity": 1,
+          "unit": "set",
+          "description": "Non-Stick Cookware Set",
+          "youtubeUrl": "https://youtube.com/shorts/BBqnKck40O0"
+        },
+        {
+          "id": "item-5d1fe035-bee2-4b25-88c7-c21610b23014",
+          "name": "Electric Kettle",
+          "price": 150,
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Electric Kettle",
+          "youtubeUrl": "https://youtube.com/shorts/gSdU13bRTog"
+        }
+      ]
+    },
+    {
+      "id": "cat-9e2c7dee-4953-4607-8f36-d36a3ac90b1e",
+      "name": "Beauty & Personal Care",
+      "items": [
+        {
+          "id": "item-05836bf9-3856-47b4-a08a-5510d7c1868a",
+          "name": "Shampoo",
+          "price": 30,
+          "quantity": 500,
+          "unit": "gram",
+          "description": "Shampoo",
+          "youtubeUrl": "https://youtube.com/shorts/7VS04o_7SG0"
+        },
+        {
+          "id": "item-af06d13e-5772-46f4-b398-9702b1d64201",
+          "name": "Bath Soap",
+          "price": 20,
+          "quantity": 100,
+          "unit": "gram",
+          "description": "Bath Soap",
+          "youtubeUrl": "https://youtube.com/shorts/8imIKfxpbLU"
+        },
+        {
+          "id": "item-afab8821-5c13-4a66-945a-58696dd0564d",
+          "name": "Face Wash",
+          "price": 100,
+          "quantity": 100,
+          "unit": "gram",
+          "description": "Face Wash",
+          "youtubeUrl": "https://youtube.com/shorts/CvtnV4msErc"
+        },
+        {
+          "id": "item-56f72ee2-c8a4-45cd-88a9-30f283f3a4de",
+          "name": "Body Lotion",
+          "price": 80,
+          "quantity": 100,
+          "unit": "gram",
+          "description": "Body Lotion",
+          "youtubeUrl": "https://youtube.com/shorts/AP_SDr84hj0"
         }
       ]
     }
