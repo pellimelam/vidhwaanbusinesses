@@ -1,0 +1,20 @@
+{
+  "name": "Demo Business",
+  "short_name": "Demo Busines",
+  "description": "For Your Business",
+  "start_url": "./",
+  "scope": "./",
+  "id": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "https://yt3.ggpht.com/L-4dcOsy9xuI2gxAsOmdoutWA9GqHzR8-R_u-WCx0SRU3nE4FWpCSzYwGRpz2LxazckrZDlkMg=s176-c-k-c0x00ffffff-no-rj",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}
