@@ -66,7 +66,14 @@ const CONFIG = Object.freeze({
     2000,
 
   REQUEST_TIMEOUT_MS:
+    30000,
+
+  MAX_LOCATION_ACCURACY_METERS:
+    100,
+
+  LOCATION_TIMEOUT_MS:
     30000
+
 });
 
 
@@ -1941,7 +1948,7 @@ async function verifyBusinessLocation() {
   );
 
   setLocationText(
-    "Requesting your current location...",
+    "Getting an accurate GPS location. Please wait...",
     false
   );
 
@@ -1988,6 +1995,28 @@ async function verifyBusinessLocation() {
       );
     }
 
+    if (
+      !Number.isFinite(
+        accuracy
+      ) ||
+      accuracy <= 0
+    ) {
+      throw new Error(
+        "The device could not determine GPS accuracy. Please enable precise location and try again."
+      );
+    }
+
+    if (
+      accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+    ) {
+      throw new Error(
+        `Location accuracy is too low (approximately ${Math.round(
+          accuracy
+        )} metres). Please enable precise location, stay at the business location, and try again.`
+      );
+    }
+
     const verifiedAt =
       new Date()
         .toISOString();
@@ -2003,11 +2032,7 @@ async function verifyBusinessLocation() {
         longitude,
 
       accuracy:
-        Number.isFinite(
-          accuracy
-        )
-          ? accuracy
-          : null,
+        accuracy,
 
       verifiedAt:
         verifiedAt
@@ -2016,13 +2041,9 @@ async function verifyBusinessLocation() {
     updateLocationDetails();
 
     setLocationText(
-      Number.isFinite(
+      `Business location verified. Accuracy: approximately ${Math.round(
         accuracy
-      )
-        ? `Business location verified. Accuracy: approximately ${Math.round(
-            accuracy
-          )} metres.`
-        : "Business location verified.",
+      )} metres.`,
       true
     );
 
@@ -2072,23 +2093,192 @@ function getCurrentPosition() {
       resolve,
       reject
     ) => {
-      navigator.geolocation.getCurrentPosition(
-        resolve,
-        reject,
-        {
-          enableHighAccuracy:
-            true,
+      let bestPosition =
+        null;
 
-          timeout:
-            20000,
+      let settled =
+        false;
 
-          maximumAge:
-            0
+      let watchId =
+        null;
+
+      let timerId =
+        null;
+
+      const cleanup = () => {
+        if (
+          timerId !== null
+        ) {
+          window.clearTimeout(
+            timerId
+          );
+
+          timerId =
+            null;
         }
-      );
+
+        if (
+          watchId !== null
+        ) {
+          navigator.geolocation.clearWatch(
+            watchId
+          );
+
+          watchId =
+            null;
+        }
+      };
+
+      const finish = (
+        position
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        resolve(
+          position
+        );
+      };
+
+      const fail = (
+        error
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        reject(
+          error
+        );
+      };
+
+      const handlePosition = (
+        position
+      ) => {
+        const accuracy =
+          Number(
+            position &&
+            position.coords &&
+            position.coords.accuracy
+          );
+
+        if (
+          !Number.isFinite(
+            accuracy
+          ) ||
+          accuracy <= 0
+        ) {
+          return;
+        }
+
+        if (
+          !bestPosition ||
+          accuracy <
+            Number(
+              bestPosition.coords.accuracy
+            )
+        ) {
+          bestPosition =
+            position;
+        }
+
+        if (
+          accuracy <=
+          CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            position
+          );
+        }
+      };
+
+      const handleError = (
+        error
+      ) => {
+        if (
+          bestPosition &&
+          Number(
+            bestPosition.coords.accuracy
+          ) <=
+            CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            bestPosition
+          );
+          return;
+        }
+
+        fail(
+          error
+        );
+      };
+
+      timerId =
+        window.setTimeout(
+          () => {
+            if (
+              bestPosition &&
+              Number(
+                bestPosition.coords.accuracy
+              ) <=
+                CONFIG.MAX_LOCATION_ACCURACY_METERS
+            ) {
+              finish(
+                bestPosition
+              );
+              return;
+            }
+
+            fail(
+              new Error(
+                "Unable to obtain an accurate GPS location within 30 seconds. Please enable precise location and try again."
+              )
+            );
+          },
+          CONFIG.LOCATION_TIMEOUT_MS
+        );
+
+      try {
+        watchId =
+          navigator.geolocation.watchPosition(
+            handlePosition,
+            handleError,
+            {
+              enableHighAccuracy:
+                true,
+
+              timeout:
+                CONFIG.LOCATION_TIMEOUT_MS,
+
+              maximumAge:
+                0
+            }
+          );
+      } catch (error) {
+        fail(
+          error
+        );
+      }
     }
   );
 }
+
+
 
 
 function updateLocationDetails() {
@@ -2468,6 +2658,24 @@ function validateBuilder() {
       "Valid business GPS coordinates are required."
     );
   }
+
+
+
+  if (
+    !Number.isFinite(
+      state.location.accuracy
+    ) ||
+    state.location.accuracy <= 0 ||
+    state.location.accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+  ) {
+    errors.push(
+      `Business GPS accuracy must be ${CONFIG.MAX_LOCATION_ACCURACY_METERS} metres or better.`
+    );
+  }
+
+
+
 
   if (
     state.categories.length ===
