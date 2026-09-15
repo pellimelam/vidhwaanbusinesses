@@ -80,6 +80,7 @@ jobs:
           BUILD_DIR="$RUNNER_TEMP/vidhwaan-builder"
 
           rm -rf "$BUILD_DIR"
+
           mkdir -p "$BUILD_DIR"
 
           cat > "$BUILD_DIR/package.json" <<'EOF'
@@ -110,7 +111,7 @@ jobs:
           echo "✓ Build dependencies installed."
 
       # ==========================================================
-      # 5. VERIFY DEPENDENCIES
+      # 5. VERIFY BUILD DEPENDENCIES
       # ==========================================================
 
       - name: Verify build dependencies
@@ -183,20 +184,22 @@ jobs:
           NODE
 
       # ==========================================================
-      # 6. PRODUCTION OPTIMIZER
+      # 6. OPTIMIZE NEW / CHANGED FILES
       #
       # IMPORTANT:
       #
-      # Files are processed IN PLACE.
+      # The manifest is NOT trusted by itself.
       #
-      # Only files whose content hash has changed are processed.
+      # A file is skipped ONLY when:
       #
-      # Already processed files are skipped.
+      #   1. It exists in the manifest
+      #   2. Its current hash matches the recorded hash
+      #   3. Its current contents are already valid production output
       #
-      # The manifest stores SHA-256 hashes.
+      # Otherwise it is processed again.
       # ==========================================================
 
-      - name: Optimize changed production files
+      - name: Optimize new and changed files
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -229,10 +232,15 @@ jobs:
             );
           }
 
-          const MANIFEST =
+          const MANIFEST_DIR =
             path.join(
               WORKSPACE,
-              ".github",
+              ".github"
+            );
+
+          const MANIFEST =
+            path.join(
+              MANIFEST_DIR,
               "production-manifest.json"
             );
 
@@ -269,10 +277,24 @@ jobs:
               .digest("hex");
           }
 
+          function relativeFile(file) {
+            return path
+              .relative(
+                WORKSPACE,
+                file
+              )
+              .split(path.sep)
+              .join("/");
+          }
+
           function readManifest() {
-            if (!fs.existsSync(MANIFEST)) {
+            if (
+              !fs.existsSync(
+                MANIFEST
+              )
+            ) {
               return {
-                version: 1,
+                version: 2,
                 files: {}
               };
             }
@@ -289,10 +311,11 @@ jobs:
               if (
                 !parsed ||
                 typeof parsed !== "object" ||
+                !parsed.files ||
                 typeof parsed.files !== "object"
               ) {
                 throw new Error(
-                  "Invalid production manifest."
+                  "Invalid production manifest structure."
                 );
               }
 
@@ -306,7 +329,7 @@ jobs:
 
           function writeManifest(manifest) {
             fs.mkdirSync(
-              path.dirname(MANIFEST),
+              MANIFEST_DIR,
               {
                 recursive: true
               }
@@ -367,12 +390,16 @@ jobs:
                   entry.name
                 );
 
-              if (entry.isDirectory()) {
+              if (
+                entry.isDirectory()
+              ) {
                 walk(full);
                 continue;
               }
 
-              if (!entry.isFile()) {
+              if (
+                !entry.isFile()
+              ) {
                 continue;
               }
 
@@ -408,23 +435,104 @@ jobs:
             }
           }
 
-          function relativeFile(file) {
-            return path
-              .relative(
-                WORKSPACE,
-                file
-              )
-              .split(path.sep)
-              .join("/");
+          function isOneLine(content) {
+            return (
+              !String(content)
+                .includes("\n") &&
+              !String(content)
+                .includes("\r")
+            );
           }
 
-          function oneLine(content) {
-            return String(content)
-              .replace(/^\uFEFF/, "")
-              .replace(/\r\n/g, "")
-              .replace(/\r/g, "")
-              .replace(/\n/g, "")
-              .trim();
+          function isValidJSON(content) {
+            try {
+              JSON.parse(content);
+              return true;
+            } catch {
+              return false;
+            }
+          }
+
+          function looksLikeHTMLProduction(content) {
+            return isOneLine(content);
+          }
+
+          function looksLikeCSSProduction(content) {
+            return isOneLine(content);
+          }
+
+          function looksLikeJSProduction(content) {
+            return isOneLine(content);
+          }
+
+          function looksLikeJSONProduction(content) {
+            return (
+              isOneLine(content) &&
+              isValidJSON(content)
+            );
+          }
+
+          function alreadyProduction(
+            file,
+            source,
+            manifestEntry
+          ) {
+            if (
+              !manifestEntry ||
+              manifestEntry.status !== "processed"
+            ) {
+              return false;
+            }
+
+            const currentHash =
+              sha256(source);
+
+            if (
+              manifestEntry.outputHash !==
+              currentHash
+            ) {
+              return false;
+            }
+
+            const ext =
+              path.extname(
+                file
+              ).toLowerCase();
+
+            if (
+              ext === ".html" ||
+              ext === ".htm"
+            ) {
+              return looksLikeHTMLProduction(
+                source
+              );
+            }
+
+            if (
+              ext === ".css"
+            ) {
+              return looksLikeCSSProduction(
+                source
+              );
+            }
+
+            if (
+              ext === ".js"
+            ) {
+              return looksLikeJSProduction(
+                source
+              );
+            }
+
+            if (
+              ext === ".json"
+            ) {
+              return looksLikeJSONProduction(
+                source
+              );
+            }
+
+            return false;
           }
 
           async function processHTML(file) {
@@ -453,11 +561,21 @@ jobs:
                 }
               );
 
+            const finalOutput =
+              String(output)
+                .replace(/^\uFEFF/, "")
+                .replace(/\r\n/g, "")
+                .replace(/\r/g, "")
+                .replace(/\n/g, "")
+                .trim();
+
             fs.writeFileSync(
               file,
-              oneLine(output),
+              finalOutput,
               "utf8"
             );
+
+            return finalOutput;
           }
 
           function processCSS(file) {
@@ -484,11 +602,38 @@ jobs:
               );
             }
 
+            if (
+              typeof result.styles !==
+              "string"
+            ) {
+              throw new Error(
+                `CleanCSS produced no output: ${file}`
+              );
+            }
+
+            const finalOutput =
+              result.styles
+                .replace(/^\uFEFF/, "")
+                .replace(/\r\n/g, "")
+                .replace(/\r/g, "")
+                .replace(/\n/g, "")
+                .trim();
+
+            if (
+              !finalOutput
+            ) {
+              throw new Error(
+                `CleanCSS produced empty output: ${file}`
+              );
+            }
+
             fs.writeFileSync(
               file,
-              oneLine(result.styles),
+              finalOutput,
               "utf8"
             );
+
+            return finalOutput;
           }
 
           async function processJS(file) {
@@ -499,12 +644,11 @@ jobs:
               );
 
             /*
-             * First obfuscate the JavaScript.
+             * Obfuscate first.
              *
-             * Conservative settings are intentional.
-             * Aggressive control-flow flattening and
-             * dead-code injection can damage production
-             * applications and increase file size heavily.
+             * Conservative production settings are used
+             * to reduce the chance of breaking PWA code,
+             * service workers and application logic.
              */
 
             const obfuscated =
@@ -522,7 +666,8 @@ jobs:
 
                   stringArray: true,
 
-                  stringArrayCallsTransform: true,
+                  stringArrayCallsTransform:
+                    true,
 
                   stringArrayCallsTransformThreshold:
                     0.75,
@@ -531,13 +676,17 @@ jobs:
                     "base64"
                   ],
 
-                  stringArrayIndexShift: true,
+                  stringArrayIndexShift:
+                    true,
 
-                  stringArrayRotate: true,
+                  stringArrayRotate:
+                    true,
 
-                  stringArrayShuffle: true,
+                  stringArrayShuffle:
+                    true,
 
-                  stringArrayWrappersCount: 1,
+                  stringArrayWrappersCount:
+                    1,
 
                   stringArrayWrappersChainedCalls:
                     true,
@@ -548,37 +697,40 @@ jobs:
                   stringArrayWrappersType:
                     "variable",
 
-                  splitStrings: false,
+                  splitStrings:
+                    false,
 
-                  unicodeEscapeSequence: false,
+                  unicodeEscapeSequence:
+                    false,
 
-                  controlFlowFlattening: false,
+                  controlFlowFlattening:
+                    false,
 
-                  deadCodeInjection: false,
+                  deadCodeInjection:
+                    false,
 
-                  debugProtection: false,
+                  debugProtection:
+                    false,
 
-                  disableConsoleOutput: false,
+                  disableConsoleOutput:
+                    false,
 
-                  selfDefending: false
+                  selfDefending:
+                    false
                 }
               );
 
             const obfuscatedCode =
               obfuscated.getObfuscatedCode();
 
-            /*
-             * Run Terser after obfuscation.
-             * This removes unnecessary syntax and
-             * produces the final compact output.
-             */
-
             const result =
               await minifyJS(
                 obfuscatedCode,
                 {
                   compress: true,
+
                   mangle: false,
+
                   format: {
                     beautify: false,
                     comments: false,
@@ -589,18 +741,37 @@ jobs:
 
             if (
               !result ||
-              typeof result.code !== "string"
+              typeof result.code !==
+              "string"
             ) {
               throw new Error(
                 `JavaScript optimization produced no output: ${file}`
               );
             }
 
+            const finalOutput =
+              result.code
+                .replace(/^\uFEFF/, "")
+                .replace(/\r\n/g, "")
+                .replace(/\r/g, "")
+                .replace(/\n/g, "")
+                .trim();
+
+            if (
+              !finalOutput
+            ) {
+              throw new Error(
+                `JavaScript optimization produced empty output: ${file}`
+              );
+            }
+
             fs.writeFileSync(
               file,
-              oneLine(result.code),
+              finalOutput,
               "utf8"
             );
+
+            return finalOutput;
           }
 
           function processJSON(file) {
@@ -621,20 +792,72 @@ jobs:
               );
             }
 
-            /*
-             * JSON.stringify without indentation
-             * produces compact valid JSON.
-             */
-
             const output =
               JSON.stringify(
                 parsed
               );
 
+            if (
+              typeof output !==
+              "string"
+            ) {
+              throw new Error(
+                `JSON compression produced no output: ${file}`
+              );
+            }
+
             fs.writeFileSync(
               file,
               output,
               "utf8"
+            );
+
+            return output;
+          }
+
+          async function processFile(
+            file
+          ) {
+            const ext =
+              path.extname(
+                file
+              ).toLowerCase();
+
+            if (
+              ext === ".html" ||
+              ext === ".htm"
+            ) {
+              return await processHTML(
+                file
+              );
+            }
+
+            if (
+              ext === ".css"
+            ) {
+              return processCSS(
+                file
+              );
+            }
+
+            if (
+              ext === ".js"
+            ) {
+              return await processJS(
+                file
+              );
+            }
+
+            if (
+              ext === ".json"
+            ) {
+              return processJSON(
+                file
+              );
+            }
+
+            throw new Error(
+              `Unsupported production file type: ${file}`
             );
           }
 
@@ -691,32 +914,36 @@ jobs:
               const relative =
                 relativeFile(file);
 
-              const currentSource =
+              let source =
                 fs.readFileSync(
                   file,
                   "utf8"
                 );
 
-              const currentHash =
-                sha256(
-                  currentSource
-                );
-
-              const previous =
+              const entry =
                 manifest.files[
                   relative
                 ];
 
               /*
-               * If the exact current file content
-               * was already successfully processed,
-               * NEVER process it again.
+               * IMPORTANT:
+               *
+               * We compare the CURRENT FILE
+               * against the recorded OUTPUT hash.
+               *
+               * Therefore an already optimized file
+               * is skipped.
+               *
+               * If somebody replaces or edits the file,
+               * its hash changes and it is rebuilt.
                */
 
               if (
-                previous &&
-                previous.sourceHash === currentHash &&
-                previous.status === "processed"
+                alreadyProduction(
+                  file,
+                  source,
+                  entry
+                )
               ) {
                 console.log(
                   `SKIP  ${relative}`
@@ -727,52 +954,82 @@ jobs:
                 continue;
               }
 
+              console.log(
+                `BUILD ${relative}`
+              );
+
+              const finalOutput =
+                await processFile(
+                  file
+                );
+
+              /*
+               * Verify immediately.
+               */
+
+              if (
+                !isOneLine(
+                  finalOutput
+                )
+              ) {
+                throw new Error(
+                  `Production output is not one line: ${relative}`
+                );
+              }
+
               const ext =
                 path.extname(
                   file
                 ).toLowerCase();
 
-              console.log(
-                `BUILD ${relative}`
-              );
-
               if (
-                ext === ".html" ||
-                ext === ".htm"
+                ext === ".json" &&
+                !isValidJSON(
+                  finalOutput
+                )
               ) {
-                await processHTML(file);
-              } else if (
-                ext === ".css"
-              ) {
-                processCSS(file);
-              } else if (
-                ext === ".js"
-              ) {
-                await processJS(file);
-              } else if (
-                ext === ".json"
-              ) {
-                processJSON(file);
+                throw new Error(
+                  `Production JSON is invalid: ${relative}`
+                );
               }
 
-              const finalSource =
-                fs.readFileSync(
-                  file,
-                  "utf8"
+              const finalHash =
+                sha256(
+                  finalOutput
                 );
+
+              /*
+               * ONLY AFTER successful processing
+               * and successful validation do we
+               * update the manifest.
+               */
 
               manifest.files[
                 relative
               ] = {
-                sourceHash: currentHash,
-                outputHash: sha256(
-                  finalSource
-                ),
-                status: "processed",
-                type: ext.substring(1)
+                outputHash:
+                  finalHash,
+
+                status:
+                  "processed",
+
+                type:
+                  ext.substring(1),
+
+                updatedAt:
+                  new Date().toISOString()
               };
 
               processed++;
+
+              /*
+               * Keep the variable explicitly refreshed
+               * so the logic always refers to the final
+               * file state.
+               */
+
+              source =
+                finalOutput;
             }
 
             /*
@@ -780,7 +1037,7 @@ jobs:
              * that no longer exist.
              */
 
-            const existingFiles =
+            const currentFiles =
               new Set(
                 allFiles.map(
                   relativeFile
@@ -793,13 +1050,16 @@ jobs:
               )
             ) {
               if (
-                !existingFiles.has(file)
+                !currentFiles.has(file)
               ) {
-                delete manifest.files[file];
+                delete manifest.files[
+                  file
+                ];
               }
             }
 
-            manifest.version = 1;
+            manifest.version =
+              2;
 
             writeManifest(
               manifest
@@ -811,7 +1071,7 @@ jobs:
             );
 
             console.log(
-              " PRODUCTION OPTIMIZATION COMPLETE"
+              " OPTIMIZATION COMPLETE"
             );
 
             console.log(
@@ -829,7 +1089,19 @@ jobs:
 
             console.log("");
             console.log(
-              "✓ Incremental optimization completed."
+              "✓ New files processed."
+            );
+
+            console.log(
+              "✓ Changed files processed."
+            );
+
+            console.log(
+              "✓ Already optimized files skipped."
+            );
+
+            console.log(
+              "✓ Manifest updated only after successful processing."
             );
           }
 
@@ -862,10 +1134,12 @@ jobs:
           node "$BUILD_DIR/optimize.cjs"
 
       # ==========================================================
-      # 7. VERIFY PRODUCTION FILES
+      # 7. FINAL HTML / CSS / JS / JSON VERIFICATION
+      #
+      # This checks the ACTUAL repository files.
       # ==========================================================
 
-      - name: Verify optimized files
+      - name: Verify production files
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -908,6 +1182,8 @@ jobs:
               ! -path "*/dist/*" \
               ! -path "*/build/*" \
               ! -path "*/out/*" \
+              ! -name "package-lock.json" \
+              ! -name "npm-shrinkwrap.json" \
               -print0
           )
 
@@ -921,7 +1197,7 @@ jobs:
           echo "✓ ALL PRODUCTION HTML/CSS/JS/JSON FILES ARE ONE LINE."
 
       # ==========================================================
-      # 8. VERIFY JSON
+      # 8. VERIFY ALL JSON FILES
       # ==========================================================
 
       - name: Verify JSON files
@@ -936,7 +1212,7 @@ jobs:
           const root =
             process.env.GITHUB_WORKSPACE;
 
-          const excluded =
+          const excludedDirectories =
             new Set([
               ".git",
               "node_modules",
@@ -948,16 +1224,32 @@ jobs:
               "out"
             ]);
 
+          const excludedFiles =
+            new Set([
+              "package-lock.json",
+              "npm-shrinkwrap.json",
+              "production-manifest.json"
+            ]);
+
+          let count = 0;
+
           function walk(dir) {
-            for (
-              const entry of fs.readdirSync(
+            const entries =
+              fs.readdirSync(
                 dir,
-                { withFileTypes: true }
-              )
+                {
+                  withFileTypes: true
+                }
+              );
+
+            for (
+              const entry of entries
             ) {
               if (
                 entry.isDirectory() &&
-                excluded.has(entry.name)
+                excludedDirectories.has(
+                  entry.name
+                )
               ) {
                 continue;
               }
@@ -968,13 +1260,20 @@ jobs:
                   entry.name
                 );
 
-              if (entry.isDirectory()) {
+              if (
+                entry.isDirectory()
+              ) {
                 walk(full);
                 continue;
               }
 
               if (
-                !entry.isFile() ||
+                !entry.isFile()
+              ) {
+                continue;
+              }
+
+              if (
                 !entry.name
                   .toLowerCase()
                   .endsWith(".json")
@@ -983,8 +1282,9 @@ jobs:
               }
 
               if (
-                entry.name ===
-                "production-manifest.json"
+                excludedFiles.has(
+                  entry.name
+                )
               ) {
                 continue;
               }
@@ -995,20 +1295,28 @@ jobs:
                   "utf8"
                 );
 
-              JSON.parse(source);
-
-              const lines =
-                source.split("\n").length;
-
-              if (lines !== 1) {
+              try {
+                JSON.parse(source);
+              } catch (error) {
                 throw new Error(
-                  `${path.relative(root, full)} is not one line.`
+                  `Invalid JSON: ${path.relative(root, full)}: ${error.message}`
+                );
+              }
+
+              if (
+                source.includes("\n") ||
+                source.includes("\r")
+              ) {
+                throw new Error(
+                  `JSON is not one line: ${path.relative(root, full)}`
                 );
               }
 
               console.log(
                 `✓ ${path.relative(root, full)}`
               );
+
+              count++;
             }
           }
 
@@ -1016,12 +1324,16 @@ jobs:
 
           console.log("");
           console.log(
+            `✓ Verified ${count} JSON files.`
+          );
+
+          console.log(
             "✓ All JSON files are valid and compressed."
           );
           NODE
 
       # ==========================================================
-      # 9. VERIFY NO UNEXPECTED BUILD FOLDERS
+      # 9. VERIFY NO PUBLIC DIRECTORY
       # ==========================================================
 
       - name: Verify repository structure
@@ -1037,17 +1349,14 @@ jobs:
           echo "✓ No public/ directory created."
 
           if [[ -d "$GITHUB_WORKSPACE/node_modules" ]]; then
-            echo "❌ node_modules/ must not exist in repository."
+            echo "❌ node_modules/ directory must not exist."
             exit 1
           fi
 
           echo "✓ No node_modules/ directory."
 
       # ==========================================================
-      # 10. COMMIT ONLY ACTUAL PRODUCTION CHANGES
-      #
-      # The manifest is also committed so the next run knows
-      # which exact file content has already been processed.
+      # 10. COMMIT PRODUCTION CHANGES
       # ==========================================================
 
       - name: Commit optimized files
@@ -1095,7 +1404,7 @@ jobs:
           echo ""
 
           echo "CSS:"
-          echo "  ✓ Compressed"
+          echo "  ✓ Minified"
           echo "  ✓ One line"
 
           echo ""
@@ -1123,10 +1432,11 @@ jobs:
 
           echo ""
 
-          echo "Incremental behavior:"
-          echo "  ✓ Already processed files are skipped"
-          echo "  ✓ Changed files are processed again"
-          echo "  ✓ New files are processed automatically"
+          echo "Incremental processing:"
+          echo "  ✓ New files processed"
+          echo "  ✓ Updated files processed"
+          echo "  ✓ Replaced files processed"
+          echo "  ✓ Already optimized files skipped"
 
           echo ""
 
