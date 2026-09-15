@@ -78,10 +78,10 @@ const CONFIG = Object.freeze({
     120000,
 
   MAX_LOCATION_ACCURACY_METERS:
-    100,
+    500,
 
   LOCATION_TIMEOUT_MS:
-    30000
+    45000
 
 });
 
