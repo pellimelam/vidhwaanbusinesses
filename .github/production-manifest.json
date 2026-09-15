@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "files": {
+    "ecommerce/9440246101/index.html": {
+      "sourceHash": "24135b9e6a4451182f78562c51f26b1b5f668ef8e91f79c912e7626a11d0a68a",
+      "outputHash": "82eb19915734a98dde7fc6fe9cf2f45325d8e1d4574efd95a81d9ee5a2254885",
+      "status": "processed",
+      "type": "html"
+    },
+    "ecommerce/9866516195/index.html": {
+      "sourceHash": "24135b9e6a4451182f78562c51f26b1b5f668ef8e91f79c912e7626a11d0a68a",
+      "outputHash": "82eb19915734a98dde7fc6fe9cf2f45325d8e1d4574efd95a81d9ee5a2254885",
+      "status": "processed",
+      "type": "html"
+    },
+    "ecommerce/ecommerce.html": {
+      "sourceHash": "24135b9e6a4451182f78562c51f26b1b5f668ef8e91f79c912e7626a11d0a68a",
+      "outputHash": "82eb19915734a98dde7fc6fe9cf2f45325d8e1d4574efd95a81d9ee5a2254885",
+      "status": "processed",
+      "type": "html"
+    },
+    "index.html": {
+      "sourceHash": "4ddfb8a95db572054544a6ef10b4c34166a06aa199c64211178dd0963ef587b6",
+      "outputHash": "5d506e817202efb4770065a3ac6e5dd4aaabf5290ee3269c9b737198b7d6bbb5",
+      "status": "processed",
+      "type": "html"
+    },
+    "ecommerce/ecommerce.css": {
+      "sourceHash": "7b0728f345997591a825d76fe9c9c63cee51dde221b79105f079b176c3266367",
+      "outputHash": "381a84cef15f1795b77180b8b49e542712134974272356f142d4007021909a6d",
+      "status": "processed",
+      "type": "css"
+    },
+    "main.css": {
+      "sourceHash": "9e2290019b59b29fcde3f6cb0c1ef3d98a793c853929d19d2a36d41ef3fd7db7",
+      "outputHash": "80896dd71a9a64c62fd25c056df096097590c8df4e0fdeb48ec21bafbef2a730",
+      "status": "processed",
+      "type": "css"
+    },
+    "app.js": {
+      "sourceHash": "58a42f692e7da48fb5750c9ecebb0c1b6ef697984439d32a13797a33f3af25df",
+      "outputHash": "908eb1bc5f3a956a31af10789ada10c1d96f43075455e5b3e0fdb385b7bde328",
+      "status": "processed",
+      "type": "js"
+    },
+    "ecommerce/9440246101/sw.js": {
+      "sourceHash": "5bd6991b2518ed9b119dabb3d813f3c7aad59452daeecbc15e530dd65af1258f",
+      "outputHash": "9a5ad8e7b86f02c4d00ee6c573ab748d55ad9a3894fe011ac062ae3a844c8e86",
+      "status": "processed",
+      "type": "js"
+    },
+    "ecommerce/9866516195/sw.js": {
+      "sourceHash": "5bd6991b2518ed9b119dabb3d813f3c7aad59452daeecbc15e530dd65af1258f",
+      "outputHash": "c56d1fcd30a4fa1c45552ef6c5fe061cfe056624e6ac017d0f2a50c1db007b98",
+      "status": "processed",
+      "type": "js"
+    },
+    "ecommerce/ecommerce.js": {
+      "sourceHash": "edba97ca397606be34732bd4982e809262c3a04f2f8014b5348942c2883c4dcc",
+      "outputHash": "169a3128d210c437b4faca545f52161e6c2de2d2a62b8759db5f5f5349cdd6a9",
+      "status": "processed",
+      "type": "js"
+    },
+    "ecommerce/sw.js": {
+      "sourceHash": "5bd6991b2518ed9b119dabb3d813f3c7aad59452daeecbc15e530dd65af1258f",
+      "outputHash": "e635a6196e3c0fee09ef5628cc5400d838359274f8fd2c6f806fb6500c9ac00c",
+      "status": "processed",
+      "type": "js"
+    },
+    "ecommerce/9440246101/ecommerce.json": {
+      "sourceHash": "ff4041ebb1d576af899732d8b9cdea49fe64704d3ae7909c04173d8eee9032cd",
+      "outputHash": "5ca48c2fc3e9b7daf1c8bf4c01cc80639c6c042ddd9c8e1c18deec248cf6d652",
+      "status": "processed",
+      "type": "json"
+    },
+    "ecommerce/9440246101/manifest.json": {
+      "sourceHash": "3a2d28d53f9e7da4ceb440a2dec0560e81744aac6aae892a5443d878447874d6",
+      "outputHash": "c46433f75d5ff9e8ac47413a5e1e2410f9c73fac0c07bcbeadb11710abd88187",
+      "status": "processed",
+      "type": "json"
+    },
+    "ecommerce/9866516195/ecommerce.json": {
+      "sourceHash": "8cc2becc7cdcb04cc0a5f145eea45cf7cfab6e62ef85da127e2a9812a5e0df64",
+      "outputHash": "f4c44009a1fbd89ebcc86e052b19be92250b5253f8606c8e16d0f3a76a41da4c",
+      "status": "processed",
+      "type": "json"
+    },
+    "ecommerce/9866516195/manifest.json": {
+      "sourceHash": "3a2d28d53f9e7da4ceb440a2dec0560e81744aac6aae892a5443d878447874d6",
+      "outputHash": "c46433f75d5ff9e8ac47413a5e1e2410f9c73fac0c07bcbeadb11710abd88187",
+      "status": "processed",
+      "type": "json"
+    },
+    "ecommerce/manifest.json": {
+      "sourceHash": "a28e6f922ec5815f2f78b40534772abfff081f94460c8443afb520d2cb539686",
+      "outputHash": "99c827d8f0e7c7fddf5faa44bbc4d74735111a170ba2375779a7aa24916ceaf6",
+      "status": "processed",
+      "type": "json"
+    }
+  }
+}
