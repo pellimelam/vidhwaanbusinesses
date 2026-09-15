@@ -23,6 +23,9 @@ const CONFIG = Object.freeze({
   TEMPLATE_ID:
     "ECM",
 
+  CATEGORY_ITEM_STORAGE_KEY:
+    "vidhwaan_business_ecommerce_categories_items",
+
   MAX_CATEGORIES:
     50,
 
@@ -65,8 +68,14 @@ const CONFIG = Object.freeze({
   MAX_YOUTUBE_URL_LENGTH:
     2000,
 
-  REQUEST_TIMEOUT_MS:
+  REQUEST_TIMEOUT_MS: 
     30000,
+
+  DEPLOYMENT_CHECK_INTERVAL_MS: 
+    3000,
+
+  DEPLOYMENT_TIMEOUT_MS: 
+    120000,
 
   MAX_LOCATION_ACCURACY_METERS:
     100,
@@ -468,6 +477,11 @@ function cacheDom() {
       "business-app-url"
     );
 
+  DOM.deploymentStatus =
+    document.getElementById(
+      "deployment-status"
+    );
+
   DOM.openBusinessApp =
     document.getElementById(
       "open-business-app"
@@ -690,7 +704,12 @@ function bindEvents() {
 function initializeApplication() {
   state.selectedTemplate = null;
 
-  seedDefaultCategories();
+  const restored =
+    loadCategoryItemData();
+
+  if (!restored) {
+    seedDefaultCategories();
+  }
 
   renderCategories();
   renderItems();
@@ -785,6 +804,81 @@ function seedDefaultCategories() {
       })
     );
 }
+
+
+/* =========================================================
+ * CATEGORY & ITEM PERSISTENCE
+ * ========================================================= */
+
+function saveCategoryItemData() {
+  try {
+    localStorage.setItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY,
+      JSON.stringify({
+        categories:
+          state.categories
+      })
+    );
+  } catch (error) {
+    console.warn(
+      "Could not save category and item data.",
+      error
+    );
+  }
+}
+
+
+function loadCategoryItemData() {
+  try {
+    const stored =
+      localStorage.getItem(
+        CONFIG.CATEGORY_ITEM_STORAGE_KEY
+      );
+
+    if (!stored) {
+      return false;
+    }
+
+    const parsed =
+      JSON.parse(stored);
+
+    if (
+      !parsed ||
+      !Array.isArray(
+        parsed.categories
+      )
+    ) {
+      return false;
+    }
+
+    state.categories =
+      parsed.categories;
+
+    return true;
+  } catch (error) {
+    console.warn(
+      "Could not load saved category and item data.",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+function clearCategoryItemData() {
+  try {
+    localStorage.removeItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY
+    );
+  } catch (error) {
+    console.warn(
+      "Could not clear saved category and item data.",
+      error
+    );
+  }
+}
+
 
 
 /* =========================================================
@@ -929,6 +1023,8 @@ function saveCategory() {
     category.name =
       name;
 
+    saveCategoryItemData();
+
     closeCategoryModal();
 
     renderCategories();
@@ -974,6 +1070,8 @@ function saveCategory() {
     name,
     items: []
   });
+
+  saveCategoryItemData();
 
   closeCategoryModal();
 
@@ -1067,6 +1165,8 @@ function deleteCategory(
         entry.id !==
         categoryId
     );
+
+  saveCategoryItemData();
 
   renderCategories();
   renderItems();
@@ -1521,6 +1621,8 @@ function saveItem() {
     result.item.youtubeUrl =
       youtubeUrl;
 
+    saveCategoryItemData();
+
     closeItemModal();
 
     renderItems();
@@ -1598,6 +1700,8 @@ function saveItem() {
       youtubeUrl
   });
 
+  saveCategoryItemData();
+
   closeItemModal();
 
   renderItems();
@@ -1606,7 +1710,8 @@ function saveItem() {
     "Item added.",
     "success"
   );
-}
+
+
 
 
 function handleItemAction(
@@ -1680,6 +1785,8 @@ function deleteItem(
         item.id !==
         itemId
     );
+
+  saveCategoryItemData();
 
   renderItems();
 
@@ -2845,45 +2952,29 @@ function hideValidation() {
 
 
 async function publishBusiness() {
-  if (
-    state.publishing
-  ) {
-    return;
-  }
+  if (state.publishing) return;
 
   hideValidation();
   hideSuccess();
   clearSubscriptionError();
 
-  const validation =
-    validateBuilder();
+  const validation = validateBuilder();
 
-  if (
-    !validation.valid
-  ) {
-    showValidation(
-      validation.errors
-    );
-
+  if (!validation.valid) {
+    showValidation(validation.errors);
     showToast(
-      validation.errors[0] ||
-        "Please review the form.",
+      validation.errors[0] || "Please review the form.",
       "error"
     );
-
     return;
   }
 
-  const payload =
-    buildPublishPayload();
+  const payload = buildPublishPayload();
 
-  state.publishing =
-    true;
+  state.publishing = true;
+  state.lastPublishedUrl = "";
 
-  setPublishBusy(
-    true
-  );
-
+  setPublishBusy(true);
   setPublishStatus(
     "Verifying your subscription and creating your business app..."
   );
@@ -2893,78 +2984,249 @@ async function publishBusiness() {
   );
 
   try {
-    const result =
-      await sendPublishRequest(
-        payload
-      );
+    const result = await sendPublishRequest(payload);
 
-    if (
-      !result ||
-      result.success !==
-        true
-    ) {
+    if (!result || result.success !== true) {
       throw new Error(
-        result &&
-        result.message
+        result && result.message
           ? result.message
           : "The business app could not be created."
       );
     }
 
-    if (
-      !isValidHttpsUrl(
-        result.url
-      )
-    ) {
+    if (!isValidHttpsUrl(result.url)) {
       throw new Error(
         "The Worker did not return a valid business app URL."
       );
     }
 
-    state.lastPublishedUrl =
-      result.url;
+    state.lastPublishedUrl = result.url;
 
     hideLoader();
 
-    showSuccess(
-      result
-    );
+    showSuccess(result);
 
     setPublishStatus(
-      "Business app created successfully."
+      "Business app is being published..."
     );
 
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app has been created. We are waiting for the public app files to become available.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Publishing your business app...";
+      DOM.deploymentStatus.classList.remove("is-live");
+      DOM.deploymentStatus.classList.add("is-waiting");
+    }
+
+    const deploymentReady =
+      await waitForDeployment(result.url);
+
+    if (!deploymentReady) {
+      if (DOM.deploymentStatus) {
+        DOM.deploymentStatus.textContent =
+          "The app is still being published. Please wait a little longer and try opening it again.";
+        DOM.deploymentStatus.classList.remove("is-live");
+        DOM.deploymentStatus.classList.add("is-waiting");
+      }
+
+      setPublishStatus(
+        "Business app is still being published."
+      );
+
+      return;
+    }
+
+    enablePublishedBusiness(result.url);
+
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app is live and ready to open.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Business app is live.";
+      DOM.deploymentStatus.classList.remove("is-waiting");
+      DOM.deploymentStatus.classList.add("is-live");
+    }
+
+    setPublishStatus(
+      "Business app created and published successfully."
+    );
+
+    showToast(
+      "Your business app is now live.",
+      "success"
+    );
   } catch (error) {
     hideLoader();
 
-    const message =
-      getErrorMessage(
-        error
-      );
+    const message = getErrorMessage(error);
 
-    setPublishStatus(
-      message
-    );
+    setPublishStatus(message);
 
-    showValidation(
-      [
-        message
-      ]
-    );
+    showValidation([message]);
 
     showToast(
       message,
       "error"
     );
-
   } finally {
-    state.publishing =
-      false;
+    state.publishing = false;
+    setPublishBusy(false);
+  }
+}
 
-    setPublishBusy(
-      false
+
+async function waitForDeployment(url) {
+  const startedAt = Date.now();
+
+  while (
+    Date.now() - startedAt <
+    CONFIG.DEPLOYMENT_TIMEOUT_MS
+  ) {
+    if (await isDeploymentReady(url)) {
+      return true;
+    }
+
+    const elapsedSeconds =
+      Math.floor(
+        (Date.now() - startedAt) / 1000
+      );
+
+    const remainingSeconds = Math.max(
+      0,
+      Math.ceil(
+        (CONFIG.DEPLOYMENT_TIMEOUT_MS -
+          (Date.now() - startedAt)) /
+          1000
+      )
+    );
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        `Publishing your business app... ${elapsedSeconds}s elapsed.`;
+    }
+
+    setPublishStatus(
+      `Waiting for your business app to become live... ${remainingSeconds}s remaining.`
+    );
+
+    await sleep(
+      CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS
     );
   }
+
+  return false;
+}
+
+
+async function isDeploymentReady(url) {
+  try {
+    const pageUrl = new URL(url);
+
+    const dataUrl = new URL(
+      "ecommerce.json",
+      pageUrl
+    );
+
+    const [pageResponse, dataResponse] =
+      await Promise.all([
+        fetchDeploymentResource(
+          pageUrl.href
+        ),
+        fetchDeploymentResource(
+          dataUrl.href
+        )
+      ]);
+
+    return (
+      pageResponse &&
+      pageResponse.ok &&
+      dataResponse &&
+      dataResponse.ok
+    );
+  } catch (error) {
+    return false;
+  }
+}
+
+
+async function fetchDeploymentResource(url) {
+  try {
+    const controller =
+      new AbortController();
+
+    const timeoutId =
+      setTimeout(
+        () => controller.abort(),
+        CONFIG.REQUEST_TIMEOUT_MS
+      );
+
+    const response = await fetch(
+      url,
+      {
+        method: "GET",
+        cache: "no-store",
+        credentials: "omit",
+        redirect: "follow",
+        signal: controller.signal
+      }
+    );
+
+    clearTimeout(timeoutId);
+
+    return response;
+  } catch (error) {
+    return null;
+  }
+}
+
+
+function enablePublishedBusiness(url) {
+  if (!isValidHttpsUrl(url)) {
+    return;
+  }
+
+  state.lastPublishedUrl = url;
+
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = url;
+    DOM.businessAppUrl.textContent = url;
+    DOM.businessAppUrl.dataset.url = url;
+
+    DOM.businessAppUrl.classList.remove(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "aria-disabled"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "tabindex"
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = false;
+  }
+}
+
+
+function sleep(milliseconds) {
+  return new Promise(
+    (resolve) => {
+      setTimeout(
+        resolve,
+        milliseconds
+      );
+    }
+  );
 }
 
 
@@ -3209,69 +3471,64 @@ async function sendPublishRequest(
  * ========================================================= */
 
 
-function showSuccess(
-  result
-) {
-  if (
-    !DOM.successSection
-  ) {
-    return;
-  }
+function showSuccess(result) {
+  if (!DOM.successSection) return;
 
   const url =
-    typeof result.url ===
-    "string"
+    typeof result.url === "string"
       ? result.url.trim()
       : "";
 
-  state.lastPublishedUrl =
-    url;
+  state.lastPublishedUrl = url;
 
-  if (
-    DOM.successDescription
-  ) {
+  if (DOM.successDescription) {
     DOM.successDescription.textContent =
-      result.message ||
-      "Your business app has been successfully created.";
+      "Your business app has been created. We are waiting for the public app files to become available.";
   }
 
-  if (
-    DOM.businessAppUrl
-  ) {
-    DOM.businessAppUrl.href =
-      url || "#";
-
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = "#";
     DOM.businessAppUrl.textContent =
-      url ||
-      "Business App";
+      "Preparing Business App...";
+    DOM.businessAppUrl.dataset.url = "";
 
-    DOM.businessAppUrl.dataset.url =
-      url;
+    DOM.businessAppUrl.classList.add(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "aria-disabled",
+      "true"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "tabindex",
+      "-1"
+    );
   }
 
-  if (
-    DOM.openBusinessApp
-  ) {
-    DOM.openBusinessApp.disabled =
-      !isValidHttpsUrl(
-        url
-      );
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = true;
   }
 
-  DOM.successSection.hidden =
-    false;
+  if (DOM.deploymentStatus) {
+    DOM.deploymentStatus.textContent =
+      "Publishing your business app...";
+    DOM.deploymentStatus.classList.remove(
+      "is-live"
+    );
+    DOM.deploymentStatus.classList.add(
+      "is-waiting"
+    );
+  }
 
-  DOM.successSection.scrollIntoView(
-    {
-      behavior:
-        "smooth",
+  DOM.successSection.hidden = false;
 
-      block:
-        "center"
-    }
-  );
+  DOM.successSection.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 }
-
 
 function hideSuccess() {
   if (
@@ -3289,20 +3546,15 @@ function openPublishedBusiness() {
     (
       DOM.businessAppUrl
         ? DOM.businessAppUrl.dataset.url ||
-          DOM.businessAppUrl.href
+          ""
         : ""
     );
 
-  if (
-    !isValidHttpsUrl(
-      url
-    )
-  ) {
+  if (!isValidHttpsUrl(url)) {
     showToast(
-      "Published business app URL is not available.",
+      "Your business app is not live yet. Please wait for publishing to finish.",
       "error"
     );
-
     return;
   }
 
@@ -3312,6 +3564,7 @@ function openPublishedBusiness() {
     "noopener,noreferrer"
   );
 }
+
 
 
 function editBusiness() {
@@ -3598,6 +3851,8 @@ function resetBuilderData(
     state.selectedTemplate =
       null;
   }
+
+  clearCategoryItemData();
 
   state.categories =
     [];
