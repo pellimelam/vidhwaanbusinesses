@@ -13,7 +13,7 @@
  */
 
 const CONFIG = Object.freeze({
-  WORKER_URL: "",
+  WORKER_URL: "https://divine-snowflake-aabd.propertiesgrouphyd.workers.dev",
   TEMPLATE_ID: "ECM",
   MAX_CATEGORIES: 50,
   MAX_ITEMS_PER_CATEGORY: 500,
