@@ -766,13 +766,18 @@ a {
 
 .video-modal__dialog {
   position: relative;
+
   width: min(
-    calc(100% - 32px),
-    520px
+    calc(100vw - 32px),
+    520px,
+    calc((100vh - 110px) * 9 / 16)
   );
+
   max-height: calc(100vh - 32px);
   margin: 16px auto;
+
   overflow: hidden;
+
   border-radius: var(--radius-large);
   background: var(--color-surface);
   box-shadow: var(--shadow-large);
@@ -1055,9 +1060,13 @@ a {
   }
 
   .video-modal__dialog {
-    width: calc(100% - 20px);
-    margin: 10px auto;
+    width: min(
+      calc(100vw - 20px),
+      calc((100vh - 100px) * 9 / 16)
+    );
+
     max-height: calc(100vh - 20px);
+    margin: 10px auto;
   }
 
   .toast-container {
