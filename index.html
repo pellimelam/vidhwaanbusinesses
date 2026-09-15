@@ -109,9 +109,13 @@
         >
           <span
             class="template-card__icon"
-            aria-hidden="true"
           >
-            🛍️
+            <img
+              src="./ecommerce/icons/logo.png"
+              alt="Ecommerce"
+              width="58"
+              height="58"
+            >
           </span>
 
           <span class="template-card__content">
@@ -786,13 +790,21 @@
           <a
             href="#"
             id="business-app-url"
-            class="success-url-box__url"
-            target="_blank"
-            rel="noopener noreferrer"
+            class="success-url-box__url is-pending"
+            aria-disabled="true"
+            tabindex="-1"
           >
-            Open Business App
+            Preparing Business App...
           </a>
         </div>
+
+        <p
+          class="deployment-status"
+          id="deployment-status"
+          aria-live="polite"
+        >
+          Publishing your business app...
+        </p>
 
         <div class="success-actions">
 
