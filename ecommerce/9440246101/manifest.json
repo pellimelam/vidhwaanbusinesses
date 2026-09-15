@@ -1,6 +1,6 @@
 {
   "name": "Demo Business",
-  "short_name": "Demo Busines",
+  "short_name": "Demo Business",
   "description": "For Your Business",
   "start_url": "./",
   "scope": "./",
@@ -13,7 +13,12 @@
   "icons": [
     {
       "src": "https://yt3.ggpht.com/L-4dcOsy9xuI2gxAsOmdoutWA9GqHzR8-R_u-WCx0SRU3nE4FWpCSzYwGRpz2LxazckrZDlkMg=s176-c-k-c0x00ffffff-no-rj",
-      "sizes": "any",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "https://yt3.ggpht.com/L-4dcOsy9xuI2gxAsOmdoutWA9GqHzR8-R_u-WCx0SRU3nE4FWpCSzYwGRpz2LxazckrZDlkMg=s176-c-k-c0x00ffffff-no-rj",
+      "sizes": "512x512",
       "purpose": "any"
     }
   ]
