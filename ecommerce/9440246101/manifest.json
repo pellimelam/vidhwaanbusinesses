@@ -12,12 +12,12 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "https://clock.vidhwaan.com/icons/icon-512.png",
+      "src": "https://clock.vidhwaan.com/icons/logo.png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "https://clock.vidhwaan.com/icons/icon-512.png",
+      "src": "https://clock.vidhwaan.com/icons/logo.png",
       "sizes": "512x512",
       "purpose": "any"
     }
