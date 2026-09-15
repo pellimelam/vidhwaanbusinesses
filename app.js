@@ -1710,6 +1710,7 @@ function saveItem() {
     "Item added.",
     "success"
   );
+}
 
 
 
