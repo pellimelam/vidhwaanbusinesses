@@ -1,1 +1,36 @@
-{"template":"ECM","version":1,"business":{"name":"Demo Business","tagline":"For Your Business","address":"Utukur Village, Sydapuram Mandal, Nellore District-524407","mobile":"9866516195","email":"info@vidhwaan.com","whatsapp":"9866516195","logoUrl":"https://yt3.ggpht.com/L-4dcOsy9xuI2gxAsOmdoutWA9GqHzR8-R_u-WCx0SRU3nE4FWpCSzYwGRpz2LxazckrZDlkMg=s176-c-k-c0x00ffffff-no-rj"},"location":{"verified":true,"latitude":14.242348999999999,"longitude":79.738389,"verifiedAt":"2026-09-15T13:27:23.703Z"},"categories":[{"id":"cat-b49cd0df-a71e-4de0-bd96-5a4b45d493cc","name":"Grocery","items":[{"id":"item-48b4545f-bb71-4e1e-a53d-e546ac072c10","name":"Rice","price":30,"quantity":1,"unit":"kg","description":"Rice","youtubeUrl":"https://youtube.com/shorts/8JXcgIOjdNc"}]}]}
+{
+  "template": "ECM",
+  "version": 1,
+  "business": {
+    "name": "Demo Business",
+    "tagline": "For Your Business",
+    "address": "Utukur Village, Sydapuram Mandal, Nellore District-524407",
+    "mobile": "9866516195",
+    "email": "info@vidhwaan.com",
+    "whatsapp": "9866516195",
+    "logoUrl": "https://yt3.ggpht.com/L-4dcOsy9xuI2gxAsOmdoutWA9GqHzR8-R_u-WCx0SRU3nE4FWpCSzYwGRpz2LxazckrZDlkMg=s176-c-k-c0x00ffffff-no-rj"
+  },
+  "location": {
+    "verified": true,
+    "latitude": 14.242348999999999,
+    "longitude": 79.738389,
+    "verifiedAt": "2026-09-15T13:27:23.703Z"
+  },
+  "categories": [
+    {
+      "id": "cat-b49cd0df-a71e-4de0-bd96-5a4b45d493cc",
+      "name": "Grocery",
+      "items": [
+        {
+          "id": "item-48b4545f-bb71-4e1e-a53d-e546ac072c10",
+          "name": "Rice",
+          "price": 30,
+          "quantity": 1,
+          "unit": "kg",
+          "description": "Rice",
+          "youtubeUrl": "https://youtube.com/shorts/8JXcgIOjdNc"
+        }
+      ]
+    }
+  ]
+}
