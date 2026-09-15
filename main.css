@@ -333,9 +333,17 @@ a {
   height: 58px;
   display: grid;
   place-items: center;
+  overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--black);
-  font-size: 1.7rem;
+}
+
+.template-card__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
 }
 
 .template-card__content {
@@ -618,6 +626,11 @@ a {
 }
 
 
+#open-business-app:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* ============================================================
    LOGO PREVIEW
    ============================================================ */
@@ -897,6 +910,23 @@ a {
 }
 
 
+.deployment-status {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.deployment-status.is-waiting {
+  color: var(--text-secondary);
+}
+
+.deployment-status.is-live {
+  color: var(--success);
+  font-weight: 600;
+}
+
 /* ============================================================
    SPINNER
    ============================================================ */
@@ -1002,6 +1032,15 @@ a {
   font-weight: 700;
   overflow-wrap: anywhere;
 }
+
+
+.success-url-box__url.is-pending {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
 
 .success-actions {
   display: flex;
