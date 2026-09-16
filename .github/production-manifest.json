@@ -74,10 +74,10 @@
       "updatedAt": "2026-09-16T06:42:38.946Z"
     },
     "ecommerce/9440246101/manifest.json": {
-      "sourceHash": "3a2d28d53f9e7da4ceb440a2dec0560e81744aac6aae892a5443d878447874d6",
-      "outputHash": "c46433f75d5ff9e8ac47413a5e1e2410f9c73fac0c07bcbeadb11710abd88187",
+      "outputHash": "53252269b324ed404d84ef5574afb6296b4bd98c511d13d7e8849ab14c39099c",
       "status": "processed",
-      "type": "json"
+      "type": "json",
+      "updatedAt": "2026-09-16T06:43:58.506Z"
     },
     "ecommerce/9866516195/ecommerce.json": {
       "outputHash": "a8c8c089d86619cc8b8542fd17e951773f76e36a21dac7bc8648cdf5a4e06511",
