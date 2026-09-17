@@ -1,1 +1,9536 @@
-"use strict";const _0x53b2da=_0x1938;!function(){const _0x27401e__0x223ecb=837,_0x27401e__0x84a578=1030,_0x27401e__0x12f03c=616,_0x27401e__0x3789d5=812,_0x27401e__0x5452cf=1077,_0x27401e__0x15e57d=915,_0x27401e__0x16502c=386,_0x27401e__0x712ce6=477,_0x27401e__0x15a84f=764,_0x27401e__0x3fa1be=765,_0x2a41b0=_0x1938,_0x19f25f=_0x5e9b();for(;;)try{if(485419===parseInt(_0x2a41b0(_0x27401e__0x223ecb))/1*(parseInt(_0x2a41b0(947))/2)+-parseInt(_0x2a41b0(638))/3*(-parseInt(_0x2a41b0(496))/4)+parseInt(_0x2a41b0(_0x27401e__0x84a578))/5+parseInt(_0x2a41b0(_0x27401e__0x12f03c))/6*(parseInt(_0x2a41b0(_0x27401e__0x3789d5))/7)+-parseInt(_0x2a41b0(_0x27401e__0x5452cf))/8*(parseInt(_0x2a41b0(_0x27401e__0x15e57d))/9)+parseInt(_0x2a41b0(_0x27401e__0x16502c))/10*(parseInt(_0x2a41b0(_0x27401e__0x712ce6))/11)+parseInt(_0x2a41b0(_0x27401e__0x15a84f))/12*(-parseInt(_0x2a41b0(_0x27401e__0x3fa1be))/13))break;_0x19f25f.push(_0x19f25f.shift())}catch(_0x38f23f){_0x19f25f.push(_0x19f25f.shift())}}();const CONFIG=Object[_0x53b2da(655)]({WORKER_URL:_0x53b2da(926),TEMPLATE_ID:_0x53b2da(943),CATEGORY_ITEM_STORAGE_KEY:_0x53b2da(645),WEBSITE_STORAGE_KEY:_0x53b2da(396),MAX_CATEGORIES:50,MAX_ITEMS_PER_CATEGORY:500,MAX_TOTAL_ITEMS:5e3,MAX_CATEGORY_NAME_LENGTH:100,MAX_ITEM_NAME_LENGTH:150,MAX_BUSINESS_NAME_LENGTH:120,MAX_TAGLINE_LENGTH:200,MAX_ADDRESS_LENGTH:500,MAX_PHONE_LENGTH:30,MAX_EMAIL_LENGTH:254,MAX_WHATSAPP_LENGTH:30,MAX_LOGO_URL_LENGTH:2e3,MAX_DESCRIPTION_LENGTH:1e3,MAX_YOUTUBE_URL_LENGTH:2e3,REQUEST_TIMEOUT_MS:3e4,DEPLOYMENT_CHECK_INTERVAL_MS:3e3,DEPLOYMENT_TIMEOUT_MS:12e4,MAX_LOCATION_ACCURACY_METERS:500,LOCATION_TIMEOUT_MS:45e3}),DEFAULT_CATEGORIES=Object.freeze([_0x53b2da(1014),_0x53b2da(1079),_0x53b2da(448),_0x53b2da(575),_0x53b2da(923),"Beauty & Personal Care"]),state={selectedTemplate:null,website:{sections:[],footer:{items:[]}},categories:[],editingCategoryId:null,editingItemId:null,editingItemCategoryId:null,location:{verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},publishing:!1,lastPublishedUrl:"",logoPreviewRequest:0},DOM={};function initialize(){cacheDom(),bindEvents(),initializeApplication()}function cacheDom(){const _0x2a89c8__0x539ab7=948,_0x2a89c8__0x14f350=451,_0x2a89c8__0x501123=948,_0x2a89c8__0x1b55b2=460,_0x2a89c8__0x502dc7=504,_0x2a89c8__0x576cc6=1047,_0x2a89c8__0x1be993=1035,_0x2a89c8__0x50f768=948,_0x2a89c8__0x221b0b=534,_0x2a89c8__0x155a35=948,_0x2a89c8__0x1787be=450,_0x2a89c8__0xbb11a4=978,_0x2a89c8__0x229c27=791,_0x2a89c8__0x1406ac=948,_0x2a89c8__0x324cd7=1082,_0x2a89c8__0x13719b=653,_0x2a89c8__0xcf56a5=526,_0x2a89c8__0x4c4cf5=387,_0x2a89c8__0x3b7cb4=641,_0x2a89c8__0x243f2c=1022,_0x2a89c8__0xfb6f78=720,_0x2a89c8__0x5f04a7=1054,_0x2a89c8__0x250b29=948,_0x2a89c8__0x3e9514=748,_0x2a89c8__0x4ec075=976,_0x2a89c8__0x2bacc8=462,_0x2a89c8__0x3c77c5=591,_0x2a89c8__0x1288e6=773,_0x2a89c8__0x59a570=948,_0x2a89c8__0x1dee38=459,_0x2a89c8__0x3fd64b=1007,_0x2a89c8__0x4047d6=987,_0x2a89c8__0x172aa0=452,_0x2a89c8__0x52a701=944,_0x2a89c8__0xa6a03f=800,_0x2a89c8__0x5afadb=965,_0x2a89c8__0x19b680=519,_0x2a89c8__0x395e6e=531,_0x2a89c8__0x557701=823,_0x2a89c8__0x50f560=948,_0x2a89c8__0x14e75c=1059,_0x2a89c8__0x56c98c=1061,_0x2a89c8__0x461dd7=772,_0x2a89c8__0x140271=1073,_0x2a89c8__0x27bcb6=685,_0x2a89c8__0x8dbbb1=731,_0x2a89c8__0x2fa474=846,_0x2a89c8__0x12412a=443,_0x2a89c8__0x3aeb76=865,_0x2a89c8__0x13801c=678,_0x2a89c8__0x1a7ff7=948,_0x2a89c8__0xc6a471=756,_0x2a89c8__0x355ced=815,_0x2a89c8__0x455bac=821,_0x2a89c8__0x38a40e=803,_0x2a89c8__0x295d4f=699,_0x2a89c8__0x18e869=948,_0x2a89c8__0x24f60e=582,_0x2a89c8__0x37592e=1024,_0x2a89c8__0x4f2930=880,_0x2a89c8__0x110a70=948,_0x2a89c8__0x4b99e3=672,_0x2a89c8__0x645ac9=883,_0x2a89c8__0x2a7897=766,_0x2a89c8__0x574524=767,_0x2a89c8__0x36a290=1037,_0x2a89c8__0x31ff34=907,_0x2a89c8__0x394a5c=416,_0x2a89c8__0x198f0f=404,_0x2a89c8__0x293394=481,_0x2a89c8__0x5e81e1=635,_0x2a89c8__0x3587e0=940,_0x2a89c8__0x351970=948,_0x2a89c8__0x12f8f0=567,_0x2a89c8__0x2f7fb6=792,_0x2a89c8__0x52142a=652,_0x2a89c8__0x551422=827,_0x2a89c8__0x5f30dd=435,_0x2a89c8__0x33ba86=948,_0x2a89c8__0x428db4=447,_0x2a89c8__0x45b83b=1019,_0x2a89c8__0x3c02e0=809,_0x2a89c8__0xf248c0=911,_0x2a89c8__0x2ddadf=427,_0x2a89c8__0x4662fc=737,_0x2a89c8__0x1bded8=406,_0x2a89c8__0x16cbcd=811,_0x2a89c8__0x2b1ab7=948,_0x2a89c8__0x33abd2=718,_0x2a89c8__0x1a3438=688,_0x2a89c8__0x39b763=727,_0x2a89c8__0x10c7e1=512,_0x2a89c8__0x54c30a=948,_0x2a89c8__0xce2935=584,_0x2a89c8__0x52675c=948,_0x2a89c8__0x38f9c3=668,_0x2a89c8__0x1d9cac=948,_0x2a89c8__0x33d8de=906,_0x2a89c8__0x282bbb=513,_0x2a89c8__0x1e8ee2=729,_0x2a89c8__0x45ab0d=1078,_0x2a89c8__0x24b951=948,_0x2a89c8__0x5e1661=539,_0x2a89c8__0x50de2b=980,_0x2a89c8__0x58b5fc=848,_0x2a89c8__0x145308=895,_0x2a89c8__0x29b7f5=642,_0x2a89c8__0x26cb9f=948,_0x2a89c8__0x3a63ff=948,_0x2a89c8__0x377e65=520,_0x2a89c8__0x7f0718=741,_0x2a89c8__0x5b4f65=948,_0x2a89c8__0xf0fd5a=676,_0x2a89c8__0xb5ac79=393,_0x2a89c8__0x3040ac=948,_0x2a89c8__0x343999=790,_0x2a89c8__0x5161ed=693,_0x2a89c8__0x5c57e4=948,_0x2a89c8__0x46e861=654,_0x2a89c8__0x3a4eaa=948,_0x2a89c8__0x5bd671=948,_0x2a89c8__0x36baa8=903,_0x2a89c8__0x599cad=985,_0x2a89c8__0x438eeb=798,_0x2a89c8__0x4c80ac=602,_0x2a89c8__0x3bfa9d=558,_0x2a89c8__0x151640=967,_0x2a89c8__0x48db27=948,_0x2a89c8__0x4e2282=521,_0x2a89c8__0x5dda93=882,_0x2a89c8__0x595a0d=948,_0x2a89c8__0x26e7fa=949,_0x2a89c8__0x2c7860=948,_0x2a89c8__0x48b413=1018,_0x2a89c8__0x510db0=810,_0x2a89c8__0x1c92f4=805,_0x2a89c8__0x4c5f14=564,_0x2a89c8__0x537f98=499,_0x2a89c8__0x2ba1b0=948,_0x2a89c8__0x555a5e=528,_0x2a89c8__0x2627c6=736,_0x2a89c8__0x6dfe4a=856,_0x2a89c8__0x4f32a3=822,_0x2a89c8__0x396c52=578,_0x2a89c8__0x2bf85f=917,_0x2a89c8__0x29f8fe=948,_0x2a89c8__0x3c5397=1074,_0x2a89c8__0x3613c3=948,_0x2a89c8__0x33fce4=597,_0x2a89c8__0x12c8b5=615,_0x2a89c8__0x4f5941=932,_0x2a89c8__0x403431=990,_0x2a89c8__0x2617f2=890,_0x2a89c8__0x3402a5=948,_0x2a89c8__0x41b308=901,_0x2a89c8__0x34c567=1031,_0x2a89c8__0x5579ad=1025,_0x2a89c8__0x5877dc=948,_0x2a89c8__0xf6956=740,_0x2a89c8__0x569912=922,_0x2a89c8__0x47eae9=669,_0x2a89c8__0x47a340=948,_0x2a89c8__0x47a660=489,_0x2a89c8__0xfa8a56=561,_0x2a89c8__0x461dfa=563,_0x2a89c8__0x518da0=838,_0x2a89c8__0x11b167=948,_0x2a89c8__0x28e729=430,_0x2a89c8__0x5bae1e=948,_0x2a89c8__0x297fc2=705,_0x2a89c8__0xc2bb50=839,_0x2a89c8__0x221020=1069,_0x2a89c8__0x18d9de=786,_0x2a89c8__0x2eb801=565,_0x2a89c8__0x408432=493,_0x2a89c8__0x56cbe7=902,_0x2a89c8__0x442459=726,_0x2a89c8__0x3031b2=948,_0x2a89c8__0x358865=650,_0x2a89c8__0x3b7e6f=444,_0x2a89c8__0x41f85e=881,_0x2a89c8__0x58fc0d=399,_0x2a89c8__0x1ad127=948,_0x2a89c8__0x294b9f=927,_0x2a89c8__0x29204d=1080,_0x2a89c8__0x1a7feb=834,_0x2a89c8__0x4c398d=479,_0x2a89c8__0x2138e1=983,_0x2942da=_0x53b2da;DOM.connectionStatus=document[_0x2942da(_0x2a89c8__0x539ab7)](_0x2942da(780)),DOM[_0x2942da(627)]=document[_0x2942da(_0x2a89c8__0x539ab7)](_0x2942da(_0x2a89c8__0x14f350)),DOM[_0x2942da(1027)]=document[_0x2942da(_0x2a89c8__0x501123)](_0x2942da(_0x2a89c8__0x1b55b2)),DOM[_0x2942da(779)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x502dc7)),DOM.templateEcommerce=document.getElementById(_0x2942da(_0x2a89c8__0x576cc6)),DOM[_0x2942da(603)]=document.getElementById(_0x2942da(754)),DOM.ecommerceSection=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x1be993)),DOM.websiteSection=document[_0x2942da(_0x2a89c8__0x50f768)](_0x2942da(_0x2a89c8__0x221b0b)),DOM[_0x2942da(656)]=document[_0x2942da(_0x2a89c8__0x155a35)](_0x2942da(_0x2a89c8__0x1787be)),DOM.websiteSubscriptionId=document[_0x2942da(948)](_0x2942da(629)),DOM[_0x2942da(783)]=document[_0x2942da(_0x2a89c8__0x539ab7)](_0x2942da(_0x2a89c8__0xbb11a4)),DOM[_0x2942da(_0x2a89c8__0x229c27)]=document[_0x2942da(_0x2a89c8__0x1406ac)](_0x2942da(_0x2a89c8__0x324cd7)),DOM[_0x2942da(_0x2a89c8__0x13719b)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0xcf56a5)),DOM[_0x2942da(_0x2a89c8__0x4c4cf5)]=document[_0x2942da(_0x2a89c8__0x539ab7)](_0x2942da(_0x2a89c8__0x3b7cb4)),DOM.websiteEmail=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x243f2c)),DOM[_0x2942da(_0x2a89c8__0xfb6f78)]=document[_0x2942da(_0x2a89c8__0x501123)](_0x2942da(_0x2a89c8__0x5f04a7)),DOM[_0x2942da(1042)]=document[_0x2942da(_0x2a89c8__0x250b29)](_0x2942da(_0x2a89c8__0x3e9514)),DOM[_0x2942da(_0x2a89c8__0x4ec075)]=document.getElementById(_0x2942da(_0x2a89c8__0x2bacc8)),DOM[_0x2942da(_0x2a89c8__0x3c77c5)]=document[_0x2942da(_0x2a89c8__0x501123)]("website-logo"),DOM[_0x2942da(_0x2a89c8__0x1288e6)]=document[_0x2942da(_0x2a89c8__0x59a570)](_0x2942da(_0x2a89c8__0x1dee38)),DOM[_0x2942da(_0x2a89c8__0x3fd64b)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x4047d6)),DOM.websiteVerifyLocation=document.getElementById(_0x2942da(_0x2a89c8__0x172aa0)),DOM[_0x2942da(_0x2a89c8__0x52a701)]=document[_0x2942da(_0x2a89c8__0x59a570)](_0x2942da(_0x2a89c8__0xa6a03f)),DOM[_0x2942da(_0x2a89c8__0x5afadb)]=document[_0x2942da(_0x2a89c8__0x1406ac)](_0x2942da(_0x2a89c8__0x19b680)),DOM.websiteLocationStatusText=document.getElementById(_0x2942da(_0x2a89c8__0x395e6e)),DOM.websiteLocationDetails=document[_0x2942da(_0x2a89c8__0x50f768)](_0x2942da(_0x2a89c8__0x557701)),DOM.websiteLocationLatitude=document[_0x2942da(_0x2a89c8__0x50f560)](_0x2942da(_0x2a89c8__0x14e75c)),DOM[_0x2942da(_0x2a89c8__0x56c98c)]=document.getElementById("website-location-longitude"),DOM[_0x2942da(_0x2a89c8__0x461dd7)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x140271)),DOM[_0x2942da(_0x2a89c8__0x27bcb6)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x8dbbb1)),DOM[_0x2942da(_0x2a89c8__0x2fa474)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x12412a)),DOM[_0x2942da(_0x2a89c8__0x3aeb76)]=document.getElementById("website-sections"),DOM[_0x2942da(_0x2a89c8__0x13801c)]=document[_0x2942da(_0x2a89c8__0x1a7ff7)](_0x2942da(_0x2a89c8__0xc6a471)),DOM[_0x2942da(_0x2a89c8__0x355ced)]=document[_0x2942da(_0x2a89c8__0x501123)](_0x2942da(904)),DOM[_0x2942da(_0x2a89c8__0x455bac)]=document.getElementById(_0x2942da(_0x2a89c8__0x38a40e)),DOM[_0x2942da(_0x2a89c8__0x295d4f)]=document[_0x2942da(_0x2a89c8__0x18e869)]("website-footer-empty"),DOM[_0x2942da(_0x2a89c8__0x24f60e)]=document.getElementById(_0x2942da(_0x2a89c8__0x37592e)),DOM[_0x2942da(646)]=document[_0x2942da(_0x2a89c8__0x155a35)]("website-validation-list"),DOM[_0x2942da(_0x2a89c8__0x4f2930)]=document[_0x2942da(_0x2a89c8__0x110a70)](_0x2942da(_0x2a89c8__0x4b99e3)),DOM.websitePublishSpinner=document.getElementById(_0x2942da(_0x2a89c8__0x645ac9)),DOM.websitePublishButtonText=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x2a7897)),DOM[_0x2942da(_0x2a89c8__0x574524)]=document[_0x2942da(_0x2a89c8__0x501123)](_0x2942da(_0x2a89c8__0x36a290)),DOM[_0x2942da(_0x2a89c8__0x31ff34)]=document[_0x2942da(948)]("website-publish-result"),DOM[_0x2942da(_0x2a89c8__0x394a5c)]=document[_0x2942da(_0x2a89c8__0x250b29)]("website-published-url"),DOM[_0x2942da(_0x2a89c8__0x198f0f)]=document.getElementById("website-content-modal"),DOM.websiteContentModalClose=document.getElementById(_0x2942da(914)),DOM[_0x2942da(633)]=document[_0x2942da(_0x2a89c8__0x50f560)]("website-content-modal-title"),DOM[_0x2942da(_0x2a89c8__0x293394)]=document[_0x2942da(_0x2a89c8__0x50f560)](_0x2942da(_0x2a89c8__0x5e81e1)),DOM[_0x2942da(_0x2a89c8__0x3587e0)]=document[_0x2942da(_0x2a89c8__0x351970)](_0x2942da(594)),DOM.websiteContentTextLabel=document[_0x2942da(_0x2a89c8__0x155a35)]("website-content-text-label"),DOM.websiteContentText=document[_0x2942da(_0x2a89c8__0x351970)](_0x2942da(401)),DOM[_0x2942da(405)]=document[_0x2942da(_0x2a89c8__0x155a35)](_0x2942da(_0x2a89c8__0x12f8f0)),DOM[_0x2942da(_0x2a89c8__0x2f7fb6)]=document[_0x2942da(_0x2a89c8__0x539ab7)](_0x2942da(900)),DOM.websiteContentRepeatableHelp=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x52142a)),DOM[_0x2942da(412)]=document.getElementById(_0x2942da(_0x2a89c8__0x551422)),DOM[_0x2942da(_0x2a89c8__0x5f30dd)]=document[_0x2942da(_0x2a89c8__0x33ba86)](_0x2942da(_0x2a89c8__0x428db4)),DOM[_0x2942da(_0x2a89c8__0x45b83b)]=document[_0x2942da(_0x2a89c8__0x50f768)](_0x2942da(_0x2a89c8__0x3c02e0)),DOM[_0x2942da(_0x2a89c8__0xf248c0)]=document.getElementById(_0x2942da(_0x2a89c8__0x2ddadf)),DOM[_0x2942da(_0x2a89c8__0x4662fc)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x1bded8)),DOM[_0x2942da(_0x2a89c8__0x16cbcd)]=document[_0x2942da(_0x2a89c8__0x2b1ab7)](_0x2942da(_0x2a89c8__0x33abd2)),DOM[_0x2942da(_0x2a89c8__0x1a3438)]=document.getElementById(_0x2942da(_0x2a89c8__0x39b763)),DOM.businessPassword=document[_0x2942da(_0x2a89c8__0x351970)](_0x2942da(617)),DOM[_0x2942da(_0x2a89c8__0x10c7e1)]=document[_0x2942da(_0x2a89c8__0x54c30a)](_0x2942da(_0x2a89c8__0xce2935)),DOM[_0x2942da(717)]=document[_0x2942da(_0x2a89c8__0x52675c)](_0x2942da(_0x2a89c8__0x38f9c3)),DOM.businessName=document[_0x2942da(_0x2a89c8__0x1d9cac)](_0x2942da(_0x2a89c8__0x33d8de)),DOM[_0x2942da(_0x2a89c8__0x282bbb)]=document.getElementById(_0x2942da(784)),DOM[_0x2942da(579)]=document.getElementById(_0x2942da(_0x2a89c8__0x1e8ee2)),DOM.mobile=document.getElementById("business-mobile"),DOM[_0x2942da(_0x2a89c8__0x45ab0d)]=document[_0x2942da(_0x2a89c8__0x24b951)](_0x2942da(_0x2a89c8__0x5e1661)),DOM[_0x2942da(_0x2a89c8__0x50de2b)]=document.getElementById(_0x2942da(_0x2a89c8__0x58b5fc)),DOM[_0x2942da(_0x2a89c8__0x145308)]=document[_0x2942da(_0x2a89c8__0x250b29)](_0x2942da(_0x2a89c8__0x29b7f5)),DOM[_0x2942da(1009)]=document[_0x2942da(_0x2a89c8__0x26cb9f)]("logo-preview"),DOM.logoPreviewImage=document[_0x2942da(_0x2a89c8__0x3a63ff)](_0x2942da(_0x2a89c8__0x377e65)),DOM.locationStatus=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x7f0718)),DOM[_0x2942da(757)]=document[_0x2942da(_0x2a89c8__0x5b4f65)](_0x2942da(_0x2a89c8__0xf0fd5a)),DOM[_0x2942da(_0x2a89c8__0xb5ac79)]=document[_0x2942da(_0x2a89c8__0x3040ac)](_0x2942da(_0x2a89c8__0x343999)),DOM[_0x2942da(442)]=document[_0x2942da(948)]("verify-location"),DOM[_0x2942da(_0x2a89c8__0x5161ed)]=document[_0x2942da(_0x2a89c8__0x5c57e4)]("location-details"),DOM.locationLatitude=document.getElementById(_0x2942da(_0x2a89c8__0x46e861)),DOM.locationLongitude=document[_0x2942da(_0x2a89c8__0x3a4eaa)]("location-longitude"),DOM.locationVerifiedAt=document[_0x2942da(_0x2a89c8__0x5bd671)](_0x2942da(_0x2a89c8__0x36baa8)),DOM[_0x2942da(_0x2a89c8__0x599cad)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x438eeb)),DOM[_0x2942da(_0x2a89c8__0x4c80ac)]=document.getElementById(_0x2942da(_0x2a89c8__0x3bfa9d)),DOM[_0x2942da(_0x2a89c8__0x151640)]=document[_0x2942da(_0x2a89c8__0x48db27)]("category-list"),DOM[_0x2942da(_0x2a89c8__0x4e2282)]=document[_0x2942da(_0x2a89c8__0x1406ac)](_0x2942da(501)),DOM[_0x2942da(_0x2a89c8__0x5dda93)]=document[_0x2942da(_0x2a89c8__0x595a0d)](_0x2942da(_0x2a89c8__0x26e7fa)),DOM.categoryModalTitle=document[_0x2942da(_0x2a89c8__0x2c7860)](_0x2942da(694)),DOM[_0x2942da(_0x2a89c8__0x48b413)]=document.getElementById("category-modal-close"),DOM.categoryName=document.getElementById(_0x2942da(_0x2a89c8__0x510db0)),DOM[_0x2942da(_0x2a89c8__0x1c92f4)]=document.getElementById(_0x2942da(_0x2a89c8__0x4c5f14)),DOM[_0x2942da(_0x2a89c8__0x537f98)]=document[_0x2942da(_0x2a89c8__0x2ba1b0)](_0x2942da(_0x2a89c8__0x555a5e)),DOM[_0x2942da(_0x2a89c8__0x2627c6)]=document.getElementById(_0x2942da(_0x2a89c8__0x6dfe4a)),DOM[_0x2942da(_0x2a89c8__0x4f32a3)]=document.getElementById("add-item"),DOM[_0x2942da(471)]=document[_0x2942da(_0x2a89c8__0x595a0d)](_0x2942da(_0x2a89c8__0x396c52)),DOM[_0x2942da(_0x2a89c8__0x2bf85f)]=document[_0x2942da(_0x2a89c8__0x5bd671)](_0x2942da(463)),DOM[_0x2942da(455)]=document[_0x2942da(_0x2a89c8__0x29f8fe)](_0x2942da(395)),DOM[_0x2942da(_0x2a89c8__0x3c5397)]=document[_0x2942da(_0x2a89c8__0x3613c3)](_0x2942da(_0x2a89c8__0x33fce4)),DOM[_0x2942da(_0x2a89c8__0x12c8b5)]=document[_0x2942da(_0x2a89c8__0x1a7ff7)](_0x2942da(_0x2a89c8__0x4f5941)),DOM.itemModalClose=document[_0x2942da(_0x2a89c8__0x5bd671)]("item-modal-close"),DOM.itemName=document[_0x2942da(948)](_0x2942da(533)),DOM[_0x2942da(_0x2a89c8__0x403431)]=document[_0x2942da(_0x2a89c8__0x24b951)](_0x2942da(715)),DOM[_0x2942da(_0x2a89c8__0x2617f2)]=document[_0x2942da(_0x2a89c8__0x3402a5)](_0x2942da(_0x2a89c8__0x41b308)),DOM.itemUnit=document.getElementById(_0x2942da(_0x2a89c8__0x34c567)),DOM[_0x2942da(_0x2a89c8__0x5579ad)]=document[_0x2942da(_0x2a89c8__0x5877dc)](_0x2942da(_0x2a89c8__0xf6956)),DOM[_0x2942da(_0x2a89c8__0x569912)]=document[_0x2942da(_0x2a89c8__0x2b1ab7)]("item-description"),DOM[_0x2942da(_0x2a89c8__0x47eae9)]=document[_0x2942da(_0x2a89c8__0x47a340)](_0x2942da(794)),DOM[_0x2942da(_0x2a89c8__0x47a660)]=document.getElementById("item-form-error"),DOM.itemCancel=document.getElementById(_0x2942da(_0x2a89c8__0xfa8a56)),DOM[_0x2942da(_0x2a89c8__0x461dfa)]=document[_0x2942da(_0x2a89c8__0x3613c3)]("item-save"),DOM[_0x2942da(_0x2a89c8__0x518da0)]=document[_0x2942da(_0x2a89c8__0x11b167)]("validation-summary"),DOM[_0x2942da(_0x2a89c8__0x28e729)]=document.getElementById("validation-list"),DOM.publishBusiness=document[_0x2942da(_0x2a89c8__0x5bae1e)](_0x2942da(_0x2a89c8__0x297fc2)),DOM.publishSpinner=document.getElementById(_0x2942da(807)),DOM[_0x2942da(_0x2a89c8__0xc2bb50)]=document[_0x2942da(_0x2a89c8__0x3402a5)](_0x2942da(_0x2a89c8__0x221020)),DOM[_0x2942da(_0x2a89c8__0x18d9de)]=document.getElementById(_0x2942da(_0x2a89c8__0x2eb801)),DOM[_0x2942da(_0x2a89c8__0x408432)]=document.getElementById(_0x2942da(_0x2a89c8__0x56cbe7)),DOM[_0x2942da(_0x2a89c8__0x442459)]=document[_0x2942da(_0x2a89c8__0x3031b2)](_0x2942da(962)),DOM[_0x2942da(_0x2a89c8__0x358865)]=document.getElementById(_0x2942da(_0x2a89c8__0x3b7e6f)),DOM[_0x2942da(_0x2a89c8__0x41f85e)]=document[_0x2942da(_0x2a89c8__0x3613c3)](_0x2942da(_0x2a89c8__0x58fc0d)),DOM.openBusinessApp=document[_0x2942da(948)]("open-business-app"),DOM[_0x2942da(562)]=document[_0x2942da(_0x2a89c8__0x1ad127)]("edit-business"),DOM.createAnother=document[_0x2942da(_0x2a89c8__0x1d9cac)](_0x2942da(_0x2a89c8__0x294b9f)),DOM[_0x2942da(_0x2a89c8__0x29204d)]=document[_0x2942da(948)](_0x2942da(_0x2a89c8__0x1a7feb)),DOM[_0x2942da(769)]=document.getElementById(_0x2942da(_0x2a89c8__0x4c398d)),DOM[_0x2942da(_0x2a89c8__0x2138e1)]=document[_0x2942da(_0x2a89c8__0x11b167)](_0x2942da(776))}function bindEvents(){const _0x4c8a5f__0x465d85=659,_0x4c8a5f__0x4b9ab2=811,_0x4c8a5f__0x4a6823=656,_0x4c8a5f__0x458ff7=659,_0x4c8a5f__0x187e2a=417,_0x4c8a5f__0x5e8682=976,_0x4c8a5f__0x289fc9=591,_0x4c8a5f__0x52634a=591,_0x4c8a5f__0x2a4eda=789,_0x4c8a5f__0x53cd89=1034,_0x4c8a5f__0x19cfcd=685,_0x4c8a5f__0x20f7ff=846,_0x4c8a5f__0xec648=846,_0x4c8a5f__0x438150=659,_0x4c8a5f__0x5b38b2=865,_0x4c8a5f__0x5596f9=815,_0x4c8a5f__0x238e48=842,_0x4c8a5f__0x4090dc=659,_0x4c8a5f__0x4ebda9=911,_0x4c8a5f__0x59350f=737,_0x4c8a5f__0x25a56f=412,_0x4c8a5f__0x23ce61=435,_0x4c8a5f__0x32b7b7=659,_0x4c8a5f__0xef9c88=821,_0x4c8a5f__0x16c22a=880,_0x4c8a5f__0x25a0ea=985,_0x4c8a5f__0x5a25de=659,_0x4c8a5f__0xe94f7a=602,_0x4c8a5f__0x241c17=602,_0x4c8a5f__0x2e26c0=659,_0x4c8a5f__0x3ca83b=1018,_0x4c8a5f__0x3d54ca=499,_0x4c8a5f__0xd9217a=736,_0x4c8a5f__0x42fa1e=659,_0x4c8a5f__0x3159c1=882,_0x4c8a5f__0x53b6ee=822,_0x4c8a5f__0x3b6a7a=659,_0x4c8a5f__0x88003=1070,_0x4c8a5f__0x12c08f=659,_0x4c8a5f__0x426800=1038,_0x4c8a5f__0x25b06a=659,_0x4c8a5f__0x3cad72=417,_0x4c8a5f__0x3effbe=563,_0x4c8a5f__0xa18d7a=1074,_0x4c8a5f__0x308217=659,_0x4c8a5f__0x3472b6=967,_0x4c8a5f__0x4bc869=659,_0x4c8a5f__0x37edce=917,_0x4c8a5f__0x41a2dc=659,_0x4c8a5f__0x178dd0=417,_0x4c8a5f__0x268f35=442,_0x4c8a5f__0x49caca=512,_0x4c8a5f__0x5ecb14=895,_0x4c8a5f__0x404f9c=895,_0x4c8a5f__0x3516f1=895,_0x4c8a5f__0x213384=1084,_0x4c8a5f__0x573483=991,_0x4c8a5f__0x514f6b=400,_0x4c8a5f__0x30c88b=562,_0x4c8a5f__0x2af5b4=562,_0x4c8a5f__0xdf9f75=855,_0x4c8a5f__0x386e0b=933,_0x313932=_0x53b2da;DOM[_0x313932(1023)]&&DOM.templateEcommerce[_0x313932(_0x4c8a5f__0x465d85)](_0x313932(417),()=>selectTemplate(_0x313932(943))),DOM.templateWebsite&&DOM.templateWebsite[_0x313932(659)]("click",()=>selectTemplate("WEB")),DOM[_0x313932(_0x4c8a5f__0x4b9ab2)]&&DOM[_0x313932(_0x4c8a5f__0x4b9ab2)][_0x313932(_0x4c8a5f__0x465d85)](_0x313932(417),showTemplateSelection),DOM.websiteBackToTemplates&&DOM[_0x313932(_0x4c8a5f__0x4a6823)][_0x313932(_0x4c8a5f__0x458ff7)](_0x313932(_0x4c8a5f__0x187e2a),showTemplateSelection),DOM[_0x313932(_0x4c8a5f__0x5e8682)]&&DOM.websitePasswordToggle[_0x313932(_0x4c8a5f__0x458ff7)]("click",toggleWebsitePassword),DOM[_0x313932(_0x4c8a5f__0x289fc9)]&&(DOM[_0x313932(_0x4c8a5f__0x52634a)].addEventListener(_0x313932(_0x4c8a5f__0x2a4eda),previewWebsiteLogo),DOM.websiteLogo.addEventListener("change",previewWebsiteLogo)),DOM[_0x313932(_0x4c8a5f__0x53cd89)]&&DOM[_0x313932(_0x4c8a5f__0x53cd89)][_0x313932(_0x4c8a5f__0x458ff7)]("click",verifyWebsiteLocation),DOM[_0x313932(_0x4c8a5f__0x19cfcd)]&&DOM[_0x313932(_0x4c8a5f__0x19cfcd)][_0x313932(659)](_0x313932(417),addWebsiteSection),DOM[_0x313932(_0x4c8a5f__0x20f7ff)]&&DOM[_0x313932(_0x4c8a5f__0xec648)][_0x313932(_0x4c8a5f__0x438150)]("click",addWebsiteSection),DOM[_0x313932(_0x4c8a5f__0x5b38b2)]&&DOM[_0x313932(_0x4c8a5f__0x5b38b2)].addEventListener(_0x313932(417),handleWebsiteSectionAction),DOM[_0x313932(_0x4c8a5f__0x5596f9)]&&DOM[_0x313932(_0x4c8a5f__0x5596f9)][_0x313932(659)]("click",addWebsiteFooterLink),DOM[_0x313932(_0x4c8a5f__0x238e48)]&&DOM.websiteContentModalClose[_0x313932(_0x4c8a5f__0x4090dc)]("click",closeWebsiteContentModal),DOM[_0x313932(_0x4c8a5f__0x4ebda9)]&&DOM[_0x313932(_0x4c8a5f__0x4ebda9)].addEventListener(_0x313932(417),closeWebsiteContentModal),DOM[_0x313932(_0x4c8a5f__0x59350f)]&&DOM[_0x313932(_0x4c8a5f__0x59350f)][_0x313932(_0x4c8a5f__0x465d85)](_0x313932(_0x4c8a5f__0x187e2a),saveWebsiteContentModal),DOM.websiteContentAddRow&&DOM[_0x313932(_0x4c8a5f__0x25a56f)][_0x313932(659)](_0x313932(_0x4c8a5f__0x187e2a),addWebsiteContentModalRow),DOM[_0x313932(_0x4c8a5f__0x23ce61)]&&DOM.websiteContentRowList[_0x313932(_0x4c8a5f__0x32b7b7)](_0x313932(417),handleWebsiteContentModalRowAction),DOM[_0x313932(_0x4c8a5f__0xef9c88)]&&DOM[_0x313932(_0x4c8a5f__0xef9c88)][_0x313932(659)](_0x313932(_0x4c8a5f__0x187e2a),handleWebsiteFooterAction),DOM[_0x313932(_0x4c8a5f__0x16c22a)]&&DOM[_0x313932(_0x4c8a5f__0x16c22a)][_0x313932(_0x4c8a5f__0x4090dc)](_0x313932(417),publishWebsite),DOM[_0x313932(_0x4c8a5f__0x25a0ea)]&&DOM.addCategory[_0x313932(_0x4c8a5f__0x5a25de)](_0x313932(_0x4c8a5f__0x187e2a),()=>openCategoryModal()),DOM[_0x313932(_0x4c8a5f__0xe94f7a)]&&DOM[_0x313932(_0x4c8a5f__0x241c17)][_0x313932(_0x4c8a5f__0x2e26c0)](_0x313932(_0x4c8a5f__0x187e2a),()=>openCategoryModal()),DOM.categoryModalClose&&DOM[_0x313932(_0x4c8a5f__0x3ca83b)][_0x313932(_0x4c8a5f__0x458ff7)]("click",closeCategoryModal),DOM.categoryCancel&&DOM[_0x313932(_0x4c8a5f__0x3d54ca)][_0x313932(_0x4c8a5f__0x5a25de)](_0x313932(417),closeCategoryModal),DOM.categorySave&&DOM[_0x313932(_0x4c8a5f__0xd9217a)][_0x313932(_0x4c8a5f__0x42fa1e)](_0x313932(_0x4c8a5f__0x187e2a),saveCategory),DOM[_0x313932(_0x4c8a5f__0x3159c1)]&&DOM[_0x313932(_0x4c8a5f__0x3159c1)][_0x313932(_0x4c8a5f__0x465d85)](_0x313932(417),handleModalBackdrop),DOM.addItem&&DOM[_0x313932(_0x4c8a5f__0x53b6ee)][_0x313932(_0x4c8a5f__0x3b6a7a)]("click",()=>openItemModal()),DOM[_0x313932(471)]&&DOM[_0x313932(471)][_0x313932(659)](_0x313932(417),()=>openItemModal()),DOM[_0x313932(_0x4c8a5f__0x88003)]&&DOM.itemModalClose[_0x313932(_0x4c8a5f__0x12c08f)](_0x313932(_0x4c8a5f__0x187e2a),closeItemModal),DOM[_0x313932(1038)]&&DOM[_0x313932(_0x4c8a5f__0x426800)][_0x313932(_0x4c8a5f__0x25b06a)](_0x313932(_0x4c8a5f__0x3cad72),closeItemModal),DOM[_0x313932(_0x4c8a5f__0x3effbe)]&&DOM[_0x313932(_0x4c8a5f__0x3effbe)].addEventListener(_0x313932(_0x4c8a5f__0x3cad72),saveItem),DOM.itemModal&&DOM[_0x313932(_0x4c8a5f__0xa18d7a)][_0x313932(_0x4c8a5f__0x308217)]("click",handleModalBackdrop),DOM[_0x313932(_0x4c8a5f__0x3472b6)]&&DOM[_0x313932(967)][_0x313932(_0x4c8a5f__0x4bc869)](_0x313932(_0x4c8a5f__0x187e2a),handleCategoryAction),DOM[_0x313932(_0x4c8a5f__0x37edce)]&&DOM[_0x313932(_0x4c8a5f__0x37edce)][_0x313932(_0x4c8a5f__0x41a2dc)](_0x313932(_0x4c8a5f__0x178dd0),handleItemAction),DOM[_0x313932(442)]&&DOM[_0x313932(_0x4c8a5f__0x268f35)].addEventListener("click",verifyBusinessLocation),DOM.businessPasswordToggle&&DOM[_0x313932(_0x4c8a5f__0x49caca)].addEventListener("click",toggleBusinessPassword),DOM[_0x313932(_0x4c8a5f__0x5ecb14)]&&(DOM[_0x313932(_0x4c8a5f__0x404f9c)].addEventListener(_0x313932(789),previewLogo),DOM[_0x313932(_0x4c8a5f__0x3516f1)].addEventListener(_0x313932(_0x4c8a5f__0x213384),previewLogo)),DOM[_0x313932(_0x4c8a5f__0x573483)]&&DOM[_0x313932(_0x4c8a5f__0x573483)].addEventListener(_0x313932(_0x4c8a5f__0x187e2a),publishBusiness),DOM[_0x313932(_0x4c8a5f__0x514f6b)]&&DOM.openBusinessApp.addEventListener(_0x313932(_0x4c8a5f__0x187e2a),openPublishedBusiness),DOM[_0x313932(_0x4c8a5f__0x30c88b)]&&DOM[_0x313932(_0x4c8a5f__0x2af5b4)][_0x313932(_0x4c8a5f__0x308217)](_0x313932(_0x4c8a5f__0x178dd0),editBusiness),DOM.createAnother&&DOM[_0x313932(682)][_0x313932(659)](_0x313932(417),createAnotherApp),document[_0x313932(_0x4c8a5f__0x465d85)](_0x313932(_0x4c8a5f__0xdf9f75),handleKeyboard),window[_0x313932(_0x4c8a5f__0x25b06a)](_0x313932(_0x4c8a5f__0x386e0b),updateConnectionStatus),window[_0x313932(_0x4c8a5f__0x308217)]("offline",updateConnectionStatus)}function toggleBusinessPassword(){const _0x56f19b__0x40ba51=512,_0x56f19b__0xccd17e=590,_0x56f19b__0x19e011=775,_0x56f19b__0x1bd6e0=613,_0x56f19b__0x198060=1067,_0x56f19b__0x3416ee=775,_0x56f19b__0x4d9509=512,_0x56f19b__0x5cef32=439,_0x56f19b__0x10e68b=1004,_0x56f19b__0x38b22a=490,_0x56f19b__0x4d2df6=666,_0x56f19b__0x263f63=974,_0x56f19b__0x4715b3=969,_0x433171=_0x53b2da;if(!DOM[_0x433171(875)]||!DOM[_0x433171(_0x56f19b__0x40ba51)])return;const _0x2ed5f1=DOM[_0x433171(512)][_0x433171(_0x56f19b__0xccd17e)](".password-toggle__icon"),_0x2065f5=DOM[_0x433171(875)][_0x433171(613)]===_0x433171(_0x56f19b__0x19e011);DOM.businessPassword[_0x433171(_0x56f19b__0x1bd6e0)]=_0x433171(_0x2065f5?_0x56f19b__0x198060:_0x56f19b__0x3416ee),DOM[_0x433171(_0x56f19b__0x4d9509)][_0x433171(_0x56f19b__0x5cef32)](_0x433171(_0x56f19b__0x10e68b),_0x2065f5?_0x433171(_0x56f19b__0x38b22a):"Show password"),DOM[_0x433171(512)].setAttribute(_0x433171(_0x56f19b__0x4d2df6),_0x433171(_0x2065f5?_0x56f19b__0x263f63:_0x56f19b__0x4715b3)),_0x2ed5f1&&(_0x2ed5f1.textContent=_0x2065f5?"◉":"👁")}function initializeApplication(){state[_0x53b2da(687)]=null,loadWebsiteData(),renderWebsiteSections(),renderWebsiteFooter(),updateWebsiteLocationDetails();!loadCategoryItemData()&&seedDefaultCategories(),renderCategories(),renderItems(),updateItemCategorySelect(),showTemplateSelection(),updateConnectionStatus(),hideSuccess(),hideValidation()}function selectTemplate(_0x12d671){const _0x5518c5__0x26641f=787,_0x5518c5__0x1e332c=681,_0x5518c5__0x68d0d5=687,_0x5518c5__0x390db8=1027,_0x5518c5__0x252fa9=1008,_0x5518c5__0x49f588=1008,_0x5518c5__0x278b6c=939,_0x5518c5__0x29dfba=941,_0x5518c5__0x12c136=984,_0x5518c5__0x5caa95=925,_0x112e0a=_0x53b2da;_0x12d671===_0x112e0a(943)||_0x12d671===_0x112e0a(941)?(state[_0x112e0a(_0x5518c5__0x68d0d5)]=_0x12d671,hideSuccess(),hideValidation(),DOM.templateSection&&(DOM[_0x112e0a(_0x5518c5__0x390db8)].hidden=!0),DOM[_0x112e0a(_0x5518c5__0x252fa9)]&&(DOM[_0x112e0a(_0x5518c5__0x49f588)].hidden="ECM"!==_0x12d671),DOM.websiteSection&&(DOM[_0x112e0a(_0x5518c5__0x278b6c)].hidden=_0x12d671!==_0x112e0a(_0x5518c5__0x29dfba)),window.scrollTo({top:0,behavior:_0x112e0a(_0x5518c5__0x12c136)}),showToast(_0x12d671===_0x112e0a(_0x5518c5__0x29dfba)?_0x112e0a(643):_0x112e0a(_0x5518c5__0x5caa95),"success")):showToast(_0x112e0a(_0x5518c5__0x26641f),_0x112e0a(_0x5518c5__0x1e332c))}function showTemplateSelection(){const _0x4bab3a__0x12f049=1027,_0x4bab3a__0x2ff6d3=1088,_0x4bab3a__0x458358=1008,_0x4bab3a__0x1b1391=939,_0x4bab3a__0x32302a=1088,_0x4bab3a__0x2f6ed0=952,_0x4bab3a__0x4c9d70=984,_0x2c1cab=_0x53b2da;state.selectedTemplate=null,DOM[_0x2c1cab(1027)]&&(DOM[_0x2c1cab(_0x4bab3a__0x12f049)][_0x2c1cab(_0x4bab3a__0x2ff6d3)]=!1),DOM[_0x2c1cab(1008)]&&(DOM[_0x2c1cab(_0x4bab3a__0x458358)].hidden=!0),DOM[_0x2c1cab(_0x4bab3a__0x1b1391)]&&(DOM.websiteSection[_0x2c1cab(_0x4bab3a__0x32302a)]=!0),hideSuccess(),hideValidation(),window[_0x2c1cab(_0x4bab3a__0x2f6ed0)]({top:0,behavior:_0x2c1cab(_0x4bab3a__0x4c9d70)})}function seedDefaultCategories(){const _0x1ab76f__0x1e74ac=478,_0x1ab76f__0x4f40d4=516,_0x25819a=_0x53b2da;state[_0x25819a(_0x1ab76f__0x1e74ac)].length>0||(state[_0x25819a(_0x1ab76f__0x1e74ac)]=DEFAULT_CATEGORIES[_0x25819a(_0x1ab76f__0x4f40d4)](_0x281e9b=>({id:createId("cat"),name:_0x281e9b,items:[]})))}function saveCategoryItemData(){const _0x56dc70__0x21988a=872,_0x56dc70__0x5bdfe8=804,_0x56dc70__0x1708e1=478,_0x56dc70__0x52e302=614,_0x316253=_0x53b2da;try{localStorage[_0x316253(_0x56dc70__0x21988a)](CONFIG[_0x316253(_0x56dc70__0x5bdfe8)],JSON.stringify({categories:state[_0x316253(_0x56dc70__0x1708e1)]}))}catch(_0x2869ee){console[_0x316253(_0x56dc70__0x52e302)](_0x316253(438),_0x2869ee)}}function loadCategoryItemData(){const _0x3e7ed3__0x12ec32=960,_0x3e7ed3__0x51b3ab=552,_0x3e7ed3__0x3f2c02=1029,_0x3e7ed3__0x390834=478,_0x3e7ed3__0x56f50f=640,_0x4ba7ce=_0x53b2da;try{const _0x8e9115=localStorage[_0x4ba7ce(_0x3e7ed3__0x12ec32)](CONFIG[_0x4ba7ce(804)]);if(!_0x8e9115)return!1;const _0x2e3be5=JSON[_0x4ba7ce(_0x3e7ed3__0x51b3ab)](_0x8e9115);return!(!_0x2e3be5||!Array[_0x4ba7ce(_0x3e7ed3__0x3f2c02)](_0x2e3be5[_0x4ba7ce(_0x3e7ed3__0x390834)]))&&(state.categories=_0x2e3be5[_0x4ba7ce(478)],!0)}catch(_0x335caa){return console[_0x4ba7ce(614)](_0x4ba7ce(_0x3e7ed3__0x56f50f),_0x335caa),!1}}function clearCategoryItemData(){const _0x8c9d15__0x223420=474,_0x8c9d15__0x4f1991=804,_0x8c9d15__0x3657d0=614,_0x8c9d15__0x28b612=830,_0x359221=_0x53b2da;try{localStorage[_0x359221(_0x8c9d15__0x223420)](CONFIG[_0x359221(_0x8c9d15__0x4f1991)])}catch(_0x5ee40b){console[_0x359221(_0x8c9d15__0x3657d0)](_0x359221(_0x8c9d15__0x28b612),_0x5ee40b)}}function openCategoryModal(_0x22cdbc=null){const _0x1da256__0x4e1ccb=724,_0x1da256__0x493cbc=1066,_0x1da256__0x253125=1040,_0x1da256__0xa895b1=556,_0x1da256__0x2d5ee5=724,_0x1da256__0x426b27=736,_0x1da256__0xb7860=736,_0x1da256__0x473a1d=724,_0x1da256__0xbe9309=671,_0x1da256__0x51baa2=882,_0x16ea50__0x2bca22=1066,_0x335946=_0x53b2da;if(state[_0x335946(440)]=_0x22cdbc,clearCategoryError(),_0x22cdbc){const _0x52b135=findCategory(_0x22cdbc);if(!_0x52b135)return;DOM.categoryModalTitle&&(DOM[_0x335946(556)][_0x335946(724)]=_0x335946(849)),DOM.categorySave&&(DOM[_0x335946(736)][_0x335946(_0x1da256__0x4e1ccb)]=_0x335946(538)),DOM.categoryName&&(DOM[_0x335946(_0x1da256__0x493cbc)].value=_0x52b135[_0x335946(_0x1da256__0x253125)])}else DOM.categoryModalTitle&&(DOM[_0x335946(_0x1da256__0xa895b1)][_0x335946(_0x1da256__0x2d5ee5)]=_0x335946(671)),DOM[_0x335946(_0x1da256__0x426b27)]&&(DOM[_0x335946(_0x1da256__0xb7860)][_0x335946(_0x1da256__0x473a1d)]=_0x335946(_0x1da256__0xbe9309)),DOM.categoryName&&(DOM[_0x335946(1066)][_0x335946(1090)]="");showModal(DOM[_0x335946(_0x1da256__0x51baa2)]),requestAnimationFrame(()=>{focusElement(DOM[_0x335946(_0x16ea50__0x2bca22)])})}function closeCategoryModal(){const _0x42e23f__0x3bc73c=1066,_0x42e23f__0xd95acc=1090,_0x165e87=_0x53b2da;state[_0x165e87(440)]=null,clearCategoryError(),DOM[_0x165e87(_0x42e23f__0x3bc73c)]&&(DOM[_0x165e87(1066)][_0x165e87(_0x42e23f__0xd95acc)]=""),hideModal(DOM[_0x165e87(882)])}function saveCategory(){const _0x44784d__0x3260d0=1066,_0x44784d__0x163acf=1090,_0x44784d__0x2bb57b=611,_0x44784d__0x118fcf=440,_0x44784d__0x107ccd=759,_0x44784d__0x1cb032=913,_0x44784d__0x3abbd4=835,_0x44784d__0x1b4004=478,_0x44784d__0x53055b=921,_0x44784d__0x5e2665=596,_0x44784d__0x256b65=739,_0x44784d__0x2031aa=478,_0x44784d__0x337ef9=478,_0x44784d__0x395aaa=843,_0x44784d__0x37357f=413,_0xc53ce1=_0x53b2da;clearCategoryError();const _0xe933a1=normalizeText(DOM[_0xc53ce1(1066)]?DOM[_0xc53ce1(_0x44784d__0x3260d0)][_0xc53ce1(_0x44784d__0x163acf)]:"",CONFIG[_0xc53ce1(853)]);if(!_0xe933a1)return showCategoryError(_0xc53ce1(_0x44784d__0x2bb57b)),void focusElement(DOM[_0xc53ce1(_0x44784d__0x3260d0)]);if(state.editingCategoryId){const _0x18906c=findCategory(state[_0xc53ce1(_0x44784d__0x118fcf)]);if(!_0x18906c)return void showCategoryError(_0xc53ce1(_0x44784d__0x107ccd));return state.categories[_0xc53ce1(_0x44784d__0x1cb032)](_0x3656da=>_0x3656da.id!==_0x18906c.id&&_0x3656da.name[_0xc53ce1(557)]()===_0xe933a1[_0xc53ce1(557)]())?void showCategoryError(_0xc53ce1(_0x44784d__0x3abbd4)):(_0x18906c[_0xc53ce1(1040)]=_0xe933a1,saveCategoryItemData(),closeCategoryModal(),renderCategories(),renderItems(),updateItemCategorySelect(),void showToast("Category updated.","success"))}if(state[_0xc53ce1(_0x44784d__0x1b4004)][_0xc53ce1(1043)]>=CONFIG[_0xc53ce1(_0x44784d__0x53055b)])return void showCategoryError(_0xc53ce1(_0x44784d__0x5e2665)+CONFIG[_0xc53ce1(_0x44784d__0x53055b)]+_0xc53ce1(_0x44784d__0x256b65));state[_0xc53ce1(_0x44784d__0x2031aa)][_0xc53ce1(913)](_0x31fb01=>_0x31fb01[_0xc53ce1(1040)][_0xc53ce1(557)]()===_0xe933a1[_0xc53ce1(557)]())?showCategoryError("A category with this name already exists."):(state[_0xc53ce1(_0x44784d__0x337ef9)][_0xc53ce1(_0x44784d__0x395aaa)]({id:createId("cat"),name:_0xe933a1,items:[]}),saveCategoryItemData(),closeCategoryModal(),renderCategories(),updateItemCategorySelect(),showToast(_0xc53ce1(_0x44784d__0x37357f),"success"))}function handleCategoryAction(_0x303bc9){const _0x56f59c__0x1f06e8=753,_0x56f59c__0x535f62=1052,_0x56f59c__0x8c7bdd=540,_0x56f59c__0x52126e=956,_0x460592=_0x53b2da,_0x9b08c5=_0x303bc9[_0x460592(472)].closest(_0x460592(_0x56f59c__0x1f06e8));if(!_0x9b08c5)return;const _0x427f2a=_0x9b08c5[_0x460592(_0x56f59c__0x535f62)].categoryAction,_0x570f95=_0x9b08c5[_0x460592(_0x56f59c__0x535f62)].categoryId;_0x570f95&&(_0x427f2a!==_0x460592(_0x56f59c__0x8c7bdd)?"delete"!==_0x427f2a?_0x427f2a===_0x460592(_0x56f59c__0x52126e)&&openItemModal(_0x570f95):deleteCategory(_0x570f95):openCategoryModal(_0x570f95))}function deleteCategory(_0x2a675c){const _0x1be67f__0x5c6e4c=509,_0x1be67f__0x5959e4=1043,_0x1be67f__0xb76e9f=746,_0x1be67f__0x525a82=1010,_0x1be67f__0x1bf6b4=509,_0x1be67f__0x4e4914=997,_0x1be67f__0x29cd1b=746,_0x1be67f__0x2b234b=1040,_0x1be67f__0x23cfe9=892,_0x1be67f__0x190ead=745,_0x5caa40=_0x53b2da,_0x39d6b2=findCategory(_0x2a675c);if(!_0x39d6b2)return;const _0x3227d8=_0x39d6b2[_0x5caa40(_0x1be67f__0x5c6e4c)][_0x5caa40(_0x1be67f__0x5959e4)]>0?_0x5caa40(_0x1be67f__0xb76e9f)+_0x39d6b2.name+_0x5caa40(_0x1be67f__0x525a82)+_0x39d6b2[_0x5caa40(_0x1be67f__0x1bf6b4)].length+_0x5caa40(_0x1be67f__0x4e4914):_0x5caa40(_0x1be67f__0x29cd1b)+_0x39d6b2[_0x5caa40(_0x1be67f__0x2b234b)]+'"?';window[_0x5caa40(_0x1be67f__0x23cfe9)](_0x3227d8)&&(state.categories=state.categories.filter(_0x4375f5=>_0x4375f5.id!==_0x2a675c),saveCategoryItemData(),renderCategories(),renderItems(),updateItemCategorySelect(),showToast(_0x5caa40(_0x1be67f__0x190ead),"success"))}function renderCategories(){const _0x3883b6__0x1a3137=967,_0x3883b6__0x5e5ce2=518,_0x3883b6__0x3e0479=1043,_0x3883b6__0x439ea9=521,_0x3883b6__0x5ecf88=478,_0x3883b6__0xcb1657=909,_0x428775__0x3d92de=423,_0x428775__0x15d3cc=431,_0x428775__0x3a518f=993,_0x428775__0x547932=797,_0x428775__0x203b8a=431,_0x428775__0x4b3e98=509,_0x428775__0x16ab05=391,_0x428775__0x15fabc=394,_0x428775__0x392cda=820,_0x428775__0x435923=667,_0x428775__0x370ed2=667,_0x428775__0x3421f9=667,_0x428775__0x1bf038=967,_0x428775__0x356963=667,_0x4af723=_0x53b2da;if(!DOM[_0x4af723(_0x3883b6__0x1a3137)])return;DOM[_0x4af723(_0x3883b6__0x1a3137)][_0x4af723(_0x3883b6__0x5e5ce2)]();const _0x55e0bc=state.categories[_0x4af723(_0x3883b6__0x3e0479)]>0;DOM[_0x4af723(_0x3883b6__0x439ea9)]&&(DOM[_0x4af723(_0x3883b6__0x439ea9)].hidden=_0x55e0bc),_0x55e0bc&&state[_0x4af723(_0x3883b6__0x5ecf88)][_0x4af723(_0x3883b6__0xcb1657)](_0x308635=>{const _0x40472b=_0x4af723,_0x114e7d=document[_0x40472b(_0x428775__0x3d92de)](_0x40472b(_0x428775__0x15d3cc));_0x114e7d[_0x40472b(799)]=_0x40472b(_0x428775__0x3a518f);const _0x100021=document[_0x40472b(423)](_0x40472b(_0x428775__0x15d3cc));_0x100021[_0x40472b(799)]=_0x40472b(_0x428775__0x547932),_0x100021[_0x40472b(724)]=_0x308635.name;const _0x1d8238=document[_0x40472b(423)](_0x40472b(_0x428775__0x203b8a));_0x1d8238[_0x40472b(799)]=_0x40472b(571);const _0xc2a3de=document.createElement(_0x40472b(793));_0xc2a3de[_0x40472b(724)]=_0x308635[_0x40472b(_0x428775__0x4b3e98)][_0x40472b(1043)]+" item"+(1===_0x308635[_0x40472b(_0x428775__0x4b3e98)][_0x40472b(1043)]?"":"s");const _0x224076=createButton(_0x40472b(_0x428775__0x16ab05),_0x40472b(820),"add-item",_0x308635.id),_0x24331b=createButton(_0x40472b(_0x428775__0x15fabc),_0x40472b(_0x428775__0x392cda),_0x40472b(540),_0x308635.id),_0x4d190e=createButton(_0x40472b(742),_0x40472b(_0x428775__0x392cda),"delete",_0x308635.id);_0x1d8238[_0x40472b(_0x428775__0x435923)](_0xc2a3de),_0x1d8238[_0x40472b(_0x428775__0x435923)](_0x224076),_0x1d8238[_0x40472b(_0x428775__0x370ed2)](_0x24331b),_0x1d8238[_0x40472b(_0x428775__0x3421f9)](_0x4d190e),_0x114e7d.appendChild(_0x100021),_0x114e7d[_0x40472b(_0x428775__0x3421f9)](_0x1d8238),DOM[_0x40472b(_0x428775__0x1bf038)][_0x40472b(_0x428775__0x356963)](_0x114e7d)})}function openItemModal(_0x50ea66=null,_0x2eb45b=null){const _0x5ab449__0x227815=724,_0x5ab449__0x3c9dfe=563,_0x5ab449__0xd7a690=802,_0x5ab449__0x490cd7=990,_0x5ab449__0x118c14=968,_0x5ab449__0x498bfe=1005,_0x5ab449__0x1249f9=897,_0x5ab449__0x2a7fc6=549,_0x5ab449__0x54c98a=922,_0x5ab449__0x3c2dfe=669,_0x5ab449__0xd542a4=563,_0x5ab449__0x5d065b=563,_0x5ab449__0x76fe3c=391,_0x5ab449__0x412520=1025,_0x5ab449__0x131acb=1090,_0x3ebc08__0x3b1459=802,_0x4fad0d=_0x53b2da;if(clearItemError(),state[_0x4fad0d(484)]=_0x2eb45b,state[_0x4fad0d(692)]=_0x50ea66,updateItemCategorySelect(),_0x2eb45b){const _0x4b140a=findItem(_0x50ea66,_0x2eb45b);if(!_0x4b140a)return;const _0x1e3232=_0x4b140a.item;DOM[_0x4fad0d(615)]&&(DOM.itemModalTitle[_0x4fad0d(_0x5ab449__0x227815)]="Edit Item"),DOM[_0x4fad0d(_0x5ab449__0x3c9dfe)]&&(DOM[_0x4fad0d(_0x5ab449__0x3c9dfe)].textContent="Update Item"),setValue(DOM[_0x4fad0d(_0x5ab449__0xd7a690)],_0x1e3232[_0x4fad0d(1040)]),setValue(DOM[_0x4fad0d(_0x5ab449__0x490cd7)],_0x1e3232[_0x4fad0d(_0x5ab449__0x118c14)]),setValue(DOM.itemQuantity,_0x1e3232[_0x4fad0d(_0x5ab449__0x498bfe)]),setValue(DOM[_0x4fad0d(_0x5ab449__0x1249f9)],_0x1e3232[_0x4fad0d(_0x5ab449__0x2a7fc6)]),setValue(DOM[_0x4fad0d(1025)],_0x4b140a.category.id),setValue(DOM[_0x4fad0d(_0x5ab449__0x54c98a)],_0x1e3232[_0x4fad0d(630)]||""),setValue(DOM[_0x4fad0d(_0x5ab449__0x3c2dfe)],_0x1e3232[_0x4fad0d(593)]||"")}else DOM.itemModalTitle&&(DOM[_0x4fad0d(615)][_0x4fad0d(724)]="Add Item"),DOM[_0x4fad0d(_0x5ab449__0xd542a4)]&&(DOM[_0x4fad0d(_0x5ab449__0x5d065b)][_0x4fad0d(724)]=_0x4fad0d(_0x5ab449__0x76fe3c)),clearItemFields(),_0x50ea66&&DOM[_0x4fad0d(_0x5ab449__0x412520)]&&(DOM[_0x4fad0d(1025)][_0x4fad0d(_0x5ab449__0x131acb)]=_0x50ea66);showModal(DOM[_0x4fad0d(1074)]),requestAnimationFrame(()=>{focusElement(DOM[_0x4fad0d(_0x3ebc08__0x3b1459)])})}function closeItemModal(){const _0x2ec7bd__0x435a77=692,_0x2ec7bd__0x41225c=1074,_0x133235=_0x53b2da;state[_0x133235(484)]=null,state[_0x133235(_0x2ec7bd__0x435a77)]=null,clearItemError(),clearItemFields(),hideModal(DOM[_0x133235(_0x2ec7bd__0x41225c)])}function saveItem(){const _0x4e294f__0x209e81=1025,_0x4e294f__0x316191=1090,_0x4e294f__0x4eb98f=802,_0x4e294f__0x199474=1090,_0x4e294f__0x21bec8=990,_0x4e294f__0x104665=1090,_0x4e294f__0x5a4b18=890,_0x4e294f__0x4a2774=922,_0x4e294f__0x371fc3=963,_0x4e294f__0x8983db=669,_0x4e294f__0x309173=759,_0x4e294f__0x57efe9=725,_0x4e294f__0x3a697e=419,_0x4e294f__0x473c55=484,_0x4e294f__0x4d13f7=913,_0x4e294f__0x1f4320=691,_0x4e294f__0x55c1f5=389,_0x4e294f__0x55a86d=1040,_0x4e294f__0x5f0878=389,_0x4e294f__0x168b6=1005,_0x4e294f__0x5004f5=549,_0x4e294f__0x20809e=630,_0x4e294f__0x2644b0=593,_0x4e294f__0x48dc26=859,_0x4e294f__0x39cb98=596,_0x4e294f__0x566ce8=859,_0x4e294f__0x25d132=509,_0x4e294f__0x3b12ec=1043,_0x4e294f__0x263738=833,_0x4e294f__0x34cc29=509,_0x4e294f__0x3e922b=691,_0x4e294f__0x36a2f7=509,_0x2e7523=_0x53b2da;clearItemError();const _0x46366b=DOM.itemCategory?DOM[_0x2e7523(_0x4e294f__0x209e81)][_0x2e7523(_0x4e294f__0x316191)]:"",_0x320da7=normalizeText(DOM[_0x2e7523(_0x4e294f__0x4eb98f)]?DOM[_0x2e7523(802)][_0x2e7523(_0x4e294f__0x199474)]:"",CONFIG[_0x2e7523(1006)]),_0x4d06c0=parseNumber(DOM.itemPrice?DOM[_0x2e7523(_0x4e294f__0x21bec8)][_0x2e7523(_0x4e294f__0x104665)]:""),_0x23dabd=parseNumber(DOM[_0x2e7523(_0x4e294f__0x5a4b18)]?DOM[_0x2e7523(_0x4e294f__0x5a4b18)][_0x2e7523(_0x4e294f__0x104665)]:""),_0x442434=normalizeText(DOM[_0x2e7523(897)]?DOM.itemUnit[_0x2e7523(_0x4e294f__0x316191)]:"",50),_0x8bc4bb=normalizeText(DOM[_0x2e7523(_0x4e294f__0x4a2774)]?DOM.itemDescription.value:"",CONFIG[_0x2e7523(_0x4e294f__0x371fc3)]),_0x5eab37=normalizeText(DOM[_0x2e7523(669)]?DOM[_0x2e7523(_0x4e294f__0x8983db)].value:"",CONFIG[_0x2e7523(441)]);if(!_0x46366b)return showItemError(_0x2e7523(1033)),void focusElement(DOM.itemCategory);const _0x353bc9=findCategory(_0x46366b);if(!_0x353bc9)return void showItemError(_0x2e7523(_0x4e294f__0x309173));if(!_0x320da7)return showItemError(_0x2e7523(639)),void focusElement(DOM[_0x2e7523(_0x4e294f__0x4eb98f)]);if(null===_0x4d06c0||_0x4d06c0<0)return showItemError("Please enter a valid price."),void focusElement(DOM[_0x2e7523(_0x4e294f__0x21bec8)]);if(null!==_0x23dabd&&_0x23dabd<0)return showItemError(_0x2e7523(_0x4e294f__0x57efe9)),void focusElement(DOM[_0x2e7523(890)]);if(_0x5eab37&&!isValidYoutubeUrl(_0x5eab37))return showItemError(_0x2e7523(_0x4e294f__0x3a697e)),void focusElement(DOM.itemYoutube);if(state[_0x2e7523(_0x4e294f__0x473c55)]){const _0x5be304=findItem(state[_0x2e7523(692)],state.editingItemId);if(!_0x5be304)return void showItemError("The selected item could not be found.");return _0x353bc9.items[_0x2e7523(_0x4e294f__0x4d13f7)](_0x2149d3=>_0x2149d3.id!==_0x5be304[_0x2e7523(389)].id&&_0x2149d3.name.toLowerCase()===_0x320da7[_0x2e7523(557)]())?void showItemError(_0x2e7523(_0x4e294f__0x1f4320)):(_0x5be304[_0x2e7523(_0x4e294f__0x55c1f5)][_0x2e7523(_0x4e294f__0x55a86d)]=_0x320da7,_0x5be304[_0x2e7523(389)].price=_0x4d06c0,_0x5be304[_0x2e7523(_0x4e294f__0x5f0878)][_0x2e7523(_0x4e294f__0x168b6)]=null===_0x23dabd?0:_0x23dabd,_0x5be304[_0x2e7523(_0x4e294f__0x5f0878)][_0x2e7523(_0x4e294f__0x5004f5)]=_0x442434,_0x5be304.item[_0x2e7523(_0x4e294f__0x20809e)]=_0x8bc4bb,_0x5be304.item[_0x2e7523(_0x4e294f__0x2644b0)]=_0x5eab37,saveCategoryItemData(),closeItemModal(),renderItems(),void showToast("Item updated.",_0x2e7523(924)))}if(getTotalItemCount()>=CONFIG[_0x2e7523(_0x4e294f__0x48dc26)])return void showItemError(_0x2e7523(_0x4e294f__0x39cb98)+CONFIG[_0x2e7523(_0x4e294f__0x566ce8)]+_0x2e7523(719));if(_0x353bc9[_0x2e7523(_0x4e294f__0x25d132)][_0x2e7523(_0x4e294f__0x3b12ec)]>=CONFIG[_0x2e7523(744)])return void showItemError(_0x2e7523(_0x4e294f__0x39cb98)+CONFIG.MAX_ITEMS_PER_CATEGORY+_0x2e7523(_0x4e294f__0x263738));_0x353bc9[_0x2e7523(_0x4e294f__0x34cc29)][_0x2e7523(913)](_0x4966f3=>_0x4966f3.name[_0x2e7523(557)]()===_0x320da7.toLowerCase())?showItemError(_0x2e7523(_0x4e294f__0x3e922b)):(_0x353bc9[_0x2e7523(_0x4e294f__0x36a2f7)].push({id:createId(_0x2e7523(389)),name:_0x320da7,price:_0x4d06c0,quantity:null===_0x23dabd?0:_0x23dabd,unit:_0x442434,description:_0x8bc4bb,youtubeUrl:_0x5eab37}),saveCategoryItemData(),closeItemModal(),renderItems(),showToast(_0x2e7523(585),_0x2e7523(924)))}function handleItemAction(_0x1ba2e5){const _0x54276d__0x209ffd=782,_0x54276d__0x482634=610,_0x54276d__0x2f1dc8=1052,_0x54276d__0xf00732=604,_0x54276d__0x5b9e1e=714,_0x54276d__0x65273e=540,_0x4bc484=_0x53b2da,_0x48f2fa=_0x1ba2e5.target[_0x4bc484(_0x54276d__0x209ffd)](_0x4bc484(_0x54276d__0x482634));if(!_0x48f2fa)return;const _0x348d2a=_0x48f2fa[_0x4bc484(_0x54276d__0x2f1dc8)][_0x4bc484(_0x54276d__0xf00732)],_0x4e756f=_0x48f2fa[_0x4bc484(_0x54276d__0x2f1dc8)][_0x4bc484(_0x54276d__0x5b9e1e)],_0x59a698=_0x48f2fa[_0x4bc484(_0x54276d__0x2f1dc8)][_0x4bc484(908)];_0x4e756f&&_0x59a698&&(_0x348d2a!==_0x4bc484(_0x54276d__0x65273e)?_0x348d2a===_0x4bc484(546)&&deleteItem(_0x4e756f,_0x59a698):openItemModal(_0x4e756f,_0x59a698))}function deleteItem(_0x26fb29,_0x46144c){const _0x31c360__0x12507d=389,_0x31c360__0x519e1c=684,_0x31c360__0x4e7369=840,_0x2498b0=_0x53b2da,_0x1d7932=findItem(_0x26fb29,_0x46144c);_0x1d7932&&window[_0x2498b0(892)]('Delete "'+_0x1d7932[_0x2498b0(_0x31c360__0x12507d)][_0x2498b0(1040)]+'"?')&&(_0x1d7932.category[_0x2498b0(509)]=_0x1d7932[_0x2498b0(_0x31c360__0x519e1c)][_0x2498b0(509)].filter(_0x59628d=>_0x59628d.id!==_0x46144c),saveCategoryItemData(),renderItems(),showToast(_0x2498b0(_0x31c360__0x4e7369),"success"))}function renderItems(){const _0x3805a9__0x50b747=917,_0x3805a9__0x4a3d70=518,_0x3805a9__0x3407ea=455,_0x3805a9__0x2b3585=1088,_0x2259a2__0x3b8172=909,_0x1db033=_0x53b2da;if(!DOM[_0x1db033(_0x3805a9__0x50b747)])return;DOM[_0x1db033(_0x3805a9__0x50b747)][_0x1db033(_0x3805a9__0x4a3d70)]();const _0x556a44=getTotalItemCount();DOM[_0x1db033(_0x3805a9__0x3407ea)]&&(DOM[_0x1db033(_0x3805a9__0x3407ea)][_0x1db033(_0x3805a9__0x2b3585)]=_0x556a44>0),0!==_0x556a44&&state[_0x1db033(478)][_0x1db033(909)](_0x1d9b8a=>{const _0x1abf5d__0x5620bc=431,_0x1abf5d__0x22dc27=799,_0x1abf5d__0x3ece7b=423,_0x1abf5d__0x2d1162=547,_0x1abf5d__0x3bb402=724,_0x1abf5d__0x292029=423,_0x1abf5d__0x15f883=750,_0x1abf5d__0x4bdee1=1005,_0x1abf5d__0xfc4e7f=710,_0x1abf5d__0x2eb209=968,_0x1abf5d__0x15420f=667,_0x1abf5d__0x531941=667,_0x1abf5d__0x4e4e9d=431,_0x1abf5d__0x393ad4=667,_0x1abf5d__0x4c790f=593,_0x1abf5d__0x19248e=423,_0x1abf5d__0x3a657f=724,_0x1abf5d__0xade32a=929,_0x1abf5d__0x449fe3=394,_0x1abf5d__0x3b4931=661,_0x1abf5d__0x11a4e6=540,_0x1abf5d__0x34ae4b=546,_0x1abf5d__0x9db86d=667,_0x1abf5d__0x39a315=667,_0x1abf5d__0x2dfb7f=917,_0xbad5f7=_0x1db033;_0x1d9b8a.items[_0xbad5f7(_0x2259a2__0x3b8172)](_0x4084ed=>{const _0x2544e0=_0xbad5f7,_0x41a0d7=document.createElement(_0x2544e0(_0x1abf5d__0x5620bc));_0x41a0d7[_0x2544e0(_0x1abf5d__0x22dc27)]="item-row";const _0x137a27=document.createElement(_0x2544e0(_0x1abf5d__0x5620bc));_0x137a27[_0x2544e0(799)]=_0x2544e0(1055);const _0x14b3d4=document[_0x2544e0(_0x1abf5d__0x3ece7b)]("div");_0x14b3d4[_0x2544e0(799)]=_0x2544e0(_0x1abf5d__0x2d1162),_0x14b3d4[_0x2544e0(_0x1abf5d__0x3bb402)]=_0x4084ed[_0x2544e0(1040)];const _0x5462f4=document[_0x2544e0(_0x1abf5d__0x292029)](_0x2544e0(_0x1abf5d__0x5620bc));_0x5462f4[_0x2544e0(799)]=_0x2544e0(_0x1abf5d__0x15f883);const _0x2e601e=_0x4084ed.quantity>0?_0x2544e0(589)+formatNumber(_0x4084ed[_0x2544e0(_0x1abf5d__0x4bdee1)])+" "+(_0x4084ed[_0x2544e0(549)]||""):"";if(_0x5462f4.textContent=_0x1d9b8a.name+_0x2544e0(_0x1abf5d__0xfc4e7f)+formatNumber(_0x4084ed[_0x2544e0(_0x1abf5d__0x2eb209)])+_0x2e601e,_0x137a27[_0x2544e0(_0x1abf5d__0x15420f)](_0x14b3d4),_0x137a27[_0x2544e0(_0x1abf5d__0x531941)](_0x5462f4),_0x4084ed.description){const _0x5e853d=document.createElement(_0x2544e0(_0x1abf5d__0x4e4e9d));_0x5e853d[_0x2544e0(799)]="item-row__description",_0x5e853d.textContent=_0x4084ed[_0x2544e0(630)],_0x137a27[_0x2544e0(_0x1abf5d__0x393ad4)](_0x5e853d)}if(_0x4084ed[_0x2544e0(_0x1abf5d__0x4c790f)]){const _0x2f8d94=document[_0x2544e0(_0x1abf5d__0x19248e)]("div");_0x2f8d94.className=_0x2544e0(482),_0x2f8d94[_0x2544e0(_0x1abf5d__0x3a657f)]=_0x2544e0(503),_0x137a27[_0x2544e0(_0x1abf5d__0x531941)](_0x2f8d94)}const _0x36abb2=document.createElement(_0x2544e0(_0x1abf5d__0x4e4e9d));_0x36abb2[_0x2544e0(_0x1abf5d__0x22dc27)]=_0x2544e0(_0x1abf5d__0xade32a);const _0x2b3c17=createButton(_0x2544e0(_0x1abf5d__0x449fe3),_0x2544e0(_0x1abf5d__0x3b4931),_0x2544e0(_0x1abf5d__0x11a4e6),_0x1d9b8a.id,_0x4084ed.id),_0x4c11ef=createButton("Delete",_0x2544e0(661),_0x2544e0(_0x1abf5d__0x34ae4b),_0x1d9b8a.id,_0x4084ed.id);_0x36abb2.appendChild(_0x2b3c17),_0x36abb2[_0x2544e0(_0x1abf5d__0x9db86d)](_0x4c11ef),_0x41a0d7[_0x2544e0(_0x1abf5d__0x39a315)](_0x137a27),_0x41a0d7[_0x2544e0(_0x1abf5d__0x9db86d)](_0x36abb2),DOM[_0x2544e0(_0x1abf5d__0x2dfb7f)].appendChild(_0x41a0d7)})})}function updateItemCategorySelect(){const _0x496389__0x523d14=1025,_0x496389__0x57ac16=518,_0x496389__0x296545=423,_0x496389__0x34e0af=724,_0x496389__0x1fff7f=675,_0x496389__0x52c757=478,_0x1d01ca__0xd06af6=423,_0x1d01ca__0x55ca87=606,_0x1d01ca__0x23926a=1090,_0x1c1303=_0x53b2da;if(!DOM[_0x1c1303(1025)])return;const _0x46b8f9=DOM.itemCategory[_0x1c1303(1090)];DOM[_0x1c1303(_0x496389__0x523d14)][_0x1c1303(_0x496389__0x57ac16)]();const _0x4e31ed=document[_0x1c1303(_0x496389__0x296545)]("option");_0x4e31ed[_0x1c1303(1090)]="",_0x4e31ed[_0x1c1303(_0x496389__0x34e0af)]=_0x1c1303(_0x496389__0x1fff7f),DOM.itemCategory[_0x1c1303(667)](_0x4e31ed),state[_0x1c1303(_0x496389__0x52c757)].forEach(_0x4c37a9=>{const _0x33f506=_0x1c1303,_0x5f10c4=document[_0x33f506(_0x1d01ca__0xd06af6)](_0x33f506(_0x1d01ca__0x55ca87));_0x5f10c4[_0x33f506(_0x1d01ca__0x23926a)]=_0x4c37a9.id,_0x5f10c4.textContent=_0x4c37a9[_0x33f506(1040)],DOM.itemCategory[_0x33f506(667)](_0x5f10c4)}),state[_0x1c1303(_0x496389__0x52c757)].some(_0x1702db=>_0x1702db.id===_0x46b8f9)&&(DOM[_0x1c1303(1025)][_0x1c1303(1090)]=_0x46b8f9)}async function verifyBusinessLocation(){const _0xbb96bc__0x30f8e5=898,_0xbb96bc__0xf51345=442,_0xbb96bc__0xda5c9d=752,_0xbb96bc__0x42cb51=760,_0xbb96bc__0x40f547=831,_0xbb96bc__0x4fb57c=1048,_0xbb96bc__0x5b8b91=492,_0xbb96bc__0x4c5d8f=751,_0xbb96bc__0x5a581a=954,_0xbb96bc__0x3d4358=1036,_0xbb96bc__0x39e6b2=657,_0xbb96bc__0x30fd4a=601,_0xbb96bc__0x2b7e0b=795,_0xbb96bc__0xaa65e8=924,_0x4ac84b=_0x53b2da;if(navigator[_0x4ac84b(825)]){setButtonBusy(DOM[_0x4ac84b(_0xbb96bc__0xf51345)],!0,_0x4ac84b(_0xbb96bc__0xda5c9d)),setLocationText(_0x4ac84b(_0xbb96bc__0x42cb51),!1);try{const _0x5304a2=await getCurrentPosition(),_0x4053c1=Number(_0x5304a2[_0x4ac84b(_0xbb96bc__0x40f547)][_0x4ac84b(_0xbb96bc__0x4fb57c)]),_0x12c74c=Number(_0x5304a2.coords[_0x4ac84b(_0xbb96bc__0x5b8b91)]),_0x31ea62=Number(_0x5304a2[_0x4ac84b(831)].accuracy);if(!Number.isFinite(_0x4053c1)||!Number[_0x4ac84b(_0xbb96bc__0x4c5d8f)](_0x12c74c))throw new Error("The browser returned an invalid location.");if(_0x4053c1<-90||_0x4053c1>90||_0x12c74c<-180||_0x12c74c>180)throw new Error(_0x4ac84b(801));if(!Number[_0x4ac84b(751)](_0x31ea62)||_0x31ea62<=0)throw new Error(_0x4ac84b(_0xbb96bc__0x5a581a));if(_0x31ea62>CONFIG[_0x4ac84b(_0xbb96bc__0x3d4358)])throw new Error(_0x4ac84b(_0xbb96bc__0x39e6b2)+Math.round(_0x31ea62)+_0x4ac84b(777));const _0x30a2a4=(new Date).toISOString();state[_0x4ac84b(_0xbb96bc__0x30fd4a)]={verified:!0,latitude:_0x4053c1,longitude:_0x12c74c,accuracy:_0x31ea62,verifiedAt:_0x30a2a4},updateLocationDetails(),setLocationText(_0x4ac84b(_0xbb96bc__0x2b7e0b)+Math[_0x4ac84b(680)](_0x31ea62)+_0x4ac84b(959),!0),showToast("Business location verified.",_0x4ac84b(_0xbb96bc__0xaa65e8))}catch(_0x59c4a4){state[_0x4ac84b(_0xbb96bc__0x30fd4a)]={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},updateLocationDetails(),setLocationError(getLocationErrorMessage(_0x59c4a4))}finally{setButtonBusy(DOM[_0x4ac84b(442)],!1)}}else setLocationError(_0x4ac84b(_0xbb96bc__0x30f8e5))}function getCurrentPosition(){const _0x56395d__0x56f153=826,_0x160b17__0x1d748f=957,_0x160b17__0x4c18eb=825,_0x160b17__0x32783b=711;return new Promise((_0x2beeea,_0xd19e7e)=>{const _0x51fe2a__0x509e92=831,_0x51fe2a__0x360476=1036,_0x51fe2a__0x57eee8=398,_0x2344fd__0x4e7f57=781,_0x2344fd__0xf0c232=1036,_0x5210f5__0x4dedf2=831,_0x5210f5__0x36f644=831,_0x5210f5__0x2754a3=751,_0x5210f5__0x27c756=831,_0x5210f5__0x137860=781,_0x5210f5__0x125862=1036,_0x5b7b72=_0x1938;let _0x5a8e1d=null,_0x31a790=!1,_0x33753a=null,_0x16bb05=null;const _0x5860c2=()=>{const _0xbe7b43=_0x1938;null!==_0x16bb05&&(window[_0xbe7b43(_0x160b17__0x1d748f)](_0x16bb05),_0x16bb05=null),null!==_0x33753a&&(navigator[_0xbe7b43(_0x160b17__0x4c18eb)][_0xbe7b43(_0x160b17__0x32783b)](_0x33753a),_0x33753a=null)},_0x245b0a=_0x3f4071=>{_0x31a790||(_0x31a790=!0,_0x5860c2(),_0x2beeea(_0x3f4071))},_0x23b094=_0x31e24d=>{_0x31a790||(_0x31a790=!0,_0x5860c2(),_0xd19e7e(_0x31e24d))},_0x45fb5f=_0x7c7330=>{const _0x599769=_0x1938,_0x88ea9d=Number(_0x7c7330&&_0x7c7330[_0x599769(_0x5210f5__0x4dedf2)]&&_0x7c7330[_0x599769(_0x5210f5__0x36f644)][_0x599769(781)]);!Number[_0x599769(_0x5210f5__0x2754a3)](_0x88ea9d)||_0x88ea9d<=0||((!_0x5a8e1d||_0x88ea9d<Number(_0x5a8e1d[_0x599769(_0x5210f5__0x27c756)][_0x599769(_0x5210f5__0x137860)]))&&(_0x5a8e1d=_0x7c7330),_0x88ea9d<=CONFIG[_0x599769(_0x5210f5__0x125862)]&&_0x245b0a(_0x7c7330))},_0x639fe0=_0x180fe6=>{const _0x3b48c3=_0x1938;_0x5a8e1d&&Number(_0x5a8e1d.coords[_0x3b48c3(_0x2344fd__0x4e7f57)])<=CONFIG[_0x3b48c3(_0x2344fd__0xf0c232)]?_0x245b0a(_0x5a8e1d):_0x23b094(_0x180fe6)};_0x16bb05=window[_0x5b7b72(_0x56395d__0x56f153)](()=>{const _0x3af17c=_0x5b7b72;_0x5a8e1d&&Number(_0x5a8e1d[_0x3af17c(_0x51fe2a__0x509e92)][_0x3af17c(781)])<=CONFIG[_0x3af17c(_0x51fe2a__0x360476)]?_0x245b0a(_0x5a8e1d):_0x23b094(new Error(_0x3af17c(_0x51fe2a__0x57eee8)))},CONFIG.LOCATION_TIMEOUT_MS);try{_0x33753a=navigator.geolocation[_0x5b7b72(916)](_0x45fb5f,_0x639fe0,{enableHighAccuracy:!0,timeout:CONFIG[_0x5b7b72(510)],maximumAge:0})}catch(_0x23d595){_0x23b094(_0x23d595)}})}function updateLocationDetails(){const _0x4ccc9f__0x3222a1=693,_0x4ccc9f__0x4227b4=1088,_0x4ccc9f__0x2d9d6c=934,_0x4ccc9f__0x11bec3=601,_0x4ccc9f__0x1449f6=485,_0x4ccc9f__0x710898=601,_0x4ccc9f__0xf62418=1048,_0x4ccc9f__0x369fa2=601,_0x4ccc9f__0x1845ae=601,_0x4ccc9f__0x18504a=505,_0x4ccc9f__0x5466e7=724,_0x4ccc9f__0x212291=601,_0x4f1372=_0x53b2da;DOM.locationDetails&&(DOM[_0x4f1372(_0x4ccc9f__0x3222a1)][_0x4f1372(_0x4ccc9f__0x4227b4)]=!state[_0x4f1372(601)].verified),DOM.locationLatitude&&(DOM[_0x4f1372(_0x4ccc9f__0x2d9d6c)].textContent=state[_0x4f1372(_0x4ccc9f__0x11bec3)][_0x4f1372(_0x4ccc9f__0x1449f6)]?formatCoordinate(state[_0x4f1372(_0x4ccc9f__0x710898)][_0x4f1372(_0x4ccc9f__0xf62418)]):"—"),DOM.locationLongitude&&(DOM[_0x4f1372(674)].textContent=state[_0x4f1372(_0x4ccc9f__0x369fa2)][_0x4f1372(_0x4ccc9f__0x1449f6)]?formatCoordinate(state[_0x4f1372(_0x4ccc9f__0x1845ae)][_0x4f1372(492)]):"—"),DOM[_0x4f1372(_0x4ccc9f__0x18504a)]&&(DOM.locationVerifiedAt[_0x4f1372(_0x4ccc9f__0x5466e7)]=state[_0x4f1372(601)].verified?formatDateTime(state[_0x4f1372(_0x4ccc9f__0x212291)].verifiedAt):"—")}function setLocationText(_0x3d9923,_0x4a6fa2){const _0x72a496__0x59c41d=1083,_0x72a496__0x2c2f09=523,_0x72a496__0x1513b2=426,_0x72a496__0x59c607=523,_0x72a496__0x2fc267=857,_0x72a496__0x26909d=757,_0x575745=_0x53b2da;DOM[_0x575745(393)]&&(DOM.locationStatusText[_0x575745(724)]=_0x3d9923),DOM.locationStatus&&(DOM[_0x575745(_0x72a496__0x59c41d)][_0x575745(_0x72a496__0x2c2f09)][_0x575745(749)](_0x575745(_0x72a496__0x1513b2),Boolean(_0x4a6fa2)),DOM.locationStatus[_0x575745(_0x72a496__0x59c607)].toggle(_0x575745(_0x72a496__0x2fc267),!1)),DOM[_0x575745(_0x72a496__0x26909d)]&&DOM[_0x575745(_0x72a496__0x26909d)][_0x575745(523)][_0x575745(749)](_0x575745(426),Boolean(_0x4a6fa2))}function setLocationError(_0x15c2c3){const _0x3747fc__0x53fd21=724,_0x3747fc__0x5b0b6d=1083,_0x3747fc__0x3a06d2=523,_0x3747fc__0x1e8a37=681,_0x7c87a=_0x53b2da;DOM[_0x7c87a(393)]&&(DOM[_0x7c87a(393)][_0x7c87a(_0x3747fc__0x53fd21)]=_0x15c2c3),DOM[_0x7c87a(_0x3747fc__0x5b0b6d)]&&(DOM[_0x7c87a(1083)][_0x7c87a(_0x3747fc__0x3a06d2)][_0x7c87a(870)](_0x7c87a(426)),DOM.locationStatus[_0x7c87a(523)][_0x7c87a(507)](_0x7c87a(857))),showToast(_0x15c2c3,_0x7c87a(_0x3747fc__0x1e8a37))}function formatCoordinate(_0xd54224){const _0x2a5b1e=_0x53b2da;return Number(_0xd54224)[_0x2a5b1e(658)](6)}function formatDateTime(_0x2f7271){const _0x374854__0x2a7ceb=1e3,_0x374854__0x566674=583,_0x374854__0x58c6bf=878,_0x374854__0x50304c=458,_0x429dad=_0x53b2da,_0x3a3531=new Date(_0x2f7271);return Number[_0x429dad(_0x374854__0x2a7ceb)](_0x3a3531[_0x429dad(_0x374854__0x566674)]())?"—":_0x3a3531[_0x429dad(893)](_0x429dad(_0x374854__0x58c6bf),{dateStyle:"medium",timeStyle:_0x429dad(_0x374854__0x50304c)})}function previewLogo(){const _0x2e0242__0x210adc=895,_0x2e0242__0xcda92e=895,_0x2e0242__0x4caa0c=919,_0x2e0242__0x44dd1d=1009,_0x2e0242__0x108264=1088,_0x2e0242__0x16b340=525,_0x2e0242__0x2400d8=407,_0x2e0242__0x1e4732=697,_0x2e0242__0x19eb28=697,_0x3b033b__0x1c3829=866,_0x3b033b__0x3e8554=1088,_0x1d1c9e=_0x53b2da,_0x5abc1e=++state[_0x1d1c9e(866)],_0x58fc0a=normalizeText(DOM[_0x1d1c9e(_0x2e0242__0x210adc)]?DOM[_0x1d1c9e(_0x2e0242__0xcda92e)].value:"",CONFIG[_0x1d1c9e(_0x2e0242__0x4caa0c)]);_0x58fc0a&&isValidHttpsUrl(_0x58fc0a)?DOM[_0x1d1c9e(_0x2e0242__0x44dd1d)]&&DOM.logoPreviewImage&&(DOM[_0x1d1c9e(_0x2e0242__0x44dd1d)][_0x1d1c9e(_0x2e0242__0x108264)]=!1,DOM.logoPreviewImage[_0x1d1c9e(_0x2e0242__0x16b340)]=_0x1d1c9e(415),DOM[_0x1d1c9e(697)][_0x1d1c9e(_0x2e0242__0x2400d8)]="",DOM.logoPreviewImage.onload=()=>{const _0x375df9=_0x1d1c9e;_0x5abc1e===state[_0x375df9(_0x3b033b__0x1c3829)]&&(DOM.logoPreview[_0x375df9(_0x3b033b__0x3e8554)]=!1)},DOM[_0x1d1c9e(_0x2e0242__0x1e4732)].onerror=()=>{_0x5abc1e===state[_0x1d1c9e(866)]&&hideLogoPreview()},DOM[_0x1d1c9e(_0x2e0242__0x19eb28)][_0x1d1c9e(_0x2e0242__0x2400d8)]=_0x58fc0a):hideLogoPreview()}function hideLogoPreview(){const _0x54e736__0x571c28=1088,_0x54e736__0x5a0747=697,_0x54e736__0x191fa9=407,_0x1be34a=_0x53b2da;DOM.logoPreview&&(DOM[_0x1be34a(1009)][_0x1be34a(_0x54e736__0x571c28)]=!0),DOM[_0x1be34a(_0x54e736__0x5a0747)]&&DOM.logoPreviewImage.removeAttribute(_0x1be34a(_0x54e736__0x191fa9))}function validateBuilder(){const _0x218068__0x3fb25c=513,_0x218068__0x52f5b0=579,_0x218068__0x355105=453,_0x218068__0x25868c=688,_0x218068__0x13947a=1090,_0x218068__0x296182=843,_0x218068__0xfec87c=536,_0x218068__0x22c396=843,_0x218068__0x1597c7=418,_0x218068__0x3ce9b3=762,_0x218068__0x2433b6=548,_0x218068__0x2e1ced=421,_0x218068__0xd0229e=843,_0x218068__0x1d32b2=601,_0x218068__0x207129=649,_0x218068__0x18567a=751,_0x218068__0x14b8f0=601,_0x218068__0xe1e87=781,_0x218068__0x329529=601,_0x218068__0x29074e=781,_0x218068__0x1c7a43=781,_0x218068__0x317e03=1036,_0x218068__0x5baecb=879,_0x218068__0x46f4b2=873,_0x218068__0x23d1df=478,_0x218068__0x146b1f=843,_0x218068__0xd362a9=1057,_0x218068__0x3698d7=1043,_0x221b4f__0xffb45=1040,_0x221b4f__0x339f76=843,_0x221b4f__0x3c80e6=509,_0x221b4f__0x32c015=744,_0x221b4f__0x17e2b8=843,_0x221b4f__0x34c776=545,_0x221b4f__0x42e8ed=1076,_0x221b4f__0x2642a7=909,_0x46d3de__0x1dd41e=968,_0x46d3de__0x4212e1=843,_0x46d3de__0x14775e=607,_0x46d3de__0x3755fe=1040,_0x46d3de__0xeb3a4c=751,_0x46d3de__0x541bad=707,_0x46d3de__0x20e15d=593,_0x46d3de__0x5d13f3=1040,_0x378ca2=_0x53b2da,_0x114c00=[],_0x2a784f=getValue(DOM[_0x378ca2(625)]),_0x2c5f41=(getValue(DOM[_0x378ca2(_0x218068__0x3fb25c)]),getValue(DOM[_0x378ca2(_0x218068__0x52f5b0)])),_0xacdad9=getValue(DOM[_0x378ca2(_0x218068__0x355105)]),_0x1b0fe2=getValue(DOM.email),_0x3db208=getValue(DOM.whatsapp),_0x3d3dc0=getValue(DOM.logoUrl),_0x1a55c1=getValue(DOM[_0x378ca2(_0x218068__0x25868c)]),_0x53c972=DOM.businessPassword?DOM.businessPassword[_0x378ca2(_0x218068__0x13947a)]:"";!state.selectedTemplate&&_0x114c00[_0x378ca2(_0x218068__0x296182)](_0x378ca2(454)),state.selectedTemplate!==CONFIG[_0x378ca2(_0x218068__0xfec87c)]&&_0x114c00[_0x378ca2(_0x218068__0x22c396)]("The selected application template is invalid."),!_0x1a55c1&&_0x114c00.push("Please enter your Subscription ID."),!_0x53c972&&_0x114c00[_0x378ca2(843)](_0x378ca2(_0x218068__0x1597c7)),!_0x2a784f&&_0x114c00[_0x378ca2(843)](_0x378ca2(_0x218068__0x3ce9b3)),!_0x2c5f41&&_0x114c00[_0x378ca2(843)](_0x378ca2(698)),!_0xacdad9&&_0x114c00[_0x378ca2(843)](_0x378ca2(390)),_0x1b0fe2&&!isValidEmail(_0x1b0fe2)&&_0x114c00[_0x378ca2(843)](_0x378ca2(_0x218068__0x2433b6)),!_0x3db208&&_0x114c00[_0x378ca2(_0x218068__0x296182)](_0x378ca2(_0x218068__0x2e1ced)),_0x3d3dc0&&!isValidHttpsUrl(_0x3d3dc0)&&_0x114c00[_0x378ca2(843)](_0x378ca2(456)),!state.location[_0x378ca2(485)]&&_0x114c00[_0x378ca2(_0x218068__0xd0229e)](_0x378ca2(532)),(!Number.isFinite(state[_0x378ca2(_0x218068__0x1d32b2)][_0x378ca2(1048)])||!Number.isFinite(state[_0x378ca2(601)].longitude))&&_0x114c00[_0x378ca2(843)](_0x378ca2(_0x218068__0x207129)),(!Number[_0x378ca2(_0x218068__0x18567a)](state[_0x378ca2(_0x218068__0x14b8f0)][_0x378ca2(_0x218068__0xe1e87)])||state[_0x378ca2(_0x218068__0x329529)][_0x378ca2(_0x218068__0x29074e)]<=0||state[_0x378ca2(_0x218068__0x329529)][_0x378ca2(_0x218068__0x1c7a43)]>CONFIG[_0x378ca2(_0x218068__0x317e03)])&&_0x114c00.push(_0x378ca2(_0x218068__0x5baecb)+CONFIG[_0x378ca2(_0x218068__0x317e03)]+_0x378ca2(_0x218068__0x46f4b2)),0===state[_0x378ca2(_0x218068__0x23d1df)][_0x378ca2(1043)]&&_0x114c00[_0x378ca2(_0x218068__0x146b1f)]("Please add at least one category.");const _0x4c0429=getTotalItemCount();return 0===_0x4c0429&&_0x114c00.push(_0x378ca2(_0x218068__0xd362a9)),state[_0x378ca2(478)][_0x378ca2(909)](_0x3b5c2d=>{const _0x5788c8=_0x378ca2;!_0x3b5c2d[_0x5788c8(_0x221b4f__0xffb45)]&&_0x114c00[_0x5788c8(_0x221b4f__0x339f76)]("Every category must have a name."),_0x3b5c2d[_0x5788c8(_0x221b4f__0x3c80e6)].length>CONFIG[_0x5788c8(_0x221b4f__0x32c015)]&&_0x114c00[_0x5788c8(_0x221b4f__0x17e2b8)](_0x5788c8(_0x221b4f__0x34c776)+_0x3b5c2d[_0x5788c8(_0x221b4f__0xffb45)]+_0x5788c8(_0x221b4f__0x42e8ed)),_0x3b5c2d[_0x5788c8(509)][_0x5788c8(_0x221b4f__0x2642a7)](_0x5df2be=>{const _0x18f035=_0x5788c8;!_0x5df2be.name&&_0x114c00[_0x18f035(843)](_0x18f035(770)+_0x3b5c2d.name+'" is missing its name.'),(!Number.isFinite(_0x5df2be[_0x18f035(968)])||_0x5df2be[_0x18f035(_0x46d3de__0x1dd41e)]<0)&&_0x114c00[_0x18f035(_0x46d3de__0x4212e1)](_0x18f035(_0x46d3de__0x14775e)+_0x5df2be[_0x18f035(_0x46d3de__0x3755fe)]+'" has an invalid price.'),(!Number[_0x18f035(_0x46d3de__0xeb3a4c)](_0x5df2be.quantity)||_0x5df2be.quantity<0)&&_0x114c00[_0x18f035(_0x46d3de__0x4212e1)](_0x18f035(607)+_0x5df2be.name+_0x18f035(_0x46d3de__0x541bad)),_0x5df2be[_0x18f035(_0x46d3de__0x20e15d)]&&!isValidYoutubeUrl(_0x5df2be.youtubeUrl)&&_0x114c00.push(_0x18f035(_0x46d3de__0x14775e)+_0x5df2be[_0x18f035(_0x46d3de__0x5d13f3)]+'" has an invalid YouTube URL.')})}),_0x4c0429>CONFIG[_0x378ca2(859)]&&_0x114c00[_0x378ca2(_0x218068__0x22c396)](_0x378ca2(596)+CONFIG[_0x378ca2(859)]+" total items are allowed."),{valid:0===_0x114c00[_0x378ca2(_0x218068__0x3698d7)],errors:uniqueStrings(_0x114c00)}}function showValidation(_0x525125){const _0x4b32e3__0x17d8f9=838,_0x4b32e3__0x277cbd=430,_0x4b32e3__0x30689a=518,_0x4b32e3__0x3178d1=909,_0x4b32e3__0x573354=838,_0x4b32e3__0x1737eb=984,_0x4b32e3__0x2d8803=763,_0x1d2d3c__0x2d25af=423,_0x1d2d3c__0x5b5135=667,_0x3abf6d=_0x53b2da;DOM[_0x3abf6d(_0x4b32e3__0x17d8f9)]&&DOM[_0x3abf6d(_0x4b32e3__0x277cbd)]&&(DOM.validationList[_0x3abf6d(_0x4b32e3__0x30689a)](),_0x525125[_0x3abf6d(_0x4b32e3__0x3178d1)](_0x149371=>{const _0x19e177=_0x3abf6d,_0x5522c4=document[_0x19e177(_0x1d2d3c__0x2d25af)]("li");_0x5522c4[_0x19e177(724)]=_0x149371,DOM.validationList[_0x19e177(_0x1d2d3c__0x5b5135)](_0x5522c4)}),DOM[_0x3abf6d(_0x4b32e3__0x573354)].hidden=!1,DOM[_0x3abf6d(_0x4b32e3__0x17d8f9)].scrollIntoView({behavior:_0x3abf6d(_0x4b32e3__0x1737eb),block:_0x3abf6d(_0x4b32e3__0x2d8803)}))}function hideValidation(){const _0x47134f__0x14a6a4=430,_0x47134f__0x3a5b82=518,_0x201840=_0x53b2da;DOM[_0x201840(838)]&&(DOM.validationSummary.hidden=!0),DOM.validationList&&DOM[_0x201840(_0x47134f__0x14a6a4)][_0x201840(_0x47134f__0x3a5b82)]()}async function publishBusiness(){const _0x2797cf__0x2fed08=1015,_0x2797cf__0x5b67bb=931,_0x2797cf__0x22ad68=832,_0x2797cf__0x45f754=722,_0x2797cf__0x2771d6=924,_0x2797cf__0x29a80a=1002,_0x2797cf__0x55d355=572,_0x2797cf__0x5c51dc=726,_0x2797cf__0x29e200=704,_0x2797cf__0x4a4c8f=881,_0x2797cf__0x42efa1=724,_0x2797cf__0x2f76d2=870,_0x2797cf__0x50d001=566,_0x2797cf__0xce3883=881,_0x2797cf__0x401116=507,_0x2797cf__0x1740f1=724,_0x2797cf__0x5f2ce9=522,_0x2797cf__0x2c9f31=881,_0x2797cf__0x282af3=523,_0x2797cf__0x22c8f5=566,_0x2797cf__0x26394a=1003,_0x2797cf__0x4e9db4=726,_0x2797cf__0x4c5a6d=411,_0x2797cf__0x30b1d9=523,_0x2797cf__0xa3ab03=507,_0x2797cf__0x530a76=621,_0x2797cf__0x4d9fcd=681,_0x2797cf__0x4c63c9=832,_0x5a5001=_0x53b2da;if(state[_0x5a5001(832)])return;hideValidation(),hideSuccess(),clearSubscriptionError();const _0x35b992=validateBuilder();if(!_0x35b992[_0x5a5001(_0x2797cf__0x2fed08)])return showValidation(_0x35b992[_0x5a5001(931)]),void showToast(_0x35b992[_0x5a5001(_0x2797cf__0x5b67bb)][0]||_0x5a5001(422),"error");const _0xde05c0=buildPublishPayload();state[_0x5a5001(_0x2797cf__0x22ad68)]=!0,state.lastPublishedUrl="",setPublishBusy(!0),setPublishStatus(_0x5a5001(721)),showLoader(_0x5a5001(_0x2797cf__0x45f754));try{const _0x324b92=await sendPublishRequest(_0xde05c0);if(!_0x324b92||!0!==_0x324b92[_0x5a5001(_0x2797cf__0x2771d6)])throw new Error(_0x324b92&&_0x324b92[_0x5a5001(_0x2797cf__0x29a80a)]?_0x324b92.message:"The business app could not be created.");if(!isValidHttpsUrl(_0x324b92[_0x5a5001(_0x2797cf__0x55d355)]))throw new Error("The Worker did not return a valid business app URL.");state[_0x5a5001(733)]=_0x324b92[_0x5a5001(_0x2797cf__0x55d355)],hideLoader(),showSuccess(_0x324b92),setPublishStatus(_0x5a5001(542)),DOM[_0x5a5001(_0x2797cf__0x5c51dc)]&&(DOM[_0x5a5001(_0x2797cf__0x5c51dc)][_0x5a5001(724)]=_0x5a5001(_0x2797cf__0x29e200)),DOM[_0x5a5001(_0x2797cf__0x4a4c8f)]&&(DOM.deploymentStatus[_0x5a5001(_0x2797cf__0x42efa1)]="Publishing your business app...",DOM[_0x5a5001(_0x2797cf__0x4a4c8f)][_0x5a5001(523)][_0x5a5001(_0x2797cf__0x2f76d2)](_0x5a5001(_0x2797cf__0x50d001)),DOM[_0x5a5001(_0x2797cf__0xce3883)].classList[_0x5a5001(_0x2797cf__0x401116)]("is-waiting"));if(!await waitForDeployment(_0x324b92[_0x5a5001(572)]))return DOM.deploymentStatus&&(DOM.deploymentStatus[_0x5a5001(_0x2797cf__0x1740f1)]=_0x5a5001(_0x2797cf__0x5f2ce9),DOM[_0x5a5001(_0x2797cf__0x2c9f31)][_0x5a5001(_0x2797cf__0x282af3)][_0x5a5001(_0x2797cf__0x2f76d2)](_0x5a5001(_0x2797cf__0x22c8f5)),DOM[_0x5a5001(_0x2797cf__0x4a4c8f)][_0x5a5001(_0x2797cf__0x282af3)].add(_0x5a5001(_0x2797cf__0x26394a))),void setPublishStatus("Business app is still being published.");enablePublishedBusiness(_0x324b92.url),DOM[_0x5a5001(_0x2797cf__0x4e9db4)]&&(DOM[_0x5a5001(_0x2797cf__0x4e9db4)].textContent=_0x5a5001(_0x2797cf__0x4c5a6d)),DOM[_0x5a5001(881)]&&(DOM[_0x5a5001(_0x2797cf__0x4a4c8f)][_0x5a5001(_0x2797cf__0x1740f1)]="Business app is live.",DOM[_0x5a5001(_0x2797cf__0x2c9f31)][_0x5a5001(_0x2797cf__0x30b1d9)].remove(_0x5a5001(_0x2797cf__0x26394a)),DOM[_0x5a5001(881)][_0x5a5001(523)][_0x5a5001(_0x2797cf__0xa3ab03)](_0x5a5001(_0x2797cf__0x50d001))),setPublishStatus("Business app created and published successfully."),showToast(_0x5a5001(_0x2797cf__0x530a76),"success")}catch(_0x24dbbd){hideLoader();const _0x1a73db=getErrorMessage(_0x24dbbd);setPublishStatus(_0x1a73db),showValidation([_0x1a73db]),showToast(_0x1a73db,_0x5a5001(_0x2797cf__0x4d9fcd))}finally{state[_0x5a5001(_0x2797cf__0x4c63c9)]=!1,setPublishBusy(!1)}}async function waitForDeployment(_0x11d15c){const _0x5ae256__0x10f593=864,_0x5ae256__0x1c0ded=702,_0x5ae256__0x2a0b1e=647,_0x5ae256__0xd3db2f=724,_0x5ae256__0x2e425b=1026,_0x5ae256__0x101c64=828,_0x5ae256__0x48031b=841,_0x5ae256__0x29e26a=743,_0x3001a4=_0x53b2da,_0x17e46b=Date[_0x3001a4(864)]();for(;Date.now()-_0x17e46b<CONFIG[_0x3001a4(647)];){if(await isDeploymentReady(_0x11d15c))return!0;const _0x3406e4=Math[_0x3001a4(498)]((Date[_0x3001a4(_0x5ae256__0x10f593)]()-_0x17e46b)/1e3),_0x1be6f0=Math[_0x3001a4(_0x5ae256__0x1c0ded)](0,Math.ceil((CONFIG[_0x3001a4(_0x5ae256__0x2a0b1e)]-(Date.now()-_0x17e46b))/1e3));DOM[_0x3001a4(881)]&&(DOM.deploymentStatus[_0x3001a4(_0x5ae256__0xd3db2f)]=_0x3001a4(_0x5ae256__0x2e425b)+_0x3406e4+_0x3001a4(_0x5ae256__0x101c64)),setPublishStatus(_0x3001a4(_0x5ae256__0x48031b)+_0x1be6f0+"s remaining."),await sleep(CONFIG[_0x3001a4(_0x5ae256__0x29e26a)])}return!1}async function isDeploymentReady(_0x4bf311){const _0x5ebde0__0x1a8ea4=1068,_0x5ebde0__0x388aab=392,_0x5ebde0__0x2f42ed=392,_0x2baf1a=_0x53b2da;try{const _0x3a18f1=new URL(_0x4bf311),_0x21c510=new URL(_0x2baf1a(_0x5ebde0__0x1a8ea4),_0x3a18f1),[_0x30b720,_0x56974b]=await Promise[_0x2baf1a(1087)]([fetchDeploymentResource(_0x3a18f1[_0x2baf1a(_0x5ebde0__0x388aab)]),fetchDeploymentResource(_0x21c510[_0x2baf1a(_0x5ebde0__0x2f42ed)])]);return _0x30b720&&_0x30b720.ok&&_0x56974b&&_0x56974b.ok}catch(_0x4ec76d){return!1}}async function fetchDeploymentResource(_0x108c5d){const _0xc0a890__0x217794=701,_0xc0a890__0x35f3fc=623,_0xc0a890__0x48fc13=483,_0xc0a890__0x562d96=587,_0xc0a890__0x40961f=996,_0x493c6b=_0x53b2da;try{const _0x148a3a=new AbortController,_0x9bffd2=setTimeout(()=>_0x148a3a.abort(),CONFIG[_0x493c6b(1071)]),_0x4b8526=await fetch(_0x108c5d,{method:_0x493c6b(_0xc0a890__0x217794),cache:_0x493c6b(_0xc0a890__0x35f3fc),credentials:_0x493c6b(_0xc0a890__0x48fc13),redirect:_0x493c6b(_0xc0a890__0x562d96),signal:_0x148a3a[_0x493c6b(_0xc0a890__0x40961f)]});return clearTimeout(_0x9bffd2),_0x4b8526}catch(_0x40c17f){return null}}function enablePublishedBusiness(_0xc3994a){const _0xacdd26__0x4b7c15=650,_0xacdd26__0x4f9509=724,_0xacdd26__0xd7676a=1052,_0xacdd26__0x479d1b=572,_0xacdd26__0xd11a78=523,_0xacdd26__0x4d8048=870,_0xacdd26__0xc8bca7=650,_0xacdd26__0xa600ec=999,_0xacdd26__0x5c6673=708,_0xacdd26__0x248a3f=999,_0xacdd26__0x5c2ae7=938,_0x4f7b01=_0x53b2da;isValidHttpsUrl(_0xc3994a)&&(state.lastPublishedUrl=_0xc3994a,DOM[_0x4f7b01(650)]&&(DOM[_0x4f7b01(_0xacdd26__0x4b7c15)].href=_0xc3994a,DOM[_0x4f7b01(650)][_0x4f7b01(_0xacdd26__0x4f9509)]=_0xc3994a,DOM[_0x4f7b01(_0xacdd26__0x4b7c15)][_0x4f7b01(_0xacdd26__0xd7676a)][_0x4f7b01(_0xacdd26__0x479d1b)]=_0xc3994a,DOM[_0x4f7b01(_0xacdd26__0x4b7c15)][_0x4f7b01(_0xacdd26__0xd11a78)][_0x4f7b01(_0xacdd26__0x4d8048)](_0x4f7b01(899)),DOM[_0x4f7b01(_0xacdd26__0xc8bca7)][_0x4f7b01(_0xacdd26__0xa600ec)](_0x4f7b01(_0xacdd26__0x5c6673)),DOM.businessAppUrl[_0x4f7b01(_0xacdd26__0x248a3f)](_0x4f7b01(_0xacdd26__0x5c2ae7))),DOM[_0x4f7b01(400)]&&(DOM[_0x4f7b01(400)].disabled=!1))}function sleep(_0x4b8f5e){return new Promise(_0xfa4505=>{setTimeout(_0xfa4505,_0x4b8f5e)})}function buildPublishPayload(){const _0x3d4fe1__0x558cff=688,_0x3d4fe1__0x453d76=1090,_0x3d4fe1__0x2979fc=625,_0x3d4fe1__0x2fe8fd=579,_0x3d4fe1__0xd3475=453,_0x3d4fe1__0x38cb28=1078,_0x3d4fe1__0x4bef4b=980,_0x3d4fe1__0x1d4920=601,_0x3d4fe1__0x2544bb=1048,_0x3d4fe1__0x5eb328=492,_0x3d4fe1__0x3cb864=1064,_0x3d4fe1__0x3bfa19=516,_0xba293a=_0x53b2da;return{template:CONFIG[_0xba293a(536)],subscriptionId:getValue(DOM[_0xba293a(_0x3d4fe1__0x558cff)]),businessPassword:DOM[_0xba293a(875)]?DOM.businessPassword[_0xba293a(_0x3d4fe1__0x453d76)]:"",business:{name:getValue(DOM[_0xba293a(_0x3d4fe1__0x2979fc)]),tagline:getValue(DOM[_0xba293a(513)]),address:getValue(DOM[_0xba293a(_0x3d4fe1__0x2fe8fd)]),mobile:getValue(DOM[_0xba293a(_0x3d4fe1__0xd3475)]),email:getValue(DOM[_0xba293a(_0x3d4fe1__0x38cb28)]),whatsapp:getValue(DOM[_0xba293a(_0x3d4fe1__0x4bef4b)]),logoUrl:getValue(DOM[_0xba293a(895)])},location:{verified:state[_0xba293a(_0x3d4fe1__0x1d4920)][_0xba293a(485)],latitude:state[_0xba293a(_0x3d4fe1__0x1d4920)][_0xba293a(_0x3d4fe1__0x2544bb)],longitude:state[_0xba293a(601)][_0xba293a(_0x3d4fe1__0x5eb328)],verifiedAt:state[_0xba293a(_0x3d4fe1__0x1d4920)][_0xba293a(_0x3d4fe1__0x3cb864)]},categories:state.categories[_0xba293a(_0x3d4fe1__0x3bfa19)](_0x5e113f=>({id:_0x5e113f.id,name:_0x5e113f[_0xba293a(1040)],items:_0x5e113f[_0xba293a(509)].map(_0x16399c=>({id:_0x16399c.id,name:_0x16399c[_0xba293a(1040)],price:_0x16399c[_0xba293a(968)],quantity:_0x16399c[_0xba293a(1005)],unit:_0x16399c[_0xba293a(549)],description:_0x16399c.description,youtubeUrl:_0x16399c[_0xba293a(593)]}))}))}}async function sendPublishRequest(_0x2e7f43){const _0x239ab4__0xb943c6=553,_0x239ab4__0x427646=826,_0x239ab4__0x3c95ae=1071,_0x239ab4__0x886713=728,_0x239ab4__0x2e468c=1081,_0x239ab4__0x4cd806=734,_0x239ab4__0x12a6e8=623,_0x239ab4__0x13910c=483,_0x239ab4__0x28bbce=996,_0x239ab4__0x399514=470,_0x239ab4__0x3b90f7=696,_0x239ab4__0x5d4853=557,_0x239ab4__0x20c445=476,_0x239ab4__0x57a7ef=530,_0x239ab4__0x5c95c3=468,_0x239ab4__0x186c64=1067,_0x239ab4__0x5d8d61=568,_0x239ab4__0x47f56e=982,_0x239ab4__0x360796=1002,_0x239ab4__0x412926=500,_0x239ab4__0x1f10bc=689,_0x239ab4__0x286455=888,_0x661a3c=_0x53b2da,_0x295e4e=normalizeBaseUrl(CONFIG[_0x661a3c(1065)]);if(!_0x295e4e)throw new Error(_0x661a3c(_0x239ab4__0xb943c6));const _0x1c9e7b=new AbortController,_0x58cf7a=window[_0x661a3c(_0x239ab4__0x427646)](()=>{_0x1c9e7b.abort()},CONFIG[_0x661a3c(_0x239ab4__0x3c95ae)]);try{const _0x1a8b2c=await fetch(_0x295e4e+_0x661a3c(_0x239ab4__0x886713),{method:_0x661a3c(588),headers:{"Content-Type":_0x661a3c(_0x239ab4__0x2e468c),Accept:_0x661a3c(1081)},body:JSON[_0x661a3c(_0x239ab4__0x4cd806)](_0x2e7f43),cache:_0x661a3c(_0x239ab4__0x12a6e8),credentials:_0x661a3c(_0x239ab4__0x13910c),signal:_0x1c9e7b[_0x661a3c(_0x239ab4__0x28bbce)]});let _0x30f8bc;if((_0x1a8b2c.headers[_0x661a3c(_0x239ab4__0x399514)](_0x661a3c(_0x239ab4__0x3b90f7))||"")[_0x661a3c(_0x239ab4__0x5d4853)]()[_0x661a3c(_0x239ab4__0x20c445)](_0x661a3c(_0x239ab4__0x2e468c)))try{_0x30f8bc=await _0x1a8b2c[_0x661a3c(_0x239ab4__0x57a7ef)]()}catch{throw new Error(_0x661a3c(_0x239ab4__0x5c95c3))}else{_0x30f8bc={success:!1,message:await _0x1a8b2c[_0x661a3c(_0x239ab4__0x186c64)]()||_0x661a3c(_0x239ab4__0x5d8d61)+_0x1a8b2c[_0x661a3c(_0x239ab4__0x47f56e)]+"."}}if(!_0x1a8b2c.ok)throw new Error(_0x30f8bc&&_0x30f8bc[_0x661a3c(_0x239ab4__0x360796)]?_0x30f8bc[_0x661a3c(_0x239ab4__0x360796)]:"Worker returned HTTP "+_0x1a8b2c[_0x661a3c(_0x239ab4__0x47f56e)]+".");return _0x30f8bc}catch(_0x14c140){if(_0x14c140&&_0x14c140.name===_0x661a3c(_0x239ab4__0x412926))throw new Error(_0x661a3c(_0x239ab4__0x1f10bc));if(_0x14c140 instanceof TypeError)throw new Error(_0x661a3c(_0x239ab4__0x286455));throw _0x14c140}finally{window[_0x661a3c(957)](_0x58cf7a)}}function showSuccess(_0x209ebf){const _0x538012__0xe146b8=695,_0x538012__0x248e92=1075,_0x538012__0x28acbf=726,_0x538012__0x37bb07=726,_0x538012__0x3f2712=704,_0x538012__0x22618a=650,_0x538012__0x487316=650,_0x538012__0x24b82e=392,_0x538012__0x1fe4f8=650,_0x538012__0xe75d2b=1052,_0x538012__0xf8bbc8=572,_0x538012__0x598394=523,_0x538012__0x290c76=899,_0x538012__0x4a01d3=650,_0x538012__0x5408e6=974,_0x538012__0x85b787=439,_0x538012__0x38d1b5=400,_0x538012__0x2b55cb=400,_0x538012__0x2f57cc=409,_0x538012__0x25058b=724,_0x538012__0x5ca39d=574,_0x538012__0x2f2755=881,_0x538012__0x29aa37=566,_0x538012__0x1265fd=493,_0x538012__0x5af3de=763,_0xeb5133=_0x53b2da;if(!DOM[_0xeb5133(493)])return;const _0x10f65b=typeof _0x209ebf.url===_0xeb5133(_0x538012__0xe146b8)?_0x209ebf.url[_0xeb5133(_0x538012__0x248e92)]():"";state.lastPublishedUrl=_0x10f65b,DOM[_0xeb5133(_0x538012__0x28acbf)]&&(DOM[_0xeb5133(_0x538012__0x37bb07)][_0xeb5133(724)]=_0xeb5133(_0x538012__0x3f2712)),DOM[_0xeb5133(_0x538012__0x22618a)]&&(DOM[_0xeb5133(_0x538012__0x487316)][_0xeb5133(_0x538012__0x24b82e)]="#",DOM[_0xeb5133(_0x538012__0x487316)][_0xeb5133(724)]="Preparing Business App...",DOM[_0xeb5133(_0x538012__0x1fe4f8)][_0xeb5133(_0x538012__0xe75d2b)][_0xeb5133(_0x538012__0xf8bbc8)]="",DOM[_0xeb5133(650)][_0xeb5133(_0x538012__0x598394)].add(_0xeb5133(_0x538012__0x290c76)),DOM[_0xeb5133(_0x538012__0x4a01d3)].setAttribute("aria-disabled",_0xeb5133(_0x538012__0x5408e6)),DOM.businessAppUrl[_0xeb5133(_0x538012__0x85b787)]("tabindex","-1")),DOM[_0xeb5133(_0x538012__0x38d1b5)]&&(DOM[_0xeb5133(_0x538012__0x2b55cb)][_0xeb5133(_0x538012__0x2f57cc)]=!0),DOM[_0xeb5133(881)]&&(DOM[_0xeb5133(881)][_0xeb5133(_0x538012__0x25058b)]=_0xeb5133(_0x538012__0x5ca39d),DOM[_0xeb5133(_0x538012__0x2f2755)].classList.remove(_0xeb5133(_0x538012__0x29aa37)),DOM[_0xeb5133(_0x538012__0x2f2755)][_0xeb5133(523)][_0xeb5133(507)]("is-waiting")),DOM[_0xeb5133(_0x538012__0x1265fd)][_0xeb5133(1088)]=!1,DOM[_0xeb5133(_0x538012__0x1265fd)].scrollIntoView({behavior:"smooth",block:_0xeb5133(_0x538012__0x5af3de)})}function hideSuccess(){const _0x46e0fa__0x3c852c=493,_0x46e0fa__0x1b2769=1088,_0x478063=_0x53b2da;DOM[_0x478063(493)]&&(DOM[_0x478063(_0x46e0fa__0x3c852c)][_0x478063(_0x46e0fa__0x1b2769)]=!0)}function openPublishedBusiness(){const _0x53642e__0x2b07b4=650,_0x53642e__0x449598=572,_0x53642e__0x55fda6=681,_0x53642e__0x1f7157=581,_0x53642e__0x215ca6=634,_0x36e420=_0x53b2da,_0x6c72c1=state.lastPublishedUrl||DOM[_0x36e420(_0x53642e__0x2b07b4)]&&DOM.businessAppUrl.dataset[_0x36e420(_0x53642e__0x449598)]||"";isValidHttpsUrl(_0x6c72c1)?window[_0x36e420(_0x53642e__0x1f7157)](_0x6c72c1,_0x36e420(446),_0x36e420(_0x53642e__0x215ca6)):showToast(_0x36e420(683),_0x36e420(_0x53642e__0x55fda6))}function editBusiness(){const _0xe8ee7c__0x350f5c=1008,_0xe8ee7c__0xfd70a5=1008,_0xe8ee7c__0xf28b1d=1027,_0xe8ee7c__0x134dba=984,_0x3a15e0=_0x53b2da;hideSuccess(),DOM[_0x3a15e0(_0xe8ee7c__0x350f5c)]&&(DOM[_0x3a15e0(_0xe8ee7c__0xfd70a5)][_0x3a15e0(1088)]=!1),DOM[_0x3a15e0(_0xe8ee7c__0xf28b1d)]&&(DOM[_0x3a15e0(_0xe8ee7c__0xf28b1d)].hidden=!0),window.scrollTo({top:0,behavior:_0x3a15e0(_0xe8ee7c__0x134dba)})}function createAnotherApp(){const _0x2d407f__0x3d2873=511,_0x2d407f__0x2e4338=924,_0x2ba540=_0x53b2da;resetBuilderData(!1),showTemplateSelection(),showToast(_0x2ba540(_0x2d407f__0x3d2873),_0x2ba540(_0x2d407f__0x2e4338))}function showLoader(_0x52702e){const _0x1675fe__0x2d4e7a=769,_0x1675fe__0x1d848d=724,_0x1675fe__0x3e223e=487,_0x1675fe__0x30f989=1080,_0x1675fe__0x7b3f5c=1088,_0x4dd99f=_0x53b2da;DOM[_0x4dd99f(769)]&&(DOM[_0x4dd99f(_0x1675fe__0x2d4e7a)][_0x4dd99f(_0x1675fe__0x1d848d)]=_0x52702e||_0x4dd99f(_0x1675fe__0x3e223e)),DOM[_0x4dd99f(_0x1675fe__0x30f989)]&&(DOM.applicationLoader[_0x4dd99f(_0x1675fe__0x7b3f5c)]=!1)}function hideLoader(){const _0x4cf61c__0x4fc377=1080,_0x1b9bc3=_0x53b2da;DOM[_0x1b9bc3(_0x4cf61c__0x4fc377)]&&(DOM[_0x1b9bc3(_0x4cf61c__0x4fc377)].hidden=!0)}function setPublishBusy(_0x1581da){const _0x38cbc6__0x23fce0=409,_0x38cbc6__0x371fe1=868,_0x38cbc6__0x517341=868,_0x38cbc6__0x369eeb=1088,_0x38cbc6__0x5a1ae6=839,_0x38cbc6__0x5747b6=724,_0x38cbc6__0x3536de=515,_0x115b55=_0x53b2da;DOM[_0x115b55(991)]&&(DOM[_0x115b55(991)][_0x115b55(_0x38cbc6__0x23fce0)]=_0x1581da),DOM[_0x115b55(_0x38cbc6__0x371fe1)]&&(DOM[_0x115b55(_0x38cbc6__0x517341)][_0x115b55(_0x38cbc6__0x369eeb)]=!_0x1581da),DOM[_0x115b55(839)]&&(DOM[_0x115b55(_0x38cbc6__0x5a1ae6)][_0x115b55(_0x38cbc6__0x5747b6)]=_0x1581da?"Creating Business App...":_0x115b55(_0x38cbc6__0x3536de))}function setPublishStatus(_0x3509b0){const _0x18ed0a__0x5704ff=786,_0x39cc8d=_0x53b2da;DOM[_0x39cc8d(_0x18ed0a__0x5704ff)]&&(DOM[_0x39cc8d(_0x18ed0a__0x5704ff)].textContent=_0x3509b0||"")}function updateConnectionStatus(){const _0x3acb50__0x1b9204=627,_0x3acb50__0x2b1b87=627,_0x3acb50__0x19d6d1=716,_0x3acb50__0x2383d2=551,_0x3acb50__0x38191b=523,_0x3acb50__0x48bea2=433,_0x46ef47=_0x53b2da,_0xd11ab3=navigator[_0x46ef47(677)];DOM[_0x46ef47(_0x3acb50__0x1b9204)]&&(DOM[_0x46ef47(_0x3acb50__0x2b1b87)].textContent=_0xd11ab3?_0x46ef47(_0x3acb50__0x19d6d1):"Offline"),DOM[_0x46ef47(_0x3acb50__0x2383d2)]&&(DOM[_0x46ef47(551)][_0x46ef47(_0x3acb50__0x38191b)][_0x46ef47(749)](_0x46ef47(_0x3acb50__0x48bea2),_0xd11ab3),DOM[_0x46ef47(_0x3acb50__0x2383d2)].classList.toggle(_0x46ef47(936),!_0xd11ab3))}function showModal(_0x1e4cb8){const _0x5ecb9d__0x24f2a8=439,_0x5ecb9d__0x44f19f=523,_0x5ecb9d__0x21924c=507,_0x2439fe=_0x53b2da;_0x1e4cb8&&(_0x1e4cb8.hidden=!1,_0x1e4cb8[_0x2439fe(_0x5ecb9d__0x24f2a8)](_0x2439fe(981),_0x2439fe(969)),document.body[_0x2439fe(_0x5ecb9d__0x44f19f)][_0x2439fe(_0x5ecb9d__0x21924c)]("modal-open"))}function hideModal(_0x7c4c67){const _0xcf60bf__0x1f4466=439,_0xcf60bf__0x40cf56=974,_0xcf60bf__0x377fc3=882,_0xcf60bf__0x11d8a7=1088,_0xcf60bf__0x4da373=402,_0x520651=_0x53b2da;_0x7c4c67&&(_0x7c4c67[_0x520651(1088)]=!0,_0x7c4c67[_0x520651(_0xcf60bf__0x1f4466)]("aria-hidden",_0x520651(_0xcf60bf__0x40cf56)),DOM[_0x520651(_0xcf60bf__0x377fc3)]&&DOM.itemModal&&DOM.websiteContentModal&&DOM[_0x520651(_0xcf60bf__0x377fc3)][_0x520651(_0xcf60bf__0x11d8a7)]&&DOM[_0x520651(1074)][_0x520651(_0xcf60bf__0x11d8a7)]&&DOM[_0x520651(404)].hidden&&document[_0x520651(_0xcf60bf__0x4da373)].classList.remove(_0x520651(1086)))}function handleModalBackdrop(_0x1ce28c){const _0x27f63f__0x2ed653=472,_0x27f63f__0x9cc7aa=861,_0x27f63f__0x2a2fd4=1052,_0x27f63f__0x1a29c8=949,_0x27f63f__0x47262e=597,_0x1ab715=_0x53b2da;if(_0x1ce28c[_0x1ab715(472)]!==_0x1ce28c.currentTarget)return;const _0x3b4245=_0x1ce28c[_0x1ab715(_0x27f63f__0x2ed653)].closest(_0x1ab715(_0x27f63f__0x9cc7aa));if(!_0x3b4245)return;const _0x5255dd=_0x3b4245[_0x1ab715(_0x27f63f__0x2a2fd4)][_0x1ab715(622)];_0x5255dd===_0x1ab715(_0x27f63f__0x1a29c8)&&closeCategoryModal(),_0x5255dd===_0x1ab715(_0x27f63f__0x47262e)&&closeItemModal(),"website-content-modal"===_0x5255dd&&closeWebsiteContentModal()}function handleKeyboard(_0x1c92ec){const _0x1bed1d__0x38dd68=871,_0x1bed1d__0x1af21c=882,_0x1bed1d__0x28a17e=1088,_0x1bed1d__0x5ee95d=1074,_0x1bed1d__0x50cb8b=404,_0x2870b2=_0x53b2da;_0x1c92ec.key===_0x2870b2(_0x1bed1d__0x38dd68)&&(!DOM.categoryModal||DOM[_0x2870b2(_0x1bed1d__0x1af21c)][_0x2870b2(_0x1bed1d__0x28a17e)]?!DOM.itemModal||DOM[_0x2870b2(_0x1bed1d__0x5ee95d)][_0x2870b2(_0x1bed1d__0x28a17e)]?DOM[_0x2870b2(404)]&&!DOM[_0x2870b2(_0x1bed1d__0x50cb8b)][_0x2870b2(_0x1bed1d__0x28a17e)]&&closeWebsiteContentModal():closeItemModal():closeCategoryModal())}document[_0x53b2da(659)](_0x53b2da(467),initialize);const WEBSITE_MAX_SECTIONS=100,WEBSITE_MAX_BLOCKS_PER_SECTION=100,WEBSITE_MAX_IMAGES_PER_BLOCK=50,WEBSITE_MAX_VIDEOS_PER_BLOCK=50,WEBSITE_MAX_LINKS_PER_BLOCK=50,WEBSITE_MAX_FOOTER_LINKS=50,WEBSITE_MAX_TEXT_LENGTH=1e4,WEBSITE_MAX_URL_LENGTH=2e3;function toggleWebsitePassword(){const _0x2a718b__0x122df7=977,_0x2a718b__0x1ec740=1042,_0x2a718b__0x39555a=613,_0x2a718b__0x5d090=1067,_0x2a718b__0x1dfe53=775,_0x2a718b__0x5a8405=439,_0x2a718b__0x61ad48=1004,_0x2a718b__0x296fb6=490,_0x2a718b__0x59e9eb=976,_0x2a718b__0x2024aa=666,_0x2a718b__0xd85322=974,_0x2a718b__0x52ce04=969,_0x2a718b__0x16fe3f=724,_0x10d938=_0x53b2da;if(!DOM[_0x10d938(1042)]||!DOM[_0x10d938(976)])return;const _0x58cfc6=DOM[_0x10d938(976)][_0x10d938(590)](_0x10d938(_0x2a718b__0x122df7)),_0x544368=DOM[_0x10d938(_0x2a718b__0x1ec740)][_0x10d938(613)]===_0x10d938(775);DOM[_0x10d938(1042)][_0x10d938(_0x2a718b__0x39555a)]=_0x10d938(_0x544368?_0x2a718b__0x5d090:_0x2a718b__0x1dfe53),DOM.websitePasswordToggle[_0x10d938(_0x2a718b__0x5a8405)](_0x10d938(_0x2a718b__0x61ad48),_0x544368?_0x10d938(_0x2a718b__0x296fb6):"Show password"),DOM[_0x10d938(_0x2a718b__0x59e9eb)].setAttribute(_0x10d938(_0x2a718b__0x2024aa),_0x10d938(_0x544368?_0x2a718b__0xd85322:_0x2a718b__0x52ce04)),_0x58cfc6&&(_0x58cfc6[_0x10d938(_0x2a718b__0x16fe3f)]=_0x544368?"◉":"👁")}function previewWebsiteLogo(){const _0x4a3cbc__0x58e44b=1007,_0x4a3cbc__0x56ca42=591,_0x4a3cbc__0x16c11e=1007,_0x4a3cbc__0xa35779=999,_0x4a3cbc__0xd4f6de=407,_0x4a3cbc__0x2e35bf=466,_0x4a3cbc__0x50b2c1=986,_0x18fee9__0x130d90=773,_0x18fee9__0xc38933=1088,_0x18fee9__0x2d93fa=1007,_0x18fee9__0x119f3a=999,_0x18fee9__0x5635ef=407,_0x54248d__0x35bb09=1007,_0x54248d__0x5bd7c2=407,_0x54248d__0x483bcb=773,_0x54248d__0x397f36=1088,_0x4685ad=_0x53b2da;if(!DOM[_0x4685ad(591)]||!DOM[_0x4685ad(773)]||!DOM[_0x4685ad(_0x4a3cbc__0x58e44b)])return;const _0x7f5d12=getValue(DOM[_0x4685ad(_0x4a3cbc__0x56ca42)]);if(!_0x7f5d12||!isValidHttpsUrl(_0x7f5d12))return DOM.websiteLogoPreview[_0x4685ad(1088)]=!0,void DOM[_0x4685ad(_0x4a3cbc__0x16c11e)][_0x4685ad(_0x4a3cbc__0xa35779)](_0x4685ad(_0x4a3cbc__0xd4f6de));const _0xbb0788=++state.logoPreviewRequest,_0x39f4c4=new Image;_0x39f4c4[_0x4685ad(700)]=()=>{const _0x382f53=_0x4685ad;_0xbb0788===state.logoPreviewRequest&&(DOM[_0x382f53(_0x54248d__0x35bb09)][_0x382f53(_0x54248d__0x5bd7c2)]=_0x7f5d12,DOM[_0x382f53(_0x54248d__0x483bcb)][_0x382f53(_0x54248d__0x397f36)]=!1)},_0x39f4c4.onerror=()=>{const _0x22b9fd=_0x4685ad;_0xbb0788===state.logoPreviewRequest&&(DOM[_0x22b9fd(_0x18fee9__0x130d90)][_0x22b9fd(_0x18fee9__0xc38933)]=!0,DOM[_0x22b9fd(_0x18fee9__0x2d93fa)][_0x22b9fd(_0x18fee9__0x119f3a)](_0x22b9fd(_0x18fee9__0x5635ef)))},_0x39f4c4[_0x4685ad(_0x4a3cbc__0x2e35bf)]=_0x4685ad(_0x4a3cbc__0x50b2c1),_0x39f4c4.src=_0x7f5d12}async function verifyWebsiteLocation(){const _0x48b7de__0x3b495b=1034,_0x48b7de__0x2299f4=752,_0x48b7de__0x4d0aee=1048,_0x48b7de__0x7aa06b=831,_0x48b7de__0x4658e1=492,_0x48b7de__0x3bc087=831,_0x48b7de__0x2790eb=788,_0x48b7de__0x497b42=751,_0x48b7de__0x5271a4=954,_0x48b7de__0x51556d=709,_0x48b7de__0x2757ca=795,_0x48b7de__0x35ef55=680,_0x48b7de__0x1905e4=959,_0x48b7de__0x5cd479=601,_0x5aa98a=_0x53b2da;if(navigator[_0x5aa98a(825)]){setButtonBusy(DOM[_0x5aa98a(_0x48b7de__0x3b495b)],!0,_0x5aa98a(_0x48b7de__0x2299f4)),setWebsiteLocationText("Getting an accurate GPS location. Please wait...",!1);try{const _0x1692c8=await getCurrentPosition(),_0x1dcc6d=Number(_0x1692c8[_0x5aa98a(831)][_0x5aa98a(_0x48b7de__0x4d0aee)]),_0x2569e9=Number(_0x1692c8[_0x5aa98a(_0x48b7de__0x7aa06b)][_0x5aa98a(_0x48b7de__0x4658e1)]),_0x5745c7=Number(_0x1692c8[_0x5aa98a(_0x48b7de__0x3bc087)][_0x5aa98a(781)]);if(!Number[_0x5aa98a(751)](_0x1dcc6d)||!Number.isFinite(_0x2569e9)||_0x1dcc6d<-90||_0x1dcc6d>90||_0x2569e9<-180||_0x2569e9>180)throw new Error(_0x5aa98a(_0x48b7de__0x2790eb));if(!Number[_0x5aa98a(_0x48b7de__0x497b42)](_0x5745c7)||_0x5745c7<=0)throw new Error(_0x5aa98a(_0x48b7de__0x5271a4));if(_0x5745c7>CONFIG[_0x5aa98a(1036)])throw new Error("Location accuracy is too low (approximately "+Math.round(_0x5745c7)+" metres). Please enable precise location, stay at the business location, and try again.");state.location={verified:!0,latitude:_0x1dcc6d,longitude:_0x2569e9,accuracy:_0x5745c7,verifiedAt:(new Date)[_0x5aa98a(_0x48b7de__0x51556d)]()},updateWebsiteLocationDetails(),setWebsiteLocationText(_0x5aa98a(_0x48b7de__0x2757ca)+Math[_0x5aa98a(_0x48b7de__0x35ef55)](_0x5745c7)+_0x5aa98a(_0x48b7de__0x1905e4),!0),showToast(_0x5aa98a(988),"success")}catch(_0x22308d){state[_0x5aa98a(_0x48b7de__0x5cd479)]={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},updateWebsiteLocationDetails(),setWebsiteLocationText(getLocationErrorMessage(_0x22308d),!1)}finally{setButtonBusy(DOM[_0x5aa98a(_0x48b7de__0x3b495b)],!1)}}else setWebsiteLocationText("Location services are not supported by this browser.",!1)}function setWebsiteLocationText(_0xa53d13,_0x20bc3d){const _0x554964__0x14ea61=457,_0x554964__0x1420a3=724,_0x554964__0x4ad00a=523,_0x512f85=_0x53b2da;DOM.websiteLocationStatusText&&(DOM[_0x512f85(_0x554964__0x14ea61)][_0x512f85(_0x554964__0x1420a3)]=_0xa53d13),DOM.websiteLocationStatusIndicator&&DOM.websiteLocationStatusIndicator[_0x512f85(_0x554964__0x4ad00a)].toggle("is-verified",Boolean(_0x20bc3d))}function updateWebsiteLocationDetails(){const _0x195ae6__0x3c1546=724,_0x195ae6__0x224ae2=658,_0x195ae6__0x27031b=1061,_0x195ae6__0x14b41c=1061,_0x195ae6__0x24d151=492,_0x195ae6__0x447137=658,_0x195ae6__0x6f5b90=772,_0x195ae6__0x3c91cd=724,_0x195ae6__0x548129=893,_0x195ae6__0xfb5ab8=878,_0x195ae6__0x21fb15=886,_0x195ae6__0x29a68a=485,_0x376255=_0x53b2da,_0x4b1bc4=state[_0x376255(601)];DOM[_0x376255(894)]&&(DOM.websiteLocationLatitude[_0x376255(_0x195ae6__0x3c1546)]=Number[_0x376255(751)](_0x4b1bc4.latitude)?_0x4b1bc4[_0x376255(1048)][_0x376255(_0x195ae6__0x224ae2)](6):"—"),DOM[_0x376255(_0x195ae6__0x27031b)]&&(DOM[_0x376255(_0x195ae6__0x14b41c)][_0x376255(_0x195ae6__0x3c1546)]=Number.isFinite(_0x4b1bc4.longitude)?_0x4b1bc4[_0x376255(_0x195ae6__0x24d151)][_0x376255(_0x195ae6__0x447137)](6):"—"),DOM[_0x376255(772)]&&(DOM[_0x376255(_0x195ae6__0x6f5b90)][_0x376255(_0x195ae6__0x3c91cd)]=_0x4b1bc4[_0x376255(1064)]?new Date(_0x4b1bc4.verifiedAt)[_0x376255(_0x195ae6__0x548129)](_0x376255(_0x195ae6__0xfb5ab8)):"—"),DOM[_0x376255(_0x195ae6__0x21fb15)]&&(DOM.websiteLocationDetails.hidden=!_0x4b1bc4[_0x376255(_0x195ae6__0x29a68a)])}function saveWebsiteData(){const _0x676e33__0x4503d3=734,_0x676e33__0x4b5edf=618,_0x676e33__0x4f3a8b=1011,_0x676e33__0xfb6a20=614,_0x676e33__0x1e07c6=814,_0x52afae=_0x53b2da;try{localStorage[_0x52afae(872)](CONFIG.WEBSITE_STORAGE_KEY,JSON[_0x52afae(_0x676e33__0x4503d3)]({sections:state[_0x52afae(1011)][_0x52afae(_0x676e33__0x4b5edf)],footer:state[_0x52afae(_0x676e33__0x4f3a8b)].footer}))}catch(_0x1a2c4c){console[_0x52afae(_0x676e33__0xfb6a20)](_0x52afae(_0x676e33__0x1e07c6),_0x1a2c4c)}}function loadWebsiteData(){const _0x15fec6__0x5dfe48=960,_0x15fec6__0x4a2833=508,_0x15fec6__0x54a7e4=1011,_0x15fec6__0x147770=552,_0x15fec6__0x4ecee5=1029,_0x15fec6__0x305cab=618,_0x15fec6__0x1a797c=465,_0x15fec6__0x207f3a=509,_0x15fec6__0x448a11=614,_0x8cabfa=_0x53b2da;try{const _0x118ad2=localStorage[_0x8cabfa(_0x15fec6__0x5dfe48)](CONFIG[_0x8cabfa(_0x15fec6__0x4a2833)]);if(!_0x118ad2)return state[_0x8cabfa(_0x15fec6__0x54a7e4)]={sections:[],footer:{items:[]}},!1;const _0x2368e7=JSON[_0x8cabfa(_0x15fec6__0x147770)](_0x118ad2);return!(!_0x2368e7||!Array[_0x8cabfa(_0x15fec6__0x4ecee5)](_0x2368e7.sections))&&(state[_0x8cabfa(1011)]={sections:sanitizeWebsiteSections(_0x2368e7[_0x8cabfa(_0x15fec6__0x305cab)]),footer:{items:sanitizeWebsiteFooter(_0x2368e7[_0x8cabfa(_0x15fec6__0x1a797c)]&&Array[_0x8cabfa(_0x15fec6__0x4ecee5)](_0x2368e7.footer[_0x8cabfa(_0x15fec6__0x207f3a)])?_0x2368e7[_0x8cabfa(465)].items:[])}},!0)}catch(_0x33ee8a){return console[_0x8cabfa(_0x15fec6__0x448a11)]("Could not load Website data.",_0x33ee8a),!1}}function clearWebsiteData(){const _0x487b3e__0x15237d=614,_0x487b3e__0x256f11=816,_0x49b182=_0x53b2da;try{localStorage[_0x49b182(474)](CONFIG[_0x49b182(508)])}catch(_0x32824e){console[_0x49b182(_0x487b3e__0x15237d)](_0x49b182(_0x487b3e__0x256f11),_0x32824e)}state[_0x49b182(1011)]={sections:[],footer:{items:[]}}}function sanitizeWebsiteSections(_0x2c5abc){const _0x52c281__0x5345f2=516,_0x3dc543=_0x53b2da;return _0x2c5abc[_0x3dc543(896)](0,WEBSITE_MAX_SECTIONS)[_0x3dc543(_0x52c281__0x5345f2)]((_0x1ad3b6,_0x166dcb)=>({id:typeof _0x1ad3b6.id===_0x3dc543(695)&&_0x1ad3b6.id?_0x1ad3b6.id:createId(_0x3dc543(712)),heading:normalizeText(_0x1ad3b6.heading,300)||"Section "+(_0x166dcb+1),blocks:sanitizeWebsiteBlocks(Array[_0x3dc543(1029)](_0x1ad3b6.blocks)?_0x1ad3b6[_0x3dc543(609)]:[])}))}function sanitizeWebsiteBlocks(_0x7239cf){const _0x4f4e2f__0x9656fc=613,_0x4f4e2f__0x48bff5=695,_0x4f4e2f__0x5269ab=690,_0x4f4e2f__0x4e8d8=1045,_0x4f4e2f__0x38f036=1067,_0x4f4e2f__0x307693=695,_0x4f4e2f__0x1b11cc=961,_0x4f4e2f__0x51b930=758,_0x4f4e2f__0x11760c=1072,_0x4f4e2f__0x51ddc5=509,_0x4f4e2f__0x57a0b3=896,_0x2e1ac4=_0x53b2da;return _0x7239cf[_0x2e1ac4(896)](0,100)[_0x2e1ac4(516)](_0x4ed6ec=>{const _0x3d79c6=_0x2e1ac4;return _0x4ed6ec&&typeof _0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x9656fc)]===_0x3d79c6(_0x4f4e2f__0x48bff5)?"paragraph"===_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x9656fc)]?{id:"string"==typeof _0x4ed6ec.id?_0x4ed6ec.id:createId(_0x3d79c6(_0x4f4e2f__0x5269ab)),type:_0x3d79c6(_0x4f4e2f__0x4e8d8),text:normalizeText(_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x38f036)],WEBSITE_MAX_TEXT_LENGTH)}:"subparagraph"===_0x4ed6ec[_0x3d79c6(613)]?{id:typeof _0x4ed6ec.id===_0x3d79c6(_0x4f4e2f__0x307693)?_0x4ed6ec.id:createId(_0x3d79c6(_0x4f4e2f__0x5269ab)),type:"subparagraph",text:normalizeText(_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x38f036)],WEBSITE_MAX_TEXT_LENGTH)}:_0x4ed6ec.type===_0x3d79c6(_0x4f4e2f__0x1b11cc)?{id:"string"==typeof _0x4ed6ec.id?_0x4ed6ec.id:createId(_0x3d79c6(_0x4f4e2f__0x5269ab)),type:_0x3d79c6(961),items:sanitizeUrlItems(_0x4ed6ec[_0x3d79c6(509)],WEBSITE_MAX_IMAGES_PER_BLOCK)}:"videos"===_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x9656fc)]?{id:"string"==typeof _0x4ed6ec.id?_0x4ed6ec.id:createId(_0x3d79c6(_0x4f4e2f__0x5269ab)),type:_0x3d79c6(_0x4f4e2f__0x51b930),items:sanitizeUrlItems(_0x4ed6ec[_0x3d79c6(509)],WEBSITE_MAX_VIDEOS_PER_BLOCK)}:_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x9656fc)]===_0x3d79c6(1072)?{id:"string"==typeof _0x4ed6ec.id?_0x4ed6ec.id:createId(_0x3d79c6(690)),type:_0x3d79c6(_0x4f4e2f__0x11760c),items:Array.isArray(_0x4ed6ec[_0x3d79c6(509)])?_0x4ed6ec[_0x3d79c6(_0x4f4e2f__0x51ddc5)][_0x3d79c6(_0x4f4e2f__0x57a0b3)](0,WEBSITE_MAX_LINKS_PER_BLOCK).map(_0x66a36f=>({id:_0x66a36f&&typeof _0x66a36f.id===_0x3d79c6(695)&&_0x66a36f.id?_0x66a36f.id:createId(_0x3d79c6(651)),name:normalizeText(_0x66a36f&&_0x66a36f.name,150),url:normalizeText(_0x66a36f&&_0x66a36f[_0x3d79c6(572)],WEBSITE_MAX_URL_LENGTH)})).filter(_0x49d7e8=>_0x49d7e8[_0x3d79c6(1040)]||_0x49d7e8[_0x3d79c6(572)]):[]}:null:null}).filter(Boolean)}function sanitizeUrlItems(_0x3d889d,_0x9bf3d8){const _0x4ece44__0x2b8e9a=516,_0x4ece44__0x51f795=516,_0x4ece44__0x2bde1c=670,_0x19bb6c=_0x53b2da;return Array.isArray(_0x3d889d)?_0x3d889d.slice(0,_0x9bf3d8)[_0x19bb6c(_0x4ece44__0x2b8e9a)](_0xbf8909=>typeof _0xbf8909===_0x19bb6c(695)?_0xbf8909:_0xbf8909&&"string"==typeof _0xbf8909.url?_0xbf8909.url:"")[_0x19bb6c(_0x4ece44__0x51f795)](_0x23c51d=>normalizeText(_0x23c51d,WEBSITE_MAX_URL_LENGTH))[_0x19bb6c(_0x4ece44__0x2bde1c)](Boolean):[]}function sanitizeWebsiteFooter(_0x487d8d){const _0x5d3928__0x577369=670,_0x1f0d72=_0x53b2da;return _0x487d8d[_0x1f0d72(896)](0,WEBSITE_MAX_FOOTER_LINKS)[_0x1f0d72(516)](_0x4900c2=>({id:"string"==typeof _0x4900c2.id?_0x4900c2.id:createId(_0x1f0d72(465)),name:normalizeText(_0x4900c2[_0x1f0d72(1040)],150),url:normalizeText(_0x4900c2[_0x1f0d72(572)],WEBSITE_MAX_URL_LENGTH)}))[_0x1f0d72(_0x5d3928__0x577369)](_0x5aea24=>_0x5aea24[_0x1f0d72(1040)]||_0x5aea24[_0x1f0d72(572)])}function addWebsiteSection(){const _0x10d997__0x533a71=618,_0x10d997__0x67f728=1043,_0x10d997__0x43672b=596,_0x10d997__0x11de60=964,_0x10d997__0x245547=681,_0x10d997__0x176f64=1063,_0x10d997__0x1ce784=612,_0x10d997__0x2d6a5b=618,_0x10d997__0x2543de=712,_0x37aa7e=_0x53b2da;if(state[_0x37aa7e(1011)][_0x37aa7e(_0x10d997__0x533a71)][_0x37aa7e(_0x10d997__0x67f728)]>=WEBSITE_MAX_SECTIONS)return void showToast(_0x37aa7e(_0x10d997__0x43672b)+WEBSITE_MAX_SECTIONS+_0x37aa7e(_0x10d997__0x11de60),_0x37aa7e(_0x10d997__0x245547));const _0x53f6c0=window[_0x37aa7e(_0x10d997__0x176f64)]("Enter section heading:");if(null===_0x53f6c0)return;const _0x12599b=normalizeText(_0x53f6c0,300);_0x12599b?(state[_0x37aa7e(1011)][_0x37aa7e(_0x10d997__0x2d6a5b)].push({id:createId(_0x37aa7e(_0x10d997__0x2543de)),heading:_0x12599b,blocks:[]}),saveWebsiteData(),renderWebsiteSections(),showToast(_0x37aa7e(1001),"success")):showToast(_0x37aa7e(_0x10d997__0x1ce784),_0x37aa7e(_0x10d997__0x245547))}function editWebsiteSection(_0x237eee){const _0x5c716b__0x400aa2=994,_0x5c716b__0x2dcfe7=735,_0x5c716b__0xbaddc1=681,_0x12ec3=_0x53b2da,_0x5d7085=findWebsiteSection(_0x237eee);if(!_0x5d7085)return;const _0x30c0fa=window[_0x12ec3(1063)]("Edit section heading:",_0x5d7085[_0x12ec3(_0x5c716b__0x400aa2)]);if(null===_0x30c0fa)return;const _0x4f5e3d=normalizeText(_0x30c0fa,300);_0x4f5e3d?(_0x5d7085[_0x12ec3(994)]=_0x4f5e3d,saveWebsiteData(),renderWebsiteSections(),showToast("Section updated.","success")):showToast(_0x12ec3(_0x5c716b__0x2dcfe7),_0x12ec3(_0x5c716b__0xbaddc1))}function moveWebsiteSection(_0x6b6114,_0x44bcc8){const _0x5b06bb__0x219404=1028,_0x5b06bb__0x371336=1043,_0x5b06bb__0x5db7b9=618,_0x5b06bb__0xbce5ed=618,_0x457112=_0x53b2da,_0x343585=state.website.sections[_0x457112(_0x5b06bb__0x219404)](_0x95e9ca=>_0x95e9ca.id===_0x6b6114);if(_0x343585<0)return;const _0x1e9fd7="up"===_0x44bcc8?_0x343585-1:_0x343585+1;if(_0x1e9fd7<0||_0x1e9fd7>=state.website.sections[_0x457112(_0x5b06bb__0x371336)])return;const _0x576a48=state[_0x457112(1011)][_0x457112(_0x5b06bb__0x5db7b9)][_0x343585];state[_0x457112(1011)][_0x457112(618)][_0x343585]=state.website[_0x457112(_0x5b06bb__0xbce5ed)][_0x1e9fd7],state.website.sections[_0x1e9fd7]=_0x576a48,saveWebsiteData(),renderWebsiteSections()}function deleteWebsiteSection(_0x5db2a5){const _0x573336__0x4fd1c6=994,_0x573336__0x467c03=1011,_0x573336__0x1b2e4d=1011,_0x131433=_0x53b2da,_0xaa0b30=findWebsiteSection(_0x5db2a5);_0xaa0b30&&window[_0x131433(892)]('Delete section "'+_0xaa0b30[_0x131433(_0x573336__0x4fd1c6)]+'"?')&&(state[_0x131433(_0x573336__0x467c03)].sections=state[_0x131433(_0x573336__0x1b2e4d)].sections[_0x131433(670)](_0x3edb87=>_0x3edb87.id!==_0x5db2a5),saveWebsiteData(),renderWebsiteSections(),showToast(_0x131433(673),"success"))}function findWebsiteSection(_0x44334b){const _0x30b1f9=_0x53b2da;return state[_0x30b1f9(1011)][_0x30b1f9(618)].find(_0x585ff4=>_0x585ff4.id===_0x44334b)||null}function renderWebsiteSections(){const _0x3deaf2__0x2f43f3=518,_0x3deaf2__0x394980=1011,_0x3deaf2__0x22185c=618,_0x3deaf2__0x48a70e=678,_0x3deaf2__0x41db72=678,_0x3deaf2__0x4b981f=909,_0x4118ec__0x53586f=423,_0x4118ec__0x5ba7ad=1021,_0x4118ec__0x54e02d=431,_0x4118ec__0x1a5533=799,_0x4118ec__0x4481eb=423,_0x4118ec__0x3a0dd7=793,_0x4118ec__0x16a260=799,_0x4118ec__0x410356=667,_0x4118ec__0x3c7757=667,_0x4118ec__0x5d7fe6=994,_0x4118ec__0x2943c9=423,_0x4118ec__0x1534f5=1092,_0x4118ec__0x49b48b=394,_0x4118ec__0x1adf73=624,_0x4118ec__0x1ad747=469,_0x4118ec__0x5a8956=742,_0x4118ec__0x4f997d=428,_0x4118ec__0x10c61c=799,_0x4118ec__0x5dd92a=423,_0x4118ec__0x5587aa=420,_0x4118ec__0x115749=609,_0x4118ec__0x4040c2=909,_0x4118ec__0x37a66b=1043,_0x4118ec__0x41ed85=799,_0x4118ec__0x15946=1060,_0x4118ec__0x4bad5d=667,_0x4118ec__0x2d7d83=889,_0x4118ec__0x336178=1045,_0x4118ec__0x5a5c3b=502,_0x4118ec__0x4a2b23=971,_0x4118ec__0x52faa9=758,_0x4118ec__0x3ab426=1072,_0x4118ec__0x5385e7=909,_0x4118ec__0x56e351=667,_0x4e4921=_0x53b2da;if(!DOM[_0x4e4921(865)])return;DOM[_0x4e4921(865)][_0x4e4921(_0x3deaf2__0x2f43f3)]();const _0x504f51=state[_0x4e4921(_0x3deaf2__0x394980)][_0x4e4921(_0x3deaf2__0x22185c)];DOM[_0x4e4921(_0x3deaf2__0x48a70e)]&&(DOM[_0x4e4921(_0x3deaf2__0x41db72)][_0x4e4921(1088)]=_0x504f51[_0x4e4921(1043)]>0),_0x504f51[_0x4e4921(_0x3deaf2__0x4b981f)]((_0x1ce0ef,_0x1440d6)=>{const _0x44baf9__0x236f09=613,_0x44baf9__0x4797b4=796,_0x44baf9__0x258a0e=529,_0x44baf9__0x47511b=1052,_0x44baf9__0x213d1e=665,_0x44baf9__0x5a8ead=1052,_0x44baf9__0x29175b=667,_0x12a271__0x2dabb4=667,_0xea9975=_0x4e4921,_0xf31cf3=document[_0xea9975(_0x4118ec__0x53586f)](_0xea9975(1012));_0xf31cf3[_0xea9975(799)]=_0xea9975(_0x4118ec__0x5ba7ad);const _0xbd5c1=document[_0xea9975(423)](_0xea9975(_0x4118ec__0x54e02d));_0xbd5c1[_0xea9975(_0x4118ec__0x1a5533)]="website-section-card__header";const _0x49e53a=document.createElement("div");_0x49e53a[_0xea9975(799)]=_0xea9975(686);const _0x7b90f2=document[_0xea9975(_0x4118ec__0x4481eb)]("h4"),_0x30b09f=document[_0xea9975(423)](_0xea9975(_0x4118ec__0x3a0dd7));_0x30b09f[_0xea9975(_0x4118ec__0x16a260)]=_0xea9975(905),_0x30b09f.textContent=String(_0x1440d6+1),_0x7b90f2[_0xea9975(_0x4118ec__0x410356)](_0x30b09f),_0x7b90f2[_0xea9975(_0x4118ec__0x3c7757)](document[_0xea9975(573)](_0x1ce0ef[_0xea9975(_0x4118ec__0x5d7fe6)])),_0x49e53a[_0xea9975(_0x4118ec__0x410356)](_0x7b90f2);const _0x109145=document[_0xea9975(_0x4118ec__0x2943c9)](_0xea9975(_0x4118ec__0x54e02d));_0x109145[_0xea9975(799)]=_0xea9975(_0x4118ec__0x1534f5),_0x109145[_0xea9975(667)](createWebsiteActionButton(_0xea9975(_0x4118ec__0x49b48b),_0xea9975(_0x4118ec__0x1adf73),_0x1ce0ef.id)),_0x109145[_0xea9975(_0x4118ec__0x410356)](createWebsiteActionButton("↑",_0xea9975(_0x4118ec__0x1ad747),_0x1ce0ef.id,0===_0x1440d6)),_0x109145.appendChild(createWebsiteActionButton("↓",_0xea9975(592),_0x1ce0ef.id,_0x1440d6===_0x504f51.length-1)),_0x109145[_0xea9975(667)](createWebsiteActionButton(_0xea9975(_0x4118ec__0x5a8956),_0xea9975(_0x4118ec__0x4f997d),_0x1ce0ef.id)),_0xbd5c1.appendChild(_0x49e53a),_0xbd5c1[_0xea9975(_0x4118ec__0x3c7757)](_0x109145);const _0xfe88ac=document[_0xea9975(_0x4118ec__0x4481eb)]("div");_0xfe88ac[_0xea9975(_0x4118ec__0x10c61c)]="website-section-card__body";const _0x248cd5=document[_0xea9975(_0x4118ec__0x5dd92a)](_0xea9975(431));if(_0x248cd5[_0xea9975(799)]=_0xea9975(_0x4118ec__0x5587aa),_0x1ce0ef[_0xea9975(_0x4118ec__0x115749)][_0xea9975(_0x4118ec__0x4040c2)](_0x4a96cc=>{_0x248cd5[_0xea9975(_0x12a271__0x2dabb4)](renderWebsiteBlock(_0x1ce0ef,_0x4a96cc))}),0===_0x1ce0ef[_0xea9975(_0x4118ec__0x115749)][_0xea9975(_0x4118ec__0x37a66b)]){const _0x59d180=document.createElement("div");_0x59d180[_0xea9975(_0x4118ec__0x41ed85)]="website-content-empty",_0x59d180[_0xea9975(724)]=_0xea9975(_0x4118ec__0x15946),_0x248cd5[_0xea9975(_0x4118ec__0x4bad5d)](_0x59d180)}_0xfe88ac[_0xea9975(667)](_0x248cd5);const _0x4ae233=document[_0xea9975(423)](_0xea9975(431));_0x4ae233.className=_0xea9975(1049),[[_0xea9975(_0x4118ec__0x2d7d83),_0xea9975(_0x4118ec__0x336178)],[_0xea9975(858),_0xea9975(_0x4118ec__0x5a5c3b)],[_0xea9975(619),"images"],[_0xea9975(_0x4118ec__0x4a2b23),_0xea9975(_0x4118ec__0x52faa9)],["Link Buttons",_0xea9975(_0x4118ec__0x3ab426)]][_0xea9975(_0x4118ec__0x5385e7)](([_0xd42d4a,_0x3f2039])=>{const _0x9f5232=_0xea9975,_0x22c91b=document[_0x9f5232(423)]("button");_0x22c91b[_0x9f5232(_0x44baf9__0x236f09)]=_0x9f5232(461),_0x22c91b[_0x9f5232(799)]=_0x9f5232(930),_0x22c91b[_0x9f5232(1052)][_0x9f5232(_0x44baf9__0x4797b4)]=_0x9f5232(_0x44baf9__0x258a0e),_0x22c91b[_0x9f5232(_0x44baf9__0x47511b)][_0x9f5232(_0x44baf9__0x213d1e)]=_0x1ce0ef.id,_0x22c91b[_0x9f5232(_0x44baf9__0x5a8ead)][_0x9f5232(771)]=_0x3f2039,_0x22c91b.textContent="+ "+_0xd42d4a,_0x4ae233[_0x9f5232(_0x44baf9__0x29175b)](_0x22c91b)}),_0xfe88ac[_0xea9975(_0x4118ec__0x3c7757)](_0x4ae233),_0xf31cf3[_0xea9975(_0x4118ec__0x4bad5d)](_0xbd5c1),_0xf31cf3.appendChild(_0xfe88ac),DOM[_0xea9975(865)][_0xea9975(_0x4118ec__0x56e351)](_0xf31cf3)})}function createWebsiteActionButton(_0x25a583,_0x476d70,_0x5d5fe3,_0x102feb=!1){const _0x466473__0x1d89d5=461,_0x466473__0x374a9d=613,_0x466473__0x144edc=796,_0x466473__0x10b166=1052,_0x466473__0x15b6c2=665,_0x46b392=_0x53b2da,_0x459951=document[_0x46b392(423)](_0x46b392(_0x466473__0x1d89d5));return _0x459951[_0x46b392(_0x466473__0x374a9d)]=_0x46b392(461),_0x459951.className="secondary-button secondary-button--small",_0x459951.dataset[_0x46b392(_0x466473__0x144edc)]=_0x476d70,_0x459951[_0x46b392(_0x466473__0x10b166)][_0x46b392(_0x466473__0x15b6c2)]=_0x5d5fe3,_0x459951[_0x46b392(724)]=_0x25a583,_0x459951.disabled=_0x102feb,_0x459951}function renderWebsiteBlock(_0x4f4d06,_0x41c72e){const _0x4bc36b__0x187860=664,_0x4bc36b__0x2eb73c=423,_0x4bc36b__0x50ddf4=431,_0x4bc36b__0x8e8e94=818,_0x4bc36b__0x1e8ce3=799,_0x4bc36b__0x307d12=724,_0x4bc36b__0x3e1922=569,_0x4bc36b__0x572d41=423,_0x4bc36b__0x552072=461,_0x4bc36b__0x564b4a=930,_0x4bc36b__0x28f40b=1052,_0x4bc36b__0x7d499e=876,_0x4bc36b__0x588841=1052,_0x4bc36b__0x9ed14b=665,_0x4bc36b__0x5b8cd=1052,_0x4bc36b__0x285f4e=436,_0x4bc36b__0x1017d4=1052,_0x4bc36b__0x5d3144=796,_0x4bc36b__0x1a8266=1058,_0x4bc36b__0x5d238a=1052,_0x4bc36b__0x40fbfd=1052,_0x4bc36b__0x429979=436,_0x4bc36b__0x1d5500=667,_0x4bc36b__0x5e1bc6=667,_0x4bc36b__0x286f46=945,_0x558d83=_0x53b2da,_0x54dfc8=document.createElement("div");_0x54dfc8[_0x558d83(799)]=_0x558d83(_0x4bc36b__0x187860);const _0x518605=document[_0x558d83(_0x4bc36b__0x2eb73c)](_0x558d83(_0x4bc36b__0x50ddf4));_0x518605.className=_0x558d83(_0x4bc36b__0x8e8e94);const _0xfd40c3=document.createElement("span");_0xfd40c3[_0x558d83(_0x4bc36b__0x1e8ce3)]="website-content-block__type",_0xfd40c3[_0x558d83(_0x4bc36b__0x307d12)]=getWebsiteBlockLabel(_0x41c72e.type);const _0x40ba27=document.createElement(_0x558d83(_0x4bc36b__0x50ddf4));_0x40ba27[_0x558d83(_0x4bc36b__0x1e8ce3)]=_0x558d83(_0x4bc36b__0x3e1922);const _0x524333=document[_0x558d83(_0x4bc36b__0x572d41)]("button");_0x524333.type=_0x558d83(_0x4bc36b__0x552072),_0x524333.textContent=_0x558d83(394),_0x524333.className=_0x558d83(_0x4bc36b__0x564b4a),_0x524333[_0x558d83(_0x4bc36b__0x28f40b)][_0x558d83(796)]=_0x558d83(_0x4bc36b__0x7d499e),_0x524333[_0x558d83(_0x4bc36b__0x588841)][_0x558d83(_0x4bc36b__0x9ed14b)]=_0x4f4d06.id,_0x524333[_0x558d83(_0x4bc36b__0x5b8cd)][_0x558d83(_0x4bc36b__0x285f4e)]=_0x41c72e.id;const _0x866d64=document[_0x558d83(_0x4bc36b__0x572d41)]("button");_0x866d64[_0x558d83(613)]=_0x558d83(461),_0x866d64[_0x558d83(724)]="Delete",_0x866d64[_0x558d83(_0x4bc36b__0x1e8ce3)]="secondary-button secondary-button--small",_0x866d64[_0x558d83(_0x4bc36b__0x1017d4)][_0x558d83(_0x4bc36b__0x5d3144)]=_0x558d83(_0x4bc36b__0x1a8266),_0x866d64[_0x558d83(_0x4bc36b__0x5d238a)][_0x558d83(_0x4bc36b__0x9ed14b)]=_0x4f4d06.id,_0x866d64[_0x558d83(_0x4bc36b__0x40fbfd)][_0x558d83(_0x4bc36b__0x429979)]=_0x41c72e.id,_0x40ba27[_0x558d83(_0x4bc36b__0x1d5500)](_0x524333),_0x40ba27[_0x558d83(_0x4bc36b__0x1d5500)](_0x866d64),_0x518605[_0x558d83(_0x4bc36b__0x5e1bc6)](_0xfd40c3),_0x518605[_0x558d83(_0x4bc36b__0x1d5500)](_0x40ba27);const _0x2e8344=document[_0x558d83(_0x4bc36b__0x2eb73c)]("div");return _0x2e8344[_0x558d83(_0x4bc36b__0x1e8ce3)]=_0x558d83(_0x4bc36b__0x286f46),renderWebsiteBlockPreview(_0x2e8344,_0x41c72e),_0x54dfc8[_0x558d83(667)](_0x518605),_0x54dfc8.appendChild(_0x2e8344),_0x54dfc8}function getWebsiteBlockLabel(_0x5291ab){const _0x1c6142__0x4eea6e=554,_0x2e00fa=_0x53b2da;return{paragraph:"Paragraph",subparagraph:_0x2e00fa(858),images:_0x2e00fa(619),videos:_0x2e00fa(971),links:_0x2e00fa(_0x1c6142__0x4eea6e)}[_0x5291ab]||_0x2e00fa(1085)}function renderWebsiteBlockPreview(_0x41bbfa,_0x503072){const _0x4a266a__0x5a7471=613,_0x4a266a__0x16cede=1045,_0x4a266a__0x39f505=423,_0x4a266a__0x5231b=1067,_0x4a266a__0x1ff40e=586,_0x4a266a__0x4a051e=667,_0x4a266a__0xa4fb2b=502,_0x4a266a__0x49d005=423,_0x4a266a__0x5d64c9=527,_0x4a266a__0x484519=550,_0x4a266a__0x4f83c6=761,_0x4a266a__0xafd3c8=555,_0x4a266a__0x92a55f=724,_0x4a266a__0x2f75bc=1067,_0x4a266a__0x55e094=608,_0x4a266a__0x1eb5c9=961,_0x4a266a__0x133cc8=799,_0x4a266a__0x28254a=845,_0x4a266a__0x5e2498=509,_0x4a266a__0x3cccc7=909,_0x4a266a__0x4e61f4=1043,_0x4a266a__0xa48970=867,_0x4a266a__0x23d37d=758,_0x4a266a__0x4b9f64=408,_0x4a266a__0x184fc3=724,_0x4a266a__0x2513d9=1044,_0x4a266a__0x2e229b=1072,_0x4a266a__0x3a85c2=509,_0x4a266a__0x143217=909,_0x4a266a__0x470f99=408,_0x4a266a__0x52d1b1=808,_0x4f75d5__0x207633=423,_0x4f75d5__0x1b28a6=799,_0x4f75d5__0x15f1c8=472,_0x4f75d5__0x377f33=648,_0x4f75d5__0xc04c81=1040,_0x19013e__0x16067e=423,_0x19013e__0x861f3b=429,_0x19013e__0x409d76=458,_0x19013e__0x15a042=507,_0x19013e__0x359931=1053,_0x19013e__0x8d847a=423,_0x19013e__0x27db9b=730,_0x19013e__0x60d392=572,_0x19013e__0x20ccfd=755,_0x19013e__0x17f82a=850,_0x19013e__0x5ba306=942,_0x19013e__0x1ccba8=844,_0x19013e__0xf3230b=667,_0x19013e__0x30799e=667,_0x57ede9__0x45cfbe=488,_0x57ede9__0x2a74ee=525,_0x57ede9__0x22bdf9=667,_0x348dbb=_0x53b2da;if(_0x503072[_0x348dbb(_0x4a266a__0x5a7471)]===_0x348dbb(_0x4a266a__0x16cede)){const _0x1dd04b=document[_0x348dbb(_0x4a266a__0x39f505)]("p");return _0x1dd04b.textContent=_0x503072[_0x348dbb(_0x4a266a__0x5231b)]||_0x348dbb(_0x4a266a__0x1ff40e),void _0x41bbfa[_0x348dbb(_0x4a266a__0x4a051e)](_0x1dd04b)}if(_0x503072[_0x348dbb(613)]===_0x348dbb(_0x4a266a__0xa4fb2b)){const _0x418e6a=document[_0x348dbb(_0x4a266a__0x49d005)]("p");return _0x418e6a[_0x348dbb(_0x4a266a__0x5d64c9)][_0x348dbb(_0x4a266a__0x484519)]=_0x348dbb(_0x4a266a__0x4f83c6),_0x418e6a.style.color=_0x348dbb(_0x4a266a__0xafd3c8),_0x418e6a[_0x348dbb(_0x4a266a__0x92a55f)]=_0x503072[_0x348dbb(_0x4a266a__0x2f75bc)]||_0x348dbb(_0x4a266a__0x55e094),void _0x41bbfa.appendChild(_0x418e6a)}if(_0x503072[_0x348dbb(_0x4a266a__0x5a7471)]===_0x348dbb(_0x4a266a__0x1eb5c9)){const _0x5f085a=document[_0x348dbb(_0x4a266a__0x49d005)]("div");return _0x5f085a[_0x348dbb(_0x4a266a__0x133cc8)]=_0x348dbb(_0x4a266a__0x28254a),_0x503072[_0x348dbb(_0x4a266a__0x5e2498)][_0x348dbb(_0x4a266a__0x3cccc7)](_0x4cfffe=>{const _0x12140c=_0x348dbb,_0x2cc8bd=document.createElement(_0x12140c(_0x57ede9__0x45cfbe));_0x2cc8bd.src=_0x4cfffe,_0x2cc8bd[_0x12140c(_0x57ede9__0x2a74ee)]="Website image",_0x2cc8bd.loading=_0x12140c(942),_0x2cc8bd.referrerPolicy=_0x12140c(986),_0x5f085a[_0x12140c(_0x57ede9__0x22bdf9)](_0x2cc8bd)}),0===_0x503072[_0x348dbb(509)][_0x348dbb(_0x4a266a__0x4e61f4)]&&(_0x5f085a[_0x348dbb(_0x4a266a__0x92a55f)]=_0x348dbb(_0x4a266a__0xa48970)),void _0x41bbfa.appendChild(_0x5f085a)}if(_0x503072[_0x348dbb(_0x4a266a__0x5a7471)]===_0x348dbb(_0x4a266a__0x23d37d)){const _0x37647a=document[_0x348dbb(423)]("div");return _0x37647a[_0x348dbb(799)]=_0x348dbb(829),_0x503072.items.forEach(_0x592a38=>{const _0x40c93c=_0x348dbb,_0x362a2f=getYoutubeEmbedData(_0x592a38);if(!_0x362a2f)return;const _0x59a190=document[_0x40c93c(_0x19013e__0x16067e)]("div");_0x59a190[_0x40c93c(799)]=_0x40c93c(_0x19013e__0x861f3b),_0x362a2f[_0x40c93c(_0x19013e__0x409d76)]&&_0x59a190[_0x40c93c(523)][_0x40c93c(_0x19013e__0x15a042)](_0x40c93c(_0x19013e__0x359931));const _0x467c8b=document[_0x40c93c(_0x19013e__0x8d847a)](_0x40c93c(_0x19013e__0x27db9b));_0x467c8b.src=_0x362a2f[_0x40c93c(_0x19013e__0x60d392)],_0x467c8b[_0x40c93c(577)]=_0x40c93c(_0x19013e__0x20ccfd),_0x467c8b[_0x40c93c(_0x19013e__0x17f82a)]=_0x40c93c(_0x19013e__0x5ba306),_0x467c8b[_0x40c93c(_0x19013e__0x1ccba8)]="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",_0x467c8b.allowFullscreen=!0,_0x59a190[_0x40c93c(_0x19013e__0xf3230b)](_0x467c8b),_0x37647a[_0x40c93c(_0x19013e__0x30799e)](_0x59a190)}),0===_0x37647a[_0x348dbb(_0x4a266a__0x4b9f64)][_0x348dbb(1043)]&&(_0x37647a[_0x348dbb(_0x4a266a__0x184fc3)]=_0x348dbb(_0x4a266a__0x2513d9)),void _0x41bbfa.appendChild(_0x37647a)}_0x503072[_0x348dbb(_0x4a266a__0x5a7471)]===_0x348dbb(_0x4a266a__0x2e229b)&&(_0x503072[_0x348dbb(_0x4a266a__0x3a85c2)][_0x348dbb(_0x4a266a__0x143217)](_0x2828ab=>{const _0x1fc9b7=_0x348dbb;if(!_0x2828ab.name||!isValidHttpsUrl(_0x2828ab[_0x1fc9b7(572)]))return;const _0x28bc14=document[_0x1fc9b7(_0x4f75d5__0x207633)]("a");_0x28bc14[_0x1fc9b7(_0x4f75d5__0x1b28a6)]="website-link-preview",_0x28bc14[_0x1fc9b7(392)]=_0x2828ab.url,_0x28bc14[_0x1fc9b7(_0x4f75d5__0x15f1c8)]="_blank",_0x28bc14[_0x1fc9b7(432)]=_0x1fc9b7(_0x4f75d5__0x377f33),_0x28bc14[_0x1fc9b7(724)]=_0x2828ab[_0x1fc9b7(_0x4f75d5__0xc04c81)],_0x41bbfa.appendChild(_0x28bc14)}),0===_0x41bbfa[_0x348dbb(_0x4a266a__0x470f99)][_0x348dbb(_0x4a266a__0x4e61f4)]&&(_0x41bbfa[_0x348dbb(724)]=_0x348dbb(_0x4a266a__0x52d1b1)))}function handleWebsiteSectionAction(_0x1cc0f8){const _0xaa6fcb__0x4e73ce=514,_0xaa6fcb__0x422896=1052,_0xaa6fcb__0x4c9510=796,_0xaa6fcb__0xc285d2=1052,_0xaa6fcb__0x466f6e=665,_0xaa6fcb__0x1f05f9=624,_0xaa6fcb__0x21be1c=469,_0xaa6fcb__0x1b7b9b=592,_0xaa6fcb__0x511dee=537,_0xaa6fcb__0x1d4bc9=428,_0xaa6fcb__0x34fd61=1052,_0xaa6fcb__0x51bde5=436,_0xaa6fcb__0x463da6=1058,_0xaa6fcb__0x191ccc=1052,_0xaa6fcb__0x1a849b=436,_0x197e6a=_0x53b2da,_0x52dc9b=_0x1cc0f8[_0x197e6a(472)].closest(_0x197e6a(_0xaa6fcb__0x4e73ce));if(!_0x52dc9b)return;const _0x147044=_0x52dc9b[_0x197e6a(_0xaa6fcb__0x422896)][_0x197e6a(_0xaa6fcb__0x4c9510)],_0x56b7f3=_0x52dc9b[_0x197e6a(_0xaa6fcb__0xc285d2)][_0x197e6a(_0xaa6fcb__0x466f6e)];_0x147044!==_0x197e6a(_0xaa6fcb__0x1f05f9)?_0x147044!==_0x197e6a(_0xaa6fcb__0x21be1c)?_0x147044!==_0x197e6a(_0xaa6fcb__0x1b7b9b)?_0x147044!==_0x197e6a(_0xaa6fcb__0x1d4bc9)?"add-content"!==_0x147044?"edit-block"!==_0x147044?_0x147044===_0x197e6a(_0xaa6fcb__0x463da6)&&deleteWebsiteContent(_0x56b7f3,_0x52dc9b[_0x197e6a(_0xaa6fcb__0x191ccc)][_0x197e6a(_0xaa6fcb__0x1a849b)]):editWebsiteContent(_0x56b7f3,_0x52dc9b[_0x197e6a(_0xaa6fcb__0x34fd61)][_0x197e6a(_0xaa6fcb__0x51bde5)]):addWebsiteContent(_0x56b7f3,_0x52dc9b[_0x197e6a(_0xaa6fcb__0xc285d2)][_0x197e6a(771)]):deleteWebsiteSection(_0x56b7f3):moveWebsiteSection(_0x56b7f3,_0x197e6a(_0xaa6fcb__0x511dee)):moveWebsiteSection(_0x56b7f3,"up"):editWebsiteSection(_0x56b7f3)}let websiteContentModalState={mode:"add",sectionId:null,blockId:null,type:null};function openWebsiteContentModal(_0x571a1c,_0x28e7fe,_0x555982=null){const _0x3ad1c7__0x1a09ff=540,_0x3ad1c7__0x3c5105=507,_0x3ad1c7__0x3383e8=1045,_0x3ad1c7__0x557249=502,_0x3ad1c7__0x3c8943=961,_0x3ad1c7__0x5cc2e2=1072,_0x3ad1c7__0x3c2825=633,_0x3ad1c7__0x27d692=633,_0x3ad1c7__0x46ca3d=540,_0x3ad1c7__0x46f702=713,_0x3ad1c7__0x5b889e=935,_0x3ad1c7__0x3e5cb2=481,_0x3ad1c7__0x1a7254=724,_0x3ad1c7__0x45dfc0=631,_0x3ad1c7__0x5673f8=973,_0x3ad1c7__0x21096c=473,_0x3ad1c7__0x3f7d75=806,_0x3ad1c7__0x7c0e07=940,_0x3ad1c7__0x1f2ce7=1088,_0x3ad1c7__0x29003a=405,_0x3ad1c7__0x33b341=1039,_0x3ad1c7__0x9e140=1039,_0x3ad1c7__0x24cf59=703,_0x3ad1c7__0x1f9e34=663,_0x3ad1c7__0xddaf9a=998,_0x3ad1c7__0x3bb220=1090,_0x3ad1c7__0x3db1cb=1067,_0x3ad1c7__0x332e1b=737,_0x3ad1c7__0x1fbab8=724,_0x3ad1c7__0x1523bd=1091,_0x3ad1c7__0x472ca7=935,_0x3ad1c7__0x20da13=404,_0x1eecbf__0xcb381=998,_0x1eecbf__0x34da5e=599,_0x59f44d=_0x53b2da;if(!findWebsiteSection(_0x571a1c))return;websiteContentModalState={mode:_0x59f44d(_0x555982?_0x3ad1c7__0x1a09ff:_0x3ad1c7__0x3c5105),sectionId:_0x571a1c,blockId:_0x555982?_0x555982.id:null,type:_0x28e7fe},clearWebsiteContentModal();const _0x41d683=_0x28e7fe===_0x59f44d(_0x3ad1c7__0x3383e8)||_0x28e7fe===_0x59f44d(_0x3ad1c7__0x557249),_0x5ca91c=_0x28e7fe===_0x59f44d(_0x3ad1c7__0x3c8943),_0x3bd347=_0x28e7fe===_0x59f44d(758),_0x44b1be=_0x28e7fe===_0x59f44d(_0x3ad1c7__0x5cc2e2),_0x13daaa=getWebsiteBlockLabel(_0x28e7fe);DOM[_0x59f44d(_0x3ad1c7__0x3c2825)]&&(DOM[_0x59f44d(_0x3ad1c7__0x27d692)].textContent=websiteContentModalState.mode===_0x59f44d(_0x3ad1c7__0x46ca3d)?_0x59f44d(_0x3ad1c7__0x46f702)+_0x13daaa:_0x59f44d(_0x3ad1c7__0x5b889e)+_0x13daaa),DOM[_0x59f44d(_0x3ad1c7__0x3e5cb2)]&&(DOM[_0x59f44d(481)][_0x59f44d(_0x3ad1c7__0x1a7254)]=_0x41d683?_0x59f44d(_0x3ad1c7__0x45dfc0):_0x5ca91c?_0x59f44d(_0x3ad1c7__0x5673f8):_0x3bd347?"Add YouTube video or YouTube Shorts URLs.":_0x59f44d(_0x44b1be?_0x3ad1c7__0x21096c:_0x3ad1c7__0x3f7d75)),DOM[_0x59f44d(940)]&&(DOM[_0x59f44d(_0x3ad1c7__0x7c0e07)][_0x59f44d(_0x3ad1c7__0x1f2ce7)]=!_0x41d683),DOM[_0x59f44d(_0x3ad1c7__0x29003a)]&&(DOM[_0x59f44d(405)].hidden=_0x41d683),_0x41d683&&(DOM[_0x59f44d(_0x3ad1c7__0x33b341)]&&(DOM[_0x59f44d(_0x3ad1c7__0x9e140)][_0x59f44d(_0x3ad1c7__0x24cf59)]=_0x13daaa+_0x59f44d(_0x3ad1c7__0x1f9e34)),DOM[_0x59f44d(_0x3ad1c7__0xddaf9a)]&&(DOM[_0x59f44d(998)][_0x59f44d(_0x3ad1c7__0x3bb220)]=_0x555982&&typeof _0x555982[_0x59f44d(_0x3ad1c7__0x3db1cb)]===_0x59f44d(695)?_0x555982[_0x59f44d(_0x3ad1c7__0x3db1cb)]:"",DOM[_0x59f44d(_0x3ad1c7__0xddaf9a)][_0x59f44d(885)]=_0x28e7fe===_0x59f44d(_0x3ad1c7__0x3383e8)?"Write your paragraph here...":_0x59f44d(595))),!_0x41d683&&configureWebsiteRepeatableModal(_0x28e7fe,_0x555982),DOM[_0x59f44d(_0x3ad1c7__0x332e1b)]&&(DOM[_0x59f44d(_0x3ad1c7__0x332e1b)][_0x59f44d(_0x3ad1c7__0x1fbab8)]=websiteContentModalState[_0x59f44d(992)]===_0x59f44d(_0x3ad1c7__0x46ca3d)?_0x59f44d(_0x3ad1c7__0x1523bd)+_0x13daaa:_0x59f44d(_0x3ad1c7__0x472ca7)+_0x13daaa),showModal(DOM[_0x59f44d(_0x3ad1c7__0x20da13)]),_0x41d683&&requestAnimationFrame(()=>{const _0x59495e=_0x59f44d;DOM[_0x59495e(_0x1eecbf__0xcb381)]&&DOM[_0x59495e(998)][_0x59495e(_0x1eecbf__0x34da5e)]()})}function clearWebsiteContentModal(){const _0x1e0e10__0x55c944=998,_0x1e0e10__0x975f14=1090,_0x1e0e10__0x18a3a4=435,_0x1e0e10__0x1e988a=518,_0xbaf33b=_0x53b2da;DOM[_0xbaf33b(998)]&&(DOM[_0xbaf33b(_0x1e0e10__0x55c944)][_0xbaf33b(_0x1e0e10__0x975f14)]=""),DOM[_0xbaf33b(435)]&&DOM[_0xbaf33b(_0x1e0e10__0x18a3a4)][_0xbaf33b(_0x1e0e10__0x1e988a)](),clearWebsiteContentModalError()}function clearWebsiteContentModalError(){const _0x51e721__0x3a4869=1019,_0x51e721__0x2b4f33=1088,_0x54f3f6=_0x53b2da;DOM[_0x54f3f6(1019)]&&(DOM[_0x54f3f6(_0x51e721__0x3a4869)][_0x54f3f6(_0x51e721__0x2b4f33)]=!0,DOM[_0x54f3f6(1019)][_0x54f3f6(724)]="")}function showWebsiteContentModalError(_0x250ee9){const _0x5810cb__0x57e433=1088,_0x3b29fe=_0x53b2da;DOM[_0x3b29fe(1019)]&&(DOM.websiteContentFormError[_0x3b29fe(_0x5810cb__0x57e433)]=!1,DOM[_0x3b29fe(1019)].textContent=_0x250ee9)}function closeWebsiteContentModal(){const _0x44c0c3__0x38d466=404,_0x3ac290=_0x53b2da;websiteContentModalState={mode:_0x3ac290(507),sectionId:null,blockId:null,type:null},hideModal(DOM[_0x3ac290(_0x44c0c3__0x38d466)])}function configureWebsiteRepeatableModal(_0x50dfea,_0x2089a1){const _0x5eb520__0xa7b081=817,_0x5eb520__0x409d6d=758,_0x5eb520__0xd630a6=1013,_0x5eb520__0x36ca2f=703,_0x5eb520__0x25c2fd=663,_0x5eb520__0x189aa6=946,_0x5eb520__0x2ee380=509,_0x5eb520__0x1f94ee=1043,_0x5eb520__0x64d3d7=909,_0x2b4367=_0x53b2da;let _0x5baa15="Items",_0x319f20="Add one or more items.";_0x50dfea===_0x2b4367(961)&&(_0x5baa15=_0x2b4367(836),_0x319f20=_0x2b4367(_0x5eb520__0xa7b081)),_0x50dfea===_0x2b4367(_0x5eb520__0x409d6d)&&(_0x5baa15=_0x2b4367(_0x5eb520__0xd630a6),_0x319f20=_0x2b4367(972)),_0x50dfea===_0x2b4367(1072)&&(_0x5baa15="Link Buttons",_0x319f20="Give each button a clear name and destination URL."),DOM.websiteContentRepeatableLabel&&(DOM.websiteContentRepeatableLabel[_0x2b4367(_0x5eb520__0x36ca2f)]=_0x5baa15+_0x2b4367(_0x5eb520__0x25c2fd)),DOM[_0x2b4367(946)]&&(DOM[_0x2b4367(_0x5eb520__0x189aa6)][_0x2b4367(724)]=_0x319f20);const _0x43c261=_0x2089a1&&Array[_0x2b4367(1029)](_0x2089a1[_0x2b4367(_0x5eb520__0x2ee380)])?_0x2089a1[_0x2b4367(_0x5eb520__0x2ee380)]:[];0!==_0x43c261[_0x2b4367(_0x5eb520__0x1f94ee)]?_0x43c261[_0x2b4367(_0x5eb520__0x64d3d7)](_0x1d0c54=>{addWebsiteContentModalRow(_0x1d0c54)}):addWebsiteContentModalRow()}function _0x5e9b(){const _0x45627c=["vgHLihjLCxvLC3qGDgLTzwqGB3v0lIbqBgvHC2uGDhj5igfNywLUlG","yMXVy2S","qw4GAxrLBsb3AxrOihrOAxmGBMfTzsbHBhjLywr5igv4Axn0CYbPBIb0AgLZignHDgvNB3j5lG","zwrPDgLUz0L0zw1dyxrLz29YEuLK","Bg9JyxrPB25ezxrHAwXZ","y2f0zwDVCNKTBw9KywWTDgL0Bgu","C3rYAw5N","y29UDgvUDc10ExbL","Bg9NB1bYzxzPzxDjBwfNzq","ugXLyxnLigvUDgvYihrOzsbIDxnPBMvZCYbHzgrYzxnZlG","D2vIC2L0zuzVB3rLCKvTChr5","B25SB2fK","r0vu","Bwf4","Aw5Uzxjive1m","ww91CIbIDxnPBMvZCYbHChaGAgfZigjLzw4Gy3jLyxrLzc4Gv2uGyxjLihDHAxrPBMCGzM9YihrOzsbWDwjSAwmGyxbWigzPBgvZihrVigjLy29TzsbHDMfPBgfIBguU","ChvIBgLZAc1IDxnPBMvZCW","Ahr0Chm6","iIbOyxmGyw4GAw52ywXPzcbXDwfUDgL0Es4","yxjPys1KAxnHyMXLza","Dg9ju09tDhjPBMC","imk3iokcUq","y2XLyxjxyxrJAa","C2vJDgLVBG","rwrPDca","y2f0zwDVCNLjza","AxrLBs1WCMLJzq","uMvHzhK","C3vIC2nYAxb0Aw9UrxjYB3i","yMfJAY10BY10zw1WBgf0zxm","ihrVDgfSigL0zw1ZigfYzsbHBgXVD2vKlG","D2vIC2L0zvDOyxrZyxbW","vMvYAwz5Aw5NihLVDxiGC3vIC2nYAxb0Aw9UigfUzcbJCMvHDgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlG","vMvYAwz5Aw5Nihn1yNnJCMLWDgLVBIbHBMqGChvIBgLZAgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlG","rw50zxiGzM9VDgvYigXPBMSGBMfTztO","Dgv4DenVBNrLBNq","uxvHBNrPDhKGy2fUBM90igjLig5Lz2f0AxzLlG","C3vJy2vZC0rLC2nYAxb0Aw9U","C3vIC2nYAxb0Aw9UlwLK","l3b1yMXPC2G","yNvZAw5LC3mTywrKCMvZCW","AwzYyw1L","D2vIC2L0zs1HzgqTC2vJDgLVBG","CMfUzg9T","BgfZDfb1yMXPC2HLzfvYBa","C3rYAw5NAwz5","u2vJDgLVBIbOzwfKAw5NignHBM5VDcbIzsbLBxb0Es4","y2f0zwDVCNLtyxzL","D2vIC2L0zunVBNrLBNrtyxzL","iIbJB250ywLUCYbHBIbPBNzHBgLKigXPBMSU","ignHDgvNB3jPzxmGyxjLigfSBg93zwqU","AxrLBs1JyxrLz29YEq","Bg9JyxrPB24TC3rHDhvZ","rgvSzxrL","revqte9ztuvovf9dsevds19jtLrfuLzbtf9nuW","tufyx0Luru1tx1bfuL9dqvrfr09swq","q2f0zwDVCNKGzgvSzxrLzc4","rgvSzxrLici","BgLUA0LK","D2vIC2L0zs1WyxnZD29Yza","Dg9Nz2XL","AxrLBs1YB3DFx21LDge","AxngAw5PDgu","vMvYAwz5Aw5NlI4U","w2rHDgeTy2f0zwDVCNKTywn0Aw9Uxq","DgvTCgXHDguTD2vIC2L0zq","ww91vhvIzsb2AwrLBW","D2vIC2L0zs1Zzwn0Aw9UCY1LBxb0Eq","Bg9JyxrPB25tDgf0DxnjBMrPy2f0B3i","DMLKzw9Z","vgHLihnLBgvJDgvKignHDgvNB3j5ignVDwXKig5VDcbIzsbMB3vUzc4","r2v0DgLUzYbHBIbHy2n1CMf0zsbhufmGBg9JyxrPB24UifbSzwfZzsb3ywL0lI4U","mc45nxjLBq","ugXLyxnLigvUDgvYihrOzsbIDxnPBMvZCYbUyw1LlG","y2vUDgvY","mJmYnte4mJrwvuTlsgK","mtnQv05Yswi","D2vIC2L0zs1WDwjSAxnOlwj1DhrVBI10zxH0","D2vIC2L0zvb1yMXPC2HtDgf0Dxm","lNDLyNnPDguTBw9KywWTBgLUAY1Uyw1L","Bg9HzgvYvgv4Da","qw4GAxrLBsbPBIaI","y29UDgvUDfr5Cgu","D2vIC2L0zuXVy2f0Aw9UvMvYAwzPzwrbDa","D2vIC2L0zuXVz29qCMv2Awv3","B3jPz2LU","CgfZC3DVCMq","Dg9HC3qTy29UDgfPBMvY","ig1LDhjLCYKUifbSzwfZzsbLBMfIBguGChjLy2LZzsbSB2nHDgLVBIWGC3rHEsbHDcb0AguGyNvZAw5LC3mGBg9JyxrPB24SigfUzcb0CNKGywDHAw4U","w2rHDgeTD2vIC2L0zs1TB2rHBc1Yzw1VDMuTCM93xq","DgvTCgXHDgvhCMLK","y29UBMvJDgLVBI1ZDgf0Dxm","ywnJDxjHy3K","y2XVC2vZDa","D2vIC2L0zuj1C2LUzxnZtMfTzq","yNvZAw5LC3mTDgfNBgLUzq","Ahr0Chm6lY93D3CUEw91DhvIzs5JB20Vzw1IzwqV","ChvIBgLZAfn0yxr1CW","vgHPCYb0zw1WBgf0zsbPCYbUB3qGy3vYCMvUDgX5igf2ywLSywjSzs4","vgHLigjYB3DZzxiGCMv0DxjUzwqGAw52ywXPzcbhufmGy29VCMrPBMf0zxmU","Aw5WDxq","Bg9JyxrPB24TC3rHDhvZlxrLEhq","D2vIC2L0zufKzhjLC3m","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLtgfIzwW","C3bHBG","AxrLBs15B3v0DwjL","qNvZAw5LC3mGBg9JyxrPB24GDMvYAwzPzwqUiefJy3vYywn5oIbHChbYB3HPBwf0zwX5ia","D2vIC2L0zufJDgLVBG","y2f0zwDVCNKTCM93x19Uyw1L","ywrKlwnHDgvNB3j5","y2XHC3noyw1L","D2vIC2L0zs1SB2nHDgLVBI1ZDgf0Dxm","vgHLihjLDhvYBMvKignVB3jKAw5HDgvZigfYzsbPBNzHBgLKlG","AxrLBu5HBwu","D2vIC2L0zs1MB290zxiTBgLUA3m","q0furuDpuLLFsvrftv9tve9squDfx0Tfwq","y2f0zwDVCNLoyw1LrxjYB3i","qwrKihDLyNnPDguGy29UDgvUDc4","ChvIBgLZAc1ZCgLUBMvY","tM8GDMfSAwqGBgLUA3mGywrKzwqU","D2vIC2L0zs1JB250zw50lwzVCM0TzxjYB3i","y2f0zwDVCNKTBMfTzq","yMfJA1rVvgvTCgXHDgvZ","n2XQCgDNsq","y29Kzq","q291BgqGBM90ihnHDMuGv2vIC2L0zsbKyxrHlG","D2vIC2L0zufKzezVB3rLCKXPBMS","q291BgqGBM90ignSzwfYifDLyNnPDguGzgf0ys4","vxnLieHuvfbtigLTywDLifvsthmUiefKzcbHCYbTyw55igLTywDLCYbHCYb5B3uGBMvLzc4","D2vIC2L0zs1JB250zw50lwjSB2nRx19OzwfKzxi","iIbJB250ywLUCYbHBIbLBxb0Esb2AwrLBYbIBg9JAY4","y2f0zwDVCNKTCM93x19Hy3rPB24","D2vIC2L0zuzVB3rLCKXPBMTZ","ywrKsxrLBq","D2vIC2L0zs1SB2nHDgLVBI1KzxrHAwXZ","v2vIC2L0zsbJCMvHDgvKlcbIDxqGDgHLihb1yMXPyYbMAwXLCYbHCMuGC3rPBgWGyMvPBMCGChvIBgLZAgvKlIbqBgvHC2uGDhj5igfNywLUihnOB3j0BhKU","z2vVBg9JyxrPB24","C2v0vgLTzw91Da","D2vIC2L0zs1JB250zw50lwfKzc1YB3C","CYbLBgfWC2vKlG","D2vIC2L0zs12AwrLBY1SAxn0","q291BgqGBM90ignSzwfYihnHDMvKignHDgvNB3j5igfUzcbPDgvTigrHDgeU","y29VCMrZ","ChvIBgLZAgLUzW","igL0zw1ZigfYzsbHBgXVD2vKigLUig9UzsbJyxrLz29YEs4","yxbWBgLJyxrPB24TBg9HzgvY","qsbJyxrLz29YEsb3AxrOihrOAxmGBMfTzsbHBhjLywr5igv4Axn0CY4","sw1Hz2uGvvjmCW","nJC4AKjzyLfu","DMfSAwrHDgLVBLn1Bw1HCNK","ChvIBgLZAej1DhrVBLrLEhq","sxrLBsbKzwXLDgvKlG","v2fPDgLUzYbMB3iGEw91CIbIDxnPBMvZCYbHChaGDg8GyMvJB21LigXPDMuUlI4G","D2vIC2L0zunVBNrLBNrnB2rHBenSB3nL","ChvZAa","ywXSB3C","D2vIC2L0zs1PBwfNzs1SAxn0","D2vIC2L0zufKzezPCNn0u2vJDgLVBG","u2vJDgLVBIaI","yNvZAw5LC3mTD2HHDhnHCha","rwrPDcbdyxrLz29YEq","Bg9HzgLUzW","cIaGicaGidXKAxyGy2XHC3m9iMzVCM0Tz3jVDxaIpGOGicaGicaGidXSywjLBcbJBgfZCZ0IzM9YBs1SywjLBci+cIaGicaGicaGica","l3DHDgnO","tufyx0nbvevht1jzx05btuvFtevor1ri","lNDLyNnPDguTBw9KywWTBgLUAY11CMW","A2v5zg93BG","y2f0zwDVCNKTC2f2zq","AxmTzxjYB3i","u3vIlxbHCMfNCMfWAa","tufyx1rpvefmx0Luru1t","Ahr0Chm6lY9LEgfTCgXLlMnVBs9PBwfNzs5QCgC","w2rHDgeTBw9KywWTy2XVC2vD","C3rHCNrZv2L0Aa","Dg9HC3qGDg9HC3qTlq","BM93","D2vIC2L0zvnLy3rPB25Z","Bg9NB1bYzxzPzxDszxf1zxn0","tM8GAw1Hz2vZigfKzgvKlG","ChvIBgLZAfnWAw5Uzxi","D2vIC2L0zvb1yMXPC2HcDxr0B25uzxH0","CMvTB3zL","rxnJyxbL","C2v0sxrLBq","ig1LDhjLCYbVCIbIzxr0zxiU","D2vIC2L0zs1SAw5RlxjVDW","yNvZAw5LC3nqyxnZD29Yza","zwrPDc1IBg9JAW","q3jLyxrLifDLyNnPDgu","zw4Tsu4","qNvZAw5LC3mGr1btigfJy3vYywn5ig11C3qGyMuG","D2vIC2L0zvb1yMXPC2G","zgvWBg95BwvUDfn0yxr1CW","y2f0zwDVCNLnB2rHBa","D2vIC2L0zs1WDwjSAxnOlxnWAw5Uzxi","yxjPys1IDxn5","CgXHy2vOB2XKzxi","D2vIC2L0zuXVy2f0Aw9Urgv0ywLSCW","igL0zw1ZigfYzsbHBgXVD2vKlG","vw5HyMXLihrVignVBM5Ly3qGDg8GDgHLiej1C2LUzxnZifDVCMTLCI4GugXLyxnLignOzwnRihLVDxiGAw50zxjUzxqGy29UBMvJDgLVBIbHBMqGDhj5igfNywLUlG","ugfYywDYyxbO","AxrLBvf1yw50Axr5","zM9VDgvYswq","y29UzMLYBq","Dg9mB2nHBgvtDhjPBMC","D2vIC2L0zuXVy2f0Aw9Utgf0Axr1zgu","Bg9NB1vYBa","C2XPy2u","AxrLBvvUAxq","tg9JyxrPB24GC2vYDMLJzxmGyxjLig5VDcbZDxbWB3j0zwqGyNKGDgHPCYbICM93C2vYlG","AxmTCgvUzgLUzW","D2vIC2L0zs1JB250zw50lxjLCgvHDgfIBguTBgfIzwW","AxrLBs1XDwfUDgL0Eq","C3vJy2vZCY1Zzwn0Aw9U","Bg9JyxrPB24TDMvYAwzPzwqTyxq","D2vIC2L0zs1HzgqTzM9VDgvYlwXPBMS","D2vIC2L0zs1Zzwn0Aw9Ulw9YzgvY","yNvZAw5LC3mTBMfTzq","D2vIC2L0zvb1yMXPC2Hszxn1Bhq","AxrLBuLK","zM9YrwfJAa","uhvIBgLZAgLUzY4UlG","D2vIC2L0zunVBNrLBNrdyw5JzwW","l3yV","C29Tzq","D2vIC2L0zs1JB250zw50lw1VzgfSlwnSB3nL","mZi2mZy1mLnhCffuzW","D2f0y2HqB3nPDgLVBG","AxrLBuXPC3q","cIaGicaGidXKAxyGy2XHC3m9iMzVCM0Tz3jVDxaIpGOGicaGicaGidXSywjLBcbJBgfZCZ0IzM9YBs1SywjLBci+cIaGicaGicaGicbcDxr0B24GtMfTzqOGicaGicaGicaGphnWyw4Gy2XHC3m9iNjLCxvPCMvKlw1HCMSIpIO8l3nWyw4+cIaGicaGicaGpc9SywjLBd4kcIaGicaGicaGpgLUChv0cIaGicaGicaGicb0ExbLpsj0zxH0iGOGicaGicaGicaGy2XHC3m9iMzVCM0TAw5WDxqGD2vIC2L0zs1TB2rHBc1SAw5Rlw5HBwuIcIaGicaGicaGicbTyxHSzw5NDgG9iJe1mcikicaGicaGicaGihbSywnLAg9SzgvYpsjLlMCUienVBNrHy3qGvxmIcIaGicaGicaGicbHDxrVy29TCgXLDgu9iM9MzIikicaGicaGica+cIaGicaGidWVzgL2pGOkicaGicaGpgrPDIbJBgfZCZ0IzM9YBs1NCM91Cci+cIaGicaGicaGpgXHyMvSignSyxnZpsjMB3jTlwXHyMvSiJ4kicaGicaGicaGiej1DhrVBIbvuKWkicaGicaGicaGidXZCgfUignSyxnZpsjYzxf1AxjLzc1TyxjRiJ4Qpc9ZCgfUpGOGicaGicaGidWVBgfIzwW+cGOGicaGicaGidXPBNb1DaOGicaGicaGicaGDhLWzt0IDxjSiGOGicaGicaGicaGy2XHC3m9iMzVCM0TAw5WDxqGD2vIC2L0zs1TB2rHBc1SAw5RlxvYBcikicaGicaGicaGig1HEgXLBMD0Ad0I","tufyx0Xpr09Fvvjmx0XftKDusa","D2vIC2L0zs12AwrLBY1YB3C","tufyx0nbvevht1jjrvm","AxrLBurLC2nYAxb0Aw9U","sg9TzsaMieTPDgnOzw4","C3vJy2vZCW","rwnVBw1LCMnLigfWCcbZzwXLy3rLzc4","Ahr0Chm6lY9KAxzPBMuTC25VD2zSywTLlwfHyMqUChjVCgvYDgLLC2DYB3vWAhLKlNDVCMTLCNmUzgv2","y3jLyxrLlwfUB3rOzxi","iIbJB250ywLUCYbHBIbLBxb0EsbSAw5RigjSB2nRlG","AxrLBs1YB3DFx2fJDgLVBNm","C2vJB25Kyxj5lwj1DhrVBIbZzwnVBMrHCNKTyNv0Dg9Uls1ZBwfSBa","zxjYB3jZ","AxrLBs1TB2rHBc10AxrSzq","B25SAw5L","Bg9JyxrPB25myxrPDhvKzq","qwrKia","AxmTB2zMBgLUzq","Ahr0Chm6lY95B3v0DwjLlMnVBs93yxrJAd92ps4UlG","DgfIAw5KzxG","D2vIC2L0zvnLy3rPB24","D2vIC2L0zunVBNrLBNruzxH0rMLLBgq","v0vc","Bgf6Eq","runn","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZ","D2vIC2L0zs1IBg9JAY1WCMv2Awv3","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLsgvSCa","mJmXneL4zwffBW","z2v0rwXLBwvUDej5swq","y2f0zwDVCNKTBw9KywW","igzVB3rLCIbSAw5RCYbHCMuGywXSB3DLzc4","D2vIC2L0zvn1yNnJCMLWDgLVBKLK","C2nYB2XSvg8","igjSB2nRpW","vgHLigrLDMLJzsbJB3vSzcbUB3qGzgv0zxjTAw5LieDquYbHy2n1CMfJEs4GugXLyxnLigvUywjSzsbWCMvJAxnLigXVy2f0Aw9UigfUzcb0CNKGywDHAw4U","u29TzxrOAw5NihDLBNqGD3jVBMCUifbSzwfZzsb0CNKGywDHAw4U","ywrKlwL0zw0","y2XLyxjuAw1LB3v0","cIaGicaGicaGica8C3bHBIbJBgfZCZ0ICMvXDwLYzwqTBwfYAYi+kJWVC3bHBJ4kicaGicaGica8l2XHyMvSpGOkicaGicaGica8Aw5WDxqkicaGicaGicaGihr5Cgu9iNvYBcikicaGicaGicaGignSyxnZpsjMB3jTlwLUChv0ihDLyNnPDguTBw9KywWTDxjSiGOGicaGicaGicaGBwf4BgvUz3rOpsi","ig1LDhjLCY4","z2v0sxrLBq","Aw1Hz2vZ","C3vJy2vZCY1KzxnJCMLWDgLVBG","tufyx0rfu0nssvbusu9ox0XftKDusa","ihnLy3rPB25ZigfYzsbHBgXVD2vKlG","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZsw5KAwnHDg9Y","p3jLBd0W","y2f0zwDVCNLmAxn0","ChjPy2u","zMfSC2u","zNjVBq","ww91vhvIzsbwAwrLB3m","ww91ignHBIbHzgqGBM9YBwfSifLVDvr1yMuGDMLKzw9ZigfUzcbzB3vuDwjLifnOB3j0CY4","qwrKig9UzsbVCIbTB3jLieHuvfbtigLTywDLifvsthmU","Dhj1zq","tg9JyxrPB24GCMvXDwvZDcb0Aw1LzcbVDxqUifbSzwfZzsb0CNKGywDHAw4U","D2vIC2L0zvbHC3n3B3jKvg9Nz2XL","lNbHC3n3B3jKlxrVz2DSzv9FAwnVBG","D2vIC2L0zs1IDxnPBMvZCY1Uyw1L","Cgf0Ag5HBwu","D2HHDhnHCha","yxjPys1OAwrKzw4","C3rHDhvZ","Dg9HC3rdB250ywLUzxi","C21VB3rO","ywrKq2f0zwDVCNK","BM8TCMvMzxjYzxi","D2vIC2L0zs1SB2DVlxbYzxzPzxCTAw1Hz2u","qNvZAw5LC3mGBg9JyxrPB24GDMvYAwzPzwqU","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjK","AxrLBvbYAwnL","ChvIBgLZAej1C2LUzxnZ","Bw9Kzq","y2f0zwDVCNKTCM93","AgvHzgLUzW","ChjVDg9JB2W","C2LNBMfS","igL0zw0OCYKGAw5ZAwrLigL0pW","D2vIC2L0zunVBNrLBNruzxH0","CMvTB3zLqxr0CMLIDxrL","Axnoyu4","v2vIC2L0zsbZzwn0Aw9UigfKzgvKlG","BwvZC2fNzq","AxmTD2fPDgLUzW","yxjPys1SywjLBa","CxvHBNrPDhK","tufyx0Luru1FtKfnrv9mru5hveG","D2vIC2L0zuXVz29qCMv2Awv3sw1Hz2u","zwnVBw1LCMnLu2vJDgLVBG","Bg9NB1bYzxzPzxC","iIbHBMqGywXSia","D2vIC2L0zq","yxj0AwnSzq","ww91vhvIzsbvuKXZ","r3jVy2vYEq","DMfSAwq","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjKx19Uyw1L","CMfUzg9Tvvvjra","y2f0zwDVCNLnB2rHBenSB3nL","D2vIC2L0zunVBNrLBNrgB3jTrxjYB3i","zMLUza","D2vIC2L0zs1Zzwn0Aw9UlwnHCMq","D2vIC2L0zs1LBwfPBa","DgvTCgXHDgvfy29TBwvYy2u","D2vIC2L0zs12ywXPzgf0Aw9Ulxn1Bw1HCNK","AxrLBunHDgvNB3j5","uhvIBgLZAgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlIa","DgvTCgXHDgvtzwn0Aw9U","zMLUzeLUzgv4","AxnbCNjHEq","nda5mtuYnunhyNHZBa","AxrLBs11BML0","iGOGicaGicaGicaGAw5WDxrTB2rLpsj1CMWIcIaGicaGicaGicbHDxrVy29TCgXLDgu9iNvYBcikicaGicaGica+cIaGicaGidWVzgL2pGOkicaGicaGpgj1DhrVBGOGicaGicaGihr5Cgu9iMj1DhrVBIikicaGicaGicbJBgfZCZ0IC2vJB25Kyxj5lwj1DhrVBIb3zwjZAxrLlwzPzwXKlxjVD19FCMvTB3zLiGOGicaGicaGigrHDgeTD2vIC2L0zs1TB2rHBc1Yzw1VDMuTCM93cIaGicaGicaGyxjPys1SywjLBd0IuMvTB3zLigL0zw0IcIaGicaGicaGDgL0Bgu9iLjLBw92zsikicaGicaGpGOGicaGicaGiokiKGOGicaGica8l2j1DhrVBJ4kicaGia","ugXLyxnLihnLBgvJDcbHignHDgvNB3j5lG","D2vIC2L0zvzLCMLMEuXVy2f0Aw9U","zwnVBw1LCMnLlxnLy3rPB24","tufyx0Xpq0fusu9ox0fdq1vsqunzx01fvevsuW","D2vIC2L0zs1WDwjSAxnOlxn0yxr1CW","AxrLBunHBMnLBa","D2vIC2L0zunVBNrLBNruzxH0tgfIzwW","BMfTzq","sw1Hz2uGvvjm","D2vIC2L0zvbHC3n3B3jK","BgvUz3rO","tM8GDMfSAwqGww91vhvIzsb2AwrLB3mGywrKzwqU","CgfYywDYyxbO","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGww91vhvIzsbvuKWU","DgvTCgXHDguTzwnVBw1LCMnL","Bgf0Axr1zgu","D2vIC2L0zs1HzgqTy29UDgvUDa","B3jPz2LUywXuzxH0","iIbJB250ywLUCYbHBIbPBNzHBgLKigLTywDLifvstc4","zgf0yxnLDa","D2vIC2L0zs12AwrLBY1WCMv2Awv3ls1ZAg9YDa","D2vIC2L0zs13Agf0C2fWCa","AxrLBs1YB3DFx21HAw4","CMvKDwnL","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGAxrLBs4","zgvSzxrLlwjSB2nR","D2vIC2L0zs1SB2nHDgLVBI1SyxrPDhvKzq","tM8Gy29UDgvUDcbHzgrLzcb5zxqUifvZzsbbzgqGq29UDgvUDcbIzwXVDY4","D2vIC2L0zuXVy2f0Aw9Utg9Uz2L0DwrL","y2f0zwDVCNLby3rPB24","ChjVBxb0","DMvYAwzPzwrbDa","v09ss0vsx1vsta","y2f0zwDVCNLoyw1L","Dgv4Da","zwnVBw1LCMnLlMPZB24","ChvIBgLZAc1IDxr0B24TDgv4Da","AxrLBu1VzgfSq2XVC2u","uKvrvuvtvf9usu1ft1vux01t","BgLUA3m","D2vIC2L0zs1SB2nHDgLVBI12zxjPzMLLzc1HDa","AxrLBu1VzgfS","DhjPBq","iIbLEgnLzwrZihrOzsbPDgvTigXPBwL0lG","ofHwru5sra","zw1HAwW","q2XVDgHPBMC","yxbWBgLJyxrPB25mB2fKzxi","yxbWBgLJyxrPB24VANnVBG","D2vIC2L0zs1IDxnPBMvZCY1HzgrYzxnZ","Bg9JyxrPB25tDgf0Dxm","y2HHBMDL","q29UDgvUDa","Bw9KywWTB3bLBG","ywXS","AgLKzgvU","iIbJB250ywLUCYbHBIbLBxb0EsbPBwfNzsbIBg9JAY4","DMfSDwu","u2f2zsa","D2vIC2L0zs1Zzwn0Aw9UlwnHCMrFx2fJDgLVBNm","mJK1mgfXvxncuG","D2vIC2L0zu1VyMLSzq","D2vIC2L0zuzVB3rLCKfJDgLVBG","AxrLBq","ugXLyxnLigvUDgvYihrOzsbIDxnPBMvZCYbTB2jPBguGBNvTyMvYlG","qwrKieL0zw0","AhjLzG","Bg9JyxrPB25tDgf0DxnuzxH0","rwrPDa","AxrLBs1LBxb0Eq","DMLKAhDHyw5FyNvZAw5LC3nFD2vIC2L0zv9KyxrH","vgHLifDVCMTLCIbKAwqGBM90ihjLDhvYBIbHihzHBgLKihDLyNnPDguGvvjmlG","vw5HyMXLihrVig9IDgfPBIbHBIbHy2n1CMf0zsbhufmGBg9JyxrPB24GD2L0AgLUidmWihnLy29UzhmUifbSzwfZzsbLBMfIBguGChjLy2LZzsbSB2nHDgLVBIbHBMqGDhj5igfNywLUlG","zgvWBg95BwvUDc1ZDgf0Dxm","B3bLBKj1C2LUzxnZqxbW","D2vIC2L0zs1JB250zw50lxrLEhq","yM9KEq","ugXLyxnLihDHAxqUlI4","D2vIC2L0zunVBNrLBNrnB2rHBa","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLrMLLBgq","D2vIC2L0zs1JB250zw50lxnHDMu","C3jJ","y2HPBgrYzw4","zgLZywjSzwq","CMvWBgfJzq","ww91CIbIDxnPBMvZCYbHChaGAxmGBgL2zsbHBMqGCMvHzhKGDg8GB3bLBI4","D2vIC2L0zunVBNrLBNrbzgrsB3C","q2f0zwDVCNKGywrKzwqU","D2vIC2L0zvb1yMXPC2HtCgLUBMvY","qNvZAw5LC3mGBg9NBYbWCMv2Awv3","D2vIC2L0zvb1yMXPC2HLzfvYBa","y2XPy2S","ugXLyxnLignYzwf0zsb5B3vYiej1C2LUzxnZifbHC3n3B3jKlG","ugXLyxnLigvUDgvYigeGDMfSAwqGww91vhvIzsbVCIbzB3vuDwjLifnOB3j0CYbvuKWU","D2vIC2L0zs1Zzwn0Aw9UlwnHCMrFx2nVBNrLBNq","ugXLyxnLigvUDgvYihrOzsbcDxnPBMvZCYbxAgf0C0fWCcbUDw1IzxiU","ugXLyxnLihjLDMLLDYb0AguGzM9YBs4","y3jLyxrLrwXLBwvUDa","v2vIC2L0zsbJCMvHDgvKlIbxywL0Aw5NigzVCIb0AguGChvIBgLJigzPBgvZihrVigjLy29TzsbHDMfPBgfIBguUlI4","Bs55B3v0DwjLlMnVBq","AxmTDMvYAwzPzwq","D2vIC2L0zs1JB250zw50lwnHBMnLBa","zgvSzxrLlxnLy3rPB24","D2vIC2L0zs12AwrLBY1WCMv2Awv3","DMfSAwrHDgLVBKXPC3q","zgL2","CMvS","AxmTB25SAw5L","CYbYzw1HAw5PBMCU","D2vIC2L0zunVBNrLBNrsB3DmAxn0","yMXVy2Tjza","vw5HyMXLihrVihzLCMLMEsb5B3vYigXVy2f0Aw9UlG","q291BgqGBM90ihnHDMuGy2f0zwDVCNKGyw5KigL0zw0Gzgf0ys4","C2v0qxr0CMLIDxrL","zwrPDgLUz0nHDgvNB3j5swq","tufyx1LpvvrvqKvFvvjmx0XftKDusa","DMvYAwz5tg9JyxrPB24","D2vIC2L0zs1HzgqTzMLYC3qTC2vJDgLVBG","yNvZAw5LC3mTyxbWlxvYBa","ugXLyxnLigvUDgvYigf0igXLyxn0ig9Uzsb2ywXPzcbIDxr0B24GBMfTzsbHBMqGsfruufmGvvjmlG","x2jSyw5R","D2vIC2L0zs1JB250zw50lxjVDY1SAxn0","rM9Vza","iGOGicaGicaGicaGCgXHy2vOB2XKzxi9iMH0DhbZoI8VzxHHBxbSzs5JB20IcIaGicaGicaGicbPBNb1Dg1Vzgu9iNvYBcikicaGicaGicaGigf1Dg9JB21WBgv0zt0IDxjSiGOGicaGicaGid4kicaGicaGpc9KAxy+cGOGicaGica8yNv0Dg9UcIaGicaGicaGDhLWzt0IyNv0Dg9UiGOGicaGicaGignSyxnZpsjZzwnVBMrHCNKTyNv0Dg9UihDLyNnPDguTzMLLBgqTCM93x19Yzw1VDMuIcIaGicaGicaGzgf0ys13zwjZAxrLlw1VzgfSlxjLBw92zs1YB3CkicaGicaGicbHCMLHlwXHyMvSpsjszw1VDMuGBgLUAYbIDxr0B24IcIaGicaGicaGDgL0Bgu9iLjLBw92zsikicaGicaGpGOGicaGicaGiokiKGOGicaGica8l2j1DhrVBJ4kicaGia","D2vIC2L0zs1IywnRlxrVlxrLBxbSyxrLCW","y29UBMvJDgLVBI10zxH0","D2vIC2L0zs12zxjPzNKTBg9JyxrPB24","Bw9IAwXL","ugXLyxnLihnLBgvJDcbHigj1C2LUzxnZigfWCcb0zw1WBgf0zs4","AxrLBuvTChr5","tg9NBYbvuKWGBxvZDcbIzsbHihzHBgLKieHuvfbtifvstc4","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZvgv4Da","C2HVCNq","D2vIC2L0zs1SB2DVlxbYzxzPzxC","DgvTCgXHDguTC2vJDgLVBG","yNv0Dg9U","D2vIC2L0zs1WyxnZD29Yzc10B2DNBgu","AxrLBs1SAxn0","ugXLyxnLignVBxbSzxrLigv2zxj5igXPBMSGyNv0Dg9UihDPDgGGysb2ywXPzcbUyw1LigfUzcbivfrquYbvuKWU","zM9VDgvY","CMvMzxjYzxjqB2XPy3K","re9nq29UDgvUDeXVywrLza","vgHLifDVCMTLCIbYzxr1CM5LzcbPBNzHBgLKiePtt04U","Bw92zs11Ca","z2v0","ywrKrMLYC3rjDgvT","DgfYz2v0","q3jLyxrLig9UzsbVCIbTB3jLihbYB2zLC3nPB25HBcbSAw5Rigj1DhrVBNmU","CMvTB3zLsxrLBq","D2vIC2L0zs5QC29U","Aw5JBhvKzxm","mZG4m3nor3DWBG","y2f0zwDVCMLLCW","Bg9HzgvYlxrLEhq","v2vIC2L0zsbJCMvHDgvKigfUzcbPCYbZDgLSBcbIzwLUzYbWDwjSAxnOzwqU","D2vIC2L0zunVBNrLBNrnB2rHBerLC2nYAxb0Aw9U","AxrLBs1YB3DFx3zPzgvV","B21PDa","zwrPDgLUz0L0zw1jza","DMvYAwzPzwq","v2fPDgLUzYbMB3iGD2vIC2L0zsbMAwXLCYb0BYbIzwnVBwuGBgL2zs4UlIa","uhjVy2vZC2LUzY4UlG","Aw1N","AxrLBuzVCM1fCNjVCG","sgLKzsbWyxnZD29Yza","rxzLCNKGzM9VDgvYigXPBMSGBxvZDcbOyxzLigeGBMfTzsbHBMqGDMfSAwqGsfruufmGvvjmlG","Bg9Uz2L0DwrL","C3vJy2vZC1nLy3rPB24","l3nOB3j0CY8","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGAw1Hz2uGvvjmlG","offAtMfgqq","y2vPBa","zMXVB3i","y2f0zwDVCNLdyw5JzwW","qwjVCNrfCNjVCG","y2f0zwDVCNKTzw1WDhK","C3vICgfYywDYyxbO","ww91vhvIzsb2AwrLBYbHDhrHy2HLza","DgvTCgXHDguTz3jPza","Bg9JyxrPB25wzxjPzMLLzef0","v2vIC2L0zsbJB250zw50igrLBgv0zwqU","ywrK","v0vcu0Lurv9tve9squDfx0Tfwq","AxrLBxm","te9dqvrjt05FveLnru9vvf9nuW","uMvHzhKGDg8Gy3jLyxrLigfUB3rOzxiGyNvZAw5LC3mGyxbWlG","yNvZAw5LC3nqyxnZD29YzfrVz2DSzq","DgfNBgLUzq","w2rHDgeTD2vIC2L0zs1Hy3rPB25D","q3jLyxrLiej1C2LUzxnZiefWCa","BwfW","rgvSzxrLigzVB3rLCIbSAw5Rici","CMvWBgfJzunOAwXKCMvU","D2vIC2L0zs1SB2nHDgLVBI1ZDgf0DxmTAw5KAwnHDg9Y","Bg9NBY1WCMv2Awv3lwLTywDL","y2f0zwDVCNLfBxb0Eq","vgHLigfWCcbPCYbZDgLSBcbIzwLUzYbWDwjSAxnOzwqUifbSzwfZzsb3ywL0igeGBgL0DgXLigXVBMDLCIbHBMqGDhj5ig9Wzw5PBMCGAxqGywDHAw4U","y2XHC3nmAxn0","C2nYB2XSsw50B1zPzxC","ywX0","D2vIC2L0zs10ywDSAw5L","C3r5Bgu","y2f0zwDVCNKTy2fUy2vS","ywrKlwnVBNrLBNq","ANnVBG","D2vIC2L0zs1SB2nHDgLVBI1ZDgf0DxmTDgv4Da","ugXLyxnLihzLCMLMEsb0AguGyNvZAw5LC3mGBg9JyxrPB24U","AxrLBs1Uyw1L","D2vIC2L0zs1Zzwn0Aw9U","Ag9ZDg5HBwu","vevnueXbvevFsuq","zg93BG","vxbKyxrLienHDgvNB3j5","yNvZAw5LC3mTzw1HAwW","zwrPDa","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGD2vIC2L0zsbZzwn0Aw9UlG","qNvZAw5LC3mGyxbWigLZigjLAw5Nihb1yMXPC2HLzc4UlG","y3j5ChrV","rwrPDcbMB290zxiGBgLUAYbUyw1LoG","q2f0zwDVCNKGiG","zgvSzxrL","AxrLBs1YB3DFx25HBwu","ugXLyxnLigvUDgvYigeGDMfSAwqGzw1HAwWGywrKCMvZCY4","Dw5PDa","zM9UDfnPEMu","y29UBMvJDgLVBLn0yxr1CW","CgfYC2u","qNvZAw5LC3mGv29YA2vYifvstcbPCYbUB3qGy29UzMLNDxjLzc4","tgLUAYbcDxr0B25Z","DMfYkc0TDgv4Dc1ZzwnVBMrHCNKP","y2f0zwDVCNLnB2rHBfrPDgXL","Dg9mB3DLCKnHC2u","ywrKlwzPCNn0lwnHDgvNB3j5","lNDLyNnPDguTAw1Hz2uTCM93lcaUD2vIC2L0zs12AwrLBY1YB3CSic53zwjZAxrLlwXPBMSTCM93","ww91CIbhBg9IywWGv2vIC2L0zsbPCYbSAxzLlG","AxrLBs1Jyw5JzwW","zwrPDej1C2LUzxnZ","AxrLBvnHDMu","y2f0zwDVCNKTBMfTzs1LCNjVCG","ChvIBgLZAc1ZDgf0Dxm","AxmTBgL2zq","D2vIC2L0zs1JB250zw50lxjLCgvHDgfIBguTzMLLBgq","v29YA2vYihjLDhvYBMvKieHuvfaG","D2vIC2L0zs1JB250zw50lwjSB2nRx19Hy3rPB25Z","l2vTyMvKlW","y2f0zwDVCNKTCM93x19Hy3rPB25Z","DxjS","y3jLyxrLvgv4De5Vzgu","uhvIBgLZAgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlG","rwXLy3rYB25Py3m","ugXLyxnLigvUDgvYigeGDMfSAwqGBgLUAYbUyw1LigfUzcbivfrquYbvuKWU","DgL0Bgu","ywrKlwzPCNn0lwL0zw0","ywrKCMvZCW","lNDLyNnPDguTBw9KywWTDxjS","B3bLBG","D2vIC2L0zvzHBgLKyxrPB25tDw1Tyxj5","z2v0vgLTzq","yNvZAw5LC3mTCgfZC3DVCMqTDg9Nz2XL","sxrLBsbHzgrLzc4","rw1WDhKGCgfYywDYyxbOlG","zM9SBg93","ue9tva","imk3ia","CxvLCNLtzwXLy3rVCG","D2vIC2L0zuXVz28","Bw92zs1KB3DU","Ew91DhvIzvvYBa","D2vIC2L0zs1JB250zw50lxrLEhqTzMLLBgq","v3jPDguGEw91CIbZDwiTCgfYywDYyxbOigHLCMuUlI4","twf4Aw11Bsa","AxrLBs1TB2rHBa","C3bSAxq","zM9JDxm","Ew91DhvIzs5JB20","Bg9JyxrPB24","ywrKrMLYC3rdyxrLz29YEq","DgvTCgXHDgvxzwjZAxrL","AxrLBufJDgLVBG","tg9JyxrPB24GCgvYBwLZC2LVBIb3yxmGzgvUAwvKlIbqBgvHC2uGywXSB3CGBg9JyxrPB24GywnJzxnZigfUzcb0CNKGywDHAw4U","B3b0Aw9U","sxrLBsaI","rw1WDhKGC3vIlxbHCMfNCMfWAc4","yMXVy2TZ","w2rHDgeTAxrLBs1Hy3rPB25D","ugXLyxnLigvUDgvYigeGy2f0zwDVCNKGBMfTzs4","ugXLyxnLigvUDgvYigeGC2vJDgLVBIbOzwfKAw5NlG","DhLWzq","D2fYBG","AxrLBu1VzgfSvgL0Bgu","mJi0ntC3mfztAwDXzq","yNvZAw5LC3mTCgfZC3DVCMq","C2vJDgLVBNm","sw1Hz2vZ","rgvSzxrLihrOAxmG","ww91CIbIDxnPBMvZCYbHChaGAxmGBM93igXPDMuU","Bw9KywXdBg9Zzq","BM8TC3rVCMu","zwrPDc1Zzwn0Aw9U","yNvZAw5LC3noyw1L","ww91vhvIzsbvuKW","y29UBMvJDgLVBLrLEhq","v2vIC2L0zsbJB250zw50ihvWzgf0zwqU","D2vIC2L0zs1ZDwjZy3jPChrPB24TAwq","zgvZy3jPChrPB24","v3jPDguGEw91CIbJB250zw50ignSzwfYBhKGyw5KignVBwzVCNrHyMX5lIbmB25NihbHCMfNCMfWAhmGyxjLihn1ChbVCNrLzc4","ugXLyxnLigvUDgvYihLVDxiGu3vIC2nYAxb0Aw9UieLelG","D2vIC2L0zunVBNrLBNrnB2rHBfrPDgXL","BM9VCgvUzxiSBM9YzwzLCNjLCG","D2vIC2L0zs1JB250zw50lw1VzgfSlwrLC2nYAxb0Aw9U","D2vIC2L0zuvTywLS","rg9Uzs4","mta1nJC3n2T0y3Pivq","ugXLyxnLigvUDgvYigfUigL0zw0GBMfTzs4","q291BgqGBM90igXVywqGC2f2zwqGy2f0zwDVCNKGyw5KigL0zw0Gzgf0ys4","D2vIC2L0zs1TB2jPBgu","yNvZAw5LC3mTBg9NBW","r2XVyMfSifDLyNnPDguGC2vSzwn0zwqU","CM9Szq","DMLKAhDHyw5FyNvZAw5LC3nFzwnVBw1LCMnLx2nHDgvNB3jPzxnFAxrLBxm","D2vIC2L0zvzHBgLKyxrPB25mAxn0","revqte9ztuvovf9usu1ft1vux01t","BM9VCgvUzxiGBM9YzwzLCNjLCG","vMfSAwqGyNvZAw5LC3mGr1btignVB3jKAw5HDgvZigfYzsbYzxf1AxjLzc4","yNvZAw5LC3nbChbvCMW","BgLUAW","D2vIC2L0zs1JB250zw50lxjLCgvHDgfIBguTAgvSCa","D2vIC2L0zvrHz2XPBMu","Bg9JyxrPB24TBgf0Axr1zgu","zNjLzxPL","D2vIC2L0zujHy2TuB1rLBxbSyxrLCW","tg9JyxrPB24GywnJDxjHy3KGAxmGDg9VigXVDYaOyxbWCM94Aw1HDgvSEsa","Dg9gAxHLza","ywrKrxzLBNrmAxn0zw5LCG","zNvUy3rPB24","AxrLBs1YB3DFx2fJDgLVBG","ignVBNrLBNqGyMXVy2TZigfYzsbHBgXVD2vKigLUig9UzsbZzwn0Aw9UlG","idXZCgfUignSyxnZpsjYzxf1AxjLzc1TyxjRiJ4Qpc9ZCgfUpG","D2vIC2L0zs1JB250zw50lwjSB2nR","C2vJDgLVBKLK","yxjPys1WCMvZC2vK","yxbWzw5Kq2HPBgq","C3vIC2nYAxb0Aw9UlwvYCM9Y","AxrLBvLVDxr1yMu","zMLSDgvY","qwrKienHDgvNB3j5","D2vIC2L0zs1WDwjSAxnO","v2vIC2L0zsbZzwn0Aw9UigrLBgv0zwqU","Bg9JyxrPB25mB25NAxr1zgu","u2vSzwn0ignHDgvNB3j5","Bg9JyxrPB24TC3rHDhvZlwLUzgLJyxrVCG","B25mAw5L","D2vIC2L0zvnLy3rPB25Zrw1WDhK","DgvZDa","CM91BMq","zxjYB3i","y3jLyxrLqw5VDgHLCG","ww91CIbIDxnPBMvZCYbHChaGAxmGBM90igXPDMuGEwv0lIbqBgvHC2uGD2fPDcbMB3iGChvIBgLZAgLUzYb0BYbMAw5PC2GU","y2f0zwDVCNK","D2vIC2L0zufKzfnLy3rPB24","D2vIC2L0zs1Zzwn0Aw9UlwnHCMrFx3rPDgXL","C2vSzwn0zwruzw1WBgf0zq","C3vIC2nYAxb0Aw9Uswq"];return(_0x5e9b=function(){return _0x45627c})()}function addWebsiteContentModalRow(_0x305591=null){const _0x50ad26__0x4d8634=613,_0x50ad26__0x33c0c3=408,_0x50ad26__0x2e555f=596,_0x50ad26__0x447b24=887,_0x50ad26__0x3e51ea=431,_0x50ad26__0x3e6d3d=799,_0x50ad26__0x25b68b=874,_0x50ad26__0x4144ea=920,_0x50ad26__0x49365c=1072,_0x50ad26__0x509266=695,_0x50ad26__0xa8c484=747,_0x50ad26__0x18cf15=1072,_0x50ad26__0x11eee9=449,_0x50ad26__0x2fc707=768,_0x50ad26__0x50e036=590,_0x50ad26__0x402765=854,_0x50ad26__0x48eec2=695,_0x50ad26__0x510db1=1040,_0x50ad26__0x4f5acd=1090,_0x50ad26__0x57a051=572,_0x50ad26__0x54e6be=860,_0x50ad26__0x2db70b=937,_0x50ad26__0x19f2c6=1041,_0x50ad26__0x327575=626,_0x50ad26__0x266908=703,_0x50ad26__0x5ef59d=851,_0x50ad26__0x2cb01c=958,_0x50ad26__0x1bd904=1032,_0x50ad26__0x469a32=580,_0x50ad26__0x3b3a57=667,_0x1f4f01=_0x53b2da;if(!DOM[_0x1f4f01(435)])return;const _0x11a2e6=websiteContentModalState[_0x1f4f01(_0x50ad26__0x4d8634)],_0x1ddbb8=DOM.websiteContentRowList[_0x1f4f01(_0x50ad26__0x33c0c3)].length;let _0x2181d1=WEBSITE_MAX_IMAGES_PER_BLOCK;if("videos"===_0x11a2e6&&(_0x2181d1=WEBSITE_MAX_VIDEOS_PER_BLOCK),"links"===_0x11a2e6&&(_0x2181d1=WEBSITE_MAX_LINKS_PER_BLOCK),_0x1ddbb8>=_0x2181d1)return void showWebsiteContentModalError(_0x1f4f01(_0x50ad26__0x2e555f)+_0x2181d1+_0x1f4f01(_0x50ad26__0x447b24));const _0x2ac76c=document.createElement(_0x1f4f01(_0x50ad26__0x3e51ea));if(_0x2ac76c[_0x1f4f01(_0x50ad26__0x3e6d3d)]="links"===_0x11a2e6?_0x1f4f01(_0x50ad26__0x25b68b):"images"===_0x11a2e6?"website-image-row":_0x1f4f01(_0x50ad26__0x4144ea),_0x11a2e6===_0x1f4f01(_0x50ad26__0x49365c)&&_0x305591&&"object"==typeof _0x305591&&typeof _0x305591.id===_0x1f4f01(_0x50ad26__0x509266)&&_0x305591.id&&(_0x2ac76c[_0x1f4f01(1052)][_0x1f4f01(_0x50ad26__0xa8c484)]=_0x305591.id),_0x11a2e6===_0x1f4f01(_0x50ad26__0x18cf15)){_0x2ac76c.innerHTML=_0x1f4f01(918)+WEBSITE_MAX_URL_LENGTH+_0x1f4f01(_0x50ad26__0x11eee9);const _0x67c431=_0x2ac76c.querySelector(_0x1f4f01(_0x50ad26__0x2fc707)),_0x568ff1=_0x2ac76c[_0x1f4f01(_0x50ad26__0x50e036)](_0x1f4f01(_0x50ad26__0x402765));_0x305591&&"object"==typeof _0x305591&&(_0x67c431[_0x1f4f01(1090)]=typeof _0x305591.name===_0x1f4f01(_0x50ad26__0x48eec2)?_0x305591[_0x1f4f01(_0x50ad26__0x510db1)]:"",_0x568ff1[_0x1f4f01(_0x50ad26__0x4f5acd)]=typeof _0x305591[_0x1f4f01(_0x50ad26__0x57a051)]===_0x1f4f01(_0x50ad26__0x48eec2)?_0x305591[_0x1f4f01(_0x50ad26__0x57a051)]:"")}else{const _0x2abded=_0x1f4f01("images"===_0x11a2e6?_0x50ad26__0x54e6be:_0x50ad26__0x2db70b),_0x2fb8a3=_0x1f4f01("images"===_0x11a2e6?_0x50ad26__0x19f2c6:_0x50ad26__0x327575);_0x2ac76c[_0x1f4f01(_0x50ad26__0x266908)]=_0x1f4f01(_0x50ad26__0x5ef59d)+_0x2fb8a3+_0x1f4f01(_0x50ad26__0x2cb01c)+WEBSITE_MAX_URL_LENGTH+'"\n          placeholder="'+_0x2abded+_0x1f4f01(_0x50ad26__0x1bd904);const _0x38dccb=_0x2ac76c[_0x1f4f01(590)](_0x1f4f01(_0x50ad26__0x469a32));"string"==typeof _0x305591&&(_0x38dccb[_0x1f4f01(_0x50ad26__0x4f5acd)]=_0x305591)}DOM.websiteContentRowList[_0x1f4f01(_0x50ad26__0x3b3a57)](_0x2ac76c),clearWebsiteContentModalError()}function handleWebsiteContentModalRowAction(_0x5b9562){const _0x4c3b28__0x7a989e=778,_0x4c3b28__0x424e78=782,_0x4c3b28__0x5b2371=559,_0x4c3b28__0x14c82c=870,_0x4c3b28__0x4c02fb=435,_0x4c3b28__0x3dff6a=408,_0x37e954=_0x53b2da,_0x5412da=_0x5b9562[_0x37e954(472)].closest(_0x37e954(_0x4c3b28__0x7a989e));if(!_0x5412da)return;const _0x302f55=_0x5412da[_0x37e954(_0x4c3b28__0x424e78)](_0x37e954(_0x4c3b28__0x5b2371));_0x302f55&&(_0x302f55[_0x37e954(_0x4c3b28__0x14c82c)](),0===DOM[_0x37e954(_0x4c3b28__0x4c02fb)][_0x37e954(_0x4c3b28__0x3dff6a)][_0x37e954(1043)]&&addWebsiteContentModalRow())}function saveWebsiteContentModal(){const _0x22315c__0x1ede80=1045,_0x22315c__0x137ce4=998,_0x22315c__0xd1dc65=1090,_0x22315c__0x1d2496=599,_0x22315c__0xb7607d=609,_0x22315c__0x4edb52=1067,_0x22315c__0x773d21=843,_0x22315c__0x253cc1=540,_0x22315c__0x44cd11=435,_0x22315c__0x545180=408,_0x22315c__0x21f720=1043,_0x22315c__0xce6aa7=516,_0x22315c__0x5c2e2b=961,_0x22315c__0x5e97c4=758,_0x22315c__0x5a5588=1046,_0x22315c__0x2aee2a=1072,_0x22315c__0x2c367f=445,_0x22315c__0x1fe62e=1043,_0x22315c__0x1a2bad=464,_0x22315c__0x5358de=1072,_0x15210e__0x161cf2=590,_0x15210e__0x207ca1=768,_0x15210e__0x2f83c1=1052,_0x15210e__0x3bb84b=747,_0x15210e__0x1767ae=651,_0x2ba0dc__0x511331=590,_0x2ba0dc__0xdde179=1090,_0x2ba0dc__0xe21c5a=1075,_0x5c3350__0x2d6d42=590,_0x5c3350__0x1603e4=580,_0x5c3350__0x382b5f=1090,_0x5c3350__0x4bb70f=1075,_0x38bb90=_0x53b2da;clearWebsiteContentModalError();const _0x17e096=findWebsiteSection(websiteContentModalState[_0x38bb90(665)]);if(!_0x17e096)return void closeWebsiteContentModal();const _0x52c9ac=websiteContentModalState[_0x38bb90(613)];if(_0x52c9ac===_0x38bb90(_0x22315c__0x1ede80)||"subparagraph"===_0x52c9ac){const _0x1a57cf=normalizeText(DOM.websiteContentText?DOM[_0x38bb90(_0x22315c__0x137ce4)][_0x38bb90(_0x22315c__0xd1dc65)]:"",WEBSITE_MAX_TEXT_LENGTH);if(!_0x1a57cf)return showWebsiteContentModalError("Please enter your content."),void(DOM[_0x38bb90(_0x22315c__0x137ce4)]&&DOM[_0x38bb90(998)][_0x38bb90(_0x22315c__0x1d2496)]());if("edit"===websiteContentModalState.mode){const _0x2b1e31=_0x17e096[_0x38bb90(_0x22315c__0xb7607d)][_0x38bb90(1020)](_0x1b4f37=>_0x1b4f37.id===websiteContentModalState[_0x38bb90(436)]);if(!_0x2b1e31)return void closeWebsiteContentModal();_0x2b1e31[_0x38bb90(_0x22315c__0x4edb52)]=_0x1a57cf}else _0x17e096[_0x38bb90(609)][_0x38bb90(_0x22315c__0x773d21)]({id:createId(_0x38bb90(690)),type:_0x52c9ac,text:_0x1a57cf});return void finishWebsiteContentModalSave(websiteContentModalState.mode===_0x38bb90(_0x22315c__0x253cc1)?_0x38bb90(628):"Paragraph added.")}const _0x46e1b4=Array[_0x38bb90(970)](DOM[_0x38bb90(_0x22315c__0x44cd11)]?DOM.websiteContentRowList[_0x38bb90(_0x22315c__0x545180)]:[]);if(0!==_0x46e1b4[_0x38bb90(_0x22315c__0x21f720)]){if("images"===_0x52c9ac){const _0x5a18b1=_0x46e1b4[_0x38bb90(_0x22315c__0xce6aa7)](_0x557d89=>{const _0x5921aa=_0x38bb90,_0x3fda79=_0x557d89[_0x5921aa(_0x5c3350__0x2d6d42)](_0x5921aa(_0x5c3350__0x1603e4));return _0x3fda79?_0x3fda79[_0x5921aa(_0x5c3350__0x382b5f)][_0x5921aa(_0x5c3350__0x4bb70f)]():""})[_0x38bb90(670)](Boolean),_0x3c6c3b=_0x5a18b1.filter(_0x4d7332=>!isValidHttpsUrl(_0x4d7332));return 0===_0x5a18b1[_0x38bb90(1043)]?void showWebsiteContentModalError(_0x38bb90(495)):_0x3c6c3b[_0x38bb90(1043)]>0?void showWebsiteContentModalError("Every image URL must be a valid HTTPS URL."):void saveWebsiteRepeatableBlock(_0x17e096,_0x38bb90(_0x22315c__0x5c2e2b),_0x5a18b1)}if(_0x52c9ac===_0x38bb90(_0x22315c__0x5e97c4)){const _0x2ffdbc=_0x46e1b4.map(_0x1e5033=>{const _0x48c0a7=_0x38bb90,_0x2852a9=_0x1e5033[_0x48c0a7(_0x2ba0dc__0x511331)](".website-modal-url");return _0x2852a9?_0x2852a9[_0x48c0a7(_0x2ba0dc__0xdde179)][_0x48c0a7(_0x2ba0dc__0xe21c5a)]():""}).filter(Boolean);if(0===_0x2ffdbc[_0x38bb90(1043)])return void showWebsiteContentModalError(_0x38bb90(_0x22315c__0x5a5588));return _0x2ffdbc[_0x38bb90(670)](_0x3e805a=>!isValidYoutubeUrl(_0x3e805a))[_0x38bb90(_0x22315c__0x21f720)]>0?void showWebsiteContentModalError("Please enter valid YouTube video or YouTube Shorts URLs."):void saveWebsiteRepeatableBlock(_0x17e096,_0x38bb90(_0x22315c__0x5e97c4),_0x2ffdbc)}if(_0x52c9ac===_0x38bb90(_0x22315c__0x2aee2a)){const _0x34769c=_0x46e1b4.map(_0x55f5de=>{const _0x392bc7=_0x38bb90,_0x32921e=_0x55f5de[_0x392bc7(_0x15210e__0x161cf2)](_0x392bc7(_0x15210e__0x207ca1)),_0x1c5ff9=_0x55f5de[_0x392bc7(_0x15210e__0x161cf2)](".website-modal-link-url"),_0x4caeb5=normalizeText(_0x32921e?_0x32921e.value:"",150),_0x1bd794=normalizeText(_0x1c5ff9?_0x1c5ff9[_0x392bc7(1090)]:"",WEBSITE_MAX_URL_LENGTH);return _0x4caeb5&&isValidHttpsUrl(_0x1bd794)?{id:_0x55f5de[_0x392bc7(_0x15210e__0x2f83c1)][_0x392bc7(_0x15210e__0x3bb84b)]||createId(_0x392bc7(_0x15210e__0x1767ae)),name:_0x4caeb5,url:_0x1bd794}:null})[_0x38bb90(670)](Boolean);if(0===_0x34769c[_0x38bb90(1043)])return void showWebsiteContentModalError(_0x38bb90(_0x22315c__0x2c367f));if(_0x34769c[_0x38bb90(_0x22315c__0x1fe62e)]!==_0x46e1b4[_0x38bb90(_0x22315c__0x1fe62e)])return void showWebsiteContentModalError(_0x38bb90(_0x22315c__0x1a2bad));saveWebsiteRepeatableBlock(_0x17e096,_0x38bb90(_0x22315c__0x5358de),_0x34769c)}}else showWebsiteContentModalError("Please add at least one item.")}function saveWebsiteRepeatableBlock(_0x296d44,_0x2afab,_0x5d076f){const _0x2bc3b5__0x824132=609,_0x2bc3b5__0x5ccb2d=843,_0x2bc3b5__0x4faaa2=540,_0x2bc3b5__0x3f9d83=628,_0x21a648=_0x53b2da;if(websiteContentModalState[_0x21a648(992)]===_0x21a648(540)){const _0x361143=_0x296d44[_0x21a648(_0x2bc3b5__0x824132)].find(_0xd596db=>_0xd596db.id===websiteContentModalState.blockId);if(!_0x361143)return void closeWebsiteContentModal();_0x361143[_0x21a648(509)]=_0x5d076f}else _0x296d44[_0x21a648(609)][_0x21a648(_0x2bc3b5__0x5ccb2d)]({id:createId(_0x21a648(690)),type:_0x2afab,items:_0x5d076f});finishWebsiteContentModalSave(websiteContentModalState.mode===_0x21a648(_0x2bc3b5__0x4faaa2)?_0x21a648(_0x2bc3b5__0x3f9d83):getWebsiteBlockLabel(_0x2afab)+" added.")}function finishWebsiteContentModalSave(_0x237517){const _0x39a366=_0x53b2da;saveWebsiteData(),renderWebsiteSections(),closeWebsiteContentModal(),showToast(_0x237517,_0x39a366(924))}function _0x1938(_0x23a75f,_0x3e1726){const _0x5e9b27=_0x5e9b();return _0x1938=function(_0x1938ef,_0x15bcd7){let _0x554bdc=_0x5e9b27[_0x1938ef-=386];if(void 0===_0x1938.woqtxY){_0x1938.gJshPE=function(_0x2ed5f1){let _0x3641b5="",_0x12d671="";for(let _0x2869ee,_0x8e9115,_0x281e9b=0,_0x2e3be5=0;_0x8e9115=_0x2ed5f1.charAt(_0x2e3be5++);~_0x8e9115&&(_0x2869ee=_0x281e9b%4?64*_0x2869ee+_0x8e9115:_0x8e9115,_0x281e9b++%4)?_0x3641b5+=String.fromCharCode(255&_0x2869ee>>(-2*_0x281e9b&6)):0)_0x8e9115="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=".indexOf(_0x8e9115);for(let _0x335caa=0,_0x5ee40b=_0x3641b5.length;_0x335caa<_0x5ee40b;_0x335caa++)_0x12d671+="%"+("00"+_0x3641b5.charCodeAt(_0x335caa).toString(16)).slice(-2);return decodeURIComponent(_0x12d671)},_0x23a75f=arguments,_0x1938.woqtxY=!0}const _0x56aafb=_0x1938ef+_0x5e9b27[0],_0xbab4c3=_0x23a75f[_0x56aafb];return _0xbab4c3?_0x554bdc=_0xbab4c3:(_0x554bdc=_0x1938.gJshPE(_0x554bdc),_0x23a75f[_0x56aafb]=_0x554bdc),_0x554bdc},_0x1938(_0x23a75f,_0x3e1726)}function addWebsiteContent(_0x240301,_0x272518){const _0x703a29__0xa9ab82=609,_0x703a29__0x3aa27d=1043,_0x703a29__0x4acc14=662,_0x4ee456=_0x53b2da,_0x5a1df=findWebsiteSection(_0x240301);_0x5a1df&&(_0x5a1df[_0x4ee456(_0x703a29__0xa9ab82)][_0x4ee456(_0x703a29__0x3aa27d)]>=100?showToast(_0x4ee456(596)+100+_0x4ee456(_0x703a29__0x4acc14),_0x4ee456(681)):openWebsiteContentModal(_0x240301,_0x272518))}function editWebsiteContent(_0x130f27,_0x13dc3f){const _0x977e2__0x236596=609,_0x977e2__0xbcd803=613,_0xcfb69=_0x53b2da,_0x544007=findWebsiteSection(_0x130f27);if(!_0x544007)return;const _0x577341=_0x544007[_0xcfb69(_0x977e2__0x236596)].find(_0x164acf=>_0x164acf.id===_0x13dc3f);_0x577341&&openWebsiteContentModal(_0x130f27,_0x577341[_0xcfb69(_0x977e2__0xbcd803)],_0x577341)}function deleteWebsiteContent(_0xebc022,_0x33fa5c){const _0x1c6931__0x556506=1020,_0x1c6931__0x9f9707=892,_0x1c6931__0x1ac706=620,_0x1c6931__0x5b102a=613,_0x1c6931__0x545f0d=953,_0x1c6931__0x12b4cb=609,_0x1c6931__0xb11dfe=670,_0x1c6931__0x53cbc8=506,_0x1c6931__0x194ff9=924,_0x2a2a3d=_0x53b2da,_0x55ce58=findWebsiteSection(_0xebc022);if(!_0x55ce58)return;const _0x31cdd8=_0x55ce58[_0x2a2a3d(609)][_0x2a2a3d(_0x1c6931__0x556506)](_0x1973a2=>_0x1973a2.id===_0x33fa5c);_0x31cdd8&&window[_0x2a2a3d(_0x1c6931__0x9f9707)](_0x2a2a3d(_0x1c6931__0x1ac706)+getWebsiteBlockLabel(_0x31cdd8[_0x2a2a3d(_0x1c6931__0x5b102a)])[_0x2a2a3d(557)]()+_0x2a2a3d(_0x1c6931__0x545f0d))&&(_0x55ce58[_0x2a2a3d(_0x1c6931__0x12b4cb)]=_0x55ce58[_0x2a2a3d(609)][_0x2a2a3d(_0x1c6931__0xb11dfe)](_0x2d1bb3=>_0x2d1bb3.id!==_0x33fa5c),saveWebsiteData(),renderWebsiteSections(),showToast(_0x2a2a3d(_0x1c6931__0x53cbc8),_0x2a2a3d(_0x1c6931__0x194ff9)))}function addWebsiteFooterLink(){const _0x5e187b__0x33c46b=509,_0x5e187b__0x54a0ad=596,_0x5e187b__0x1a9187=950,_0x5e187b__0x5bb640=681,_0x5e187b__0xc85c43=723,_0x5e187b__0x345062=1063,_0x5e187b__0x40b67b=576,_0x5e187b__0x417b44=1011,_0x5e187b__0x1e8015=465,_0x5e187b__0x875649=924,_0x4d0de1=_0x53b2da;if(state[_0x4d0de1(1011)].footer[_0x4d0de1(_0x5e187b__0x33c46b)].length>=WEBSITE_MAX_FOOTER_LINKS)return void showToast(_0x4d0de1(_0x5e187b__0x54a0ad)+WEBSITE_MAX_FOOTER_LINKS+_0x4d0de1(_0x5e187b__0x1a9187),_0x4d0de1(_0x5e187b__0x5bb640));const _0x15aa57=window.prompt(_0x4d0de1(_0x5e187b__0xc85c43));if(null===_0x15aa57)return;const _0x51eb38=normalizeText(_0x15aa57,150),_0x4e04da=window[_0x4d0de1(_0x5e187b__0x345062)]("Enter footer link URL:");if(null===_0x4e04da)return;const _0x121a58=normalizeText(_0x4e04da,WEBSITE_MAX_URL_LENGTH);_0x51eb38&&isValidHttpsUrl(_0x121a58)?(state[_0x4d0de1(_0x5e187b__0x417b44)][_0x4d0de1(_0x5e187b__0x1e8015)].items[_0x4d0de1(843)]({id:createId("footer"),name:_0x51eb38,url:_0x121a58}),saveWebsiteData(),renderWebsiteFooter(),showToast("Footer link added.",_0x4d0de1(_0x5e187b__0x875649))):showToast(_0x4d0de1(_0x5e187b__0x40b67b),"error")}function renderWebsiteFooter(){const _0x47fd51__0x1102da=518,_0x47fd51__0x2407a5=465,_0x47fd51__0x516989=1043,_0x47fd51__0x355586=909,_0x9f2d99__0x29aade=423,_0x9f2d99__0x4b0701=799,_0x9f2d99__0x1f3c88=989,_0x9f2d99__0x40ec93=724,_0x9f2d99__0xd028bb=423,_0x9f2d99__0x37412a=667,_0x9f2d99__0x2c9577=423,_0x9f2d99__0x50c5df=431,_0x9f2d99__0x4e85a5=799,_0x9f2d99__0x24761e=461,_0x9f2d99__0x26a50d=799,_0x9f2d99__0x9eca74=1052,_0x9f2d99__0x5aeddf=891,_0x9f2d99__0x534a63=423,_0x9f2d99__0x550c4f=613,_0x9f2d99__0x337615=799,_0x9f2d99__0x5d13aa=930,_0x9f2d99__0x21e574=1052,_0x9f2d99__0x54bde4=891,_0x9f2d99__0x9b4a4b=667,_0x3c3893=_0x53b2da;if(!DOM.websiteFooterLinks)return;DOM[_0x3c3893(821)][_0x3c3893(_0x47fd51__0x1102da)]();const _0x35b52b=state.website[_0x3c3893(_0x47fd51__0x2407a5)][_0x3c3893(509)];DOM[_0x3c3893(699)]&&(DOM[_0x3c3893(699)][_0x3c3893(1088)]=_0x35b52b[_0x3c3893(_0x47fd51__0x516989)]>0),_0x35b52b[_0x3c3893(_0x47fd51__0x355586)](_0x1ad2c7=>{const _0x1ce047=_0x3c3893,_0x5ae483=document[_0x1ce047(_0x9f2d99__0x29aade)]("div");_0x5ae483[_0x1ce047(_0x9f2d99__0x4b0701)]=_0x1ce047(_0x9f2d99__0x1f3c88);const _0x33e2cf=document.createElement("div");_0x33e2cf.className="website-footer-link-card__info";const _0x270540=document[_0x1ce047(_0x9f2d99__0x29aade)]("p");_0x270540.className=_0x1ce047(1016),_0x270540[_0x1ce047(_0x9f2d99__0x40ec93)]=_0x1ad2c7.name;const _0x1ac605=document[_0x1ce047(_0x9f2d99__0xd028bb)]("p");_0x1ac605[_0x1ce047(799)]="website-footer-link-card__url",_0x1ac605[_0x1ce047(724)]=_0x1ad2c7.url,_0x33e2cf[_0x1ce047(_0x9f2d99__0x37412a)](_0x270540),_0x33e2cf[_0x1ce047(667)](_0x1ac605);const _0x5bb114=document[_0x1ce047(_0x9f2d99__0x2c9577)](_0x1ce047(_0x9f2d99__0x50c5df));_0x5bb114[_0x1ce047(_0x9f2d99__0x4e85a5)]="website-footer-link-card__actions";const _0x893c4d=document[_0x1ce047(423)](_0x1ce047(461));_0x893c4d[_0x1ce047(613)]=_0x1ce047(_0x9f2d99__0x24761e),_0x893c4d[_0x1ce047(_0x9f2d99__0x26a50d)]="secondary-button secondary-button--small",_0x893c4d.textContent=_0x1ce047(394),_0x893c4d[_0x1ce047(_0x9f2d99__0x9eca74)][_0x1ce047(388)]=_0x1ce047(540),_0x893c4d[_0x1ce047(1052)][_0x1ce047(_0x9f2d99__0x5aeddf)]=_0x1ad2c7.id;const _0x580da5=document[_0x1ce047(_0x9f2d99__0x534a63)](_0x1ce047(_0x9f2d99__0x24761e));_0x580da5[_0x1ce047(_0x9f2d99__0x550c4f)]="button",_0x580da5[_0x1ce047(_0x9f2d99__0x337615)]=_0x1ce047(_0x9f2d99__0x5d13aa),_0x580da5.textContent="Delete",_0x580da5.dataset.websiteFooterAction="delete",_0x580da5[_0x1ce047(_0x9f2d99__0x21e574)][_0x1ce047(_0x9f2d99__0x54bde4)]=_0x1ad2c7.id,_0x5bb114[_0x1ce047(_0x9f2d99__0x9b4a4b)](_0x893c4d),_0x5bb114.appendChild(_0x580da5),_0x5ae483[_0x1ce047(_0x9f2d99__0x9b4a4b)](_0x33e2cf),_0x5ae483[_0x1ce047(667)](_0x5bb114),DOM[_0x1ce047(821)].appendChild(_0x5ae483)})}function handleWebsiteFooterAction(_0x3527e4){const _0x27385a__0x3f3372=782,_0x27385a__0x3546d4=1052,_0x27385a__0x16e028=891,_0x27385a__0x459cc0=1020,_0x27385a__0x5278aa=517,_0x27385a__0x65adf5=1040,_0x27385a__0x5bca79=465,_0x27385a__0x5ab2e2=509,_0x27385a__0x252dad=1063,_0x27385a__0x17be25=544,_0x27385a__0x4476b0=576,_0x27385a__0x1bbda7=681,_0x27385a__0x3cfc21=572,_0x33a932=_0x53b2da,_0x208dd6=_0x3527e4[_0x33a932(472)][_0x33a932(_0x27385a__0x3f3372)]("[data-website-footer-action]");if(!_0x208dd6)return;const _0x5602f8=_0x208dd6.dataset[_0x33a932(388)],_0x1447d0=_0x208dd6[_0x33a932(_0x27385a__0x3546d4)][_0x33a932(_0x27385a__0x16e028)],_0x17f173=state.website.footer[_0x33a932(509)][_0x33a932(_0x27385a__0x459cc0)](_0x554690=>_0x554690.id===_0x1447d0);if(_0x17f173){if("delete"===_0x5602f8){if(!window[_0x33a932(892)](_0x33a932(_0x27385a__0x5278aa)+_0x17f173[_0x33a932(_0x27385a__0x65adf5)]+'"?'))return;return state.website[_0x33a932(_0x27385a__0x5bca79)][_0x33a932(_0x27385a__0x5ab2e2)]=state.website[_0x33a932(465)].items.filter(_0x4ba9ed=>_0x4ba9ed.id!==_0x1447d0),saveWebsiteData(),void renderWebsiteFooter()}if("edit"===_0x5602f8){const _0x248e8f=window[_0x33a932(_0x27385a__0x252dad)](_0x33a932(_0x27385a__0x17be25),_0x17f173[_0x33a932(1040)]);if(null===_0x248e8f)return;const _0x507812=window[_0x33a932(_0x27385a__0x252dad)]("Edit footer link URL:",_0x17f173.url);if(null===_0x507812)return;const _0x1a7776=normalizeText(_0x248e8f,150),_0x36242b=normalizeText(_0x507812,WEBSITE_MAX_URL_LENGTH);if(!_0x1a7776||!isValidHttpsUrl(_0x36242b))return void showToast(_0x33a932(_0x27385a__0x4476b0),_0x33a932(_0x27385a__0x1bbda7));_0x17f173[_0x33a932(_0x27385a__0x65adf5)]=_0x1a7776,_0x17f173[_0x33a932(_0x27385a__0x3cfc21)]=_0x36242b,saveWebsiteData(),renderWebsiteFooter()}}}function validateWebsiteBuilder(){const _0x513112__0x1db813=783,_0x513112__0x506ea4=387,_0x513112__0x1545eb=720,_0x513112__0x34e283=591,_0x513112__0x18c1c6=843,_0x513112__0x4b7565=632,_0x513112__0x3e9bab=843,_0x513112__0x3feae5=762,_0x513112__0x5074d7=843,_0x513112__0x58d4c3=843,_0x513112__0x58699c=843,_0x513112__0x37e23f=421,_0x513112__0x552207=456,_0x513112__0x2c3583=601,_0x513112__0x2aec74=843,_0x513112__0x3e469e=532,_0x513112__0x788f21=601,_0x513112__0x56313d=492,_0x513112__0x322760=649,_0x513112__0x347bac=781,_0x513112__0x2db445=1036,_0x513112__0x3b40f0=1011,_0x513112__0x3eb7de=541,_0x513112__0x27177d=1011,_0x513112__0x2618a0=465,_0x513112__0x1a422=909,_0x513112__0x56109b=1043,_0x58af34__0x375790=1040,_0x58af34__0x5505bf=572,_0x58af34__0x3c4ad1=843,_0x58af34__0x9cff0a=491,_0x586947__0x307de2=1029,_0x586947__0x44ed1f=847,_0x586947__0x4e84ad=994,_0x586947__0x230ddc=609,_0x401f7f__0x373361=1045,_0x401f7f__0x4d40b7=613,_0x401f7f__0x3e55c5=502,_0x401f7f__0x1a73f8=843,_0x401f7f__0x4bd505=994,_0x401f7f__0x3a6ea1=613,_0x401f7f__0x378a13=961,_0x401f7f__0x52c93f=509,_0x401f7f__0x3ea067=843,_0x401f7f__0x448b96=1089,_0x401f7f__0x1b0e74=909,_0x401f7f__0x59d037=758,_0x401f7f__0x213f33=509,_0x401f7f__0x5a3919=1043,_0x401f7f__0x181e89=847,_0x401f7f__0xbe6723=1072,_0x401f7f__0x359c44=843,_0x401f7f__0x55397c=994,_0x401f7f__0x44dc73=928,_0x401f7f__0x133d89=509,_0x401f7f__0x504238=909,_0xf74e38=_0x53b2da,_0x5bbc1c=[],_0x9643c5=getValue(DOM[_0xf74e38(951)]),_0x5047d9=getValue(DOM[_0xf74e38(_0x513112__0x1db813)]),_0x2908d2=getValue(DOM.websiteAddress),_0x5d1729=(getValue(DOM.websiteTagline),getValue(DOM[_0xf74e38(_0x513112__0x506ea4)])),_0x26880b=getValue(DOM[_0xf74e38(636)]),_0x46a3bc=getValue(DOM[_0xf74e38(_0x513112__0x1545eb)]),_0x43fe7d=DOM[_0xf74e38(1042)]?DOM[_0xf74e38(1042)][_0xf74e38(1090)]:"",_0x498fd7=getValue(DOM[_0xf74e38(_0x513112__0x34e283)]);return!_0x9643c5&&_0x5bbc1c[_0xf74e38(_0x513112__0x18c1c6)](_0xf74e38(_0x513112__0x4b7565)),!_0x43fe7d&&_0x5bbc1c.push(_0xf74e38(418)),!_0x5047d9&&_0x5bbc1c[_0xf74e38(_0x513112__0x3e9bab)](_0xf74e38(_0x513112__0x3feae5)),!_0x2908d2&&_0x5bbc1c[_0xf74e38(_0x513112__0x5074d7)]("Please enter the business address."),!_0x5d1729&&_0x5bbc1c[_0xf74e38(_0x513112__0x58d4c3)]("Please enter the business mobile number."),_0x26880b&&!isValidEmail(_0x26880b)&&_0x5bbc1c[_0xf74e38(_0x513112__0x58699c)]("Please enter a valid email address."),!_0x46a3bc&&_0x5bbc1c[_0xf74e38(_0x513112__0x3e9bab)](_0xf74e38(_0x513112__0x37e23f)),_0x498fd7&&!isValidHttpsUrl(_0x498fd7)&&_0x5bbc1c[_0xf74e38(_0x513112__0x58699c)](_0xf74e38(_0x513112__0x552207)),!state[_0xf74e38(_0x513112__0x2c3583)].verified&&_0x5bbc1c[_0xf74e38(_0x513112__0x2aec74)](_0xf74e38(_0x513112__0x3e469e)),(!Number[_0xf74e38(751)](state[_0xf74e38(_0x513112__0x788f21)][_0xf74e38(1048)])||!Number.isFinite(state[_0xf74e38(601)][_0xf74e38(_0x513112__0x56313d)]))&&_0x5bbc1c.push(_0xf74e38(_0x513112__0x322760)),(!Number.isFinite(state[_0xf74e38(_0x513112__0x2c3583)][_0xf74e38(_0x513112__0x347bac)])||state[_0xf74e38(_0x513112__0x788f21)].accuracy<=0||state[_0xf74e38(_0x513112__0x788f21)][_0xf74e38(781)]>CONFIG.MAX_LOCATION_ACCURACY_METERS)&&_0x5bbc1c.push("Business GPS accuracy must be "+CONFIG[_0xf74e38(_0x513112__0x2db445)]+" metres or better."),0===state[_0xf74e38(_0x513112__0x3b40f0)][_0xf74e38(618)].length&&_0x5bbc1c[_0xf74e38(_0x513112__0x5074d7)](_0xf74e38(_0x513112__0x3eb7de)),state[_0xf74e38(_0x513112__0x3b40f0)][_0xf74e38(618)][_0xf74e38(909)](_0x372e88=>{const _0x286bfa__0x5111d5=1040,_0x286bfa__0x586563=572,_0x286bfa__0x5816f5=843,_0x286bfa__0x30d175=847,_0x286bfa__0xe49b47=994,_0x286bfa__0x2ec244=738,_0x181c78__0x328f13=847,_0x181c78__0x295e4d=1051,_0x307f06=_0xf74e38;!_0x372e88.heading&&_0x5bbc1c.push("Every website section must have a heading."),!Array[_0x307f06(_0x586947__0x307de2)](_0x372e88[_0x307f06(609)])&&_0x5bbc1c[_0x307f06(843)](_0x307f06(_0x586947__0x44ed1f)+_0x372e88[_0x307f06(_0x586947__0x4e84ad)]+'" has invalid content.'),_0x372e88[_0x307f06(_0x586947__0x230ddc)].forEach(_0xd1476=>{const _0x1eea07__0x134a44=843,_0x1eea07__0x48efff=994,_0x2efe4d=_0x307f06;(_0xd1476.type===_0x2efe4d(_0x401f7f__0x373361)||_0xd1476[_0x2efe4d(_0x401f7f__0x4d40b7)]===_0x2efe4d(_0x401f7f__0x3e55c5))&&!_0xd1476[_0x2efe4d(1067)]&&_0x5bbc1c[_0x2efe4d(_0x401f7f__0x1a73f8)]('Section "'+_0x372e88[_0x2efe4d(_0x401f7f__0x4bd505)]+'" contains empty text content.'),_0xd1476[_0x2efe4d(_0x401f7f__0x3a6ea1)]===_0x2efe4d(_0x401f7f__0x378a13)&&(0===_0xd1476[_0x2efe4d(_0x401f7f__0x52c93f)].length&&_0x5bbc1c[_0x2efe4d(_0x401f7f__0x3ea067)](_0x2efe4d(847)+_0x372e88[_0x2efe4d(994)]+_0x2efe4d(_0x401f7f__0x448b96)),_0xd1476[_0x2efe4d(_0x401f7f__0x52c93f)][_0x2efe4d(_0x401f7f__0x1b0e74)](_0x125f86=>{const _0x4be21e=_0x2efe4d;!isValidHttpsUrl(_0x125f86)&&_0x5bbc1c[_0x4be21e(843)](_0x4be21e(_0x181c78__0x328f13)+_0x372e88[_0x4be21e(994)]+_0x4be21e(_0x181c78__0x295e4d))})),_0xd1476.type===_0x2efe4d(_0x401f7f__0x59d037)&&(0===_0xd1476[_0x2efe4d(_0x401f7f__0x213f33)][_0x2efe4d(_0x401f7f__0x5a3919)]&&_0x5bbc1c[_0x2efe4d(_0x401f7f__0x1a73f8)](_0x2efe4d(_0x401f7f__0x181e89)+_0x372e88[_0x2efe4d(_0x401f7f__0x4bd505)]+_0x2efe4d(819)),_0xd1476[_0x2efe4d(_0x401f7f__0x52c93f)][_0x2efe4d(_0x401f7f__0x1b0e74)](_0x3dd1cf=>{const _0x3613ec=_0x2efe4d;!isValidYoutubeUrl(_0x3dd1cf)&&_0x5bbc1c[_0x3613ec(_0x1eea07__0x134a44)]('Section "'+_0x372e88[_0x3613ec(_0x1eea07__0x48efff)]+'" contains an invalid YouTube URL.')})),_0xd1476[_0x2efe4d(613)]===_0x2efe4d(_0x401f7f__0xbe6723)&&(0===_0xd1476[_0x2efe4d(_0x401f7f__0x213f33)].length&&_0x5bbc1c[_0x2efe4d(_0x401f7f__0x359c44)](_0x2efe4d(847)+_0x372e88[_0x2efe4d(_0x401f7f__0x55397c)]+_0x2efe4d(_0x401f7f__0x44dc73)),_0xd1476[_0x2efe4d(_0x401f7f__0x133d89)][_0x2efe4d(_0x401f7f__0x504238)](_0x491f02=>{const _0x296282=_0x2efe4d;(!_0x491f02[_0x296282(_0x286bfa__0x5111d5)]||!isValidHttpsUrl(_0x491f02[_0x296282(_0x286bfa__0x586563)]))&&_0x5bbc1c[_0x296282(_0x286bfa__0x5816f5)](_0x296282(_0x286bfa__0x30d175)+_0x372e88[_0x296282(_0x286bfa__0xe49b47)]+_0x296282(_0x286bfa__0x2ec244))}))})}),state[_0xf74e38(_0x513112__0x27177d)][_0xf74e38(_0x513112__0x2618a0)][_0xf74e38(509)][_0xf74e38(_0x513112__0x1a422)](_0x298c2c=>{const _0x6dddef=_0xf74e38;(!_0x298c2c[_0x6dddef(_0x58af34__0x375790)]||!isValidHttpsUrl(_0x298c2c[_0x6dddef(_0x58af34__0x5505bf)]))&&_0x5bbc1c[_0x6dddef(_0x58af34__0x3c4ad1)](_0x6dddef(_0x58af34__0x9cff0a))}),{valid:0===_0x5bbc1c[_0xf74e38(_0x513112__0x56109b)],errors:uniqueStrings(_0x5bbc1c)}}function showWebsiteValidation(_0x2ffa8c){const _0x40533f__0x56fee1=646,_0x40533f__0x340cc2=909,_0x40533f__0x1cc3c7=524,_0x40533f__0x406a12=984,_0x1fc408__0x40c79e=646,_0x3187cc=_0x53b2da;DOM[_0x3187cc(582)]&&DOM.websiteValidationList&&(DOM[_0x3187cc(_0x40533f__0x56fee1)][_0x3187cc(518)](),_0x2ffa8c[_0x3187cc(_0x40533f__0x340cc2)](_0xb5f823=>{const _0x485d0f=_0x3187cc,_0x376670=document.createElement("li");_0x376670.textContent=_0xb5f823,DOM[_0x485d0f(_0x1fc408__0x40c79e)][_0x485d0f(667)](_0x376670)}),DOM[_0x3187cc(582)][_0x3187cc(1088)]=!1,DOM.websiteValidationSummary[_0x3187cc(_0x40533f__0x1cc3c7)]({behavior:_0x3187cc(_0x40533f__0x406a12),block:"center"}))}function hideWebsiteValidation(){const _0x567b7f__0x57edc5=582,_0x567b7f__0x398ba4=646,_0x567b7f__0x258774=646,_0x567b7f__0x5d2a5b=518,_0x534240=_0x53b2da;DOM[_0x534240(_0x567b7f__0x57edc5)]&&(DOM[_0x534240(_0x567b7f__0x57edc5)][_0x534240(1088)]=!0),DOM[_0x534240(_0x567b7f__0x398ba4)]&&DOM[_0x534240(_0x567b7f__0x258774)][_0x534240(_0x567b7f__0x5d2a5b)]()}function buildWebsitePublishPayload(){const _0x29fa39__0x5a9810=951,_0x29fa39__0xafcfb8=1090,_0x29fa39__0xd328c0=791,_0x29fa39__0x190615=653,_0x29fa39__0x2e199b=387,_0x29fa39__0x43acd3=720,_0x29fa39__0x53d4c8=591,_0x29fa39__0x203ed3=1048,_0x29fa39__0x2d586a=492,_0x29fa39__0x1350fb=781,_0x29fa39__0x3f2d99=601,_0x29fa39__0x316b89=1064,_0x29fa39__0x4322b5=618,_0x29fa39__0x42f783=516,_0x29fa39__0x205c3a=1011,_0x50f292=_0x53b2da;return{template:_0x50f292(941),subscriptionId:getValue(DOM[_0x50f292(_0x29fa39__0x5a9810)]),businessPassword:DOM[_0x50f292(1042)]?DOM[_0x50f292(1042)][_0x50f292(_0x29fa39__0xafcfb8)]:"",business:{name:getValue(DOM.websiteBusinessName),address:getValue(DOM[_0x50f292(_0x29fa39__0xd328c0)]),tagline:getValue(DOM[_0x50f292(_0x29fa39__0x190615)]),mobile:getValue(DOM[_0x50f292(_0x29fa39__0x2e199b)]),email:getValue(DOM[_0x50f292(636)]),whatsapp:getValue(DOM[_0x50f292(_0x29fa39__0x43acd3)]),logoUrl:getValue(DOM[_0x50f292(_0x29fa39__0x53d4c8)])},location:{verified:state[_0x50f292(601)].verified,latitude:state.location[_0x50f292(_0x29fa39__0x203ed3)],longitude:state.location[_0x50f292(_0x29fa39__0x2d586a)],accuracy:state.location[_0x50f292(_0x29fa39__0x1350fb)],verifiedAt:state[_0x50f292(_0x29fa39__0x3f2d99)][_0x50f292(_0x29fa39__0x316b89)]},sections:state.website[_0x50f292(_0x29fa39__0x4322b5)][_0x50f292(_0x29fa39__0x42f783)](_0x3bff0c=>({id:_0x3bff0c.id,heading:_0x3bff0c[_0x50f292(994)],blocks:_0x3bff0c[_0x50f292(609)]})),footer:{items:state[_0x50f292(_0x29fa39__0x205c3a)][_0x50f292(465)].items[_0x50f292(_0x29fa39__0x42f783)](_0x162082=>({id:_0x162082.id,name:_0x162082[_0x50f292(1040)],url:_0x162082[_0x50f292(572)]}))}}}async function publishWebsite(){const _0x595930__0x168450=832,_0x595930__0x22252c=931,_0x595930__0x37b87=924,_0x595930__0x37effe=1002,_0x595930__0x185113=424,_0x595930__0x7d223b=480,_0x595930__0x341434=416,_0x595930__0x59ae75=392,_0x595930__0x5babe0=572,_0x595930__0x4c52fa=724,_0x595930__0x1806a1=907,_0x595930__0x399b1b=1088,_0x595930__0x4285fc=560,_0x595930__0x34517f=924,_0x595930__0x1df50a=832,_0x385af5=_0x53b2da;if(state[_0x385af5(_0x595930__0x168450)])return;hideWebsiteValidation();const _0x338b8a=validateWebsiteBuilder();if(!_0x338b8a.valid)return showWebsiteValidation(_0x338b8a[_0x385af5(931)]),void showToast(_0x338b8a[_0x385af5(_0x595930__0x22252c)][0]||"Please review the website.",_0x385af5(681));const _0x592c82=buildWebsitePublishPayload();state[_0x385af5(_0x595930__0x168450)]=!0,setWebsitePublishBusy(!0),setWebsitePublishStatus("Verifying subscription and publishing your Global Website...");try{const _0x456b37=await sendPublishRequest(_0x592c82);if(!_0x456b37||!0!==_0x456b37[_0x385af5(_0x595930__0x37b87)])throw new Error(_0x456b37&&_0x456b37[_0x385af5(_0x595930__0x37effe)]?_0x456b37.message:"The Global Website could not be created.");if(!isValidHttpsUrl(_0x456b37.url))throw new Error(_0x385af5(397));setWebsitePublishStatus(_0x385af5(_0x595930__0x185113));if(!await waitForWebsiteDeployment(_0x456b37[_0x385af5(572)]))return setWebsitePublishStatus(_0x385af5(824)),void showToast(_0x385af5(_0x595930__0x7d223b),"info");DOM[_0x385af5(_0x595930__0x341434)]&&(DOM.websitePublishedUrl[_0x385af5(_0x595930__0x59ae75)]=_0x456b37[_0x385af5(_0x595930__0x5babe0)],DOM[_0x385af5(416)][_0x385af5(_0x595930__0x4c52fa)]=_0x456b37.url),DOM[_0x385af5(907)]&&(DOM[_0x385af5(_0x595930__0x1806a1)][_0x385af5(_0x595930__0x399b1b)]=!1),setWebsitePublishStatus(_0x385af5(_0x595930__0x4285fc)),showToast("Your Global Website is now live.",_0x385af5(_0x595930__0x34517f))}catch(_0x53ef04){const _0x4134c1=getErrorMessage(_0x53ef04);setWebsitePublishStatus(_0x4134c1),showWebsiteValidation([_0x4134c1]),showToast(_0x4134c1,"error")}finally{state[_0x385af5(_0x595930__0x1df50a)]=!1,setWebsitePublishBusy(!1)}}async function waitForWebsiteDeployment(_0x5dbb98){const _0x5a9203__0x3e220c=864,_0x5a9203__0x3ab758=647,_0x5a9203__0x2d77a5=702,_0x5a9203__0x3cbaf3=497,_0x5a9203__0x559985=647,_0x5a9203__0x4da7f9=486,_0x5a9203__0x26aeac=434,_0x5a9203__0x4f38f7=743,_0x37f55b=_0x53b2da,_0x1e9268=Date[_0x37f55b(_0x5a9203__0x3e220c)]();for(;Date[_0x37f55b(864)]()-_0x1e9268<CONFIG[_0x37f55b(_0x5a9203__0x3ab758)];){if(await isWebsiteDeploymentReady(_0x5dbb98))return!0;const _0x38f1f9=Math[_0x37f55b(_0x5a9203__0x2d77a5)](0,Math[_0x37f55b(_0x5a9203__0x3cbaf3)]((CONFIG[_0x37f55b(_0x5a9203__0x559985)]-(Date[_0x37f55b(_0x5a9203__0x3e220c)]()-_0x1e9268))/1e3));setWebsitePublishStatus(_0x37f55b(_0x5a9203__0x4da7f9)+_0x38f1f9+_0x37f55b(_0x5a9203__0x26aeac)),await sleep(CONFIG[_0x37f55b(_0x5a9203__0x4f38f7)])}return!1}async function isWebsiteDeploymentReady(_0x2edd5e){const _0x25491d__0x54bd37=475,_0x25491d__0x76f6d1=392,_0xf77654=_0x53b2da;try{const _0x1e250d=new URL(_0x2edd5e),_0xc90087=new URL(_0xf77654(_0x25491d__0x54bd37),_0x1e250d),[_0x22fe61,_0x5b24b2]=await Promise[_0xf77654(1087)]([fetchDeploymentResource(_0x1e250d[_0xf77654(_0x25491d__0x76f6d1)]),fetchDeploymentResource(_0xc90087[_0xf77654(392)])]);return Boolean(_0x22fe61&&_0x22fe61.ok&&_0x5b24b2&&_0x5b24b2.ok)}catch{return!1}}function setWebsitePublishBusy(_0x24b2cc){const _0x45338a__0x11747d=880,_0x45338a__0x31d6ea=409,_0x45338a__0x43f4d2=439,_0x45338a__0x485611=974,_0x45338a__0x46ab64=414,_0x45338a__0x5558d5=1088,_0x45338a__0x49d9db=869,_0x45338a__0x3349b4=724,_0x45338a__0x1484ef=910,_0x45338a__0x5a20cf=877,_0x161fa0=_0x53b2da;DOM.websitePublish&&(DOM[_0x161fa0(_0x45338a__0x11747d)][_0x161fa0(_0x45338a__0x31d6ea)]=_0x24b2cc,DOM.websitePublish[_0x161fa0(_0x45338a__0x43f4d2)](_0x161fa0(884),_0x24b2cc?_0x161fa0(_0x45338a__0x485611):"false"),DOM[_0x161fa0(_0x45338a__0x46ab64)]&&(DOM.websitePublishSpinner[_0x161fa0(_0x45338a__0x5558d5)]=!_0x24b2cc),DOM[_0x161fa0(_0x45338a__0x49d9db)]&&(DOM[_0x161fa0(869)][_0x161fa0(_0x45338a__0x3349b4)]=_0x161fa0(_0x24b2cc?_0x45338a__0x1484ef:_0x45338a__0x5a20cf)))}function setWebsitePublishStatus(_0x42b923){const _0x1c9401__0x24fd03=767,_0x1c9401__0x59449f=724,_0x2baa30=_0x53b2da;DOM[_0x2baa30(767)]&&(DOM[_0x2baa30(_0x1c9401__0x24fd03)][_0x2baa30(_0x1c9401__0x59449f)]=_0x42b923||"")}function getYoutubeEmbedData(_0x561701){const _0x2480df__0x2ca3e7=410,_0x2480df__0xb74d0f=598,_0x2480df__0x3b97cd=425,_0x2480df__0x26d6a1=979,_0x2480df__0x38c6cf=862,_0x2480df__0x1930fe=494,_0x2480df__0x19451a=470,_0x2480df__0x1a6846=862,_0x2480df__0x17704a=979,_0x2480df__0x2d58f9=785,_0x2480df__0x3db6ed=966,_0xaea678=_0x53b2da;try{const _0x8b9400=new URL(_0x561701),_0x5ea769=_0x8b9400.hostname[_0xaea678(557)]()[_0xaea678(_0x2480df__0x2ca3e7)](/^www\./,"");let _0x2632d7="",_0x599bda=!1;return"youtu.be"===_0x5ea769?_0x2632d7=_0x8b9400.pathname[_0xaea678(_0x2480df__0xb74d0f)]("/").filter(Boolean)[0]||"":_0x5ea769!==_0xaea678(600)&&_0x5ea769!==_0xaea678(_0x2480df__0x3b97cd)||(_0x8b9400[_0xaea678(_0x2480df__0x26d6a1)][_0xaea678(_0x2480df__0x38c6cf)](_0xaea678(_0x2480df__0x1930fe))?(_0x2632d7=_0x8b9400[_0xaea678(979)][_0xaea678(598)]("/")[_0xaea678(670)](Boolean)[1]||"",_0x599bda=!0):_0x8b9400.pathname===_0xaea678(852)?_0x2632d7=_0x8b9400.searchParams[_0xaea678(_0x2480df__0x19451a)]("v")||"":_0x8b9400[_0xaea678(_0x2480df__0x26d6a1)][_0xaea678(_0x2480df__0x1a6846)]("/embed/")&&(_0x2632d7=_0x8b9400[_0xaea678(_0x2480df__0x17704a)].split("/")[_0xaea678(670)](Boolean)[1]||"")),_0x2632d7?{short:_0x599bda,url:_0xaea678(_0x2480df__0x2d58f9)+encodeURIComponent(_0x2632d7)+_0xaea678(_0x2480df__0x3db6ed)}:null}catch{return null}}function resetBuilderData(_0x10bde3){const _0x44d7df__0x3aba70=478,_0x44d7df__0x1d9f1e=440,_0x44d7df__0xe3dd47=484,_0x44d7df__0x3203dc=601,_0x44d7df__0x7369d9=733,_0x494ba1=_0x53b2da;!_0x10bde3&&(state.selectedTemplate=null),clearCategoryItemData(),clearWebsiteData(),state[_0x494ba1(_0x44d7df__0x3aba70)]=[],state[_0x494ba1(_0x44d7df__0x1d9f1e)]=null,state[_0x494ba1(_0x44d7df__0xe3dd47)]=null,state.editingItemCategoryId=null,state[_0x494ba1(_0x44d7df__0x3203dc)]={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},state[_0x494ba1(_0x44d7df__0x7369d9)]="",clearAllFormFields(),seedDefaultCategories(),renderCategories(),renderItems(),updateItemCategorySelect(),updateLocationDetails(),hideValidation(),hideSuccess(),clearSubscriptionError(),setPublishStatus("")}function clearAllFormFields(){const _0xa820b__0x5090f3=513,_0xa820b__0x45e821=453,_0xa820b__0x4830f2=895,_0xa820b__0x18a550=951,_0xa820b__0x3e99d2=783,_0xa820b__0xa0f64c=387,_0xa820b__0x392de8=636,_0xa820b__0x58a2e8=720,_0xa820b__0x2d2b96=591,_0xa820b__0x1722ff=909,_0xa820b__0x18f8c3=773,_0xa820b__0x3b1fb9=1088,_0xa820b__0x5e5252=1007,_0xa820b__0x2c563a=1007,_0xa820b__0x48a08a=407,_0xa820b__0x2fadf4=907,_0xa820b__0x53d4af=1025,_0xa820b__0x2ef3a0=1025,_0xa820b__0x46da71=1090,_0x287655=_0x53b2da;[DOM[_0x287655(688)],DOM.businessName,DOM[_0x287655(_0xa820b__0x5090f3)],DOM[_0x287655(579)],DOM[_0x287655(_0xa820b__0x45e821)],DOM.email,DOM[_0x287655(980)],DOM[_0x287655(_0xa820b__0x4830f2)],DOM[_0x287655(_0xa820b__0x18a550)],DOM[_0x287655(_0xa820b__0x3e99d2)],DOM.websiteAddress,DOM[_0x287655(653)],DOM[_0x287655(_0xa820b__0xa0f64c)],DOM[_0x287655(_0xa820b__0x392de8)],DOM[_0x287655(_0xa820b__0x58a2e8)],DOM.websitePassword,DOM[_0x287655(_0xa820b__0x2d2b96)]][_0x287655(_0xa820b__0x1722ff)](_0x33e7f9=>{_0x33e7f9&&(_0x33e7f9.value="")}),hideLogoPreview(),DOM[_0x287655(_0xa820b__0x18f8c3)]&&(DOM.websiteLogoPreview[_0x287655(_0xa820b__0x3b1fb9)]=!0),DOM[_0x287655(_0xa820b__0x5e5252)]&&DOM[_0x287655(_0xa820b__0x2c563a)][_0x287655(999)](_0x287655(_0xa820b__0x48a08a)),renderWebsiteSections(),renderWebsiteFooter(),DOM[_0x287655(907)]&&(DOM[_0x287655(_0xa820b__0x2fadf4)].hidden=!0),setWebsitePublishStatus(""),hideWebsiteValidation(),DOM[_0x287655(_0xa820b__0x53d4af)]&&(DOM[_0x287655(_0xa820b__0x2ef3a0)][_0x287655(_0xa820b__0x46da71)]=""),clearItemFields(),setLocationText("Location not verified",!1)}function clearItemFields(){const _0x3d18ac__0x1b82cd=890,_0x3d18ac__0x27a056=1025,_0x3d18ac__0x49fa6c=922,_0x7411e3=_0x53b2da;setValue(DOM[_0x7411e3(802)],""),setValue(DOM.itemPrice,""),setValue(DOM[_0x7411e3(_0x3d18ac__0x1b82cd)],""),setValue(DOM[_0x7411e3(897)],""),setValue(DOM[_0x7411e3(_0x3d18ac__0x27a056)],""),setValue(DOM[_0x7411e3(_0x3d18ac__0x49fa6c)],""),setValue(DOM[_0x7411e3(669)],"")}function showCategoryError(_0x5e7b59){const _0xf4e0ee__0x144fa0=805,_0xf4e0ee__0x1245c9=1088,_0xa81553=_0x53b2da;DOM[_0xa81553(_0xf4e0ee__0x144fa0)]&&(DOM[_0xa81553(_0xf4e0ee__0x144fa0)].textContent=_0x5e7b59,DOM[_0xa81553(_0xf4e0ee__0x144fa0)][_0xa81553(_0xf4e0ee__0x1245c9)]=!1)}function clearCategoryError(){const _0x4a0b6d__0x1f41dc=805,_0x4a0b6d__0x1885fe=805,_0x4a0b6d__0xdb7066=1088,_0x554057=_0x53b2da;DOM[_0x554057(_0x4a0b6d__0x1f41dc)]&&(DOM[_0x554057(_0x4a0b6d__0x1f41dc)].textContent="",DOM[_0x554057(_0x4a0b6d__0x1885fe)][_0x554057(_0x4a0b6d__0xdb7066)]=!0)}function showItemError(_0x143603){const _0x2492b0__0x5bb885=489,_0x2492b0__0x566086=724,_0x2492b0__0x527214=489,_0x2492b0__0xd255c4=1088,_0x28243a=_0x53b2da;DOM[_0x28243a(_0x2492b0__0x5bb885)]&&(DOM[_0x28243a(_0x2492b0__0x5bb885)][_0x28243a(_0x2492b0__0x566086)]=_0x143603,DOM[_0x28243a(_0x2492b0__0x527214)][_0x28243a(_0x2492b0__0xd255c4)]=!1)}function clearItemError(){const _0x5784d2__0x34b74a=489,_0x5784d2__0x2fe482=489,_0x5784d2__0x4c6ec4=1088,_0x362b44=_0x53b2da;DOM[_0x362b44(489)]&&(DOM[_0x362b44(_0x5784d2__0x34b74a)].textContent="",DOM[_0x362b44(_0x5784d2__0x2fe482)][_0x362b44(_0x5784d2__0x4c6ec4)]=!0)}function clearSubscriptionError(){const _0x25caf0__0x8a1662=724,_0x25caf0__0x13c166=717,_0x25caf0__0x4c9ea0=1088,_0xae9a7f=_0x53b2da;DOM.subscriptionError&&(DOM[_0xae9a7f(717)][_0xae9a7f(_0x25caf0__0x8a1662)]="",DOM[_0xae9a7f(_0x25caf0__0x13c166)][_0xae9a7f(_0x25caf0__0x4c9ea0)]=!0)}function showToast(_0x56bd45,_0x5a0cd8="info"){const _0x3cbc29__0x316383=431,_0x3cbc29__0x4393cd=799,_0x3cbc29__0x501715=863,_0x3cbc29__0x4829a8=439,_0x3cbc29__0x487353=644,_0x3cbc29__0x578446=982,_0x3cbc29__0x3a77f7=724,_0x3cbc29__0x3957db=637,_0x3cbc29__0x3f6730=667,_0x5b90f8__0x5cdf84=870,_0x2fe376=_0x53b2da;if(!DOM[_0x2fe376(983)])return;const _0x283ea=document.createElement(_0x2fe376(_0x3cbc29__0x316383));_0x283ea[_0x2fe376(_0x3cbc29__0x4393cd)]=_0x2fe376(_0x3cbc29__0x501715)+_0x5a0cd8,_0x283ea[_0x2fe376(_0x3cbc29__0x4829a8)](_0x2fe376(_0x3cbc29__0x487353),_0x2fe376(_0x3cbc29__0x578446)),_0x283ea[_0x2fe376(_0x3cbc29__0x3a77f7)]=_0x56bd45||_0x2fe376(_0x3cbc29__0x3957db),DOM[_0x2fe376(983)][_0x2fe376(_0x3cbc29__0x3f6730)](_0x283ea),window.setTimeout(()=>{_0x283ea[_0x2fe376(_0x5b90f8__0x5cdf84)]()},4500)}function findCategory(_0x3da55e){const _0x4d95bb=_0x53b2da;return state.categories[_0x4d95bb(1020)](_0x1d17d8=>_0x1d17d8.id===_0x3da55e)||null}function findItem(_0x7df67f,_0x78dfbe){const _0x583402__0x5d021e=509,_0x583402__0x208c4f=1020,_0x2855e5=_0x53b2da,_0x1fc3c6=findCategory(_0x7df67f);if(!_0x1fc3c6)return null;const _0x46d1d4=_0x1fc3c6[_0x2855e5(_0x583402__0x5d021e)][_0x2855e5(_0x583402__0x208c4f)](_0x1dce1a=>_0x1dce1a.id===_0x78dfbe);return _0x46d1d4?{category:_0x1fc3c6,item:_0x46d1d4}:null}function getTotalItemCount(){const _0x42b70c=_0x53b2da;return state[_0x42b70c(478)][_0x42b70c(1056)]((_0x1f6a31,_0x5e9246)=>_0x1f6a31+_0x5e9246[_0x42b70c(509)].length,0)}function createButton(_0x1f8dba,_0x39a31a,_0xe72af6,_0x35e9f4,_0x43224e=null){const _0x397dc7__0x2b48ab=461,_0x397dc7__0x33c704=799,_0x397dc7__0x5db7a1=1052,_0x397dc7__0x2ed432=908,_0x397dc7__0x4ba322=956,_0x397dc7__0x75dbd5=540,_0x397dc7__0x5f054b=546,_0x397dc7__0x5ce6ae=1062,_0x397dc7__0x140801=724,_0x2640b5=_0x53b2da,_0x3d71c3=document[_0x2640b5(423)](_0x2640b5(_0x397dc7__0x2b48ab));return _0x3d71c3[_0x2640b5(613)]=_0x2640b5(461),_0x39a31a&&(_0x3d71c3[_0x2640b5(_0x397dc7__0x33c704)]=_0x39a31a),_0x35e9f4&&(_0x3d71c3.dataset[_0x2640b5(714)]=_0x35e9f4),_0x43224e&&(_0x3d71c3[_0x2640b5(_0x397dc7__0x5db7a1)][_0x2640b5(_0x397dc7__0x2ed432)]=_0x43224e),(_0xe72af6===_0x2640b5(_0x397dc7__0x4ba322)||_0xe72af6===_0x2640b5(_0x397dc7__0x75dbd5)||_0xe72af6===_0x2640b5(_0x397dc7__0x5f054b))&&(_0x43224e?_0x3d71c3.dataset[_0x2640b5(604)]=_0xe72af6:_0x3d71c3[_0x2640b5(_0x397dc7__0x5db7a1)][_0x2640b5(_0x397dc7__0x5ce6ae)]=_0xe72af6),_0x3d71c3[_0x2640b5(_0x397dc7__0x140801)]=_0x1f8dba,_0x3d71c3}function setButtonBusy(_0x3975fb,_0x335a28,_0x4ddcc3){const _0x47506b__0x2b7a47=1050,_0x47506b__0x400dc6=1052,_0x47506b__0x220583=724,_0x47506b__0x4c211a=884,_0x47506b__0x4f3654=974,_0x47506b__0x1d8ce7=724,_0x47506b__0x320c18=403,_0x47506b__0x30c335=999,_0x47506b__0x1cf509=1052,_0x47506b__0x5e7b0c=1050,_0x47506b__0x3671ae=1052,_0x47506b__0x48074c=1050,_0x47506b__0x148201=1050,_0x3dbafb=_0x53b2da;_0x3975fb&&(_0x335a28?(!_0x3975fb[_0x3dbafb(1052)][_0x3dbafb(_0x47506b__0x2b7a47)]&&(_0x3975fb[_0x3dbafb(_0x47506b__0x400dc6)][_0x3dbafb(_0x47506b__0x2b7a47)]=_0x3975fb[_0x3dbafb(_0x47506b__0x220583)]),_0x3975fb[_0x3dbafb(409)]=!0,_0x3975fb.setAttribute(_0x3dbafb(_0x47506b__0x4c211a),_0x3dbafb(_0x47506b__0x4f3654)),_0x3975fb[_0x3dbafb(_0x47506b__0x1d8ce7)]=_0x4ddcc3||_0x3dbafb(_0x47506b__0x320c18)):(_0x3975fb[_0x3dbafb(409)]=!1,_0x3975fb[_0x3dbafb(_0x47506b__0x30c335)](_0x3dbafb(_0x47506b__0x4c211a)),_0x3975fb[_0x3dbafb(_0x47506b__0x1cf509)][_0x3dbafb(_0x47506b__0x5e7b0c)]&&(_0x3975fb[_0x3dbafb(_0x47506b__0x1d8ce7)]=_0x3975fb[_0x3dbafb(_0x47506b__0x3671ae)][_0x3dbafb(_0x47506b__0x48074c)],delete _0x3975fb[_0x3dbafb(1052)][_0x3dbafb(_0x47506b__0x148201)])))}function getValue(_0x3fdf87){const _0x3c7405__0x5474bc=1075,_0x288718=_0x53b2da;return _0x3fdf87?String(_0x3fdf87[_0x288718(1090)]||"")[_0x288718(_0x3c7405__0x5474bc)]():""}function setValue(_0x1eb37a,_0xfb1cd1){_0x1eb37a&&(_0x1eb37a[_0x53b2da(1090)]=null==_0xfb1cd1?"":String(_0xfb1cd1))}function normalizeText(_0x42e991,_0x29bd3a){const _0x309702__0x283fbb=1075,_0x309702__0x2e22ed=1043,_0x309702__0x36dc6b=896,_0x5b7939=_0x53b2da,_0x22c81e=String(_0x42e991??"")[_0x5b7939(_0x309702__0x283fbb)]();return Number[_0x5b7939(751)](_0x29bd3a)&&_0x22c81e[_0x5b7939(_0x309702__0x2e22ed)]>_0x29bd3a?_0x22c81e[_0x5b7939(_0x309702__0x36dc6b)](0,_0x29bd3a):_0x22c81e}function parseNumber(_0x599f1b){const _0x209e35=_0x53b2da,_0x219a70=String(_0x599f1b??"")[_0x209e35(1075)]();if(!_0x219a70)return null;const _0x19558c=Number(_0x219a70);return Number[_0x209e35(751)](_0x19558c)?_0x19558c:null}function formatNumber(_0x1ebb84){const _0x153be9=_0x53b2da,_0x4846c3=Number(_0x1ebb84);return Number.isFinite(_0x4846c3)?_0x4846c3[_0x153be9(893)](_0x153be9(878),{maximumFractionDigits:2}):"0"}function createId(_0x1e3322){const _0x114cf3__0x50ab46=660,_0x114cf3__0x562afd=1017,_0x114cf3__0x4d25d6=864,_0x114cf3__0x493e35=732,_0x40e794=_0x53b2da;return window[_0x40e794(543)]&&typeof window.crypto[_0x40e794(1017)]===_0x40e794(_0x114cf3__0x50ab46)?_0x1e3322+"-"+window[_0x40e794(543)][_0x40e794(_0x114cf3__0x562afd)]():_0x1e3322+"-"+Date[_0x40e794(_0x114cf3__0x4d25d6)]()+"-"+Math[_0x40e794(_0x114cf3__0x493e35)]().toString(36).slice(2,10)}function focusElement(_0x49ab2e){const _0x44a632__0x31b50d=599,_0x18f4c0=_0x53b2da;if(_0x49ab2e)try{_0x49ab2e[_0x18f4c0(_0x44a632__0x31b50d)]({preventScroll:!1})}catch{_0x49ab2e[_0x18f4c0(_0x44a632__0x31b50d)]()}}function uniqueStrings(_0x21abbc){return[...new Set(_0x21abbc.filter(Boolean))]}function isValidHttpsUrl(_0x130f22){const _0x248609__0x593a59=535,_0x214c41=_0x53b2da;try{const _0x4f8ba5=new URL(_0x130f22);return _0x4f8ba5.protocol===_0x214c41(706)&&Boolean(_0x4f8ba5[_0x214c41(_0x248609__0x593a59)])}catch{return!1}}function normalizeBaseUrl(_0x230c7e){const _0x20f954__0x3db551=995,_0x1beda3=_0x53b2da,_0x3c8282=String(_0x230c7e??"").trim();if(!_0x3c8282)return"";try{const _0xe4d42a=new URL(_0x3c8282);return"https:"!==_0xe4d42a[_0x1beda3(_0x20f954__0x3db551)]?"":_0xe4d42a[_0x1beda3(774)]}catch{return""}}function isValidEmail(_0x3a36bc){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/[_0x53b2da(679)](_0x3a36bc)}function isValidYoutubeUrl(_0x20bb0a){const _0x3dddf7__0x495d38=535,_0x3dddf7__0x489fd1=557,_0x3dddf7__0x27f867=410,_0x3dddf7__0x13b259=979,_0x3dddf7__0x34bb1e=598,_0x3dddf7__0x3e55a2=979,_0x3dddf7__0x141659=862,_0x3dddf7__0x681f02=598,_0x3dddf7__0x464a7f=852,_0x3dddf7__0x2b28e0=470,_0x3dddf7__0x17377f=570,_0x3dddf7__0x59b9fb=979,_0x3dddf7__0x4a461a=912,_0x3dddf7__0x3b0252=598,_0x297f9f=_0x53b2da;try{const _0xead2a7=new URL(_0x20bb0a),_0x34bd32=_0xead2a7[_0x297f9f(_0x3dddf7__0x495d38)][_0x297f9f(_0x3dddf7__0x489fd1)]()[_0x297f9f(_0x3dddf7__0x27f867)](/^www\./,"");return"youtu.be"===_0x34bd32?Boolean(_0xead2a7[_0x297f9f(_0x3dddf7__0x13b259)][_0x297f9f(_0x3dddf7__0x34bb1e)]("/").filter(Boolean)[0]):(_0x34bd32===_0x297f9f(600)||_0x34bd32===_0x297f9f(425))&&(_0xead2a7[_0x297f9f(_0x3dddf7__0x3e55a2)][_0x297f9f(_0x3dddf7__0x141659)]("/shorts/")?Boolean(_0xead2a7[_0x297f9f(979)][_0x297f9f(_0x3dddf7__0x681f02)]("/").filter(Boolean)[1]):_0xead2a7[_0x297f9f(979)]===_0x297f9f(_0x3dddf7__0x464a7f)?Boolean(_0xead2a7.searchParams[_0x297f9f(_0x3dddf7__0x2b28e0)]("v")):_0xead2a7[_0x297f9f(_0x3dddf7__0x3e55a2)][_0x297f9f(862)](_0x297f9f(_0x3dddf7__0x17377f))?Boolean(_0xead2a7.pathname.split("/").filter(Boolean)[1]):!!_0xead2a7[_0x297f9f(_0x3dddf7__0x59b9fb)].startsWith(_0x297f9f(_0x3dddf7__0x4a461a))&&Boolean(_0xead2a7.pathname[_0x297f9f(_0x3dddf7__0x3b0252)]("/")[_0x297f9f(670)](Boolean)[1]))}catch{return!1}}function getErrorMessage(_0x34cd7e){const _0x4e0007__0x306ac7=955,_0x4e0007__0x533ff7=500,_0x4e0007__0x3a5579=1002,_0x303e4d=_0x53b2da;return _0x34cd7e?_0x34cd7e[_0x303e4d(1040)]===_0x303e4d(_0x4e0007__0x533ff7)?_0x303e4d(689):_0x34cd7e[_0x303e4d(_0x4e0007__0x3a5579)]?_0x34cd7e[_0x303e4d(_0x4e0007__0x3a5579)]:_0x303e4d(955):_0x303e4d(_0x4e0007__0x306ac7)}function getLocationErrorMessage(_0x4bfcef){const _0x20e522__0x418509=813,_0x20e522__0x32084c=605,_0x20e522__0x59f54e=975,_0x20e522__0x44b849=1002,_0x150bbc=_0x53b2da;if(!_0x4bfcef)return _0x150bbc(437);switch(_0x4bfcef[_0x150bbc(_0x20e522__0x418509)]){case 1:return _0x150bbc(_0x20e522__0x32084c);case 2:return"Your current location could not be determined. Please try again.";case 3:return _0x150bbc(_0x20e522__0x59f54e);default:return _0x4bfcef[_0x150bbc(_0x20e522__0x44b849)]||"Unable to verify your location."}}
+"use strict";
+
+/*
+ * Vidhwaan Business Apps
+ * Builder Application
+ *
+ * Step 8
+ * File: business/app.js
+ *
+ * Ecommerce builder frontend.
+ *
+ * IMPORTANT:
+ * - This file is matched to the current index.html DOM.
+ * - Subscription verification is performed by the Cloudflare Worker.
+ * - The browser never treats the Subscription ID as proof of payment.
+ * - The Worker is authoritative for payment, application and expiry checks.
+ */
+
+const CONFIG = Object.freeze({
+  WORKER_URL:
+    "https://divine-snowflake-aabd.propertiesgrouphyd.workers.dev",
+
+  TEMPLATE_ID:
+    "ECM",
+
+  CATEGORY_ITEM_STORAGE_KEY:
+    "vidhwaan_business_ecommerce_categories_items",
+
+  WEBSITE_STORAGE_KEY:
+    "vidhwaan_business_website_data",
+
+  MAX_CATEGORIES:
+    50,
+
+  MAX_ITEMS_PER_CATEGORY:
+    500,
+
+  MAX_TOTAL_ITEMS:
+    5000,
+
+  MAX_CATEGORY_NAME_LENGTH:
+    100,
+
+  MAX_ITEM_NAME_LENGTH:
+    150,
+
+  MAX_BUSINESS_NAME_LENGTH:
+    120,
+
+  MAX_TAGLINE_LENGTH:
+    200,
+
+  MAX_ADDRESS_LENGTH:
+    500,
+
+  MAX_PHONE_LENGTH:
+    30,
+
+  MAX_EMAIL_LENGTH:
+    254,
+
+  MAX_WHATSAPP_LENGTH:
+    30,
+
+  MAX_LOGO_URL_LENGTH:
+    2000,
+
+  MAX_DESCRIPTION_LENGTH:
+    2000,
+
+  MAX_YOUTUBE_URL_LENGTH:
+    2000,
+
+  REQUEST_TIMEOUT_MS: 
+    30000,
+
+  DEPLOYMENT_CHECK_INTERVAL_MS: 
+    3000,
+
+  DEPLOYMENT_TIMEOUT_MS: 
+    120000,
+
+  MAX_LOCATION_ACCURACY_METERS:
+    500,
+
+  LOCATION_TIMEOUT_MS:
+    45000
+
+});
+
+
+const DEFAULT_CATEGORIES = Object.freeze([
+  "Grocery",
+  "Clothing",
+  "Food",
+  "Electronics",
+  "Home & Kitchen",
+  "Beauty & Personal Care"
+]);
+
+
+const state = {
+  selectedTemplate:
+    null,
+
+  website: {
+    sections: [],
+    footer: {
+      items: []
+    }
+  },
+
+  categories:
+    [],
+
+  editingCategoryId:
+    null,
+
+  editingItemId:
+    null,
+
+  editingItemCategoryId:
+    null,
+
+  location: {
+    verified:
+      false,
+
+    latitude:
+      null,
+
+    longitude:
+      null,
+
+    accuracy:
+      null,
+
+    verifiedAt:
+      null
+  },
+
+  publishing:
+    false,
+
+  lastPublishedUrl:
+    "",
+
+  logoPreviewRequest:
+    0
+};
+
+
+const DOM = {};
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  initialize
+);
+
+
+function initialize() {
+  cacheDom();
+  bindEvents();
+  initializeApplication();
+}
+
+
+/* =========================================================
+ * DOM
+ * ========================================================= */
+
+
+function cacheDom() {
+  DOM.connectionStatus =
+    document.getElementById(
+      "connection-status"
+    );
+
+  DOM.connectionText =
+    document.getElementById(
+      "connection-text"
+    );
+
+  DOM.templateSection =
+    document.getElementById(
+      "template-section"
+    );
+
+  DOM.templateGrid =
+    document.getElementById(
+      "template-grid"
+    );
+
+  DOM.templateEcommerce =
+    document.getElementById(
+      "template-ecommerce"
+    );
+
+  DOM.templateWebsite =
+    document.getElementById(
+      "template-website"
+    );
+
+  DOM.ecommerceSection =
+    document.getElementById(
+      "ecommerce-section"
+    );
+
+  DOM.websiteSection =
+    document.getElementById(
+      "website-section"
+    );
+
+  DOM.websiteBackToTemplates =
+    document.getElementById(
+      "website-back-to-templates"
+    );
+
+  DOM.websiteSubscriptionId =
+    document.getElementById(
+      "website-subscription-id"
+    );
+
+  DOM.websiteBusinessName =
+    document.getElementById(
+      "website-business-name"
+    );
+
+  DOM.websiteAddress =
+    document.getElementById(
+      "website-business-address"
+    );
+
+  DOM.websiteTagline =
+    document.getElementById(
+      "website-tagline"
+    );
+
+  DOM.websiteMobile =
+    document.getElementById(
+      "website-mobile"
+    );
+
+  DOM.websiteEmail =
+    document.getElementById(
+      "website-email"
+    );
+
+  DOM.websiteWhatsapp =
+    document.getElementById(
+      "website-whatsapp"
+    );
+
+  DOM.websitePassword =
+    document.getElementById(
+      "website-password"
+    );
+
+  DOM.websitePasswordToggle =
+    document.getElementById(
+      "website-password-toggle"
+    );
+
+  DOM.websiteLogo =
+    document.getElementById(
+      "website-logo"
+    );
+
+  DOM.websiteLogoPreview =
+    document.getElementById(
+      "website-logo-preview"
+    );
+
+  DOM.websiteLogoPreviewImage =
+    document.getElementById(
+      "website-logo-preview-image"
+    );
+
+  DOM.websiteVerifyLocation =
+    document.getElementById(
+      "website-verify-location"
+    );
+
+  DOM.websiteLocationStatus =
+    document.getElementById(
+      "website-location-status"
+    );
+
+  DOM.websiteLocationStatusIndicator =
+    document.getElementById(
+      "website-location-status-indicator"
+    );
+
+  DOM.websiteLocationStatusText =
+    document.getElementById(
+      "website-location-status-text"
+    );
+
+  DOM.websiteLocationDetails =
+    document.getElementById(
+      "website-location-details"
+    );
+
+  DOM.websiteLocationLatitude =
+    document.getElementById(
+      "website-location-latitude"
+    );
+
+  DOM.websiteLocationLongitude =
+    document.getElementById(
+      "website-location-longitude"
+    );
+
+  DOM.websiteLocationVerifiedAt =
+    document.getElementById(
+      "website-location-verified-at"
+    );
+
+  DOM.websiteAddSection =
+    document.getElementById(
+      "website-add-section"
+    );
+
+  DOM.websiteAddFirstSection =
+    document.getElementById(
+      "website-add-first-section"
+    );
+
+  DOM.websiteSections =
+    document.getElementById(
+      "website-sections"
+    );
+
+  DOM.websiteSectionsEmpty =
+    document.getElementById(
+      "website-sections-empty"
+    );
+
+  DOM.websiteAddFooterLink =
+    document.getElementById(
+      "website-add-footer-link"
+    );
+
+  DOM.websiteFooterLinks =
+    document.getElementById(
+      "website-footer-links"
+    );
+
+  DOM.websiteFooterEmpty =
+    document.getElementById(
+      "website-footer-empty"
+    );
+
+  DOM.websiteFooterModal =
+    document.getElementById(
+      "website-footer-modal"
+    );
+
+  DOM.websiteFooterModalClose =
+    document.getElementById(
+      "website-footer-modal-close"
+    );
+
+  DOM.websiteFooterModalTitle =
+    document.getElementById(
+      "website-footer-modal-title"
+    );
+
+  DOM.websiteFooterModalDescription =
+    document.getElementById(
+      "website-footer-modal-description"
+    );
+
+  DOM.websiteFooterName =
+    document.getElementById(
+      "website-footer-name"
+    );
+
+  DOM.websiteFooterUrl =
+    document.getElementById(
+      "website-footer-url"
+    );
+
+  DOM.websiteFooterFormError =
+    document.getElementById(
+      "website-footer-form-error"
+    );
+
+  DOM.websiteFooterCancel =
+    document.getElementById(
+      "website-footer-cancel"
+    );
+
+  DOM.websiteFooterSave =
+    document.getElementById(
+      "website-footer-save"
+    );
+
+  DOM.websiteValidationSummary =
+    document.getElementById(
+      "website-validation-summary"
+    );
+
+  DOM.websiteValidationList =
+    document.getElementById(
+      "website-validation-list"
+    );
+
+  DOM.websitePublish =
+    document.getElementById(
+      "website-publish"
+    );
+
+  DOM.websitePublishSpinner =
+    document.getElementById(
+      "website-publish-spinner"
+    );
+
+  DOM.websitePublishButtonText =
+    document.getElementById(
+      "website-publish-button-text"
+    );
+
+  DOM.websitePublishStatus =
+    document.getElementById(
+      "website-publish-status"
+    );
+
+  DOM.websitePublishResult =
+    document.getElementById(
+      "website-publish-result"
+    );
+
+  DOM.websitePublishedUrl =
+    document.getElementById(
+      "website-published-url"
+    );
+
+
+  DOM.websiteContentModal =
+    document.getElementById(
+      "website-content-modal"
+    );
+
+  DOM.websiteContentModalClose =
+    document.getElementById(
+      "website-content-modal-close"
+    );
+
+  DOM.websiteContentModalTitle =
+    document.getElementById(
+      "website-content-modal-title"
+    );
+
+  DOM.websiteContentModalDescription =
+    document.getElementById(
+      "website-content-modal-description"
+    );
+
+  DOM.websiteContentTextField =
+    document.getElementById(
+      "website-content-text-field"
+    );
+
+  DOM.websiteContentTextLabel =
+    document.getElementById(
+      "website-content-text-label"
+    );
+
+  DOM.websiteContentText =
+    document.getElementById(
+      "website-content-text"
+    );
+
+  DOM.websiteContentRepeatableField =
+    document.getElementById(
+      "website-content-repeatable-field"
+    );
+
+  DOM.websiteContentRepeatableLabel =
+    document.getElementById(
+      "website-content-repeatable-label"
+    );
+
+  DOM.websiteContentRepeatableHelp =
+    document.getElementById(
+      "website-content-repeatable-help"
+    );
+
+  DOM.websiteContentAddRow =
+    document.getElementById(
+      "website-content-add-row"
+    );
+
+  DOM.websiteContentRowList =
+    document.getElementById(
+      "website-content-row-list"
+    );
+
+  DOM.websiteContentFormError =
+    document.getElementById(
+      "website-content-form-error"
+    );
+
+  DOM.websiteContentCancel =
+    document.getElementById(
+      "website-content-cancel"
+    );
+
+  DOM.websiteContentSave =
+    document.getElementById(
+      "website-content-save"
+    );
+
+
+  DOM.backToTemplates =
+    document.getElementById(
+      "back-to-templates"
+    );
+
+  DOM.subscriptionId =
+    document.getElementById(
+      "subscription-id"
+    );
+
+  DOM.businessPassword =
+    document.getElementById(
+      "business-password"
+    );
+
+  DOM.businessPasswordToggle =
+    document.getElementById(
+      "business-password-toggle"
+    );
+
+  DOM.subscriptionError =
+    document.getElementById(
+      "subscription-error"
+    );
+
+  DOM.businessName =
+    document.getElementById(
+      "business-name"
+    );
+
+  DOM.tagline =
+    document.getElementById(
+      "business-tagline"
+    );
+
+  DOM.address =
+    document.getElementById(
+      "business-address"
+    );
+
+  DOM.mobile =
+    document.getElementById(
+      "business-mobile"
+    );
+
+  DOM.email =
+    document.getElementById(
+      "business-email"
+    );
+
+  DOM.whatsapp =
+    document.getElementById(
+      "business-whatsapp"
+    );
+
+  DOM.logoUrl =
+    document.getElementById(
+      "business-logo"
+    );
+
+  DOM.logoPreview =
+    document.getElementById(
+      "logo-preview"
+    );
+
+  DOM.logoPreviewImage =
+    document.getElementById(
+      "logo-preview-image"
+    );
+
+  DOM.locationStatus =
+    document.getElementById(
+      "location-status"
+    );
+
+  DOM.locationStatusIndicator =
+    document.getElementById(
+      "location-status-indicator"
+    );
+
+  DOM.locationStatusText =
+    document.getElementById(
+      "location-status-text"
+    );
+
+  DOM.verifyLocation =
+    document.getElementById(
+      "verify-location"
+    );
+
+  DOM.locationDetails =
+    document.getElementById(
+      "location-details"
+    );
+
+  DOM.locationLatitude =
+    document.getElementById(
+      "location-latitude"
+    );
+
+  DOM.locationLongitude =
+    document.getElementById(
+      "location-longitude"
+    );
+
+  DOM.locationVerifiedAt =
+    document.getElementById(
+      "location-verified-at"
+    );
+
+  DOM.addCategory =
+    document.getElementById(
+      "add-category"
+    );
+
+  DOM.addFirstCategory =
+    document.getElementById(
+      "add-first-category"
+    );
+
+  DOM.categoryList =
+    document.getElementById(
+      "category-list"
+    );
+
+  DOM.categoryEmpty =
+    document.getElementById(
+      "category-empty"
+    );
+
+  DOM.categoryModal =
+    document.getElementById(
+      "category-modal"
+    );
+
+  DOM.categoryModalTitle =
+    document.getElementById(
+      "category-modal-title"
+    );
+
+  DOM.categoryModalClose =
+    document.getElementById(
+      "category-modal-close"
+    );
+
+  DOM.categoryName =
+    document.getElementById(
+      "category-name"
+    );
+
+  DOM.categoryNameError =
+    document.getElementById(
+      "category-name-error"
+    );
+
+  DOM.categoryCancel =
+    document.getElementById(
+      "category-cancel"
+    );
+
+  DOM.categorySave =
+    document.getElementById(
+      "category-save"
+    );
+
+  DOM.addItem =
+    document.getElementById(
+      "add-item"
+    );
+
+  DOM.addFirstItem =
+    document.getElementById(
+      "add-first-item"
+    );
+
+  DOM.itemList =
+    document.getElementById(
+      "item-list"
+    );
+
+  DOM.itemEmpty =
+    document.getElementById(
+      "item-empty"
+    );
+
+  DOM.itemModal =
+    document.getElementById(
+      "item-modal"
+    );
+
+  DOM.itemModalTitle =
+    document.getElementById(
+      "item-modal-title"
+    );
+
+  DOM.itemModalClose =
+    document.getElementById(
+      "item-modal-close"
+    );
+
+  DOM.itemName =
+    document.getElementById(
+      "item-name"
+    );
+
+  DOM.itemPrice =
+    document.getElementById(
+      "item-price"
+    );
+
+  DOM.itemQuantity =
+    document.getElementById(
+      "item-quantity"
+    );
+
+  DOM.itemUnit =
+    document.getElementById(
+      "item-unit"
+    );
+
+  DOM.itemCategory =
+    document.getElementById(
+      "item-category"
+    );
+
+  DOM.itemDescription =
+    document.getElementById(
+      "item-description"
+    );
+
+  DOM.itemYoutube =
+    document.getElementById(
+      "item-youtube"
+    );
+
+  DOM.itemFormError =
+    document.getElementById(
+      "item-form-error"
+    );
+
+  DOM.itemCancel =
+    document.getElementById(
+      "item-cancel"
+    );
+
+  DOM.itemSave =
+    document.getElementById(
+      "item-save"
+    );
+
+  DOM.validationSummary =
+    document.getElementById(
+      "validation-summary"
+    );
+
+  DOM.validationList =
+    document.getElementById(
+      "validation-list"
+    );
+
+  DOM.publishBusiness =
+    document.getElementById(
+      "publish-business"
+    );
+
+  DOM.publishSpinner =
+    document.getElementById(
+      "publish-spinner"
+    );
+
+  DOM.publishButtonText =
+    document.getElementById(
+      "publish-button-text"
+    );
+
+  DOM.publishStatus =
+    document.getElementById(
+      "publish-status"
+    );
+
+  DOM.successSection =
+    document.getElementById(
+      "success-section"
+    );
+
+  DOM.successDescription =
+    document.getElementById(
+      "success-description"
+    );
+
+  DOM.businessAppUrl =
+    document.getElementById(
+      "business-app-url"
+    );
+
+  DOM.deploymentStatus =
+    document.getElementById(
+      "deployment-status"
+    );
+
+  DOM.openBusinessApp =
+    document.getElementById(
+      "open-business-app"
+    );
+
+  DOM.editBusiness =
+    document.getElementById(
+      "edit-business"
+    );
+
+  DOM.createAnother =
+    document.getElementById(
+      "create-another"
+    );
+
+  DOM.applicationLoader =
+    document.getElementById(
+      "application-loader"
+    );
+
+  DOM.loaderText =
+    document.getElementById(
+      "loader-text"
+    );
+
+  DOM.toastContainer =
+    document.getElementById(
+      "toast-container"
+    );
+}
+
+
+/* =========================================================
+ * EVENTS
+ * ========================================================= */
+
+
+function bindEvents() {
+  if (DOM.templateEcommerce) {
+    DOM.templateEcommerce.addEventListener(
+      "click",
+      () => selectTemplate("ECM")
+    );
+  }
+
+  if (DOM.templateWebsite) {
+    DOM.templateWebsite.addEventListener(
+      "click",
+      () => selectTemplate("WEB")
+    );
+  }
+
+  if (DOM.backToTemplates) {
+    DOM.backToTemplates.addEventListener(
+      "click",
+      showTemplateSelection
+    );
+  }
+
+  if (DOM.websiteBackToTemplates) {
+    DOM.websiteBackToTemplates.addEventListener(
+      "click",
+      showTemplateSelection
+    );
+  }
+
+  if (DOM.websitePasswordToggle) {
+    DOM.websitePasswordToggle.addEventListener(
+      "click",
+      toggleWebsitePassword
+    );
+  }
+
+  if (DOM.websiteLogo) {
+    DOM.websiteLogo.addEventListener(
+      "input",
+      previewWebsiteLogo
+    );
+
+    DOM.websiteLogo.addEventListener(
+      "change",
+      previewWebsiteLogo
+    );
+  }
+
+  if (DOM.websiteVerifyLocation) {
+    DOM.websiteVerifyLocation.addEventListener(
+      "click",
+      verifyWebsiteLocation
+    );
+  }
+
+  if (DOM.websiteAddSection) {
+    DOM.websiteAddSection.addEventListener(
+      "click",
+      addWebsiteSection
+    );
+  }
+
+  if (DOM.websiteAddFirstSection) {
+    DOM.websiteAddFirstSection.addEventListener(
+      "click",
+      addWebsiteSection
+    );
+  }
+
+  if (DOM.websiteSections) {
+    DOM.websiteSections.addEventListener(
+      "click",
+      handleWebsiteSectionAction
+    );
+  }
+
+  if (DOM.websiteAddFooterLink) {
+    DOM.websiteAddFooterLink.addEventListener(
+      "click",
+      addWebsiteFooterLink
+    );
+  }
+
+
+  if (DOM.websiteContentModalClose) {
+    DOM.websiteContentModalClose.addEventListener(
+      "click",
+      closeWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentCancel) {
+    DOM.websiteContentCancel.addEventListener(
+      "click",
+      closeWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentSave) {
+    DOM.websiteContentSave.addEventListener(
+      "click",
+      saveWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentAddRow) {
+    DOM.websiteContentAddRow.addEventListener(
+      "click",
+      addWebsiteContentModalRow
+    );
+  }
+
+  if (DOM.websiteContentRowList) {
+    DOM.websiteContentRowList.addEventListener(
+      "click",
+      handleWebsiteContentModalRowAction
+    );
+  }
+
+
+
+  if (DOM.websiteFooterLinks) {
+    DOM.websiteFooterLinks.addEventListener(
+      "click",
+      handleWebsiteFooterAction
+    );
+  }
+
+
+  if (
+    DOM.websiteFooterModalClose
+  ) {
+    DOM.websiteFooterModalClose.addEventListener(
+      "click",
+      closeWebsiteFooterModal
+    );
+  }
+
+
+  if (
+    DOM.websiteFooterCancel
+  ) {
+    DOM.websiteFooterCancel.addEventListener(
+      "click",
+      closeWebsiteFooterModal
+    );
+  }
+
+
+  if (
+    DOM.websiteFooterSave
+  ) {
+    DOM.websiteFooterSave.addEventListener(
+      "click",
+      saveWebsiteFooterModal
+    );
+  }
+
+
+  if (
+    DOM.websiteFooterModal
+  ) {
+    DOM.websiteFooterModal.addEventListener(
+      "click",
+      (event) => {
+        if (
+          event.target ===
+          DOM.websiteFooterModal
+        ) {
+          closeWebsiteFooterModal();
+        }
+      }
+    );
+  }
+
+
+  if (DOM.websitePublish) {
+    DOM.websitePublish.addEventListener(
+      "click",
+      publishWebsite
+    );
+  }
+
+  if (DOM.addCategory) {
+    DOM.addCategory.addEventListener(
+      "click",
+      () => openCategoryModal()
+    );
+  }
+
+  if (DOM.addFirstCategory) {
+    DOM.addFirstCategory.addEventListener(
+      "click",
+      () => openCategoryModal()
+    );
+  }
+
+  if (DOM.categoryModalClose) {
+    DOM.categoryModalClose.addEventListener(
+      "click",
+      closeCategoryModal
+    );
+  }
+
+  if (DOM.categoryCancel) {
+    DOM.categoryCancel.addEventListener(
+      "click",
+      closeCategoryModal
+    );
+  }
+
+  if (DOM.categorySave) {
+    DOM.categorySave.addEventListener(
+      "click",
+      saveCategory
+    );
+  }
+
+  if (DOM.categoryModal) {
+    DOM.categoryModal.addEventListener(
+      "click",
+      handleModalBackdrop
+    );
+  }
+
+  if (DOM.addItem) {
+    DOM.addItem.addEventListener(
+      "click",
+      () => openItemModal()
+    );
+  }
+
+  if (DOM.addFirstItem) {
+    DOM.addFirstItem.addEventListener(
+      "click",
+      () => openItemModal()
+    );
+  }
+
+  if (DOM.itemModalClose) {
+    DOM.itemModalClose.addEventListener(
+      "click",
+      closeItemModal
+    );
+  }
+
+  if (DOM.itemCancel) {
+    DOM.itemCancel.addEventListener(
+      "click",
+      closeItemModal
+    );
+  }
+
+  if (DOM.itemSave) {
+    DOM.itemSave.addEventListener(
+      "click",
+      saveItem
+    );
+  }
+
+  if (DOM.itemModal) {
+    DOM.itemModal.addEventListener(
+      "click",
+      handleModalBackdrop
+    );
+  }
+
+  if (DOM.categoryList) {
+    DOM.categoryList.addEventListener(
+      "click",
+      handleCategoryAction
+    );
+  }
+
+  if (DOM.itemList) {
+    DOM.itemList.addEventListener(
+      "click",
+      handleItemAction
+    );
+  }
+
+  if (DOM.verifyLocation) {
+    DOM.verifyLocation.addEventListener(
+      "click",
+      verifyBusinessLocation
+    );
+  }
+
+
+  if (DOM.businessPasswordToggle) {
+    DOM.businessPasswordToggle.addEventListener(
+      "click",
+      toggleBusinessPassword
+    );
+  }
+
+
+
+  if (DOM.logoUrl) {
+    DOM.logoUrl.addEventListener(
+      "input",
+      previewLogo
+    );
+
+    DOM.logoUrl.addEventListener(
+      "change",
+      previewLogo
+    );
+  }
+
+  if (DOM.publishBusiness) {
+    DOM.publishBusiness.addEventListener(
+      "click",
+      publishBusiness
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.addEventListener(
+      "click",
+      openPublishedBusiness
+    );
+  }
+
+  if (DOM.editBusiness) {
+    DOM.editBusiness.addEventListener(
+      "click",
+      editBusiness
+    );
+  }
+
+  if (DOM.createAnother) {
+    DOM.createAnother.addEventListener(
+      "click",
+      createAnotherApp
+    );
+  }
+
+  document.addEventListener(
+    "keydown",
+    handleKeyboard
+  );
+
+  window.addEventListener(
+    "online",
+    updateConnectionStatus
+  );
+
+  window.addEventListener(
+    "offline",
+    updateConnectionStatus
+  );
+}
+
+
+
+function toggleBusinessPassword() {
+  if (
+    !DOM.businessPassword ||
+    !DOM.businessPasswordToggle
+  ) {
+    return;
+  }
+
+  const icon =
+    DOM.businessPasswordToggle.querySelector(
+      ".password-toggle__icon"
+    );
+
+  const isHidden =
+    DOM.businessPassword.type ===
+    "password";
+
+  DOM.businessPassword.type =
+    isHidden
+      ? "text"
+      : "password";
+
+  DOM.businessPasswordToggle.setAttribute(
+    "aria-label",
+    isHidden
+      ? "Hide password"
+      : "Show password"
+  );
+
+  DOM.businessPasswordToggle.setAttribute(
+    "aria-pressed",
+    isHidden
+      ? "true"
+      : "false"
+  );
+
+  if (icon) {
+    icon.textContent =
+      isHidden
+        ? "◉"
+        : "👁";
+  }
+}
+
+
+/* =========================================================
+ * APPLICATION START
+ * ========================================================= */
+
+
+function initializeApplication() {
+  state.selectedTemplate = null;
+
+  loadWebsiteData();
+
+  renderWebsiteSections();
+
+  renderWebsiteFooter();
+
+  updateWebsiteLocationDetails();
+
+  const restored =
+    loadCategoryItemData();
+
+  if (!restored) {
+    seedDefaultCategories();
+  }
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+
+  showTemplateSelection();
+  updateConnectionStatus();
+
+  hideSuccess();
+  hideValidation();
+}
+
+
+/* =========================================================
+ * TEMPLATE SELECTION
+ * ========================================================= */
+
+
+function selectTemplate(templateId) {
+  if (
+    templateId !== "ECM" &&
+    templateId !== "WEB"
+  ) {
+    showToast(
+      "This template is not currently available.",
+      "error"
+    );
+
+    return;
+  }
+
+  state.selectedTemplate =
+    templateId;
+
+  hideSuccess();
+  hideValidation();
+
+  if (DOM.templateSection) {
+    DOM.templateSection.hidden = true;
+  }
+
+  if (DOM.ecommerceSection) {
+    DOM.ecommerceSection.hidden =
+      templateId !== "ECM";
+  }
+
+  if (DOM.websiteSection) {
+    DOM.websiteSection.hidden =
+      templateId !== "WEB";
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  showToast(
+    templateId === "WEB"
+      ? "Global Website selected."
+      : "Ecommerce app selected.",
+    "success"
+  );
+}
+
+
+function showTemplateSelection() {
+  state.selectedTemplate = null;
+
+  if (DOM.templateSection) {
+    DOM.templateSection.hidden = false;
+  }
+
+  if (DOM.ecommerceSection) {
+    DOM.ecommerceSection.hidden = true;
+  }
+
+  if (DOM.websiteSection) {
+    DOM.websiteSection.hidden = true;
+  }
+
+  hideSuccess();
+  hideValidation();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* =========================================================
+ * DEFAULT CATEGORIES
+ * ========================================================= */
+
+
+function seedDefaultCategories() {
+  if (state.categories.length > 0) {
+    return;
+  }
+
+  state.categories =
+    DEFAULT_CATEGORIES.map(
+      (name) => ({
+        id: createId("cat"),
+        name,
+        items: []
+      })
+    );
+}
+
+
+/* =========================================================
+ * CATEGORY & ITEM PERSISTENCE
+ * ========================================================= */
+
+function saveCategoryItemData() {
+  try {
+    localStorage.setItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY,
+      JSON.stringify({
+        categories:
+          state.categories
+      })
+    );
+  } catch (error) {
+    console.warn(
+      "Could not save category and item data.",
+      error
+    );
+  }
+}
+
+
+function loadCategoryItemData() {
+  try {
+    const stored =
+      localStorage.getItem(
+        CONFIG.CATEGORY_ITEM_STORAGE_KEY
+      );
+
+    if (!stored) {
+      return false;
+    }
+
+    const parsed =
+      JSON.parse(stored);
+
+    if (
+      !parsed ||
+      !Array.isArray(
+        parsed.categories
+      )
+    ) {
+      return false;
+    }
+
+    state.categories =
+      parsed.categories;
+
+    return true;
+  } catch (error) {
+    console.warn(
+      "Could not load saved category and item data.",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+function clearCategoryItemData() {
+  try {
+    localStorage.removeItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY
+    );
+  } catch (error) {
+    console.warn(
+      "Could not clear saved category and item data.",
+      error
+    );
+  }
+}
+
+
+
+/* =========================================================
+ * CATEGORY MODAL
+ * ========================================================= */
+
+
+function openCategoryModal(
+  categoryId = null
+) {
+  state.editingCategoryId =
+    categoryId;
+
+  clearCategoryError();
+
+  if (categoryId) {
+    const category =
+      findCategory(categoryId);
+
+    if (!category) {
+      return;
+    }
+
+    if (DOM.categoryModalTitle) {
+      DOM.categoryModalTitle.textContent =
+        "Edit Category";
+    }
+
+    if (DOM.categorySave) {
+      DOM.categorySave.textContent =
+        "Update Category";
+    }
+
+    if (DOM.categoryName) {
+      DOM.categoryName.value =
+        category.name;
+    }
+  } else {
+    if (DOM.categoryModalTitle) {
+      DOM.categoryModalTitle.textContent =
+        "Add Category";
+    }
+
+    if (DOM.categorySave) {
+      DOM.categorySave.textContent =
+        "Add Category";
+    }
+
+    if (DOM.categoryName) {
+      DOM.categoryName.value =
+        "";
+    }
+  }
+
+  showModal(
+    DOM.categoryModal
+  );
+
+  requestAnimationFrame(
+    () => {
+      focusElement(
+        DOM.categoryName
+      );
+    }
+  );
+}
+
+
+function closeCategoryModal() {
+  state.editingCategoryId =
+    null;
+
+  clearCategoryError();
+
+  if (DOM.categoryName) {
+    DOM.categoryName.value =
+      "";
+  }
+
+  hideModal(
+    DOM.categoryModal
+  );
+}
+
+
+function saveCategory() {
+  clearCategoryError();
+
+  const name =
+    normalizeText(
+      DOM.categoryName
+        ? DOM.categoryName.value
+        : "",
+      CONFIG.MAX_CATEGORY_NAME_LENGTH
+    );
+
+  if (!name) {
+    showCategoryError(
+      "Please enter a category name."
+    );
+
+    focusElement(
+      DOM.categoryName
+    );
+
+    return;
+  }
+
+  if (
+    state.editingCategoryId
+  ) {
+    const category =
+      findCategory(
+        state.editingCategoryId
+      );
+
+    if (!category) {
+      showCategoryError(
+        "The selected category could not be found."
+      );
+
+      return;
+    }
+
+    const duplicate =
+      state.categories.some(
+        (entry) =>
+          entry.id !==
+            category.id &&
+          entry.name.toLowerCase() ===
+            name.toLowerCase()
+      );
+
+    if (duplicate) {
+      showCategoryError(
+        "A category with this name already exists."
+      );
+
+      return;
+    }
+
+    category.name =
+      name;
+
+    saveCategoryItemData();
+
+    closeCategoryModal();
+
+    renderCategories();
+    renderItems();
+    updateItemCategorySelect();
+
+    showToast(
+      "Category updated.",
+      "success"
+    );
+
+    return;
+  }
+
+  if (
+    state.categories.length >=
+    CONFIG.MAX_CATEGORIES
+  ) {
+    showCategoryError(
+      `Maximum ${CONFIG.MAX_CATEGORIES} categories are allowed.`
+    );
+
+    return;
+  }
+
+  const duplicate =
+    state.categories.some(
+      (entry) =>
+        entry.name.toLowerCase() ===
+        name.toLowerCase()
+    );
+
+  if (duplicate) {
+    showCategoryError(
+      "A category with this name already exists."
+    );
+
+    return;
+  }
+
+  state.categories.push({
+    id: createId("cat"),
+    name,
+    items: []
+  });
+
+  saveCategoryItemData();
+
+  closeCategoryModal();
+
+  renderCategories();
+  updateItemCategorySelect();
+
+  showToast(
+    "Category added.",
+    "success"
+  );
+}
+
+
+function handleCategoryAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-category-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.categoryAction;
+
+  const categoryId =
+    button.dataset.categoryId;
+
+  if (!categoryId) {
+    return;
+  }
+
+  if (action === "edit") {
+    openCategoryModal(
+      categoryId
+    );
+
+    return;
+  }
+
+  if (action === "delete") {
+    deleteCategory(
+      categoryId
+    );
+
+    return;
+  }
+
+  if (action === "add-item") {
+    openItemModal(
+      categoryId
+    );
+  }
+}
+
+
+function deleteCategory(
+  categoryId
+) {
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    return;
+  }
+
+  const hasItems =
+    category.items.length > 0;
+
+  const message =
+    hasItems
+      ? `Delete "${category.name}" and all ${category.items.length} item(s) inside it?`
+      : `Delete "${category.name}"?`;
+
+  if (
+    !window.confirm(
+      message
+    )
+  ) {
+    return;
+  }
+
+  state.categories =
+    state.categories.filter(
+      (entry) =>
+        entry.id !==
+        categoryId
+    );
+
+  saveCategoryItemData();
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+
+  showToast(
+    "Category deleted.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * CATEGORY RENDER
+ * ========================================================= */
+
+
+function renderCategories() {
+  if (!DOM.categoryList) {
+    return;
+  }
+
+  DOM.categoryList.replaceChildren();
+
+  const hasCategories =
+    state.categories.length > 0;
+
+  if (DOM.categoryEmpty) {
+    DOM.categoryEmpty.hidden =
+      hasCategories;
+  }
+
+  if (!hasCategories) {
+    return;
+  }
+
+  state.categories.forEach(
+    (category) => {
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "category-row";
+
+      const name =
+        document.createElement(
+          "div"
+        );
+
+      name.className =
+        "category-row__name";
+
+      name.textContent =
+        category.name;
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "category-row__actions";
+
+      const count =
+        document.createElement(
+          "span"
+        );
+
+      count.textContent =
+        `${category.items.length} item${
+          category.items.length === 1
+            ? ""
+            : "s"
+        }`;
+
+      const addItem =
+        createButton(
+          "Add Item",
+          "category-row__action",
+          "add-item",
+          category.id
+        );
+
+      const edit =
+        createButton(
+          "Edit",
+          "category-row__action",
+          "edit",
+          category.id
+        );
+
+      const remove =
+        createButton(
+          "Delete",
+          "category-row__action",
+          "delete",
+          category.id
+        );
+
+      actions.appendChild(
+        count
+      );
+
+      actions.appendChild(
+        addItem
+      );
+
+      actions.appendChild(
+        edit
+      );
+
+      actions.appendChild(
+        remove
+      );
+
+      row.appendChild(
+        name
+      );
+
+      row.appendChild(
+        actions
+      );
+
+      DOM.categoryList.appendChild(
+        row
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+ * ITEM MODAL
+ * ========================================================= */
+
+
+function openItemModal(
+  categoryId = null,
+  itemId = null
+) {
+  clearItemError();
+
+  state.editingItemId =
+    itemId;
+
+  state.editingItemCategoryId =
+    categoryId;
+
+  updateItemCategorySelect();
+
+  if (itemId) {
+    const result =
+      findItem(
+        categoryId,
+        itemId
+      );
+
+    if (!result) {
+      return;
+    }
+
+    const item =
+      result.item;
+
+    if (DOM.itemModalTitle) {
+      DOM.itemModalTitle.textContent =
+        "Edit Item";
+    }
+
+    if (DOM.itemSave) {
+      DOM.itemSave.textContent =
+        "Update Item";
+    }
+
+    setValue(
+      DOM.itemName,
+      item.name
+    );
+
+    setValue(
+      DOM.itemPrice,
+      item.price
+    );
+
+    setValue(
+      DOM.itemQuantity,
+      item.quantity
+    );
+
+    setValue(
+      DOM.itemUnit,
+      item.unit
+    );
+
+    setValue(
+      DOM.itemCategory,
+      result.category.id
+    );
+
+    setValue(
+      DOM.itemDescription,
+      item.description || ""
+    );
+
+    setValue(
+      DOM.itemYoutube,
+      item.youtubeUrl || ""
+    );
+  } else {
+    if (DOM.itemModalTitle) {
+      DOM.itemModalTitle.textContent =
+        "Add Item";
+    }
+
+    if (DOM.itemSave) {
+      DOM.itemSave.textContent =
+        "Add Item";
+    }
+
+    clearItemFields();
+
+    if (
+      categoryId &&
+      DOM.itemCategory
+    ) {
+      DOM.itemCategory.value =
+        categoryId;
+    }
+  }
+
+  showModal(
+    DOM.itemModal
+  );
+
+  requestAnimationFrame(
+    () => {
+      focusElement(
+        DOM.itemName
+      );
+    }
+  );
+}
+
+
+function closeItemModal() {
+  state.editingItemId =
+    null;
+
+  state.editingItemCategoryId =
+    null;
+
+  clearItemError();
+  clearItemFields();
+
+  hideModal(
+    DOM.itemModal
+  );
+}
+
+
+function saveItem() {
+  clearItemError();
+
+  const categoryId =
+    DOM.itemCategory
+      ? DOM.itemCategory.value
+      : "";
+
+  const name =
+    normalizeText(
+      DOM.itemName
+        ? DOM.itemName.value
+        : "",
+      CONFIG.MAX_ITEM_NAME_LENGTH
+    );
+
+  const price =
+    parseNumber(
+      DOM.itemPrice
+        ? DOM.itemPrice.value
+        : ""
+    );
+
+  const quantity =
+    parseNumber(
+      DOM.itemQuantity
+        ? DOM.itemQuantity.value
+        : ""
+    );
+
+  const unit =
+    normalizeText(
+      DOM.itemUnit
+        ? DOM.itemUnit.value
+        : "",
+      50
+    );
+
+  const description =
+    normalizeText(
+      DOM.itemDescription
+        ? DOM.itemDescription.value
+        : "",
+      CONFIG.MAX_DESCRIPTION_LENGTH
+    );
+
+  const youtubeUrl =
+    normalizeText(
+      DOM.itemYoutube
+        ? DOM.itemYoutube.value
+        : "",
+      CONFIG.MAX_YOUTUBE_URL_LENGTH
+    );
+
+  if (!categoryId) {
+    showItemError(
+      "Please select a category."
+    );
+
+    focusElement(
+      DOM.itemCategory
+    );
+
+    return;
+  }
+
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    showItemError(
+      "The selected category could not be found."
+    );
+
+    return;
+  }
+
+  if (!name) {
+    showItemError(
+      "Please enter an item name."
+    );
+
+    focusElement(
+      DOM.itemName
+    );
+
+    return;
+  }
+
+  if (
+    price === null ||
+    price < 0
+  ) {
+    showItemError(
+      "Please enter a valid price."
+    );
+
+    focusElement(
+      DOM.itemPrice
+    );
+
+    return;
+  }
+
+  if (
+    quantity !== null &&
+    quantity < 0
+  ) {
+    showItemError(
+      "Quantity cannot be negative."
+    );
+
+    focusElement(
+      DOM.itemQuantity
+    );
+
+    return;
+  }
+
+  if (
+    youtubeUrl &&
+    !isValidYoutubeUrl(
+      youtubeUrl
+    )
+  ) {
+    showItemError(
+      "Please enter a valid YouTube or YouTube Shorts URL."
+    );
+
+    focusElement(
+      DOM.itemYoutube
+    );
+
+    return;
+  }
+
+  if (
+    state.editingItemId
+  ) {
+    const result =
+      findItem(
+        state.editingItemCategoryId,
+        state.editingItemId
+      );
+
+    if (!result) {
+      showItemError(
+        "The selected item could not be found."
+      );
+
+      return;
+    }
+
+    const duplicate =
+      category.items.some(
+        (item) =>
+          item.id !==
+            result.item.id &&
+          item.name.toLowerCase() ===
+            name.toLowerCase()
+      );
+
+    if (duplicate) {
+      showItemError(
+        "An item with this name already exists in this category."
+      );
+
+      return;
+    }
+
+    result.item.name =
+      name;
+
+    result.item.price =
+      price;
+
+    result.item.quantity =
+      quantity === null
+        ? 0
+        : quantity;
+
+    result.item.unit =
+      unit;
+
+    result.item.description =
+      description;
+
+    result.item.youtubeUrl =
+      youtubeUrl;
+
+    saveCategoryItemData();
+
+    closeItemModal();
+
+    renderItems();
+
+    showToast(
+      "Item updated.",
+      "success"
+    );
+
+    return;
+  }
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (
+    totalItems >=
+    CONFIG.MAX_TOTAL_ITEMS
+  ) {
+    showItemError(
+      `Maximum ${CONFIG.MAX_TOTAL_ITEMS} total items are allowed.`
+    );
+
+    return;
+  }
+
+  if (
+    category.items.length >=
+    CONFIG.MAX_ITEMS_PER_CATEGORY
+  ) {
+    showItemError(
+      `Maximum ${CONFIG.MAX_ITEMS_PER_CATEGORY} items are allowed in one category.`
+    );
+
+    return;
+  }
+
+  const duplicate =
+    category.items.some(
+      (item) =>
+        item.name.toLowerCase() ===
+        name.toLowerCase()
+    );
+
+  if (duplicate) {
+    showItemError(
+      "An item with this name already exists in this category."
+    );
+
+    return;
+  }
+
+  category.items.push({
+    id:
+      createId("item"),
+
+    name:
+      name,
+
+    price:
+      price,
+
+    quantity:
+      quantity === null
+        ? 0
+        : quantity,
+
+    unit:
+      unit,
+
+    description:
+      description,
+
+    youtubeUrl:
+      youtubeUrl
+  });
+
+  saveCategoryItemData();
+
+  closeItemModal();
+
+  renderItems();
+
+  showToast(
+    "Item added.",
+    "success"
+  );
+}
+
+
+
+
+function handleItemAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-item-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.itemAction;
+
+  const categoryId =
+    button.dataset.categoryId;
+
+  const itemId =
+    button.dataset.itemId;
+
+  if (!categoryId || !itemId) {
+    return;
+  }
+
+  if (action === "edit") {
+    openItemModal(
+      categoryId,
+      itemId
+    );
+
+    return;
+  }
+
+  if (action === "delete") {
+    deleteItem(
+      categoryId,
+      itemId
+    );
+  }
+}
+
+
+function deleteItem(
+  categoryId,
+  itemId
+) {
+  const result =
+    findItem(
+      categoryId,
+      itemId
+    );
+
+  if (!result) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete "${result.item.name}"?`
+    )
+  ) {
+    return;
+  }
+
+  result.category.items =
+    result.category.items.filter(
+      (item) =>
+        item.id !==
+        itemId
+    );
+
+  saveCategoryItemData();
+
+  renderItems();
+
+  showToast(
+    "Item deleted.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * ITEM RENDER
+ * ========================================================= */
+
+
+function renderItems() {
+  if (!DOM.itemList) {
+    return;
+  }
+
+  DOM.itemList.replaceChildren();
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (DOM.itemEmpty) {
+    DOM.itemEmpty.hidden =
+      totalItems > 0;
+  }
+
+  if (totalItems === 0) {
+    return;
+  }
+
+  state.categories.forEach(
+    (category) => {
+      category.items.forEach(
+        (item) => {
+          const row =
+            document.createElement(
+              "div"
+            );
+
+          row.className =
+            "item-row";
+
+          const main =
+            document.createElement(
+              "div"
+            );
+
+          main.className =
+            "item-row__main";
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+          name.className =
+            "item-row__name";
+
+          name.textContent =
+            item.name;
+
+          const meta =
+            document.createElement(
+              "div"
+            );
+
+          meta.className =
+            "item-row__meta";
+
+          const quantityText =
+            item.quantity > 0
+              ? ` · ${formatNumber(
+                  item.quantity
+                )} ${item.unit || ""}`
+              : "";
+
+          meta.textContent =
+            `${category.name} · ₹${formatNumber(
+              item.price
+            )}${quantityText}`;
+
+          main.appendChild(
+            name
+          );
+
+          main.appendChild(
+            meta
+          );
+
+          if (
+            item.description
+          ) {
+            const description =
+              document.createElement(
+                "div"
+              );
+
+            description.className =
+              "item-row__description";
+
+            description.textContent =
+              item.description;
+
+            main.appendChild(
+              description
+            );
+          }
+
+          if (
+            item.youtubeUrl
+          ) {
+            const video =
+              document.createElement(
+                "div"
+              );
+
+            video.className =
+              "item-row__video";
+
+            video.textContent =
+              "YouTube video attached";
+
+            main.appendChild(
+              video
+            );
+          }
+
+          const actions =
+            document.createElement(
+              "div"
+            );
+
+          actions.className =
+            "item-row__actions";
+
+          const edit =
+            createButton(
+              "Edit",
+              "item-row__action",
+              "edit",
+              category.id,
+              item.id
+            );
+
+          const remove =
+            createButton(
+              "Delete",
+              "item-row__action",
+              "delete",
+              category.id,
+              item.id
+            );
+
+          actions.appendChild(
+            edit
+          );
+
+          actions.appendChild(
+            remove
+          );
+
+          row.appendChild(
+            main
+          );
+
+          row.appendChild(
+            actions
+          );
+
+          DOM.itemList.appendChild(
+            row
+          );
+        }
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+ * ITEM CATEGORY SELECT
+ * ========================================================= */
+
+
+function updateItemCategorySelect() {
+  if (!DOM.itemCategory) {
+    return;
+  }
+
+  const previousValue =
+    DOM.itemCategory.value;
+
+  DOM.itemCategory.replaceChildren();
+
+  const placeholder =
+    document.createElement(
+      "option"
+    );
+
+  placeholder.value =
+    "";
+
+  placeholder.textContent =
+    "Select category";
+
+  DOM.itemCategory.appendChild(
+    placeholder
+  );
+
+  state.categories.forEach(
+    (category) => {
+      const option =
+        document.createElement(
+          "option"
+        );
+
+      option.value =
+        category.id;
+
+      option.textContent =
+        category.name;
+
+      DOM.itemCategory.appendChild(
+        option
+      );
+    }
+  );
+
+  if (
+    state.categories.some(
+      (category) =>
+        category.id ===
+        previousValue
+    )
+  ) {
+    DOM.itemCategory.value =
+      previousValue;
+  }
+}
+
+
+/* =========================================================
+ * LOCATION
+ * ========================================================= */
+
+
+async function verifyBusinessLocation() {
+  if (
+    !navigator.geolocation
+  ) {
+    setLocationError(
+      "Location services are not supported by this browser."
+    );
+
+    return;
+  }
+
+  setButtonBusy(
+    DOM.verifyLocation,
+    true,
+    "Verifying..."
+  );
+
+  setLocationText(
+    "Getting an accurate GPS location. Please wait...",
+    false
+  );
+
+  try {
+    const position =
+      await getCurrentPosition();
+
+    const latitude =
+      Number(
+        position.coords.latitude
+      );
+
+    const longitude =
+      Number(
+        position.coords.longitude
+      );
+
+    const accuracy =
+      Number(
+        position.coords.accuracy
+      );
+
+    if (
+      !Number.isFinite(
+        latitude
+      ) ||
+      !Number.isFinite(
+        longitude
+      )
+    ) {
+      throw new Error(
+        "The browser returned an invalid location."
+      );
+    }
+
+    if (
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      throw new Error(
+        "The returned coordinates are invalid."
+      );
+    }
+
+    if (
+      !Number.isFinite(
+        accuracy
+      ) ||
+      accuracy <= 0
+    ) {
+      throw new Error(
+        "The device could not determine GPS accuracy. Please enable precise location and try again."
+      );
+    }
+
+    if (
+      accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+    ) {
+      throw new Error(
+        `Location accuracy is too low (approximately ${Math.round(
+          accuracy
+        )} metres). Please enable precise location, stay at the business location, and try again.`
+      );
+    }
+
+    const verifiedAt =
+      new Date()
+        .toISOString();
+
+    state.location = {
+      verified:
+        true,
+
+      latitude:
+        latitude,
+
+      longitude:
+        longitude,
+
+      accuracy:
+        accuracy,
+
+      verifiedAt:
+        verifiedAt
+    };
+
+    updateLocationDetails();
+
+    setLocationText(
+      `Business location verified. Accuracy: approximately ${Math.round(
+        accuracy
+      )} metres.`,
+      true
+    );
+
+    showToast(
+      "Business location verified.",
+      "success"
+    );
+
+  } catch (error) {
+    state.location = {
+      verified:
+        false,
+
+      latitude:
+        null,
+
+      longitude:
+        null,
+
+      accuracy:
+        null,
+
+      verifiedAt:
+        null
+    };
+
+    updateLocationDetails();
+
+    setLocationError(
+      getLocationErrorMessage(
+        error
+      )
+    );
+
+  } finally {
+    setButtonBusy(
+      DOM.verifyLocation,
+      false
+    );
+  }
+}
+
+
+function getCurrentPosition() {
+  return new Promise(
+    (
+      resolve,
+      reject
+    ) => {
+      let bestPosition =
+        null;
+
+      let settled =
+        false;
+
+      let watchId =
+        null;
+
+      let timerId =
+        null;
+
+      const cleanup = () => {
+        if (
+          timerId !== null
+        ) {
+          window.clearTimeout(
+            timerId
+          );
+
+          timerId =
+            null;
+        }
+
+        if (
+          watchId !== null
+        ) {
+          navigator.geolocation.clearWatch(
+            watchId
+          );
+
+          watchId =
+            null;
+        }
+      };
+
+      const finish = (
+        position
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        resolve(
+          position
+        );
+      };
+
+      const fail = (
+        error
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        reject(
+          error
+        );
+      };
+
+      const handlePosition = (
+        position
+      ) => {
+        const accuracy =
+          Number(
+            position &&
+            position.coords &&
+            position.coords.accuracy
+          );
+
+        if (
+          !Number.isFinite(
+            accuracy
+          ) ||
+          accuracy <= 0
+        ) {
+          return;
+        }
+
+        if (
+          !bestPosition ||
+          accuracy <
+            Number(
+              bestPosition.coords.accuracy
+            )
+        ) {
+          bestPosition =
+            position;
+        }
+
+        if (
+          accuracy <=
+          CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            position
+          );
+        }
+      };
+
+      const handleError = (
+        error
+      ) => {
+        if (
+          bestPosition &&
+          Number(
+            bestPosition.coords.accuracy
+          ) <=
+            CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            bestPosition
+          );
+          return;
+        }
+
+        fail(
+          error
+        );
+      };
+
+      timerId =
+        window.setTimeout(
+          () => {
+            if (
+              bestPosition &&
+              Number(
+                bestPosition.coords.accuracy
+              ) <=
+                CONFIG.MAX_LOCATION_ACCURACY_METERS
+            ) {
+              finish(
+                bestPosition
+              );
+              return;
+            }
+
+            fail(
+              new Error(
+                "Unable to obtain an accurate GPS location within 30 seconds. Please enable precise location and try again."
+              )
+            );
+          },
+          CONFIG.LOCATION_TIMEOUT_MS
+        );
+
+      try {
+        watchId =
+          navigator.geolocation.watchPosition(
+            handlePosition,
+            handleError,
+            {
+              enableHighAccuracy:
+                true,
+
+              timeout:
+                CONFIG.LOCATION_TIMEOUT_MS,
+
+              maximumAge:
+                0
+            }
+          );
+      } catch (error) {
+        fail(
+          error
+        );
+      }
+    }
+  );
+}
+
+
+
+
+function updateLocationDetails() {
+  if (
+    DOM.locationDetails
+  ) {
+    DOM.locationDetails.hidden =
+      !state.location.verified;
+  }
+
+  if (
+    DOM.locationLatitude
+  ) {
+    DOM.locationLatitude.textContent =
+      state.location.verified
+        ? formatCoordinate(
+            state.location.latitude
+          )
+        : "—";
+  }
+
+  if (
+    DOM.locationLongitude
+  ) {
+    DOM.locationLongitude.textContent =
+      state.location.verified
+        ? formatCoordinate(
+            state.location.longitude
+          )
+        : "—";
+  }
+
+  if (
+    DOM.locationVerifiedAt
+  ) {
+    DOM.locationVerifiedAt.textContent =
+      state.location.verified
+        ? formatDateTime(
+            state.location.verifiedAt
+          )
+        : "—";
+  }
+}
+
+
+function setLocationText(
+  message,
+  verified
+) {
+  if (
+    DOM.locationStatusText
+  ) {
+    DOM.locationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.locationStatus
+  ) {
+    DOM.locationStatus.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+
+    DOM.locationStatus.classList.toggle(
+      "is-error",
+      false
+    );
+  }
+
+  if (
+    DOM.locationStatusIndicator
+  ) {
+    DOM.locationStatusIndicator.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+  }
+}
+
+
+function setLocationError(
+  message
+) {
+  if (
+    DOM.locationStatusText
+  ) {
+    DOM.locationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.locationStatus
+  ) {
+    DOM.locationStatus.classList.remove(
+      "is-verified"
+    );
+
+    DOM.locationStatus.classList.add(
+      "is-error"
+    );
+  }
+
+  showToast(
+    message,
+    "error"
+  );
+}
+
+
+function formatCoordinate(
+  value
+) {
+  return Number(
+    value
+  ).toFixed(6);
+}
+
+
+function formatDateTime(
+  value
+) {
+  const date =
+    new Date(
+      value
+    );
+
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
+    return "—";
+  }
+
+  return date.toLocaleString(
+    "en-IN",
+    {
+      dateStyle:
+        "medium",
+
+      timeStyle:
+        "short"
+    }
+  );
+}
+
+
+/* =========================================================
+ * LOGO PREVIEW
+ * ========================================================= */
+
+
+function previewLogo() {
+  const requestId =
+    ++state.logoPreviewRequest;
+
+  const value =
+    normalizeText(
+      DOM.logoUrl
+        ? DOM.logoUrl.value
+        : "",
+      CONFIG.MAX_LOGO_URL_LENGTH
+    );
+
+  if (
+    !value ||
+    !isValidHttpsUrl(
+      value
+    )
+  ) {
+    hideLogoPreview();
+
+    return;
+  }
+
+  if (
+    !DOM.logoPreview ||
+    !DOM.logoPreviewImage
+  ) {
+    return;
+  }
+
+  DOM.logoPreview.hidden =
+    false;
+
+  DOM.logoPreviewImage.alt =
+    "Business logo preview";
+
+  DOM.logoPreviewImage.src =
+    "";
+
+  DOM.logoPreviewImage.onload =
+    () => {
+      if (
+        requestId !==
+        state.logoPreviewRequest
+      ) {
+        return;
+      }
+
+      DOM.logoPreview.hidden =
+        false;
+    };
+
+  DOM.logoPreviewImage.onerror =
+    () => {
+      if (
+        requestId !==
+        state.logoPreviewRequest
+      ) {
+        return;
+      }
+
+      hideLogoPreview();
+    };
+
+  DOM.logoPreviewImage.src =
+    value;
+}
+
+
+function hideLogoPreview() {
+  if (
+    DOM.logoPreview
+  ) {
+    DOM.logoPreview.hidden =
+      true;
+  }
+
+  if (
+    DOM.logoPreviewImage
+  ) {
+    DOM.logoPreviewImage.removeAttribute(
+      "src"
+    );
+  }
+}
+
+
+/* =========================================================
+ * VALIDATION
+ * ========================================================= */
+
+
+function validateBuilder() {
+  const errors = [];
+
+  const businessName =
+    getValue(
+      DOM.businessName
+    );
+
+  const tagline =
+    getValue(
+      DOM.tagline
+    );
+
+  const address =
+    getValue(
+      DOM.address
+    );
+
+  const mobile =
+    getValue(
+      DOM.mobile
+    );
+
+  const email =
+    getValue(
+      DOM.email
+    );
+
+  const whatsapp =
+    getValue(
+      DOM.whatsapp
+    );
+
+  const logoUrl =
+    getValue(
+      DOM.logoUrl
+    );
+
+  const subscriptionId =
+    getValue(
+      DOM.subscriptionId
+    );
+
+  const businessPassword =
+    DOM.businessPassword
+      ? DOM.businessPassword.value
+      : "";
+
+  if (
+    !state.selectedTemplate
+  ) {
+    errors.push(
+      "Please select a business app template."
+    );
+  }
+
+  if (
+    state.selectedTemplate !==
+    CONFIG.TEMPLATE_ID
+  ) {
+    errors.push(
+      "The selected application template is invalid."
+    );
+  }
+
+  if (!subscriptionId) {
+    errors.push(
+      "Please enter your Subscription ID."
+    );
+  }
+
+  if (!businessPassword) {
+    errors.push(
+      "Please create your Business Password."
+    );
+  }
+
+  if (!businessName) {
+    errors.push(
+      "Please enter the business name."
+    );
+  }
+
+  if (
+    !address
+  ) {
+    errors.push(
+      "Please enter the business address."
+    );
+  }
+
+  if (!mobile) {
+    errors.push(
+      "Please enter the business mobile number."
+    );
+  }
+
+  if (
+    email &&
+    !isValidEmail(
+      email
+    )
+  ) {
+    errors.push(
+      "Please enter a valid email address."
+    );
+  }
+
+  if (!whatsapp) {
+    errors.push(
+      "Please enter the Business WhatsApp number."
+    );
+  }
+
+  if (
+    logoUrl &&
+    !isValidHttpsUrl(
+      logoUrl
+    )
+  ) {
+    errors.push(
+      "Logo URL must be a valid HTTPS URL."
+    );
+  }
+
+  if (
+    !state.location.verified
+  ) {
+    errors.push(
+      "Please verify the business location."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.latitude
+    ) ||
+    !Number.isFinite(
+      state.location.longitude
+    )
+  ) {
+    errors.push(
+      "Valid business GPS coordinates are required."
+    );
+  }
+
+
+
+  if (
+    !Number.isFinite(
+      state.location.accuracy
+    ) ||
+    state.location.accuracy <= 0 ||
+    state.location.accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+  ) {
+    errors.push(
+      `Business GPS accuracy must be ${CONFIG.MAX_LOCATION_ACCURACY_METERS} metres or better.`
+    );
+  }
+
+
+
+
+  if (
+    state.categories.length ===
+    0
+  ) {
+    errors.push(
+      "Please add at least one category."
+    );
+  }
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (
+    totalItems === 0
+  ) {
+    errors.push(
+      "Please add at least one item."
+    );
+  }
+
+  state.categories.forEach(
+    (category) => {
+      if (!category.name) {
+        errors.push(
+          "Every category must have a name."
+        );
+      }
+
+      if (
+        category.items.length >
+        CONFIG.MAX_ITEMS_PER_CATEGORY
+      ) {
+        errors.push(
+          `Category "${category.name}" exceeds the item limit.`
+        );
+      }
+
+      category.items.forEach(
+        (item) => {
+          if (!item.name) {
+            errors.push(
+              `An item in "${category.name}" is missing its name.`
+            );
+          }
+
+          if (
+            !Number.isFinite(
+              item.price
+            ) ||
+            item.price < 0
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid price.`
+            );
+          }
+
+          if (
+            !Number.isFinite(
+              item.quantity
+            ) ||
+            item.quantity < 0
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid quantity.`
+            );
+          }
+
+          if (
+            item.youtubeUrl &&
+            !isValidYoutubeUrl(
+              item.youtubeUrl
+            )
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid YouTube URL.`
+            );
+          }
+        }
+      );
+    }
+  );
+
+  if (
+    totalItems >
+    CONFIG.MAX_TOTAL_ITEMS
+  ) {
+    errors.push(
+      `Maximum ${CONFIG.MAX_TOTAL_ITEMS} total items are allowed.`
+    );
+  }
+
+  return {
+    valid:
+      errors.length === 0,
+
+    errors:
+      uniqueStrings(
+        errors
+      )
+  };
+}
+
+
+function showValidation(
+  errors
+) {
+  if (
+    !DOM.validationSummary ||
+    !DOM.validationList
+  ) {
+    return;
+  }
+
+  DOM.validationList.replaceChildren();
+
+  errors.forEach(
+    (error) => {
+      const li =
+        document.createElement(
+          "li"
+        );
+
+      li.textContent =
+        error;
+
+      DOM.validationList.appendChild(
+        li
+      );
+    }
+  );
+
+  DOM.validationSummary.hidden =
+    false;
+
+  DOM.validationSummary.scrollIntoView(
+    {
+      behavior:
+        "smooth",
+
+      block:
+        "center"
+    }
+  );
+}
+
+
+function hideValidation() {
+  if (
+    DOM.validationSummary
+  ) {
+    DOM.validationSummary.hidden =
+      true;
+  }
+
+  if (
+    DOM.validationList
+  ) {
+    DOM.validationList.replaceChildren();
+  }
+}
+
+
+/* =========================================================
+ * PUBLISH
+ * ========================================================= */
+
+
+async function publishBusiness() {
+  if (state.publishing) return;
+
+  hideValidation();
+  hideSuccess();
+  clearSubscriptionError();
+
+  const validation = validateBuilder();
+
+  if (!validation.valid) {
+    showValidation(validation.errors);
+    showToast(
+      validation.errors[0] || "Please review the form.",
+      "error"
+    );
+    return;
+  }
+
+  const payload = buildPublishPayload();
+
+  state.publishing = true;
+  state.lastPublishedUrl = "";
+
+  setPublishBusy(true);
+  setPublishStatus(
+    "Verifying your subscription and creating your business app..."
+  );
+
+  showLoader(
+    "Verifying subscription and publishing your business app..."
+  );
+
+  try {
+    const result = await sendPublishRequest(payload);
+
+    if (!result || result.success !== true) {
+      throw new Error(
+        result && result.message
+          ? result.message
+          : "The business app could not be created."
+      );
+    }
+
+    if (!isValidHttpsUrl(result.url)) {
+      throw new Error(
+        "The Worker did not return a valid business app URL."
+      );
+    }
+
+    state.lastPublishedUrl = result.url;
+
+    hideLoader();
+
+    showSuccess(result);
+
+    setPublishStatus(
+      "Business app is being published..."
+    );
+
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app has been created. We are waiting for the public app files to become available.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Publishing your business app...";
+      DOM.deploymentStatus.classList.remove("is-live");
+      DOM.deploymentStatus.classList.add("is-waiting");
+    }
+
+    const deploymentReady =
+      await waitForDeployment(result.url);
+
+    if (!deploymentReady) {
+      if (DOM.deploymentStatus) {
+        DOM.deploymentStatus.textContent =
+          "The app is still being published. Please wait a little longer and try opening it again.";
+        DOM.deploymentStatus.classList.remove("is-live");
+        DOM.deploymentStatus.classList.add("is-waiting");
+      }
+
+      setPublishStatus(
+        "Business app is still being published."
+      );
+
+      return;
+    }
+
+    enablePublishedBusiness(result.url);
+
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app is live and ready to open.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Business app is live.";
+      DOM.deploymentStatus.classList.remove("is-waiting");
+      DOM.deploymentStatus.classList.add("is-live");
+    }
+
+    setPublishStatus(
+      "Business app created and published successfully."
+    );
+
+    showToast(
+      "Your business app is now live.",
+      "success"
+    );
+  } catch (error) {
+    hideLoader();
+
+    const message = getErrorMessage(error);
+
+    setPublishStatus(message);
+
+    showValidation([message]);
+
+    showToast(
+      message,
+      "error"
+    );
+  } finally {
+    state.publishing = false;
+    setPublishBusy(false);
+  }
+}
+
+
+async function waitForDeployment(url) {
+  const startedAt = Date.now();
+
+  while (
+    Date.now() - startedAt <
+    CONFIG.DEPLOYMENT_TIMEOUT_MS
+  ) {
+    if (await isDeploymentReady(url)) {
+      return true;
+    }
+
+    const elapsedSeconds =
+      Math.floor(
+        (Date.now() - startedAt) / 1000
+      );
+
+    const remainingSeconds = Math.max(
+      0,
+      Math.ceil(
+        (CONFIG.DEPLOYMENT_TIMEOUT_MS -
+          (Date.now() - startedAt)) /
+          1000
+      )
+    );
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        `Publishing your business app... ${elapsedSeconds}s elapsed.`;
+    }
+
+    setPublishStatus(
+      `Waiting for your business app to become live... ${remainingSeconds}s remaining.`
+    );
+
+    await sleep(
+      CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS
+    );
+  }
+
+  return false;
+}
+
+
+async function isDeploymentReady(url) {
+  try {
+    const pageUrl = new URL(url);
+
+    const dataUrl = new URL(
+      "ecommerce.json",
+      pageUrl
+    );
+
+    const [pageResponse, dataResponse] =
+      await Promise.all([
+        fetchDeploymentResource(
+          pageUrl.href
+        ),
+        fetchDeploymentResource(
+          dataUrl.href
+        )
+      ]);
+
+    return (
+      pageResponse &&
+      pageResponse.ok &&
+      dataResponse &&
+      dataResponse.ok
+    );
+  } catch (error) {
+    return false;
+  }
+}
+
+
+async function fetchDeploymentResource(url) {
+  try {
+    const controller =
+      new AbortController();
+
+    const timeoutId =
+      setTimeout(
+        () => controller.abort(),
+        CONFIG.REQUEST_TIMEOUT_MS
+      );
+
+    const response = await fetch(
+      url,
+      {
+        method: "GET",
+        cache: "no-store",
+        credentials: "omit",
+        redirect: "follow",
+        signal: controller.signal
+      }
+    );
+
+    clearTimeout(timeoutId);
+
+    return response;
+  } catch (error) {
+    return null;
+  }
+}
+
+
+function enablePublishedBusiness(url) {
+  if (!isValidHttpsUrl(url)) {
+    return;
+  }
+
+  state.lastPublishedUrl = url;
+
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = url;
+    DOM.businessAppUrl.textContent = url;
+    DOM.businessAppUrl.dataset.url = url;
+
+    DOM.businessAppUrl.classList.remove(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "aria-disabled"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "tabindex"
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = false;
+  }
+}
+
+
+function sleep(milliseconds) {
+  return new Promise(
+    (resolve) => {
+      setTimeout(
+        resolve,
+        milliseconds
+      );
+    }
+  );
+}
+
+
+function buildPublishPayload() {
+  return {
+    template:
+      CONFIG.TEMPLATE_ID,
+
+    subscriptionId:
+      getValue(
+        DOM.subscriptionId
+      ),
+
+    businessPassword:
+      DOM.businessPassword
+        ? DOM.businessPassword.value
+        : "",
+
+    business: {
+      name:
+        getValue(
+          DOM.businessName
+        ),
+
+      tagline:
+        getValue(
+          DOM.tagline
+        ),
+
+      address:
+        getValue(
+          DOM.address
+        ),
+
+      mobile:
+        getValue(
+          DOM.mobile
+        ),
+
+      email:
+        getValue(
+          DOM.email
+        ),
+
+      whatsapp:
+        getValue(
+          DOM.whatsapp
+        ),
+
+      logoUrl:
+        getValue(
+          DOM.logoUrl
+        )
+    },
+
+    location: {
+      verified:
+        state.location.verified,
+
+      latitude:
+        state.location.latitude,
+
+      longitude:
+        state.location.longitude,
+
+      verifiedAt:
+        state.location.verifiedAt
+    },
+
+    categories:
+      state.categories.map(
+        (category) => ({
+          id:
+            category.id,
+
+          name:
+            category.name,
+
+          items:
+            category.items.map(
+              (item) => ({
+                id:
+                  item.id,
+
+                name:
+                  item.name,
+
+                price:
+                  item.price,
+
+                quantity:
+                  item.quantity,
+
+                unit:
+                  item.unit,
+
+                description:
+                  item.description,
+
+                youtubeUrl:
+                  item.youtubeUrl
+              })
+            )
+        })
+      )
+  };
+}
+
+
+async function sendPublishRequest(
+  payload
+) {
+  const workerUrl =
+    normalizeBaseUrl(
+      CONFIG.WORKER_URL
+    );
+
+  if (!workerUrl) {
+    throw new Error(
+      "Business Worker URL is not configured."
+    );
+  }
+
+  const controller =
+    new AbortController();
+
+  const timeoutId =
+    window.setTimeout(
+      () => {
+        controller.abort();
+      },
+      CONFIG.REQUEST_TIMEOUT_MS
+    );
+
+  try {
+    const response =
+      await fetch(
+        `${workerUrl}/publish`,
+        {
+          method:
+            "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            "Accept":
+              "application/json"
+          },
+
+          body:
+            JSON.stringify(
+              payload
+            ),
+
+          cache:
+            "no-store",
+
+          credentials:
+            "omit",
+
+          signal:
+            controller.signal
+        }
+      );
+
+    const contentType =
+      response.headers.get(
+        "content-type"
+      ) || "";
+
+    let result;
+
+    if (
+      contentType
+        .toLowerCase()
+        .includes(
+          "application/json"
+        )
+    ) {
+      try {
+        result =
+          await response.json();
+      } catch {
+        throw new Error(
+          "The Worker returned invalid JSON."
+        );
+      }
+    } else {
+      const text =
+        await response.text();
+
+      result = {
+        success:
+          false,
+
+        message:
+          text ||
+          `Worker returned HTTP ${response.status}.`
+      };
+    }
+
+    if (
+      !response.ok
+    ) {
+      throw new Error(
+        result &&
+        result.message
+          ? result.message
+          : `Worker returned HTTP ${response.status}.`
+      );
+    }
+
+    return result;
+
+  } catch (error) {
+    if (
+      error &&
+      error.name ===
+        "AbortError"
+    ) {
+      throw new Error(
+        "The request timed out. Please try again."
+      );
+    }
+
+    if (
+      error instanceof TypeError
+    ) {
+      throw new Error(
+        "Unable to connect to the Business Worker. Please check your internet connection and try again."
+      );
+    }
+
+    throw error;
+
+  } finally {
+    window.clearTimeout(
+      timeoutId
+    );
+  }
+}
+
+
+/* =========================================================
+ * SUCCESS
+ * ========================================================= */
+
+
+function showSuccess(result) {
+  if (!DOM.successSection) return;
+
+  const url =
+    typeof result.url === "string"
+      ? result.url.trim()
+      : "";
+
+  state.lastPublishedUrl = url;
+
+  if (DOM.successDescription) {
+    DOM.successDescription.textContent =
+      "Your business app has been created. We are waiting for the public app files to become available.";
+  }
+
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = "#";
+    DOM.businessAppUrl.textContent =
+      "Preparing Business App...";
+    DOM.businessAppUrl.dataset.url = "";
+
+    DOM.businessAppUrl.classList.add(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "aria-disabled",
+      "true"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "tabindex",
+      "-1"
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = true;
+  }
+
+  if (DOM.deploymentStatus) {
+    DOM.deploymentStatus.textContent =
+      "Publishing your business app...";
+    DOM.deploymentStatus.classList.remove(
+      "is-live"
+    );
+    DOM.deploymentStatus.classList.add(
+      "is-waiting"
+    );
+  }
+
+  DOM.successSection.hidden = false;
+
+  DOM.successSection.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function hideSuccess() {
+  if (
+    DOM.successSection
+  ) {
+    DOM.successSection.hidden =
+      true;
+  }
+}
+
+
+function openPublishedBusiness() {
+  const url =
+    state.lastPublishedUrl ||
+    (
+      DOM.businessAppUrl
+        ? DOM.businessAppUrl.dataset.url ||
+          ""
+        : ""
+    );
+
+  if (!isValidHttpsUrl(url)) {
+    showToast(
+      "Your business app is not live yet. Please wait for publishing to finish.",
+      "error"
+    );
+    return;
+  }
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+
+
+function editBusiness() {
+  hideSuccess();
+
+  if (
+    DOM.ecommerceSection
+  ) {
+    DOM.ecommerceSection.hidden =
+      false;
+  }
+
+  if (
+    DOM.templateSection
+  ) {
+    DOM.templateSection.hidden =
+      true;
+  }
+
+  window.scrollTo({
+    top:
+      0,
+
+    behavior:
+      "smooth"
+  });
+}
+
+
+function createAnotherApp() {
+  resetBuilderData(
+    false
+  );
+
+  showTemplateSelection();
+
+  showToast(
+    "Ready to create another business app.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * LOADING / BUTTON STATUS
+ * ========================================================= */
+
+
+function showLoader(
+  message
+) {
+  if (
+    DOM.loaderText
+  ) {
+    DOM.loaderText.textContent =
+      message ||
+      "Processing...";
+  }
+
+  if (
+    DOM.applicationLoader
+  ) {
+    DOM.applicationLoader.hidden =
+      false;
+  }
+}
+
+
+function hideLoader() {
+  if (
+    DOM.applicationLoader
+  ) {
+    DOM.applicationLoader.hidden =
+      true;
+  }
+}
+
+
+function setPublishBusy(
+  busy
+) {
+  if (
+    DOM.publishBusiness
+  ) {
+    DOM.publishBusiness.disabled =
+      busy;
+  }
+
+  if (
+    DOM.publishSpinner
+  ) {
+    DOM.publishSpinner.hidden =
+      !busy;
+  }
+
+  if (
+    DOM.publishButtonText
+  ) {
+    DOM.publishButtonText.textContent =
+      busy
+        ? "Creating Business App..."
+        : "Create Business App";
+  }
+}
+
+
+function setPublishStatus(
+  message
+) {
+  if (
+    DOM.publishStatus
+  ) {
+    DOM.publishStatus.textContent =
+      message || "";
+  }
+}
+
+
+/* =========================================================
+ * CONNECTION
+ * ========================================================= */
+
+
+function updateConnectionStatus() {
+  const online =
+    navigator.onLine;
+
+  if (
+    DOM.connectionText
+  ) {
+    DOM.connectionText.textContent =
+      online
+        ? "Ready"
+        : "Offline";
+  }
+
+  if (
+    DOM.connectionStatus
+  ) {
+    DOM.connectionStatus.classList.toggle(
+      "is-online",
+      online
+    );
+
+    DOM.connectionStatus.classList.toggle(
+      "is-offline",
+      !online
+    );
+  }
+}
+
+
+/* =========================================================
+ * MODALS
+ * ========================================================= */
+
+
+function showModal(
+  modal
+) {
+  if (!modal) {
+    return;
+  }
+
+  modal.hidden =
+    false;
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add(
+    "modal-open"
+  );
+}
+
+
+function hideModal(
+  modal
+) {
+  if (!modal) {
+    return;
+  }
+
+  modal.hidden =
+    true;
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  if (
+    DOM.categoryModal &&
+    DOM.itemModal &&
+    DOM.websiteContentModal &&
+    DOM.categoryModal.hidden &&
+    DOM.itemModal.hidden &&
+    DOM.websiteContentModal.hidden
+  ) {
+    document.body.classList.remove(
+      "modal-open"
+    );
+  }
+}
+
+
+function handleModalBackdrop(
+  event
+) {
+  if (
+    event.target !==
+    event.currentTarget
+  ) {
+    return;
+  }
+
+  const closeTarget =
+    event.target.closest(
+      "[data-modal-close]"
+    );
+
+  if (!closeTarget) {
+    return;
+  }
+
+  const modalId =
+    closeTarget.dataset.modalClose;
+
+  if (
+    modalId ===
+    "category-modal"
+  ) {
+    closeCategoryModal();
+  }
+
+  if (
+    modalId ===
+    "item-modal"
+  ) {
+    closeItemModal();
+  }
+
+  if (
+    modalId ===
+    "website-content-modal"
+  ) {
+    closeWebsiteContentModal();
+  }
+
+
+}
+
+
+function handleKeyboard(
+  event
+) {
+  if (
+    event.key !==
+    "Escape"
+  ) {
+    return;
+  }
+
+  if (
+    DOM.categoryModal &&
+    !DOM.categoryModal.hidden
+  ) {
+    closeCategoryModal();
+
+    return;
+  }
+
+  if (
+    DOM.itemModal &&
+    !DOM.itemModal.hidden
+  ) {
+    closeItemModal();
+
+    return;
+  }
+
+  if (
+    DOM.websiteContentModal &&
+    !DOM.websiteContentModal.hidden
+  ) {
+    closeWebsiteContentModal();
+  }
+}
+
+
+/* =========================================================
+ * GLOBAL WEBSITE BUILDER
+ * ========================================================= */
+
+const WEBSITE_MAX_SECTIONS = 100;
+
+const WEBSITE_MAX_BLOCKS_PER_SECTION = 100;
+
+const WEBSITE_MAX_IMAGES_PER_BLOCK = 50;
+
+const WEBSITE_MAX_VIDEOS_PER_BLOCK = 50;
+
+const WEBSITE_MAX_LINKS_PER_BLOCK = 50;
+
+const WEBSITE_MAX_FOOTER_LINKS = 50;
+
+const WEBSITE_MAX_TEXT_LENGTH = 10000;
+
+const WEBSITE_MAX_URL_LENGTH = 2000;
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PASSWORD
+ * --------------------------------------------------------- */
+
+function toggleWebsitePassword() {
+  if (
+    !DOM.websitePassword ||
+    !DOM.websitePasswordToggle
+  ) {
+    return;
+  }
+
+  const icon =
+    DOM.websitePasswordToggle.querySelector(
+      ".password-toggle__icon"
+    );
+
+  const hidden =
+    DOM.websitePassword.type === "password";
+
+  DOM.websitePassword.type =
+    hidden
+      ? "text"
+      : "password";
+
+  DOM.websitePasswordToggle.setAttribute(
+    "aria-label",
+    hidden
+      ? "Hide password"
+      : "Show password"
+  );
+
+  DOM.websitePasswordToggle.setAttribute(
+    "aria-pressed",
+    hidden
+      ? "true"
+      : "false"
+  );
+
+  if (icon) {
+    icon.textContent =
+      hidden
+        ? "◉"
+        : "👁";
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE LOGO
+ * --------------------------------------------------------- */
+
+function previewWebsiteLogo() {
+  if (
+    !DOM.websiteLogo ||
+    !DOM.websiteLogoPreview ||
+    !DOM.websiteLogoPreviewImage
+  ) {
+    return;
+  }
+
+  const url =
+    getValue(
+      DOM.websiteLogo
+    );
+
+  if (
+    !url ||
+    !isValidHttpsUrl(url)
+  ) {
+    DOM.websiteLogoPreview.hidden =
+      true;
+
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+
+    return;
+  }
+
+  const requestId =
+    ++state.logoPreviewRequest;
+
+  const image =
+    new Image();
+
+  image.onload = () => {
+    if (
+      requestId !==
+      state.logoPreviewRequest
+    ) {
+      return;
+    }
+
+    DOM.websiteLogoPreviewImage.src =
+      url;
+
+    DOM.websiteLogoPreview.hidden =
+      false;
+  };
+
+  image.onerror = () => {
+    if (
+      requestId !==
+      state.logoPreviewRequest
+    ) {
+      return;
+    }
+
+    DOM.websiteLogoPreview.hidden =
+      true;
+
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+  };
+
+  image.referrerPolicy =
+    "no-referrer";
+
+  image.src =
+    url;
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE LOCATION
+ * --------------------------------------------------------- */
+
+async function verifyWebsiteLocation() {
+  if (
+    !navigator.geolocation
+  ) {
+    setWebsiteLocationText(
+      "Location services are not supported by this browser.",
+      false
+    );
+
+    return;
+  }
+
+  setButtonBusy(
+    DOM.websiteVerifyLocation,
+    true,
+    "Verifying..."
+  );
+
+  setWebsiteLocationText(
+    "Getting an accurate GPS location. Please wait...",
+    false
+  );
+
+  try {
+    const position =
+      await getCurrentPosition();
+
+    const latitude =
+      Number(
+        position.coords.latitude
+      );
+
+    const longitude =
+      Number(
+        position.coords.longitude
+      );
+
+    const accuracy =
+      Number(
+        position.coords.accuracy
+      );
+
+    if (
+      !Number.isFinite(latitude) ||
+      !Number.isFinite(longitude) ||
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      throw new Error(
+        "The browser returned invalid GPS coordinates."
+      );
+    }
+
+    if (
+      !Number.isFinite(accuracy) ||
+      accuracy <= 0
+    ) {
+      throw new Error(
+        "The device could not determine GPS accuracy. Please enable precise location and try again."
+      );
+    }
+
+    if (
+      accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+    ) {
+      throw new Error(
+        `Location accuracy is too low (approximately ${Math.round(
+          accuracy
+        )} metres). Please enable precise location, stay at the business location, and try again.`
+      );
+    }
+
+    state.location = {
+      verified:
+        true,
+
+      latitude:
+        latitude,
+
+      longitude:
+        longitude,
+
+      accuracy:
+        accuracy,
+
+      verifiedAt:
+        new Date()
+          .toISOString()
+    };
+
+    updateWebsiteLocationDetails();
+
+    setWebsiteLocationText(
+      `Business location verified. Accuracy: approximately ${Math.round(
+        accuracy
+      )} metres.`,
+      true
+    );
+
+    showToast(
+      "Business location verified.",
+      "success"
+    );
+
+  } catch (error) {
+    state.location = {
+      verified:
+        false,
+
+      latitude:
+        null,
+
+      longitude:
+        null,
+
+      accuracy:
+        null,
+
+      verifiedAt:
+        null
+    };
+
+    updateWebsiteLocationDetails();
+
+    setWebsiteLocationText(
+      getLocationErrorMessage(
+        error
+      ),
+      false
+    );
+
+  } finally {
+    setButtonBusy(
+      DOM.websiteVerifyLocation,
+      false
+    );
+  }
+}
+
+
+function setWebsiteLocationText(
+  message,
+  verified
+) {
+  if (
+    DOM.websiteLocationStatusText
+  ) {
+    DOM.websiteLocationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.websiteLocationStatusIndicator
+  ) {
+    DOM.websiteLocationStatusIndicator.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+  }
+}
+
+
+function updateWebsiteLocationDetails() {
+  const location =
+    state.location;
+
+  if (
+    DOM.websiteLocationLatitude
+  ) {
+    DOM.websiteLocationLatitude.textContent =
+      Number.isFinite(
+        location.latitude
+      )
+        ? location.latitude.toFixed(6)
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationLongitude
+  ) {
+    DOM.websiteLocationLongitude.textContent =
+      Number.isFinite(
+        location.longitude
+      )
+        ? location.longitude.toFixed(6)
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationVerifiedAt
+  ) {
+    DOM.websiteLocationVerifiedAt.textContent =
+      location.verifiedAt
+        ? new Date(
+            location.verifiedAt
+          ).toLocaleString(
+            "en-IN"
+          )
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationDetails
+  ) {
+    DOM.websiteLocationDetails.hidden =
+      !location.verified;
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE STORAGE
+ * --------------------------------------------------------- */
+
+function saveWebsiteData() {
+  try {
+    localStorage.setItem(
+      CONFIG.WEBSITE_STORAGE_KEY,
+      JSON.stringify({
+        sections:
+          state.website.sections,
+
+        footer:
+          state.website.footer
+      })
+    );
+  } catch (error) {
+    console.warn(
+      "Could not save Website data.",
+      error
+    );
+  }
+}
+
+
+function loadWebsiteData() {
+  try {
+    const stored =
+      localStorage.getItem(
+        CONFIG.WEBSITE_STORAGE_KEY
+      );
+
+    if (!stored) {
+      state.website = {
+        sections: [],
+        footer: {
+          items: []
+        }
+      };
+
+      return false;
+    }
+
+    const parsed =
+      JSON.parse(
+        stored
+      );
+
+    if (
+      !parsed ||
+      !Array.isArray(
+        parsed.sections
+      )
+    ) {
+      return false;
+    }
+
+    state.website = {
+      sections:
+        sanitizeWebsiteSections(
+          parsed.sections
+        ),
+
+      footer: {
+        items:
+          sanitizeWebsiteFooter(
+            parsed.footer &&
+            Array.isArray(
+              parsed.footer.items
+            )
+              ? parsed.footer.items
+              : []
+          )
+      }
+    };
+
+    return true;
+
+  } catch (error) {
+    console.warn(
+      "Could not load Website data.",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+function clearWebsiteData() {
+  try {
+    localStorage.removeItem(
+      CONFIG.WEBSITE_STORAGE_KEY
+    );
+  } catch (error) {
+    console.warn(
+      "Could not clear Website data.",
+      error
+    );
+  }
+
+  state.website = {
+    sections: [],
+
+    footer: {
+      items: []
+    }
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SANITIZATION
+ * --------------------------------------------------------- */
+
+function sanitizeWebsiteSections(
+  sections
+) {
+  return sections
+    .slice(
+      0,
+      WEBSITE_MAX_SECTIONS
+    )
+    .map(
+      (section, index) => ({
+        id:
+          typeof section.id === "string" &&
+          section.id
+            ? section.id
+            : createId(
+                "section"
+              ),
+
+        heading:
+          normalizeText(
+            section.heading,
+            300
+          ) ||
+          `Section ${index + 1}`,
+
+        blocks:
+          sanitizeWebsiteBlocks(
+            Array.isArray(
+              section.blocks
+            )
+              ? section.blocks
+              : []
+          )
+      })
+    );
+}
+
+
+function sanitizeWebsiteBlocks(
+  blocks
+) {
+  return blocks
+    .slice(
+      0,
+      WEBSITE_MAX_BLOCKS_PER_SECTION
+    )
+    .map(
+      (block) => {
+        if (
+          !block ||
+          typeof block.type !== "string"
+        ) {
+          return null;
+        }
+
+        if (
+          block.type ===
+          "paragraph"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "paragraph",
+
+            text:
+              normalizeText(
+                block.text,
+                WEBSITE_MAX_TEXT_LENGTH
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "subheading"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "subheading",
+
+            text:
+              normalizeText(
+                block.text,
+                WEBSITE_MAX_TEXT_LENGTH
+              )
+          };
+        }
+
+
+        if (
+          block.type ===
+          "subparagraph"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "subparagraph",
+
+            text:
+              normalizeText(
+                block.text,
+                WEBSITE_MAX_TEXT_LENGTH
+              )
+          };
+        }
+        if (
+          block.type ===
+          "images"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "images",
+
+            items:
+              sanitizeUrlItems(
+                block.items,
+                WEBSITE_MAX_IMAGES_PER_BLOCK
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "videos"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "videos",
+
+            items:
+              sanitizeUrlItems(
+                block.items,
+                WEBSITE_MAX_VIDEOS_PER_BLOCK
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "links"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "links",
+
+            items:
+              Array.isArray(
+                block.items
+              )
+                ? block.items
+                    .slice(
+                      0,
+                      WEBSITE_MAX_LINKS_PER_BLOCK
+                    )
+                    .map(
+                      (item) => ({
+                        id:
+                          item &&
+                          typeof item.id === "string" &&
+                          item.id
+                            ? item.id
+                            : createId(
+                                "link"
+                              ),
+
+                        name:
+                          normalizeText(
+                            item &&
+                            item.name,
+                            150
+                          ),
+
+                        url:
+                          normalizeText(
+                            item &&
+                            item.url,
+                            WEBSITE_MAX_URL_LENGTH
+                          )
+                      })
+                    )
+                    .filter(
+                      (item) =>
+                        item.name ||
+                        item.url
+                    )
+                : []
+          };
+        }
+
+        return null;
+      }
+    )
+    .filter(Boolean);
+}
+
+
+function sanitizeUrlItems(
+  items,
+  max
+) {
+  if (
+    !Array.isArray(items)
+  ) {
+    return [];
+  }
+
+  return items
+    .slice(
+      0,
+      max
+    )
+    .map(
+      (item) =>
+        typeof item === "string"
+          ? item
+          : item &&
+            typeof item.url === "string"
+            ? item.url
+            : ""
+    )
+    .map(
+      (url) =>
+        normalizeText(
+          url,
+          WEBSITE_MAX_URL_LENGTH
+        )
+    )
+    .filter(Boolean);
+}
+
+
+function sanitizeWebsiteFooter(
+  items
+) {
+  return items
+    .slice(
+      0,
+      WEBSITE_MAX_FOOTER_LINKS
+    )
+    .map(
+      (item) => ({
+        id:
+          typeof item.id === "string"
+            ? item.id
+            : createId(
+                "footer"
+              ),
+
+        name:
+          normalizeText(
+            item.name,
+            150
+          ),
+
+        url:
+          normalizeText(
+            item.url,
+            WEBSITE_MAX_URL_LENGTH
+          )
+      })
+    )
+    .filter(
+      (item) =>
+        item.name ||
+        item.url
+    );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SECTIONS
+ * --------------------------------------------------------- */
+
+function addWebsiteSection() {
+  if (
+    state.website.sections.length >=
+    WEBSITE_MAX_SECTIONS
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_SECTIONS} sections are allowed.`,
+      "error"
+    );
+
+    return;
+  }
+
+  const heading =
+    window.prompt(
+      "Enter section heading:"
+    );
+
+  if (
+    heading === null
+  ) {
+    return;
+  }
+
+  const cleanHeading =
+    normalizeText(
+      heading,
+      300
+    );
+
+  if (!cleanHeading) {
+    showToast(
+      "Please enter a section heading.",
+      "error"
+    );
+
+    return;
+  }
+
+  state.website.sections.push({
+    id:
+      createId(
+        "section"
+      ),
+
+    heading:
+      cleanHeading,
+
+    blocks:
+      []
+  });
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website section added.",
+    "success"
+  );
+}
+
+
+function editWebsiteSection(
+  sectionId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const heading =
+    window.prompt(
+      "Edit section heading:",
+      section.heading
+    );
+
+  if (
+    heading === null
+  ) {
+    return;
+  }
+
+  const cleanHeading =
+    normalizeText(
+      heading,
+      300
+    );
+
+  if (!cleanHeading) {
+    showToast(
+      "Section heading cannot be empty.",
+      "error"
+    );
+
+    return;
+  }
+
+  section.heading =
+    cleanHeading;
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Section updated.",
+    "success"
+  );
+}
+
+
+function moveWebsiteSection(
+  sectionId,
+  direction
+) {
+  const index =
+    state.website.sections.findIndex(
+      (section) =>
+        section.id ===
+        sectionId
+    );
+
+  if (
+    index < 0
+  ) {
+    return;
+  }
+
+  const targetIndex =
+    direction === "up"
+      ? index - 1
+      : index + 1;
+
+  if (
+    targetIndex < 0 ||
+    targetIndex >=
+      state.website.sections.length
+  ) {
+    return;
+  }
+
+  const current =
+    state.website.sections[index];
+
+  state.website.sections[index] =
+    state.website.sections[
+      targetIndex
+    ];
+
+  state.website.sections[
+    targetIndex
+  ] = current;
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+}
+
+
+function deleteWebsiteSection(
+  sectionId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete section "${section.heading}"?`
+    )
+  ) {
+    return;
+  }
+
+  state.website.sections =
+    state.website.sections.filter(
+      (entry) =>
+        entry.id !==
+        sectionId
+    );
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website section deleted.",
+    "success"
+  );
+}
+
+
+function findWebsiteSection(
+  sectionId
+) {
+  return (
+    state.website.sections.find(
+      (section) =>
+        section.id ===
+        sectionId
+    ) ||
+    null
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SECTION RENDER
+ * --------------------------------------------------------- */
+
+function renderWebsiteSections() {
+  if (
+    !DOM.websiteSections
+  ) {
+    return;
+  }
+
+  DOM.websiteSections.replaceChildren();
+
+  const sections =
+    state.website.sections;
+
+  if (
+    DOM.websiteSectionsEmpty
+  ) {
+    DOM.websiteSectionsEmpty.hidden =
+      sections.length > 0;
+  }
+
+  sections.forEach(
+    (
+      section,
+      index
+    ) => {
+      const card =
+        document.createElement(
+          "article"
+        );
+
+      card.className =
+        "website-section-card";
+
+      const header =
+        document.createElement(
+          "div"
+        );
+
+      header.className =
+        "website-section-card__header";
+
+      const title =
+        document.createElement(
+          "div"
+        );
+
+      title.className =
+        "website-section-card__title";
+
+      const heading =
+        document.createElement(
+          "h4"
+        );
+
+      const order =
+        document.createElement(
+          "span"
+        );
+
+      order.className =
+        "website-section-order";
+
+      order.textContent =
+        String(
+          index + 1
+        );
+
+      heading.appendChild(
+        order
+      );
+
+      heading.appendChild(
+        document.createTextNode(
+          section.heading
+        )
+      );
+
+      title.appendChild(
+        heading
+      );
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "website-section-card__actions";
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "Edit",
+          "edit-section",
+          section.id
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "↑",
+          "move-up",
+          section.id,
+          index === 0
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "↓",
+          "move-down",
+          section.id,
+          index ===
+            sections.length - 1
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "Delete",
+          "delete-section",
+          section.id
+        )
+      );
+
+      header.appendChild(
+        title
+      );
+
+      header.appendChild(
+        actions
+      );
+
+      const body =
+        document.createElement(
+          "div"
+        );
+
+      body.className =
+        "website-section-card__body";
+
+      const content =
+        document.createElement(
+          "div"
+        );
+
+      content.className =
+        "website-section-card__content";
+
+      section.blocks.forEach(
+        (block) => {
+          content.appendChild(
+            renderWebsiteBlock(
+              section,
+              block
+            )
+          );
+        }
+      );
+
+      if (
+        section.blocks.length ===
+        0
+      ) {
+        const empty =
+          document.createElement(
+            "div"
+          );
+
+        empty.className =
+          "website-content-empty";
+
+        empty.textContent =
+          "No content added yet. Use Add Content below.";
+
+        content.appendChild(
+          empty
+        );
+      }
+
+      body.appendChild(
+        content
+      );
+
+      const addContent =
+        document.createElement(
+          "div"
+        );
+
+      addContent.className =
+        "website-add-content";
+
+      [
+        ["Paragraph", "paragraph"],
+        ["Subheading", "subheading"],
+        ["Sub-paragraph", "subparagraph"],
+        ["Images", "images"],
+        ["YouTube Videos", "videos"],
+        ["Link Buttons", "links"]
+      ].forEach(
+        ([label, type]) => {
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.type =
+            "button";
+
+          button.className =
+            "secondary-button secondary-button--small";
+
+          button.dataset.websiteAction =
+            "add-content";
+
+          button.dataset.sectionId =
+            section.id;
+
+          button.dataset.contentType =
+            type;
+
+          button.textContent =
+            `+ ${label}`;
+
+          addContent.appendChild(
+            button
+          );
+        }
+      );
+
+      body.appendChild(
+        addContent
+      );
+
+      card.appendChild(
+        header
+      );
+
+      card.appendChild(
+        body
+      );
+
+      DOM.websiteSections.appendChild(
+        card
+      );
+    }
+  );
+}
+
+
+function createWebsiteActionButton(
+  text,
+  action,
+  sectionId,
+  disabled = false
+) {
+  const button =
+    document.createElement(
+      "button"
+    );
+
+  button.type =
+    "button";
+
+  button.className =
+    "secondary-button secondary-button--small";
+
+  button.dataset.websiteAction =
+    action;
+
+  button.dataset.sectionId =
+    sectionId;
+
+  button.textContent =
+    text;
+
+  button.disabled =
+    disabled;
+
+  return button;
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE BLOCKS
+ * --------------------------------------------------------- */
+
+function renderWebsiteBlock(
+  section,
+  block
+) {
+  const card =
+    document.createElement(
+      "div"
+    );
+
+  card.className =
+    "website-content-block";
+
+  const header =
+    document.createElement(
+      "div"
+    );
+
+  header.className =
+    "website-content-block__header";
+
+  const type =
+    document.createElement(
+      "span"
+    );
+
+  type.className =
+    "website-content-block__type";
+
+  type.textContent =
+    getWebsiteBlockLabel(
+      block.type
+    );
+
+  const actions =
+    document.createElement(
+      "div"
+    );
+
+  actions.className =
+    "website-content-block__actions";
+
+  const edit =
+    document.createElement(
+      "button"
+    );
+
+  edit.type =
+    "button";
+
+  edit.textContent =
+    "Edit";
+
+  edit.className =
+    "secondary-button secondary-button--small";
+
+  edit.dataset.websiteAction =
+    "edit-block";
+
+  edit.dataset.sectionId =
+    section.id;
+
+  edit.dataset.blockId =
+    block.id;
+
+  const remove =
+    document.createElement(
+      "button"
+    );
+
+  remove.type =
+    "button";
+
+  remove.textContent =
+    "Delete";
+
+  remove.className =
+    "secondary-button secondary-button--small";
+
+  remove.dataset.websiteAction =
+    "delete-block";
+
+  remove.dataset.sectionId =
+    section.id;
+
+  remove.dataset.blockId =
+    block.id;
+
+  actions.appendChild(
+    edit
+  );
+
+  actions.appendChild(
+    remove
+  );
+
+  header.appendChild(
+    type
+  );
+
+  header.appendChild(
+    actions
+  );
+
+  const preview =
+    document.createElement(
+      "div"
+    );
+
+  preview.className =
+    "website-block-preview";
+
+  renderWebsiteBlockPreview(
+    preview,
+    block
+  );
+
+  card.appendChild(
+    header
+  );
+
+  card.appendChild(
+    preview
+  );
+
+  return card;
+}
+
+
+function getWebsiteBlockLabel(
+  type
+) {
+  const labels = {
+    paragraph:
+      "Paragraph",
+
+    subheading:
+      "Subheading",
+
+    subparagraph:
+      "Sub-paragraph",
+
+    images:
+      "Images",
+
+    videos:
+      "YouTube Videos",
+
+    links:
+      "Link Buttons"
+  };
+
+  return (
+    labels[type] ||
+    "Content"
+  );
+}
+
+
+function renderWebsiteBlockPreview(
+  container,
+  block
+) {
+  if (
+    block.type ===
+    "paragraph"
+  ) {
+    const p =
+      document.createElement(
+        "p"
+      );
+
+    p.textContent =
+      block.text ||
+      "Empty paragraph.";
+
+    container.appendChild(
+      p
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "subheading"
+  ) {
+    const heading =
+      document.createElement(
+        "h4"
+      );
+
+    heading.textContent =
+      block.text ||
+      "Empty subheading.";
+
+    container.appendChild(
+      heading
+    );
+
+    return;
+  }
+
+
+  if (
+    block.type ===
+    "subparagraph"
+  ) {
+    const p =
+      document.createElement(
+        "p"
+      );
+
+    p.style.fontSize =
+      "0.95rem";
+
+    p.style.color =
+      "var(--text-secondary)";
+
+    p.textContent =
+      block.text ||
+      "Empty sub-paragraph.";
+
+    container.appendChild(
+      p
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "images"
+  ) {
+    const list =
+      document.createElement(
+        "div"
+      );
+
+    list.className =
+      "website-image-list";
+
+    block.items.forEach(
+      (url) => {
+        const image =
+          document.createElement(
+            "img"
+          );
+
+        image.src =
+          url;
+
+        image.alt =
+          "Website image";
+
+        image.loading =
+          "lazy";
+
+        image.referrerPolicy =
+          "no-referrer";
+
+        list.appendChild(
+          image
+        );
+      }
+    );
+
+    if (
+      block.items.length ===
+      0
+    ) {
+      list.textContent =
+        "No images added.";
+    }
+
+    container.appendChild(
+      list
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "videos"
+  ) {
+    const list =
+      document.createElement(
+        "div"
+      );
+
+    list.className =
+      "website-video-list";
+
+    block.items.forEach(
+      (url) => {
+        const embed =
+          getYoutubeEmbedData(
+            url
+          );
+
+        if (!embed) {
+          return;
+        }
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+        wrapper.className =
+          "website-video-preview";
+
+        if (
+          embed.short
+        ) {
+          wrapper.classList.add(
+            "website-video-preview--short"
+          );
+        }
+
+        const iframe =
+          document.createElement(
+            "iframe"
+          );
+
+        iframe.src =
+          embed.url;
+
+        iframe.title =
+          "YouTube video";
+
+        iframe.loading =
+          "lazy";
+
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+        iframe.allowFullscreen =
+          true;
+
+        wrapper.appendChild(
+          iframe
+        );
+
+        list.appendChild(
+          wrapper
+        );
+      }
+    );
+
+    if (
+      list.children.length ===
+      0
+    ) {
+      list.textContent =
+        "No valid YouTube videos added.";
+    }
+
+    container.appendChild(
+      list
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "links"
+  ) {
+    block.items.forEach(
+      (item) => {
+        if (
+          !item.name ||
+          !isValidHttpsUrl(
+            item.url
+          )
+        ) {
+          return;
+        }
+
+        const link =
+          document.createElement(
+            "a"
+          );
+
+        link.className =
+          "website-link-preview";
+
+        link.href =
+          item.url;
+
+        link.target =
+          "_blank";
+
+        link.rel =
+          "noopener noreferrer";
+
+        link.textContent =
+          item.name;
+
+        container.appendChild(
+          link
+        );
+      }
+    );
+
+    if (
+      container.children.length ===
+      0
+    ) {
+      container.textContent =
+        "No valid links added.";
+    }
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE ACTIONS
+ * --------------------------------------------------------- */
+
+function handleWebsiteSectionAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-website-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.websiteAction;
+
+  const sectionId =
+    button.dataset.sectionId;
+
+  if (
+    action ===
+    "edit-section"
+  ) {
+    editWebsiteSection(
+      sectionId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "move-up"
+  ) {
+    moveWebsiteSection(
+      sectionId,
+      "up"
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "move-down"
+  ) {
+    moveWebsiteSection(
+      sectionId,
+      "down"
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "delete-section"
+  ) {
+    deleteWebsiteSection(
+      sectionId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "add-content"
+  ) {
+    addWebsiteContent(
+      sectionId,
+      button.dataset.contentType
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "edit-block"
+  ) {
+    editWebsiteContent(
+      sectionId,
+      button.dataset.blockId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "delete-block"
+  ) {
+    deleteWebsiteContent(
+      sectionId,
+      button.dataset.blockId
+    );
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT EDITOR
+ * --------------------------------------------------------- */
+
+let websiteContentModalState = {
+  mode: "add",
+  sectionId: null,
+  blockId: null,
+  type: null
+};
+
+
+let websiteFooterModalState = {
+  mode: "add",
+  footerId: null
+};
+
+
+function openWebsiteContentModal(
+  sectionId,
+  type,
+  block = null
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  websiteContentModalState = {
+    mode:
+      block
+        ? "edit"
+        : "add",
+
+    sectionId:
+      sectionId,
+
+    blockId:
+      block
+        ? block.id
+        : null,
+
+    type:
+      type
+  };
+
+  clearWebsiteContentModal();
+
+  const isText =
+    type === "paragraph" ||
+    type === "subheading" ||
+    type === "subparagraph";
+
+  const isImages =
+    type === "images";
+
+  const isVideos =
+    type === "videos";
+
+  const isLinks =
+    type === "links";
+
+  const label =
+    getWebsiteBlockLabel(
+      type
+    );
+
+  if (
+    DOM.websiteContentModalTitle
+  ) {
+    DOM.websiteContentModalTitle.textContent =
+      websiteContentModalState.mode ===
+      "edit"
+        ? `Edit ${label}`
+        : `Add ${label}`;
+  }
+
+  if (
+    DOM.websiteContentModalDescription
+  ) {
+    DOM.websiteContentModalDescription.textContent =
+      isText
+        ? "Write your content clearly and comfortably. Long paragraphs are supported."
+        : isImages
+        ? "Add one or more HTTPS image URLs."
+        : isVideos
+        ? "Add YouTube video or YouTube Shorts URLs."
+        : isLinks
+        ? "Create one or more professional link buttons."
+        : "Add website content.";
+  }
+
+  if (
+    DOM.websiteContentTextField
+  ) {
+    DOM.websiteContentTextField.hidden =
+      !isText;
+  }
+
+  if (
+    DOM.websiteContentRepeatableField
+  ) {
+    DOM.websiteContentRepeatableField.hidden =
+      isText;
+  }
+
+  if (isText) {
+    if (
+      DOM.websiteContentTextLabel
+    ) {
+      DOM.websiteContentTextLabel.innerHTML =
+        `${label} <span class="required-mark">*</span>`;
+    }
+
+    if (
+      DOM.websiteContentText
+    ) {
+      DOM.websiteContentText.value =
+        block &&
+        typeof block.text ===
+          "string"
+          ? block.text
+          : "";
+
+      DOM.websiteContentText.placeholder =
+        type === "paragraph"
+          ? "Write your paragraph here..."
+          : type === "subheading"
+          ? "Write your subheading here..."
+          : "Write your sub-paragraph here...";
+    }
+  }
+
+  if (!isText) {
+    configureWebsiteRepeatableModal(
+      type,
+      block
+    );
+  }
+
+  if (
+    DOM.websiteContentSave
+  ) {
+    DOM.websiteContentSave.textContent =
+      websiteContentModalState.mode ===
+      "edit"
+        ? `Save ${label}`
+        : `Add ${label}`;
+  }
+
+  showModal(
+    DOM.websiteContentModal
+  );
+
+  if (isText) {
+    requestAnimationFrame(
+      () => {
+        if (
+          DOM.websiteContentText
+        ) {
+          DOM.websiteContentText.focus();
+        }
+      }
+    );
+  }
+}
+
+
+function clearWebsiteContentModal() {
+  if (
+    DOM.websiteContentText
+  ) {
+    DOM.websiteContentText.value =
+      "";
+  }
+
+  if (
+    DOM.websiteContentRowList
+  ) {
+    DOM.websiteContentRowList.replaceChildren();
+  }
+
+  clearWebsiteContentModalError();
+}
+
+
+function clearWebsiteContentModalError() {
+  if (
+    DOM.websiteContentFormError
+  ) {
+    DOM.websiteContentFormError.hidden =
+      true;
+
+    DOM.websiteContentFormError.textContent =
+      "";
+  }
+}
+
+
+function showWebsiteContentModalError(
+  message
+) {
+  if (
+    DOM.websiteContentFormError
+  ) {
+    DOM.websiteContentFormError.hidden =
+      false;
+
+    DOM.websiteContentFormError.textContent =
+      message;
+  }
+}
+
+
+function closeWebsiteContentModal() {
+  websiteContentModalState = {
+    mode: "add",
+    sectionId: null,
+    blockId: null,
+    type: null
+  };
+
+  hideModal(
+    DOM.websiteContentModal
+  );
+}
+
+
+function configureWebsiteRepeatableModal(
+  type,
+  block
+) {
+  let label =
+    "Items";
+
+  let help =
+    "Add one or more items.";
+
+  if (
+    type === "images"
+  ) {
+    label =
+      "Image URLs";
+
+    help =
+      "Use HTTPS image URLs. Add as many images as you need.";
+  }
+
+  if (
+    type === "videos"
+  ) {
+    label =
+      "YouTube URLs";
+
+    help =
+      "You can add normal YouTube videos and YouTube Shorts.";
+  }
+
+  if (
+    type === "links"
+  ) {
+    label =
+      "Link Buttons";
+
+    help =
+      "Give each button a clear name and destination URL.";
+  }
+
+  if (
+    DOM.websiteContentRepeatableLabel
+  ) {
+    DOM.websiteContentRepeatableLabel.innerHTML =
+      `${label} <span class="required-mark">*</span>`;
+  }
+
+  if (
+    DOM.websiteContentRepeatableHelp
+  ) {
+    DOM.websiteContentRepeatableHelp.textContent =
+      help;
+  }
+
+  const items =
+    block &&
+    Array.isArray(
+      block.items
+    )
+      ? block.items
+      : [];
+
+  if (
+    items.length === 0
+  ) {
+    addWebsiteContentModalRow();
+    return;
+  }
+
+  items.forEach(
+    (item) => {
+      addWebsiteContentModalRow(
+        item
+      );
+    }
+  );
+}
+
+
+function addWebsiteContentModalRow(
+  value = null
+) {
+  if (
+    !DOM.websiteContentRowList
+  ) {
+    return;
+  }
+
+  const type =
+    websiteContentModalState.type;
+
+  const currentRows =
+    DOM.websiteContentRowList.children.length;
+
+  let maximum =
+    WEBSITE_MAX_IMAGES_PER_BLOCK;
+
+  if (
+    type === "videos"
+  ) {
+    maximum =
+      WEBSITE_MAX_VIDEOS_PER_BLOCK;
+  }
+
+  if (
+    type === "links"
+  ) {
+    maximum =
+      WEBSITE_MAX_LINKS_PER_BLOCK;
+  }
+
+  if (
+    currentRows >=
+    maximum
+  ) {
+    showWebsiteContentModalError(
+      `Maximum ${maximum} items are allowed.`
+    );
+
+    return;
+  }
+
+  const row =
+    document.createElement(
+      "div"
+    );
+
+  row.className =
+    type === "links"
+      ? "website-link-row"
+      : type === "images"
+      ? "website-image-row"
+      : "website-video-row";
+
+  if (
+    type === "links" &&
+    value &&
+    typeof value === "object" &&
+    typeof value.id === "string" &&
+    value.id
+  ) {
+    row.dataset.linkId =
+      value.id;
+  }
+
+  if (
+    type === "links"
+  ) {
+    row.innerHTML = `
+      <div class="form-group">
+        <label class="form-label">
+          Button Name
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="text"
+          class="form-input website-modal-link-name"
+          maxlength="150"
+          placeholder="e.g. Contact Us"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          Button URL
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="url"
+          class="form-input website-modal-link-url"
+          maxlength="${WEBSITE_MAX_URL_LENGTH}"
+          placeholder="https://example.com"
+          inputmode="url"
+          autocomplete="url"
+        >
+      </div>
+
+      <button
+        type="button"
+        class="secondary-button website-field-row__remove"
+        data-website-modal-remove-row
+        aria-label="Remove link button"
+        title="Remove"
+      >
+        −
+      </button>
+    `;
+
+    const nameInput =
+      row.querySelector(
+        ".website-modal-link-name"
+      );
+
+    const urlInput =
+      row.querySelector(
+        ".website-modal-link-url"
+      );
+
+    if (
+      value &&
+      typeof value ===
+        "object"
+    ) {
+      nameInput.value =
+        typeof value.name ===
+        "string"
+          ? value.name
+          : "";
+
+      urlInput.value =
+        typeof value.url ===
+        "string"
+          ? value.url
+          : "";
+    }
+  } else {
+    const placeholder =
+      type === "images"
+        ? "https://example.com/image.jpg"
+        : "https://youtube.com/watch?v=...";
+
+    const label =
+      type === "images"
+        ? "Image URL"
+        : "YouTube URL";
+
+    row.innerHTML = `
+      <div class="form-group">
+        <label class="form-label">
+          ${label}
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="url"
+          class="form-input website-modal-url"
+          maxlength="${WEBSITE_MAX_URL_LENGTH}"
+          placeholder="${placeholder}"
+          inputmode="url"
+          autocomplete="url"
+        >
+      </div>
+
+      <button
+        type="button"
+        class="secondary-button website-field-row__remove"
+        data-website-modal-remove-row
+        aria-label="Remove item"
+        title="Remove"
+      >
+        −
+      </button>
+    `;
+
+    const input =
+      row.querySelector(
+        ".website-modal-url"
+      );
+
+    if (
+      typeof value ===
+      "string"
+    ) {
+      input.value =
+        value;
+    }
+  }
+
+  DOM.websiteContentRowList.appendChild(
+    row
+  );
+
+  clearWebsiteContentModalError();
+}
+
+
+function handleWebsiteContentModalRowAction(
+  event
+) {
+  const removeButton =
+    event.target.closest(
+      "[data-website-modal-remove-row]"
+    );
+
+  if (!removeButton) {
+    return;
+  }
+
+  const row =
+    removeButton.closest(
+      ".website-image-row, .website-video-row, .website-link-row"
+    );
+
+  if (!row) {
+    return;
+  }
+
+  row.remove();
+
+  if (
+    DOM.websiteContentRowList.children.length ===
+    0
+  ) {
+    addWebsiteContentModalRow();
+  }
+}
+
+
+function saveWebsiteContentModal() {
+  clearWebsiteContentModalError();
+
+  const section =
+    findWebsiteSection(
+      websiteContentModalState.sectionId
+    );
+
+  if (!section) {
+    closeWebsiteContentModal();
+    return;
+  }
+
+  const type =
+    websiteContentModalState.type;
+
+  if (
+    type === "paragraph" ||
+    type === "subheading" ||
+    type === "subparagraph"
+  ) {
+    const text =
+      normalizeText(
+        DOM.websiteContentText
+          ? DOM.websiteContentText.value
+          : "",
+        WEBSITE_MAX_TEXT_LENGTH
+      );
+
+    if (!text) {
+      showWebsiteContentModalError(
+        "Please enter your content."
+      );
+
+      if (
+        DOM.websiteContentText
+      ) {
+        DOM.websiteContentText.focus();
+      }
+
+      return;
+    }
+
+    if (
+      websiteContentModalState.mode ===
+      "edit"
+    ) {
+      const block =
+        section.blocks.find(
+          (entry) =>
+            entry.id ===
+            websiteContentModalState.blockId
+        );
+
+      if (!block) {
+        closeWebsiteContentModal();
+        return;
+      }
+
+      block.text =
+        text;
+    } else {
+      section.blocks.push({
+        id:
+          createId(
+            "block"
+          ),
+
+        type:
+          type,
+
+        text:
+          text
+      });
+    }
+
+    finishWebsiteContentModalSave(
+      websiteContentModalState.mode ===
+        "edit"
+        ? "Website content updated."
+        : `${getWebsiteBlockLabel(type)} added.`
+    );
+
+    return;
+  }
+
+  const rows =
+    Array.from(
+      DOM.websiteContentRowList
+        ? DOM.websiteContentRowList.children
+        : []
+    );
+
+  if (
+    rows.length ===
+    0
+  ) {
+    showWebsiteContentModalError(
+      "Please add at least one item."
+    );
+
+    return;
+  }
+
+  if (
+    type === "images"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const input =
+              row.querySelector(
+                ".website-modal-url"
+              );
+
+            return input
+              ? input.value.trim()
+              : "";
+          }
+        )
+        .filter(Boolean);
+
+    const invalid =
+      items.filter(
+        (url) =>
+          !isValidHttpsUrl(
+            url
+          )
+      );
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please add at least one image URL."
+      );
+
+      return;
+    }
+
+    if (
+      invalid.length > 0
+    ) {
+      showWebsiteContentModalError(
+        "Every image URL must be a valid HTTPS URL."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "images",
+      items
+    );
+
+    return;
+  }
+
+  if (
+    type === "videos"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const input =
+              row.querySelector(
+                ".website-modal-url"
+              );
+
+            return input
+              ? input.value.trim()
+              : "";
+          }
+        )
+        .filter(Boolean);
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please add at least one YouTube URL."
+      );
+
+      return;
+    }
+
+    const invalid =
+      items.filter(
+        (url) =>
+          !isValidYoutubeUrl(
+            url
+          )
+      );
+
+    if (
+      invalid.length > 0
+    ) {
+      showWebsiteContentModalError(
+        "Please enter valid YouTube video or YouTube Shorts URLs."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "videos",
+      items
+    );
+
+    return;
+  }
+
+  if (
+    type === "links"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const nameInput =
+              row.querySelector(
+                ".website-modal-link-name"
+              );
+
+            const urlInput =
+              row.querySelector(
+                ".website-modal-link-url"
+              );
+
+            const name =
+              normalizeText(
+                nameInput
+                  ? nameInput.value
+                  : "",
+                150
+              );
+
+            const url =
+              normalizeText(
+                urlInput
+                  ? urlInput.value
+                  : "",
+                WEBSITE_MAX_URL_LENGTH
+              );
+
+            if (
+              !name ||
+              !isValidHttpsUrl(
+                url
+              )
+            ) {
+              return null;
+            }
+
+            return {
+              id:
+                row.dataset.linkId ||
+                createId(
+                  "link"
+                ),
+
+              name,
+              url
+            };
+          }
+        )
+        .filter(Boolean);
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please enter at least one valid button name and HTTPS URL."
+      );
+
+      return;
+    }
+
+    if (
+      items.length !==
+      rows.length
+    ) {
+      showWebsiteContentModalError(
+        "Please complete every link button with a valid name and HTTPS URL."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "links",
+      items
+    );
+  }
+}
+
+
+function saveWebsiteRepeatableBlock(
+  section,
+  type,
+  items
+) {
+  if (
+    websiteContentModalState.mode ===
+    "edit"
+  ) {
+    const block =
+      section.blocks.find(
+        (entry) =>
+          entry.id ===
+          websiteContentModalState.blockId
+      );
+
+    if (!block) {
+      closeWebsiteContentModal();
+      return;
+    }
+
+    block.items =
+      items;
+  } else {
+    section.blocks.push({
+      id:
+        createId(
+          "block"
+        ),
+
+      type:
+        type,
+
+      items:
+        items
+    });
+  }
+
+  finishWebsiteContentModalSave(
+    websiteContentModalState.mode ===
+      "edit"
+      ? "Website content updated."
+      : `${getWebsiteBlockLabel(type)} added.`
+  );
+}
+
+
+function finishWebsiteContentModalSave(
+  message
+) {
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  closeWebsiteContentModal();
+
+  showToast(
+    message,
+    "success"
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT CREATION
+ * --------------------------------------------------------- */
+
+function addWebsiteContent(
+  sectionId,
+  type
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  if (
+    section.blocks.length >=
+    WEBSITE_MAX_BLOCKS_PER_SECTION
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_BLOCKS_PER_SECTION} content blocks are allowed in one section.`,
+      "error"
+    );
+
+    return;
+  }
+
+  openWebsiteContentModal(
+    sectionId,
+    type
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT EDIT / DELETE
+ * --------------------------------------------------------- */
+
+function editWebsiteContent(
+  sectionId,
+  blockId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const block =
+    section.blocks.find(
+      (entry) =>
+        entry.id ===
+        blockId
+    );
+
+  if (!block) {
+    return;
+  }
+
+  openWebsiteContentModal(
+    sectionId,
+    block.type,
+    block
+  );
+}
+
+function deleteWebsiteContent(
+  sectionId,
+  blockId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const block =
+    section.blocks.find(
+      (entry) =>
+        entry.id ===
+        blockId
+    );
+
+  if (!block) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete this ${getWebsiteBlockLabel(
+        block.type
+      ).toLowerCase()} block?`
+    )
+  ) {
+    return;
+  }
+
+  section.blocks =
+    section.blocks.filter(
+      (entry) =>
+        entry.id !==
+        blockId
+    );
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website content deleted.",
+    "success"
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE FOOTER
+ * --------------------------------------------------------- */
+
+function openWebsiteFooterModal(
+  mode = "add",
+  item = null
+) {
+  websiteFooterModalState = {
+    mode,
+    footerId:
+      item &&
+      typeof item.id === "string"
+        ? item.id
+        : null
+  };
+
+
+  if (
+    DOM.websiteFooterModalTitle
+  ) {
+    DOM.websiteFooterModalTitle.textContent =
+      mode === "edit"
+        ? "Edit Footer Link"
+        : "Add Footer Link";
+  }
+
+
+  if (
+    DOM.websiteFooterModalDescription
+  ) {
+    DOM.websiteFooterModalDescription.textContent =
+      mode === "edit"
+        ? "Update the footer name and destination URL."
+        : "Add a name and destination URL for your website footer.";
+  }
+
+
+  if (
+    DOM.websiteFooterName
+  ) {
+    DOM.websiteFooterName.value =
+      item &&
+      typeof item.name === "string"
+        ? item.name
+        : "";
+  }
+
+
+  if (
+    DOM.websiteFooterUrl
+  ) {
+    DOM.websiteFooterUrl.value =
+      item &&
+      typeof item.url === "string"
+        ? item.url
+        : "";
+  }
+
+
+  if (
+    DOM.websiteFooterFormError
+  ) {
+    DOM.websiteFooterFormError.textContent =
+      "";
+
+    DOM.websiteFooterFormError.hidden =
+      true;
+  }
+
+
+  if (
+    DOM.websiteFooterSave
+  ) {
+    DOM.websiteFooterSave.textContent =
+      mode === "edit"
+        ? "Save Changes"
+        : "Add Footer Link";
+  }
+
+
+  if (
+    DOM.websiteFooterModal
+  ) {
+    DOM.websiteFooterModal.hidden =
+      false;
+
+    DOM.websiteFooterModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "modal-open"
+    );
+  }
+
+
+  requestAnimationFrame(
+    () => {
+      if (
+        DOM.websiteFooterName
+      ) {
+        DOM.websiteFooterName.focus();
+      }
+    }
+  );
+}
+
+
+function closeWebsiteFooterModal() {
+  websiteFooterModalState = {
+    mode: "add",
+    footerId: null
+  };
+
+
+  if (
+    DOM.websiteFooterModal
+  ) {
+    DOM.websiteFooterModal.hidden =
+      true;
+
+    DOM.websiteFooterModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "modal-open"
+    );
+  }
+}
+
+
+function showWebsiteFooterModalError(
+  message
+) {
+  if (
+    !DOM.websiteFooterFormError
+  ) {
+    return;
+  }
+
+  DOM.websiteFooterFormError.textContent =
+    message;
+
+  DOM.websiteFooterFormError.hidden =
+    false;
+}
+
+
+function saveWebsiteFooterModal() {
+  const name =
+    DOM.websiteFooterName
+      ? normalizeText(
+          DOM.websiteFooterName.value,
+          150
+        )
+      : "";
+
+  const url =
+    DOM.websiteFooterUrl
+      ? normalizeText(
+          DOM.websiteFooterUrl.value,
+          WEBSITE_MAX_URL_LENGTH
+        )
+      : "";
+
+
+  if (!name) {
+    showWebsiteFooterModalError(
+      "Please enter a footer link name."
+    );
+
+    if (
+      DOM.websiteFooterName
+    ) {
+      DOM.websiteFooterName.focus();
+    }
+
+    return;
+  }
+
+
+  if (
+    !isValidHttpsUrl(
+      url
+    )
+  ) {
+    showWebsiteFooterModalError(
+      "Please enter a valid HTTPS URL."
+    );
+
+    if (
+      DOM.websiteFooterUrl
+    ) {
+      DOM.websiteFooterUrl.focus();
+    }
+
+    return;
+  }
+
+
+  if (
+    websiteFooterModalState.mode ===
+    "edit"
+  ) {
+    const item =
+      state.website.footer.items.find(
+        (entry) =>
+          entry.id ===
+          websiteFooterModalState.footerId
+      );
+
+
+    if (!item) {
+      closeWebsiteFooterModal();
+      return;
+    }
+
+
+    item.name =
+      name;
+
+    item.url =
+      url;
+
+    saveWebsiteData();
+
+    renderWebsiteFooter();
+
+    closeWebsiteFooterModal();
+
+    showToast(
+      "Footer link updated.",
+      "success"
+    );
+
+    return;
+  }
+
+
+  if (
+    state.website.footer.items.length >=
+    WEBSITE_MAX_FOOTER_LINKS
+  ) {
+    closeWebsiteFooterModal();
+
+    showToast(
+      `Maximum ${WEBSITE_MAX_FOOTER_LINKS} footer links are allowed.`,
+      "error"
+    );
+
+    return;
+  }
+
+
+  state.website.footer.items.push({
+    id:
+      createId(
+        "footer"
+      ),
+
+    name,
+    url
+  });
+
+
+  saveWebsiteData();
+
+  renderWebsiteFooter();
+
+  closeWebsiteFooterModal();
+
+  showToast(
+    "Footer link added.",
+    "success"
+  );
+}
+
+
+function addWebsiteFooterLink() {
+  if (
+    state.website.footer.items.length >=
+    WEBSITE_MAX_FOOTER_LINKS
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_FOOTER_LINKS} footer links are allowed.`,
+      "error"
+    );
+
+    return;
+  }
+
+
+  openWebsiteFooterModal(
+    "add"
+  );
+}
+
+
+
+function renderWebsiteFooter() {
+  if (
+    !DOM.websiteFooterLinks
+  ) {
+    return;
+  }
+
+  DOM.websiteFooterLinks.replaceChildren();
+
+  const items =
+    state.website.footer.items;
+
+  if (
+    DOM.websiteFooterEmpty
+  ) {
+    DOM.websiteFooterEmpty.hidden =
+      items.length > 0;
+  }
+
+  items.forEach(
+    (item) => {
+      const card =
+        document.createElement(
+          "div"
+        );
+
+      card.className =
+        "website-footer-link-card";
+
+      const info =
+        document.createElement(
+          "div"
+        );
+
+      info.className =
+        "website-footer-link-card__info";
+
+      const name =
+        document.createElement(
+          "p"
+        );
+
+      name.className =
+        "website-footer-link-card__name";
+
+      name.textContent =
+        item.name;
+
+      const url =
+        document.createElement(
+          "p"
+        );
+
+      url.className =
+        "website-footer-link-card__url";
+
+      url.textContent =
+        item.url;
+
+      info.appendChild(
+        name
+      );
+
+      info.appendChild(
+        url
+      );
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "website-footer-link-card__actions";
+
+      const edit =
+        document.createElement(
+          "button"
+        );
+
+      edit.type =
+        "button";
+
+      edit.className =
+        "secondary-button secondary-button--small";
+
+      edit.textContent =
+        "Edit";
+
+      edit.dataset.websiteFooterAction =
+        "edit";
+
+      edit.dataset.footerId =
+        item.id;
+
+      const remove =
+        document.createElement(
+          "button"
+        );
+
+      remove.type =
+        "button";
+
+      remove.className =
+        "secondary-button secondary-button--small";
+
+      remove.textContent =
+        "Delete";
+
+      remove.dataset.websiteFooterAction =
+        "delete";
+
+      remove.dataset.footerId =
+        item.id;
+
+      actions.appendChild(
+        edit
+      );
+
+      actions.appendChild(
+        remove
+      );
+
+      card.appendChild(
+        info
+      );
+
+      card.appendChild(
+        actions
+      );
+
+      DOM.websiteFooterLinks.appendChild(
+        card
+      );
+    }
+  );
+}
+
+
+function handleWebsiteFooterAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-website-footer-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.websiteFooterAction;
+
+  const footerId =
+    button.dataset.footerId;
+
+  const item =
+    state.website.footer.items.find(
+      (entry) =>
+        entry.id ===
+        footerId
+    );
+
+  if (!item) {
+    return;
+  }
+
+  if (
+    action === "delete"
+  ) {
+    if (
+      !window.confirm(
+        `Delete footer link "${item.name}"?`
+      )
+    ) {
+      return;
+    }
+
+    state.website.footer.items =
+      state.website.footer.items.filter(
+        (entry) =>
+          entry.id !==
+          footerId
+      );
+
+    saveWebsiteData();
+
+    renderWebsiteFooter();
+
+    return;
+  }
+
+  if (
+    action === "edit"
+  ) {
+    openWebsiteFooterModal(
+      "edit",
+      item
+    );
+
+    return;
+  }
+}
+
+/* ---------------------------------------------------------
+ * WEBSITE VALIDATION
+ * --------------------------------------------------------- */
+
+function validateWebsiteBuilder() {
+  const errors = [];
+
+  const subscriptionId =
+    getValue(
+      DOM.websiteSubscriptionId
+    );
+
+  const businessName =
+    getValue(
+      DOM.websiteBusinessName
+    );
+
+  const address =
+    getValue(
+      DOM.websiteAddress
+    );
+
+  const tagline =
+    getValue(
+      DOM.websiteTagline
+    );
+
+  const mobile =
+    getValue(
+      DOM.websiteMobile
+    );
+
+  const email =
+    getValue(
+      DOM.websiteEmail
+    );
+
+  const whatsapp =
+    getValue(
+      DOM.websiteWhatsapp
+    );
+
+  const password =
+    DOM.websitePassword
+      ? DOM.websitePassword.value
+      : "";
+
+  const logo =
+    getValue(
+      DOM.websiteLogo
+    );
+
+  if (!subscriptionId) {
+    errors.push(
+      "Please enter your Subscription ID."
+    );
+  }
+
+  if (!password) {
+    errors.push(
+      "Please create your Business Password."
+    );
+  }
+
+  if (!businessName) {
+    errors.push(
+      "Please enter the business name."
+    );
+  }
+
+  if (!address) {
+    errors.push(
+      "Please enter the business address."
+    );
+  }
+
+  if (!mobile) {
+    errors.push(
+      "Please enter the business mobile number."
+    );
+  }
+
+  if (
+    email &&
+    !isValidEmail(
+      email
+    )
+  ) {
+    errors.push(
+      "Please enter a valid email address."
+    );
+  }
+
+  if (!whatsapp) {
+    errors.push(
+      "Please enter the Business WhatsApp number."
+    );
+  }
+
+  if (
+    logo &&
+    !isValidHttpsUrl(
+      logo
+    )
+  ) {
+    errors.push(
+      "Logo URL must be a valid HTTPS URL."
+    );
+  }
+
+  if (
+    !state.location.verified
+  ) {
+    errors.push(
+      "Please verify the business location."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.latitude
+    ) ||
+    !Number.isFinite(
+      state.location.longitude
+    )
+  ) {
+    errors.push(
+      "Valid business GPS coordinates are required."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.accuracy
+    ) ||
+    state.location.accuracy <= 0 ||
+    state.location.accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+  ) {
+    errors.push(
+      `Business GPS accuracy must be ${CONFIG.MAX_LOCATION_ACCURACY_METERS} metres or better.`
+    );
+  }
+
+  if (
+    state.website.sections.length ===
+    0
+  ) {
+    errors.push(
+      "Please add at least one website section."
+    );
+  }
+
+  state.website.sections.forEach(
+    (section) => {
+      if (
+        !section.heading
+      ) {
+        errors.push(
+          "Every website section must have a heading."
+        );
+      }
+
+      if (
+        !Array.isArray(
+          section.blocks
+        )
+      ) {
+        errors.push(
+          `Section "${section.heading}" has invalid content.`
+        );
+      }
+
+      section.blocks.forEach(
+        (block) => {
+          if (
+            block.type ===
+              "paragraph" ||
+            block.type ===
+              "subheading" ||
+            block.type ===
+              "subparagraph"
+          ) {
+            if (
+              !block.text
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains empty text content.`
+              );
+            }
+          }
+
+          if (
+            block.type ===
+            "images"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty image block.`
+              );
+            }
+
+            block.items.forEach(
+              (url) => {
+                if (
+                  !isValidHttpsUrl(
+                    url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid image URL.`
+                  );
+                }
+              }
+            );
+          }
+
+          if (
+            block.type ===
+            "videos"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty video block.`
+              );
+            }
+
+            block.items.forEach(
+              (url) => {
+                if (
+                  !isValidYoutubeUrl(
+                    url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid YouTube URL.`
+                  );
+                }
+              }
+            );
+          }
+
+          if (
+            block.type ===
+            "links"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty link block.`
+              );
+            }
+
+            block.items.forEach(
+              (item) => {
+                if (
+                  !item.name ||
+                  !isValidHttpsUrl(
+                    item.url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid link.`
+                  );
+                }
+              }
+            );
+          }
+        }
+      );
+    }
+  );
+
+  state.website.footer.items.forEach(
+    (item) => {
+      if (
+        !item.name ||
+        !isValidHttpsUrl(
+          item.url
+        )
+      ) {
+        errors.push(
+          "Every footer link must have a name and valid HTTPS URL."
+        );
+      }
+    }
+  );
+
+  return {
+    valid:
+      errors.length ===
+      0,
+
+    errors:
+      uniqueStrings(
+        errors
+      )
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE VALIDATION UI
+ * --------------------------------------------------------- */
+
+function showWebsiteValidation(
+  errors
+) {
+  if (
+    !DOM.websiteValidationSummary ||
+    !DOM.websiteValidationList
+  ) {
+    return;
+  }
+
+  DOM.websiteValidationList.replaceChildren();
+
+  errors.forEach(
+    (error) => {
+      const li =
+        document.createElement(
+          "li"
+        );
+
+      li.textContent =
+        error;
+
+      DOM.websiteValidationList.appendChild(
+        li
+      );
+    }
+  );
+
+  DOM.websiteValidationSummary.hidden =
+    false;
+
+  DOM.websiteValidationSummary.scrollIntoView({
+    behavior:
+      "smooth",
+
+    block:
+      "center"
+  });
+}
+
+
+function hideWebsiteValidation() {
+  if (
+    DOM.websiteValidationSummary
+  ) {
+    DOM.websiteValidationSummary.hidden =
+      true;
+  }
+
+  if (
+    DOM.websiteValidationList
+  ) {
+    DOM.websiteValidationList.replaceChildren();
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PAYLOAD
+ * --------------------------------------------------------- */
+
+function buildWebsitePublishPayload() {
+  return {
+    template:
+      "WEB",
+
+    subscriptionId:
+      getValue(
+        DOM.websiteSubscriptionId
+      ),
+
+    businessPassword:
+      DOM.websitePassword
+        ? DOM.websitePassword.value
+        : "",
+
+    business: {
+      name:
+        getValue(
+          DOM.websiteBusinessName
+        ),
+
+      address:
+        getValue(
+          DOM.websiteAddress
+        ),
+
+      tagline:
+        getValue(
+          DOM.websiteTagline
+        ),
+
+      mobile:
+        getValue(
+          DOM.websiteMobile
+        ),
+
+      email:
+        getValue(
+          DOM.websiteEmail
+        ),
+
+      whatsapp:
+        getValue(
+          DOM.websiteWhatsapp
+        ),
+
+      logoUrl:
+        getValue(
+          DOM.websiteLogo
+        )
+    },
+
+    location: {
+      verified:
+        state.location.verified,
+
+      latitude:
+        state.location.latitude,
+
+      longitude:
+        state.location.longitude,
+
+      accuracy:
+        state.location.accuracy,
+
+      verifiedAt:
+        state.location.verifiedAt
+    },
+
+    sections:
+      state.website.sections.map(
+        (section) => ({
+          id:
+            section.id,
+
+          heading:
+            section.heading,
+
+          blocks:
+            section.blocks
+        })
+      ),
+
+    footer: {
+      items:
+        state.website.footer.items.map(
+          (item) => ({
+            id:
+              item.id,
+
+            name:
+              item.name,
+
+            url:
+              item.url
+          })
+        )
+    }
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PUBLISH
+ * --------------------------------------------------------- */
+
+async function publishWebsite() {
+  if (
+    state.publishing
+  ) {
+    return;
+  }
+
+  hideWebsiteValidation();
+
+  const validation =
+    validateWebsiteBuilder();
+
+  if (
+    !validation.valid
+  ) {
+    showWebsiteValidation(
+      validation.errors
+    );
+
+    showToast(
+      validation.errors[0] ||
+        "Please review the website.",
+      "error"
+    );
+
+    return;
+  }
+
+  const payload =
+    buildWebsitePublishPayload();
+
+  state.publishing =
+    true;
+
+  setWebsitePublishBusy(
+    true
+  );
+
+  setWebsitePublishStatus(
+    "Verifying subscription and publishing your Global Website..."
+  );
+
+  try {
+    const result =
+      await sendPublishRequest(
+        payload
+      );
+
+    if (
+      !result ||
+      result.success !== true
+    ) {
+      throw new Error(
+        result &&
+        result.message
+          ? result.message
+          : "The Global Website could not be created."
+      );
+    }
+
+    if (
+      !isValidHttpsUrl(
+        result.url
+      )
+    ) {
+      throw new Error(
+        "The Worker did not return a valid website URL."
+      );
+    }
+
+    setWebsitePublishStatus(
+      "Website created. Waiting for the public files to become available..."
+    );
+
+    const ready =
+      await waitForWebsiteDeployment(
+        result.url
+      );
+
+    if (!ready) {
+      setWebsitePublishStatus(
+        "Website created, but the public files are still being published. Please try again shortly."
+      );
+
+      showToast(
+        "Website created and is still being published.",
+        "info"
+      );
+
+      return;
+    }
+
+    if (
+      DOM.websitePublishedUrl
+    ) {
+      DOM.websitePublishedUrl.href =
+        result.url;
+
+      DOM.websitePublishedUrl.textContent =
+        result.url;
+    }
+
+    if (
+      DOM.websitePublishResult
+    ) {
+      DOM.websitePublishResult.hidden =
+        false;
+    }
+
+    setWebsitePublishStatus(
+      "Your Global Website is live."
+    );
+
+    showToast(
+      "Your Global Website is now live.",
+      "success"
+    );
+
+  } catch (error) {
+    const message =
+      getErrorMessage(
+        error
+      );
+
+    setWebsitePublishStatus(
+      message
+    );
+
+    showWebsiteValidation([
+      message
+    ]);
+
+    showToast(
+      message,
+      "error"
+    );
+
+  } finally {
+    state.publishing =
+      false;
+
+    setWebsitePublishBusy(
+      false
+    );
+  }
+}
+
+
+async function waitForWebsiteDeployment(
+  url
+) {
+  const startedAt =
+    Date.now();
+
+  while (
+    Date.now() -
+      startedAt <
+    CONFIG.DEPLOYMENT_TIMEOUT_MS
+  ) {
+    if (
+      await isWebsiteDeploymentReady(
+        url
+      )
+    ) {
+      return true;
+    }
+
+    const remaining =
+      Math.max(
+        0,
+        Math.ceil(
+          (
+            CONFIG.DEPLOYMENT_TIMEOUT_MS -
+            (
+              Date.now() -
+              startedAt
+            )
+          ) /
+            1000
+        )
+      );
+
+    setWebsitePublishStatus(
+      `Waiting for website files to become live... ${remaining}s remaining.`
+    );
+
+    await sleep(
+      CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS
+    );
+  }
+
+  return false;
+}
+
+
+async function isWebsiteDeploymentReady(
+  url
+) {
+  try {
+    const pageUrl =
+      new URL(
+        url
+      );
+
+    const dataUrl =
+      new URL(
+        "website.json",
+        pageUrl
+      );
+
+    const [
+      pageResponse,
+      dataResponse
+    ] =
+      await Promise.all([
+        fetchDeploymentResource(
+          pageUrl.href
+        ),
+
+        fetchDeploymentResource(
+          dataUrl.href
+        )
+      ]);
+
+    return Boolean(
+      pageResponse &&
+      pageResponse.ok &&
+      dataResponse &&
+      dataResponse.ok
+    );
+
+  } catch {
+    return false;
+  }
+}
+
+
+function setWebsitePublishBusy(
+  busy
+) {
+  if (
+    !DOM.websitePublish
+  ) {
+    return;
+  }
+
+  DOM.websitePublish.disabled =
+    busy;
+
+  DOM.websitePublish.setAttribute(
+    "aria-busy",
+    busy
+      ? "true"
+      : "false"
+  );
+
+  if (
+    DOM.websitePublishSpinner
+  ) {
+    DOM.websitePublishSpinner.hidden =
+      !busy;
+  }
+
+  if (
+    DOM.websitePublishButtonText
+  ) {
+    DOM.websitePublishButtonText.textContent =
+      busy
+        ? "Publishing..."
+        : "Create Website";
+  }
+}
+
+
+function setWebsitePublishStatus(
+  message
+) {
+  if (
+    DOM.websitePublishStatus
+  ) {
+    DOM.websitePublishStatus.textContent =
+      message ||
+      "";
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE YOUTUBE
+ * --------------------------------------------------------- */
+
+function getYoutubeEmbedData(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    const hostname =
+      url.hostname
+        .toLowerCase()
+        .replace(
+          /^www\./,
+          ""
+        );
+
+    let id =
+      "";
+
+    let short =
+      false;
+
+    if (
+      hostname ===
+      "youtu.be"
+    ) {
+      id =
+        url.pathname
+          .split("/")
+          .filter(Boolean)[0] ||
+        "";
+    } else if (
+      hostname ===
+        "youtube.com" ||
+      hostname ===
+        "m.youtube.com"
+    ) {
+      if (
+        url.pathname.startsWith(
+          "/shorts/"
+        )
+      ) {
+        id =
+          url.pathname
+            .split("/")
+            .filter(Boolean)[1] ||
+          "";
+
+        short =
+          true;
+      } else if (
+        url.pathname ===
+        "/watch"
+      ) {
+        id =
+          url.searchParams.get(
+            "v"
+          ) ||
+          "";
+      } else if (
+        url.pathname.startsWith(
+          "/embed/"
+        )
+      ) {
+        id =
+          url.pathname
+            .split("/")
+            .filter(Boolean)[1] ||
+          "";
+      }
+    }
+
+    if (!id) {
+      return null;
+    }
+
+    return {
+      short,
+
+      url:
+        `https://www.youtube.com/embed/${encodeURIComponent(
+          id
+        )}?rel=0`
+    };
+
+  } catch {
+    return null;
+  }
+}
+
+
+/* =========================================================
+ * RESET
+ * ========================================================= */
+
+
+function resetBuilderData(
+  keepTemplate
+) {
+  if (
+    !keepTemplate
+  ) {
+    state.selectedTemplate =
+      null;
+  }
+
+  clearCategoryItemData();
+
+  clearWebsiteData();
+
+  state.categories =
+    [];
+
+  state.editingCategoryId =
+    null;
+
+  state.editingItemId =
+    null;
+
+  state.editingItemCategoryId =
+    null;
+
+  state.location = {
+    verified:
+      false,
+
+    latitude:
+      null,
+
+    longitude:
+      null,
+
+    accuracy:
+      null,
+
+    verifiedAt:
+      null
+  };
+
+  state.lastPublishedUrl =
+    "";
+
+  clearAllFormFields();
+
+  seedDefaultCategories();
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+  updateLocationDetails();
+
+  hideValidation();
+  hideSuccess();
+
+  clearSubscriptionError();
+
+  setPublishStatus(
+    ""
+  );
+}
+
+
+function clearAllFormFields() {
+  const fields = [
+    DOM.subscriptionId,
+    DOM.businessName,
+    DOM.tagline,
+    DOM.address,
+    DOM.mobile,
+    DOM.email,
+    DOM.whatsapp,
+    DOM.logoUrl,
+
+    DOM.websiteSubscriptionId,
+    DOM.websiteBusinessName,
+    DOM.websiteAddress,
+    DOM.websiteTagline,
+    DOM.websiteMobile,
+    DOM.websiteEmail,
+    DOM.websiteWhatsapp,
+    DOM.websitePassword,
+    DOM.websiteLogo
+  ];
+
+  fields.forEach(
+    (field) => {
+      if (field) {
+        field.value =
+          "";
+      }
+    }
+  );
+
+  hideLogoPreview();
+
+  if (
+    DOM.websiteLogoPreview
+  ) {
+    DOM.websiteLogoPreview.hidden =
+      true;
+  }
+
+  if (
+    DOM.websiteLogoPreviewImage
+  ) {
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+  }
+
+  renderWebsiteSections();
+
+  renderWebsiteFooter();
+
+  if (
+    DOM.websitePublishResult
+  ) {
+    DOM.websitePublishResult.hidden =
+      true;
+  }
+
+  setWebsitePublishStatus(
+    ""
+  );
+
+  hideWebsiteValidation();
+
+  if (
+    DOM.itemCategory
+  ) {
+    DOM.itemCategory.value =
+      "";
+  }
+
+  clearItemFields();
+
+  setLocationText(
+    "Location not verified",
+    false
+  );
+}
+
+
+function clearItemFields() {
+  setValue(
+    DOM.itemName,
+    ""
+  );
+
+  setValue(
+    DOM.itemPrice,
+    ""
+  );
+
+  setValue(
+    DOM.itemQuantity,
+    ""
+  );
+
+  setValue(
+    DOM.itemUnit,
+    ""
+  );
+
+  setValue(
+    DOM.itemCategory,
+    ""
+  );
+
+  setValue(
+    DOM.itemDescription,
+    ""
+  );
+
+  setValue(
+    DOM.itemYoutube,
+    ""
+  );
+}
+
+
+/* =========================================================
+ * FIELD ERRORS
+ * ========================================================= */
+
+
+function showCategoryError(
+  message
+) {
+  if (
+    DOM.categoryNameError
+  ) {
+    DOM.categoryNameError.textContent =
+      message;
+
+    DOM.categoryNameError.hidden =
+      false;
+  }
+}
+
+
+function clearCategoryError() {
+  if (
+    DOM.categoryNameError
+  ) {
+    DOM.categoryNameError.textContent =
+      "";
+
+    DOM.categoryNameError.hidden =
+      true;
+  }
+}
+
+
+function showItemError(
+  message
+) {
+  if (
+    DOM.itemFormError
+  ) {
+    DOM.itemFormError.textContent =
+      message;
+
+    DOM.itemFormError.hidden =
+      false;
+  }
+}
+
+
+function clearItemError() {
+  if (
+    DOM.itemFormError
+  ) {
+    DOM.itemFormError.textContent =
+      "";
+
+    DOM.itemFormError.hidden =
+      true;
+  }
+}
+
+
+function clearSubscriptionError() {
+  if (
+    DOM.subscriptionError
+  ) {
+    DOM.subscriptionError.textContent =
+      "";
+
+    DOM.subscriptionError.hidden =
+      true;
+  }
+}
+
+
+/* =========================================================
+ * TOAST
+ * ========================================================= */
+
+
+function showToast(
+  message,
+  type = "info"
+) {
+  if (
+    !DOM.toastContainer
+  ) {
+    return;
+  }
+
+  const toast =
+    document.createElement(
+      "div"
+    );
+
+  toast.className =
+    `toast toast--${type}`;
+
+  toast.setAttribute(
+    "role",
+    "status"
+  );
+
+  toast.textContent =
+    message ||
+    "Done.";
+
+  DOM.toastContainer.appendChild(
+    toast
+  );
+
+  window.setTimeout(
+    () => {
+      toast.remove();
+    },
+    4500
+  );
+}
+
+
+/* =========================================================
+ * DATA HELPERS
+ * ========================================================= */
+
+
+function findCategory(
+  categoryId
+) {
+  return state.categories.find(
+    (category) =>
+      category.id ===
+      categoryId
+  ) || null;
+}
+
+
+function findItem(
+  categoryId,
+  itemId
+) {
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    return null;
+  }
+
+  const item =
+    category.items.find(
+      (entry) =>
+        entry.id ===
+        itemId
+    );
+
+  if (!item) {
+    return null;
+  }
+
+  return {
+    category,
+    item
+  };
+}
+
+
+function getTotalItemCount() {
+  return state.categories.reduce(
+    (
+      total,
+      category
+    ) =>
+      total +
+      category.items.length,
+    0
+  );
+}
+
+
+/* =========================================================
+ * BUTTONS
+ * ========================================================= */
+
+
+function createButton(
+  text,
+  className,
+  action,
+  categoryId,
+  itemId = null
+) {
+  const button =
+    document.createElement(
+      "button"
+    );
+
+  button.type =
+    "button";
+
+  if (className) {
+    button.className =
+      className;
+  }
+
+  if (categoryId) {
+    button.dataset.categoryId =
+      categoryId;
+  }
+
+  if (itemId) {
+    button.dataset.itemId =
+      itemId;
+  }
+
+  if (
+    action === "add-item" ||
+    action === "edit" ||
+    action === "delete"
+  ) {
+    if (itemId) {
+      button.dataset.itemAction =
+        action;
+    } else {
+      button.dataset.categoryAction =
+        action;
+    }
+  }
+
+  button.textContent =
+    text;
+
+  return button;
+}
+
+
+function setButtonBusy(
+  button,
+  busy,
+  busyText
+) {
+  if (!button) {
+    return;
+  }
+
+  if (busy) {
+    if (
+      !button.dataset.originalText
+    ) {
+      button.dataset.originalText =
+        button.textContent;
+    }
+
+    button.disabled =
+      true;
+
+    button.setAttribute(
+      "aria-busy",
+      "true"
+    );
+
+    button.textContent =
+      busyText ||
+      "Please wait...";
+  } else {
+    button.disabled =
+      false;
+
+    button.removeAttribute(
+      "aria-busy"
+    );
+
+    if (
+      button.dataset.originalText
+    ) {
+      button.textContent =
+        button.dataset.originalText;
+
+      delete button.dataset.originalText;
+    }
+  }
+}
+
+
+/* =========================================================
+ * GENERAL HELPERS
+ * ========================================================= */
+
+
+function getValue(
+  element
+) {
+  return element
+    ? String(
+        element.value || ""
+      ).trim()
+    : "";
+}
+
+
+function setValue(
+  element,
+  value
+) {
+  if (!element) {
+    return;
+  }
+
+  element.value =
+    value === null ||
+    value === undefined
+      ? ""
+      : String(value);
+}
+
+
+function normalizeText(
+  value,
+  maxLength
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (
+    Number.isFinite(
+      maxLength
+    ) &&
+    text.length >
+      maxLength
+  ) {
+    return text.slice(
+      0,
+      maxLength
+    );
+  }
+
+  return text;
+}
+
+
+function parseNumber(
+  value
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (!text) {
+    return null;
+  }
+
+  const number =
+    Number(text);
+
+  if (
+    !Number.isFinite(
+      number
+    )
+  ) {
+    return null;
+  }
+
+  return number;
+}
+
+
+function formatNumber(
+  value
+) {
+  const number =
+    Number(value);
+
+  if (
+    !Number.isFinite(
+      number
+    )
+  ) {
+    return "0";
+  }
+
+  return number.toLocaleString(
+    "en-IN",
+    {
+      maximumFractionDigits:
+        2
+    }
+  );
+}
+
+
+function createId(
+  prefix
+) {
+  if (
+    window.crypto &&
+    typeof window.crypto
+      .randomUUID ===
+      "function"
+  ) {
+    return `${prefix}-${window.crypto.randomUUID()}`;
+  }
+
+  return (
+    `${prefix}-${Date.now()}-${Math.random()
+      .toString(36)
+      .slice(2, 10)}`
+  );
+}
+
+
+function focusElement(
+  element
+) {
+  if (!element) {
+    return;
+  }
+
+  try {
+    element.focus({
+      preventScroll:
+        false
+    });
+  } catch {
+    element.focus();
+  }
+}
+
+
+function uniqueStrings(
+  values
+) {
+  return [
+    ...new Set(
+      values.filter(
+        Boolean
+      )
+    )
+  ];
+}
+
+
+/* =========================================================
+ * URL VALIDATION
+ * ========================================================= */
+
+
+function isValidHttpsUrl(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    return (
+      url.protocol ===
+        "https:" &&
+      Boolean(
+        url.hostname
+      )
+    );
+  } catch {
+    return false;
+  }
+}
+
+
+function normalizeBaseUrl(
+  value
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (!text) {
+    return "";
+  }
+
+  try {
+    const url =
+      new URL(
+        text
+      );
+
+    if (
+      url.protocol !==
+      "https:"
+    ) {
+      return "";
+    }
+
+    return url.origin;
+  } catch {
+    return "";
+  }
+}
+
+
+function isValidEmail(
+  value
+) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    .test(
+      value
+    );
+}
+
+
+function isValidYoutubeUrl(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    const hostname =
+      url.hostname
+        .toLowerCase()
+        .replace(
+          /^www\./,
+          ""
+        );
+
+    if (
+      hostname ===
+      "youtu.be"
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[0]
+      );
+    }
+
+    if (
+      hostname !==
+        "youtube.com" &&
+      hostname !==
+        "m.youtube.com"
+    ) {
+      return false;
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/shorts/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    if (
+      url.pathname ===
+      "/watch"
+    ) {
+      return Boolean(
+        url.searchParams.get(
+          "v"
+        )
+      );
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/embed/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/v/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    return false;
+
+  } catch {
+    return false;
+  }
+}
+
+
+/* =========================================================
+ * ERROR HANDLING
+ * ========================================================= */
+
+
+function getErrorMessage(
+  error
+) {
+  if (!error) {
+    return "Something went wrong. Please try again.";
+  }
+
+  if (
+    error.name ===
+    "AbortError"
+  ) {
+    return "The request timed out. Please try again.";
+  }
+
+  if (
+    error.message
+  ) {
+    return error.message;
+  }
+
+  return "Something went wrong. Please try again.";
+}
+
+
+function getLocationErrorMessage(
+  error
+) {
+  if (
+    !error
+  ) {
+    return "Unable to verify your location.";
+  }
+
+  switch (
+    error.code
+  ) {
+    case 1:
+      return "Location permission was denied. Please allow location access and try again.";
+
+    case 2:
+      return "Your current location could not be determined. Please try again.";
+
+    case 3:
+      return "Location request timed out. Please try again.";
+
+    default:
+      return (
+        error.message ||
+        "Unable to verify your location."
+      );
+  }
+}
