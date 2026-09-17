@@ -126,6 +126,30 @@
       "status": "processed",
       "type": "json",
       "updatedAt": "2026-09-17T06:18:34.633Z"
+    },
+    "website/9440246101/index.html": {
+      "outputHash": "cefdeb09adc01b8b16979359cb65d86f320401e2aaa999a5ce95edfc08017fd0",
+      "status": "processed",
+      "type": "html",
+      "updatedAt": "2026-09-17T08:13:26.849Z"
+    },
+    "website/9440246101/sw.js": {
+      "outputHash": "9477ca0340004fb9a93216ea7e8b27e9ad09fcf36f31ffe7e9508e4d15a38c2f",
+      "status": "processed",
+      "type": "js",
+      "updatedAt": "2026-09-17T08:13:27.043Z"
+    },
+    "website/9440246101/manifest.json": {
+      "outputHash": "60329ea6174d1ed52ab6b02a256af0d724acf0ea607539801e9c044316125926",
+      "status": "processed",
+      "type": "json",
+      "updatedAt": "2026-09-17T08:13:27.044Z"
+    },
+    "website/9440246101/website.json": {
+      "outputHash": "3513bf17a3de55cf605bd05312d4dd87b3c45e6c3ac18164dc3b87441a82ac48",
+      "status": "processed",
+      "type": "json",
+      "updatedAt": "2026-09-17T08:13:27.044Z"
     }
   }
 }
