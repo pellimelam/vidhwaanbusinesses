@@ -104,10 +104,10 @@
       "updatedAt": "2026-09-17T13:16:27.498Z"
     },
     "website/website.css": {
-      "outputHash": "ba5e61a3235afd0546b499ee4c7ba5764f097146cc40598cc5531319a2c18ddc",
+      "outputHash": "9b9cda8406cf6665dc30a16a958cdc810753312b57ae5d00fba4f3dcf7d43511",
       "status": "processed",
       "type": "css",
-      "updatedAt": "2026-09-17T13:50:34.694Z"
+      "updatedAt": "2026-09-17T14:08:23.134Z"
     },
     "website/sw.js": {
       "outputHash": "e8db4b0ff5a4cd6e831bdea9c09c1919d7df2d9d1dccfd7062acc8911bb2090b",
