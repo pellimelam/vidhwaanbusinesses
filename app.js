@@ -1,1 +1,9223 @@
-"use strict";const _0x4be7d1=_0x2044;!function(){const _0x42fb28__0x4b6aab=684,_0x42fb28__0x1423ef=791,_0x42fb28__0x565b2a=333,_0x42fb28__0x30983b=603,_0x42fb28__0x40b36f=368,_0x42fb28__0x2abe97=733,_0x42fb28__0x419a36=501,_0x49f8b5=_0x2044,_0x44dd97=_0x52fe();for(;;)try{if(320888===parseInt(_0x49f8b5(437))/1*(parseInt(_0x49f8b5(_0x42fb28__0x4b6aab))/2)+parseInt(_0x49f8b5(_0x42fb28__0x1423ef))/3*(parseInt(_0x49f8b5(445))/4)+parseInt(_0x49f8b5(_0x42fb28__0x565b2a))/5*(parseInt(_0x49f8b5(_0x42fb28__0x30983b))/6)+parseInt(_0x49f8b5(_0x42fb28__0x40b36f))/7+-parseInt(_0x49f8b5(_0x42fb28__0x2abe97))/8+-parseInt(_0x49f8b5(855))/9+parseInt(_0x49f8b5(_0x42fb28__0x419a36))/10*(parseInt(_0x49f8b5(297))/11))break;_0x44dd97.push(_0x44dd97.shift())}catch(_0x16d70c){_0x44dd97.push(_0x44dd97.shift())}}();const CONFIG=Object[_0x4be7d1(641)]({WORKER_URL:_0x4be7d1(346),TEMPLATE_ID:_0x4be7d1(750),CATEGORY_ITEM_STORAGE_KEY:_0x4be7d1(463),WEBSITE_STORAGE_KEY:_0x4be7d1(281),MAX_CATEGORIES:50,MAX_ITEMS_PER_CATEGORY:500,MAX_TOTAL_ITEMS:5e3,MAX_CATEGORY_NAME_LENGTH:100,MAX_ITEM_NAME_LENGTH:150,MAX_BUSINESS_NAME_LENGTH:120,MAX_TAGLINE_LENGTH:200,MAX_ADDRESS_LENGTH:500,MAX_PHONE_LENGTH:30,MAX_EMAIL_LENGTH:254,MAX_WHATSAPP_LENGTH:30,MAX_LOGO_URL_LENGTH:2e3,MAX_DESCRIPTION_LENGTH:1e3,MAX_YOUTUBE_URL_LENGTH:2e3,REQUEST_TIMEOUT_MS:3e4,DEPLOYMENT_CHECK_INTERVAL_MS:3e3,DEPLOYMENT_TIMEOUT_MS:12e4,MAX_LOCATION_ACCURACY_METERS:500,LOCATION_TIMEOUT_MS:45e3}),DEFAULT_CATEGORIES=Object[_0x4be7d1(641)]([_0x4be7d1(326),_0x4be7d1(913),"Food",_0x4be7d1(878),_0x4be7d1(778),_0x4be7d1(446)]),state={selectedTemplate:null,website:{sections:[],footer:{items:[]}},categories:[],editingCategoryId:null,editingItemId:null,editingItemCategoryId:null,location:{verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},publishing:!1,lastPublishedUrl:"",logoPreviewRequest:0},DOM={};function initialize(){cacheDom(),bindEvents(),initializeApplication()}function cacheDom(){const _0x5f2971__0x2c7e39=652,_0x5f2971__0x2d35eb=652,_0x5f2971__0x5cd77d=578,_0x5f2971__0x4d221c=378,_0x5f2971__0xb6fe8d=725,_0x5f2971__0x459480=638,_0x5f2971__0x216502=643,_0x5f2971__0x501427=652,_0x5f2971__0x1af9eb=455,_0x5f2971__0x2b6af8=714,_0x5f2971__0xfcffa2=543,_0x5f2971__0x4b9495=915,_0x5f2971__0x514e11=425,_0x5f2971__0x47f83b=652,_0x5f2971__0x53fe19=726,_0x5f2971__0x37f73f=588,_0x5f2971__0x45f523=926,_0x5f2971__0x4c25fc=606,_0x5f2971__0x1aa788=585,_0x5f2971__0x3cd3da=652,_0x5f2971__0x45c892=330,_0x5f2971__0x3561b2=481,_0x5f2971__0x306918=652,_0x5f2971__0x1168e2=306,_0x5f2971__0x30c951=380,_0x5f2971__0x57c325=515,_0x5f2971__0x4e8f91=652,_0x5f2971__0x46f9f4=416,_0x5f2971__0x5dee55=823,_0x5f2971__0x275678=652,_0x5f2971__0x331050=394,_0x5f2971__0x9254c0=817,_0x5f2971__0x55dc1a=652,_0x5f2971__0x1eddd4=580,_0x5f2971__0x10bbd6=478,_0x5f2971__0x2875cf=553,_0x5f2971__0x561fe1=318,_0x5f2971__0x45f0aa=581,_0x5f2971__0x34a6a2=560,_0x5f2971__0x3e291f=554,_0x5f2971__0x3a7c3c=418,_0x5f2971__0x540974=652,_0x5f2971__0x4d1d06=631,_0x5f2971__0x57f439=429,_0x5f2971__0x451216=618,_0x5f2971__0x5076e1=546,_0x5f2971__0x934a41=900,_0x5f2971__0x1146a5=652,_0x5f2971__0x10a27d=690,_0x5f2971__0x311dc1=797,_0x5f2971__0x411dd7=636,_0x5f2971__0x4afeeb=313,_0x5f2971__0x3b0462=688,_0x5f2971__0x5be00a=808,_0x5f2971__0x1c4b61=870,_0x5f2971__0xd378af=635,_0x5f2971__0x4a728d=850,_0x5f2971__0x1a42a4=355,_0x5f2971__0x44029a=423,_0x5f2971__0x3ae252=404,_0x5f2971__0x4b5a77=663,_0x5f2971__0x5a830d=410,_0x5f2971__0x4ab9f1=652,_0x5f2971__0x47a8c5=656,_0x5f2971__0x29c270=557,_0x5f2971__0x50c8d6=652,_0x5f2971__0x4d13a2=558,_0x5f2971__0x52b4c7=922,_0x5f2971__0x4c29ec=642,_0x5f2971__0x23fd5a=652,_0x5f2971__0x4b1a5d=474,_0x5f2971__0x9fcdd5=491,_0x5f2971__0x5031b8=324,_0x5f2971__0x480fce=272,_0x5f2971__0x583caa=652,_0x5f2971__0x2de81f=435,_0x5f2971__0x24f319=867,_0x5f2971__0x15caf8=652,_0x5f2971__0x125edc=721,_0x5f2971__0x2a0d5a=678,_0x5f2971__0x2fa295=881,_0x5f2971__0x53c6e4=652,_0x5f2971__0x851529=488,_0x5f2971__0x1828d4=741,_0x5f2971__0x1a1978=497,_0x5f2971__0x3dfe69=652,_0x5f2971__0x22fa67=473,_0x5f2971__0x43416f=364,_0x5f2971__0x274e19=681,_0x5f2971__0x56fa17=440,_0x5f2971__0x2302c5=652,_0x5f2971__0x3cf67e=813,_0x5f2971__0x3cc9c2=692,_0x5f2971__0x54b56a=652,_0x5f2971__0x183165=495,_0x5f2971__0x2c99b5=774,_0x5f2971__0x2e99f0=652,_0x5f2971__0x578347=383,_0x5f2971__0x1aac3f=627,_0x5f2971__0x3b7a2a=652,_0x5f2971__0x1e99e2=270,_0x5f2971__0x140c5c=673,_0x5f2971__0x15e110=291,_0x5f2971__0x745a13=541,_0x5f2971__0x3ea6e6=754,_0x5f2971__0x2bd06a=518,_0x5f2971__0x5318ff=809,_0x5f2971__0x387ff6=299,_0x5f2971__0x1b72d4=472,_0x5f2971__0x5b9e30=374,_0x5f2971__0x3f13f5=707,_0x5f2971__0xd7f5d8=749,_0x5f2971__0x43fe33=419,_0x5f2971__0x3d83d7=888,_0x5f2971__0x5c431d=839,_0x5f2971__0x4fdcd1=597,_0x5f2971__0x5266ea=438,_0x5f2971__0x3e8fc4=434,_0x5f2971__0x1d22c2=278,_0x5f2971__0x20ce0c=782,_0x5f2971__0x2ab533=292,_0x5f2971__0x3b5030=450,_0x5f2971__0x3e90e9=649,_0x5f2971__0x109451=604,_0x5f2971__0x59ca97=465,_0x5f2971__0xd57a27=652,_0x5f2971__0x4b041d=487,_0x5f2971__0x28d4b1=652,_0x5f2971__0x164ebc=574,_0x5f2971__0x47a253=652,_0x5f2971__0x1df356=584,_0x5f2971__0x1400c0=600,_0x5f2971__0x55e575=652,_0x5f2971__0x36993a=909,_0x5f2971__0x4cd0aa=385,_0x5f2971__0x5958e7=652,_0x5f2971__0x34cb3c=914,_0x5f2971__0x262827=431,_0x5f2971__0x5d7004=770,_0x5f2971__0x56d4ab=798,_0x5f2971__0x31da87=279,_0x5f2971__0x4d7792=652,_0x5f2971__0xa34f21=287,_0x5f2971__0x4818fa=872,_0x5f2971__0x3f0969=476,_0x5f2971__0x76b4c8=779,_0x5f2971__0xce75e1=371,_0x5f2971__0x17057d=609,_0x5f2971__0x1c570c=512,_0x5f2971__0x1cb014=605,_0x5f2971__0x119c70=652,_0x5f2971__0x27e5ee=777,_0x5f2971__0x24d131=334,_0x5f2971__0x341251=342,_0x5f2971__0x48e3e7=819,_0x5f2971__0x23225c=652,_0x5f2971__0xdb596=652,_0x5f2971__0x52a5ce=549,_0x5f2971__0x47ed53=632,_0x5f2971__0x11bf35=652,_0x5f2971__0x259202=866,_0x5f2971__0x1704e5=769,_0x5f2971__0x2b25fa=611,_0x5f2971__0x5ca0aa=938,_0x5f2971__0x51f2fb=412,_0x5f2971__0x58fb95=875,_0x5f2971__0x1b07b9=406,_0x5f2971__0x1e2b60=652,_0x5f2971__0x4137da=859,_0x5f2971__0x3469d9=652,_0x5f2971__0x3e353b=683,_0x28fb24=_0x4be7d1;DOM[_0x28fb24(524)]=document[_0x28fb24(_0x5f2971__0x2c7e39)]("connection-status"),DOM[_0x28fb24(284)]=document[_0x28fb24(_0x5f2971__0x2d35eb)]("connection-text"),DOM.templateSection=document[_0x28fb24(_0x5f2971__0x2c7e39)]("template-section"),DOM[_0x28fb24(_0x5f2971__0x5cd77d)]=document[_0x28fb24(_0x5f2971__0x2d35eb)](_0x28fb24(_0x5f2971__0x4d221c)),DOM[_0x28fb24(_0x5f2971__0xb6fe8d)]=document[_0x28fb24(_0x5f2971__0x2c7e39)](_0x28fb24(369)),DOM[_0x28fb24(_0x5f2971__0x459480)]=document.getElementById(_0x28fb24(_0x5f2971__0x216502)),DOM[_0x28fb24(666)]=document[_0x28fb24(_0x5f2971__0x501427)]("ecommerce-section"),DOM.websiteSection=document[_0x28fb24(_0x5f2971__0x2c7e39)](_0x28fb24(_0x5f2971__0x1af9eb)),DOM.websiteBackToTemplates=document.getElementById(_0x28fb24(_0x5f2971__0x2b6af8)),DOM.websiteSubscriptionId=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0xfcffa2)),DOM[_0x28fb24(_0x5f2971__0x4b9495)]=document[_0x28fb24(_0x5f2971__0x501427)](_0x28fb24(_0x5f2971__0x514e11)),DOM.websiteAddress=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(_0x5f2971__0x53fe19)),DOM.websiteTagline=document[_0x28fb24(_0x5f2971__0x47f83b)]("website-tagline"),DOM[_0x28fb24(_0x5f2971__0x37f73f)]=document[_0x28fb24(_0x5f2971__0x47f83b)]("website-mobile"),DOM.websiteEmail=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(_0x5f2971__0x45f523)),DOM[_0x28fb24(_0x5f2971__0x4c25fc)]=document[_0x28fb24(_0x5f2971__0x2d35eb)](_0x28fb24(_0x5f2971__0x1aa788)),DOM[_0x28fb24(566)]=document[_0x28fb24(_0x5f2971__0x3cd3da)]("website-password"),DOM.websitePasswordToggle=document[_0x28fb24(_0x5f2971__0x501427)](_0x28fb24(_0x5f2971__0x45c892)),DOM[_0x28fb24(_0x5f2971__0x3561b2)]=document[_0x28fb24(_0x5f2971__0x306918)](_0x28fb24(322)),DOM[_0x28fb24(362)]=document[_0x28fb24(_0x5f2971__0x306918)](_0x28fb24(799)),DOM[_0x28fb24(_0x5f2971__0x1168e2)]=document.getElementById("website-logo-preview-image"),DOM[_0x28fb24(589)]=document.getElementById(_0x28fb24(_0x5f2971__0x30c951)),DOM[_0x28fb24(_0x5f2971__0x57c325)]=document[_0x28fb24(_0x5f2971__0x4e8f91)](_0x28fb24(_0x5f2971__0x46f9f4)),DOM[_0x28fb24(647)]=document[_0x28fb24(_0x5f2971__0x3cd3da)](_0x28fb24(_0x5f2971__0x5dee55)),DOM[_0x28fb24(640)]=document[_0x28fb24(_0x5f2971__0x275678)]("website-location-status-text"),DOM[_0x28fb24(836)]=document.getElementById(_0x28fb24(_0x5f2971__0x331050)),DOM[_0x28fb24(_0x5f2971__0x9254c0)]=document[_0x28fb24(_0x5f2971__0x55dc1a)](_0x28fb24(_0x5f2971__0x1eddd4)),DOM.websiteLocationLongitude=document[_0x28fb24(_0x5f2971__0x501427)](_0x28fb24(275)),DOM[_0x28fb24(_0x5f2971__0x10bbd6)]=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(424)),DOM[_0x28fb24(_0x5f2971__0x2875cf)]=document[_0x28fb24(_0x5f2971__0x55dc1a)]("website-add-section"),DOM.websiteAddFirstSection=document.getElementById(_0x28fb24(513)),DOM[_0x28fb24(816)]=document[_0x28fb24(_0x5f2971__0x275678)]("website-sections"),DOM[_0x28fb24(_0x5f2971__0x561fe1)]=document[_0x28fb24(_0x5f2971__0x3cd3da)](_0x28fb24(_0x5f2971__0x45f0aa)),DOM[_0x28fb24(_0x5f2971__0x34a6a2)]=document.getElementById(_0x28fb24(_0x5f2971__0x3e291f)),DOM[_0x28fb24(_0x5f2971__0x3a7c3c)]=document[_0x28fb24(_0x5f2971__0x540974)](_0x28fb24(932)),DOM[_0x28fb24(728)]=document[_0x28fb24(_0x5f2971__0x2c7e39)](_0x28fb24(_0x5f2971__0x4d1d06)),DOM[_0x28fb24(_0x5f2971__0x57f439)]=document[_0x28fb24(652)]("website-validation-summary"),DOM.websiteValidationList=document.getElementById("website-validation-list"),DOM[_0x28fb24(_0x5f2971__0x451216)]=document.getElementById(_0x28fb24(_0x5f2971__0x5076e1)),DOM[_0x28fb24(594)]=document.getElementById(_0x28fb24(772)),DOM[_0x28fb24(_0x5f2971__0x934a41)]=document[_0x28fb24(_0x5f2971__0x1146a5)](_0x28fb24(_0x5f2971__0x10a27d)),DOM[_0x28fb24(_0x5f2971__0x311dc1)]=document[_0x28fb24(_0x5f2971__0x540974)](_0x28fb24(_0x5f2971__0x411dd7)),DOM[_0x28fb24(_0x5f2971__0x4afeeb)]=document.getElementById(_0x28fb24(_0x5f2971__0x3b0462)),DOM[_0x28fb24(894)]=document.getElementById(_0x28fb24(_0x5f2971__0x5be00a)),DOM[_0x28fb24(_0x5f2971__0x1c4b61)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0xd378af)),DOM.websiteContentModalClose=document[_0x28fb24(652)]("website-content-modal-close"),DOM.websiteContentModalTitle=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x4a728d)),DOM[_0x28fb24(_0x5f2971__0x1a42a4)]=document[_0x28fb24(_0x5f2971__0x306918)](_0x28fb24(_0x5f2971__0x44029a)),DOM.websiteContentTextField=document.getElementById(_0x28fb24(469)),DOM[_0x28fb24(_0x5f2971__0x3ae252)]=document.getElementById(_0x28fb24(_0x5f2971__0x4b5a77)),DOM[_0x28fb24(_0x5f2971__0x5a830d)]=document[_0x28fb24(_0x5f2971__0x4ab9f1)](_0x28fb24(277)),DOM[_0x28fb24(_0x5f2971__0x47a8c5)]=document[_0x28fb24(_0x5f2971__0x2c7e39)](_0x28fb24(752)),DOM[_0x28fb24(_0x5f2971__0x29c270)]=document[_0x28fb24(_0x5f2971__0x4ab9f1)]("website-content-repeatable-label"),DOM.websiteContentRepeatableHelp=document[_0x28fb24(_0x5f2971__0x50c8d6)](_0x28fb24(_0x5f2971__0x4d13a2)),DOM.websiteContentAddRow=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(_0x5f2971__0x52b4c7)),DOM.websiteContentRowList=document.getElementById("website-content-row-list"),DOM[_0x28fb24(_0x5f2971__0x4c29ec)]=document[_0x28fb24(_0x5f2971__0x23fd5a)](_0x28fb24(_0x5f2971__0x4b1a5d)),DOM[_0x28fb24(_0x5f2971__0x9fcdd5)]=document[_0x28fb24(_0x5f2971__0x1146a5)](_0x28fb24(_0x5f2971__0x5031b8)),DOM[_0x28fb24(_0x5f2971__0x480fce)]=document[_0x28fb24(_0x5f2971__0x583caa)]("website-content-save"),DOM[_0x28fb24(_0x5f2971__0x2de81f)]=document[_0x28fb24(_0x5f2971__0x1146a5)](_0x28fb24(_0x5f2971__0x24f319)),DOM[_0x28fb24(548)]=document[_0x28fb24(_0x5f2971__0x15caf8)]("subscription-id"),DOM[_0x28fb24(_0x5f2971__0x125edc)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x2a0d5a)),DOM[_0x28fb24(_0x5f2971__0x2fa295)]=document[_0x28fb24(_0x5f2971__0x53c6e4)](_0x28fb24(408)),DOM[_0x28fb24(_0x5f2971__0x851529)]=document[_0x28fb24(_0x5f2971__0x15caf8)]("subscription-error"),DOM[_0x28fb24(942)]=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(_0x5f2971__0x1828d4)),DOM[_0x28fb24(_0x5f2971__0x1a1978)]=document[_0x28fb24(_0x5f2971__0x3dfe69)](_0x28fb24(_0x5f2971__0x22fa67)),DOM.address=document[_0x28fb24(_0x5f2971__0x275678)](_0x28fb24(_0x5f2971__0x43416f)),DOM.mobile=document.getElementById("business-mobile"),DOM[_0x28fb24(_0x5f2971__0x274e19)]=document[_0x28fb24(_0x5f2971__0x306918)](_0x28fb24(_0x5f2971__0x56fa17)),DOM[_0x28fb24(869)]=document[_0x28fb24(_0x5f2971__0x2302c5)]("business-whatsapp"),DOM.logoUrl=document[_0x28fb24(_0x5f2971__0x540974)](_0x28fb24(_0x5f2971__0x3cf67e)),DOM[_0x28fb24(_0x5f2971__0x3cc9c2)]=document[_0x28fb24(_0x5f2971__0x54b56a)](_0x28fb24(_0x5f2971__0x183165)),DOM[_0x28fb24(_0x5f2971__0x2c99b5)]=document[_0x28fb24(_0x5f2971__0x2e99f0)]("logo-preview-image"),DOM.locationStatus=document[_0x28fb24(_0x5f2971__0x50c8d6)](_0x28fb24(_0x5f2971__0x578347)),DOM[_0x28fb24(_0x5f2971__0x1aac3f)]=document[_0x28fb24(_0x5f2971__0x3b7a2a)]("location-status-indicator"),DOM[_0x28fb24(_0x5f2971__0x1e99e2)]=document.getElementById(_0x28fb24(_0x5f2971__0x140c5c)),DOM[_0x28fb24(_0x5f2971__0x15e110)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x745a13)),DOM[_0x28fb24(_0x5f2971__0x3ea6e6)]=document.getElementById(_0x28fb24(489)),DOM[_0x28fb24(_0x5f2971__0x2bd06a)]=document.getElementById(_0x28fb24(768)),DOM[_0x28fb24(_0x5f2971__0x5318ff)]=document[_0x28fb24(_0x5f2971__0x2d35eb)](_0x28fb24(892)),DOM[_0x28fb24(_0x5f2971__0x387ff6)]=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(415)),DOM[_0x28fb24(_0x5f2971__0x1b72d4)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x5b9e30)),DOM.addFirstCategory=document[_0x28fb24(_0x5f2971__0x275678)](_0x28fb24(896)),DOM.categoryList=document.getElementById("category-list"),DOM[_0x28fb24(_0x5f2971__0x3f13f5)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0xd7f5d8)),DOM[_0x28fb24(_0x5f2971__0x43fe33)]=document[_0x28fb24(_0x5f2971__0x2e99f0)]("category-modal"),DOM[_0x28fb24(_0x5f2971__0x3d83d7)]=document[_0x28fb24(_0x5f2971__0x47f83b)](_0x28fb24(_0x5f2971__0x5c431d)),DOM[_0x28fb24(_0x5f2971__0x4fdcd1)]=document.getElementById("category-modal-close"),DOM.categoryName=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x5266ea)),DOM[_0x28fb24(_0x5f2971__0x3e8fc4)]=document[_0x28fb24(_0x5f2971__0x3b7a2a)]("category-name-error"),DOM[_0x28fb24(_0x5f2971__0x1d22c2)]=document[_0x28fb24(_0x5f2971__0x2302c5)](_0x28fb24(_0x5f2971__0x20ce0c)),DOM[_0x28fb24(_0x5f2971__0x2ab533)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x3b5030)),DOM[_0x28fb24(_0x5f2971__0x3e90e9)]=document.getElementById(_0x28fb24(_0x5f2971__0x109451)),DOM.addFirstItem=document[_0x28fb24(652)]("add-first-item"),DOM[_0x28fb24(_0x5f2971__0x59ca97)]=document[_0x28fb24(_0x5f2971__0xd57a27)]("item-list"),DOM[_0x28fb24(_0x5f2971__0x4b041d)]=document[_0x28fb24(_0x5f2971__0x28d4b1)](_0x28fb24(_0x5f2971__0x164ebc)),DOM[_0x28fb24(873)]=document[_0x28fb24(_0x5f2971__0x47a253)](_0x28fb24(_0x5f2971__0x1df356)),DOM[_0x28fb24(_0x5f2971__0x1400c0)]=document[_0x28fb24(_0x5f2971__0x55e575)](_0x28fb24(_0x5f2971__0x36993a)),DOM[_0x28fb24(_0x5f2971__0x4cd0aa)]=document[_0x28fb24(_0x5f2971__0x5958e7)](_0x28fb24(_0x5f2971__0x34cb3c)),DOM[_0x28fb24(_0x5f2971__0x262827)]=document[_0x28fb24(_0x5f2971__0x47f83b)]("item-name"),DOM[_0x28fb24(_0x5f2971__0x5d7004)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x56d4ab)),DOM.itemQuantity=document.getElementById("item-quantity"),DOM[_0x28fb24(_0x5f2971__0x31da87)]=document[_0x28fb24(_0x5f2971__0x4d7792)](_0x28fb24(_0x5f2971__0xa34f21)),DOM[_0x28fb24(_0x5f2971__0x4818fa)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0x3f0969)),DOM.itemDescription=document.getElementById("item-description"),DOM.itemYoutube=document.getElementById(_0x28fb24(314)),DOM[_0x28fb24(_0x5f2971__0x76b4c8)]=document[_0x28fb24(652)](_0x28fb24(_0x5f2971__0xce75e1)),DOM[_0x28fb24(_0x5f2971__0x17057d)]=document.getElementById(_0x28fb24(_0x5f2971__0x1c570c)),DOM[_0x28fb24(_0x5f2971__0x1cb014)]=document[_0x28fb24(_0x5f2971__0x119c70)]("item-save"),DOM[_0x28fb24(_0x5f2971__0x27e5ee)]=document.getElementById(_0x28fb24(910)),DOM[_0x28fb24(_0x5f2971__0x24d131)]=document[_0x28fb24(_0x5f2971__0x55dc1a)]("validation-list"),DOM[_0x28fb24(_0x5f2971__0x341251)]=document.getElementById(_0x28fb24(_0x5f2971__0x48e3e7)),DOM.publishSpinner=document[_0x28fb24(_0x5f2971__0x23225c)]("publish-spinner"),DOM[_0x28fb24(480)]=document[_0x28fb24(_0x5f2971__0xdb596)]("publish-button-text"),DOM[_0x28fb24(_0x5f2971__0x52a5ce)]=document[_0x28fb24(_0x5f2971__0x15caf8)](_0x28fb24(_0x5f2971__0x47ed53)),DOM.successSection=document[_0x28fb24(_0x5f2971__0x11bf35)]("success-section"),DOM[_0x28fb24(_0x5f2971__0x259202)]=document.getElementById(_0x28fb24(917)),DOM[_0x28fb24(_0x5f2971__0x1704e5)]=document[_0x28fb24(_0x5f2971__0x2302c5)]("business-app-url"),DOM.deploymentStatus=document.getElementById(_0x28fb24(_0x5f2971__0x2b25fa)),DOM[_0x28fb24(_0x5f2971__0x5ca0aa)]=document.getElementById(_0x28fb24(_0x5f2971__0x51f2fb)),DOM.editBusiness=document[_0x28fb24(_0x5f2971__0x3dfe69)](_0x28fb24(402)),DOM.createAnother=document[_0x28fb24(_0x5f2971__0x119c70)](_0x28fb24(_0x5f2971__0x58fb95)),DOM.applicationLoader=document.getElementById(_0x28fb24(_0x5f2971__0x1b07b9)),DOM.loaderText=document[_0x28fb24(_0x5f2971__0x1e2b60)](_0x28fb24(316)),DOM[_0x28fb24(_0x5f2971__0x4137da)]=document[_0x28fb24(_0x5f2971__0x3469d9)](_0x28fb24(_0x5f2971__0x3e353b))}function bindEvents(){const _0x15ec02__0x66aafa=725,_0x15ec02__0x33b7ca=638,_0x15ec02__0x4bb892=352,_0x15ec02__0x23d33a=461,_0x15ec02__0x298154=335,_0x15ec02__0x3054ac=461,_0x15ec02__0x378e83=898,_0x15ec02__0x10bdfc=461,_0x15ec02__0x4ab23d=818,_0x15ec02__0x1d7de7=481,_0x15ec02__0x1e3599=352,_0x15ec02__0x353f88=461,_0x15ec02__0x533845=553,_0x15ec02__0xc9bc7b=352,_0x15ec02__0x216c93=461,_0x15ec02__0xfadfc2=506,_0x15ec02__0x4316d0=352,_0x15ec02__0x9e6d86=560,_0x15ec02__0x42c56e=461,_0x15ec02__0x5f5995=493,_0x15ec02__0x2ae1f3=491,_0x15ec02__0x472c25=491,_0x15ec02__0x1467af=461,_0x15ec02__0xbd8a95=338,_0x15ec02__0x3a1e15=338,_0x15ec02__0x1e7555=461,_0x15ec02__0xab95cb=599,_0x15ec02__0x5eb566=418,_0x15ec02__0x4293df=461,_0x15ec02__0x21ff1b=618,_0x15ec02__0x2c1aa0=618,_0x15ec02__0x105b6e=461,_0x15ec02__0x20578a=472,_0x15ec02__0x265088=871,_0x15ec02__0x24748c=871,_0x15ec02__0x2e8991=597,_0x15ec02__0x438c64=352,_0x15ec02__0x3bddde=278,_0x15ec02__0x330439=352,_0x15ec02__0x214b9e=292,_0x15ec02__0x5d0458=419,_0x15ec02__0x55f6f=649,_0x15ec02__0x3422d9=461,_0x15ec02__0x1b4a28=884,_0x15ec02__0x3cef8e=385,_0x15ec02__0x8add7a=352,_0x15ec02__0x24cd0f=461,_0x15ec02__0x3ff5d3=352,_0x15ec02__0x1a0fa7=605,_0x15ec02__0x5a913f=352,_0x15ec02__0x1626bf=873,_0x15ec02__0x692a52=352,_0x15ec02__0x3e7948=582,_0x15ec02__0x2d5952=352,_0x15ec02__0x405e17=465,_0x15ec02__0x5ede7d=461,_0x15ec02__0x457502=881,_0x15ec02__0x572027=881,_0x15ec02__0x5d41f0=496,_0x15ec02__0x57e1cb=352,_0x15ec02__0x11c53c=352,_0x15ec02__0x3d6777=387,_0x15ec02__0x37e404=342,_0x15ec02__0x3119d8=938,_0x15ec02__0x364f29=653,_0x15ec02__0x2a496f=461,_0x15ec02__0x3a2b8b=760,_0x15ec02__0x3fef4f=760,_0x15ec02__0xbe8287=352,_0x15ec02__0x2043a8=568,_0x15ec02__0x37519f=307,_0x10da6f=_0x4be7d1;DOM.templateEcommerce&&DOM[_0x10da6f(_0x15ec02__0x66aafa)][_0x10da6f(352)](_0x10da6f(461),()=>selectTemplate(_0x10da6f(750))),DOM.templateWebsite&&DOM[_0x10da6f(_0x15ec02__0x33b7ca)][_0x10da6f(_0x15ec02__0x4bb892)]("click",()=>selectTemplate(_0x10da6f(771))),DOM.backToTemplates&&DOM[_0x10da6f(435)][_0x10da6f(352)](_0x10da6f(_0x15ec02__0x23d33a),showTemplateSelection),DOM[_0x10da6f(_0x15ec02__0x298154)]&&DOM[_0x10da6f(_0x15ec02__0x298154)].addEventListener(_0x10da6f(_0x15ec02__0x3054ac),showTemplateSelection),DOM[_0x10da6f(898)]&&DOM[_0x10da6f(_0x15ec02__0x378e83)][_0x10da6f(_0x15ec02__0x4bb892)](_0x10da6f(_0x15ec02__0x10bdfc),toggleWebsitePassword),DOM[_0x10da6f(481)]&&(DOM.websiteLogo[_0x10da6f(352)](_0x10da6f(_0x15ec02__0x4ab23d),previewWebsiteLogo),DOM[_0x10da6f(_0x15ec02__0x1d7de7)][_0x10da6f(_0x15ec02__0x1e3599)]("change",previewWebsiteLogo)),DOM.websiteVerifyLocation&&DOM.websiteVerifyLocation.addEventListener(_0x10da6f(_0x15ec02__0x353f88),verifyWebsiteLocation),DOM[_0x10da6f(_0x15ec02__0x533845)]&&DOM.websiteAddSection[_0x10da6f(_0x15ec02__0xc9bc7b)](_0x10da6f(_0x15ec02__0x216c93),addWebsiteSection),DOM.websiteAddFirstSection&&DOM[_0x10da6f(_0x15ec02__0xfadfc2)][_0x10da6f(_0x15ec02__0x4316d0)](_0x10da6f(461),addWebsiteSection),DOM.websiteSections&&DOM.websiteSections[_0x10da6f(352)]("click",handleWebsiteSectionAction),DOM[_0x10da6f(560)]&&DOM[_0x10da6f(_0x15ec02__0x9e6d86)].addEventListener(_0x10da6f(_0x15ec02__0x42c56e),addWebsiteFooterLink),DOM[_0x10da6f(_0x15ec02__0x5f5995)]&&DOM.websiteContentModalClose.addEventListener("click",closeWebsiteContentModal),DOM[_0x10da6f(_0x15ec02__0x2ae1f3)]&&DOM[_0x10da6f(_0x15ec02__0x472c25)][_0x10da6f(_0x15ec02__0xc9bc7b)](_0x10da6f(_0x15ec02__0x353f88),closeWebsiteContentModal),DOM.websiteContentSave&&DOM[_0x10da6f(272)].addEventListener(_0x10da6f(_0x15ec02__0x1467af),saveWebsiteContentModal),DOM[_0x10da6f(_0x15ec02__0xbd8a95)]&&DOM[_0x10da6f(_0x15ec02__0x3a1e15)].addEventListener(_0x10da6f(_0x15ec02__0x1e7555),addWebsiteContentModalRow),DOM[_0x10da6f(_0x15ec02__0xab95cb)]&&DOM[_0x10da6f(599)].addEventListener(_0x10da6f(_0x15ec02__0x353f88),handleWebsiteContentModalRowAction),DOM[_0x10da6f(_0x15ec02__0x5eb566)]&&DOM.websiteFooterLinks[_0x10da6f(352)](_0x10da6f(_0x15ec02__0x4293df),handleWebsiteFooterAction),DOM[_0x10da6f(_0x15ec02__0x21ff1b)]&&DOM[_0x10da6f(_0x15ec02__0x2c1aa0)][_0x10da6f(_0x15ec02__0xc9bc7b)](_0x10da6f(_0x15ec02__0x105b6e),publishWebsite),DOM[_0x10da6f(_0x15ec02__0x20578a)]&&DOM[_0x10da6f(472)][_0x10da6f(352)]("click",()=>openCategoryModal()),DOM[_0x10da6f(_0x15ec02__0x265088)]&&DOM[_0x10da6f(_0x15ec02__0x24748c)][_0x10da6f(352)](_0x10da6f(461),()=>openCategoryModal()),DOM[_0x10da6f(_0x15ec02__0x2e8991)]&&DOM[_0x10da6f(_0x15ec02__0x2e8991)][_0x10da6f(_0x15ec02__0x438c64)]("click",closeCategoryModal),DOM[_0x10da6f(_0x15ec02__0x3bddde)]&&DOM[_0x10da6f(_0x15ec02__0x3bddde)][_0x10da6f(_0x15ec02__0x330439)](_0x10da6f(461),closeCategoryModal),DOM[_0x10da6f(_0x15ec02__0x214b9e)]&&DOM[_0x10da6f(292)][_0x10da6f(352)](_0x10da6f(461),saveCategory),DOM.categoryModal&&DOM[_0x10da6f(_0x15ec02__0x5d0458)][_0x10da6f(352)](_0x10da6f(461),handleModalBackdrop),DOM[_0x10da6f(_0x15ec02__0x55f6f)]&&DOM[_0x10da6f(649)][_0x10da6f(_0x15ec02__0xc9bc7b)](_0x10da6f(_0x15ec02__0x3422d9),()=>openItemModal()),DOM[_0x10da6f(_0x15ec02__0x1b4a28)]&&DOM[_0x10da6f(_0x15ec02__0x1b4a28)].addEventListener(_0x10da6f(_0x15ec02__0x10bdfc),()=>openItemModal()),DOM[_0x10da6f(385)]&&DOM[_0x10da6f(_0x15ec02__0x3cef8e)][_0x10da6f(_0x15ec02__0x8add7a)](_0x10da6f(_0x15ec02__0x24cd0f),closeItemModal),DOM[_0x10da6f(609)]&&DOM[_0x10da6f(609)][_0x10da6f(_0x15ec02__0x3ff5d3)](_0x10da6f(461),closeItemModal),DOM[_0x10da6f(_0x15ec02__0x1a0fa7)]&&DOM.itemSave[_0x10da6f(_0x15ec02__0x5a913f)]("click",saveItem),DOM[_0x10da6f(_0x15ec02__0x1626bf)]&&DOM.itemModal[_0x10da6f(_0x15ec02__0x692a52)]("click",handleModalBackdrop),DOM[_0x10da6f(_0x15ec02__0x3e7948)]&&DOM[_0x10da6f(582)][_0x10da6f(_0x15ec02__0x2d5952)](_0x10da6f(461),handleCategoryAction),DOM[_0x10da6f(_0x15ec02__0x405e17)]&&DOM[_0x10da6f(465)][_0x10da6f(_0x15ec02__0x8add7a)]("click",handleItemAction),DOM[_0x10da6f(291)]&&DOM[_0x10da6f(291)][_0x10da6f(_0x15ec02__0x4316d0)](_0x10da6f(_0x15ec02__0x5ede7d),verifyBusinessLocation),DOM[_0x10da6f(_0x15ec02__0x457502)]&&DOM[_0x10da6f(_0x15ec02__0x572027)][_0x10da6f(352)](_0x10da6f(_0x15ec02__0x1e7555),toggleBusinessPassword),DOM.logoUrl&&(DOM[_0x10da6f(_0x15ec02__0x5d41f0)][_0x10da6f(_0x15ec02__0x57e1cb)]("input",previewLogo),DOM[_0x10da6f(_0x15ec02__0x5d41f0)][_0x10da6f(_0x15ec02__0x11c53c)](_0x10da6f(_0x15ec02__0x3d6777),previewLogo)),DOM.publishBusiness&&DOM[_0x10da6f(_0x15ec02__0x37e404)][_0x10da6f(_0x15ec02__0x330439)]("click",publishBusiness),DOM[_0x10da6f(_0x15ec02__0x3119d8)]&&DOM.openBusinessApp[_0x10da6f(352)](_0x10da6f(461),openPublishedBusiness),DOM[_0x10da6f(653)]&&DOM[_0x10da6f(_0x15ec02__0x364f29)][_0x10da6f(_0x15ec02__0x692a52)](_0x10da6f(_0x15ec02__0x2a496f),editBusiness),DOM[_0x10da6f(_0x15ec02__0x3a2b8b)]&&DOM[_0x10da6f(_0x15ec02__0x3fef4f)].addEventListener(_0x10da6f(461),createAnotherApp),document[_0x10da6f(_0x15ec02__0xbe8287)](_0x10da6f(_0x15ec02__0x2043a8),handleKeyboard),window.addEventListener("online",updateConnectionStatus),window[_0x10da6f(352)](_0x10da6f(_0x15ec02__0x37519f),updateConnectionStatus)}function toggleBusinessPassword(){const _0x55612b__0x481c17=881,_0x55612b__0x4bbe1c=919,_0x55612b__0x2ef70f=874,_0x55612b__0x336e97=721,_0x55612b__0x5a47b3=348,_0x55612b__0x10274f=874,_0x55612b__0x1d30f8=881,_0x55612b__0x5a4ec7=630,_0x55612b__0x3fcabc=717,_0x55612b__0x25f0aa=857,_0x55612b__0x4ce343=459,_0x55612b__0x5341f0=881,_0x55612b__0x43b96a=803,_0x55612b__0x5eb872=379,_0x130278=_0x4be7d1;if(!DOM.businessPassword||!DOM.businessPasswordToggle)return;const _0x35ae8a=DOM[_0x130278(_0x55612b__0x481c17)][_0x130278(_0x55612b__0x4bbe1c)](".password-toggle__icon"),_0x5348af=DOM.businessPassword.type===_0x130278(_0x55612b__0x2ef70f);DOM[_0x130278(_0x55612b__0x336e97)][_0x130278(_0x55612b__0x5a47b3)]=_0x130278(_0x5348af?747:_0x55612b__0x10274f),DOM[_0x130278(_0x55612b__0x1d30f8)][_0x130278(_0x55612b__0x5a4ec7)](_0x130278(_0x55612b__0x3fcabc),_0x130278(_0x5348af?_0x55612b__0x25f0aa:_0x55612b__0x4ce343)),DOM[_0x130278(_0x55612b__0x5341f0)].setAttribute(_0x130278(_0x55612b__0x43b96a),_0x5348af?"true":"false"),_0x35ae8a&&(_0x35ae8a[_0x130278(_0x55612b__0x5eb872)]=_0x5348af?"◉":"👁")}function initializeApplication(){state[_0x4be7d1(482)]=null,loadWebsiteData(),renderWebsiteSections(),renderWebsiteFooter(),updateWebsiteLocationDetails();!loadCategoryItemData()&&seedDefaultCategories(),renderCategories(),renderItems(),updateItemCategorySelect(),showTemplateSelection(),updateConnectionStatus(),hideSuccess(),hideValidation()}function selectTemplate(_0xcf259c){const _0x5db51e__0x5cfbe3=677,_0x5db51e__0xf0cab4=666,_0x5db51e__0x2a734d=343,_0x5db51e__0x948b56=750,_0x5db51e__0x20baef=802,_0x5db51e__0x561b51=771,_0x5db51e__0x399514=294,_0x5db51e__0x11667e=812,_0x5db51e__0x71970=687,_0x5db51e__0x19dc5f=931,_0x10ce22=_0x4be7d1;_0xcf259c===_0x10ce22(750)||_0xcf259c===_0x10ce22(771)?(state.selectedTemplate=_0xcf259c,hideSuccess(),hideValidation(),DOM.templateSection&&(DOM[_0x10ce22(_0x5db51e__0x5cfbe3)][_0x10ce22(343)]=!0),DOM[_0x10ce22(_0x5db51e__0xf0cab4)]&&(DOM[_0x10ce22(666)][_0x10ce22(_0x5db51e__0x2a734d)]=_0xcf259c!==_0x10ce22(_0x5db51e__0x948b56)),DOM.websiteSection&&(DOM[_0x10ce22(_0x5db51e__0x20baef)][_0x10ce22(_0x5db51e__0x2a734d)]=_0xcf259c!==_0x10ce22(_0x5db51e__0x561b51)),window[_0x10ce22(_0x5db51e__0x399514)]({top:0,behavior:_0x10ce22(_0x5db51e__0x11667e)}),showToast("WEB"===_0xcf259c?_0x10ce22(_0x5db51e__0x71970):"Ecommerce app selected.",_0x10ce22(_0x5db51e__0x19dc5f))):showToast("This template is not currently available.","error")}function showTemplateSelection(){const _0x5d2bbd__0x1ebd06=666,_0x5d2bbd__0x3b09db=666,_0x5d2bbd__0x4d5528=343,_0x5d2bbd__0x20d2d7=802,_0x5d2bbd__0xbe6d15=812,_0x50b506=_0x4be7d1;state[_0x50b506(482)]=null,DOM[_0x50b506(677)]&&(DOM.templateSection.hidden=!1),DOM[_0x50b506(_0x5d2bbd__0x1ebd06)]&&(DOM[_0x50b506(_0x5d2bbd__0x3b09db)][_0x50b506(_0x5d2bbd__0x4d5528)]=!0),DOM[_0x50b506(802)]&&(DOM[_0x50b506(_0x5d2bbd__0x20d2d7)][_0x50b506(_0x5d2bbd__0x4d5528)]=!0),hideSuccess(),hideValidation(),window[_0x50b506(294)]({top:0,behavior:_0x50b506(_0x5d2bbd__0xbe6d15)})}function seedDefaultCategories(){const _0x2eb102=_0x4be7d1;state.categories[_0x2eb102(738)]>0||(state.categories=DEFAULT_CATEGORIES[_0x2eb102(569)](_0x130f4d=>({id:createId(_0x2eb102(317)),name:_0x130f4d,items:[]})))}function saveCategoryItemData(){const _0x32ac42__0x2e23d4=885,_0x32ac42__0x5c613a=920,_0x32ac42__0x34f881=664,_0x32ac42__0x4866a9=748,_0x5a09f0=_0x4be7d1;try{localStorage[_0x5a09f0(_0x32ac42__0x2e23d4)](CONFIG.CATEGORY_ITEM_STORAGE_KEY,JSON[_0x5a09f0(_0x32ac42__0x5c613a)]({categories:state.categories}))}catch(_0x4c1374){console[_0x5a09f0(_0x32ac42__0x34f881)](_0x5a09f0(_0x32ac42__0x4866a9),_0x4c1374)}}function loadCategoryItemData(){const _0x28e6dc__0x3150b0=367,_0x28e6dc__0x9d7e53=267,_0x28e6dc__0x16a1a5=623,_0x28e6dc__0x144e07=407,_0x28e6dc__0x313336=664,_0x28e6dc__0x2a5de1=280,_0x3605eb=_0x4be7d1;try{const _0x27d2ee=localStorage[_0x3605eb(288)](CONFIG[_0x3605eb(_0x28e6dc__0x3150b0)]);if(!_0x27d2ee)return!1;const _0x1100e5=JSON[_0x3605eb(_0x28e6dc__0x9d7e53)](_0x27d2ee);return!(!_0x1100e5||!Array[_0x3605eb(_0x28e6dc__0x16a1a5)](_0x1100e5[_0x3605eb(_0x28e6dc__0x144e07)]))&&(state[_0x3605eb(407)]=_0x1100e5[_0x3605eb(_0x28e6dc__0x144e07)],!0)}catch(_0x216c05){return console[_0x3605eb(_0x28e6dc__0x313336)](_0x3605eb(_0x28e6dc__0x2a5de1),_0x216c05),!1}}function clearCategoryItemData(){const _0x1f0e36__0x8e12d8=651,_0x1f0e36__0x6189d9=367,_0x1f0e36__0xeb748b=664,_0x1f0e36__0x580872=327,_0x429e42=_0x4be7d1;try{localStorage[_0x429e42(_0x1f0e36__0x8e12d8)](CONFIG[_0x429e42(_0x1f0e36__0x6189d9)])}catch(_0x2a7fa8){console[_0x429e42(_0x1f0e36__0xeb748b)](_0x429e42(_0x1f0e36__0x580872),_0x2a7fa8)}}function openCategoryModal(_0x383439=null){const _0x480c01__0x20a05a=888,_0x480c01__0x4568c5=379,_0x480c01__0x3e8ded=292,_0x480c01__0x27c632=405,_0x480c01__0x179bd1=933,_0x480c01__0x11e851=759,_0x480c01__0x22eb83=888,_0x480c01__0x2e5b14=888,_0x480c01__0x364be6=806,_0x480c01__0x1f678d=933,_0x75014c=_0x4be7d1;if(state[_0x75014c(356)]=_0x383439,clearCategoryError(),_0x383439){const _0x20da76=findCategory(_0x383439);if(!_0x20da76)return;DOM.categoryModalTitle&&(DOM[_0x75014c(_0x480c01__0x20a05a)][_0x75014c(_0x480c01__0x4568c5)]=_0x75014c(755)),DOM.categorySave&&(DOM[_0x75014c(_0x480c01__0x3e8ded)][_0x75014c(379)]=_0x75014c(_0x480c01__0x27c632)),DOM[_0x75014c(_0x480c01__0x179bd1)]&&(DOM.categoryName[_0x75014c(_0x480c01__0x11e851)]=_0x20da76[_0x75014c(523)])}else DOM[_0x75014c(_0x480c01__0x22eb83)]&&(DOM[_0x75014c(_0x480c01__0x2e5b14)].textContent=_0x75014c(806)),DOM[_0x75014c(_0x480c01__0x3e8ded)]&&(DOM[_0x75014c(_0x480c01__0x3e8ded)][_0x75014c(379)]=_0x75014c(_0x480c01__0x364be6)),DOM[_0x75014c(_0x480c01__0x1f678d)]&&(DOM[_0x75014c(_0x480c01__0x179bd1)][_0x75014c(_0x480c01__0x11e851)]="");showModal(DOM.categoryModal),requestAnimationFrame(()=>{focusElement(DOM[_0x75014c(933)])})}function closeCategoryModal(){const _0x4a420e__0xfe2ad6=759,_0x4a420e__0x2939cd=419,_0x16626d=_0x4be7d1;state[_0x16626d(356)]=null,clearCategoryError(),DOM.categoryName&&(DOM.categoryName[_0x16626d(_0x4a420e__0xfe2ad6)]=""),hideModal(DOM[_0x16626d(_0x4a420e__0x2939cd)])}function saveCategory(){const _0x23f1fe__0x5576b5=933,_0x23f1fe__0x904b23=759,_0x23f1fe__0x2bcae3=356,_0x23f1fe__0x1d150c=411,_0x23f1fe__0x1be882=407,_0x23f1fe__0x9b64ba=523,_0x23f1fe__0x56a371=718,_0x23f1fe__0x595e09=328,_0x23f1fe__0x531a99=470,_0x23f1fe__0x562f1d=659,_0x23f1fe__0x3e6e3c=407,_0x23f1fe__0x4d0b34=345,_0x23f1fe__0x354f0b=317,_0x47908e=_0x4be7d1;clearCategoryError();const _0x3db028=normalizeText(DOM[_0x47908e(933)]?DOM[_0x47908e(_0x23f1fe__0x5576b5)][_0x47908e(_0x23f1fe__0x904b23)]:"",CONFIG.MAX_CATEGORY_NAME_LENGTH);if(!_0x3db028)return showCategoryError(_0x47908e(536)),void focusElement(DOM[_0x47908e(_0x23f1fe__0x5576b5)]);if(state[_0x47908e(_0x23f1fe__0x2bcae3)]){const _0x49f95c=findCategory(state.editingCategoryId);if(!_0x49f95c)return void showCategoryError(_0x47908e(_0x23f1fe__0x1d150c));return state[_0x47908e(_0x23f1fe__0x1be882)].some(_0x2c99c6=>_0x2c99c6.id!==_0x49f95c.id&&_0x2c99c6[_0x47908e(523)][_0x47908e(403)]()===_0x3db028[_0x47908e(403)]())?void showCategoryError("A category with this name already exists."):(_0x49f95c[_0x47908e(_0x23f1fe__0x9b64ba)]=_0x3db028,saveCategoryItemData(),closeCategoryModal(),renderCategories(),renderItems(),updateItemCategorySelect(),void showToast(_0x47908e(_0x23f1fe__0x56a371),_0x47908e(931)))}if(state[_0x47908e(_0x23f1fe__0x1be882)].length>=CONFIG[_0x47908e(_0x23f1fe__0x595e09)])return void showCategoryError(_0x47908e(_0x23f1fe__0x531a99)+CONFIG[_0x47908e(328)]+_0x47908e(924));state.categories.some(_0x2a24de=>_0x2a24de[_0x47908e(523)][_0x47908e(403)]()===_0x3db028[_0x47908e(403)]())?showCategoryError(_0x47908e(_0x23f1fe__0x562f1d)):(state[_0x47908e(_0x23f1fe__0x3e6e3c)][_0x47908e(_0x23f1fe__0x4d0b34)]({id:createId(_0x47908e(_0x23f1fe__0x354f0b)),name:_0x3db028,items:[]}),saveCategoryItemData(),closeCategoryModal(),renderCategories(),updateItemCategorySelect(),showToast(_0x47908e(835),"success"))}function handleCategoryAction(_0x586638){const _0x1a7d55__0x20533f=698,_0x1a7d55__0x1f911b=776,_0x1a7d55__0x26e892=757,_0x1a7d55__0xb835ff=710,_0x1a7d55__0x3d242c=302,_0x9ef5a3=_0x4be7d1,_0x523461=_0x586638[_0x9ef5a3(787)][_0x9ef5a3(_0x1a7d55__0x20533f)](_0x9ef5a3(_0x1a7d55__0x1f911b));if(!_0x523461)return;const _0x3b03a1=_0x523461[_0x9ef5a3(710)][_0x9ef5a3(_0x1a7d55__0x26e892)],_0x4a797c=_0x523461[_0x9ef5a3(_0x1a7d55__0xb835ff)][_0x9ef5a3(_0x1a7d55__0x3d242c)];_0x4a797c&&("edit"!==_0x3b03a1?_0x3b03a1!==_0x9ef5a3(880)?_0x3b03a1===_0x9ef5a3(604)&&openItemModal(_0x4a797c):deleteCategory(_0x4a797c):openCategoryModal(_0x4a797c))}function deleteCategory(_0x457e41){const _0x33fc70__0x2c0b8=738,_0x33fc70__0x3ad870=625,_0x33fc70__0x50a7de=555,_0x33fc70__0x5234f0=492,_0x33fc70__0x3fcd47=523,_0x33fc70__0x4fab04=856,_0x33fc70__0x2c5693=407,_0x33fc70__0x245b14=863,_0x33fc70__0x56d799=931,_0x3c7d83=_0x4be7d1,_0x523388=findCategory(_0x457e41);if(!_0x523388)return;const _0x491b46=_0x523388[_0x3c7d83(492)][_0x3c7d83(_0x33fc70__0x2c0b8)]>0?_0x3c7d83(_0x33fc70__0x3ad870)+_0x523388.name+_0x3c7d83(_0x33fc70__0x50a7de)+_0x523388[_0x3c7d83(_0x33fc70__0x5234f0)][_0x3c7d83(738)]+_0x3c7d83(824):'Delete "'+_0x523388[_0x3c7d83(_0x33fc70__0x3fcd47)]+'"?';window[_0x3c7d83(_0x33fc70__0x4fab04)](_0x491b46)&&(state[_0x3c7d83(_0x33fc70__0x2c5693)]=state.categories[_0x3c7d83(_0x33fc70__0x245b14)](_0x495b2c=>_0x495b2c.id!==_0x457e41),saveCategoryItemData(),renderCategories(),renderItems(),updateItemCategorySelect(),showToast("Category deleted.",_0x3c7d83(_0x33fc70__0x56d799)))}function renderCategories(){const _0x12a259__0x43510d=582,_0x12a259__0x47f35f=693,_0x12a259__0x4562f6=407,_0x12a259__0x140026=707,_0x12a259__0x4d1d1b=343,_0x12a259__0x3cf1b2=765,_0x36b9d5__0x45a963=413,_0x36b9d5__0x214d0f=879,_0x36b9d5__0x49c046=675,_0x36b9d5__0x28b1be=376,_0x36b9d5__0x2486ef=381,_0x36b9d5__0x221874=379,_0x36b9d5__0x198439=523,_0x36b9d5__0x1633f1=261,_0x36b9d5__0x3a17df=427,_0x36b9d5__0x1a00b5=738,_0x36b9d5__0x5afedb=457,_0x36b9d5__0x4af417=492,_0x36b9d5__0x390c2c=738,_0x36b9d5__0x21730f=927,_0x36b9d5__0xdc1864=273,_0x36b9d5__0x220427=633,_0x36b9d5__0x1abdcb=880,_0x36b9d5__0x3e0409=761,_0x36b9d5__0xbf3aae=761,_0x36b9d5__0x104803=582,_0x486163=_0x4be7d1;if(!DOM[_0x486163(582)])return;DOM[_0x486163(_0x12a259__0x43510d)][_0x486163(_0x12a259__0x47f35f)]();const _0x53132f=state[_0x486163(_0x12a259__0x4562f6)][_0x486163(738)]>0;DOM.categoryEmpty&&(DOM[_0x486163(_0x12a259__0x140026)][_0x486163(_0x12a259__0x4d1d1b)]=_0x53132f),_0x53132f&&state[_0x486163(407)][_0x486163(_0x12a259__0x3cf1b2)](_0x5487e3=>{const _0x1c2c66=_0x486163,_0x3cfb51=document[_0x1c2c66(_0x36b9d5__0x45a963)](_0x1c2c66(_0x36b9d5__0x214d0f));_0x3cfb51[_0x1c2c66(_0x36b9d5__0x49c046)]=_0x1c2c66(_0x36b9d5__0x28b1be);const _0x563290=document.createElement(_0x1c2c66(_0x36b9d5__0x214d0f));_0x563290[_0x1c2c66(_0x36b9d5__0x49c046)]=_0x1c2c66(_0x36b9d5__0x2486ef),_0x563290[_0x1c2c66(_0x36b9d5__0x221874)]=_0x5487e3[_0x1c2c66(_0x36b9d5__0x198439)];const _0x28d474=document[_0x1c2c66(413)]("div");_0x28d474.className=_0x1c2c66(_0x36b9d5__0x1633f1);const _0x4725ff=document.createElement(_0x1c2c66(_0x36b9d5__0x3a17df));_0x4725ff[_0x1c2c66(379)]=_0x5487e3[_0x1c2c66(492)][_0x1c2c66(_0x36b9d5__0x1a00b5)]+_0x1c2c66(_0x36b9d5__0x5afedb)+(1===_0x5487e3[_0x1c2c66(_0x36b9d5__0x4af417)][_0x1c2c66(_0x36b9d5__0x390c2c)]?"":"s");const _0x157209=createButton("Add Item",_0x1c2c66(273),"add-item",_0x5487e3.id),_0x52c90e=createButton(_0x1c2c66(_0x36b9d5__0x21730f),_0x1c2c66(_0x36b9d5__0xdc1864),_0x1c2c66(_0x36b9d5__0x220427),_0x5487e3.id),_0x5b33e8=createButton("Delete",_0x1c2c66(273),_0x1c2c66(_0x36b9d5__0x1abdcb),_0x5487e3.id);_0x28d474[_0x1c2c66(761)](_0x4725ff),_0x28d474[_0x1c2c66(761)](_0x157209),_0x28d474.appendChild(_0x52c90e),_0x28d474[_0x1c2c66(_0x36b9d5__0x3e0409)](_0x5b33e8),_0x3cfb51[_0x1c2c66(_0x36b9d5__0xbf3aae)](_0x563290),_0x3cfb51[_0x1c2c66(_0x36b9d5__0xbf3aae)](_0x28d474),DOM[_0x1c2c66(_0x36b9d5__0x104803)][_0x1c2c66(761)](_0x3cfb51)})}function openItemModal(_0x955191=null,_0x23a136=null){const _0x47fab5__0x525fdf=396,_0x47fab5__0x1bf108=842,_0x47fab5__0x20cdbf=373,_0x47fab5__0x23afd8=379,_0x47fab5__0xc83552=305,_0x47fab5__0x2c433d=605,_0x47fab5__0x1d56e4=605,_0x47fab5__0xd69d9b=379,_0x47fab5__0x20e01f=702,_0x47fab5__0x348b73=431,_0x47fab5__0x506114=770,_0x47fab5__0x1aa259=351,_0x47fab5__0x464892=279,_0x47fab5__0x555766=852,_0x47fab5__0x5b736b=872,_0x47fab5__0x31efe8=451,_0x47fab5__0x4b73d3=596,_0x47fab5__0x28484f=499,_0x47fab5__0x4327dc=860,_0x47fab5__0x17ef0e=600,_0x47fab5__0x15f508=600,_0x47fab5__0x39ef4e=605,_0x47fab5__0x14f9d6=872,_0x47fab5__0x45986f=873,_0xd497b6=_0x4be7d1;if(clearItemError(),state[_0xd497b6(_0x47fab5__0x525fdf)]=_0x23a136,state[_0xd497b6(_0x47fab5__0x1bf108)]=_0x955191,updateItemCategorySelect(),_0x23a136){const _0x442d79=findItem(_0x955191,_0x23a136);if(!_0x442d79)return;const _0x15e2de=_0x442d79[_0xd497b6(_0x47fab5__0x20cdbf)];DOM[_0xd497b6(600)]&&(DOM.itemModalTitle[_0xd497b6(_0x47fab5__0x23afd8)]=_0xd497b6(_0x47fab5__0xc83552)),DOM[_0xd497b6(_0x47fab5__0x2c433d)]&&(DOM[_0xd497b6(_0x47fab5__0x1d56e4)][_0xd497b6(_0x47fab5__0xd69d9b)]=_0xd497b6(_0x47fab5__0x20e01f)),setValue(DOM[_0xd497b6(_0x47fab5__0x348b73)],_0x15e2de.name),setValue(DOM[_0xd497b6(_0x47fab5__0x506114)],_0x15e2de.price),setValue(DOM[_0xd497b6(_0x47fab5__0x1aa259)],_0x15e2de.quantity),setValue(DOM[_0xd497b6(_0x47fab5__0x464892)],_0x15e2de[_0xd497b6(_0x47fab5__0x555766)]),setValue(DOM[_0xd497b6(_0x47fab5__0x5b736b)],_0x442d79[_0xd497b6(_0x47fab5__0x31efe8)].id),setValue(DOM[_0xd497b6(_0x47fab5__0x4b73d3)],_0x15e2de[_0xd497b6(715)]||""),setValue(DOM[_0xd497b6(_0x47fab5__0x28484f)],_0x15e2de[_0xd497b6(_0x47fab5__0x4327dc)]||"")}else DOM[_0xd497b6(_0x47fab5__0x17ef0e)]&&(DOM[_0xd497b6(_0x47fab5__0x15f508)].textContent=_0xd497b6(398)),DOM[_0xd497b6(_0x47fab5__0x39ef4e)]&&(DOM[_0xd497b6(_0x47fab5__0x2c433d)][_0xd497b6(379)]=_0xd497b6(398)),clearItemFields(),_0x955191&&DOM[_0xd497b6(_0x47fab5__0x14f9d6)]&&(DOM[_0xd497b6(_0x47fab5__0x14f9d6)].value=_0x955191);showModal(DOM[_0xd497b6(_0x47fab5__0x45986f)]),requestAnimationFrame(()=>{focusElement(DOM.itemName)})}function closeItemModal(){const _0x5c08d5__0x2b8593=842,_0x5c08d5__0x4ad607=873,_0x532e4e=_0x4be7d1;state[_0x532e4e(396)]=null,state[_0x532e4e(_0x5c08d5__0x2b8593)]=null,clearItemError(),clearItemFields(),hideModal(DOM[_0x532e4e(_0x5c08d5__0x4ad607)])}function saveItem(){const _0x5469db__0x2d967c=872,_0x5469db__0x3c14c1=759,_0x5469db__0x43f087=770,_0x5469db__0x5588f9=351,_0x5469db__0x35e252=759,_0x5469db__0x144ecb=279,_0x5469db__0xc29b0a=759,_0x5469db__0xbea5d1=596,_0x5469db__0x621296=596,_0x5469db__0x19ae8c=358,_0x5469db__0x5c6e80=598,_0x5469db__0x19706d=411,_0x5469db__0x448104=431,_0x5469db__0x4a3271=537,_0x5469db__0x21658c=770,_0x5469db__0x1a5b79=851,_0x5469db__0x1c0bf3=499,_0x5469db__0x41fc00=396,_0x5469db__0x20bf10=396,_0x5469db__0x318867=492,_0x5469db__0x58d9bc=373,_0x5469db__0x4ab3e3=929,_0x5469db__0x4b7c5a=263,_0x5469db__0x2ab7b=852,_0x5469db__0x2a2b83=860,_0x5469db__0x1fed7a=931,_0x5469db__0x264126=947,_0x5469db__0x365b46=470,_0x5469db__0x555f5c=947,_0x5469db__0x27137b=738,_0x5469db__0x2f5d17=734,_0x5469db__0x3392cc=301,_0x5469db__0x126a72=492,_0x5469db__0xde0850=484,_0x5469db__0x4e45eb=676,_0x5469db__0x5c361b=345,_0x5469db__0x1c84ec=847,_0x14dfd5=_0x4be7d1;clearItemError();const _0x4bee96=DOM[_0x14dfd5(_0x5469db__0x2d967c)]?DOM[_0x14dfd5(_0x5469db__0x2d967c)][_0x14dfd5(_0x5469db__0x3c14c1)]:"",_0xc1822d=normalizeText(DOM[_0x14dfd5(431)]?DOM[_0x14dfd5(431)][_0x14dfd5(_0x5469db__0x3c14c1)]:"",CONFIG.MAX_ITEM_NAME_LENGTH),_0x5eda4f=parseNumber(DOM[_0x14dfd5(_0x5469db__0x43f087)]?DOM[_0x14dfd5(_0x5469db__0x43f087)][_0x14dfd5(759)]:""),_0x2fe962=parseNumber(DOM[_0x14dfd5(351)]?DOM[_0x14dfd5(_0x5469db__0x5588f9)][_0x14dfd5(_0x5469db__0x35e252)]:""),_0x1b8908=normalizeText(DOM[_0x14dfd5(_0x5469db__0x144ecb)]?DOM.itemUnit[_0x14dfd5(_0x5469db__0xc29b0a)]:"",50),_0x42788d=normalizeText(DOM[_0x14dfd5(_0x5469db__0xbea5d1)]?DOM[_0x14dfd5(_0x5469db__0x621296)].value:"",CONFIG[_0x14dfd5(_0x5469db__0x19ae8c)]),_0x1485ac=normalizeText(DOM[_0x14dfd5(499)]?DOM[_0x14dfd5(499)][_0x14dfd5(_0x5469db__0x3c14c1)]:"",CONFIG[_0x14dfd5(_0x5469db__0x5c6e80)]);if(!_0x4bee96)return showItemError(_0x14dfd5(443)),void focusElement(DOM[_0x14dfd5(_0x5469db__0x2d967c)]);const _0x13a5b4=findCategory(_0x4bee96);if(!_0x13a5b4)return void showItemError(_0x14dfd5(_0x5469db__0x19706d));if(!_0xc1822d)return showItemError(_0x14dfd5(565)),void focusElement(DOM[_0x14dfd5(_0x5469db__0x448104)]);if(null===_0x5eda4f||_0x5eda4f<0)return showItemError(_0x14dfd5(_0x5469db__0x4a3271)),void focusElement(DOM[_0x14dfd5(_0x5469db__0x21658c)]);if(null!==_0x2fe962&&_0x2fe962<0)return showItemError(_0x14dfd5(_0x5469db__0x1a5b79)),void focusElement(DOM[_0x14dfd5(_0x5469db__0x5588f9)]);if(_0x1485ac&&!isValidYoutubeUrl(_0x1485ac))return showItemError("Please enter a valid YouTube or YouTube Shorts URL."),void focusElement(DOM[_0x14dfd5(_0x5469db__0x1c0bf3)]);if(state[_0x14dfd5(_0x5469db__0x41fc00)]){const _0x289e00=findItem(state[_0x14dfd5(842)],state[_0x14dfd5(_0x5469db__0x20bf10)]);if(!_0x289e00)return void showItemError("The selected item could not be found.");return _0x13a5b4[_0x14dfd5(_0x5469db__0x318867)][_0x14dfd5(484)](_0x1b8f92=>_0x1b8f92.id!==_0x289e00[_0x14dfd5(373)].id&&_0x1b8f92.name[_0x14dfd5(403)]()===_0xc1822d[_0x14dfd5(403)]())?void showItemError(_0x14dfd5(676)):(_0x289e00[_0x14dfd5(_0x5469db__0x58d9bc)][_0x14dfd5(523)]=_0xc1822d,_0x289e00[_0x14dfd5(373)][_0x14dfd5(_0x5469db__0x4ab3e3)]=_0x5eda4f,_0x289e00[_0x14dfd5(_0x5469db__0x58d9bc)][_0x14dfd5(_0x5469db__0x4b7c5a)]=null===_0x2fe962?0:_0x2fe962,_0x289e00.item[_0x14dfd5(_0x5469db__0x2ab7b)]=_0x1b8908,_0x289e00[_0x14dfd5(373)].description=_0x42788d,_0x289e00[_0x14dfd5(_0x5469db__0x58d9bc)][_0x14dfd5(_0x5469db__0x2a2b83)]=_0x1485ac,saveCategoryItemData(),closeItemModal(),renderItems(),void showToast("Item updated.",_0x14dfd5(_0x5469db__0x1fed7a)))}if(getTotalItemCount()>=CONFIG[_0x14dfd5(_0x5469db__0x264126)])return void showItemError(_0x14dfd5(_0x5469db__0x365b46)+CONFIG[_0x14dfd5(_0x5469db__0x555f5c)]+" total items are allowed.");if(_0x13a5b4.items[_0x14dfd5(_0x5469db__0x27137b)]>=CONFIG[_0x14dfd5(_0x5469db__0x2f5d17)])return void showItemError(_0x14dfd5(_0x5469db__0x365b46)+CONFIG[_0x14dfd5(_0x5469db__0x2f5d17)]+_0x14dfd5(_0x5469db__0x3392cc));_0x13a5b4[_0x14dfd5(_0x5469db__0x126a72)][_0x14dfd5(_0x5469db__0xde0850)](_0x21746f=>_0x21746f.name[_0x14dfd5(403)]()===_0xc1822d.toLowerCase())?showItemError(_0x14dfd5(_0x5469db__0x4e45eb)):(_0x13a5b4[_0x14dfd5(_0x5469db__0x126a72)][_0x14dfd5(_0x5469db__0x5c361b)]({id:createId("item"),name:_0xc1822d,price:_0x5eda4f,quantity:null===_0x2fe962?0:_0x2fe962,unit:_0x1b8908,description:_0x42788d,youtubeUrl:_0x1485ac}),saveCategoryItemData(),closeItemModal(),renderItems(),showToast(_0x14dfd5(_0x5469db__0x1c84ec),_0x14dfd5(_0x5469db__0x1fed7a)))}function handleItemAction(_0x478492){const _0x287fd2__0x39f430=698,_0x287fd2__0x18bf2d=710,_0x287fd2__0x5d2dfc=562,_0x287fd2__0x4b99d2=633,_0x343a8c=_0x4be7d1,_0x1057db=_0x478492[_0x343a8c(787)][_0x343a8c(_0x287fd2__0x39f430)]("[data-item-action]");if(!_0x1057db)return;const _0x4cd141=_0x1057db[_0x343a8c(_0x287fd2__0x18bf2d)][_0x343a8c(_0x287fd2__0x5d2dfc)],_0xb96b9f=_0x1057db[_0x343a8c(_0x287fd2__0x18bf2d)][_0x343a8c(302)],_0x2e1b90=_0x1057db[_0x343a8c(_0x287fd2__0x18bf2d)][_0x343a8c(340)];_0xb96b9f&&_0x2e1b90&&(_0x4cd141!==_0x343a8c(_0x287fd2__0x4b99d2)?_0x4cd141===_0x343a8c(880)&&deleteItem(_0xb96b9f,_0x2e1b90):openItemModal(_0xb96b9f,_0x2e1b90))}function deleteItem(_0x4681ef,_0x37404f){const _0x19b01a__0x1cf8f1=492,_0x19b01a__0x38b523=451,_0x19b01a__0x37a1a7=863,_0x4e5f3d=_0x4be7d1,_0x5e9c88=findItem(_0x4681ef,_0x37404f);_0x5e9c88&&window[_0x4e5f3d(856)](_0x4e5f3d(625)+_0x5e9c88[_0x4e5f3d(373)].name+'"?')&&(_0x5e9c88[_0x4e5f3d(451)][_0x4e5f3d(_0x19b01a__0x1cf8f1)]=_0x5e9c88[_0x4e5f3d(_0x19b01a__0x38b523)].items[_0x4e5f3d(_0x19b01a__0x37a1a7)](_0x5ca4ff=>_0x5ca4ff.id!==_0x37404f),saveCategoryItemData(),renderItems(),showToast("Item deleted.","success"))}function renderItems(){const _0x21ee4d__0x17f42a=465,_0x21ee4d__0x3558de=487,_0x21ee4d__0xfa7e72=343,_0x21ee4d__0x32f960=765,_0x55544f__0x2ff519=492,_0x55544f__0x204e81=765,_0x4469ba__0x2f14f4=413,_0x4469ba__0x58b940=610,_0x4469ba__0x322e54=854,_0x4469ba__0x5e408b=879,_0x4469ba__0x313e9a=467,_0x4469ba__0x21576c=263,_0x4469ba__0xd9d1fb=576,_0x4469ba__0x3f0a26=263,_0x4469ba__0x475c3d=379,_0x4469ba__0x2d499d=882,_0x4469ba__0x2e27e4=761,_0x4469ba__0x4d84dd=413,_0x4469ba__0x27e827=925,_0x4469ba__0x3dc3d8=379,_0x4469ba__0x4e5bc0=860,_0x4469ba__0x58a34b=675,_0x4469ba__0x4b8fd7=361,_0x4469ba__0xd02e89=428,_0x4469ba__0xcc7528=879,_0x4469ba__0x2d467a=544,_0x4469ba__0x4da74b=927,_0x4469ba__0x134f2b=420,_0xdeb8e4=_0x4be7d1;if(!DOM[_0xdeb8e4(_0x21ee4d__0x17f42a)])return;DOM[_0xdeb8e4(_0x21ee4d__0x17f42a)][_0xdeb8e4(693)]();const _0x5b6ebb=getTotalItemCount();DOM[_0xdeb8e4(_0x21ee4d__0x3558de)]&&(DOM.itemEmpty[_0xdeb8e4(_0x21ee4d__0xfa7e72)]=_0x5b6ebb>0),0!==_0x5b6ebb&&state.categories[_0xdeb8e4(_0x21ee4d__0x32f960)](_0x653447=>{const _0x15762f=_0xdeb8e4;_0x653447[_0x15762f(_0x55544f__0x2ff519)][_0x15762f(_0x55544f__0x204e81)](_0x294824=>{const _0x21bd9c=_0x15762f,_0x1a6b33=document[_0x21bd9c(_0x4469ba__0x2f14f4)]("div");_0x1a6b33[_0x21bd9c(675)]=_0x21bd9c(_0x4469ba__0x58b940);const _0x2787eb=document[_0x21bd9c(_0x4469ba__0x2f14f4)]("div");_0x2787eb.className=_0x21bd9c(_0x4469ba__0x322e54);const _0x429afd=document.createElement(_0x21bd9c(_0x4469ba__0x5e408b));_0x429afd.className=_0x21bd9c(_0x4469ba__0x313e9a),_0x429afd.textContent=_0x294824.name;const _0x49fee7=document[_0x21bd9c(_0x4469ba__0x2f14f4)](_0x21bd9c(_0x4469ba__0x5e408b));_0x49fee7.className=_0x21bd9c(552);const _0x19620c=_0x294824[_0x21bd9c(_0x4469ba__0x21576c)]>0?_0x21bd9c(_0x4469ba__0xd9d1fb)+formatNumber(_0x294824[_0x21bd9c(_0x4469ba__0x3f0a26)])+" "+(_0x294824.unit||""):"";if(_0x49fee7[_0x21bd9c(_0x4469ba__0x475c3d)]=_0x653447[_0x21bd9c(523)]+_0x21bd9c(_0x4469ba__0x2d499d)+formatNumber(_0x294824.price)+_0x19620c,_0x2787eb[_0x21bd9c(_0x4469ba__0x2e27e4)](_0x429afd),_0x2787eb.appendChild(_0x49fee7),_0x294824.description){const _0x1f4bc2=document[_0x21bd9c(_0x4469ba__0x4d84dd)](_0x21bd9c(879));_0x1f4bc2.className=_0x21bd9c(_0x4469ba__0x27e827),_0x1f4bc2[_0x21bd9c(_0x4469ba__0x3dc3d8)]=_0x294824[_0x21bd9c(715)],_0x2787eb[_0x21bd9c(761)](_0x1f4bc2)}if(_0x294824[_0x21bd9c(_0x4469ba__0x4e5bc0)]){const _0x323d9a=document.createElement(_0x21bd9c(_0x4469ba__0x5e408b));_0x323d9a[_0x21bd9c(_0x4469ba__0x58a34b)]=_0x21bd9c(_0x4469ba__0x4b8fd7),_0x323d9a[_0x21bd9c(379)]=_0x21bd9c(_0x4469ba__0xd02e89),_0x2787eb[_0x21bd9c(761)](_0x323d9a)}const _0x4d3493=document[_0x21bd9c(413)](_0x21bd9c(_0x4469ba__0xcc7528));_0x4d3493[_0x21bd9c(_0x4469ba__0x58a34b)]=_0x21bd9c(_0x4469ba__0x2d467a);const _0x31afb0=createButton(_0x21bd9c(_0x4469ba__0x4da74b),_0x21bd9c(420),"edit",_0x653447.id,_0x294824.id),_0x4864f8=createButton(_0x21bd9c(905),_0x21bd9c(_0x4469ba__0x134f2b),_0x21bd9c(880),_0x653447.id,_0x294824.id);_0x4d3493[_0x21bd9c(761)](_0x31afb0),_0x4d3493.appendChild(_0x4864f8),_0x1a6b33[_0x21bd9c(_0x4469ba__0x2e27e4)](_0x2787eb),_0x1a6b33.appendChild(_0x4d3493),DOM[_0x21bd9c(465)][_0x21bd9c(_0x4469ba__0x2e27e4)](_0x1a6b33)})})}function updateItemCategorySelect(){const _0x578c8e__0x444b1b=872,_0x578c8e__0x3ca64c=872,_0x578c8e__0x28a8c3=693,_0x578c8e__0x12fcf0=413,_0x578c8e__0x2a4218=759,_0x578c8e__0x94a5a1=379,_0x578c8e__0x466130=761,_0x578c8e__0x2bb062=765,_0x578c8e__0x49bc61=484,_0x4e7c19__0x320a13=441,_0x4e7c19__0x5a4fc8=759,_0x4e7c19__0x7e6d01=379,_0x4e7c19__0x33d23d=523,_0x4e7c19__0x4565c3=872,_0x4e7c19__0x383b6e=761,_0x4747d4=_0x4be7d1;if(!DOM[_0x4747d4(_0x578c8e__0x444b1b)])return;const _0x3be525=DOM[_0x4747d4(_0x578c8e__0x3ca64c)].value;DOM[_0x4747d4(_0x578c8e__0x444b1b)][_0x4747d4(_0x578c8e__0x28a8c3)]();const _0x39a068=document[_0x4747d4(_0x578c8e__0x12fcf0)]("option");_0x39a068[_0x4747d4(_0x578c8e__0x2a4218)]="",_0x39a068[_0x4747d4(_0x578c8e__0x94a5a1)]="Select category",DOM[_0x4747d4(_0x578c8e__0x444b1b)][_0x4747d4(_0x578c8e__0x466130)](_0x39a068),state.categories[_0x4747d4(_0x578c8e__0x2bb062)](_0x575e7b=>{const _0x39cb5a=_0x4747d4,_0x1be510=document[_0x39cb5a(413)](_0x39cb5a(_0x4e7c19__0x320a13));_0x1be510[_0x39cb5a(_0x4e7c19__0x5a4fc8)]=_0x575e7b.id,_0x1be510[_0x39cb5a(_0x4e7c19__0x7e6d01)]=_0x575e7b[_0x39cb5a(_0x4e7c19__0x33d23d)],DOM[_0x39cb5a(_0x4e7c19__0x4565c3)][_0x39cb5a(_0x4e7c19__0x383b6e)](_0x1be510)}),state.categories[_0x4747d4(_0x578c8e__0x49bc61)](_0x3bc3d4=>_0x3bc3d4.id===_0x3be525)&&(DOM.itemCategory[_0x4747d4(_0x578c8e__0x2a4218)]=_0x3be525)}async function verifyBusinessLocation(){const _0x30e6b9__0x2c2bf2=864,_0x30e6b9__0x3908fe=674,_0x30e6b9__0x49f2c9=453,_0x30e6b9__0x47c02c=468,_0x30e6b9__0xdb3747=790,_0x30e6b9__0x2ad95b=612,_0x30e6b9__0x1c97e2=612,_0x30e6b9__0x145de1=520,_0x30e6b9__0x1aa04f=366,_0x30e6b9__0x31def0=283,_0x30e6b9__0x2307d1=567,_0x30e6b9__0x45ba81=527,_0x30e6b9__0x3b0861=291,_0x44fa71=_0x4be7d1;if(navigator.geolocation){setButtonBusy(DOM[_0x44fa71(291)],!0,"Verifying..."),setLocationText(_0x44fa71(_0x30e6b9__0x3908fe),!1);try{const _0x439799=await getCurrentPosition(),_0x590c7d=Number(_0x439799[_0x44fa71(_0x30e6b9__0x49f2c9)][_0x44fa71(_0x30e6b9__0x47c02c)]),_0xa7cdd=Number(_0x439799.coords[_0x44fa71(_0x30e6b9__0xdb3747)]),_0x52e01f=Number(_0x439799.coords.accuracy);if(!Number[_0x44fa71(_0x30e6b9__0x2ad95b)](_0x590c7d)||!Number[_0x44fa71(_0x30e6b9__0x1c97e2)](_0xa7cdd))throw new Error("The browser returned an invalid location.");if(_0x590c7d<-90||_0x590c7d>90||_0xa7cdd<-180||_0xa7cdd>180)throw new Error("The returned coordinates are invalid.");if(!Number.isFinite(_0x52e01f)||_0x52e01f<=0)throw new Error(_0x44fa71(_0x30e6b9__0x145de1));if(_0x52e01f>CONFIG[_0x44fa71(_0x30e6b9__0x1aa04f)])throw new Error(_0x44fa71(_0x30e6b9__0x31def0)+Math.round(_0x52e01f)+_0x44fa71(906));const _0x347156=(new Date)[_0x44fa71(904)]();state.location={verified:!0,latitude:_0x590c7d,longitude:_0xa7cdd,accuracy:_0x52e01f,verifiedAt:_0x347156},updateLocationDetails(),setLocationText(_0x44fa71(_0x30e6b9__0x2307d1)+Math[_0x44fa71(436)](_0x52e01f)+_0x44fa71(_0x30e6b9__0x45ba81),!0),showToast("Business location verified.","success")}catch(_0x42b9a6){state.location={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},updateLocationDetails(),setLocationError(getLocationErrorMessage(_0x42b9a6))}finally{setButtonBusy(DOM[_0x44fa71(_0x30e6b9__0x3b0861)],!1)}}else setLocationError(_0x44fa71(_0x30e6b9__0x2c2bf2))}function getCurrentPosition(){const _0x9fe02e__0x461df9=945,_0x9fe02e__0x4890ee=315,_0x9fe02e__0x53df8e=384,_0x317918__0x18a8df=453,_0x317918__0xf89c91=366,_0x317918__0x5d2abe=538,_0x105d20__0x4f0959=940,_0x3f330c__0x1a0749=561;return new Promise((_0x475f48,_0x22abea)=>{const _0x34cb16__0x414c16=612,_0x34cb16__0x46737d=940,_0x4a83bf=_0x2044;let _0x36759b=null,_0x3f3b80=!1,_0x2d3801=null,_0x4ad3b3=null;const _0x14e8f5=()=>{const _0x2d71fb=_0x2044;null!==_0x4ad3b3&&(window[_0x2d71fb(331)](_0x4ad3b3),_0x4ad3b3=null),null!==_0x2d3801&&(navigator[_0x2d71fb(475)][_0x2d71fb(_0x3f330c__0x1a0749)](_0x2d3801),_0x2d3801=null)},_0x5655dd=_0xbbf888=>{_0x3f3b80||(_0x3f3b80=!0,_0x14e8f5(),_0x475f48(_0xbbf888))},_0x3fc122=_0x40be1b=>{_0x3f3b80||(_0x3f3b80=!0,_0x14e8f5(),_0x22abea(_0x40be1b))},_0x2013ce=_0x2e77ac=>{const _0x4300e6=_0x2044,_0xa37d1f=Number(_0x2e77ac&&_0x2e77ac[_0x4300e6(453)]&&_0x2e77ac.coords[_0x4300e6(940)]);!Number[_0x4300e6(_0x34cb16__0x414c16)](_0xa37d1f)||_0xa37d1f<=0||((!_0x36759b||_0xa37d1f<Number(_0x36759b.coords[_0x4300e6(_0x34cb16__0x46737d)]))&&(_0x36759b=_0x2e77ac),_0xa37d1f<=CONFIG[_0x4300e6(366)]&&_0x5655dd(_0x2e77ac))},_0x1c59e7=_0x39991d=>{const _0x15cf63=_0x2044;_0x36759b&&Number(_0x36759b[_0x15cf63(453)][_0x15cf63(_0x105d20__0x4f0959)])<=CONFIG.MAX_LOCATION_ACCURACY_METERS?_0x5655dd(_0x36759b):_0x3fc122(_0x39991d)};_0x4ad3b3=window[_0x4a83bf(_0x9fe02e__0x461df9)](()=>{const _0x26b675=_0x4a83bf;_0x36759b&&Number(_0x36759b[_0x26b675(_0x317918__0x18a8df)].accuracy)<=CONFIG[_0x26b675(_0x317918__0xf89c91)]?_0x5655dd(_0x36759b):_0x3fc122(new Error(_0x26b675(_0x317918__0x5d2abe)))},CONFIG[_0x4a83bf(_0x9fe02e__0x4890ee)]);try{_0x2d3801=navigator.geolocation[_0x4a83bf(_0x9fe02e__0x53df8e)](_0x2013ce,_0x1c59e7,{enableHighAccuracy:!0,timeout:CONFIG.LOCATION_TIMEOUT_MS,maximumAge:0})}catch(_0x7f660d){_0x3fc122(_0x7f660d)}})}function updateLocationDetails(){const _0x4ef693__0x36bd0c=754,_0x4ef693__0x31f398=343,_0x4ef693__0x4c63c0=902,_0x4ef693__0x239ca9=518,_0x4ef693__0x2569a3=518,_0x4ef693__0x37c94c=902,_0x4ef693__0x32a3b4=826,_0x4ef693__0x43b777=809,_0x4ef693__0x1113e9=379,_0x4ef693__0x3a9043=790,_0x4ef693__0xbf2845=379,_0x238f3f=_0x4be7d1;DOM[_0x238f3f(_0x4ef693__0x36bd0c)]&&(DOM[_0x238f3f(_0x4ef693__0x36bd0c)][_0x238f3f(_0x4ef693__0x31f398)]=!state[_0x238f3f(_0x4ef693__0x4c63c0)][_0x238f3f(826)]),DOM[_0x238f3f(_0x4ef693__0x239ca9)]&&(DOM[_0x238f3f(_0x4ef693__0x2569a3)][_0x238f3f(379)]=state[_0x238f3f(_0x4ef693__0x37c94c)][_0x238f3f(_0x4ef693__0x32a3b4)]?formatCoordinate(state[_0x238f3f(_0x4ef693__0x37c94c)].latitude):"—"),DOM[_0x238f3f(_0x4ef693__0x43b777)]&&(DOM.locationLongitude[_0x238f3f(_0x4ef693__0x1113e9)]=state[_0x238f3f(_0x4ef693__0x37c94c)].verified?formatCoordinate(state.location[_0x238f3f(_0x4ef693__0x3a9043)]):"—"),DOM[_0x238f3f(299)]&&(DOM[_0x238f3f(299)][_0x238f3f(_0x4ef693__0xbf2845)]=state[_0x238f3f(_0x4ef693__0x4c63c0)].verified?formatDateTime(state.location.verifiedAt):"—")}function setLocationText(_0x245f15,_0x41c01e){const _0x4c5d5d__0x28eadb=379,_0x4c5d5d__0x248236=532,_0x4c5d5d__0x3156b=460,_0x4c5d5d__0x12b49e=627,_0x4c5d5d__0x51482b=293,_0x4c5d5d__0x241cfd=517,_0x1103db=_0x4be7d1;DOM[_0x1103db(270)]&&(DOM.locationStatusText[_0x1103db(_0x4c5d5d__0x28eadb)]=_0x245f15),DOM.locationStatus&&(DOM[_0x1103db(805)][_0x1103db(293)][_0x1103db(_0x4c5d5d__0x248236)](_0x1103db(517),Boolean(_0x41c01e)),DOM[_0x1103db(805)].classList.toggle(_0x1103db(_0x4c5d5d__0x3156b),!1)),DOM[_0x1103db(627)]&&DOM[_0x1103db(_0x4c5d5d__0x12b49e)][_0x1103db(_0x4c5d5d__0x51482b)][_0x1103db(_0x4c5d5d__0x248236)](_0x1103db(_0x4c5d5d__0x241cfd),Boolean(_0x41c01e))}function setLocationError(_0x22e4d9){const _0x15b547__0x559713=805,_0x15b547__0x1b1d52=805,_0x15b547__0x3354cf=293,_0x15b547__0x142df4=517,_0x15b547__0x2da9ef=805,_0x15b547__0x112a58=509,_0x15b547__0x7c571a=460,_0x15b547__0xb12885=705,_0x45d463=_0x4be7d1;DOM[_0x45d463(270)]&&(DOM.locationStatusText.textContent=_0x22e4d9),DOM[_0x45d463(_0x15b547__0x559713)]&&(DOM[_0x45d463(_0x15b547__0x1b1d52)][_0x45d463(_0x15b547__0x3354cf)].remove(_0x45d463(_0x15b547__0x142df4)),DOM[_0x45d463(_0x15b547__0x2da9ef)].classList[_0x45d463(_0x15b547__0x112a58)](_0x45d463(_0x15b547__0x7c571a))),showToast(_0x22e4d9,_0x45d463(_0x15b547__0xb12885))}function formatCoordinate(_0x25e886){const _0x249cbf=_0x4be7d1;return Number(_0x25e886)[_0x249cbf(893)](6)}function formatDateTime(_0x5d4e11){const _0x3ad8c1__0x5f4e82=626,_0x3ad8c1__0x15e5a7=804,_0x3ad8c1__0x4e4ea6=861,_0x3ad8c1__0x47751d=890,_0x3ad8c1__0x4a5067=899,_0x5981dc=_0x4be7d1,_0x134a57=new Date(_0x5d4e11);return Number[_0x5981dc(_0x3ad8c1__0x5f4e82)](_0x134a57[_0x5981dc(_0x3ad8c1__0x15e5a7)]())?"—":_0x134a57[_0x5981dc(_0x3ad8c1__0x4e4ea6)](_0x5981dc(_0x3ad8c1__0x47751d),{dateStyle:_0x5981dc(485),timeStyle:_0x5981dc(_0x3ad8c1__0x4a5067)})}function previewLogo(){const _0x57793e__0x5a561b=496,_0x57793e__0x593009=759,_0x57793e__0x1b127d=577,_0x57793e__0xb3ed2d=774,_0x57793e__0x3deab7=343,_0x57793e__0x980b41=723,_0x57793e__0x424391=774,_0x57793e__0x19d8ce=336,_0x57793e__0x3c7424=756,_0x3a22f6__0x4f1f70=386,_0x400fab__0x53a19e=692,_0x3c817c=_0x4be7d1,_0x5127f1=++state.logoPreviewRequest,_0x1fe949=normalizeText(DOM[_0x3c817c(496)]?DOM[_0x3c817c(_0x57793e__0x5a561b)][_0x3c817c(_0x57793e__0x593009)]:"",CONFIG[_0x3c817c(_0x57793e__0x1b127d)]);_0x1fe949&&isValidHttpsUrl(_0x1fe949)?DOM.logoPreview&&DOM[_0x3c817c(_0x57793e__0xb3ed2d)]&&(DOM.logoPreview[_0x3c817c(_0x57793e__0x3deab7)]=!1,DOM.logoPreviewImage[_0x3c817c(471)]=_0x3c817c(_0x57793e__0x980b41),DOM[_0x3c817c(774)][_0x3c817c(756)]="",DOM[_0x3c817c(_0x57793e__0x424391)][_0x3c817c(_0x57793e__0x19d8ce)]=()=>{const _0x5b464d=_0x3c817c;_0x5127f1===state.logoPreviewRequest&&(DOM[_0x5b464d(_0x400fab__0x53a19e)][_0x5b464d(343)]=!1)},DOM[_0x3c817c(_0x57793e__0xb3ed2d)][_0x3c817c(391)]=()=>{_0x5127f1===state[_0x3c817c(_0x3a22f6__0x4f1f70)]&&hideLogoPreview()},DOM.logoPreviewImage[_0x3c817c(_0x57793e__0x3c7424)]=_0x1fe949):hideLogoPreview()}function hideLogoPreview(){const _0x2305fd__0x1d7102=343,_0xf791c7=_0x4be7d1;DOM[_0xf791c7(692)]&&(DOM[_0xf791c7(692)][_0xf791c7(_0x2305fd__0x1d7102)]=!0),DOM.logoPreviewImage&&DOM.logoPreviewImage.removeAttribute("src")}function validateBuilder(){const _0x47ca1d__0x1b6036=821,_0x47ca1d__0xb3f51=681,_0x47ca1d__0x2c67e3=869,_0x47ca1d__0x3e896c=548,_0x47ca1d__0x1feb20=482,_0x47ca1d__0x5a832f=345,_0x47ca1d__0x2cb8d4=583,_0x47ca1d__0x482b09=345,_0x47ca1d__0x13e565=848,_0x47ca1d__0x470655=345,_0x47ca1d__0x284cdc=902,_0x47ca1d__0x5b5e07=826,_0x47ca1d__0xc1e2a9=612,_0x47ca1d__0x52c199=468,_0x47ca1d__0x1d4e01=902,_0x47ca1d__0x318495=345,_0x47ca1d__0xade58=591,_0x47ca1d__0x43b30e=902,_0x47ca1d__0x58d3d8=366,_0x47ca1d__0x32732e=392,_0x47ca1d__0x4cb5e4=559,_0x47ca1d__0x5f0d38=634,_0x47ca1d__0x9bd6e7=375,_0x47ca1d__0x47e3ba=765,_0x47ca1d__0x2f4a8b=947,_0x47ca1d__0x17597b=470,_0x47ca1d__0x12b3ea=838,_0x47ca1d__0x48c95f=738,_0x51bfbb__0x40d6f0=586,_0x51bfbb__0x60a626=734,_0x51bfbb__0x581638=911,_0x51bfbb__0x9c18ca=430,_0x51bfbb__0x1a0cbb=492,_0x51bfbb__0x462410=765,_0x4df6dd=_0x4be7d1,_0x1ef3a9=[],_0x339785=getValue(DOM[_0x4df6dd(942)]),_0xaeb551=(getValue(DOM.tagline),getValue(DOM.address)),_0x29e918=getValue(DOM[_0x4df6dd(_0x47ca1d__0x1b6036)]),_0x4146a7=getValue(DOM[_0x4df6dd(_0x47ca1d__0xb3f51)]),_0x4b5386=getValue(DOM[_0x4df6dd(_0x47ca1d__0x2c67e3)]),_0x121770=getValue(DOM.logoUrl),_0x384efa=getValue(DOM[_0x4df6dd(_0x47ca1d__0x3e896c)]),_0x284cb4=DOM.businessPassword?DOM.businessPassword[_0x4df6dd(759)]:"";!state[_0x4df6dd(_0x47ca1d__0x1feb20)]&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x5a832f)](_0x4df6dd(670)),state[_0x4df6dd(_0x47ca1d__0x1feb20)]!==CONFIG[_0x4df6dd(_0x47ca1d__0x2cb8d4)]&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x482b09)]("The selected application template is invalid."),!_0x384efa&&_0x1ef3a9.push("Please enter your Subscription ID."),!_0x284cb4&&_0x1ef3a9.push(_0x4df6dd(708)),!_0x339785&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x482b09)]("Please enter the business name."),!_0xaeb551&&_0x1ef3a9[_0x4df6dd(345)](_0x4df6dd(_0x47ca1d__0x13e565)),!_0x29e918&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x482b09)](_0x4df6dd(646)),_0x4146a7&&!isValidEmail(_0x4146a7)&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x5a832f)]("Please enter a valid email address."),!_0x4b5386&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x482b09)]("Please enter the Business WhatsApp number."),_0x121770&&!isValidHttpsUrl(_0x121770)&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x470655)]("Logo URL must be a valid HTTPS URL."),!state[_0x4df6dd(_0x47ca1d__0x284cdc)][_0x4df6dd(_0x47ca1d__0x5b5e07)]&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x5a832f)](_0x4df6dd(858)),(!Number[_0x4df6dd(_0x47ca1d__0xc1e2a9)](state[_0x4df6dd(_0x47ca1d__0x284cdc)][_0x4df6dd(_0x47ca1d__0x52c199)])||!Number[_0x4df6dd(_0x47ca1d__0xc1e2a9)](state[_0x4df6dd(_0x47ca1d__0x1d4e01)].longitude))&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x318495)](_0x4df6dd(_0x47ca1d__0xade58)),(!Number[_0x4df6dd(_0x47ca1d__0xc1e2a9)](state[_0x4df6dd(902)].accuracy)||state[_0x4df6dd(_0x47ca1d__0x43b30e)].accuracy<=0||state.location[_0x4df6dd(940)]>CONFIG[_0x4df6dd(_0x47ca1d__0x58d3d8)])&&_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x5a832f)](_0x4df6dd(_0x47ca1d__0x32732e)+CONFIG[_0x4df6dd(_0x47ca1d__0x58d3d8)]+_0x4df6dd(_0x47ca1d__0x4cb5e4)),0===state[_0x4df6dd(407)].length&&_0x1ef3a9.push(_0x4df6dd(_0x47ca1d__0x5f0d38));const _0x453d8d=getTotalItemCount();return 0===_0x453d8d&&_0x1ef3a9[_0x4df6dd(345)](_0x4df6dd(_0x47ca1d__0x9bd6e7)),state[_0x4df6dd(407)][_0x4df6dd(_0x47ca1d__0x47e3ba)](_0x3b4e57=>{const _0x4402f7__0x17643a=523,_0x4402f7__0x3de60f=345,_0x4402f7__0x73eb5a=332,_0x4402f7__0x5f0c62=612,_0x4402f7__0x147383=929,_0x4402f7__0x3b8b99=788,_0x4402f7__0x345e3c=263,_0x4402f7__0x3d8a96=788,_0x4402f7__0x1a9313=860,_0x4402f7__0x4d36f0=523,_0x3fdddb=_0x4df6dd;!_0x3b4e57[_0x3fdddb(523)]&&_0x1ef3a9.push(_0x3fdddb(_0x51bfbb__0x40d6f0)),_0x3b4e57[_0x3fdddb(492)].length>CONFIG[_0x3fdddb(_0x51bfbb__0x60a626)]&&_0x1ef3a9.push(_0x3fdddb(_0x51bfbb__0x581638)+_0x3b4e57[_0x3fdddb(523)]+_0x3fdddb(_0x51bfbb__0x9c18ca)),_0x3b4e57[_0x3fdddb(_0x51bfbb__0x1a0cbb)][_0x3fdddb(_0x51bfbb__0x462410)](_0x50f58e=>{const _0xe2e25c=_0x3fdddb;!_0x50f58e[_0xe2e25c(_0x4402f7__0x17643a)]&&_0x1ef3a9[_0xe2e25c(_0x4402f7__0x3de60f)]('An item in "'+_0x3b4e57[_0xe2e25c(_0x4402f7__0x17643a)]+_0xe2e25c(_0x4402f7__0x73eb5a)),(!Number[_0xe2e25c(_0x4402f7__0x5f0c62)](_0x50f58e[_0xe2e25c(_0x4402f7__0x147383)])||_0x50f58e[_0xe2e25c(929)]<0)&&_0x1ef3a9[_0xe2e25c(345)](_0xe2e25c(_0x4402f7__0x3b8b99)+_0x50f58e[_0xe2e25c(_0x4402f7__0x17643a)]+_0xe2e25c(658)),(!Number[_0xe2e25c(612)](_0x50f58e[_0xe2e25c(_0x4402f7__0x345e3c)])||_0x50f58e.quantity<0)&&_0x1ef3a9[_0xe2e25c(345)](_0xe2e25c(_0x4402f7__0x3d8a96)+_0x50f58e.name+_0xe2e25c(433)),_0x50f58e[_0xe2e25c(860)]&&!isValidYoutubeUrl(_0x50f58e[_0xe2e25c(_0x4402f7__0x1a9313)])&&_0x1ef3a9.push(_0xe2e25c(_0x4402f7__0x3d8a96)+_0x50f58e[_0xe2e25c(_0x4402f7__0x4d36f0)]+'" has an invalid YouTube URL.')})}),_0x453d8d>CONFIG[_0x4df6dd(_0x47ca1d__0x2f4a8b)]&&_0x1ef3a9.push(_0x4df6dd(_0x47ca1d__0x17597b)+CONFIG.MAX_TOTAL_ITEMS+_0x4df6dd(_0x47ca1d__0x12b3ea)),{valid:0===_0x1ef3a9[_0x4df6dd(_0x47ca1d__0x48c95f)],errors:uniqueStrings(_0x1ef3a9)}}function showValidation(_0x2fc27d){const _0x937707__0x17b182=693,_0x937707__0x366a3f=765,_0x937707__0x1e591e=777,_0x937707__0x521428=785,_0x937707__0x3e01f9=812,_0x937707__0x5140d0=344,_0x269a26__0xf55008=379,_0x269a26__0x1415cb=334,_0x269a26__0x16d2bf=761,_0x530fd7=_0x4be7d1;DOM[_0x530fd7(777)]&&DOM.validationList&&(DOM.validationList[_0x530fd7(_0x937707__0x17b182)](),_0x2fc27d[_0x530fd7(_0x937707__0x366a3f)](_0x340cfa=>{const _0x2dd086=_0x530fd7,_0x26bbae=document[_0x2dd086(413)]("li");_0x26bbae[_0x2dd086(_0x269a26__0xf55008)]=_0x340cfa,DOM[_0x2dd086(_0x269a26__0x1415cb)][_0x2dd086(_0x269a26__0x16d2bf)](_0x26bbae)}),DOM[_0x530fd7(_0x937707__0x1e591e)][_0x530fd7(343)]=!1,DOM[_0x530fd7(777)][_0x530fd7(_0x937707__0x521428)]({behavior:_0x530fd7(_0x937707__0x3e01f9),block:_0x530fd7(_0x937707__0x5140d0)}))}function hideValidation(){const _0x100003__0x1ea738=777,_0x100003__0x4e82dc=334,_0x100003__0x13cb13=693,_0x48a48f=_0x4be7d1;DOM.validationSummary&&(DOM[_0x48a48f(_0x100003__0x1ea738)].hidden=!0),DOM[_0x48a48f(_0x100003__0x4e82dc)]&&DOM[_0x48a48f(334)][_0x48a48f(_0x100003__0x13cb13)]()}async function publishBusiness(){const _0x2926eb__0x4fef67=795,_0x2926eb__0x4867e8=500,_0x2926eb__0x4ce1d4=601,_0x2926eb__0x4da39a=705,_0x2926eb__0x57b783=526,_0x2926eb__0x28584e=282,_0x2926eb__0x108a07=866,_0x2926eb__0xfae930=704,_0x2926eb__0x2938e3=293,_0x2926eb__0x4e0f93=509,_0x2926eb__0x378d7c=276,_0x2926eb__0x23e1ed=936,_0x2926eb__0x14af1e=607,_0x2926eb__0x1b454a=379,_0x2926eb__0x1baf01=608,_0x2926eb__0x304804=602,_0x2926eb__0x4d5dad=550,_0x2926eb__0x162e55=529,_0x2926eb__0x2b2696=379,_0x2926eb__0x21b0c3=829,_0x2926eb__0x1ce9b3=607,_0x2926eb__0x2a615d=550,_0x2926eb__0x23b007=667,_0x14a4ca=_0x4be7d1;if(state.publishing)return;hideValidation(),hideSuccess(),clearSubscriptionError();const _0x5f007a=validateBuilder();if(!_0x5f007a[_0x14a4ca(_0x2926eb__0x4fef67)])return showValidation(_0x5f007a[_0x14a4ca(_0x2926eb__0x4867e8)]),void showToast(_0x5f007a.errors[0]||_0x14a4ca(_0x2926eb__0x4ce1d4),_0x14a4ca(_0x2926eb__0x4da39a));const _0x1aaee2=buildPublishPayload();state.publishing=!0,state.lastPublishedUrl="",setPublishBusy(!0),setPublishStatus(_0x14a4ca(921)),showLoader("Verifying subscription and publishing your business app...");try{const _0x2e997c=await sendPublishRequest(_0x1aaee2);if(!_0x2e997c||!0!==_0x2e997c.success)throw new Error(_0x2e997c&&_0x2e997c[_0x14a4ca(_0x2926eb__0x57b783)]?_0x2e997c[_0x14a4ca(526)]:_0x14a4ca(542));if(!isValidHttpsUrl(_0x2e997c.url))throw new Error("The Worker did not return a valid business app URL.");state[_0x14a4ca(_0x2926eb__0x28584e)]=_0x2e997c[_0x14a4ca(936)],hideLoader(),showSuccess(_0x2e997c),setPublishStatus(_0x14a4ca(300)),DOM.successDescription&&(DOM[_0x14a4ca(_0x2926eb__0x108a07)].textContent=_0x14a4ca(_0x2926eb__0xfae930)),DOM.deploymentStatus&&(DOM.deploymentStatus.textContent="Publishing your business app...",DOM.deploymentStatus[_0x14a4ca(_0x2926eb__0x2938e3)].remove("is-live"),DOM.deploymentStatus[_0x14a4ca(_0x2926eb__0x2938e3)][_0x14a4ca(_0x2926eb__0x4e0f93)](_0x14a4ca(_0x2926eb__0x378d7c)));if(!await waitForDeployment(_0x2e997c[_0x14a4ca(_0x2926eb__0x23e1ed)]))return DOM[_0x14a4ca(_0x2926eb__0x14af1e)]&&(DOM[_0x14a4ca(607)][_0x14a4ca(_0x2926eb__0x1b454a)]=_0x14a4ca(_0x2926eb__0x1baf01),DOM[_0x14a4ca(607)][_0x14a4ca(_0x2926eb__0x2938e3)][_0x14a4ca(_0x2926eb__0x304804)](_0x14a4ca(_0x2926eb__0x4d5dad)),DOM[_0x14a4ca(_0x2926eb__0x14af1e)].classList.add("is-waiting")),void setPublishStatus(_0x14a4ca(_0x2926eb__0x162e55));enablePublishedBusiness(_0x2e997c[_0x14a4ca(_0x2926eb__0x23e1ed)]),DOM[_0x14a4ca(_0x2926eb__0x108a07)]&&(DOM.successDescription[_0x14a4ca(_0x2926eb__0x2b2696)]=_0x14a4ca(_0x2926eb__0x21b0c3)),DOM[_0x14a4ca(_0x2926eb__0x14af1e)]&&(DOM[_0x14a4ca(_0x2926eb__0x1ce9b3)].textContent=_0x14a4ca(645),DOM[_0x14a4ca(607)][_0x14a4ca(293)][_0x14a4ca(_0x2926eb__0x304804)](_0x14a4ca(_0x2926eb__0x378d7c)),DOM[_0x14a4ca(607)][_0x14a4ca(_0x2926eb__0x2938e3)].add(_0x14a4ca(_0x2926eb__0x2a615d))),setPublishStatus(_0x14a4ca(_0x2926eb__0x23b007)),showToast(_0x14a4ca(296),_0x14a4ca(931))}catch(_0x1be513){hideLoader();const _0x414d95=getErrorMessage(_0x1be513);setPublishStatus(_0x414d95),showValidation([_0x414d95]),showToast(_0x414d95,_0x14a4ca(_0x2926eb__0x4da39a))}finally{state.publishing=!1,setPublishBusy(!1)}}async function waitForDeployment(_0x1a8638){const _0x1e9e59__0x35f6a3=504,_0x1e9e59__0x27c05b=877,_0x1e9e59__0x1df96c=934,_0x1e9e59__0x2a3713=607,_0x1e9e59__0x2366f1=379,_0x1e9e59__0x5bfcfa=907,_0x1e9e59__0x1f030a=696,_0x1e9e59__0x4322eb=845,_0x180d7e=_0x4be7d1,_0x4fb193=Date[_0x180d7e(_0x1e9e59__0x35f6a3)]();for(;Date.now()-_0x4fb193<CONFIG[_0x180d7e(_0x1e9e59__0x27c05b)];){if(await isDeploymentReady(_0x1a8638))return!0;const _0x242911=Math[_0x180d7e(_0x1e9e59__0x1df96c)]((Date[_0x180d7e(_0x1e9e59__0x35f6a3)]()-_0x4fb193)/1e3),_0x91ce42=Math[_0x180d7e(339)](0,Math.ceil((CONFIG[_0x180d7e(877)]-(Date[_0x180d7e(_0x1e9e59__0x35f6a3)]()-_0x4fb193))/1e3));DOM.deploymentStatus&&(DOM[_0x180d7e(_0x1e9e59__0x2a3713)][_0x180d7e(_0x1e9e59__0x2366f1)]=_0x180d7e(_0x1e9e59__0x5bfcfa)+_0x242911+"s elapsed."),setPublishStatus(_0x180d7e(_0x1e9e59__0x1f030a)+_0x91ce42+_0x180d7e(_0x1e9e59__0x4322eb)),await sleep(CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS)}return!1}async function isDeploymentReady(_0x2b17a9){const _0x106302__0x399021=680,_0x106302__0x366afa=744,_0x106302__0x3a461a=744,_0x4c0f49=_0x4be7d1;try{const _0x2a5279=new URL(_0x2b17a9),_0x4cd60a=new URL(_0x4c0f49(639),_0x2a5279),[_0x293408,_0x53cf38]=await Promise[_0x4c0f49(_0x106302__0x399021)]([fetchDeploymentResource(_0x2a5279[_0x4c0f49(_0x106302__0x366afa)]),fetchDeploymentResource(_0x4cd60a[_0x4c0f49(_0x106302__0x3a461a)])]);return _0x293408&&_0x293408.ok&&_0x53cf38&&_0x53cf38.ok}catch(_0x48293e){return!1}}async function fetchDeploymentResource(_0x45a763){const _0x1b3e57__0x3fb739=701,_0x1b3e57__0x333d9a=711,_0x1b3e57__0x1b55a5=883,_0x1b3e57__0x2dc450=697,_0x371a0a=_0x4be7d1;try{const _0x24e3cf=new AbortController,_0x59fca6=setTimeout(()=>_0x24e3cf[_0x371a0a(735)](),CONFIG[_0x371a0a(397)]),_0x5f57a1=await fetch(_0x45a763,{method:_0x371a0a(_0x1b3e57__0x3fb739),cache:_0x371a0a(575),credentials:_0x371a0a(_0x1b3e57__0x333d9a),redirect:_0x371a0a(_0x1b3e57__0x1b55a5),signal:_0x24e3cf[_0x371a0a(_0x1b3e57__0x2dc450)]});return clearTimeout(_0x59fca6),_0x5f57a1}catch(_0x92e62){return null}}function enablePublishedBusiness(_0x308565){const _0x68a678__0x465760=769,_0x68a678__0x524bf6=744,_0x68a678__0x41778d=769,_0x68a678__0x1cf230=769,_0x68a678__0x743990=710,_0x68a678__0x16d368=936,_0x68a678__0x3eb6f9=458,_0x68a678__0x5f54eb=341,_0x68a678__0x451ab6=775,_0x68a678__0xb62c41=938,_0x68a678__0x279f9e=464,_0x44b1b0=_0x4be7d1;isValidHttpsUrl(_0x308565)&&(state.lastPublishedUrl=_0x308565,DOM.businessAppUrl&&(DOM[_0x44b1b0(_0x68a678__0x465760)][_0x44b1b0(_0x68a678__0x524bf6)]=_0x308565,DOM[_0x44b1b0(_0x68a678__0x41778d)].textContent=_0x308565,DOM[_0x44b1b0(_0x68a678__0x1cf230)][_0x44b1b0(_0x68a678__0x743990)][_0x44b1b0(_0x68a678__0x16d368)]=_0x308565,DOM.businessAppUrl[_0x44b1b0(293)].remove(_0x44b1b0(_0x68a678__0x3eb6f9)),DOM.businessAppUrl[_0x44b1b0(_0x68a678__0x5f54eb)]("aria-disabled"),DOM[_0x44b1b0(_0x68a678__0x1cf230)][_0x44b1b0(341)](_0x44b1b0(_0x68a678__0x451ab6))),DOM[_0x44b1b0(938)]&&(DOM[_0x44b1b0(_0x68a678__0xb62c41)][_0x44b1b0(_0x68a678__0x279f9e)]=!1))}function sleep(_0x283028){return new Promise(_0x170494=>{setTimeout(_0x170494,_0x283028)})}function buildPublishPayload(){const _0x146144__0x38c47f=548,_0x146144__0x5d10c5=721,_0x146144__0x1e3a85=721,_0x146144__0x51608d=942,_0x146144__0x3798eb=682,_0x146144__0x3e2b38=681,_0x146144__0x611dd=869,_0x146144__0x47a47e=496,_0x146144__0x19c729=902,_0x146144__0x2d51c8=468,_0x146144__0x135eaa=902,_0x146144__0x8c519a=790,_0x146144__0x321ac6=569,_0xd788d5=_0x4be7d1;return{template:CONFIG.TEMPLATE_ID,subscriptionId:getValue(DOM[_0xd788d5(_0x146144__0x38c47f)]),businessPassword:DOM[_0xd788d5(_0x146144__0x5d10c5)]?DOM[_0xd788d5(_0x146144__0x1e3a85)][_0xd788d5(759)]:"",business:{name:getValue(DOM[_0xd788d5(_0x146144__0x51608d)]),tagline:getValue(DOM.tagline),address:getValue(DOM[_0xd788d5(_0x146144__0x3798eb)]),mobile:getValue(DOM.mobile),email:getValue(DOM[_0xd788d5(_0x146144__0x3e2b38)]),whatsapp:getValue(DOM[_0xd788d5(_0x146144__0x611dd)]),logoUrl:getValue(DOM[_0xd788d5(_0x146144__0x47a47e)])},location:{verified:state.location.verified,latitude:state[_0xd788d5(_0x146144__0x19c729)][_0xd788d5(_0x146144__0x2d51c8)],longitude:state[_0xd788d5(_0x146144__0x135eaa)][_0xd788d5(_0x146144__0x8c519a)],verifiedAt:state[_0xd788d5(_0x146144__0x135eaa)].verifiedAt},categories:state[_0xd788d5(407)][_0xd788d5(_0x146144__0x321ac6)](_0x519eeb=>({id:_0x519eeb.id,name:_0x519eeb[_0xd788d5(523)],items:_0x519eeb[_0xd788d5(492)][_0xd788d5(569)](_0x5be0dc=>({id:_0x5be0dc.id,name:_0x5be0dc[_0xd788d5(523)],price:_0x5be0dc.price,quantity:_0x5be0dc[_0xd788d5(263)],unit:_0x5be0dc[_0xd788d5(852)],description:_0x5be0dc[_0xd788d5(715)],youtubeUrl:_0x5be0dc.youtubeUrl}))}))}}async function sendPublishRequest(_0x5c689f){const _0x47da64__0x285d79=421,_0x47da64__0x55dd54=945,_0x47da64__0x2cabb7=370,_0x47da64__0x5f1170=310,_0x47da64__0xb8488c=920,_0x47da64__0x555c19=575,_0x47da64__0x122690=711,_0x47da64__0x41d468=393,_0x47da64__0x5c1d96=516,_0x47da64__0x2420f1=784,_0x47da64__0x46e276=403,_0x47da64__0x2c07b5=593,_0x47da64__0x25dcd9=258,_0x47da64__0x45e86f=320,_0x47da64__0x516e14=747,_0x47da64__0x5cdef2=700,_0x47da64__0x45c52f=526,_0x47da64__0x4fb6ab=679,_0x47da64__0x47002f=810,_0x47da64__0x599e6d=331,_0xba73f0__0x10f717=735,_0x227f3a=_0x4be7d1,_0x53036f=normalizeBaseUrl(CONFIG[_0x227f3a(732)]);if(!_0x53036f)throw new Error(_0x227f3a(_0x47da64__0x285d79));const _0x47a713=new AbortController,_0x3ca810=window[_0x227f3a(_0x47da64__0x55dd54)](()=>{_0x47a713[_0x227f3a(_0xba73f0__0x10f717)]()},CONFIG.REQUEST_TIMEOUT_MS);try{const _0x16d74c=await fetch(_0x53036f+_0x227f3a(655),{method:_0x227f3a(_0x47da64__0x2cabb7),headers:{"Content-Type":_0x227f3a(310),Accept:_0x227f3a(_0x47da64__0x5f1170)},body:JSON[_0x227f3a(_0x47da64__0xb8488c)](_0x5c689f),cache:_0x227f3a(_0x47da64__0x555c19),credentials:_0x227f3a(_0x47da64__0x122690),signal:_0x47a713[_0x227f3a(697)]});let _0x3c3693;if((_0x16d74c[_0x227f3a(_0x47da64__0x41d468)][_0x227f3a(_0x47da64__0x5c1d96)](_0x227f3a(_0x47da64__0x2420f1))||"")[_0x227f3a(_0x47da64__0x46e276)]()[_0x227f3a(_0x47da64__0x2c07b5)](_0x227f3a(_0x47da64__0x5f1170)))try{_0x3c3693=await _0x16d74c[_0x227f3a(_0x47da64__0x25dcd9)]()}catch{throw new Error(_0x227f3a(_0x47da64__0x45e86f))}else{_0x3c3693={success:!1,message:await _0x16d74c[_0x227f3a(_0x47da64__0x516e14)]()||_0x227f3a(_0x47da64__0x5cdef2)+_0x16d74c.status+"."}}if(!_0x16d74c.ok)throw new Error(_0x3c3693&&_0x3c3693.message?_0x3c3693[_0x227f3a(_0x47da64__0x45c52f)]:_0x227f3a(_0x47da64__0x5cdef2)+_0x16d74c[_0x227f3a(_0x47da64__0x4fb6ab)]+".");return _0x3c3693}catch(_0x531312){if(_0x531312&&"AbortError"===_0x531312[_0x227f3a(523)])throw new Error("The request timed out. Please try again.");if(_0x531312 instanceof TypeError)throw new Error(_0x227f3a(_0x47da64__0x47002f));throw _0x531312}finally{window[_0x227f3a(_0x47da64__0x599e6d)](_0x3ca810)}}function showSuccess(_0x249aff){const _0x4dfa3e__0xb01893=936,_0x4dfa3e__0x17040f=928,_0x4dfa3e__0x24db9b=379,_0x4dfa3e__0xbc0e04=704,_0x4dfa3e__0x18646c=769,_0x4dfa3e__0x4567ae=769,_0x4dfa3e__0x45e821=769,_0x4dfa3e__0x31d375=379,_0x4dfa3e__0x183663=325,_0x4dfa3e__0x1f9701=293,_0x4dfa3e__0x3dc211=509,_0x4dfa3e__0x17673b=458,_0x4dfa3e__0x3540c6=630,_0x4dfa3e__0x4355e8=671,_0x4dfa3e__0x473a64=630,_0x4dfa3e__0x4a6a87=775,_0x4dfa3e__0x5ef244=607,_0x4dfa3e__0x15d378=607,_0x4dfa3e__0x70f9e5=941,_0x4dfa3e__0x31913b=293,_0x4dfa3e__0x3c0f60=607,_0x4dfa3e__0x472687=293,_0x4dfa3e__0x872b09=509,_0x4dfa3e__0x5e1d1b=276,_0x4dfa3e__0x4d23e7=514,_0x4dfa3e__0x4f2395=785,_0x4dfa3e__0x2087b5=812,_0x4dfa3e__0xb26bd9=344,_0x2f40b2=_0x4be7d1;if(!DOM[_0x2f40b2(514)])return;const _0x5f2e1e=typeof _0x249aff[_0x2f40b2(_0x4dfa3e__0xb01893)]===_0x2f40b2(_0x4dfa3e__0x17040f)?_0x249aff[_0x2f40b2(936)].trim():"";state[_0x2f40b2(282)]=_0x5f2e1e,DOM[_0x2f40b2(866)]&&(DOM.successDescription[_0x2f40b2(_0x4dfa3e__0x24db9b)]=_0x2f40b2(_0x4dfa3e__0xbc0e04)),DOM[_0x2f40b2(_0x4dfa3e__0x18646c)]&&(DOM[_0x2f40b2(_0x4dfa3e__0x4567ae)][_0x2f40b2(744)]="#",DOM[_0x2f40b2(_0x4dfa3e__0x45e821)][_0x2f40b2(_0x4dfa3e__0x31d375)]=_0x2f40b2(_0x4dfa3e__0x183663),DOM.businessAppUrl.dataset.url="",DOM[_0x2f40b2(_0x4dfa3e__0x4567ae)][_0x2f40b2(_0x4dfa3e__0x1f9701)][_0x2f40b2(_0x4dfa3e__0x3dc211)](_0x2f40b2(_0x4dfa3e__0x17673b)),DOM[_0x2f40b2(769)][_0x2f40b2(_0x4dfa3e__0x3540c6)](_0x2f40b2(_0x4dfa3e__0x4355e8),"true"),DOM[_0x2f40b2(_0x4dfa3e__0x4567ae)][_0x2f40b2(_0x4dfa3e__0x473a64)](_0x2f40b2(_0x4dfa3e__0x4a6a87),"-1")),DOM.openBusinessApp&&(DOM[_0x2f40b2(938)][_0x2f40b2(464)]=!0),DOM[_0x2f40b2(_0x4dfa3e__0x5ef244)]&&(DOM[_0x2f40b2(_0x4dfa3e__0x15d378)].textContent=_0x2f40b2(_0x4dfa3e__0x70f9e5),DOM[_0x2f40b2(607)][_0x2f40b2(_0x4dfa3e__0x31913b)][_0x2f40b2(602)](_0x2f40b2(550)),DOM[_0x2f40b2(_0x4dfa3e__0x3c0f60)][_0x2f40b2(_0x4dfa3e__0x472687)][_0x2f40b2(_0x4dfa3e__0x872b09)](_0x2f40b2(_0x4dfa3e__0x5e1d1b))),DOM[_0x2f40b2(_0x4dfa3e__0x4d23e7)][_0x2f40b2(343)]=!1,DOM[_0x2f40b2(_0x4dfa3e__0x4d23e7)][_0x2f40b2(_0x4dfa3e__0x4f2395)]({behavior:_0x2f40b2(_0x4dfa3e__0x2087b5),block:_0x2f40b2(_0x4dfa3e__0xb26bd9)})}function hideSuccess(){DOM[_0x4be7d1(514)]&&(DOM.successSection.hidden=!0)}function openPublishedBusiness(){const _0x4f62d1__0x1567b9=769,_0x4f62d1__0x2bbe43=769,_0x4f62d1__0x147c46=710,_0x4f62d1__0x2fa9ef=930,_0x4f62d1__0x774489=705,_0x59174f=_0x4be7d1,_0x1b847c=state[_0x59174f(282)]||DOM[_0x59174f(_0x4f62d1__0x1567b9)]&&DOM[_0x59174f(_0x4f62d1__0x2bbe43)][_0x59174f(_0x4f62d1__0x147c46)].url||"";isValidHttpsUrl(_0x1b847c)?window.open(_0x1b847c,"_blank","noopener,noreferrer"):showToast(_0x59174f(_0x4f62d1__0x2fa9ef),_0x59174f(_0x4f62d1__0x774489))}function editBusiness(){const _0x113669__0x2cd68b=666,_0x113669__0x4d2b42=343,_0x113669__0x176e20=677,_0x113669__0x2ae22d=677,_0x113669__0x37290e=812,_0x40691b=_0x4be7d1;hideSuccess(),DOM[_0x40691b(_0x113669__0x2cd68b)]&&(DOM[_0x40691b(_0x113669__0x2cd68b)][_0x40691b(_0x113669__0x4d2b42)]=!1),DOM[_0x40691b(_0x113669__0x176e20)]&&(DOM[_0x40691b(_0x113669__0x2ae22d)][_0x40691b(_0x113669__0x4d2b42)]=!0),window.scrollTo({top:0,behavior:_0x40691b(_0x113669__0x37290e)})}function createAnotherApp(){const _0x578a15=_0x4be7d1;resetBuilderData(!1),showTemplateSelection(),showToast(_0x578a15(390),"success")}function showLoader(_0x3512c4){const _0x501a08__0x842cf1=379,_0x501a08__0x1764ac=343,_0x5b8934=_0x4be7d1;DOM[_0x5b8934(685)]&&(DOM.loaderText[_0x5b8934(_0x501a08__0x842cf1)]=_0x3512c4||"Processing..."),DOM.applicationLoader&&(DOM.applicationLoader[_0x5b8934(_0x501a08__0x1764ac)]=!1)}function hideLoader(){const _0xb44ca3__0x8ad179=703,_0xb44ca3__0x4ddb4e=343,_0x3bf81f=_0x4be7d1;DOM.applicationLoader&&(DOM[_0x3bf81f(_0xb44ca3__0x8ad179)][_0x3bf81f(_0xb44ca3__0x4ddb4e)]=!0)}function setPublishBusy(_0x374282){const _0x955aef__0x34ed45=342,_0x955aef__0x26b5ac=464,_0x955aef__0x431d8f=897,_0x955aef__0x3941d0=480,_0x955aef__0x47c31d=379,_0x955aef__0x4f5c20=796,_0x426029=_0x4be7d1;DOM[_0x426029(_0x955aef__0x34ed45)]&&(DOM[_0x426029(_0x955aef__0x34ed45)][_0x426029(_0x955aef__0x26b5ac)]=_0x374282),DOM.publishSpinner&&(DOM[_0x426029(_0x955aef__0x431d8f)].hidden=!_0x374282),DOM.publishButtonText&&(DOM[_0x426029(_0x955aef__0x3941d0)][_0x426029(_0x955aef__0x47c31d)]=_0x374282?_0x426029(_0x955aef__0x4f5c20):"Create Business App")}function setPublishStatus(_0x1ba24e){const _0x21259b__0x4c35ba=379,_0x1af7db=_0x4be7d1;DOM[_0x1af7db(549)]&&(DOM.publishStatus[_0x1af7db(_0x21259b__0x4c35ba)]=_0x1ba24e||"")}function updateConnectionStatus(){const _0x424656__0x47a81d=284,_0x424656__0x1ef524=379,_0x424656__0x542621=466,_0x424656__0x2c6518=508,_0x424656__0x32e93c=524,_0x424656__0x307b43=532,_0x424656__0x2717c9=753,_0x51463a=_0x4be7d1,_0x3a8974=navigator.onLine;DOM[_0x51463a(284)]&&(DOM[_0x51463a(_0x424656__0x47a81d)][_0x51463a(_0x424656__0x1ef524)]=_0x51463a(_0x3a8974?_0x424656__0x542621:_0x424656__0x2c6518)),DOM.connectionStatus&&(DOM[_0x51463a(_0x424656__0x32e93c)].classList[_0x51463a(_0x424656__0x307b43)](_0x51463a(_0x424656__0x2717c9),_0x3a8974),DOM[_0x51463a(524)][_0x51463a(293)][_0x51463a(_0x424656__0x307b43)]("is-offline",!_0x3a8974))}function showModal(_0x1b9de8){const _0x58a11d__0x34ec91=630,_0x58a11d__0x5b1c4f=918,_0x58a11d__0x52bcec=637,_0x58a11d__0x3b3422=285,_0x58a11d__0x48fc82=617,_0x4fa491=_0x4be7d1;_0x1b9de8&&(_0x1b9de8.hidden=!1,_0x1b9de8[_0x4fa491(_0x58a11d__0x34ec91)](_0x4fa491(_0x58a11d__0x5b1c4f),_0x4fa491(_0x58a11d__0x52bcec)),document[_0x4fa491(_0x58a11d__0x3b3422)][_0x4fa491(293)].add(_0x4fa491(_0x58a11d__0x48fc82)))}function hideModal(_0x406ce1){const _0x725e14__0x38f7c4=630,_0x725e14__0x2e115b=918,_0x725e14__0x1033a5=595,_0x725e14__0x4608fb=873,_0x725e14__0x4875da=870,_0x725e14__0x40bdf9=343,_0x725e14__0x30296f=293,_0x725e14__0x2432e3=602,_0x3c9d2c=_0x4be7d1;_0x406ce1&&(_0x406ce1[_0x3c9d2c(343)]=!0,_0x406ce1[_0x3c9d2c(_0x725e14__0x38f7c4)](_0x3c9d2c(_0x725e14__0x2e115b),_0x3c9d2c(_0x725e14__0x1033a5)),DOM.categoryModal&&DOM[_0x3c9d2c(_0x725e14__0x4608fb)]&&DOM[_0x3c9d2c(_0x725e14__0x4875da)]&&DOM[_0x3c9d2c(419)][_0x3c9d2c(343)]&&DOM.itemModal.hidden&&DOM[_0x3c9d2c(_0x725e14__0x4875da)][_0x3c9d2c(_0x725e14__0x40bdf9)]&&document.body[_0x3c9d2c(_0x725e14__0x30296f)][_0x3c9d2c(_0x725e14__0x2432e3)]("modal-open"))}function handleModalBackdrop(_0x5ca54a){const _0x153423__0x385d9e=698,_0x153423__0x2c1894=614,_0x153423__0x532aca=710,_0x153423__0x477b96=290,_0x153423__0x16de60=584,_0xc41600=_0x4be7d1;if(_0x5ca54a[_0xc41600(787)]!==_0x5ca54a[_0xc41600(720)])return;const _0x2ac6ad=_0x5ca54a[_0xc41600(787)][_0xc41600(_0x153423__0x385d9e)](_0xc41600(_0x153423__0x2c1894));if(!_0x2ac6ad)return;const _0x4484c5=_0x2ac6ad[_0xc41600(_0x153423__0x532aca)][_0xc41600(_0x153423__0x477b96)];"category-modal"===_0x4484c5&&closeCategoryModal(),_0x4484c5===_0xc41600(_0x153423__0x16de60)&&closeItemModal(),_0x4484c5===_0xc41600(635)&&closeWebsiteContentModal()}function handleKeyboard(_0x2ffbbf){const _0x2d722e__0x450928=414,_0x2d722e__0x4ed83a=419,_0x2d722e__0x4a5ef8=419,_0x2d722e__0x5ce026=343,_0x2d722e__0x69d82c=873,_0x2d722e__0x154762=343,_0x2d722e__0x27631b=870,_0x14f696=_0x4be7d1;_0x2ffbbf.key===_0x14f696(_0x2d722e__0x450928)&&(!DOM[_0x14f696(_0x2d722e__0x4ed83a)]||DOM[_0x14f696(_0x2d722e__0x4a5ef8)][_0x14f696(_0x2d722e__0x5ce026)]?!DOM[_0x14f696(_0x2d722e__0x69d82c)]||DOM.itemModal[_0x14f696(_0x2d722e__0x154762)]?DOM[_0x14f696(870)]&&!DOM[_0x14f696(_0x2d722e__0x27631b)][_0x14f696(_0x2d722e__0x5ce026)]&&closeWebsiteContentModal():closeItemModal():closeCategoryModal())}document[_0x4be7d1(352)](_0x4be7d1(613),initialize);const WEBSITE_MAX_SECTIONS=100,WEBSITE_MAX_BLOCKS_PER_SECTION=100,WEBSITE_MAX_IMAGES_PER_BLOCK=50,WEBSITE_MAX_VIDEOS_PER_BLOCK=50,WEBSITE_MAX_LINKS_PER_BLOCK=50,WEBSITE_MAX_FOOTER_LINKS=50,WEBSITE_MAX_TEXT_LENGTH=1e4,WEBSITE_MAX_URL_LENGTH=2e3;function toggleWebsitePassword(){const _0x273a3a__0x41e799=919,_0x273a3a__0x2dc629=566,_0x273a3a__0x1fb64c=348,_0x273a3a__0xdd14a8=348,_0x273a3a__0x358e33=747,_0x273a3a__0x45305d=630,_0x273a3a__0xb64431=717,_0x273a3a__0xdee0c9=857,_0x273a3a__0xd94c32=898,_0x273a3a__0x331954=630,_0x273a3a__0x53edcd=595,_0x273a3a__0x2657be=637,_0x273a3a__0x517da9=379,_0x2450e6=_0x4be7d1;if(!DOM.websitePassword||!DOM.websitePasswordToggle)return;const _0x2dffa8=DOM.websitePasswordToggle[_0x2450e6(_0x273a3a__0x41e799)](".password-toggle__icon"),_0xddf42d=DOM[_0x2450e6(_0x273a3a__0x2dc629)][_0x2450e6(_0x273a3a__0x1fb64c)]===_0x2450e6(874);DOM.websitePassword[_0x2450e6(_0x273a3a__0xdd14a8)]=_0x2450e6(_0xddf42d?_0x273a3a__0x358e33:874),DOM.websitePasswordToggle[_0x2450e6(_0x273a3a__0x45305d)](_0x2450e6(_0x273a3a__0xb64431),_0xddf42d?_0x2450e6(_0x273a3a__0xdee0c9):"Show password"),DOM[_0x2450e6(_0x273a3a__0xd94c32)][_0x2450e6(_0x273a3a__0x331954)]("aria-pressed",_0x2450e6(_0xddf42d?_0x273a3a__0x53edcd:_0x273a3a__0x2657be)),_0x2dffa8&&(_0x2dffa8[_0x2450e6(_0x273a3a__0x517da9)]=_0xddf42d?"◉":"👁")}function previewWebsiteLogo(){const _0x4e223d__0x1e9b5e=362,_0x4e223d__0x50d608=306,_0x4e223d__0x5b59fe=481,_0x4e223d__0x36715b=343,_0x4e223d__0x4a1293=341,_0x4e223d__0x506978=833,_0x4e223d__0x31fe34=756,_0x3105c8__0x7df668=386,_0x3105c8__0x36bea2=362,_0x3105c8__0x47a31f=343,_0x3105c8__0x2f3f5e=341,_0x3105c8__0xbe715=756,_0x92a1fc__0x5612d8=306,_0x92a1fc__0x34649b=756,_0x10f591=_0x4be7d1;if(!DOM[_0x10f591(481)]||!DOM[_0x10f591(_0x4e223d__0x1e9b5e)]||!DOM[_0x10f591(_0x4e223d__0x50d608)])return;const _0x3fb54b=getValue(DOM[_0x10f591(_0x4e223d__0x5b59fe)]);if(!_0x3fb54b||!isValidHttpsUrl(_0x3fb54b))return DOM[_0x10f591(_0x4e223d__0x1e9b5e)][_0x10f591(_0x4e223d__0x36715b)]=!0,void DOM[_0x10f591(306)][_0x10f591(_0x4e223d__0x4a1293)]("src");const _0x5b9809=++state[_0x10f591(386)],_0x5a70c2=new Image;_0x5a70c2[_0x10f591(336)]=()=>{const _0x1aa389=_0x10f591;_0x5b9809===state[_0x1aa389(386)]&&(DOM[_0x1aa389(_0x92a1fc__0x5612d8)][_0x1aa389(_0x92a1fc__0x34649b)]=_0x3fb54b,DOM.websiteLogoPreview[_0x1aa389(343)]=!1)},_0x5a70c2.onerror=()=>{const _0x4fce70=_0x10f591;_0x5b9809===state[_0x4fce70(_0x3105c8__0x7df668)]&&(DOM[_0x4fce70(_0x3105c8__0x36bea2)][_0x4fce70(_0x3105c8__0x47a31f)]=!0,DOM.websiteLogoPreviewImage[_0x4fce70(_0x3105c8__0x2f3f5e)](_0x4fce70(_0x3105c8__0xbe715)))},_0x5a70c2.referrerPolicy=_0x10f591(_0x4e223d__0x506978),_0x5a70c2[_0x10f591(_0x4e223d__0x31fe34)]=_0x3fb54b}async function verifyWebsiteLocation(){const _0x4193e1__0x52293a=864,_0x4193e1__0x146c58=589,_0x4193e1__0x3b911a=674,_0x4193e1__0x27cca1=453,_0x4193e1__0x5743f3=612,_0x4193e1__0x2926cf=889,_0x4193e1__0x3a14ba=612,_0x4193e1__0x3eeb47=520,_0x4193e1__0x2ee869=283,_0x4193e1__0x275741=904,_0x4193e1__0x19998b=567,_0x4193e1__0x837c2e=527,_0x4193e1__0x2262e0=902,_0x4e15a4=_0x4be7d1;if(navigator[_0x4e15a4(475)]){setButtonBusy(DOM[_0x4e15a4(_0x4193e1__0x146c58)],!0,_0x4e15a4(923)),setWebsiteLocationText(_0x4e15a4(_0x4193e1__0x3b911a),!1);try{const _0x388ae5=await getCurrentPosition(),_0xcf37be=Number(_0x388ae5.coords.latitude),_0x5dc647=Number(_0x388ae5[_0x4e15a4(453)][_0x4e15a4(790)]),_0x29105c=Number(_0x388ae5[_0x4e15a4(_0x4193e1__0x27cca1)].accuracy);if(!Number[_0x4e15a4(_0x4193e1__0x5743f3)](_0xcf37be)||!Number[_0x4e15a4(_0x4193e1__0x5743f3)](_0x5dc647)||_0xcf37be<-90||_0xcf37be>90||_0x5dc647<-180||_0x5dc647>180)throw new Error(_0x4e15a4(_0x4193e1__0x2926cf));if(!Number[_0x4e15a4(_0x4193e1__0x3a14ba)](_0x29105c)||_0x29105c<=0)throw new Error(_0x4e15a4(_0x4193e1__0x3eeb47));if(_0x29105c>CONFIG[_0x4e15a4(366)])throw new Error(_0x4e15a4(_0x4193e1__0x2ee869)+Math.round(_0x29105c)+_0x4e15a4(906));state[_0x4e15a4(902)]={verified:!0,latitude:_0xcf37be,longitude:_0x5dc647,accuracy:_0x29105c,verifiedAt:(new Date)[_0x4e15a4(_0x4193e1__0x275741)]()},updateWebsiteLocationDetails(),setWebsiteLocationText(_0x4e15a4(_0x4193e1__0x19998b)+Math[_0x4e15a4(436)](_0x29105c)+_0x4e15a4(_0x4193e1__0x837c2e),!0),showToast(_0x4e15a4(409),"success")}catch(_0x38ea8e){state[_0x4e15a4(_0x4193e1__0x2262e0)]={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},updateWebsiteLocationDetails(),setWebsiteLocationText(getLocationErrorMessage(_0x38ea8e),!1)}finally{setButtonBusy(DOM[_0x4e15a4(_0x4193e1__0x146c58)],!1)}}else setWebsiteLocationText(_0x4e15a4(_0x4193e1__0x52293a),!1)}function setWebsiteLocationText(_0x53b974,_0x24aca3){const _0x8bf25__0x556db7=647,_0x8bf25__0x17ed5d=293,_0x8bf25__0x4558c9=517,_0x2c58c6=_0x4be7d1;DOM[_0x2c58c6(640)]&&(DOM[_0x2c58c6(640)][_0x2c58c6(379)]=_0x53b974),DOM.websiteLocationStatusIndicator&&DOM[_0x2c58c6(_0x8bf25__0x556db7)][_0x2c58c6(_0x8bf25__0x17ed5d)].toggle(_0x2c58c6(_0x8bf25__0x4558c9),Boolean(_0x24aca3))}function updateWebsiteLocationDetails(){const _0x2a0de3__0x520fb6=817,_0x2a0de3__0x24c5e7=468,_0x2a0de3__0x42fa8c=612,_0x2a0de3__0x250b4c=379,_0x2a0de3__0x189200=890,_0x2a0de3__0x1ccc16=826,_0x2dcebf=_0x4be7d1,_0x57d0e7=state[_0x2dcebf(902)];DOM[_0x2dcebf(_0x2a0de3__0x520fb6)]&&(DOM[_0x2dcebf(_0x2a0de3__0x520fb6)].textContent=Number.isFinite(_0x57d0e7[_0x2dcebf(_0x2a0de3__0x24c5e7)])?_0x57d0e7[_0x2dcebf(_0x2a0de3__0x24c5e7)].toFixed(6):"—"),DOM.websiteLocationLongitude&&(DOM[_0x2dcebf(545)][_0x2dcebf(379)]=Number[_0x2dcebf(_0x2a0de3__0x42fa8c)](_0x57d0e7.longitude)?_0x57d0e7[_0x2dcebf(790)].toFixed(6):"—"),DOM.websiteLocationVerifiedAt&&(DOM.websiteLocationVerifiedAt[_0x2dcebf(_0x2a0de3__0x250b4c)]=_0x57d0e7.verifiedAt?new Date(_0x57d0e7[_0x2dcebf(943)]).toLocaleString(_0x2dcebf(_0x2a0de3__0x189200)):"—"),DOM[_0x2dcebf(836)]&&(DOM[_0x2dcebf(836)][_0x2dcebf(343)]=!_0x57d0e7[_0x2dcebf(_0x2a0de3__0x1ccc16)])}function saveWebsiteData(){const _0x534f48__0x477450=920,_0x534f48__0x4f706d=903,_0x534f48__0x575fcb=533,_0x534f48__0x4bb632=439,_0x55076f=_0x4be7d1;try{localStorage[_0x55076f(885)](CONFIG[_0x55076f(767)],JSON[_0x55076f(_0x534f48__0x477450)]({sections:state[_0x55076f(_0x534f48__0x4f706d)][_0x55076f(_0x534f48__0x575fcb)],footer:state[_0x55076f(_0x534f48__0x4f706d)][_0x55076f(_0x534f48__0x4bb632)]}))}catch(_0x16ae47){console[_0x55076f(664)](_0x55076f(303),_0x16ae47)}}function loadWebsiteData(){const _0x40d7a9__0x240666=288,_0x40d7a9__0xec64e1=767,_0x40d7a9__0xe9b1e3=267,_0x40d7a9__0x2b1254=623,_0x40d7a9__0x3adbe8=903,_0x40d7a9__0x186335=439,_0x40d7a9__0x869314=492,_0x40d7a9__0x5347d8=834,_0x63fe59=_0x4be7d1;try{const _0x5f4b51=localStorage[_0x63fe59(_0x40d7a9__0x240666)](CONFIG[_0x63fe59(_0x40d7a9__0xec64e1)]);if(!_0x5f4b51)return state.website={sections:[],footer:{items:[]}},!1;const _0x3f83c1=JSON[_0x63fe59(_0x40d7a9__0xe9b1e3)](_0x5f4b51);return!(!_0x3f83c1||!Array[_0x63fe59(_0x40d7a9__0x2b1254)](_0x3f83c1[_0x63fe59(533)]))&&(state[_0x63fe59(_0x40d7a9__0x3adbe8)]={sections:sanitizeWebsiteSections(_0x3f83c1[_0x63fe59(533)]),footer:{items:sanitizeWebsiteFooter(_0x3f83c1[_0x63fe59(_0x40d7a9__0x186335)]&&Array[_0x63fe59(623)](_0x3f83c1[_0x63fe59(_0x40d7a9__0x186335)][_0x63fe59(_0x40d7a9__0x869314)])?_0x3f83c1[_0x63fe59(439)][_0x63fe59(492)]:[])}},!0)}catch(_0x4f29a0){return console.warn(_0x63fe59(_0x40d7a9__0x5347d8),_0x4f29a0),!1}}function clearWebsiteData(){const _0x2f7a7e__0xa3aad5=651,_0x2f7a7e__0xd957aa=767,_0x2f7a7e__0x562254=664,_0x2f7a7e__0x3cc5ca=801,_0x2f7a7e__0x40700a=903,_0x5ddade=_0x4be7d1;try{localStorage[_0x5ddade(_0x2f7a7e__0xa3aad5)](CONFIG[_0x5ddade(_0x2f7a7e__0xd957aa)])}catch(_0x18109e){console[_0x5ddade(_0x2f7a7e__0x562254)](_0x5ddade(_0x2f7a7e__0x3cc5ca),_0x18109e)}state[_0x5ddade(_0x2f7a7e__0x40700a)]={sections:[],footer:{items:[]}}}function sanitizeWebsiteSections(_0xa6242e){const _0x4c15e5=_0x4be7d1;return _0xa6242e.slice(0,WEBSITE_MAX_SECTIONS)[_0x4c15e5(569)]((_0x29a0c1,_0x3ec202)=>({id:typeof _0x29a0c1.id===_0x4c15e5(928)&&_0x29a0c1.id?_0x29a0c1.id:createId("section"),heading:normalizeText(_0x29a0c1.heading,300)||_0x4c15e5(540)+(_0x3ec202+1),blocks:sanitizeWebsiteBlocks(Array[_0x4c15e5(623)](_0x29a0c1.blocks)?_0x29a0c1.blocks:[])}))}function sanitizeWebsiteBlocks(_0xf46e3f){const _0x1f4019__0x326504=569,_0x1f4019__0x400ac4=863,_0x163b16__0xe89e23=928,_0x163b16__0x3e74bd=747,_0x163b16__0x56a5fc=348,_0x163b16__0x454b2e=751,_0x163b16__0x24ed27=348,_0x163b16__0x145d3c=564,_0x163b16__0x1b96c1=564,_0x163b16__0x59a1b9=348,_0x163b16__0x35ec3b=354,_0x163b16__0x503abf=751,_0x163b16__0x391b46=492,_0x163b16__0x1f3a3a=743,_0x163b16__0x18b8a2=623,_0x163b16__0x5d6088=492,_0x163b16__0x7b5616=372,_0x163b16__0x18c7ae=569,_0x3efc9a=_0x4be7d1;return _0xf46e3f[_0x3efc9a(372)](0,100)[_0x3efc9a(_0x1f4019__0x326504)](_0x145abb=>{const _0x28b703=_0x3efc9a;return _0x145abb&&typeof _0x145abb.type===_0x28b703(_0x163b16__0xe89e23)?_0x145abb.type===_0x28b703(827)?{id:typeof _0x145abb.id===_0x28b703(_0x163b16__0xe89e23)?_0x145abb.id:createId("block"),type:"paragraph",text:normalizeText(_0x145abb[_0x28b703(_0x163b16__0x3e74bd)],WEBSITE_MAX_TEXT_LENGTH)}:_0x145abb[_0x28b703(_0x163b16__0x56a5fc)]===_0x28b703(691)?{id:typeof _0x145abb.id===_0x28b703(_0x163b16__0xe89e23)?_0x145abb.id:createId(_0x28b703(_0x163b16__0x454b2e)),type:"subparagraph",text:normalizeText(_0x145abb[_0x28b703(_0x163b16__0x3e74bd)],WEBSITE_MAX_TEXT_LENGTH)}:_0x145abb[_0x28b703(_0x163b16__0x24ed27)]===_0x28b703(_0x163b16__0x145d3c)?{id:typeof _0x145abb.id===_0x28b703(_0x163b16__0xe89e23)?_0x145abb.id:createId(_0x28b703(751)),type:_0x28b703(_0x163b16__0x1b96c1),items:sanitizeUrlItems(_0x145abb[_0x28b703(492)],WEBSITE_MAX_IMAGES_PER_BLOCK)}:_0x145abb[_0x28b703(_0x163b16__0x59a1b9)]===_0x28b703(_0x163b16__0x35ec3b)?{id:typeof _0x145abb.id===_0x28b703(928)?_0x145abb.id:createId(_0x28b703(_0x163b16__0x503abf)),type:_0x28b703(354),items:sanitizeUrlItems(_0x145abb[_0x28b703(_0x163b16__0x391b46)],WEBSITE_MAX_VIDEOS_PER_BLOCK)}:_0x145abb[_0x28b703(348)]===_0x28b703(_0x163b16__0x1f3a3a)?{id:"string"==typeof _0x145abb.id?_0x145abb.id:createId(_0x28b703(751)),type:_0x28b703(_0x163b16__0x1f3a3a),items:Array[_0x28b703(_0x163b16__0x18b8a2)](_0x145abb[_0x28b703(492)])?_0x145abb[_0x28b703(_0x163b16__0x5d6088)][_0x28b703(_0x163b16__0x7b5616)](0,WEBSITE_MAX_LINKS_PER_BLOCK)[_0x28b703(_0x163b16__0x18c7ae)](_0x3217e6=>({name:normalizeText(_0x3217e6&&_0x3217e6[_0x28b703(523)],150),url:normalizeText(_0x3217e6&&_0x3217e6[_0x28b703(936)],WEBSITE_MAX_URL_LENGTH)}))[_0x28b703(863)](_0x519c34=>_0x519c34.name||_0x519c34[_0x28b703(936)]):[]}:null:null})[_0x3efc9a(_0x1f4019__0x400ac4)](Boolean)}function sanitizeUrlItems(_0x500d6b,_0x3d8591){const _0x219d1f__0x5bd570=372,_0x219d1f__0x4cf8b2=569,_0x219d1f__0x3fb83a=863,_0x1df27d=_0x4be7d1;return Array[_0x1df27d(623)](_0x500d6b)?_0x500d6b[_0x1df27d(_0x219d1f__0x5bd570)](0,_0x3d8591).map(_0x3ec867=>typeof _0x3ec867===_0x1df27d(928)?_0x3ec867:_0x3ec867&&typeof _0x3ec867[_0x1df27d(936)]===_0x1df27d(928)?_0x3ec867.url:"")[_0x1df27d(_0x219d1f__0x4cf8b2)](_0x353269=>normalizeText(_0x353269,WEBSITE_MAX_URL_LENGTH))[_0x1df27d(_0x219d1f__0x3fb83a)](Boolean):[]}function sanitizeWebsiteFooter(_0x3d93d6){const _0x385d1e__0x4b6f33=569,_0x385d1e__0x329fa4=863,_0x123ec9=_0x4be7d1;return _0x3d93d6.slice(0,WEBSITE_MAX_FOOTER_LINKS)[_0x123ec9(_0x385d1e__0x4b6f33)](_0x408b63=>({id:"string"==typeof _0x408b63.id?_0x408b63.id:createId("footer"),name:normalizeText(_0x408b63[_0x123ec9(523)],150),url:normalizeText(_0x408b63[_0x123ec9(936)],WEBSITE_MAX_URL_LENGTH)}))[_0x123ec9(_0x385d1e__0x329fa4)](_0x5c592e=>_0x5c592e.name||_0x5c592e[_0x123ec9(936)])}function addWebsiteSection(){const _0x4f4042__0x189740=470,_0x4f4042__0x663748=705,_0x4f4042__0x3dd693=648,_0x4f4042__0x3515f1=286,_0x4f4042__0x1cedbf=903,_0x4f4042__0x48fb18=937,_0x4f4042__0x30c45d=931,_0x21c050=_0x4be7d1;if(state.website[_0x21c050(533)].length>=WEBSITE_MAX_SECTIONS)return void showToast(_0x21c050(_0x4f4042__0x189740)+WEBSITE_MAX_SECTIONS+_0x21c050(729),_0x21c050(_0x4f4042__0x663748));const _0x35159d=window[_0x21c050(689)](_0x21c050(_0x4f4042__0x3dd693));if(null===_0x35159d)return;const _0x1ed02d=normalizeText(_0x35159d,300);_0x1ed02d?(state[_0x21c050(_0x4f4042__0x1cedbf)][_0x21c050(533)].push({id:createId(_0x21c050(622)),heading:_0x1ed02d,blocks:[]}),saveWebsiteData(),renderWebsiteSections(),showToast(_0x21c050(_0x4f4042__0x48fb18),_0x21c050(_0x4f4042__0x30c45d))):showToast(_0x21c050(_0x4f4042__0x3515f1),_0x21c050(_0x4f4042__0x663748))}function editWebsiteSection(_0x439dad){const _0x3e0283__0x2d35b5=531,_0x3e0283__0x2f3732=502,_0xd9cbc2=_0x4be7d1,_0x1cba55=findWebsiteSection(_0x439dad);if(!_0x1cba55)return;const _0xf487ab=window.prompt(_0xd9cbc2(_0x3e0283__0x2d35b5),_0x1cba55[_0xd9cbc2(_0x3e0283__0x2f3732)]);if(null===_0xf487ab)return;const _0x38d4da=normalizeText(_0xf487ab,300);_0x38d4da?(_0x1cba55.heading=_0x38d4da,saveWebsiteData(),renderWebsiteSections(),showToast("Section updated.",_0xd9cbc2(931))):showToast("Section heading cannot be empty.",_0xd9cbc2(705))}function moveWebsiteSection(_0x5f3ef6,_0x473377){const _0x195565__0x59f163=903,_0x195565__0x51f4f8=533,_0x195565__0xe60be6=738,_0x195565__0x58d7ee=903,_0x195565__0x3a2861=903,_0x2fc4bc=_0x4be7d1,_0x53d02c=state[_0x2fc4bc(_0x195565__0x59f163)][_0x2fc4bc(_0x195565__0x51f4f8)].findIndex(_0x32fc70=>_0x32fc70.id===_0x5f3ef6);if(_0x53d02c<0)return;const _0x326147="up"===_0x473377?_0x53d02c-1:_0x53d02c+1;if(_0x326147<0||_0x326147>=state[_0x2fc4bc(_0x195565__0x59f163)][_0x2fc4bc(533)][_0x2fc4bc(_0x195565__0xe60be6)])return;const _0x26964a=state[_0x2fc4bc(_0x195565__0x58d7ee)][_0x2fc4bc(_0x195565__0x51f4f8)][_0x53d02c];state[_0x2fc4bc(_0x195565__0x3a2861)][_0x2fc4bc(533)][_0x53d02c]=state[_0x2fc4bc(_0x195565__0x3a2861)].sections[_0x326147],state[_0x2fc4bc(_0x195565__0x59f163)][_0x2fc4bc(533)][_0x326147]=_0x26964a,saveWebsiteData(),renderWebsiteSections()}function deleteWebsiteSection(_0x1910b4){const _0x5bb527__0x503f4d=856,_0x5bb527__0x338da0=494,_0x5bb527__0x41af54=502,_0x5bb527__0x53d801=533,_0x5bb527__0x4dac82=533,_0x5bb527__0x79938e=863,_0x5bb527__0x42b08a=264,_0x5bb527__0x55e346=931,_0x2a3449=_0x4be7d1,_0x27babf=findWebsiteSection(_0x1910b4);_0x27babf&&window[_0x2a3449(_0x5bb527__0x503f4d)](_0x2a3449(_0x5bb527__0x338da0)+_0x27babf[_0x2a3449(_0x5bb527__0x41af54)]+'"?')&&(state[_0x2a3449(903)][_0x2a3449(_0x5bb527__0x53d801)]=state.website[_0x2a3449(_0x5bb527__0x4dac82)][_0x2a3449(_0x5bb527__0x79938e)](_0x46aa91=>_0x46aa91.id!==_0x1910b4),saveWebsiteData(),renderWebsiteSections(),showToast(_0x2a3449(_0x5bb527__0x42b08a),_0x2a3449(_0x5bb527__0x55e346)))}function findWebsiteSection(_0x22e160){const _0x252f72=_0x4be7d1;return state[_0x252f72(903)][_0x252f72(533)].find(_0x5e2eff=>_0x5e2eff.id===_0x22e160)||null}function renderWebsiteSections(){const _0x19a7b1__0x49032e=816,_0x19a7b1__0x1ffcf4=533,_0x19a7b1__0x69a504=318,_0x19a7b1__0xc403d8=343,_0x19a7b1__0x460aa3=738,_0x5833ac__0x392022=413,_0x5833ac__0x95c572=269,_0x5833ac__0x4f2733=879,_0x5833ac__0x541db8=675,_0x5833ac__0x3634af=654,_0x5833ac__0xadd827=944,_0x5833ac__0x3b32c6=379,_0x5833ac__0x27bb3f=761,_0x5833ac__0x9ece17=502,_0x5833ac__0x5ec33c=413,_0x5833ac__0x44be41=879,_0x5833ac__0x5644b9=761,_0x5833ac__0x14f846=927,_0x5833ac__0x585ce5=525,_0x5833ac__0x54e6bf=738,_0x5833ac__0x42f17f=761,_0x5833ac__0x1d3d07=761,_0x5833ac__0x1bd242=675,_0x5833ac__0x4e2f5f=793,_0x5833ac__0x35f0da=462,_0x5833ac__0x18da58=879,_0x5833ac__0x42602e=827,_0x5833ac__0x4a4bd0=503,_0x5833ac__0x487c98=691,_0x5833ac__0x155212=449,_0x5833ac__0x49341a=564,_0x5833ac__0x9f2745=354,_0x5833ac__0x1d4f93=347,_0x5833ac__0x4907f8=765,_0x5833ac__0x18c497=761,_0x5833ac__0x366ef4=761,_0x5833ac__0x2714ff=816,_0x5833ac__0x41eae6=761,_0x25803a__0x45bda6=348,_0x25803a__0x14cd82=573,_0x25803a__0x426e72=710,_0x25803a__0x52d604=490,_0x25803a__0x15156e=699,_0x25803a__0x21415a=908,_0x25803a__0x2343ba=710,_0x25803a__0x1f817d=761,_0x2aab7a=_0x4be7d1;if(!DOM[_0x2aab7a(816)])return;DOM[_0x2aab7a(_0x19a7b1__0x49032e)].replaceChildren();const _0x222db6=state.website[_0x2aab7a(_0x19a7b1__0x1ffcf4)];DOM.websiteSectionsEmpty&&(DOM[_0x2aab7a(_0x19a7b1__0x69a504)][_0x2aab7a(_0x19a7b1__0xc403d8)]=_0x222db6[_0x2aab7a(_0x19a7b1__0x460aa3)]>0),_0x222db6[_0x2aab7a(765)]((_0x464586,_0x4c5877)=>{const _0x58e860__0x28da26=761,_0x25ee37=_0x2aab7a,_0x2eef64=document[_0x25ee37(_0x5833ac__0x392022)](_0x25ee37(_0x5833ac__0x95c572));_0x2eef64.className="website-section-card";const _0x43368e=document[_0x25ee37(413)](_0x25ee37(_0x5833ac__0x4f2733));_0x43368e[_0x25ee37(_0x5833ac__0x541db8)]="website-section-card__header";const _0x166094=document.createElement(_0x25ee37(879));_0x166094.className=_0x25ee37(_0x5833ac__0x3634af);const _0x229cfb=document[_0x25ee37(_0x5833ac__0x392022)]("h4"),_0x352237=document[_0x25ee37(_0x5833ac__0x392022)]("span");_0x352237.className=_0x25ee37(_0x5833ac__0xadd827),_0x352237[_0x25ee37(_0x5833ac__0x3b32c6)]=String(_0x4c5877+1),_0x229cfb[_0x25ee37(_0x5833ac__0x27bb3f)](_0x352237),_0x229cfb[_0x25ee37(761)](document[_0x25ee37(727)](_0x464586[_0x25ee37(_0x5833ac__0x9ece17)])),_0x166094.appendChild(_0x229cfb);const _0x2b7067=document[_0x25ee37(_0x5833ac__0x5ec33c)](_0x25ee37(_0x5833ac__0x44be41));_0x2b7067.className="website-section-card__actions",_0x2b7067[_0x25ee37(_0x5833ac__0x5644b9)](createWebsiteActionButton(_0x25ee37(_0x5833ac__0x14f846),_0x25ee37(844),_0x464586.id)),_0x2b7067[_0x25ee37(_0x5833ac__0x5644b9)](createWebsiteActionButton("↑",_0x25ee37(_0x5833ac__0x585ce5),_0x464586.id,0===_0x4c5877)),_0x2b7067.appendChild(createWebsiteActionButton("↓",_0x25ee37(519),_0x464586.id,_0x4c5877===_0x222db6[_0x25ee37(_0x5833ac__0x54e6bf)]-1)),_0x2b7067[_0x25ee37(_0x5833ac__0x42f17f)](createWebsiteActionButton("Delete",_0x25ee37(868),_0x464586.id)),_0x43368e[_0x25ee37(_0x5833ac__0x1d3d07)](_0x166094),_0x43368e[_0x25ee37(_0x5833ac__0x42f17f)](_0x2b7067);const _0xa64f72=document.createElement(_0x25ee37(879));_0xa64f72[_0x25ee37(_0x5833ac__0x1bd242)]="website-section-card__body";const _0x2e6d41=document[_0x25ee37(413)](_0x25ee37(_0x5833ac__0x4f2733));if(_0x2e6d41[_0x25ee37(_0x5833ac__0x541db8)]=_0x25ee37(266),_0x464586[_0x25ee37(_0x5833ac__0x4e2f5f)][_0x25ee37(765)](_0x71d3d3=>{_0x2e6d41[_0x25ee37(_0x58e860__0x28da26)](renderWebsiteBlock(_0x464586,_0x71d3d3))}),0===_0x464586[_0x25ee37(793)][_0x25ee37(_0x5833ac__0x54e6bf)]){const _0x5303f8=document.createElement("div");_0x5303f8[_0x25ee37(675)]=_0x25ee37(_0x5833ac__0x35f0da),_0x5303f8[_0x25ee37(_0x5833ac__0x3b32c6)]="No content added yet. Use Add Content below.",_0x2e6d41.appendChild(_0x5303f8)}_0xa64f72.appendChild(_0x2e6d41);const _0xbed7c=document[_0x25ee37(413)](_0x25ee37(_0x5833ac__0x18da58));_0xbed7c[_0x25ee37(_0x5833ac__0x541db8)]="website-add-content",[["Paragraph",_0x25ee37(_0x5833ac__0x42602e)],[_0x25ee37(_0x5833ac__0x4a4bd0),_0x25ee37(_0x5833ac__0x487c98)],[_0x25ee37(_0x5833ac__0x155212),_0x25ee37(_0x5833ac__0x49341a)],["YouTube Videos",_0x25ee37(_0x5833ac__0x9f2745)],[_0x25ee37(_0x5833ac__0x1d4f93),_0x25ee37(743)]][_0x25ee37(_0x5833ac__0x4907f8)](([_0x54c189,_0x356827])=>{const _0x41c639=_0x25ee37,_0x1218c8=document[_0x41c639(413)]("button");_0x1218c8[_0x41c639(_0x25803a__0x45bda6)]="button",_0x1218c8.className=_0x41c639(_0x25803a__0x14cd82),_0x1218c8[_0x41c639(_0x25803a__0x426e72)][_0x41c639(_0x25803a__0x52d604)]=_0x41c639(_0x25803a__0x15156e),_0x1218c8[_0x41c639(710)][_0x41c639(_0x25803a__0x21415a)]=_0x464586.id,_0x1218c8[_0x41c639(_0x25803a__0x2343ba)].contentType=_0x356827,_0x1218c8[_0x41c639(379)]="+ "+_0x54c189,_0xbed7c[_0x41c639(_0x25803a__0x1f817d)](_0x1218c8)}),_0xa64f72[_0x25ee37(_0x5833ac__0x27bb3f)](_0xbed7c),_0x2eef64[_0x25ee37(_0x5833ac__0x18c497)](_0x43368e),_0x2eef64[_0x25ee37(_0x5833ac__0x366ef4)](_0xa64f72),DOM[_0x25ee37(_0x5833ac__0x2714ff)][_0x25ee37(_0x5833ac__0x41eae6)](_0x2eef64)})}function createWebsiteActionButton(_0xb13fcc,_0x220dc7,_0x51a169,_0x34c9c5=!1){const _0x277447__0x328530=573,_0x277447__0x1ec40e=710,_0x46beaa=_0x4be7d1,_0x102834=document[_0x46beaa(413)]("button");return _0x102834.type=_0x46beaa(792),_0x102834.className=_0x46beaa(_0x277447__0x328530),_0x102834[_0x46beaa(_0x277447__0x1ec40e)].websiteAction=_0x220dc7,_0x102834.dataset.sectionId=_0x51a169,_0x102834[_0x46beaa(379)]=_0xb13fcc,_0x102834[_0x46beaa(464)]=_0x34c9c5,_0x102834}function renderWebsiteBlock(_0x253897,_0x54c9f8){const _0x324cfd__0x225bd3=675,_0x324cfd__0x4b7192=547,_0x324cfd__0x25fc8e=879,_0x324cfd__0x2711de=675,_0x324cfd__0x5ae3a7=413,_0x324cfd__0x2a79d3=427,_0x324cfd__0x2302bd=781,_0x324cfd__0x3ffbba=413,_0x324cfd__0x21a2bc=879,_0x324cfd__0x1d3c65=722,_0x324cfd__0x408fbb=348,_0x324cfd__0x2b8650=792,_0x324cfd__0x46b0a1=379,_0x324cfd__0x58e464=573,_0x324cfd__0x98ffe9=908,_0x324cfd__0x479009=271,_0x324cfd__0x2e04c4=348,_0x324cfd__0xb5a29d=905,_0x324cfd__0x57285a=675,_0x324cfd__0x2652c2=573,_0x324cfd__0x2486f1=490,_0x324cfd__0x20ceab=912,_0x324cfd__0x1445b8=908,_0x324cfd__0x43c756=271,_0x324cfd__0x31f482=761,_0x324cfd__0x445975=761,_0x324cfd__0x457cf1=761,_0x324cfd__0x108d73=761,_0x1925b6=_0x4be7d1,_0x2eaf5c=document[_0x1925b6(413)](_0x1925b6(879));_0x2eaf5c[_0x1925b6(_0x324cfd__0x225bd3)]=_0x1925b6(_0x324cfd__0x4b7192);const _0x5c864f=document.createElement(_0x1925b6(_0x324cfd__0x25fc8e));_0x5c864f[_0x1925b6(_0x324cfd__0x2711de)]="website-content-block__header";const _0x1247e6=document[_0x1925b6(_0x324cfd__0x5ae3a7)](_0x1925b6(_0x324cfd__0x2a79d3));_0x1247e6.className=_0x1925b6(_0x324cfd__0x2302bd),_0x1247e6[_0x1925b6(379)]=getWebsiteBlockLabel(_0x54c9f8[_0x1925b6(348)]);const _0x478190=document[_0x1925b6(_0x324cfd__0x3ffbba)](_0x1925b6(_0x324cfd__0x21a2bc));_0x478190[_0x1925b6(_0x324cfd__0x2711de)]=_0x1925b6(_0x324cfd__0x1d3c65);const _0x2dcd9e=document.createElement("button");_0x2dcd9e[_0x1925b6(_0x324cfd__0x408fbb)]=_0x1925b6(_0x324cfd__0x2b8650),_0x2dcd9e[_0x1925b6(_0x324cfd__0x46b0a1)]="Edit",_0x2dcd9e[_0x1925b6(675)]=_0x1925b6(_0x324cfd__0x58e464),_0x2dcd9e.dataset.websiteAction="edit-block",_0x2dcd9e.dataset[_0x1925b6(_0x324cfd__0x98ffe9)]=_0x253897.id,_0x2dcd9e[_0x1925b6(710)][_0x1925b6(_0x324cfd__0x479009)]=_0x54c9f8.id;const _0x985faf=document[_0x1925b6(413)](_0x1925b6(_0x324cfd__0x2b8650));_0x985faf[_0x1925b6(_0x324cfd__0x2e04c4)]=_0x1925b6(_0x324cfd__0x2b8650),_0x985faf[_0x1925b6(_0x324cfd__0x46b0a1)]=_0x1925b6(_0x324cfd__0xb5a29d),_0x985faf[_0x1925b6(_0x324cfd__0x57285a)]=_0x1925b6(_0x324cfd__0x2652c2),_0x985faf[_0x1925b6(710)][_0x1925b6(_0x324cfd__0x2486f1)]=_0x1925b6(_0x324cfd__0x20ceab),_0x985faf[_0x1925b6(710)][_0x1925b6(_0x324cfd__0x1445b8)]=_0x253897.id,_0x985faf.dataset[_0x1925b6(_0x324cfd__0x43c756)]=_0x54c9f8.id,_0x478190[_0x1925b6(_0x324cfd__0x31f482)](_0x2dcd9e),_0x478190[_0x1925b6(_0x324cfd__0x445975)](_0x985faf),_0x5c864f[_0x1925b6(_0x324cfd__0x445975)](_0x1247e6),_0x5c864f[_0x1925b6(_0x324cfd__0x457cf1)](_0x478190);const _0x1f39e9=document[_0x1925b6(_0x324cfd__0x3ffbba)]("div");return _0x1f39e9[_0x1925b6(_0x324cfd__0x225bd3)]="website-block-preview",renderWebsiteBlockPreview(_0x1f39e9,_0x54c9f8),_0x2eaf5c.appendChild(_0x5c864f),_0x2eaf5c[_0x1925b6(_0x324cfd__0x108d73)](_0x1f39e9),_0x2eaf5c}function getWebsiteBlockLabel(_0x4835f7){const _0xc8c9__0x294b4c=503,_0xc8c9__0x1542cf=449,_0xc8c9__0x5851d0=347,_0xc8c9__0x33d865=551,_0x16ebd2=_0x4be7d1;return{paragraph:_0x16ebd2(539),subparagraph:_0x16ebd2(_0xc8c9__0x294b4c),images:_0x16ebd2(_0xc8c9__0x1542cf),videos:_0x16ebd2(719),links:_0x16ebd2(_0xc8c9__0x5851d0)}[_0x4835f7]||_0x16ebd2(_0xc8c9__0x33d865)}function renderWebsiteBlockPreview(_0xdc5bca,_0x4562d6){const _0x1a6313__0x5daceb=348,_0x1a6313__0x2403d7=827,_0x1a6313__0x18fb40=379,_0x1a6313__0x448413=780,_0x1a6313__0x3a825f=761,_0x1a6313__0x2b932c=691,_0x1a6313__0x566f13=259,_0x1a6313__0x2b469c=295,_0x1a6313__0x1f812b=629,_0x1a6313__0x322a13=747,_0x1a6313__0x5a1349=761,_0x1a6313__0x517bcf=564,_0x1a6313__0x247dd2=413,_0x1a6313__0x16a958=879,_0x1a6313__0x295f90=357,_0x1a6313__0x5b5083=738,_0x1a6313__0x429fbf=587,_0x1a6313__0x13fe3b=761,_0x1a6313__0x55a88a=879,_0x1a6313__0x35401a=695,_0x1a6313__0x193d09=379,_0x1a6313__0x3d06a4=668,_0x1a6313__0x1e6050=743,_0x1a6313__0x1ca1bc=492,_0x1a6313__0x1f9792=765,_0x1a6313__0x2cf0a8=389,_0x15494d__0x7089e3=523,_0x15494d__0x26a5db=675,_0x15494d__0x5ada38=895,_0x15494d__0x579d57=619,_0x15494d__0x5bfbc9=935,_0x15494d__0x1b53c1=523,_0x15494d__0x5dd7d5=761,_0x31ba09__0x25843e=879,_0x31ba09__0x29caba=675,_0x31ba09__0x2b2f14=293,_0x31ba09__0x5c891d=444,_0x31ba09__0x3f4154=413,_0x31ba09__0x2af7ba=756,_0x31ba09__0x54e34a=936,_0x31ba09__0xacbb98=746,_0x31ba09__0x244c2f=800,_0x31ba09__0x51f93e=556,_0x31ba09__0x4be67b=624,_0x31ba09__0x29255c=321,_0x31ba09__0x4fed28=761,_0x4b8150__0x3f0593=413,_0x4b8150__0x24d86e=756,_0x4b8150__0x11085a=471,_0x4b8150__0x25855c=746,_0x4b8150__0x20b77f=833,_0x4f4445=_0x4be7d1;if(_0x4562d6[_0x4f4445(_0x1a6313__0x5daceb)]===_0x4f4445(_0x1a6313__0x2403d7)){const _0xeb75de=document.createElement("p");return _0xeb75de[_0x4f4445(_0x1a6313__0x18fb40)]=_0x4562d6.text||_0x4f4445(_0x1a6313__0x448413),void _0xdc5bca[_0x4f4445(_0x1a6313__0x3a825f)](_0xeb75de)}if(_0x4562d6[_0x4f4445(_0x1a6313__0x5daceb)]===_0x4f4445(_0x1a6313__0x2b932c)){const _0x371c63=document[_0x4f4445(413)]("p");return _0x371c63[_0x4f4445(_0x1a6313__0x566f13)][_0x4f4445(901)]=_0x4f4445(_0x1a6313__0x2b469c),_0x371c63[_0x4f4445(259)].color=_0x4f4445(_0x1a6313__0x1f812b),_0x371c63[_0x4f4445(_0x1a6313__0x18fb40)]=_0x4562d6[_0x4f4445(_0x1a6313__0x322a13)]||_0x4f4445(724),void _0xdc5bca[_0x4f4445(_0x1a6313__0x5a1349)](_0x371c63)}if(_0x4562d6.type===_0x4f4445(_0x1a6313__0x517bcf)){const _0x40fb8b=document[_0x4f4445(_0x1a6313__0x247dd2)](_0x4f4445(_0x1a6313__0x16a958));return _0x40fb8b.className=_0x4f4445(_0x1a6313__0x295f90),_0x4562d6.items[_0x4f4445(765)](_0x3b3456=>{const _0x466f2b=_0x4f4445,_0x2431c4=document[_0x466f2b(_0x4b8150__0x3f0593)]("img");_0x2431c4[_0x466f2b(_0x4b8150__0x24d86e)]=_0x3b3456,_0x2431c4[_0x466f2b(_0x4b8150__0x11085a)]="Website image",_0x2431c4[_0x466f2b(_0x4b8150__0x25855c)]="lazy",_0x2431c4.referrerPolicy=_0x466f2b(_0x4b8150__0x20b77f),_0x40fb8b.appendChild(_0x2431c4)}),0===_0x4562d6.items[_0x4f4445(_0x1a6313__0x5b5083)]&&(_0x40fb8b[_0x4f4445(_0x1a6313__0x18fb40)]=_0x4f4445(_0x1a6313__0x429fbf)),void _0xdc5bca[_0x4f4445(_0x1a6313__0x13fe3b)](_0x40fb8b)}if(_0x4562d6[_0x4f4445(_0x1a6313__0x5daceb)]===_0x4f4445(354)){const _0x296313=document[_0x4f4445(413)](_0x4f4445(_0x1a6313__0x55a88a));return _0x296313[_0x4f4445(675)]=_0x4f4445(_0x1a6313__0x35401a),_0x4562d6.items.forEach(_0x4824ef=>{const _0xded724=_0x4f4445,_0x23068a=getYoutubeEmbedData(_0x4824ef);if(!_0x23068a)return;const _0xc9c353=document.createElement(_0xded724(_0x31ba09__0x25843e));_0xc9c353[_0xded724(_0x31ba09__0x29caba)]="website-video-preview",_0x23068a.short&&_0xc9c353[_0xded724(_0x31ba09__0x2b2f14)].add(_0xded724(_0x31ba09__0x5c891d));const _0x1989bb=document[_0xded724(_0x31ba09__0x3f4154)](_0xded724(454));_0x1989bb[_0xded724(_0x31ba09__0x2af7ba)]=_0x23068a[_0xded724(_0x31ba09__0x54e34a)],_0x1989bb[_0xded724(319)]="YouTube video",_0x1989bb[_0xded724(_0x31ba09__0xacbb98)]=_0xded724(_0x31ba09__0x244c2f),_0x1989bb[_0xded724(_0x31ba09__0x51f93e)]=_0xded724(_0x31ba09__0x4be67b),_0x1989bb[_0xded724(_0x31ba09__0x29255c)]=!0,_0xc9c353[_0xded724(_0x31ba09__0x4fed28)](_0x1989bb),_0x296313[_0xded724(_0x31ba09__0x4fed28)](_0xc9c353)}),0===_0x296313[_0x4f4445(483)][_0x4f4445(_0x1a6313__0x5b5083)]&&(_0x296313[_0x4f4445(_0x1a6313__0x193d09)]=_0x4f4445(_0x1a6313__0x3d06a4)),void _0xdc5bca[_0x4f4445(_0x1a6313__0x3a825f)](_0x296313)}_0x4562d6[_0x4f4445(_0x1a6313__0x5daceb)]===_0x4f4445(_0x1a6313__0x1e6050)&&(_0x4562d6[_0x4f4445(_0x1a6313__0x1ca1bc)][_0x4f4445(_0x1a6313__0x1f9792)](_0x46be2c=>{const _0xcd1a17=_0x4f4445;if(!_0x46be2c[_0xcd1a17(_0x15494d__0x7089e3)]||!isValidHttpsUrl(_0x46be2c.url))return;const _0xb32643=document.createElement("a");_0xb32643[_0xcd1a17(_0x15494d__0x26a5db)]=_0xcd1a17(_0x15494d__0x5ada38),_0xb32643[_0xcd1a17(744)]=_0x46be2c[_0xcd1a17(936)],_0xb32643[_0xcd1a17(787)]=_0xcd1a17(939),_0xb32643[_0xcd1a17(_0x15494d__0x579d57)]=_0xcd1a17(_0x15494d__0x5bfbc9),_0xb32643.textContent=_0x46be2c[_0xcd1a17(_0x15494d__0x1b53c1)],_0xdc5bca[_0xcd1a17(_0x15494d__0x5dd7d5)](_0xb32643)}),0===_0xdc5bca[_0x4f4445(483)].length&&(_0xdc5bca.textContent=_0x4f4445(_0x1a6313__0x2cf0a8)))}function handleWebsiteSectionAction(_0xf0cb40){const _0x433b9b__0x1150f1=698,_0x433b9b__0x429517=710,_0x433b9b__0xc7635b=490,_0x433b9b__0x1c5f34=908,_0x433b9b__0x26bf2f=844,_0x433b9b__0x2821a1=519,_0x433b9b__0x27ecb2=868,_0x433b9b__0x2b6852=699,_0x433b9b__0x686984=912,_0x433b9b__0x1fd732=271,_0x207535=_0x4be7d1,_0x19493c=_0xf0cb40[_0x207535(787)][_0x207535(_0x433b9b__0x1150f1)]("[data-website-action]");if(!_0x19493c)return;const _0x24d711=_0x19493c[_0x207535(_0x433b9b__0x429517)][_0x207535(_0x433b9b__0xc7635b)],_0x5f51c4=_0x19493c[_0x207535(_0x433b9b__0x429517)][_0x207535(_0x433b9b__0x1c5f34)];_0x24d711!==_0x207535(_0x433b9b__0x26bf2f)?"move-up"!==_0x24d711?_0x24d711!==_0x207535(_0x433b9b__0x2821a1)?_0x24d711!==_0x207535(_0x433b9b__0x27ecb2)?_0x24d711!==_0x207535(_0x433b9b__0x2b6852)?_0x24d711!==_0x207535(822)?_0x24d711===_0x207535(_0x433b9b__0x686984)&&deleteWebsiteContent(_0x5f51c4,_0x19493c[_0x207535(710)][_0x207535(_0x433b9b__0x1fd732)]):editWebsiteContent(_0x5f51c4,_0x19493c[_0x207535(710)].blockId):addWebsiteContent(_0x5f51c4,_0x19493c[_0x207535(710)].contentType):deleteWebsiteSection(_0x5f51c4):moveWebsiteSection(_0x5f51c4,_0x207535(814)):moveWebsiteSection(_0x5f51c4,"up"):editWebsiteSection(_0x5f51c4)}let websiteContentModalState={mode:_0x4be7d1(509),sectionId:null,blockId:null,type:null};function openWebsiteContentModal(_0x2a7282,_0x4ac418,_0x27c168=null){const _0x4c22ac__0x2b7f95=633,_0x4c22ac__0x43d691=827,_0x4c22ac__0x2319d6=564,_0x4c22ac__0x2cd9fa=743,_0x4c22ac__0x3a1554=379,_0x4c22ac__0x9a7e9=745,_0x4c22ac__0x80985=739,_0x4c22ac__0x52c018=843,_0x4c22ac__0x35b4cc=522,_0x4c22ac__0x2d518d=644,_0x4c22ac__0x2c5bf6=656,_0x4c22ac__0x107bef=404,_0x4c22ac__0xc2085c=312,_0x4c22ac__0x39551e=399,_0x4c22ac__0x22714e=410,_0x4c22ac__0xb1e168=759,_0x4c22ac__0x513a5c=928,_0x4c22ac__0x361aa1=272,_0x4c22ac__0x3f07b4=360,_0xad02e5=_0x4be7d1;if(!findWebsiteSection(_0x2a7282))return;websiteContentModalState={mode:_0x27c168?_0xad02e5(_0x4c22ac__0x2b7f95):"add",sectionId:_0x2a7282,blockId:_0x27c168?_0x27c168.id:null,type:_0x4ac418},clearWebsiteContentModal();const _0x23efd3=_0x4ac418===_0xad02e5(_0x4c22ac__0x43d691)||"subparagraph"===_0x4ac418,_0x752a04=_0x4ac418===_0xad02e5(_0x4c22ac__0x2319d6),_0x45efc5=_0x4ac418===_0xad02e5(354),_0x640b95=_0x4ac418===_0xad02e5(_0x4c22ac__0x2cd9fa),_0x108938=getWebsiteBlockLabel(_0x4ac418);DOM.websiteContentModalTitle&&(DOM.websiteContentModalTitle[_0xad02e5(_0x4c22ac__0x3a1554)]=websiteContentModalState[_0xad02e5(_0x4c22ac__0x9a7e9)]===_0xad02e5(633)?"Edit "+_0x108938:_0xad02e5(_0x4c22ac__0x80985)+_0x108938),DOM[_0xad02e5(355)]&&(DOM.websiteContentModalDescription.textContent=_0x23efd3?_0xad02e5(_0x4c22ac__0x52c018):_0x752a04?"Add one or more HTTPS image URLs.":_0x45efc5?_0xad02e5(_0x4c22ac__0x35b4cc):_0x640b95?"Create one or more professional link buttons.":"Add website content."),DOM[_0xad02e5(644)]&&(DOM[_0xad02e5(_0x4c22ac__0x2d518d)][_0xad02e5(343)]=!_0x23efd3),DOM.websiteContentRepeatableField&&(DOM[_0xad02e5(_0x4c22ac__0x2c5bf6)][_0xad02e5(343)]=_0x23efd3),_0x23efd3&&(DOM[_0xad02e5(_0x4c22ac__0x107bef)]&&(DOM[_0xad02e5(_0x4c22ac__0x107bef)][_0xad02e5(_0x4c22ac__0xc2085c)]=_0x108938+_0xad02e5(_0x4c22ac__0x39551e)),DOM[_0xad02e5(_0x4c22ac__0x22714e)]&&(DOM.websiteContentText[_0xad02e5(_0x4c22ac__0xb1e168)]=_0x27c168&&typeof _0x27c168[_0xad02e5(747)]===_0xad02e5(_0x4c22ac__0x513a5c)?_0x27c168.text:"",DOM.websiteContentText.placeholder="paragraph"===_0x4ac418?_0xad02e5(401):"Write your sub-paragraph here...")),!_0x23efd3&&configureWebsiteRepeatableModal(_0x4ac418,_0x27c168),DOM[_0xad02e5(_0x4c22ac__0x361aa1)]&&(DOM.websiteContentSave[_0xad02e5(379)]=websiteContentModalState[_0xad02e5(_0x4c22ac__0x9a7e9)]===_0xad02e5(_0x4c22ac__0x2b7f95)?_0xad02e5(_0x4c22ac__0x3f07b4)+_0x108938:_0xad02e5(739)+_0x108938),showModal(DOM[_0xad02e5(870)]),_0x23efd3&&requestAnimationFrame(()=>{DOM[_0xad02e5(410)]&&DOM.websiteContentText.focus()})}function clearWebsiteContentModal(){const _0x3cb2a9__0x33e04a=410,_0x3cb2a9__0x2b2d6f=599,_0x3cb2a9__0x3b1fba=693,_0x113cb8=_0x4be7d1;DOM[_0x113cb8(410)]&&(DOM[_0x113cb8(_0x3cb2a9__0x33e04a)].value=""),DOM[_0x113cb8(_0x3cb2a9__0x2b2d6f)]&&DOM.websiteContentRowList[_0x113cb8(_0x3cb2a9__0x3b1fba)](),clearWebsiteContentModalError()}function clearWebsiteContentModalError(){const _0x201ae0__0x9ee68f=642,_0x201ae0__0x1d2082=343,_0x201ae0__0x56de59=642,_0x4c34bd=_0x4be7d1;DOM[_0x4c34bd(642)]&&(DOM[_0x4c34bd(_0x201ae0__0x9ee68f)][_0x4c34bd(_0x201ae0__0x1d2082)]=!0,DOM[_0x4c34bd(_0x201ae0__0x56de59)][_0x4c34bd(379)]="")}function showWebsiteContentModalError(_0x4276f9){const _0x108085=_0x4be7d1;DOM[_0x108085(642)]&&(DOM[_0x108085(642)].hidden=!1,DOM[_0x108085(642)][_0x108085(379)]=_0x4276f9)}function closeWebsiteContentModal(){websiteContentModalState={mode:_0x4be7d1(509),sectionId:null,blockId:null,type:null},hideModal(DOM.websiteContentModal)}function configureWebsiteRepeatableModal(_0x542321,_0x5eed40){const _0x490b38__0x45d722=564,_0x490b38__0x451f70=830,_0x490b38__0x485556=354,_0x490b38__0x24ca39=706,_0x490b38__0x1800df=347,_0x490b38__0x49d082=737,_0x490b38__0x42db5f=557,_0x490b38__0x503660=731,_0x490b38__0x5c0427=379,_0x490b38__0x3cc6d7=492,_0x490b38__0x10b639=765,_0xd675b2=_0x4be7d1;let _0x1392f1=_0xd675b2(786),_0x1e23b5=_0xd675b2(887);_0x542321===_0xd675b2(_0x490b38__0x45d722)&&(_0x1392f1=_0xd675b2(_0x490b38__0x451f70),_0x1e23b5=_0xd675b2(395)),_0x542321===_0xd675b2(_0x490b38__0x485556)&&(_0x1392f1=_0xd675b2(620),_0x1e23b5=_0xd675b2(_0x490b38__0x24ca39)),_0x542321===_0xd675b2(743)&&(_0x1392f1=_0xd675b2(_0x490b38__0x1800df),_0x1e23b5=_0xd675b2(_0x490b38__0x49d082)),DOM[_0xd675b2(_0x490b38__0x42db5f)]&&(DOM.websiteContentRepeatableLabel.innerHTML=_0x1392f1+' <span class="required-mark">*</span>'),DOM[_0xd675b2(_0x490b38__0x503660)]&&(DOM.websiteContentRepeatableHelp[_0xd675b2(_0x490b38__0x5c0427)]=_0x1e23b5);const _0x17058a=_0x5eed40&&Array.isArray(_0x5eed40[_0xd675b2(_0x490b38__0x3cc6d7)])?_0x5eed40[_0xd675b2(492)]:[];0!==_0x17058a.length?_0x17058a[_0xd675b2(_0x490b38__0x10b639)](_0x45b595=>{addWebsiteContentModalRow(_0x45b595)}):addWebsiteContentModalRow()}function addWebsiteContentModalRow(_0x40891e=null){const _0x3e8e6b__0x5c28db=348,_0x3e8e6b__0x3aa25d=599,_0x3e8e6b__0x44cad1=483,_0x3e8e6b__0x53fe66=738,_0x3e8e6b__0x59c47f=354,_0x3e8e6b__0x97bd5d=470,_0x3e8e6b__0x3cbe92=413,_0x3e8e6b__0x420071=879,_0x3e8e6b__0x5dc2f3=675,_0x3e8e6b__0x28cf43=743,_0x3e8e6b__0x36b92b=564,_0x3e8e6b__0x1a1637=442,_0x3e8e6b__0x15be42=919,_0x3e8e6b__0x4b3ff7=919,_0x3e8e6b__0x5c35fc=365,_0x3e8e6b__0x10c532=523,_0x3e8e6b__0x31fb11=564,_0x3e8e6b__0x22f94f=686,_0x3e8e6b__0x3676ad=260,_0x3e8e6b__0x39161e=349,_0x3e8e6b__0xc67a19=498,_0x3e8e6b__0x2b4d2a=268,_0x3e8e6b__0x3ec82f=815,_0x3e8e6b__0xb2ee92=530,_0x3e8e6b__0x44f3d8=825,_0x3e8e6b__0x1f2d64=919,_0x3e8e6b__0x14ebbc=388,_0x3e8e6b__0x12bfb8=928,_0x3e8e6b__0x3bfdea=761,_0x19536c=_0x4be7d1;if(!DOM.websiteContentRowList)return;const _0x490926=websiteContentModalState[_0x19536c(_0x3e8e6b__0x5c28db)],_0x7e920b=DOM[_0x19536c(_0x3e8e6b__0x3aa25d)][_0x19536c(_0x3e8e6b__0x44cad1)][_0x19536c(_0x3e8e6b__0x53fe66)];let _0x539acf=WEBSITE_MAX_IMAGES_PER_BLOCK;if(_0x490926===_0x19536c(_0x3e8e6b__0x59c47f)&&(_0x539acf=WEBSITE_MAX_VIDEOS_PER_BLOCK),"links"===_0x490926&&(_0x539acf=WEBSITE_MAX_LINKS_PER_BLOCK),_0x7e920b>=_0x539acf)return void showWebsiteContentModalError(_0x19536c(_0x3e8e6b__0x97bd5d)+_0x539acf+_0x19536c(660));const _0x290ef4=document[_0x19536c(_0x3e8e6b__0x3cbe92)](_0x19536c(_0x3e8e6b__0x420071));if(_0x290ef4[_0x19536c(_0x3e8e6b__0x5dc2f3)]=_0x490926===_0x19536c(_0x3e8e6b__0x28cf43)?"website-link-row":_0x490926===_0x19536c(_0x3e8e6b__0x36b92b)?"website-image-row":_0x19536c(_0x3e8e6b__0x1a1637),_0x490926===_0x19536c(_0x3e8e6b__0x28cf43)){_0x290ef4[_0x19536c(312)]=_0x19536c(837)+WEBSITE_MAX_URL_LENGTH+'"\n          placeholder="https://example.com"\n          inputmode="url"\n          autocomplete="url"\n        >\n      </div>\n\n      <button\n        type="button"\n        class="secondary-button website-field-row__remove"\n        data-website-modal-remove-row\n        aria-label="Remove link button"\n        title="Remove"\n      >\n        −\n      </button>\n    ';const _0x52269f=_0x290ef4[_0x19536c(_0x3e8e6b__0x15be42)](_0x19536c(359)),_0x55e6c8=_0x290ef4[_0x19536c(_0x3e8e6b__0x4b3ff7)](".website-modal-link-url");_0x40891e&&typeof _0x40891e===_0x19536c(_0x3e8e6b__0x5c35fc)&&(_0x52269f.value="string"==typeof _0x40891e.name?_0x40891e[_0x19536c(_0x3e8e6b__0x10c532)]:"",_0x55e6c8[_0x19536c(759)]=typeof _0x40891e[_0x19536c(936)]===_0x19536c(928)?_0x40891e.url:"")}else{const _0xa93574=_0x490926===_0x19536c(_0x3e8e6b__0x31fb11)?_0x19536c(_0x3e8e6b__0x22f94f):_0x19536c(_0x3e8e6b__0x3676ad),_0x35dd9d=_0x19536c("images"===_0x490926?_0x3e8e6b__0x39161e:_0x3e8e6b__0xc67a19);_0x290ef4[_0x19536c(312)]=_0x19536c(_0x3e8e6b__0x2b4d2a)+_0x35dd9d+_0x19536c(_0x3e8e6b__0x3ec82f)+WEBSITE_MAX_URL_LENGTH+_0x19536c(_0x3e8e6b__0xb2ee92)+_0xa93574+_0x19536c(_0x3e8e6b__0x44f3d8);const _0x2655f7=_0x290ef4[_0x19536c(_0x3e8e6b__0x1f2d64)](_0x19536c(_0x3e8e6b__0x14ebbc));typeof _0x40891e===_0x19536c(_0x3e8e6b__0x12bfb8)&&(_0x2655f7.value=_0x40891e)}DOM[_0x19536c(599)][_0x19536c(_0x3e8e6b__0x3bfdea)](_0x290ef4),clearWebsiteContentModalError()}function handleWebsiteContentModalRowAction(_0x5471bc){const _0x990957__0x2e053f=650,_0x990957__0x20c854=698,_0x990957__0x34bd38=452,_0x990957__0x36016c=602,_0x990957__0xd442d1=483,_0x990957__0x23ca57=738,_0x34a8f7=_0x4be7d1,_0x206f54=_0x5471bc[_0x34a8f7(787)].closest(_0x34a8f7(_0x990957__0x2e053f));if(!_0x206f54)return;const _0x5f46cf=_0x206f54[_0x34a8f7(_0x990957__0x20c854)](_0x34a8f7(_0x990957__0x34bd38));_0x5f46cf&&(_0x5f46cf[_0x34a8f7(_0x990957__0x36016c)](),0===DOM[_0x34a8f7(599)][_0x34a8f7(_0x990957__0xd442d1)][_0x34a8f7(_0x990957__0x23ca57)]&&addWebsiteContentModalRow())}function saveWebsiteContentModal(){const _0x138567__0xe9b8e1=348,_0x138567__0x4984ed=691,_0x138567__0x31f48a=410,_0x138567__0x3e76f9=709,_0x138567__0x1eae3f=745,_0x138567__0x114af4=793,_0x138567__0x45326a=298,_0x138567__0x2772f0=747,_0x138567__0x548b48=345,_0x138567__0x59ecda=751,_0x138567__0x4142fa=633,_0x138567__0x57f01e=382,_0x138567__0x3a2c6e=422,_0x138567__0x3fdc8d=483,_0x138567__0x431faa=738,_0x138567__0x5dc4dd=569,_0x138567__0x32743c=863,_0x138567__0x2f7157=738,_0x138567__0x338fa0=657,_0x138567__0x21b6bb=738,_0x138567__0x22c3f7=590,_0x138567__0x3aa7fd=564,_0x138567__0xf30f77=354,_0x138567__0x571511=863,_0x138567__0x4ae10a=738,_0x138567__0x4e7abb=486,_0x138567__0x5c5f53=743,_0x138567__0x5e8448=863,_0x138567__0x58f5e3=738,_0x138567__0x319dcd=862,_0x2b5bf7__0x1ac432=919,_0x2b5bf7__0x217a71=456,_0x2b5bf7__0x17f1a2=759,_0x798af9__0x2c06ff=388,_0x412fc3__0x3d0ef0=919,_0x412fc3__0x5e6465=388,_0x412fc3__0x86b577=447,_0x3952b9=_0x4be7d1;clearWebsiteContentModalError();const _0x53f8f2=findWebsiteSection(websiteContentModalState.sectionId);if(!_0x53f8f2)return void closeWebsiteContentModal();const _0x349607=websiteContentModalState[_0x3952b9(_0x138567__0xe9b8e1)];if("paragraph"===_0x349607||_0x349607===_0x3952b9(_0x138567__0x4984ed)){const _0x214f71=normalizeText(DOM[_0x3952b9(_0x138567__0x31f48a)]?DOM[_0x3952b9(_0x138567__0x31f48a)][_0x3952b9(759)]:"",WEBSITE_MAX_TEXT_LENGTH);if(!_0x214f71)return showWebsiteContentModalError(_0x3952b9(762)),void(DOM[_0x3952b9(410)]&&DOM[_0x3952b9(_0x138567__0x31f48a)][_0x3952b9(_0x138567__0x3e76f9)]());if("edit"===websiteContentModalState[_0x3952b9(_0x138567__0x1eae3f)]){const _0x438884=_0x53f8f2[_0x3952b9(_0x138567__0x114af4)][_0x3952b9(_0x138567__0x45326a)](_0x4e9ecb=>_0x4e9ecb.id===websiteContentModalState[_0x3952b9(271)]);if(!_0x438884)return void closeWebsiteContentModal();_0x438884[_0x3952b9(_0x138567__0x2772f0)]=_0x214f71}else _0x53f8f2[_0x3952b9(_0x138567__0x114af4)][_0x3952b9(_0x138567__0x548b48)]({id:createId(_0x3952b9(_0x138567__0x59ecda)),type:_0x349607,text:_0x214f71});return void finishWebsiteContentModalSave(websiteContentModalState[_0x3952b9(745)]===_0x3952b9(_0x138567__0x4142fa)?"Website content updated.":_0x3952b9(_0x138567__0x57f01e))}const _0x2f971e=Array[_0x3952b9(_0x138567__0x3a2c6e)](DOM[_0x3952b9(599)]?DOM[_0x3952b9(599)][_0x3952b9(_0x138567__0x3fdc8d)]:[]);if(0!==_0x2f971e[_0x3952b9(_0x138567__0x431faa)]){if("images"===_0x349607){const _0x1af72c=_0x2f971e[_0x3952b9(_0x138567__0x5dc4dd)](_0x2a5914=>{const _0x5a04e7=_0x3952b9,_0x9581da=_0x2a5914[_0x5a04e7(_0x412fc3__0x3d0ef0)](_0x5a04e7(_0x412fc3__0x5e6465));return _0x9581da?_0x9581da.value[_0x5a04e7(_0x412fc3__0x86b577)]():""}).filter(Boolean),_0x2cf6e1=_0x1af72c[_0x3952b9(_0x138567__0x32743c)](_0x5b225b=>!isValidHttpsUrl(_0x5b225b));return 0===_0x1af72c[_0x3952b9(_0x138567__0x2f7157)]?void showWebsiteContentModalError(_0x3952b9(_0x138567__0x338fa0)):_0x2cf6e1[_0x3952b9(_0x138567__0x21b6bb)]>0?void showWebsiteContentModalError(_0x3952b9(_0x138567__0x22c3f7)):void saveWebsiteRepeatableBlock(_0x53f8f2,_0x3952b9(_0x138567__0x3aa7fd),_0x1af72c)}if(_0x349607===_0x3952b9(_0x138567__0xf30f77)){const _0x4a2c74=_0x2f971e[_0x3952b9(_0x138567__0x5dc4dd)](_0x5f21a7=>{const _0x26edb5=_0x3952b9,_0x234270=_0x5f21a7.querySelector(_0x26edb5(_0x798af9__0x2c06ff));return _0x234270?_0x234270[_0x26edb5(759)][_0x26edb5(447)]():""})[_0x3952b9(_0x138567__0x571511)](Boolean);if(0===_0x4a2c74[_0x3952b9(_0x138567__0x4ae10a)])return void showWebsiteContentModalError(_0x3952b9(377));return _0x4a2c74[_0x3952b9(_0x138567__0x32743c)](_0x52e289=>!isValidYoutubeUrl(_0x52e289)).length>0?void showWebsiteContentModalError(_0x3952b9(_0x138567__0x4e7abb)):void saveWebsiteRepeatableBlock(_0x53f8f2,_0x3952b9(_0x138567__0xf30f77),_0x4a2c74)}if(_0x349607===_0x3952b9(_0x138567__0x5c5f53)){const _0x395023=_0x2f971e.map(_0x21cd68=>{const _0x58eafd=_0x3952b9,_0x2535ef=_0x21cd68.querySelector(_0x58eafd(359)),_0xc8cc42=_0x21cd68[_0x58eafd(_0x2b5bf7__0x1ac432)](_0x58eafd(_0x2b5bf7__0x217a71)),_0x5b3025=normalizeText(_0x2535ef?_0x2535ef.value:"",150),_0xe7817d=normalizeText(_0xc8cc42?_0xc8cc42[_0x58eafd(_0x2b5bf7__0x17f1a2)]:"",WEBSITE_MAX_URL_LENGTH);return _0x5b3025&&isValidHttpsUrl(_0xe7817d)?{name:_0x5b3025,url:_0xe7817d}:null})[_0x3952b9(_0x138567__0x5e8448)](Boolean);if(0===_0x395023[_0x3952b9(_0x138567__0x4ae10a)])return void showWebsiteContentModalError("Please enter at least one valid button name and HTTPS URL.");if(_0x395023[_0x3952b9(_0x138567__0x431faa)]!==_0x2f971e[_0x3952b9(_0x138567__0x58f5e3)])return void showWebsiteContentModalError(_0x3952b9(_0x138567__0x319dcd));saveWebsiteRepeatableBlock(_0x53f8f2,_0x3952b9(_0x138567__0x5c5f53),_0x395023)}}else showWebsiteContentModalError(_0x3952b9(375))}function saveWebsiteRepeatableBlock(_0x1ff5d6,_0x12a6ac,_0x2c4a44){const _0xe8d6c__0x29a488=633,_0xe8d6c__0x3afefb=793,_0xe8d6c__0x1eb1a7=345,_0xe8d6c__0x3fc7b8=751,_0xe8d6c__0x4a773c=633,_0xe8d6c__0x5e69bb=736,_0x5d6185=_0x4be7d1;if(websiteContentModalState[_0x5d6185(745)]===_0x5d6185(_0xe8d6c__0x29a488)){const _0x187fed=_0x1ff5d6.blocks.find(_0x33c80b=>_0x33c80b.id===websiteContentModalState[_0x5d6185(271)]);if(!_0x187fed)return void closeWebsiteContentModal();_0x187fed.items=_0x2c4a44}else _0x1ff5d6[_0x5d6185(_0xe8d6c__0x3afefb)][_0x5d6185(_0xe8d6c__0x1eb1a7)]({id:createId(_0x5d6185(_0xe8d6c__0x3fc7b8)),type:_0x12a6ac,items:_0x2c4a44});finishWebsiteContentModalSave(websiteContentModalState[_0x5d6185(745)]===_0x5d6185(_0xe8d6c__0x4a773c)?_0x5d6185(764):getWebsiteBlockLabel(_0x12a6ac)+_0x5d6185(_0xe8d6c__0x5e69bb))}function _0x52fe(){const _0x41b3ef=["D2vIC2L0zs1Zzwn0Aw9UCY1LBxb0Eq","y2f0zwDVCNLmAxn0","vevnueXbvevFsuq","AxrLBs1TB2rHBa","D2vIC2L0zs13Agf0C2fWCa","rxzLCNKGy2f0zwDVCNKGBxvZDcbOyxzLigeGBMfTzs4","tM8GAw1Hz2vZigfKzgvKlG","D2vIC2L0zu1VyMLSzq","D2vIC2L0zvzLCMLMEuXVy2f0Aw9U","rxzLCNKGAw1Hz2uGvvjmig11C3qGyMuGysb2ywXPzcbivfrquYbvuKWU","vMfSAwqGyNvZAw5LC3mGr1btignVB3jKAw5HDgvZigfYzsbYzxf1AxjLzc4","iIbOyxmGAw52ywXPzcbJB250zw50lG","Aw5JBhvKzxm","D2vIC2L0zvb1yMXPC2HtCgLUBMvY","Dhj1zq","AxrLBurLC2nYAxb0Aw9U","y2f0zwDVCNLnB2rHBenSB3nL","tufyx1LpvvrvqKvFvvjmx0XftKDusa","D2vIC2L0zunVBNrLBNrsB3DmAxn0","AxrLBu1VzgfSvgL0Bgu","ugXLyxnLihjLDMLLDYb0AguGzM9YBs4","CMvTB3zL","mJGWmJy2B1z5Ag1s","ywrKlwL0zw0","AxrLBvnHDMu","D2vIC2L0zvDOyxrZyxbW","zgvWBg95BwvUDfn0yxr1CW","vgHLigfWCcbPCYbZDgLSBcbIzwLUzYbWDwjSAxnOzwqUifbSzwfZzsb3ywL0igeGBgL0DgXLigXVBMDLCIbHBMqGDhj5ig9Wzw5PBMCGAxqGywDHAw4U","AxrLBunHBMnLBa","AxrLBs1YB3C","zgvWBg95BwvUDc1ZDgf0Dxm","AxngAw5PDgu","re9nq29UDgvUDeXVywrLza","w2rHDgeTBw9KywWTy2XVC2vD","B3jPz2LUywXuzxH0","p3jLBd0W","Bw9KywWTB3bLBG","D2vIC2L0zvb1yMXPC2G","CMvS","ww91vhvIzsbvuKXZ","ww91CIbJDxjYzw50igXVy2f0Aw9UignVDwXKig5VDcbIzsbKzxrLCM1PBMvKlIbqBgvHC2uGDhj5igfNywLUlG","C2vJDgLVBG","AxnbCNjHEq","ywnJzwXLCM9TzxrLCJSGyxv0B3bSyxK7ignSAxbIB2fYzc13CML0ztSGzw5JCNLWDgvKlw1LzgLHoYbNExjVC2nVCgu7ihbPy3r1CMuTAw4TCgLJDhvYztSGD2vIlxnOyxjL","rgvSzxrLici","Axnoyu4","Bg9JyxrPB25tDgf0DxnjBMrPy2f0B3i","iIbJB250ywLUCYbHBIbPBNzHBgLKigLTywDLifvstc4","DMfYkc0TDgv4Dc1ZzwnVBMrHCNKP","C2v0qxr0CMLIDxrL","D2vIC2L0zs1MB290zxiTzw1WDhK","ChvIBgLZAc1ZDgf0Dxm","zwrPDa","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGy2f0zwDVCNKU","D2vIC2L0zs1JB250zw50lw1VzgfS","D2vIC2L0zs1WDwjSAxnOlxn0yxr1CW","zMfSC2u","DgvTCgXHDgvxzwjZAxrL","zwnVBw1LCMnLlMPZB24","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZvgv4Da","zNjLzxPL","D2vIC2L0zunVBNrLBNrgB3jTrxjYB3i","DgvTCgXHDguTD2vIC2L0zq","D2vIC2L0zunVBNrLBNruzxH0rMLLBgq","qNvZAw5LC3mGyxbWigLZigXPDMuU","ugXLyxnLigvUDgvYihrOzsbIDxnPBMvZCYbTB2jPBguGBNvTyMvYlG","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZsw5KAwnHDg9Y","rw50zxiGC2vJDgLVBIbOzwfKAw5NoG","ywrKsxrLBq","w2rHDgeTD2vIC2L0zs1TB2rHBc1Yzw1VDMuTCM93xq","CMvTB3zLsxrLBq","z2v0rwXLBwvUDej5swq","zwrPDej1C2LUzxnZ","D2vIC2L0zs1Zzwn0Aw9UlwnHCMrFx3rPDgXL","l3b1yMXPC2G","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLrMLLBgq","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGAw1Hz2uGvvjmlG","iIbOyxmGyw4GAw52ywXPzcbWCMLJzs4","qsbJyxrLz29YEsb3AxrOihrOAxmGBMfTzsbHBhjLywr5igv4Axn0CY4","igL0zw1ZigfYzsbHBgXVD2vKlG","CMvWBgfJzq","y2vPBa","D2vIC2L0zs1JB250zw50lxrLEhqTBgfIzwW","D2fYBG","tg9JyxrPB24GCgvYBwLZC2LVBIb3yxmGzgvUAwvKlIbqBgvHC2uGywXSB3CGBg9JyxrPB24GywnJzxnZigfUzcb0CNKGywDHAw4U","zwnVBw1LCMnLu2vJDgLVBG","qNvZAw5LC3mGyxbWignYzwf0zwqGyw5Kihb1yMXPC2HLzcbZDwnJzxnZzNvSBhKU","tM8GDMfSAwqGww91vhvIzsb2AwrLB3mGywrKzwqU","tg9JyxrPB24GBM90ihzLCMLMAwvK","ugXLyxnLihnLBgvJDcbHigj1C2LUzxnZigfWCcb0zw1WBgf0zs4","yxjPys1KAxnHyMXLza","Ahr0Chm6lY93D3CUEw91DhvIzs5JB20Vzw1IzwqV","Bg9JyxrPB24TC3rHDhvZlxrLEhq","r2v0DgLUzYbHBIbHy2n1CMf0zsbhufmGBg9JyxrPB24UifbSzwfZzsb3ywL0lI4U","y2XHC3noyw1L","qw4GAxrLBsb3AxrOihrOAxmGBMfTzsbHBhjLywr5igv4Axn0CYbPBIb0AgLZignHDgvNB3j5lG","DgvTCgXHDgvtzwn0Aw9U","yNvZAw5LC3mTCgfZC3DVCMq","C3rHDhvZ","ywXS","zw1HAwW","ywrKCMvZCW","Dg9HC3qTy29UDgfPBMvY","mJa2ntq4uLrSA2rU","Bg9HzgvYvgv4Da","Ahr0Chm6lY9LEgfTCgXLlMnVBs9PBwfNzs5QCgC","r2XVyMfSifDLyNnPDguGC2vSzwn0zwqU","D2vIC2L0zs1WDwjSAxnOlxjLC3vSDa","ChjVBxb0","D2vIC2L0zs1WDwjSAxnOlwj1DhrVBI10zxH0","C3vICgfYywDYyxbO","Bg9NB1bYzxzPzxC","CMvWBgfJzunOAwXKCMvU","rw50zxiGzM9VDgvYigXPBMSGvvjmoG","D2vIC2L0zs12AwrLBY1SAxn0","v2fPDgLUzYbMB3iGEw91CIbIDxnPBMvZCYbHChaGDg8GyMvJB21LigXPDMuUlI4G","C2LNBMfS","y2XVC2vZDa","ywrKlwnVBNrLBNq","v29YA2vYihjLDhvYBMvKieHuvfaG","r0vu","vxbKyxrLieL0zw0","yxbWBgLJyxrPB25mB2fKzxi","ww91CIbIDxnPBMvZCYbHChaGAgfZigjLzw4Gy3jLyxrLzc4Gv2uGyxjLihDHAxrPBMCGzM9YihrOzsbWDwjSAwmGyxbWigzPBgvZihrVigjLy29TzsbHDMfPBgfIBguU","zxjYB3i","ww91ignHBIbHzgqGBM9YBwfSifLVDvr1yMuGDMLKzw9ZigfUzcbzB3vuDwjLifnOB3j0CY4","y2f0zwDVCNLfBxb0Eq","ugXLyxnLignYzwf0zsb5B3vYiej1C2LUzxnZifbHC3n3B3jKlG","zM9JDxm","zgf0yxnLDa","B21PDa","Cgf0Ag5HBwu","iIbJB250ywLUCYbHBIbLBxb0EsbSAw5RigjSB2nRlG","D2vIC2L0zs1IywnRlxrVlxrLBxbSyxrLCW","zgvZy3jPChrPB24","ignVBNrLBNqGyMXVy2TZigfYzsbHBgXVD2vKigLUig9UzsbZzwn0Aw9UlG","yxjPys1SywjLBa","q2f0zwDVCNKGDxbKyxrLzc4","ww91vhvIzsbwAwrLB3m","y3vYCMvUDfrHCMDLDa","yNvZAw5LC3nqyxnZD29Yza","D2vIC2L0zs1JB250zw50lwjSB2nRx19Hy3rPB25Z","qNvZAw5LC3mGBg9NBYbWCMv2Awv3","rw1WDhKGC3vIlxbHCMfNCMfWAc4","DgvTCgXHDgvfy29TBwvYy2u","D2vIC2L0zs1IDxnPBMvZCY1HzgrYzxnZ","y3jLyxrLvgv4De5Vzgu","D2vIC2L0zuzVB3rLCKvTChr5","ihnLy3rPB25ZigfYzsbHBgXVD2vKlG","zM9VDgvYswq","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLsgvSCa","v09ss0vsx1vsta","mZe0mZmXmNjAshHsuW","tufyx0Luru1tx1bfuL9dqvrfr09swq","ywjVCNq","igfKzgvKlG","r2L2zsbLywnOigj1DhrVBIbHignSzwfYig5HBwuGyw5KigrLC3rPBMf0Aw9Uifvstc4","BgvUz3rO","qwrKia","tg9JyxrPB24GCMvXDwvZDcb0Aw1LzcbVDxqUifbSzwfZzsb0CNKGywDHAw4U","yNvZAw5LC3mTBMfTzq","vgHLifDVCMTLCIbKAwqGBM90ihjLDhvYBIbHihzHBgLKihDLyNnPDguGvvjmlG","BgLUA3m","AhjLzG","Bw9Kzq","Bg9HzgLUzW","Dgv4Da","q291BgqGBM90ihnHDMuGy2f0zwDVCNKGyw5KigL0zw0Gzgf0ys4","y2f0zwDVCNKTzw1WDhK","runn","yMXVy2S","D2vIC2L0zs1JB250zw50lxjLCgvHDgfIBguTzMLLBgq","AxmTB25SAw5L","Bg9JyxrPB25ezxrHAwXZ","rwrPDcbdyxrLz29YEq","C3jJ","y2f0zwDVCNLby3rPB24","ugXLyxnLigvUDgvYigeGDMfSAwqGzw1HAwWGywrKCMvZCY4","DMfSDwu","y3jLyxrLqw5VDgHLCG","yxbWzw5Kq2HPBgq","ugXLyxnLigvUDgvYihLVDxiGy29UDgvUDc4","Bs55B3v0DwjLlMnVBq","v2vIC2L0zsbJB250zw50ihvWzgf0zwqU","zM9YrwfJAa","D2vIC2L0zvrHz2XPBMu","v0vcu0Lurv9tve9squDfx0Tfwq","Bg9JyxrPB24TBgf0Axr1zgu","yNvZAw5LC3nbChbvCMW","AxrLBvbYAwnL","v0vc","D2vIC2L0zs1WDwjSAxnOlxnWAw5Uzxi","C3rHCNrZv2L0Aa","Bg9NB1bYzxzPzxDjBwfNzq","DgfIAw5KzxG","w2rHDgeTy2f0zwDVCNKTywn0Aw9Uxq","DMfSAwrHDgLVBLn1Bw1HCNK","sg9TzsaMieTPDgnOzw4","AxrLBuzVCM1fCNjVCG","rw1WDhKGCgfYywDYyxbOlG","D2vIC2L0zs1JB250zw50lwjSB2nRx190ExbL","y2f0zwDVCNKTy2fUy2vS","C3bSAxq","y29UDgvUDc10ExbL","C2nYB2XSsw50B1zPzxC","sxrLBxm","DgfYz2v0","sxrLBsaI","y29Kzq","Bg9Uz2L0DwrL","nJbHC3DPwLC","yNv0Dg9U","yMXVy2TZ","CM9Szq","DMfSAwq","q3jLyxrPBMCGqNvZAw5LC3mGqxbWlI4U","D2vIC2L0zvb1yMXPC2HtDgf0Dxm","AxrLBs1WCMLJzq","D2vIC2L0zs1SB2DVlxbYzxzPzxC","Bgf6Eq","q291BgqGBM90ignSzwfYifDLyNnPDguGzgf0ys4","D2vIC2L0zvnLy3rPB24","yxjPys1WCMvZC2vK","z2v0vgLTzq","Bg9JyxrPB25tDgf0Dxm","qwrKienHDgvNB3j5","ChjVDg9JB2W","D2vIC2L0zs1WDwjSAxnOzwqTDxjS","Bg9JyxrPB25mB25NAxr1zgu","vw5HyMXLihrVignVBM5Ly3qGDg8GDgHLiej1C2LUzxnZifDVCMTLCI4GugXLyxnLignOzwnRihLVDxiGAw50zxjUzxqGy29UBMvJDgLVBIbHBMqGDhj5igfNywLUlG","l3DHDgnO","C21VB3rO","yNvZAw5LC3mTBg9NBW","zg93BG","cIaGicaGicaGica8C3bHBIbJBgfZCZ0ICMvXDwLYzwqTBwfYAYi+kJWVC3bHBJ4kicaGicaGica8l2XHyMvSpGOkicaGicaGica8Aw5WDxqkicaGicaGicaGihr5Cgu9iNvYBcikicaGicaGicaGignSyxnZpsjMB3jTlwLUChv0ihDLyNnPDguTBw9KywWTDxjSiGOGicaGicaGicaGBwf4BgvUz3rOpsi","D2vIC2L0zvnLy3rPB25Z","D2vIC2L0zuXVy2f0Aw9Utgf0Axr1zgu","Aw5WDxq","ChvIBgLZAc1IDxnPBMvZCW","iIbJB250ywLUCYbHBIbLBxb0EsbPBwfNzsbIBg9JAY4","Bw9IAwXL","zwrPDc1IBg9JAW","D2vIC2L0zs1SB2nHDgLVBI1ZDgf0DxmTAw5KAwnHDg9Y","igL0zw0OCYKGAw5ZAwrLigL0pW","iGOGicaGicaGicaGAw5WDxrTB2rLpsj1CMWIcIaGicaGicaGicbHDxrVy29TCgXLDgu9iNvYBcikicaGicaGica+cIaGicaGidWVzgL2pGOkicaGicaGpgj1DhrVBGOGicaGicaGihr5Cgu9iMj1DhrVBIikicaGicaGicbJBgfZCZ0IC2vJB25Kyxj5lwj1DhrVBIb3zwjZAxrLlwzPzwXKlxjVD19FCMvTB3zLiGOGicaGicaGigrHDgeTD2vIC2L0zs1TB2rHBc1Yzw1VDMuTCM93cIaGicaGicaGyxjPys1SywjLBd0IuMvTB3zLigL0zw0IcIaGicaGicaGDgL0Bgu9iLjLBw92zsikicaGicaGpGOGicaGicaGiokiKGOGicaGica8l2j1DhrVBJ4kicaGia","DMvYAwzPzwq","CgfYywDYyxbO","D2vIC2L0zuvTywLS","ww91CIbIDxnPBMvZCYbHChaGAxmGBgL2zsbHBMqGCMvHzhKGDg8GB3bLBI4","sw1Hz2uGvvjmCW","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjKx19Uyw1L","iIbJB250ywLUCYbHBIbPBNzHBgLKifLVDvr1yMuGvvjmlG","BM8TCMvMzxjYzxi","q291BgqGBM90igXVywqGv2vIC2L0zsbKyxrHlG","q2f0zwDVCNKGywrKzwqU","D2vIC2L0zuXVy2f0Aw9Urgv0ywLSCW","cIaGicaGidXKAxyGy2XHC3m9iMzVCM0Tz3jVDxaIpGOGicaGicaGidXSywjLBcbJBgfZCZ0IzM9YBs1SywjLBci+cIaGicaGicaGicbcDxr0B24GtMfTzqOGicaGicaGicaGphnWyw4Gy2XHC3m9iNjLCxvPCMvKlw1HCMSIpIO8l3nWyw4+cIaGicaGicaGpc9SywjLBd4kcIaGicaGicaGpgLUChv0cIaGicaGicaGicb0ExbLpsj0zxH0iGOGicaGicaGicaGy2XHC3m9iMzVCM0TAw5WDxqGD2vIC2L0zs1TB2rHBc1SAw5Rlw5HBwuIcIaGicaGicaGicbTyxHSzw5NDgG9iJe1mcikicaGicaGicaGihbSywnLAg9SzgvYpsjLlMCUienVBNrHy3qGvxmIcIaGicaGicaGicbHDxrVy29TCgXLDgu9iM9MzIikicaGicaGica+cIaGicaGidWVzgL2pGOkicaGicaGpgrPDIbJBgfZCZ0IzM9YBs1NCM91Cci+cIaGicaGicaGpgXHyMvSignSyxnZpsjMB3jTlwXHyMvSiJ4kicaGicaGicaGiej1DhrVBIbvuKWkicaGicaGicaGidXZCgfUignSyxnZpsjYzxf1AxjLzc1TyxjRiJ4Qpc9ZCgfUpGOGicaGicaGidWVBgfIzwW+cGOGicaGicaGidXPBNb1DaOGicaGicaGicaGDhLWzt0IDxjSiGOGicaGicaGicaGy2XHC3m9iMzVCM0TAw5WDxqGD2vIC2L0zs1TB2rHBc1SAw5RlxvYBcikicaGicaGicaGig1HEgXLBMD0Ad0I","ihrVDgfSigL0zw1ZigfYzsbHBgXVD2vKlG","y2f0zwDVCNKTBw9KywWTDgL0Bgu","q3jLyxrLifDLyNnPDgu","u2vJDgLVBIaI","zwrPDgLUz0L0zw1dyxrLz29YEuLK","v3jPDguGEw91CIbJB250zw50ignSzwfYBhKGyw5KignVBwzVCNrHyMX5lIbmB25NihbHCMfNCMfWAhmGyxjLihn1ChbVCNrLzc4","zwrPDc1Zzwn0Aw9U","CYbYzw1HAw5PBMCU","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjKx19PBMzV","sxrLBsbHzgrLzc4","ugXLyxnLigvUDgvYihrOzsbIDxnPBMvZCYbHzgrYzxnZlG","y3j5ChrV","D2vIC2L0zs1JB250zw50lw1VzgfSlxrPDgXL","uxvHBNrPDhKGy2fUBM90igjLig5Lz2f0AxzLlG","Dw5PDa","rgvSzxrLihrOAxmG","AxrLBs1YB3DFx21HAw4","ntC0odyZm1nozxjsra","y29UzMLYBq","sgLKzsbWyxnZD29Yza","ugXLyxnLihzLCMLMEsb0AguGyNvZAw5LC3mGBg9JyxrPB24U","Dg9HC3rdB250ywLUzxi","Ew91DhvIzvvYBa","Dg9mB2nHBgvtDhjPBMC","ugXLyxnLignVBxbSzxrLigv2zxj5igXPBMSGyNv0Dg9UihDPDgGGysb2ywXPzcbUyw1LigfUzcbivfrquYbvuKWU","zMLSDgvY","tg9JyxrPB24GC2vYDMLJzxmGyxjLig5VDcbZDxbWB3j0zwqGyNKGDgHPCYbICM93C2vYlG","iIbJB250ywLUCYbLBxb0Esb0zxH0ignVBNrLBNqU","C3vJy2vZC0rLC2nYAxb0Aw9U","yMfJAY10BY10zw1WBgf0zxm","zgvSzxrLlxnLy3rPB24","D2HHDhnHCha","D2vIC2L0zunVBNrLBNrnB2rHBa","ywrKrMLYC3rdyxrLz29YEq","AxrLBunHDgvNB3j5","AxrLBu1VzgfS","CgfZC3DVCMq","y3jLyxrLlwfUB3rOzxi","v2fPDgLUzYbMB3iGD2vIC2L0zsbMAwXLCYb0BYbIzwnVBwuGBgL2zs4UlIa","revqte9ztuvovf9usu1ft1vux01t","rwXLy3rYB25Py3m","zgL2","zgvSzxrL","yNvZAw5LC3nqyxnZD29YzfrVz2DSzq","imk3iokcUq","zM9SBg93","ywrKrMLYC3rjDgvT","C2v0sxrLBq","rxzLCNKGD2vIC2L0zsbZzwn0Aw9Uig11C3qGAgf2zsbHigHLywrPBMCU","qwrKig9UzsbVCIbTB3jLigL0zw1ZlG","y2f0zwDVCNLnB2rHBfrPDgXL","vgHLigjYB3DZzxiGCMv0DxjUzwqGAw52ywXPzcbhufmGy29VCMrPBMf0zxmU","zw4Tsu4","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGD2vIC2L0zsbZzwn0Aw9UlG","Bg9JyxrPB24TBg9Uz2L0DwrL","Dg9gAxHLza","D2vIC2L0zvb1yMXPC2HLzfvYBa","D2vIC2L0zs1SAw5RlxbYzxzPzxC","ywrKlwzPCNn0lwnHDgvNB3j5","ChvIBgLZAfnWAw5Uzxi","D2vIC2L0zvbHC3n3B3jKvg9Nz2XL","C2HVCNq","D2vIC2L0zvb1yMXPC2HcDxr0B25uzxH0","zM9UDfnPEMu","Bg9JyxrPB24","D2vIC2L0zq","Dg9ju09tDhjPBMC","rgvSzxrL","ig1LDhjLCYKUifbSzwfZzsbLBMfIBguGChjLy2LZzsbSB2nHDgLVBIWGC3rHEsbHDcb0AguGyNvZAw5LC3mGBg9JyxrPB24SigfUzcb0CNKGywDHAw4U","uhvIBgLZAgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlIa","C2vJDgLVBKLK","AxrLBs1TB2rHBc10AxrSzq","DMfSAwrHDgLVBI1ZDw1Tyxj5","q2f0zwDVCNKGiG","zgvSzxrLlwjSB2nR","q2XVDgHPBMC","AxrLBs1TB2rHBc1JBg9Zzq","D2vIC2L0zuj1C2LUzxnZtMfTzq","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjK","C3vJy2vZCY1KzxnJCMLWDgLVBG","yxjPys1OAwrKzw4","CxvLCNLtzwXLy3rVCG","C3rYAw5NAwz5","vMvYAwz5Aw5NihLVDxiGC3vIC2nYAxb0Aw9UigfUzcbJCMvHDgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlG","D2vIC2L0zs1JB250zw50lwfKzc1YB3C","vMvYAwz5Aw5NlI4U","ignHDgvNB3jPzxmGyxjLigfSBg93zwqU","AxrLBs1YB3DFx2rLC2nYAxb0Aw9U","D2vIC2L0zs1LBwfPBa","rwrPDa","C3rYAw5N","ChjPy2u","ww91CIbIDxnPBMvZCYbHChaGAxmGBM90igXPDMuGEwv0lIbqBgvHC2uGD2fPDcbMB3iGChvIBgLZAgLUzYb0BYbMAw5PC2GU","C3vJy2vZCW","D2vIC2L0zs1MB290zxiTBgLUA3m","y2f0zwDVCNLoyw1L","zMXVB3i","BM9VCgvUzxiGBM9YzwzLCNjLCG","DxjS","v2vIC2L0zsbZzwn0Aw9UigfKzgvKlG","B3bLBKj1C2LUzxnZqxbW","x2jSyw5R","ywnJDxjHy3K","uhvIBgLZAgLUzYb5B3vYigj1C2LUzxnZigfWCc4UlG","yNvZAw5LC3noyw1L","DMvYAwzPzwrbDa","D2vIC2L0zs1Zzwn0Aw9Ulw9YzgvY","C2v0vgLTzw91Da","vgHLieDSB2jHBcbxzwjZAxrLignVDwXKig5VDcbIzsbJCMvHDgvKlG","tufyx1rpvefmx0Luru1t","ANnVBG","C3r5Bgu","Ahr0Chm6lY95B3v0DwjLlMnVBs93yxrJAd92ps4UlG","y2f0zwDVCNKTCM93x19Hy3rPB25Z","rw50zxiGzM9VDgvYigXPBMSGBMfTztO","CxvHBNrPDhK","v2vIC2L0zsbZzwn0Aw9UigrLBgv0zwqU","l2vTyMvKlW","D2vIC2L0zs1Zzwn0Aw9UlwnHCMrFx2nVBNrLBNq","CgfYC2u","cIaGicaGidXKAxyGy2XHC3m9iMzVCM0Tz3jVDxaIpGOGicaGicaGidXSywjLBcbJBgfZCZ0IzM9YBs1SywjLBci+cIaGicaGicaGica","yxj0AwnSzq","Bg9JyxrPB25tDgf0DxnuzxH0","yMXVy2Tjza","D2vIC2L0zunVBNrLBNrtyxzL","y2f0zwDVCNKTCM93x19Hy3rPB24","iIbJB250ywLUCYbHBIbLBxb0Esb2AwrLBYbIBg9JAY4","D2vIC2L0zs1SB2nHDgLVBI1SB25NAxr1zgu","AxmTD2fPDgLUzW","D2vIC2L0zs1JB250zw50lxrLEhq","y2f0zwDVCNLdyw5JzwW","AxrLBvvUAxq","q291BgqGBM90igXVywqGC2f2zwqGy2f0zwDVCNKGyw5KigL0zw0Gzgf0ys4","DMLKAhDHyw5FyNvZAw5LC3nFD2vIC2L0zv9KyxrH","BgfZDfb1yMXPC2HLzfvYBa","tg9JyxrPB24GywnJDxjHy3KGAxmGDg9VigXVDYaOyxbWCM94Aw1HDgvSEsa","y29UBMvJDgLVBLrLEhq","yM9KEq","ugXLyxnLigvUDgvYigeGC2vJDgLVBIbOzwfKAw5NlG","AxrLBs11BML0","z2v0sxrLBq","Ew91DhvIzs5JB20","Bw9KywXdBg9Zzq","DMvYAwz5tg9JyxrPB24","y2f0zwDVCNLtyxzL","y2XHC3nmAxn0","C2nYB2XSvg8","mc45nxjLBq","ww91CIbIDxnPBMvZCYbHChaGAxmGBM93igXPDMuU","nJzdzgTvrMq","zMLUza","Bg9JyxrPB25wzxjPzMLLzef0","qNvZAw5LC3mGyxbWigLZigjLAw5Nihb1yMXPC2HLzc4UlG","igL0zw1ZigfYzsbHBgXVD2vKigLUig9UzsbJyxrLz29YEs4","y2f0zwDVCNLjza","q291BgqGBM90ihnHDMuGv2vIC2L0zsbKyxrHlG","ugXLyxnLigvUDgvYigeGDMfSAwqGBgLUAYbUyw1LigfUzcbivfrquYbvuKWU","rwrPDcbjDgvT","D2vIC2L0zuXVz29qCMv2Awv3sw1Hz2u","B2zMBgLUzq","D2vIC2L0zvn1yNnJCMLWDgLVBKLK","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjKx19Hy3rPB25Z","yxbWBgLJyxrPB24VANnVBG","D2vIC2L0zs1MB290zxiTBgLUAY1JyxjKx191CMW","Aw5Uzxjive1m","D2vIC2L0zvb1yMXPC2Hszxn1Bhq","AxrLBs15B3v0DwjL","te9dqvrjt05FveLnru9vvf9nuW","Bg9HzgvYlxrLEhq","y2f0","D2vIC2L0zvnLy3rPB25Zrw1WDhK","DgL0Bgu","vgHLifDVCMTLCIbYzxr1CM5LzcbPBNzHBgLKiePtt04U","ywXSB3DgDwXSC2nYzwvU","D2vIC2L0zs1SB2DV","v2vIC2L0zsbJCMvHDgvKlcbIDxqGDgHLihb1yMXPyYbMAwXLCYbHCMuGC3rPBgWGyMvPBMCGChvIBgLZAgvKlIbqBgvHC2uGDhj5igfNywLUihnOB3j0BhKU","D2vIC2L0zs1JB250zw50lwnHBMnLBa","uhjLCgfYAw5Niej1C2LUzxnZiefWCc4UlG","r3jVy2vYEq","q291BgqGBM90ignSzwfYihnHDMvKignHDgvNB3j5igfUzcbPDgvTigrHDgeU","tufyx0nbvevht1jjrvm","igjSB2nRpW","D2vIC2L0zs1WyxnZD29Yzc10B2DNBgu","y2XLyxjuAw1LB3v0","iIbPCYbTAxnZAw5NigL0CYbUyw1LlG","mJbPqu5nww0","DMfSAwrHDgLVBKXPC3q","D2vIC2L0zujHy2TuB1rLBxbSyxrLCW","B25SB2fK","uhvIBgLZAgLUzY4UlG","D2vIC2L0zunVBNrLBNrbzgrsB3C","Bwf4","AxrLBuLK","CMvTB3zLqxr0CMLIDxrL","ChvIBgLZAej1C2LUzxnZ","AgLKzgvU","y2vUDgvY","ChvZAa","Ahr0Chm6lY9KAxzPBMuTC25VD2zSywTLlwfHyMqUChjVCgvYDgLLC2DYB3vWAhLKlNDVCMTLCNmUzgv2","tgLUAYbcDxr0B25Z","DhLWzq","sw1Hz2uGvvjm","iIbJB250ywLUCYbHBIbPBNzHBgLKigXPBMSU","AxrLBvf1yw50Axr5","ywrKrxzLBNrmAxn0zw5LCG","D2vIC2L0zvzHBgLKyxrPB25mAxn0","DMLKzw9Z","D2vIC2L0zunVBNrLBNrnB2rHBerLC2nYAxb0Aw9U","zwrPDgLUz0nHDgvNB3j5swq","D2vIC2L0zs1PBwfNzs1SAxn0","tufyx0rfu0nssvbusu9ox0XftKDusa","lNDLyNnPDguTBw9KywWTBgLUAY1Uyw1L","u2f2zsa","AxrLBs1YB3DFx3zPzgvV","D2vIC2L0zuXVz29qCMv2Awv3","u29TzxrOAw5NihDLBNqGD3jVBMCUifbSzwfZzsb0CNKGywDHAw4U","yNvZAw5LC3mTywrKCMvZCW","B2jQzwn0","tufyx0Xpq0fusu9ox0fdq1vsqunzx01fvevsuW","q0furuDpuLLFsvrftv9tve9squDfx0Tfwq","mJmYndC0owvRwM1SuW","DgvTCgXHDguTzwnVBw1LCMnL","ue9tva","AxrLBs1MB3jTlwvYCM9Y","C2XPy2u","AxrLBq","ywrKlwnHDgvNB3j5","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGAxrLBs4","y2f0zwDVCNKTCM93","ugXLyxnLigfKzcbHDcbSzwfZDcbVBMuGww91vhvIzsbvuKWU","DgvTCgXHDguTz3jPza","Dgv4DenVBNrLBNq","D2vIC2L0zs12zxjPzNKTBg9JyxrPB24","y2f0zwDVCNKTCM93x19Uyw1L","ugfYywDYyxbOigfKzgvKlG","Bg9JyxrPB24TC3rHDhvZ","D2f0y2HqB3nPDgLVBG","AxrLBu1VzgfSq2XVC2u","Bg9NB1bYzxzPzxDszxf1zxn0","y2HHBMDL","lNDLyNnPDguTBw9KywWTDxjS","tM8GDMfSAwqGBgLUA3mGywrKzwqU","uMvHzhKGDg8Gy3jLyxrLigfUB3rOzxiGyNvZAw5LC3mGyxbWlG","B25LCNjVCG","qNvZAw5LC3mGr1btigfJy3vYywn5ig11C3qGyMuG","AgvHzgvYCW","D2vIC2L0zs1SB2nHDgLVBI1KzxrHAwXZ","vxnLieHuvfbtigLTywDLifvsthmUiefKzcbHCYbTyw55igLTywDLCYbHCYb5B3uGBMvLzc4","zwrPDgLUz0L0zw1jza","uKvrvuvtvf9usu1ft1vux01t","qwrKieL0zw0","idXZCgfUignSyxnZpsjYzxf1AxjLzc1TyxjRiJ4Qpc9ZCgfUpG","rM9VDgvYigXPBMSGywrKzwqU","v3jPDguGEw91CIbWyxjHz3jHCgGGAgvYzs4UlG","zwrPDc1IDxnPBMvZCW","Dg9mB3DLCKnHC2u","D2vIC2L0zunVBNrLBNruzxH0tgfIzwW","vxbKyxrLienHDgvNB3j5","yxbWBgLJyxrPB24TBg9HzgvY","y2f0zwDVCMLLCW","yNvZAw5LC3mTCgfZC3DVCMqTDg9Nz2XL","qNvZAw5LC3mGBg9JyxrPB24GDMvYAwzPzwqU","D2vIC2L0zunVBNrLBNruzxH0","vgHLihnLBgvJDgvKignHDgvNB3j5ignVDwXKig5VDcbIzsbMB3vUzc4","B3bLBI1IDxnPBMvZCY1HCha","y3jLyxrLrwXLBwvUDa","rxnJyxbL","Bg9JyxrPB24TDMvYAwzPzwqTyxq","D2vIC2L0zs1SB2nHDgLVBI1ZDgf0Dxm","v2vIC2L0zsbJCMvHDgvKlIbxywL0Aw5NigzVCIb0AguGChvIBgLJigzPBgvZihrVigjLy29TzsbHDMfPBgfIBguUlI4","D2vIC2L0zuzVB3rLCKXPBMTZ","y2f0zwDVCNLnB2rHBa","AxrLBs1YB3DFx2fJDgLVBG","qNvZAw5LC3mGv29YA2vYifvstcbPCYbUB3qGy29UzMLNDxjLzc4","zNjVBq","D2vIC2L0zs1JB250zw50lw1VzgfSlwrLC2nYAxb0Aw9U","D2vIC2L0zs1SB2nHDgLVBI12zxjPzMLLzc1HDa","D2vIC2L0zs1IDxnPBMvZCY1Uyw1L","ugXLyxnLigvUDgvYihLVDxiGu3vIC2nYAxb0Aw9UieLelG","C3bHBG","ww91vhvIzsb2AwrLBYbHDhrHy2HLza","D2vIC2L0zvzHBgLKyxrPB25tDw1Tyxj5","iIbLEgnLzwrZihrOzsbPDgvTigXPBwL0lG","AxrLBu5HBwu","Ahr0Chm6","iIbOyxmGyw4GAw52ywXPzcbXDwfUDgL0Es4","y2f0zwDVCNLoyw1LrxjYB3i","yMfJA1rVvgvTCgXHDgvZ","CM91BMq","mvH1t3PtEq","y2f0zwDVCNKTBMfTzq","zM9VDgvY","yNvZAw5LC3mTzw1HAwW","B3b0Aw9U","D2vIC2L0zs12AwrLBY1YB3C","ugXLyxnLihnLBgvJDcbHignHDgvNB3j5lG","D2vIC2L0zs12AwrLBY1WCMv2Awv3ls1ZAg9YDa","ntmZndbAr2f4u0y","qMvHDxr5icyGugvYC29UywWGq2fYzq","DhjPBq","Ew91DhuUyMu","sw1Hz2vZ","y2f0zwDVCNKTC2f2zq","y2f0zwDVCNK","lNDLyNnPDguTAw1Hz2uTCM93lcaUD2vIC2L0zs12AwrLBY1YB3CSic53zwjZAxrLlwXPBMSTCM93","y29VCMrZ","AwzYyw1L","D2vIC2L0zs1Zzwn0Aw9U","lNDLyNnPDguTBw9KywWTBgLUAY11CMW","igL0zw0","AxmTCgvUzgLUzW","u2HVDYbWyxnZD29Yza","AxmTzxjYB3i","y2XPy2S","D2vIC2L0zs1JB250zw50lwvTChr5","DMLKAhDHyw5FyNvZAw5LC3nFzwnVBw1LCMnLx2nHDgvNB3jPzxnFAxrLBxm","zgLZywjSzwq","AxrLBuXPC3q","uMvHzhK","AxrLBs1YB3DFx25HBwu","Bgf0Axr1zgu","D2vIC2L0zs1JB250zw50lxrLEhqTzMLLBgq","twf4Aw11Bsa","ywX0","ywrKq2f0zwDVCNK","yNvZAw5LC3mTDgfNBgLUzq","D2vIC2L0zs1JB250zw50lwzVCM0TzxjYB3i","z2vVBg9JyxrPB24","AxrLBs1JyxrLz29YEq","D2vIC2L0zs5QC29U","D2vIC2L0zuXVy2f0Aw9UvMvYAwzPzwrbDa","v2vIC2L0zsbJCMvHDgvKigfUzcbPCYbZDgLSBcbIzwLUzYbWDwjSAxnOzwqU","ChvIBgLZAej1DhrVBLrLEhq","D2vIC2L0zuXVz28","C2vSzwn0zwruzw1WBgf0zq","y2HPBgrYzw4","C29Tzq","BwvKAxvT","ugXLyxnLigvUDgvYihzHBgLKifLVDvr1yMuGDMLKzw8GB3iGww91vhvIzsbtAg9YDhmGvvjmCY4","AxrLBuvTChr5","C3vIC2nYAxb0Aw9UrxjYB3i","Bg9JyxrPB24Tzgv0ywLSCW","D2vIC2L0zufJDgLVBG","D2vIC2L0zunVBNrLBNrdyw5JzwW","AxrLBxm","D2vIC2L0zunVBNrLBNrnB2rHBenSB3nL","rgvSzxrLihnLy3rPB24GiG","Bg9NBY1WCMv2Awv3","Bg9NB1vYBa","DgfNBgLUzq","ww91vhvIzsbvuKW","AxrLBvLVDxr1yMu","zxjYB3jZ","nZCYnJKWC1j2sevs","AgvHzgLUzW","u3vIlxbHCMfNCMfWAa","BM93","rxzLCNKGzM9VDgvYigXPBMSGBxvZDcbOyxzLigeGBMfTzsbHBMqGDMfSAwqGsfruufmGvvjmlG","D2vIC2L0zufKzezPCNn0u2vJDgLVBG","ww91CIbhBg9IywWGv2vIC2L0zsbPCYbSAxzLlG","t2zMBgLUzq","ywrK","v2vIC2L0zsbJB250zw50igrLBgv0zwqU","D2vIC2L0zuzVB3rLCKfJDgLVBG","AxrLBs1Jyw5JzwW","D2vIC2L0zs1HzgqTzMLYC3qTC2vJDgLVBG","C3vJy2vZC1nLy3rPB24","D2vIC2L0zuXVy2f0Aw9Uu3rHDhvZ","z2v0","AxmTDMvYAwzPzwq","Bg9JyxrPB25myxrPDhvKzq","Bw92zs1KB3DU","vgHLigrLDMLJzsbJB3vSzcbUB3qGzgv0zxjTAw5LieDquYbHy2n1CMfJEs4GugXLyxnLigvUywjSzsbWCMvJAxnLigXVy2f0Aw9UigfUzcb0CNKGywDHAw4U","ChvIBgLZAgLUzW","qwrKifLVDvr1yMuGDMLKzw8GB3iGww91vhvIzsbtAg9YDhmGvvjmCY4","BMfTzq","y29UBMvJDgLVBLn0yxr1CW","Bw92zs11Ca","BwvZC2fNzq","ig1LDhjLCY4","D2vIC2L0zufKzhjLC3m","qNvZAw5LC3mGyxbWigLZihn0AwXSigjLAw5Nihb1yMXPC2HLzc4","iGOGicaGicaGicaGCgXHy2vOB2XKzxi9iG","rwrPDcbZzwn0Aw9UigHLywrPBMC6","Dg9Nz2XL","C2vJDgLVBNm","vMvYAwz5Aw5Nihn1yNnJCMLWDgLVBIbHBMqGChvIBgLZAgLUzYb5B3vYieDSB2jHBcbxzwjZAxrLlI4U","l3nOB3j0CY8","ugXLyxnLigvUDgvYigeGy2f0zwDVCNKGBMfTzs4","ugXLyxnLigvUDgvYigeGDMfSAwqGChjPy2uU","vw5HyMXLihrVig9IDgfPBIbHBIbHy2n1CMf0zsbhufmGBg9JyxrPB24GD2L0AgLUidmWihnLy29UzhmUifbSzwfZzsbLBMfIBguGChjLy2LZzsbSB2nHDgLVBIbHBMqGDhj5igfNywLUlG","ugfYywDYyxbO","u2vJDgLVBIa","DMvYAwz5lwXVy2f0Aw9U","vgHLigj1C2LUzxnZigfWCcbJB3vSzcbUB3qGyMuGy3jLyxrLzc4","D2vIC2L0zs1ZDwjZy3jPChrPB24TAwq","AxrLBs1YB3DFx2fJDgLVBNm","D2vIC2L0zuXVy2f0Aw9Utg9Uz2L0DwrL","D2vIC2L0zs1WDwjSAxnO","D2vIC2L0zs1JB250zw50lwjSB2nR","C3vIC2nYAxb0Aw9Uswq","ChvIBgLZAfn0yxr1CW","AxmTBgL2zq","q29UDgvUDa","AxrLBs1YB3DFx21LDge","D2vIC2L0zufKzfnLy3rPB24","D2vIC2L0zs1HzgqTzM9VDgvYlwXPBMS","iIbHBMqGywXSia","ywXSB3C","D2vIC2L0zunVBNrLBNrszxbLyxrHyMXLtgfIzwW","D2vIC2L0zs1JB250zw50lxjLCgvHDgfIBguTAgvSCa","ig1LDhjLCYbVCIbIzxr0zxiU","D2vIC2L0zufKzezVB3rLCKXPBMS","y2XLyxjxyxrJAa","AxrLBufJDgLVBG","Aw5MBW","Aw1Hz2vZ","ugXLyxnLigvUDgvYigfUigL0zw0GBMfTzs4","D2vIC2L0zvbHC3n3B3jK","qNvZAw5LC3mGBg9JyxrPB24GDMvYAwzPzwqUiefJy3vYywn5oIbHChbYB3HPBwf0zwX5ia","A2v5zg93BG","BwfW","Ag9ZDg5HBwu","DgvZDa","vw5HyMXLihrVihzLCMLMEsb5B3vYigXVy2f0Aw9UlG","C2vJB25Kyxj5lwj1DhrVBIbZzwnVBMrHCNKTyNv0Dg9Uls1ZBwfSBa","AxrLBs1LBxb0Eq","BM8TC3rVCMu","imk3ia","tufyx0Xpr09Fvvjmx0XftKDusa","DgvTCgXHDgvhCMLK","C2vHCMnOugfYyw1Z","D2vIC2L0zs1SB2nHDgLVBI1SyxrPDhvKzq"];return(_0x52fe=function(){return _0x41b3ef})()}function finishWebsiteContentModalSave(_0x4ef551){const _0x3379ab=_0x4be7d1;saveWebsiteData(),renderWebsiteSections(),closeWebsiteContentModal(),showToast(_0x4ef551,_0x3379ab(931))}function addWebsiteContent(_0x50a7ab,_0x59c285){const _0x20ad2a__0x3c111e=738,_0x20ad2a__0x2c0c57=470,_0x20ad2a__0x29928d=716,_0x1ce16a=_0x4be7d1,_0x3056db=findWebsiteSection(_0x50a7ab);_0x3056db&&(_0x3056db.blocks[_0x1ce16a(_0x20ad2a__0x3c111e)]>=100?showToast(_0x1ce16a(_0x20ad2a__0x2c0c57)+100+_0x1ce16a(_0x20ad2a__0x29928d),"error"):openWebsiteContentModal(_0x50a7ab,_0x59c285))}function editWebsiteContent(_0x583ea7,_0x4fc25f){const _0x20b0e7__0xc9c74d=298,_0x20b0e7__0x5e64ed=348,_0x304ba6=_0x4be7d1,_0x26b0b1=findWebsiteSection(_0x583ea7);if(!_0x26b0b1)return;const _0x59b737=_0x26b0b1[_0x304ba6(793)][_0x304ba6(_0x20b0e7__0xc9c74d)](_0x3fd481=>_0x3fd481.id===_0x4fc25f);_0x59b737&&openWebsiteContentModal(_0x583ea7,_0x59b737[_0x304ba6(_0x20b0e7__0x5e64ed)],_0x59b737)}function deleteWebsiteContent(_0x223732,_0x459f76){const _0x4c66d7__0x46ee40=856,_0x4c66d7__0x5275bd=853,_0x4c66d7__0x5a899c=348,_0x4c66d7__0x55f354=329,_0x4c66d7__0x17f40a=793,_0x4c66d7__0x34767d=863,_0x4c66d7__0x3ccdcc=510,_0x957f6d=_0x4be7d1,_0x5913ef=findWebsiteSection(_0x223732);if(!_0x5913ef)return;const _0x9e9a11=_0x5913ef.blocks.find(_0x114c2a=>_0x114c2a.id===_0x459f76);_0x9e9a11&&window[_0x957f6d(_0x4c66d7__0x46ee40)](_0x957f6d(_0x4c66d7__0x5275bd)+getWebsiteBlockLabel(_0x9e9a11[_0x957f6d(_0x4c66d7__0x5a899c)])[_0x957f6d(403)]()+_0x957f6d(_0x4c66d7__0x55f354))&&(_0x5913ef[_0x957f6d(_0x4c66d7__0x17f40a)]=_0x5913ef.blocks[_0x957f6d(_0x4c66d7__0x34767d)](_0x17c58b=>_0x17c58b.id!==_0x459f76),saveWebsiteData(),renderWebsiteSections(),showToast(_0x957f6d(_0x4c66d7__0x3ccdcc),"success"))}function addWebsiteFooterLink(){const _0x49d678__0x317092=439,_0x49d678__0x18ed2a=492,_0x49d678__0x491b3e=738,_0x49d678__0x390867=470,_0x49d678__0x42e7a8=689,_0x49d678__0xc566f6=262,_0x49d678__0x2c0142=694,_0x49d678__0x125843=304,_0x49d678__0x19f1c2=439,_0x49d678__0x27caed=492,_0x49d678__0x521544=345,_0x49d678__0x303530=400,_0x49d678__0x9709e6=931,_0x3531ff=_0x4be7d1;if(state[_0x3531ff(903)][_0x3531ff(_0x49d678__0x317092)][_0x3531ff(_0x49d678__0x18ed2a)][_0x3531ff(_0x49d678__0x491b3e)]>=WEBSITE_MAX_FOOTER_LINKS)return void showToast(_0x3531ff(_0x49d678__0x390867)+WEBSITE_MAX_FOOTER_LINKS+" footer links are allowed.",_0x3531ff(705));const _0x3ebc6c=window[_0x3531ff(_0x49d678__0x42e7a8)](_0x3531ff(_0x49d678__0xc566f6));if(null===_0x3ebc6c)return;const _0x180530=normalizeText(_0x3ebc6c,150),_0x49d2d7=window[_0x3531ff(689)](_0x3531ff(_0x49d678__0x2c0142));if(null===_0x49d2d7)return;const _0x3ea754=normalizeText(_0x49d2d7,WEBSITE_MAX_URL_LENGTH);_0x180530&&isValidHttpsUrl(_0x3ea754)?(state.website[_0x3531ff(_0x49d678__0x19f1c2)][_0x3531ff(_0x49d678__0x27caed)][_0x3531ff(_0x49d678__0x521544)]({id:createId("footer"),name:_0x180530,url:_0x3ea754}),saveWebsiteData(),renderWebsiteFooter(),showToast(_0x3531ff(_0x49d678__0x303530),_0x3531ff(_0x49d678__0x9709e6))):showToast(_0x3531ff(_0x49d678__0x125843),_0x3531ff(705))}function renderWebsiteFooter(){const _0x5ebcae__0x491e68=418,_0x5ebcae__0x1f9d39=903,_0x5ebcae__0x3ebf5f=439,_0x5ebcae__0x2879e5=492,_0x5ebcae__0x54cb5e=728,_0x37db8d__0x58397a=675,_0x37db8d__0x425304=916,_0x37db8d__0x339107=846,_0x37db8d__0x17b68b=831,_0x37db8d__0x4554dc=379,_0x37db8d__0x2dd150=523,_0x37db8d__0x4c1da1=311,_0x37db8d__0x499e80=761,_0x37db8d__0x5ef566=413,_0x37db8d__0x82872a=413,_0x37db8d__0x31a2d7=792,_0x37db8d__0x55820c=348,_0x37db8d__0x3e0b08=675,_0x37db8d__0x165c93=927,_0x37db8d__0x5e32f8=710,_0x37db8d__0x31c804=511,_0x37db8d__0x145c40=633,_0x37db8d__0x499244=710,_0x37db8d__0x51de75=573,_0x37db8d__0x3e630e=905,_0x37db8d__0x461629=710,_0x37db8d__0x275530=880,_0x37db8d__0x277ead=730,_0x37db8d__0x3d9d39=761,_0x37db8d__0x37b6b8=418,_0x556aac=_0x4be7d1;if(!DOM.websiteFooterLinks)return;DOM[_0x556aac(_0x5ebcae__0x491e68)].replaceChildren();const _0xaffbcc=state[_0x556aac(_0x5ebcae__0x1f9d39)][_0x556aac(_0x5ebcae__0x3ebf5f)][_0x556aac(_0x5ebcae__0x2879e5)];DOM[_0x556aac(_0x5ebcae__0x54cb5e)]&&(DOM[_0x556aac(_0x5ebcae__0x54cb5e)].hidden=_0xaffbcc[_0x556aac(738)]>0),_0xaffbcc.forEach(_0x486b1e=>{const _0x112b0a=_0x556aac,_0x54d5bc=document.createElement(_0x112b0a(879));_0x54d5bc[_0x112b0a(_0x37db8d__0x58397a)]=_0x112b0a(_0x37db8d__0x425304);const _0x528746=document[_0x112b0a(413)]("div");_0x528746[_0x112b0a(_0x37db8d__0x58397a)]=_0x112b0a(_0x37db8d__0x339107);const _0x3d2ed4=document.createElement("p");_0x3d2ed4[_0x112b0a(_0x37db8d__0x58397a)]=_0x112b0a(_0x37db8d__0x17b68b),_0x3d2ed4[_0x112b0a(_0x37db8d__0x4554dc)]=_0x486b1e[_0x112b0a(_0x37db8d__0x2dd150)];const _0x32bf85=document[_0x112b0a(413)]("p");_0x32bf85.className=_0x112b0a(_0x37db8d__0x4c1da1),_0x32bf85.textContent=_0x486b1e.url,_0x528746[_0x112b0a(_0x37db8d__0x499e80)](_0x3d2ed4),_0x528746[_0x112b0a(_0x37db8d__0x499e80)](_0x32bf85);const _0xfa9863=document[_0x112b0a(_0x37db8d__0x5ef566)](_0x112b0a(879));_0xfa9863.className=_0x112b0a(309);const _0x3cc529=document[_0x112b0a(_0x37db8d__0x82872a)](_0x112b0a(_0x37db8d__0x31a2d7));_0x3cc529[_0x112b0a(_0x37db8d__0x55820c)]="button",_0x3cc529[_0x112b0a(_0x37db8d__0x3e0b08)]="secondary-button secondary-button--small",_0x3cc529.textContent=_0x112b0a(_0x37db8d__0x165c93),_0x3cc529[_0x112b0a(_0x37db8d__0x5e32f8)][_0x112b0a(_0x37db8d__0x31c804)]=_0x112b0a(_0x37db8d__0x145c40),_0x3cc529[_0x112b0a(_0x37db8d__0x499244)][_0x112b0a(730)]=_0x486b1e.id;const _0x5d0e0a=document[_0x112b0a(_0x37db8d__0x82872a)](_0x112b0a(_0x37db8d__0x31a2d7));_0x5d0e0a[_0x112b0a(_0x37db8d__0x55820c)]=_0x112b0a(792),_0x5d0e0a[_0x112b0a(_0x37db8d__0x58397a)]=_0x112b0a(_0x37db8d__0x51de75),_0x5d0e0a[_0x112b0a(379)]=_0x112b0a(_0x37db8d__0x3e630e),_0x5d0e0a[_0x112b0a(_0x37db8d__0x461629)].websiteFooterAction=_0x112b0a(_0x37db8d__0x275530),_0x5d0e0a.dataset[_0x112b0a(_0x37db8d__0x277ead)]=_0x486b1e.id,_0xfa9863[_0x112b0a(761)](_0x3cc529),_0xfa9863[_0x112b0a(_0x37db8d__0x3d9d39)](_0x5d0e0a),_0x54d5bc.appendChild(_0x528746),_0x54d5bc[_0x112b0a(761)](_0xfa9863),DOM[_0x112b0a(_0x37db8d__0x37b6b8)][_0x112b0a(_0x37db8d__0x499e80)](_0x54d5bc)})}function handleWebsiteFooterAction(_0x5f1c1c){const _0x3c8bba__0x4c8170=698,_0x3c8bba__0x15d35a=710,_0x3c8bba__0xcb5595=511,_0x3c8bba__0x313538=730,_0x3c8bba__0xa08677=903,_0x3c8bba__0x190b41=492,_0x3c8bba__0xf3f3b4=298,_0x3c8bba__0x3bf234=856,_0x3c8bba__0x3c91a5=523,_0x3c8bba__0x1119e5=439,_0x3c8bba__0x41e0fc=689,_0x3c8bba__0x233e32=705,_0x1b6a57=_0x4be7d1,_0x45d515=_0x5f1c1c.target[_0x1b6a57(_0x3c8bba__0x4c8170)]("[data-website-footer-action]");if(!_0x45d515)return;const _0x3ff1c8=_0x45d515[_0x1b6a57(_0x3c8bba__0x15d35a)][_0x1b6a57(_0x3c8bba__0xcb5595)],_0x297c45=_0x45d515[_0x1b6a57(_0x3c8bba__0x15d35a)][_0x1b6a57(_0x3c8bba__0x313538)],_0xfa527d=state[_0x1b6a57(_0x3c8bba__0xa08677)].footer[_0x1b6a57(_0x3c8bba__0x190b41)][_0x1b6a57(_0x3c8bba__0xf3f3b4)](_0xed7184=>_0xed7184.id===_0x297c45);if(_0xfa527d){if("delete"===_0x3ff1c8){if(!window[_0x1b6a57(_0x3c8bba__0x3bf234)]('Delete footer link "'+_0xfa527d[_0x1b6a57(_0x3c8bba__0x3c91a5)]+'"?'))return;return state[_0x1b6a57(903)][_0x1b6a57(_0x3c8bba__0x1119e5)][_0x1b6a57(_0x3c8bba__0x190b41)]=state[_0x1b6a57(_0x3c8bba__0xa08677)][_0x1b6a57(_0x3c8bba__0x1119e5)].items.filter(_0x53c9b3=>_0x53c9b3.id!==_0x297c45),saveWebsiteData(),void renderWebsiteFooter()}if("edit"===_0x3ff1c8){const _0x46505b=window.prompt("Edit footer link name:",_0xfa527d[_0x1b6a57(523)]);if(null===_0x46505b)return;const _0x23e8cc=window[_0x1b6a57(_0x3c8bba__0x41e0fc)]("Edit footer link URL:",_0xfa527d.url);if(null===_0x23e8cc)return;const _0x242967=normalizeText(_0x46505b,150),_0x3f1a81=normalizeText(_0x23e8cc,WEBSITE_MAX_URL_LENGTH);if(!_0x242967||!isValidHttpsUrl(_0x3f1a81))return void showToast("Please enter a valid link name and HTTPS URL.",_0x1b6a57(_0x3c8bba__0x233e32));_0xfa527d[_0x1b6a57(_0x3c8bba__0x3c91a5)]=_0x242967,_0xfa527d[_0x1b6a57(936)]=_0x3f1a81,saveWebsiteData(),renderWebsiteFooter()}}}function validateWebsiteBuilder(){const _0x4cb475__0xd40002=528,_0x4cb475__0x5587ac=766,_0x4cb475__0x4f61e1=588,_0x4cb475__0xbd6930=828,_0x4cb475__0x2344b9=566,_0x4cb475__0x2628cd=759,_0x4cb475__0x2e0cb3=426,_0x4cb475__0x37da04=345,_0x4cb475__0x8e2fc0=848,_0x4cb475__0x298edc=345,_0x4cb475__0x58dea6=345,_0x4cb475__0x4faca9=758,_0x4cb475__0x503cd2=345,_0x4cb475__0x279712=902,_0x4cb475__0x1ca518=826,_0x4cb475__0x57a99d=345,_0x4cb475__0x3aa24c=902,_0x4cb475__0x574f2a=468,_0x4cb475__0x1270f8=612,_0x4cb475__0x1261e3=902,_0x4cb475__0x405e94=790,_0x4cb475__0x1af70d=591,_0x4cb475__0x47fdd4=902,_0x4cb475__0x1d21b2=940,_0x4cb475__0x4d65de=902,_0x4cb475__0x54d043=940,_0x4cb475__0x39da5f=902,_0x4cb475__0xd74451=392,_0x4cb475__0x43382f=559,_0x4cb475__0x2fa012=738,_0x4cb475__0x55ad62=891,_0x4cb475__0x19f4ff=765,_0x4cb475__0x1c6cf9=439,_0x4cb475__0x1f778e=492,_0x4cb475__0x54b6dc=738,_0x1271d1__0x596fdc=936,_0x1271d1__0x54ea35=345,_0x1271d1__0x24d93b=505,_0x32ec8b__0x1181ba=502,_0x32ec8b__0x3786bd=345,_0x32ec8b__0x312487=886,_0x32ec8b__0x7c6fcc=345,_0x32ec8b__0x18677c=841,_0x32ec8b__0x46fa09=592,_0x256375=_0x4be7d1,_0x21209f=[],_0x5674b5=getValue(DOM.websiteSubscriptionId),_0x37a902=getValue(DOM[_0x256375(915)]),_0x4619e3=getValue(DOM[_0x256375(_0x4cb475__0xd40002)]),_0xb3db8d=(getValue(DOM[_0x256375(_0x4cb475__0x5587ac)]),getValue(DOM[_0x256375(_0x4cb475__0x4f61e1)])),_0x401bd1=getValue(DOM[_0x256375(_0x4cb475__0xbd6930)]),_0x3925d3=getValue(DOM[_0x256375(606)]),_0x54d053=DOM[_0x256375(_0x4cb475__0x2344b9)]?DOM[_0x256375(566)][_0x256375(_0x4cb475__0x2628cd)]:"",_0x520200=getValue(DOM.websiteLogo);return!_0x5674b5&&_0x21209f.push(_0x256375(_0x4cb475__0x2e0cb3)),!_0x54d053&&_0x21209f[_0x256375(345)]("Please create your Business Password."),!_0x37a902&&_0x21209f.push("Please enter the business name."),!_0x4619e3&&_0x21209f[_0x256375(_0x4cb475__0x37da04)](_0x256375(_0x4cb475__0x8e2fc0)),!_0xb3db8d&&_0x21209f[_0x256375(_0x4cb475__0x298edc)]("Please enter the business mobile number."),_0x401bd1&&!isValidEmail(_0x401bd1)&&_0x21209f[_0x256375(_0x4cb475__0x58dea6)](_0x256375(_0x4cb475__0x4faca9)),!_0x3925d3&&_0x21209f[_0x256375(_0x4cb475__0x503cd2)]("Please enter the Business WhatsApp number."),_0x520200&&!isValidHttpsUrl(_0x520200)&&_0x21209f[_0x256375(345)]("Logo URL must be a valid HTTPS URL."),!state[_0x256375(_0x4cb475__0x279712)][_0x256375(_0x4cb475__0x1ca518)]&&_0x21209f[_0x256375(_0x4cb475__0x57a99d)](_0x256375(858)),(!Number.isFinite(state[_0x256375(_0x4cb475__0x3aa24c)][_0x256375(_0x4cb475__0x574f2a)])||!Number[_0x256375(_0x4cb475__0x1270f8)](state[_0x256375(_0x4cb475__0x1261e3)][_0x256375(_0x4cb475__0x405e94)]))&&_0x21209f[_0x256375(_0x4cb475__0x37da04)](_0x256375(_0x4cb475__0x1af70d)),(!Number[_0x256375(_0x4cb475__0x1270f8)](state[_0x256375(_0x4cb475__0x47fdd4)][_0x256375(_0x4cb475__0x1d21b2)])||state[_0x256375(_0x4cb475__0x4d65de)][_0x256375(_0x4cb475__0x54d043)]<=0||state[_0x256375(_0x4cb475__0x39da5f)].accuracy>CONFIG[_0x256375(366)])&&_0x21209f.push(_0x256375(_0x4cb475__0xd74451)+CONFIG[_0x256375(366)]+_0x256375(_0x4cb475__0x43382f)),0===state.website[_0x256375(533)][_0x256375(_0x4cb475__0x2fa012)]&&_0x21209f.push(_0x256375(_0x4cb475__0x55ad62)),state[_0x256375(903)].sections[_0x256375(_0x4cb475__0x19f4ff)](_0x4bbfcb=>{const _0x31dd4d__0x2018d4=348,_0x31dd4d__0x35f07c=827,_0x31dd4d__0x1ec8ec=691,_0x31dd4d__0x4a9186=865,_0x31dd4d__0x55dccf=348,_0x31dd4d__0x32c403=738,_0x31dd4d__0x157806=345,_0x31dd4d__0x50f52f=841,_0x31dd4d__0x4ea70e=820,_0x31dd4d__0x3f2301=492,_0x31dd4d__0x17d592=738,_0x31dd4d__0x173119=492,_0x31dd4d__0x3360be=765,_0x31dd4d__0x100476=743,_0x1e3ebd__0x2b10ae=345,_0x1e3ebd__0x4d60c3=502,_0xfc3ac9=_0x256375;!_0x4bbfcb[_0xfc3ac9(_0x32ec8b__0x1181ba)]&&_0x21209f[_0xfc3ac9(_0x32ec8b__0x3786bd)](_0xfc3ac9(_0x32ec8b__0x312487)),!Array.isArray(_0x4bbfcb.blocks)&&_0x21209f[_0xfc3ac9(_0x32ec8b__0x7c6fcc)](_0xfc3ac9(_0x32ec8b__0x18677c)+_0x4bbfcb[_0xfc3ac9(502)]+_0xfc3ac9(_0x32ec8b__0x46fa09)),_0x4bbfcb[_0xfc3ac9(793)][_0xfc3ac9(765)](_0x3c3295=>{const _0x42d669__0xde524e=523,_0x42d669__0x2ad915=936,_0x42d669__0x48f5b6=841,_0x42d669__0x35a710=350,_0x55cfc1__0x1823d6=345,_0x55cfc1__0x4e3277=841,_0x55cfc1__0x46c7db=502,_0x55cfc1__0x2c46cb=832,_0x976a29=_0xfc3ac9;(_0x3c3295[_0x976a29(_0x31dd4d__0x2018d4)]===_0x976a29(_0x31dd4d__0x35f07c)||_0x3c3295[_0x976a29(348)]===_0x976a29(_0x31dd4d__0x1ec8ec))&&!_0x3c3295[_0x976a29(747)]&&_0x21209f[_0x976a29(345)]('Section "'+_0x4bbfcb.heading+_0x976a29(_0x31dd4d__0x4a9186)),_0x3c3295[_0x976a29(_0x31dd4d__0x55dccf)]===_0x976a29(564)&&(0===_0x3c3295.items[_0x976a29(_0x31dd4d__0x32c403)]&&_0x21209f[_0x976a29(_0x31dd4d__0x157806)](_0x976a29(_0x31dd4d__0x50f52f)+_0x4bbfcb.heading+_0x976a29(_0x31dd4d__0x4ea70e)),_0x3c3295[_0x976a29(492)][_0x976a29(765)](_0x2f8bcc=>{const _0x33c07a=_0x976a29;!isValidHttpsUrl(_0x2f8bcc)&&_0x21209f[_0x33c07a(_0x1e3ebd__0x2b10ae)](_0x33c07a(841)+_0x4bbfcb[_0x33c07a(_0x1e3ebd__0x4d60c3)]+_0x33c07a(628))})),"videos"===_0x3c3295.type&&(0===_0x3c3295[_0x976a29(_0x31dd4d__0x3f2301)][_0x976a29(_0x31dd4d__0x17d592)]&&_0x21209f[_0x976a29(_0x31dd4d__0x157806)](_0x976a29(_0x31dd4d__0x50f52f)+_0x4bbfcb[_0x976a29(502)]+_0x976a29(274)),_0x3c3295[_0x976a29(_0x31dd4d__0x173119)][_0x976a29(_0x31dd4d__0x3360be)](_0x286efd=>{const _0x1a7fb2=_0x976a29;!isValidYoutubeUrl(_0x286efd)&&_0x21209f[_0x1a7fb2(_0x55cfc1__0x1823d6)](_0x1a7fb2(_0x55cfc1__0x4e3277)+_0x4bbfcb[_0x1a7fb2(_0x55cfc1__0x46c7db)]+_0x1a7fb2(_0x55cfc1__0x2c46cb))})),_0x3c3295.type===_0x976a29(_0x31dd4d__0x100476)&&(0===_0x3c3295[_0x976a29(_0x31dd4d__0x173119)].length&&_0x21209f[_0x976a29(345)](_0x976a29(841)+_0x4bbfcb[_0x976a29(502)]+_0x976a29(713)),_0x3c3295[_0x976a29(_0x31dd4d__0x3f2301)].forEach(_0x185f40=>{const _0x54cc6b=_0x976a29;(!_0x185f40[_0x54cc6b(_0x42d669__0xde524e)]||!isValidHttpsUrl(_0x185f40[_0x54cc6b(_0x42d669__0x2ad915)]))&&_0x21209f.push(_0x54cc6b(_0x42d669__0x48f5b6)+_0x4bbfcb[_0x54cc6b(502)]+_0x54cc6b(_0x42d669__0x35a710))}))})}),state[_0x256375(903)][_0x256375(_0x4cb475__0x1c6cf9)][_0x256375(_0x4cb475__0x1f778e)][_0x256375(_0x4cb475__0x19f4ff)](_0x2391bc=>{const _0x24bae8=_0x256375;(!_0x2391bc.name||!isValidHttpsUrl(_0x2391bc[_0x24bae8(_0x1271d1__0x596fdc)]))&&_0x21209f[_0x24bae8(_0x1271d1__0x54ea35)](_0x24bae8(_0x1271d1__0x24d93b))}),{valid:0===_0x21209f[_0x256375(_0x4cb475__0x54b6dc)],errors:uniqueStrings(_0x21209f)}}function showWebsiteValidation(_0x3f5570){const _0x1e4cb2__0x1a9136=429,_0x1e4cb2__0x2c9e90=765,_0x1e4cb2__0x3308b9=429,_0x1e4cb2__0x2a15a9=785,_0x1e4cb2__0x5c3951=812,_0x5b61b2__0x4b91b6=413,_0x5b61b2__0x47c77c=761,_0x46d5ff=_0x4be7d1;DOM[_0x46d5ff(_0x1e4cb2__0x1a9136)]&&DOM.websiteValidationList&&(DOM[_0x46d5ff(353)][_0x46d5ff(693)](),_0x3f5570[_0x46d5ff(_0x1e4cb2__0x2c9e90)](_0x45b58a=>{const _0xad2708=_0x46d5ff,_0x262305=document[_0xad2708(_0x5b61b2__0x4b91b6)]("li");_0x262305[_0xad2708(379)]=_0x45b58a,DOM[_0xad2708(353)][_0xad2708(_0x5b61b2__0x47c77c)](_0x262305)}),DOM[_0x46d5ff(_0x1e4cb2__0x1a9136)].hidden=!1,DOM[_0x46d5ff(_0x1e4cb2__0x3308b9)][_0x46d5ff(_0x1e4cb2__0x2a15a9)]({behavior:_0x46d5ff(_0x1e4cb2__0x5c3951),block:"center"}))}function hideWebsiteValidation(){const _0xea0549__0x146ba2=429,_0xea0549__0x3d6492=343,_0xea0549__0x45f358=353,_0xea0549__0x4309d7=353,_0xea0549__0x2c8490=693,_0x1fcfac=_0x4be7d1;DOM[_0x1fcfac(429)]&&(DOM[_0x1fcfac(_0xea0549__0x146ba2)][_0x1fcfac(_0xea0549__0x3d6492)]=!0),DOM[_0x1fcfac(_0xea0549__0x45f358)]&&DOM[_0x1fcfac(_0xea0549__0x4309d7)][_0x1fcfac(_0xea0549__0x2c8490)]()}function buildWebsitePublishPayload(){const _0x318784__0x2df64d=308,_0x318784__0x1d0692=566,_0x318784__0x51c5e9=528,_0x318784__0x5f5154=766,_0x318784__0x37db3e=902,_0x318784__0x4e22cf=468,_0x318784__0x1321af=902,_0x318784__0x5735e4=903,_0x318784__0x278942=533,_0x318784__0x4c1ef3=569,_0x318784__0x50f144=439,_0x318784__0x1c6d41=492,_0x1f54fb=_0x4be7d1;return{template:_0x1f54fb(771),subscriptionId:getValue(DOM[_0x1f54fb(_0x318784__0x2df64d)]),businessPassword:DOM[_0x1f54fb(_0x318784__0x1d0692)]?DOM[_0x1f54fb(566)].value:"",business:{name:getValue(DOM.websiteBusinessName),address:getValue(DOM[_0x1f54fb(_0x318784__0x51c5e9)]),tagline:getValue(DOM[_0x1f54fb(_0x318784__0x5f5154)]),mobile:getValue(DOM.websiteMobile),email:getValue(DOM[_0x1f54fb(828)]),whatsapp:getValue(DOM.websiteWhatsapp),logoUrl:getValue(DOM.websiteLogo)},location:{verified:state[_0x1f54fb(_0x318784__0x37db3e)].verified,latitude:state[_0x1f54fb(902)][_0x1f54fb(_0x318784__0x4e22cf)],longitude:state[_0x1f54fb(_0x318784__0x37db3e)][_0x1f54fb(790)],accuracy:state[_0x1f54fb(902)][_0x1f54fb(940)],verifiedAt:state[_0x1f54fb(_0x318784__0x1321af)].verifiedAt},sections:state[_0x1f54fb(_0x318784__0x5735e4)][_0x1f54fb(_0x318784__0x278942)][_0x1f54fb(_0x318784__0x4c1ef3)](_0x79739b=>({id:_0x79739b.id,heading:_0x79739b[_0x1f54fb(502)],blocks:_0x79739b.blocks})),footer:{items:state[_0x1f54fb(_0x318784__0x5735e4)][_0x1f54fb(_0x318784__0x50f144)][_0x1f54fb(_0x318784__0x1c6d41)][_0x1f54fb(_0x318784__0x4c1ef3)](_0x300bac=>({id:_0x300bac.id,name:_0x300bac[_0x1f54fb(523)],url:_0x300bac[_0x1f54fb(936)]}))}}}async function publishWebsite(){const _0x5c1596__0x52adc2=795,_0x5c1596__0x4d3bdf=705,_0x5c1596__0x2b19be=534,_0x5c1596__0x226374=931,_0x5c1596__0x4026f5=946,_0x5c1596__0x4c517d=936,_0x5c1596__0x3ca4c6=742,_0x5c1596__0x3f5df6=417,_0x5c1596__0x4600ae=936,_0x5c1596__0x3b64ca=323,_0x5c1596__0x483f7d=563,_0x5c1596__0x569463=894,_0x5c1596__0x251ade=894,_0x5c1596__0x31510c=379,_0x5c1596__0x1947c9=936,_0x5c1596__0x2467ab=313,_0x5c1596__0x19a65d=313,_0x5c1596__0x1b49c3=507,_0x5c1596__0x168946=521,_0x250004=_0x4be7d1;if(state.publishing)return;hideWebsiteValidation();const _0x31e46f=validateWebsiteBuilder();if(!_0x31e46f[_0x250004(_0x5c1596__0x52adc2)])return showWebsiteValidation(_0x31e46f.errors),void showToast(_0x31e46f.errors[0]||"Please review the website.",_0x250004(_0x5c1596__0x4d3bdf));const _0x586b13=buildWebsitePublishPayload();state[_0x250004(521)]=!0,setWebsitePublishBusy(!0),setWebsitePublishStatus(_0x250004(_0x5c1596__0x2b19be));try{const _0x1480b4=await sendPublishRequest(_0x586b13);if(!_0x1480b4||!0!==_0x1480b4[_0x250004(_0x5c1596__0x226374)])throw new Error(_0x1480b4&&_0x1480b4.message?_0x1480b4.message:_0x250004(_0x5c1596__0x4026f5));if(!isValidHttpsUrl(_0x1480b4[_0x250004(_0x5c1596__0x4c517d)]))throw new Error(_0x250004(_0x5c1596__0x3ca4c6));setWebsitePublishStatus(_0x250004(_0x5c1596__0x3f5df6));if(!await waitForWebsiteDeployment(_0x1480b4[_0x250004(_0x5c1596__0x4600ae)]))return setWebsitePublishStatus(_0x250004(_0x5c1596__0x3b64ca)),void showToast(_0x250004(479),_0x250004(_0x5c1596__0x483f7d));DOM[_0x250004(_0x5c1596__0x569463)]&&(DOM[_0x250004(_0x5c1596__0x569463)][_0x250004(744)]=_0x1480b4.url,DOM[_0x250004(_0x5c1596__0x251ade)][_0x250004(_0x5c1596__0x31510c)]=_0x1480b4[_0x250004(_0x5c1596__0x1947c9)]),DOM[_0x250004(_0x5c1596__0x2467ab)]&&(DOM[_0x250004(_0x5c1596__0x19a65d)][_0x250004(343)]=!1),setWebsitePublishStatus(_0x250004(_0x5c1596__0x1b49c3)),showToast("Your Global Website is now live.","success")}catch(_0x3c2886){const _0x31d5fd=getErrorMessage(_0x3c2886);setWebsitePublishStatus(_0x31d5fd),showWebsiteValidation([_0x31d5fd]),showToast(_0x31d5fd,"error")}finally{state[_0x250004(_0x5c1596__0x168946)]=!1,setWebsitePublishBusy(!1)}}async function waitForWebsiteDeployment(_0x24fd65){const _0x15d8f8__0x386315=877,_0x15d8f8__0x55e4b2=662,_0x15d8f8__0x3d10aa=504,_0x520aab=_0x4be7d1,_0x2aa688=Date[_0x520aab(504)]();for(;Date.now()-_0x2aa688<CONFIG[_0x520aab(_0x15d8f8__0x386315)];){if(await isWebsiteDeploymentReady(_0x24fd65))return!0;const _0x121ffd=Math.max(0,Math[_0x520aab(_0x15d8f8__0x55e4b2)]((CONFIG[_0x520aab(_0x15d8f8__0x386315)]-(Date[_0x520aab(_0x15d8f8__0x3d10aa)]()-_0x2aa688))/1e3));setWebsitePublishStatus(_0x520aab(876)+_0x121ffd+"s remaining."),await sleep(CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS)}return!1}async function isWebsiteDeploymentReady(_0x848413){const _0x2301d7__0x4b4557=477,_0x2301d7__0x5babc4=680,_0x2301d7__0x234d13=744,_0x32826b=_0x4be7d1;try{const _0x41b2e1=new URL(_0x848413),_0x3aea38=new URL(_0x32826b(_0x2301d7__0x4b4557),_0x41b2e1),[_0x577637,_0xd74864]=await Promise[_0x32826b(_0x2301d7__0x5babc4)]([fetchDeploymentResource(_0x41b2e1.href),fetchDeploymentResource(_0x3aea38[_0x32826b(_0x2301d7__0x234d13)])]);return Boolean(_0x577637&&_0x577637.ok&&_0xd74864&&_0xd74864.ok)}catch{return!1}}function setWebsitePublishBusy(_0x2031c0){const _0x5ef673__0x13bf7e=618,_0x5ef673__0x2e194c=618,_0x5ef673__0x37185c=630,_0x5ef673__0x1e6b73=594,_0x5ef673__0x38481a=343,_0x5ef673__0x4e8374=379,_0x5ef673__0x7d9e4a=337,_0x5ef673__0x2fc8e8=840,_0x3c2d27=_0x4be7d1;DOM[_0x3c2d27(618)]&&(DOM[_0x3c2d27(_0x5ef673__0x13bf7e)].disabled=_0x2031c0,DOM[_0x3c2d27(_0x5ef673__0x2e194c)][_0x3c2d27(_0x5ef673__0x37185c)]("aria-busy",_0x2031c0?"true":"false"),DOM[_0x3c2d27(_0x5ef673__0x1e6b73)]&&(DOM[_0x3c2d27(594)][_0x3c2d27(_0x5ef673__0x38481a)]=!_0x2031c0),DOM[_0x3c2d27(900)]&&(DOM[_0x3c2d27(900)][_0x3c2d27(_0x5ef673__0x4e8374)]=_0x3c2d27(_0x2031c0?_0x5ef673__0x7d9e4a:_0x5ef673__0x2fc8e8)))}function setWebsitePublishStatus(_0x2d4258){const _0x2de915__0x419181=797,_0x2de915__0x57f67e=379,_0x263a0a=_0x4be7d1;DOM[_0x263a0a(_0x2de915__0x419181)]&&(DOM[_0x263a0a(_0x2de915__0x419181)][_0x263a0a(_0x2de915__0x57f67e)]=_0x2d4258||"")}function getYoutubeEmbedData(_0x315fac){const _0x358ca3__0x213a23=570,_0x358ca3__0x2245a6=661,_0x358ca3__0x4877ca=783,_0x358ca3__0x553c46=289,_0x358ca3__0x23cf23=712,_0x358ca3__0x5f26e9=712,_0x358ca3__0x3d7246=579,_0x358ca3__0x336f6f=773,_0x358ca3__0x291726=265,_0x358ca3__0x6d2c7d=863,_0x358ca3__0xff829e=672,_0x358ca3__0x3f3d43=616,_0x1c20a3=_0x4be7d1;try{const _0x32d825=new URL(_0x315fac),_0x2ae557=_0x32d825[_0x1c20a3(_0x358ca3__0x213a23)][_0x1c20a3(403)]()[_0x1c20a3(_0x358ca3__0x2245a6)](/^www\./,"");let _0x571594="",_0x398cdf=!1;return"youtu.be"===_0x2ae557?_0x571594=_0x32d825[_0x1c20a3(712)][_0x1c20a3(_0x358ca3__0x4877ca)]("/")[_0x1c20a3(863)](Boolean)[0]||"":_0x2ae557!==_0x1c20a3(_0x358ca3__0x553c46)&&"m.youtube.com"!==_0x2ae557||(_0x32d825[_0x1c20a3(_0x358ca3__0x23cf23)][_0x1c20a3(773)]("/shorts/")?(_0x571594=_0x32d825[_0x1c20a3(_0x358ca3__0x5f26e9)].split("/").filter(Boolean)[1]||"",_0x398cdf=!0):"/watch"===_0x32d825.pathname?_0x571594=_0x32d825[_0x1c20a3(_0x358ca3__0x3d7246)].get("v")||"":_0x32d825.pathname[_0x1c20a3(_0x358ca3__0x336f6f)](_0x1c20a3(_0x358ca3__0x291726))&&(_0x571594=_0x32d825.pathname[_0x1c20a3(783)]("/")[_0x1c20a3(_0x358ca3__0x6d2c7d)](Boolean)[1]||"")),_0x571594?{short:_0x398cdf,url:_0x1c20a3(_0x358ca3__0xff829e)+encodeURIComponent(_0x571594)+_0x1c20a3(_0x358ca3__0x3f3d43)}:null}catch{return null}}function resetBuilderData(_0x3dd4e9){const _0x3197ab__0x469a14=407,_0x3197ab__0x30566a=356,_0x3197ab__0x1ad612=396,_0x3197ab__0x488aba=282,_0x434b04=_0x4be7d1;!_0x3dd4e9&&(state[_0x434b04(482)]=null),clearCategoryItemData(),clearWebsiteData(),state[_0x434b04(_0x3197ab__0x469a14)]=[],state[_0x434b04(_0x3197ab__0x30566a)]=null,state[_0x434b04(_0x3197ab__0x1ad612)]=null,state.editingItemCategoryId=null,state.location={verified:!1,latitude:null,longitude:null,accuracy:null,verifiedAt:null},state[_0x434b04(_0x3197ab__0x488aba)]="",clearAllFormFields(),seedDefaultCategories(),renderCategories(),renderItems(),updateItemCategorySelect(),updateLocationDetails(),hideValidation(),hideSuccess(),clearSubscriptionError(),setPublishStatus("")}function _0x2044(_0x2aa58a,_0xad1b4d){const _0x52feec=_0x52fe();return _0x2044=function(_0x2044b6,_0x5b40b0){let _0x87d38c=_0x52feec[_0x2044b6-=258];if(void 0===_0x2044.xWzafo){_0x2044.lGNRSX=function(_0x35ae8a){let _0x34413d="",_0xcf259c="";for(let _0x4c1374,_0x27d2ee,_0x130f4d=0,_0x1100e5=0;_0x27d2ee=_0x35ae8a.charAt(_0x1100e5++);~_0x27d2ee&&(_0x4c1374=_0x130f4d%4?64*_0x4c1374+_0x27d2ee:_0x27d2ee,_0x130f4d++%4)?_0x34413d+=String.fromCharCode(255&_0x4c1374>>(-2*_0x130f4d&6)):0)_0x27d2ee="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=".indexOf(_0x27d2ee);for(let _0x216c05=0,_0x2a7fa8=_0x34413d.length;_0x216c05<_0x2a7fa8;_0x216c05++)_0xcf259c+="%"+("00"+_0x34413d.charCodeAt(_0x216c05).toString(16)).slice(-2);return decodeURIComponent(_0xcf259c)},_0x2aa58a=arguments,_0x2044.xWzafo=!0}const _0x12d9ed=_0x2044b6+_0x52feec[0],_0x439b91=_0x2aa58a[_0x12d9ed];return _0x439b91?_0x87d38c=_0x439b91:(_0x87d38c=_0x2044.lGNRSX(_0x87d38c),_0x2aa58a[_0x12d9ed]=_0x87d38c),_0x87d38c},_0x2044(_0x2aa58a,_0xad1b4d)}function clearAllFormFields(){const _0x242800__0x431eba=497,_0x242800__0x38ad2e=682,_0x242800__0x3b3940=821,_0x242800__0x8b28b9=681,_0x242800__0x123bd5=496,_0x242800__0x392567=915,_0x242800__0x51a105=528,_0x242800__0x2487a8=766,_0x242800__0x737234=588,_0x242800__0x1d3720=828,_0x242800__0x95711b=606,_0x242800__0x387519=566,_0x242800__0x2727ca=481,_0x242800__0xf032a3=765,_0x242800__0x28bf21=362,_0x242800__0x3344e1=306,_0x242800__0x507372=313,_0x242800__0x55ecb4=343,_0x242800__0x4838b2=669,_0x43a652__0x4e717e=759,_0x3d783b=_0x4be7d1;[DOM[_0x3d783b(548)],DOM[_0x3d783b(942)],DOM[_0x3d783b(_0x242800__0x431eba)],DOM[_0x3d783b(_0x242800__0x38ad2e)],DOM[_0x3d783b(_0x242800__0x3b3940)],DOM[_0x3d783b(_0x242800__0x8b28b9)],DOM.whatsapp,DOM[_0x3d783b(_0x242800__0x123bd5)],DOM.websiteSubscriptionId,DOM[_0x3d783b(_0x242800__0x392567)],DOM[_0x3d783b(_0x242800__0x51a105)],DOM[_0x3d783b(_0x242800__0x2487a8)],DOM[_0x3d783b(_0x242800__0x737234)],DOM[_0x3d783b(_0x242800__0x1d3720)],DOM[_0x3d783b(_0x242800__0x95711b)],DOM[_0x3d783b(_0x242800__0x387519)],DOM[_0x3d783b(_0x242800__0x2727ca)]][_0x3d783b(_0x242800__0xf032a3)](_0x2ad3de=>{_0x2ad3de&&(_0x2ad3de[_0x3d783b(_0x43a652__0x4e717e)]="")}),hideLogoPreview(),DOM[_0x3d783b(_0x242800__0x28bf21)]&&(DOM.websiteLogoPreview.hidden=!0),DOM[_0x3d783b(306)]&&DOM[_0x3d783b(_0x242800__0x3344e1)].removeAttribute("src"),renderWebsiteSections(),renderWebsiteFooter(),DOM[_0x3d783b(_0x242800__0x507372)]&&(DOM[_0x3d783b(_0x242800__0x507372)][_0x3d783b(_0x242800__0x55ecb4)]=!0),setWebsitePublishStatus(""),hideWebsiteValidation(),DOM.itemCategory&&(DOM.itemCategory[_0x3d783b(759)]=""),clearItemFields(),setLocationText(_0x3d783b(_0x242800__0x4838b2),!1)}function clearItemFields(){const _0x1eb393__0x4e0c48=279,_0x1eb393__0x406539=872,_0x1eb393__0xbb0890=499,_0x1a05ea=_0x4be7d1;setValue(DOM.itemName,""),setValue(DOM[_0x1a05ea(770)],""),setValue(DOM.itemQuantity,""),setValue(DOM[_0x1a05ea(_0x1eb393__0x4e0c48)],""),setValue(DOM[_0x1a05ea(_0x1eb393__0x406539)],""),setValue(DOM.itemDescription,""),setValue(DOM[_0x1a05ea(_0x1eb393__0xbb0890)],"")}function showCategoryError(_0x1b11b5){const _0x5d3dc3__0x2d5dc7=379,_0x34f244=_0x4be7d1;DOM[_0x34f244(434)]&&(DOM[_0x34f244(434)][_0x34f244(_0x5d3dc3__0x2d5dc7)]=_0x1b11b5,DOM[_0x34f244(434)][_0x34f244(343)]=!1)}function clearCategoryError(){const _0x3cfc42__0x3c9ac0=434,_0x3cfc42__0x43e343=379,_0x3cfc42__0x6fba14=434,_0x3cfc42__0x361cc3=343,_0x30ac43=_0x4be7d1;DOM.categoryNameError&&(DOM[_0x30ac43(_0x3cfc42__0x3c9ac0)][_0x30ac43(_0x3cfc42__0x43e343)]="",DOM[_0x30ac43(_0x3cfc42__0x6fba14)][_0x30ac43(_0x3cfc42__0x361cc3)]=!0)}function showItemError(_0x29af76){const _0x6dbe9e__0x420b90=343,_0x4e70d5=_0x4be7d1;DOM[_0x4e70d5(779)]&&(DOM.itemFormError[_0x4e70d5(379)]=_0x29af76,DOM.itemFormError[_0x4e70d5(_0x6dbe9e__0x420b90)]=!1)}function clearItemError(){const _0x40c848__0x1c63a4=779,_0x40c848__0x26f244=779,_0x40c848__0x13f61a=343,_0x5d2bc7=_0x4be7d1;DOM[_0x5d2bc7(_0x40c848__0x1c63a4)]&&(DOM[_0x5d2bc7(_0x40c848__0x1c63a4)][_0x5d2bc7(379)]="",DOM[_0x5d2bc7(_0x40c848__0x26f244)][_0x5d2bc7(_0x40c848__0x13f61a)]=!0)}function clearSubscriptionError(){const _0x4fb424__0x5b6f5e=379,_0x226950=_0x4be7d1;DOM[_0x226950(488)]&&(DOM.subscriptionError[_0x226950(_0x4fb424__0x5b6f5e)]="",DOM.subscriptionError[_0x226950(343)]=!0)}function showToast(_0x368fd4,_0x517675=_0x4be7d1(563)){const _0x42ee70__0x49dfeb=413,_0x42ee70__0x114d55=879,_0x42ee70__0x283524=630,_0x42ee70__0x438815=794,_0x42ee70__0xdc49c8=679,_0x42ee70__0xdb5ca7=379,_0x1672f0=_0x4be7d1;if(!DOM[_0x1672f0(859)])return;const _0x1331ee=document[_0x1672f0(_0x42ee70__0x49dfeb)](_0x1672f0(_0x42ee70__0x114d55));_0x1331ee.className="toast toast--"+_0x517675,_0x1331ee[_0x1672f0(_0x42ee70__0x283524)](_0x1672f0(_0x42ee70__0x438815),_0x1672f0(_0x42ee70__0xdc49c8)),_0x1331ee[_0x1672f0(_0x42ee70__0xdb5ca7)]=_0x368fd4||"Done.",DOM.toastContainer.appendChild(_0x1331ee),window.setTimeout(()=>{_0x1331ee.remove()},4500)}function findCategory(_0x5d57b5){const _0x5cdf6a=_0x4be7d1;return state[_0x5cdf6a(407)][_0x5cdf6a(298)](_0x42019e=>_0x42019e.id===_0x5d57b5)||null}function findItem(_0x52f88f,_0x51068b){const _0x3d9cc0=_0x4be7d1,_0x2681b3=findCategory(_0x52f88f);if(!_0x2681b3)return null;const _0x18a568=_0x2681b3[_0x3d9cc0(492)].find(_0xf63902=>_0xf63902.id===_0x51068b);return _0x18a568?{category:_0x2681b3,item:_0x18a568}:null}function getTotalItemCount(){const _0x2b8fa2=_0x4be7d1;return state[_0x2b8fa2(407)].reduce((_0x460335,_0x1ffedc)=>_0x460335+_0x1ffedc[_0x2b8fa2(492)][_0x2b8fa2(738)],0)}function createButton(_0x4d6448,_0x2ec546,_0x28c15f,_0x34c009,_0x3e1e00=null){const _0x1025bd__0x4bb024=792,_0x1025bd__0x29a0dd=348,_0x1025bd__0x1a7bca=675,_0x1025bd__0x23106f=710,_0x1025bd__0x421455=710,_0x1025bd__0x1a173b=379,_0x2df2f3=_0x4be7d1,_0x11af1e=document.createElement(_0x2df2f3(_0x1025bd__0x4bb024));return _0x11af1e[_0x2df2f3(_0x1025bd__0x29a0dd)]=_0x2df2f3(_0x1025bd__0x4bb024),_0x2ec546&&(_0x11af1e[_0x2df2f3(_0x1025bd__0x1a7bca)]=_0x2ec546),_0x34c009&&(_0x11af1e.dataset.categoryId=_0x34c009),_0x3e1e00&&(_0x11af1e[_0x2df2f3(_0x1025bd__0x23106f)].itemId=_0x3e1e00),("add-item"===_0x28c15f||_0x28c15f===_0x2df2f3(633)||"delete"===_0x28c15f)&&(_0x3e1e00?_0x11af1e[_0x2df2f3(_0x1025bd__0x421455)][_0x2df2f3(562)]=_0x28c15f:_0x11af1e[_0x2df2f3(710)][_0x2df2f3(757)]=_0x28c15f),_0x11af1e[_0x2df2f3(_0x1025bd__0x1a173b)]=_0x4d6448,_0x11af1e}function setButtonBusy(_0x4b107c,_0x206861,_0x42fddb){const _0x541c91__0x5a6b8a=710,_0x541c91__0x54cc4d=615,_0x541c91__0x284fe5=379,_0x541c91__0x4c8f96=464,_0x541c91__0x4e63a2=630,_0x541c91__0x8df361=379,_0x541c91__0x56cef1=464,_0x541c91__0x50ee31=341,_0x541c91__0x788909=710,_0x541c91__0x3fe171=710,_0x159311=_0x4be7d1;_0x4b107c&&(_0x206861?(!_0x4b107c[_0x159311(_0x541c91__0x5a6b8a)][_0x159311(_0x541c91__0x54cc4d)]&&(_0x4b107c[_0x159311(_0x541c91__0x5a6b8a)][_0x159311(_0x541c91__0x54cc4d)]=_0x4b107c[_0x159311(_0x541c91__0x284fe5)]),_0x4b107c[_0x159311(_0x541c91__0x4c8f96)]=!0,_0x4b107c[_0x159311(_0x541c91__0x4e63a2)]("aria-busy",_0x159311(595)),_0x4b107c[_0x159311(_0x541c91__0x8df361)]=_0x42fddb||"Please wait..."):(_0x4b107c[_0x159311(_0x541c91__0x56cef1)]=!1,_0x4b107c[_0x159311(_0x541c91__0x50ee31)]("aria-busy"),_0x4b107c[_0x159311(710)][_0x159311(_0x541c91__0x54cc4d)]&&(_0x4b107c[_0x159311(_0x541c91__0x8df361)]=_0x4b107c[_0x159311(_0x541c91__0x788909)].originalText,delete _0x4b107c[_0x159311(_0x541c91__0x3fe171)][_0x159311(615)])))}function getValue(_0x45f609){const _0x4da654__0x16393d=447,_0x3e9792=_0x4be7d1;return _0x45f609?String(_0x45f609[_0x3e9792(759)]||"")[_0x3e9792(_0x4da654__0x16393d)]():""}function setValue(_0x5ab888,_0x3980b2){_0x5ab888&&(_0x5ab888.value=null==_0x3980b2?"":String(_0x3980b2))}function normalizeText(_0x253dab,_0x212a98){const _0x17053a__0x37d2b0=447,_0x17053a__0x5d1023=612,_0x17053a__0x3b8826=372,_0x5b83db=_0x4be7d1,_0x81a437=String(_0x253dab??"")[_0x5b83db(_0x17053a__0x37d2b0)]();return Number[_0x5b83db(_0x17053a__0x5d1023)](_0x212a98)&&_0x81a437[_0x5b83db(738)]>_0x212a98?_0x81a437[_0x5b83db(_0x17053a__0x3b8826)](0,_0x212a98):_0x81a437}function parseNumber(_0x2f0cc6){const _0x1e3cf6__0xd7d493=447,_0x1e3cf6__0x2315b0=612,_0x157623=_0x4be7d1,_0x377507=String(_0x2f0cc6??"")[_0x157623(_0x1e3cf6__0xd7d493)]();if(!_0x377507)return null;const _0x1c0dd3=Number(_0x377507);return Number[_0x157623(_0x1e3cf6__0x2315b0)](_0x1c0dd3)?_0x1c0dd3:null}function formatNumber(_0x4fe83d){const _0x6bb8e7__0x489f1d=612,_0x6bb8e7__0x51b1de=890,_0x3c9e90=_0x4be7d1,_0x1ae9d3=Number(_0x4fe83d);return Number[_0x3c9e90(_0x6bb8e7__0x489f1d)](_0x1ae9d3)?_0x1ae9d3[_0x3c9e90(861)](_0x3c9e90(_0x6bb8e7__0x51b1de),{maximumFractionDigits:2}):"0"}function createId(_0xc87567){const _0x5b1ab2__0x16e713=849,_0x5b1ab2__0x1501c8=372,_0x2dab7d=_0x4be7d1;return window.crypto&&"function"==typeof window.crypto.randomUUID?_0xc87567+"-"+window[_0x2dab7d(_0x5b1ab2__0x16e713)].randomUUID():_0xc87567+"-"+Date.now()+"-"+Math.random().toString(36)[_0x2dab7d(_0x5b1ab2__0x1501c8)](2,10)}function focusElement(_0xea7b18){const _0x21ea09__0x3744f8=709,_0x43205f=_0x4be7d1;if(_0xea7b18)try{_0xea7b18[_0x43205f(_0x21ea09__0x3744f8)]({preventScroll:!1})}catch{_0xea7b18[_0x43205f(_0x21ea09__0x3744f8)]()}}function uniqueStrings(_0x3e951a){return[...new Set(_0x3e951a.filter(Boolean))]}function isValidHttpsUrl(_0x117690){const _0xb2356e__0x5f423f=807,_0xb2356e__0x4ff91c=432,_0x10eccd=_0x4be7d1;try{const _0x2a85eb=new URL(_0x117690);return _0x2a85eb[_0x10eccd(_0xb2356e__0x5f423f)]===_0x10eccd(_0xb2356e__0x4ff91c)&&Boolean(_0x2a85eb[_0x10eccd(570)])}catch{return!1}}function normalizeBaseUrl(_0x1cc433){const _0x314821__0x511977=447,_0x314821__0x70331a=807,_0x14f19c=_0x4be7d1,_0x562a8c=String(_0x1cc433??"")[_0x14f19c(_0x314821__0x511977)]();if(!_0x562a8c)return"";try{const _0x2856b9=new URL(_0x562a8c);return _0x2856b9[_0x14f19c(_0x314821__0x70331a)]!==_0x14f19c(432)?"":_0x2856b9.origin}catch{return""}}function isValidEmail(_0x29801e){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/[_0x4be7d1(571)](_0x29801e)}function isValidYoutubeUrl(_0x3d0783){const _0x5b5766__0x207aed=570,_0x5b5766__0x64872e=661,_0x5b5766__0xd56303=448,_0x5b5766__0x5037f7=712,_0x5b5766__0x1d1ff3=289,_0x5b5766__0x2d4a9f=763,_0x5b5766__0x10e0d9=773,_0x5b5766__0x25661e=783,_0x5b5766__0x26f184=712,_0x5b5766__0x5bf00c=811,_0x5b5766__0x170a3a=516,_0x5b5766__0x427678=773,_0x5b5766__0x48e3a5=863,_0x5b5766__0x15c897=712,_0x14547d=_0x4be7d1;try{const _0x53fe2d=new URL(_0x3d0783),_0x314cce=_0x53fe2d[_0x14547d(_0x5b5766__0x207aed)].toLowerCase()[_0x14547d(_0x5b5766__0x64872e)](/^www\./,"");return _0x314cce===_0x14547d(_0x5b5766__0xd56303)?Boolean(_0x53fe2d[_0x14547d(_0x5b5766__0x5037f7)].split("/").filter(Boolean)[0]):(_0x314cce===_0x14547d(_0x5b5766__0x1d1ff3)||_0x314cce===_0x14547d(_0x5b5766__0x2d4a9f))&&(_0x53fe2d[_0x14547d(_0x5b5766__0x5037f7)][_0x14547d(_0x5b5766__0x10e0d9)](_0x14547d(535))?Boolean(_0x53fe2d.pathname[_0x14547d(_0x5b5766__0x25661e)]("/")[_0x14547d(863)](Boolean)[1]):_0x53fe2d[_0x14547d(_0x5b5766__0x26f184)]===_0x14547d(_0x5b5766__0x5bf00c)?Boolean(_0x53fe2d.searchParams[_0x14547d(_0x5b5766__0x170a3a)]("v")):_0x53fe2d.pathname[_0x14547d(_0x5b5766__0x427678)](_0x14547d(265))?Boolean(_0x53fe2d.pathname[_0x14547d(_0x5b5766__0x25661e)]("/")[_0x14547d(_0x5b5766__0x48e3a5)](Boolean)[1]):!!_0x53fe2d[_0x14547d(_0x5b5766__0x15c897)][_0x14547d(773)]("/v/")&&Boolean(_0x53fe2d[_0x14547d(712)][_0x14547d(_0x5b5766__0x25661e)]("/").filter(Boolean)[1]))}catch{return!1}}function getErrorMessage(_0x387221){const _0xa679e3__0x52f1f6=363,_0xa679e3__0x232c59=363,_0x4f40bd=_0x4be7d1;return _0x387221?"AbortError"===_0x387221[_0x4f40bd(523)]?"The request timed out. Please try again.":_0x387221.message?_0x387221.message:_0x4f40bd(_0xa679e3__0x232c59):_0x4f40bd(_0xa679e3__0x52f1f6)}function getLocationErrorMessage(_0xa89715){const _0x44d2f2__0x250ef5=665,_0x44d2f2__0x47973c=621,_0x44d2f2__0x67b968=740,_0x44d2f2__0xe46432=526,_0x44d2f2__0x2a5925=572,_0x3013e4=_0x4be7d1;if(!_0xa89715)return"Unable to verify your location.";switch(_0xa89715[_0x3013e4(789)]){case 1:return _0x3013e4(_0x44d2f2__0x250ef5);case 2:return _0x3013e4(_0x44d2f2__0x47973c);case 3:return _0x3013e4(_0x44d2f2__0x67b968);default:return _0xa89715[_0x3013e4(_0x44d2f2__0xe46432)]||_0x3013e4(_0x44d2f2__0x2a5925)}}
+"use strict";
+
+/*
+ * Vidhwaan Business Apps
+ * Builder Application
+ *
+ * Step 8
+ * File: business/app.js
+ *
+ * Ecommerce builder frontend.
+ *
+ * IMPORTANT:
+ * - This file is matched to the current index.html DOM.
+ * - Subscription verification is performed by the Cloudflare Worker.
+ * - The browser never treats the Subscription ID as proof of payment.
+ * - The Worker is authoritative for payment, application and expiry checks.
+ */
+
+const CONFIG = Object.freeze({
+  WORKER_URL:
+    "https://divine-snowflake-aabd.propertiesgrouphyd.workers.dev",
+
+  TEMPLATE_ID:
+    "ECM",
+
+  CATEGORY_ITEM_STORAGE_KEY:
+    "vidhwaan_business_ecommerce_categories_items",
+
+  WEBSITE_STORAGE_KEY:
+    "vidhwaan_business_website_data",
+
+  MAX_CATEGORIES:
+    50,
+
+  MAX_ITEMS_PER_CATEGORY:
+    500,
+
+  MAX_TOTAL_ITEMS:
+    5000,
+
+  MAX_CATEGORY_NAME_LENGTH:
+    100,
+
+  MAX_ITEM_NAME_LENGTH:
+    150,
+
+  MAX_BUSINESS_NAME_LENGTH:
+    120,
+
+  MAX_TAGLINE_LENGTH:
+    200,
+
+  MAX_ADDRESS_LENGTH:
+    500,
+
+  MAX_PHONE_LENGTH:
+    30,
+
+  MAX_EMAIL_LENGTH:
+    254,
+
+  MAX_WHATSAPP_LENGTH:
+    30,
+
+  MAX_LOGO_URL_LENGTH:
+    2000,
+
+  MAX_DESCRIPTION_LENGTH:
+    1000,
+
+  MAX_YOUTUBE_URL_LENGTH:
+    2000,
+
+  REQUEST_TIMEOUT_MS: 
+    30000,
+
+  DEPLOYMENT_CHECK_INTERVAL_MS: 
+    3000,
+
+  DEPLOYMENT_TIMEOUT_MS: 
+    120000,
+
+  MAX_LOCATION_ACCURACY_METERS:
+    500,
+
+  LOCATION_TIMEOUT_MS:
+    45000
+
+});
+
+
+const DEFAULT_CATEGORIES = Object.freeze([
+  "Grocery",
+  "Clothing",
+  "Food",
+  "Electronics",
+  "Home & Kitchen",
+  "Beauty & Personal Care"
+]);
+
+
+const state = {
+  selectedTemplate:
+    null,
+
+  website: {
+    sections: [],
+    footer: {
+      items: []
+    }
+  },
+
+  categories:
+    [],
+
+  editingCategoryId:
+    null,
+
+  editingItemId:
+    null,
+
+  editingItemCategoryId:
+    null,
+
+  location: {
+    verified:
+      false,
+
+    latitude:
+      null,
+
+    longitude:
+      null,
+
+    accuracy:
+      null,
+
+    verifiedAt:
+      null
+  },
+
+  publishing:
+    false,
+
+  lastPublishedUrl:
+    "",
+
+  logoPreviewRequest:
+    0
+};
+
+
+const DOM = {};
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  initialize
+);
+
+
+function initialize() {
+  cacheDom();
+  bindEvents();
+  initializeApplication();
+}
+
+
+/* =========================================================
+ * DOM
+ * ========================================================= */
+
+
+function cacheDom() {
+  DOM.connectionStatus =
+    document.getElementById(
+      "connection-status"
+    );
+
+  DOM.connectionText =
+    document.getElementById(
+      "connection-text"
+    );
+
+  DOM.templateSection =
+    document.getElementById(
+      "template-section"
+    );
+
+  DOM.templateGrid =
+    document.getElementById(
+      "template-grid"
+    );
+
+  DOM.templateEcommerce =
+    document.getElementById(
+      "template-ecommerce"
+    );
+
+  DOM.templateWebsite =
+    document.getElementById(
+      "template-website"
+    );
+
+  DOM.ecommerceSection =
+    document.getElementById(
+      "ecommerce-section"
+    );
+
+  DOM.websiteSection =
+    document.getElementById(
+      "website-section"
+    );
+
+  DOM.websiteBackToTemplates =
+    document.getElementById(
+      "website-back-to-templates"
+    );
+
+  DOM.websiteSubscriptionId =
+    document.getElementById(
+      "website-subscription-id"
+    );
+
+  DOM.websiteBusinessName =
+    document.getElementById(
+      "website-business-name"
+    );
+
+  DOM.websiteAddress =
+    document.getElementById(
+      "website-business-address"
+    );
+
+  DOM.websiteTagline =
+    document.getElementById(
+      "website-tagline"
+    );
+
+  DOM.websiteMobile =
+    document.getElementById(
+      "website-mobile"
+    );
+
+  DOM.websiteEmail =
+    document.getElementById(
+      "website-email"
+    );
+
+  DOM.websiteWhatsapp =
+    document.getElementById(
+      "website-whatsapp"
+    );
+
+  DOM.websitePassword =
+    document.getElementById(
+      "website-password"
+    );
+
+  DOM.websitePasswordToggle =
+    document.getElementById(
+      "website-password-toggle"
+    );
+
+  DOM.websiteLogo =
+    document.getElementById(
+      "website-logo"
+    );
+
+  DOM.websiteLogoPreview =
+    document.getElementById(
+      "website-logo-preview"
+    );
+
+  DOM.websiteLogoPreviewImage =
+    document.getElementById(
+      "website-logo-preview-image"
+    );
+
+  DOM.websiteVerifyLocation =
+    document.getElementById(
+      "website-verify-location"
+    );
+
+  DOM.websiteLocationStatus =
+    document.getElementById(
+      "website-location-status"
+    );
+
+  DOM.websiteLocationStatusIndicator =
+    document.getElementById(
+      "website-location-status-indicator"
+    );
+
+  DOM.websiteLocationStatusText =
+    document.getElementById(
+      "website-location-status-text"
+    );
+
+  DOM.websiteLocationDetails =
+    document.getElementById(
+      "website-location-details"
+    );
+
+  DOM.websiteLocationLatitude =
+    document.getElementById(
+      "website-location-latitude"
+    );
+
+  DOM.websiteLocationLongitude =
+    document.getElementById(
+      "website-location-longitude"
+    );
+
+  DOM.websiteLocationVerifiedAt =
+    document.getElementById(
+      "website-location-verified-at"
+    );
+
+  DOM.websiteAddSection =
+    document.getElementById(
+      "website-add-section"
+    );
+
+  DOM.websiteAddFirstSection =
+    document.getElementById(
+      "website-add-first-section"
+    );
+
+  DOM.websiteSections =
+    document.getElementById(
+      "website-sections"
+    );
+
+  DOM.websiteSectionsEmpty =
+    document.getElementById(
+      "website-sections-empty"
+    );
+
+  DOM.websiteAddFooterLink =
+    document.getElementById(
+      "website-add-footer-link"
+    );
+
+  DOM.websiteFooterLinks =
+    document.getElementById(
+      "website-footer-links"
+    );
+
+  DOM.websiteFooterEmpty =
+    document.getElementById(
+      "website-footer-empty"
+    );
+
+  DOM.websiteValidationSummary =
+    document.getElementById(
+      "website-validation-summary"
+    );
+
+  DOM.websiteValidationList =
+    document.getElementById(
+      "website-validation-list"
+    );
+
+  DOM.websitePublish =
+    document.getElementById(
+      "website-publish"
+    );
+
+  DOM.websitePublishSpinner =
+    document.getElementById(
+      "website-publish-spinner"
+    );
+
+  DOM.websitePublishButtonText =
+    document.getElementById(
+      "website-publish-button-text"
+    );
+
+  DOM.websitePublishStatus =
+    document.getElementById(
+      "website-publish-status"
+    );
+
+  DOM.websitePublishResult =
+    document.getElementById(
+      "website-publish-result"
+    );
+
+  DOM.websitePublishedUrl =
+    document.getElementById(
+      "website-published-url"
+    );
+
+
+  DOM.websiteContentModal =
+    document.getElementById(
+      "website-content-modal"
+    );
+
+  DOM.websiteContentModalClose =
+    document.getElementById(
+      "website-content-modal-close"
+    );
+
+  DOM.websiteContentModalTitle =
+    document.getElementById(
+      "website-content-modal-title"
+    );
+
+  DOM.websiteContentModalDescription =
+    document.getElementById(
+      "website-content-modal-description"
+    );
+
+  DOM.websiteContentTextField =
+    document.getElementById(
+      "website-content-text-field"
+    );
+
+  DOM.websiteContentTextLabel =
+    document.getElementById(
+      "website-content-text-label"
+    );
+
+  DOM.websiteContentText =
+    document.getElementById(
+      "website-content-text"
+    );
+
+  DOM.websiteContentRepeatableField =
+    document.getElementById(
+      "website-content-repeatable-field"
+    );
+
+  DOM.websiteContentRepeatableLabel =
+    document.getElementById(
+      "website-content-repeatable-label"
+    );
+
+  DOM.websiteContentRepeatableHelp =
+    document.getElementById(
+      "website-content-repeatable-help"
+    );
+
+  DOM.websiteContentAddRow =
+    document.getElementById(
+      "website-content-add-row"
+    );
+
+  DOM.websiteContentRowList =
+    document.getElementById(
+      "website-content-row-list"
+    );
+
+  DOM.websiteContentFormError =
+    document.getElementById(
+      "website-content-form-error"
+    );
+
+  DOM.websiteContentCancel =
+    document.getElementById(
+      "website-content-cancel"
+    );
+
+  DOM.websiteContentSave =
+    document.getElementById(
+      "website-content-save"
+    );
+
+
+  DOM.backToTemplates =
+    document.getElementById(
+      "back-to-templates"
+    );
+
+  DOM.subscriptionId =
+    document.getElementById(
+      "subscription-id"
+    );
+
+  DOM.businessPassword =
+    document.getElementById(
+      "business-password"
+    );
+
+  DOM.businessPasswordToggle =
+    document.getElementById(
+      "business-password-toggle"
+    );
+
+  DOM.subscriptionError =
+    document.getElementById(
+      "subscription-error"
+    );
+
+  DOM.businessName =
+    document.getElementById(
+      "business-name"
+    );
+
+  DOM.tagline =
+    document.getElementById(
+      "business-tagline"
+    );
+
+  DOM.address =
+    document.getElementById(
+      "business-address"
+    );
+
+  DOM.mobile =
+    document.getElementById(
+      "business-mobile"
+    );
+
+  DOM.email =
+    document.getElementById(
+      "business-email"
+    );
+
+  DOM.whatsapp =
+    document.getElementById(
+      "business-whatsapp"
+    );
+
+  DOM.logoUrl =
+    document.getElementById(
+      "business-logo"
+    );
+
+  DOM.logoPreview =
+    document.getElementById(
+      "logo-preview"
+    );
+
+  DOM.logoPreviewImage =
+    document.getElementById(
+      "logo-preview-image"
+    );
+
+  DOM.locationStatus =
+    document.getElementById(
+      "location-status"
+    );
+
+  DOM.locationStatusIndicator =
+    document.getElementById(
+      "location-status-indicator"
+    );
+
+  DOM.locationStatusText =
+    document.getElementById(
+      "location-status-text"
+    );
+
+  DOM.verifyLocation =
+    document.getElementById(
+      "verify-location"
+    );
+
+  DOM.locationDetails =
+    document.getElementById(
+      "location-details"
+    );
+
+  DOM.locationLatitude =
+    document.getElementById(
+      "location-latitude"
+    );
+
+  DOM.locationLongitude =
+    document.getElementById(
+      "location-longitude"
+    );
+
+  DOM.locationVerifiedAt =
+    document.getElementById(
+      "location-verified-at"
+    );
+
+  DOM.addCategory =
+    document.getElementById(
+      "add-category"
+    );
+
+  DOM.addFirstCategory =
+    document.getElementById(
+      "add-first-category"
+    );
+
+  DOM.categoryList =
+    document.getElementById(
+      "category-list"
+    );
+
+  DOM.categoryEmpty =
+    document.getElementById(
+      "category-empty"
+    );
+
+  DOM.categoryModal =
+    document.getElementById(
+      "category-modal"
+    );
+
+  DOM.categoryModalTitle =
+    document.getElementById(
+      "category-modal-title"
+    );
+
+  DOM.categoryModalClose =
+    document.getElementById(
+      "category-modal-close"
+    );
+
+  DOM.categoryName =
+    document.getElementById(
+      "category-name"
+    );
+
+  DOM.categoryNameError =
+    document.getElementById(
+      "category-name-error"
+    );
+
+  DOM.categoryCancel =
+    document.getElementById(
+      "category-cancel"
+    );
+
+  DOM.categorySave =
+    document.getElementById(
+      "category-save"
+    );
+
+  DOM.addItem =
+    document.getElementById(
+      "add-item"
+    );
+
+  DOM.addFirstItem =
+    document.getElementById(
+      "add-first-item"
+    );
+
+  DOM.itemList =
+    document.getElementById(
+      "item-list"
+    );
+
+  DOM.itemEmpty =
+    document.getElementById(
+      "item-empty"
+    );
+
+  DOM.itemModal =
+    document.getElementById(
+      "item-modal"
+    );
+
+  DOM.itemModalTitle =
+    document.getElementById(
+      "item-modal-title"
+    );
+
+  DOM.itemModalClose =
+    document.getElementById(
+      "item-modal-close"
+    );
+
+  DOM.itemName =
+    document.getElementById(
+      "item-name"
+    );
+
+  DOM.itemPrice =
+    document.getElementById(
+      "item-price"
+    );
+
+  DOM.itemQuantity =
+    document.getElementById(
+      "item-quantity"
+    );
+
+  DOM.itemUnit =
+    document.getElementById(
+      "item-unit"
+    );
+
+  DOM.itemCategory =
+    document.getElementById(
+      "item-category"
+    );
+
+  DOM.itemDescription =
+    document.getElementById(
+      "item-description"
+    );
+
+  DOM.itemYoutube =
+    document.getElementById(
+      "item-youtube"
+    );
+
+  DOM.itemFormError =
+    document.getElementById(
+      "item-form-error"
+    );
+
+  DOM.itemCancel =
+    document.getElementById(
+      "item-cancel"
+    );
+
+  DOM.itemSave =
+    document.getElementById(
+      "item-save"
+    );
+
+  DOM.validationSummary =
+    document.getElementById(
+      "validation-summary"
+    );
+
+  DOM.validationList =
+    document.getElementById(
+      "validation-list"
+    );
+
+  DOM.publishBusiness =
+    document.getElementById(
+      "publish-business"
+    );
+
+  DOM.publishSpinner =
+    document.getElementById(
+      "publish-spinner"
+    );
+
+  DOM.publishButtonText =
+    document.getElementById(
+      "publish-button-text"
+    );
+
+  DOM.publishStatus =
+    document.getElementById(
+      "publish-status"
+    );
+
+  DOM.successSection =
+    document.getElementById(
+      "success-section"
+    );
+
+  DOM.successDescription =
+    document.getElementById(
+      "success-description"
+    );
+
+  DOM.businessAppUrl =
+    document.getElementById(
+      "business-app-url"
+    );
+
+  DOM.deploymentStatus =
+    document.getElementById(
+      "deployment-status"
+    );
+
+  DOM.openBusinessApp =
+    document.getElementById(
+      "open-business-app"
+    );
+
+  DOM.editBusiness =
+    document.getElementById(
+      "edit-business"
+    );
+
+  DOM.createAnother =
+    document.getElementById(
+      "create-another"
+    );
+
+  DOM.applicationLoader =
+    document.getElementById(
+      "application-loader"
+    );
+
+  DOM.loaderText =
+    document.getElementById(
+      "loader-text"
+    );
+
+  DOM.toastContainer =
+    document.getElementById(
+      "toast-container"
+    );
+}
+
+
+/* =========================================================
+ * EVENTS
+ * ========================================================= */
+
+
+function bindEvents() {
+  if (DOM.templateEcommerce) {
+    DOM.templateEcommerce.addEventListener(
+      "click",
+      () => selectTemplate("ECM")
+    );
+  }
+
+  if (DOM.templateWebsite) {
+    DOM.templateWebsite.addEventListener(
+      "click",
+      () => selectTemplate("WEB")
+    );
+  }
+
+  if (DOM.backToTemplates) {
+    DOM.backToTemplates.addEventListener(
+      "click",
+      showTemplateSelection
+    );
+  }
+
+  if (DOM.websiteBackToTemplates) {
+    DOM.websiteBackToTemplates.addEventListener(
+      "click",
+      showTemplateSelection
+    );
+  }
+
+  if (DOM.websitePasswordToggle) {
+    DOM.websitePasswordToggle.addEventListener(
+      "click",
+      toggleWebsitePassword
+    );
+  }
+
+  if (DOM.websiteLogo) {
+    DOM.websiteLogo.addEventListener(
+      "input",
+      previewWebsiteLogo
+    );
+
+    DOM.websiteLogo.addEventListener(
+      "change",
+      previewWebsiteLogo
+    );
+  }
+
+  if (DOM.websiteVerifyLocation) {
+    DOM.websiteVerifyLocation.addEventListener(
+      "click",
+      verifyWebsiteLocation
+    );
+  }
+
+  if (DOM.websiteAddSection) {
+    DOM.websiteAddSection.addEventListener(
+      "click",
+      addWebsiteSection
+    );
+  }
+
+  if (DOM.websiteAddFirstSection) {
+    DOM.websiteAddFirstSection.addEventListener(
+      "click",
+      addWebsiteSection
+    );
+  }
+
+  if (DOM.websiteSections) {
+    DOM.websiteSections.addEventListener(
+      "click",
+      handleWebsiteSectionAction
+    );
+  }
+
+  if (DOM.websiteAddFooterLink) {
+    DOM.websiteAddFooterLink.addEventListener(
+      "click",
+      addWebsiteFooterLink
+    );
+  }
+
+
+  if (DOM.websiteContentModalClose) {
+    DOM.websiteContentModalClose.addEventListener(
+      "click",
+      closeWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentCancel) {
+    DOM.websiteContentCancel.addEventListener(
+      "click",
+      closeWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentSave) {
+    DOM.websiteContentSave.addEventListener(
+      "click",
+      saveWebsiteContentModal
+    );
+  }
+
+  if (DOM.websiteContentAddRow) {
+    DOM.websiteContentAddRow.addEventListener(
+      "click",
+      addWebsiteContentModalRow
+    );
+  }
+
+  if (DOM.websiteContentRowList) {
+    DOM.websiteContentRowList.addEventListener(
+      "click",
+      handleWebsiteContentModalRowAction
+    );
+  }
+
+
+
+  if (DOM.websiteFooterLinks) {
+    DOM.websiteFooterLinks.addEventListener(
+      "click",
+      handleWebsiteFooterAction
+    );
+  }
+
+  if (DOM.websitePublish) {
+    DOM.websitePublish.addEventListener(
+      "click",
+      publishWebsite
+    );
+  }
+
+  if (DOM.addCategory) {
+    DOM.addCategory.addEventListener(
+      "click",
+      () => openCategoryModal()
+    );
+  }
+
+  if (DOM.addFirstCategory) {
+    DOM.addFirstCategory.addEventListener(
+      "click",
+      () => openCategoryModal()
+    );
+  }
+
+  if (DOM.categoryModalClose) {
+    DOM.categoryModalClose.addEventListener(
+      "click",
+      closeCategoryModal
+    );
+  }
+
+  if (DOM.categoryCancel) {
+    DOM.categoryCancel.addEventListener(
+      "click",
+      closeCategoryModal
+    );
+  }
+
+  if (DOM.categorySave) {
+    DOM.categorySave.addEventListener(
+      "click",
+      saveCategory
+    );
+  }
+
+  if (DOM.categoryModal) {
+    DOM.categoryModal.addEventListener(
+      "click",
+      handleModalBackdrop
+    );
+  }
+
+  if (DOM.addItem) {
+    DOM.addItem.addEventListener(
+      "click",
+      () => openItemModal()
+    );
+  }
+
+  if (DOM.addFirstItem) {
+    DOM.addFirstItem.addEventListener(
+      "click",
+      () => openItemModal()
+    );
+  }
+
+  if (DOM.itemModalClose) {
+    DOM.itemModalClose.addEventListener(
+      "click",
+      closeItemModal
+    );
+  }
+
+  if (DOM.itemCancel) {
+    DOM.itemCancel.addEventListener(
+      "click",
+      closeItemModal
+    );
+  }
+
+  if (DOM.itemSave) {
+    DOM.itemSave.addEventListener(
+      "click",
+      saveItem
+    );
+  }
+
+  if (DOM.itemModal) {
+    DOM.itemModal.addEventListener(
+      "click",
+      handleModalBackdrop
+    );
+  }
+
+  if (DOM.categoryList) {
+    DOM.categoryList.addEventListener(
+      "click",
+      handleCategoryAction
+    );
+  }
+
+  if (DOM.itemList) {
+    DOM.itemList.addEventListener(
+      "click",
+      handleItemAction
+    );
+  }
+
+  if (DOM.verifyLocation) {
+    DOM.verifyLocation.addEventListener(
+      "click",
+      verifyBusinessLocation
+    );
+  }
+
+
+  if (DOM.businessPasswordToggle) {
+    DOM.businessPasswordToggle.addEventListener(
+      "click",
+      toggleBusinessPassword
+    );
+  }
+
+
+
+  if (DOM.logoUrl) {
+    DOM.logoUrl.addEventListener(
+      "input",
+      previewLogo
+    );
+
+    DOM.logoUrl.addEventListener(
+      "change",
+      previewLogo
+    );
+  }
+
+  if (DOM.publishBusiness) {
+    DOM.publishBusiness.addEventListener(
+      "click",
+      publishBusiness
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.addEventListener(
+      "click",
+      openPublishedBusiness
+    );
+  }
+
+  if (DOM.editBusiness) {
+    DOM.editBusiness.addEventListener(
+      "click",
+      editBusiness
+    );
+  }
+
+  if (DOM.createAnother) {
+    DOM.createAnother.addEventListener(
+      "click",
+      createAnotherApp
+    );
+  }
+
+  document.addEventListener(
+    "keydown",
+    handleKeyboard
+  );
+
+  window.addEventListener(
+    "online",
+    updateConnectionStatus
+  );
+
+  window.addEventListener(
+    "offline",
+    updateConnectionStatus
+  );
+}
+
+
+
+function toggleBusinessPassword() {
+  if (
+    !DOM.businessPassword ||
+    !DOM.businessPasswordToggle
+  ) {
+    return;
+  }
+
+  const icon =
+    DOM.businessPasswordToggle.querySelector(
+      ".password-toggle__icon"
+    );
+
+  const isHidden =
+    DOM.businessPassword.type ===
+    "password";
+
+  DOM.businessPassword.type =
+    isHidden
+      ? "text"
+      : "password";
+
+  DOM.businessPasswordToggle.setAttribute(
+    "aria-label",
+    isHidden
+      ? "Hide password"
+      : "Show password"
+  );
+
+  DOM.businessPasswordToggle.setAttribute(
+    "aria-pressed",
+    isHidden
+      ? "true"
+      : "false"
+  );
+
+  if (icon) {
+    icon.textContent =
+      isHidden
+        ? "◉"
+        : "👁";
+  }
+}
+
+
+/* =========================================================
+ * APPLICATION START
+ * ========================================================= */
+
+
+function initializeApplication() {
+  state.selectedTemplate = null;
+
+  loadWebsiteData();
+
+  renderWebsiteSections();
+
+  renderWebsiteFooter();
+
+  updateWebsiteLocationDetails();
+
+  const restored =
+    loadCategoryItemData();
+
+  if (!restored) {
+    seedDefaultCategories();
+  }
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+
+  showTemplateSelection();
+  updateConnectionStatus();
+
+  hideSuccess();
+  hideValidation();
+}
+
+
+/* =========================================================
+ * TEMPLATE SELECTION
+ * ========================================================= */
+
+
+function selectTemplate(templateId) {
+  if (
+    templateId !== "ECM" &&
+    templateId !== "WEB"
+  ) {
+    showToast(
+      "This template is not currently available.",
+      "error"
+    );
+
+    return;
+  }
+
+  state.selectedTemplate =
+    templateId;
+
+  hideSuccess();
+  hideValidation();
+
+  if (DOM.templateSection) {
+    DOM.templateSection.hidden = true;
+  }
+
+  if (DOM.ecommerceSection) {
+    DOM.ecommerceSection.hidden =
+      templateId !== "ECM";
+  }
+
+  if (DOM.websiteSection) {
+    DOM.websiteSection.hidden =
+      templateId !== "WEB";
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  showToast(
+    templateId === "WEB"
+      ? "Global Website selected."
+      : "Ecommerce app selected.",
+    "success"
+  );
+}
+
+
+function showTemplateSelection() {
+  state.selectedTemplate = null;
+
+  if (DOM.templateSection) {
+    DOM.templateSection.hidden = false;
+  }
+
+  if (DOM.ecommerceSection) {
+    DOM.ecommerceSection.hidden = true;
+  }
+
+  if (DOM.websiteSection) {
+    DOM.websiteSection.hidden = true;
+  }
+
+  hideSuccess();
+  hideValidation();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* =========================================================
+ * DEFAULT CATEGORIES
+ * ========================================================= */
+
+
+function seedDefaultCategories() {
+  if (state.categories.length > 0) {
+    return;
+  }
+
+  state.categories =
+    DEFAULT_CATEGORIES.map(
+      (name) => ({
+        id: createId("cat"),
+        name,
+        items: []
+      })
+    );
+}
+
+
+/* =========================================================
+ * CATEGORY & ITEM PERSISTENCE
+ * ========================================================= */
+
+function saveCategoryItemData() {
+  try {
+    localStorage.setItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY,
+      JSON.stringify({
+        categories:
+          state.categories
+      })
+    );
+  } catch (error) {
+    console.warn(
+      "Could not save category and item data.",
+      error
+    );
+  }
+}
+
+
+function loadCategoryItemData() {
+  try {
+    const stored =
+      localStorage.getItem(
+        CONFIG.CATEGORY_ITEM_STORAGE_KEY
+      );
+
+    if (!stored) {
+      return false;
+    }
+
+    const parsed =
+      JSON.parse(stored);
+
+    if (
+      !parsed ||
+      !Array.isArray(
+        parsed.categories
+      )
+    ) {
+      return false;
+    }
+
+    state.categories =
+      parsed.categories;
+
+    return true;
+  } catch (error) {
+    console.warn(
+      "Could not load saved category and item data.",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+function clearCategoryItemData() {
+  try {
+    localStorage.removeItem(
+      CONFIG.CATEGORY_ITEM_STORAGE_KEY
+    );
+  } catch (error) {
+    console.warn(
+      "Could not clear saved category and item data.",
+      error
+    );
+  }
+}
+
+
+
+/* =========================================================
+ * CATEGORY MODAL
+ * ========================================================= */
+
+
+function openCategoryModal(
+  categoryId = null
+) {
+  state.editingCategoryId =
+    categoryId;
+
+  clearCategoryError();
+
+  if (categoryId) {
+    const category =
+      findCategory(categoryId);
+
+    if (!category) {
+      return;
+    }
+
+    if (DOM.categoryModalTitle) {
+      DOM.categoryModalTitle.textContent =
+        "Edit Category";
+    }
+
+    if (DOM.categorySave) {
+      DOM.categorySave.textContent =
+        "Update Category";
+    }
+
+    if (DOM.categoryName) {
+      DOM.categoryName.value =
+        category.name;
+    }
+  } else {
+    if (DOM.categoryModalTitle) {
+      DOM.categoryModalTitle.textContent =
+        "Add Category";
+    }
+
+    if (DOM.categorySave) {
+      DOM.categorySave.textContent =
+        "Add Category";
+    }
+
+    if (DOM.categoryName) {
+      DOM.categoryName.value =
+        "";
+    }
+  }
+
+  showModal(
+    DOM.categoryModal
+  );
+
+  requestAnimationFrame(
+    () => {
+      focusElement(
+        DOM.categoryName
+      );
+    }
+  );
+}
+
+
+function closeCategoryModal() {
+  state.editingCategoryId =
+    null;
+
+  clearCategoryError();
+
+  if (DOM.categoryName) {
+    DOM.categoryName.value =
+      "";
+  }
+
+  hideModal(
+    DOM.categoryModal
+  );
+}
+
+
+function saveCategory() {
+  clearCategoryError();
+
+  const name =
+    normalizeText(
+      DOM.categoryName
+        ? DOM.categoryName.value
+        : "",
+      CONFIG.MAX_CATEGORY_NAME_LENGTH
+    );
+
+  if (!name) {
+    showCategoryError(
+      "Please enter a category name."
+    );
+
+    focusElement(
+      DOM.categoryName
+    );
+
+    return;
+  }
+
+  if (
+    state.editingCategoryId
+  ) {
+    const category =
+      findCategory(
+        state.editingCategoryId
+      );
+
+    if (!category) {
+      showCategoryError(
+        "The selected category could not be found."
+      );
+
+      return;
+    }
+
+    const duplicate =
+      state.categories.some(
+        (entry) =>
+          entry.id !==
+            category.id &&
+          entry.name.toLowerCase() ===
+            name.toLowerCase()
+      );
+
+    if (duplicate) {
+      showCategoryError(
+        "A category with this name already exists."
+      );
+
+      return;
+    }
+
+    category.name =
+      name;
+
+    saveCategoryItemData();
+
+    closeCategoryModal();
+
+    renderCategories();
+    renderItems();
+    updateItemCategorySelect();
+
+    showToast(
+      "Category updated.",
+      "success"
+    );
+
+    return;
+  }
+
+  if (
+    state.categories.length >=
+    CONFIG.MAX_CATEGORIES
+  ) {
+    showCategoryError(
+      `Maximum ${CONFIG.MAX_CATEGORIES} categories are allowed.`
+    );
+
+    return;
+  }
+
+  const duplicate =
+    state.categories.some(
+      (entry) =>
+        entry.name.toLowerCase() ===
+        name.toLowerCase()
+    );
+
+  if (duplicate) {
+    showCategoryError(
+      "A category with this name already exists."
+    );
+
+    return;
+  }
+
+  state.categories.push({
+    id: createId("cat"),
+    name,
+    items: []
+  });
+
+  saveCategoryItemData();
+
+  closeCategoryModal();
+
+  renderCategories();
+  updateItemCategorySelect();
+
+  showToast(
+    "Category added.",
+    "success"
+  );
+}
+
+
+function handleCategoryAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-category-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.categoryAction;
+
+  const categoryId =
+    button.dataset.categoryId;
+
+  if (!categoryId) {
+    return;
+  }
+
+  if (action === "edit") {
+    openCategoryModal(
+      categoryId
+    );
+
+    return;
+  }
+
+  if (action === "delete") {
+    deleteCategory(
+      categoryId
+    );
+
+    return;
+  }
+
+  if (action === "add-item") {
+    openItemModal(
+      categoryId
+    );
+  }
+}
+
+
+function deleteCategory(
+  categoryId
+) {
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    return;
+  }
+
+  const hasItems =
+    category.items.length > 0;
+
+  const message =
+    hasItems
+      ? `Delete "${category.name}" and all ${category.items.length} item(s) inside it?`
+      : `Delete "${category.name}"?`;
+
+  if (
+    !window.confirm(
+      message
+    )
+  ) {
+    return;
+  }
+
+  state.categories =
+    state.categories.filter(
+      (entry) =>
+        entry.id !==
+        categoryId
+    );
+
+  saveCategoryItemData();
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+
+  showToast(
+    "Category deleted.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * CATEGORY RENDER
+ * ========================================================= */
+
+
+function renderCategories() {
+  if (!DOM.categoryList) {
+    return;
+  }
+
+  DOM.categoryList.replaceChildren();
+
+  const hasCategories =
+    state.categories.length > 0;
+
+  if (DOM.categoryEmpty) {
+    DOM.categoryEmpty.hidden =
+      hasCategories;
+  }
+
+  if (!hasCategories) {
+    return;
+  }
+
+  state.categories.forEach(
+    (category) => {
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "category-row";
+
+      const name =
+        document.createElement(
+          "div"
+        );
+
+      name.className =
+        "category-row__name";
+
+      name.textContent =
+        category.name;
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "category-row__actions";
+
+      const count =
+        document.createElement(
+          "span"
+        );
+
+      count.textContent =
+        `${category.items.length} item${
+          category.items.length === 1
+            ? ""
+            : "s"
+        }`;
+
+      const addItem =
+        createButton(
+          "Add Item",
+          "category-row__action",
+          "add-item",
+          category.id
+        );
+
+      const edit =
+        createButton(
+          "Edit",
+          "category-row__action",
+          "edit",
+          category.id
+        );
+
+      const remove =
+        createButton(
+          "Delete",
+          "category-row__action",
+          "delete",
+          category.id
+        );
+
+      actions.appendChild(
+        count
+      );
+
+      actions.appendChild(
+        addItem
+      );
+
+      actions.appendChild(
+        edit
+      );
+
+      actions.appendChild(
+        remove
+      );
+
+      row.appendChild(
+        name
+      );
+
+      row.appendChild(
+        actions
+      );
+
+      DOM.categoryList.appendChild(
+        row
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+ * ITEM MODAL
+ * ========================================================= */
+
+
+function openItemModal(
+  categoryId = null,
+  itemId = null
+) {
+  clearItemError();
+
+  state.editingItemId =
+    itemId;
+
+  state.editingItemCategoryId =
+    categoryId;
+
+  updateItemCategorySelect();
+
+  if (itemId) {
+    const result =
+      findItem(
+        categoryId,
+        itemId
+      );
+
+    if (!result) {
+      return;
+    }
+
+    const item =
+      result.item;
+
+    if (DOM.itemModalTitle) {
+      DOM.itemModalTitle.textContent =
+        "Edit Item";
+    }
+
+    if (DOM.itemSave) {
+      DOM.itemSave.textContent =
+        "Update Item";
+    }
+
+    setValue(
+      DOM.itemName,
+      item.name
+    );
+
+    setValue(
+      DOM.itemPrice,
+      item.price
+    );
+
+    setValue(
+      DOM.itemQuantity,
+      item.quantity
+    );
+
+    setValue(
+      DOM.itemUnit,
+      item.unit
+    );
+
+    setValue(
+      DOM.itemCategory,
+      result.category.id
+    );
+
+    setValue(
+      DOM.itemDescription,
+      item.description || ""
+    );
+
+    setValue(
+      DOM.itemYoutube,
+      item.youtubeUrl || ""
+    );
+  } else {
+    if (DOM.itemModalTitle) {
+      DOM.itemModalTitle.textContent =
+        "Add Item";
+    }
+
+    if (DOM.itemSave) {
+      DOM.itemSave.textContent =
+        "Add Item";
+    }
+
+    clearItemFields();
+
+    if (
+      categoryId &&
+      DOM.itemCategory
+    ) {
+      DOM.itemCategory.value =
+        categoryId;
+    }
+  }
+
+  showModal(
+    DOM.itemModal
+  );
+
+  requestAnimationFrame(
+    () => {
+      focusElement(
+        DOM.itemName
+      );
+    }
+  );
+}
+
+
+function closeItemModal() {
+  state.editingItemId =
+    null;
+
+  state.editingItemCategoryId =
+    null;
+
+  clearItemError();
+  clearItemFields();
+
+  hideModal(
+    DOM.itemModal
+  );
+}
+
+
+function saveItem() {
+  clearItemError();
+
+  const categoryId =
+    DOM.itemCategory
+      ? DOM.itemCategory.value
+      : "";
+
+  const name =
+    normalizeText(
+      DOM.itemName
+        ? DOM.itemName.value
+        : "",
+      CONFIG.MAX_ITEM_NAME_LENGTH
+    );
+
+  const price =
+    parseNumber(
+      DOM.itemPrice
+        ? DOM.itemPrice.value
+        : ""
+    );
+
+  const quantity =
+    parseNumber(
+      DOM.itemQuantity
+        ? DOM.itemQuantity.value
+        : ""
+    );
+
+  const unit =
+    normalizeText(
+      DOM.itemUnit
+        ? DOM.itemUnit.value
+        : "",
+      50
+    );
+
+  const description =
+    normalizeText(
+      DOM.itemDescription
+        ? DOM.itemDescription.value
+        : "",
+      CONFIG.MAX_DESCRIPTION_LENGTH
+    );
+
+  const youtubeUrl =
+    normalizeText(
+      DOM.itemYoutube
+        ? DOM.itemYoutube.value
+        : "",
+      CONFIG.MAX_YOUTUBE_URL_LENGTH
+    );
+
+  if (!categoryId) {
+    showItemError(
+      "Please select a category."
+    );
+
+    focusElement(
+      DOM.itemCategory
+    );
+
+    return;
+  }
+
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    showItemError(
+      "The selected category could not be found."
+    );
+
+    return;
+  }
+
+  if (!name) {
+    showItemError(
+      "Please enter an item name."
+    );
+
+    focusElement(
+      DOM.itemName
+    );
+
+    return;
+  }
+
+  if (
+    price === null ||
+    price < 0
+  ) {
+    showItemError(
+      "Please enter a valid price."
+    );
+
+    focusElement(
+      DOM.itemPrice
+    );
+
+    return;
+  }
+
+  if (
+    quantity !== null &&
+    quantity < 0
+  ) {
+    showItemError(
+      "Quantity cannot be negative."
+    );
+
+    focusElement(
+      DOM.itemQuantity
+    );
+
+    return;
+  }
+
+  if (
+    youtubeUrl &&
+    !isValidYoutubeUrl(
+      youtubeUrl
+    )
+  ) {
+    showItemError(
+      "Please enter a valid YouTube or YouTube Shorts URL."
+    );
+
+    focusElement(
+      DOM.itemYoutube
+    );
+
+    return;
+  }
+
+  if (
+    state.editingItemId
+  ) {
+    const result =
+      findItem(
+        state.editingItemCategoryId,
+        state.editingItemId
+      );
+
+    if (!result) {
+      showItemError(
+        "The selected item could not be found."
+      );
+
+      return;
+    }
+
+    const duplicate =
+      category.items.some(
+        (item) =>
+          item.id !==
+            result.item.id &&
+          item.name.toLowerCase() ===
+            name.toLowerCase()
+      );
+
+    if (duplicate) {
+      showItemError(
+        "An item with this name already exists in this category."
+      );
+
+      return;
+    }
+
+    result.item.name =
+      name;
+
+    result.item.price =
+      price;
+
+    result.item.quantity =
+      quantity === null
+        ? 0
+        : quantity;
+
+    result.item.unit =
+      unit;
+
+    result.item.description =
+      description;
+
+    result.item.youtubeUrl =
+      youtubeUrl;
+
+    saveCategoryItemData();
+
+    closeItemModal();
+
+    renderItems();
+
+    showToast(
+      "Item updated.",
+      "success"
+    );
+
+    return;
+  }
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (
+    totalItems >=
+    CONFIG.MAX_TOTAL_ITEMS
+  ) {
+    showItemError(
+      `Maximum ${CONFIG.MAX_TOTAL_ITEMS} total items are allowed.`
+    );
+
+    return;
+  }
+
+  if (
+    category.items.length >=
+    CONFIG.MAX_ITEMS_PER_CATEGORY
+  ) {
+    showItemError(
+      `Maximum ${CONFIG.MAX_ITEMS_PER_CATEGORY} items are allowed in one category.`
+    );
+
+    return;
+  }
+
+  const duplicate =
+    category.items.some(
+      (item) =>
+        item.name.toLowerCase() ===
+        name.toLowerCase()
+    );
+
+  if (duplicate) {
+    showItemError(
+      "An item with this name already exists in this category."
+    );
+
+    return;
+  }
+
+  category.items.push({
+    id:
+      createId("item"),
+
+    name:
+      name,
+
+    price:
+      price,
+
+    quantity:
+      quantity === null
+        ? 0
+        : quantity,
+
+    unit:
+      unit,
+
+    description:
+      description,
+
+    youtubeUrl:
+      youtubeUrl
+  });
+
+  saveCategoryItemData();
+
+  closeItemModal();
+
+  renderItems();
+
+  showToast(
+    "Item added.",
+    "success"
+  );
+}
+
+
+
+
+function handleItemAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-item-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.itemAction;
+
+  const categoryId =
+    button.dataset.categoryId;
+
+  const itemId =
+    button.dataset.itemId;
+
+  if (!categoryId || !itemId) {
+    return;
+  }
+
+  if (action === "edit") {
+    openItemModal(
+      categoryId,
+      itemId
+    );
+
+    return;
+  }
+
+  if (action === "delete") {
+    deleteItem(
+      categoryId,
+      itemId
+    );
+  }
+}
+
+
+function deleteItem(
+  categoryId,
+  itemId
+) {
+  const result =
+    findItem(
+      categoryId,
+      itemId
+    );
+
+  if (!result) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete "${result.item.name}"?`
+    )
+  ) {
+    return;
+  }
+
+  result.category.items =
+    result.category.items.filter(
+      (item) =>
+        item.id !==
+        itemId
+    );
+
+  saveCategoryItemData();
+
+  renderItems();
+
+  showToast(
+    "Item deleted.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * ITEM RENDER
+ * ========================================================= */
+
+
+function renderItems() {
+  if (!DOM.itemList) {
+    return;
+  }
+
+  DOM.itemList.replaceChildren();
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (DOM.itemEmpty) {
+    DOM.itemEmpty.hidden =
+      totalItems > 0;
+  }
+
+  if (totalItems === 0) {
+    return;
+  }
+
+  state.categories.forEach(
+    (category) => {
+      category.items.forEach(
+        (item) => {
+          const row =
+            document.createElement(
+              "div"
+            );
+
+          row.className =
+            "item-row";
+
+          const main =
+            document.createElement(
+              "div"
+            );
+
+          main.className =
+            "item-row__main";
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+          name.className =
+            "item-row__name";
+
+          name.textContent =
+            item.name;
+
+          const meta =
+            document.createElement(
+              "div"
+            );
+
+          meta.className =
+            "item-row__meta";
+
+          const quantityText =
+            item.quantity > 0
+              ? ` · ${formatNumber(
+                  item.quantity
+                )} ${item.unit || ""}`
+              : "";
+
+          meta.textContent =
+            `${category.name} · ₹${formatNumber(
+              item.price
+            )}${quantityText}`;
+
+          main.appendChild(
+            name
+          );
+
+          main.appendChild(
+            meta
+          );
+
+          if (
+            item.description
+          ) {
+            const description =
+              document.createElement(
+                "div"
+              );
+
+            description.className =
+              "item-row__description";
+
+            description.textContent =
+              item.description;
+
+            main.appendChild(
+              description
+            );
+          }
+
+          if (
+            item.youtubeUrl
+          ) {
+            const video =
+              document.createElement(
+                "div"
+              );
+
+            video.className =
+              "item-row__video";
+
+            video.textContent =
+              "YouTube video attached";
+
+            main.appendChild(
+              video
+            );
+          }
+
+          const actions =
+            document.createElement(
+              "div"
+            );
+
+          actions.className =
+            "item-row__actions";
+
+          const edit =
+            createButton(
+              "Edit",
+              "item-row__action",
+              "edit",
+              category.id,
+              item.id
+            );
+
+          const remove =
+            createButton(
+              "Delete",
+              "item-row__action",
+              "delete",
+              category.id,
+              item.id
+            );
+
+          actions.appendChild(
+            edit
+          );
+
+          actions.appendChild(
+            remove
+          );
+
+          row.appendChild(
+            main
+          );
+
+          row.appendChild(
+            actions
+          );
+
+          DOM.itemList.appendChild(
+            row
+          );
+        }
+      );
+    }
+  );
+}
+
+
+/* =========================================================
+ * ITEM CATEGORY SELECT
+ * ========================================================= */
+
+
+function updateItemCategorySelect() {
+  if (!DOM.itemCategory) {
+    return;
+  }
+
+  const previousValue =
+    DOM.itemCategory.value;
+
+  DOM.itemCategory.replaceChildren();
+
+  const placeholder =
+    document.createElement(
+      "option"
+    );
+
+  placeholder.value =
+    "";
+
+  placeholder.textContent =
+    "Select category";
+
+  DOM.itemCategory.appendChild(
+    placeholder
+  );
+
+  state.categories.forEach(
+    (category) => {
+      const option =
+        document.createElement(
+          "option"
+        );
+
+      option.value =
+        category.id;
+
+      option.textContent =
+        category.name;
+
+      DOM.itemCategory.appendChild(
+        option
+      );
+    }
+  );
+
+  if (
+    state.categories.some(
+      (category) =>
+        category.id ===
+        previousValue
+    )
+  ) {
+    DOM.itemCategory.value =
+      previousValue;
+  }
+}
+
+
+/* =========================================================
+ * LOCATION
+ * ========================================================= */
+
+
+async function verifyBusinessLocation() {
+  if (
+    !navigator.geolocation
+  ) {
+    setLocationError(
+      "Location services are not supported by this browser."
+    );
+
+    return;
+  }
+
+  setButtonBusy(
+    DOM.verifyLocation,
+    true,
+    "Verifying..."
+  );
+
+  setLocationText(
+    "Getting an accurate GPS location. Please wait...",
+    false
+  );
+
+  try {
+    const position =
+      await getCurrentPosition();
+
+    const latitude =
+      Number(
+        position.coords.latitude
+      );
+
+    const longitude =
+      Number(
+        position.coords.longitude
+      );
+
+    const accuracy =
+      Number(
+        position.coords.accuracy
+      );
+
+    if (
+      !Number.isFinite(
+        latitude
+      ) ||
+      !Number.isFinite(
+        longitude
+      )
+    ) {
+      throw new Error(
+        "The browser returned an invalid location."
+      );
+    }
+
+    if (
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      throw new Error(
+        "The returned coordinates are invalid."
+      );
+    }
+
+    if (
+      !Number.isFinite(
+        accuracy
+      ) ||
+      accuracy <= 0
+    ) {
+      throw new Error(
+        "The device could not determine GPS accuracy. Please enable precise location and try again."
+      );
+    }
+
+    if (
+      accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+    ) {
+      throw new Error(
+        `Location accuracy is too low (approximately ${Math.round(
+          accuracy
+        )} metres). Please enable precise location, stay at the business location, and try again.`
+      );
+    }
+
+    const verifiedAt =
+      new Date()
+        .toISOString();
+
+    state.location = {
+      verified:
+        true,
+
+      latitude:
+        latitude,
+
+      longitude:
+        longitude,
+
+      accuracy:
+        accuracy,
+
+      verifiedAt:
+        verifiedAt
+    };
+
+    updateLocationDetails();
+
+    setLocationText(
+      `Business location verified. Accuracy: approximately ${Math.round(
+        accuracy
+      )} metres.`,
+      true
+    );
+
+    showToast(
+      "Business location verified.",
+      "success"
+    );
+
+  } catch (error) {
+    state.location = {
+      verified:
+        false,
+
+      latitude:
+        null,
+
+      longitude:
+        null,
+
+      accuracy:
+        null,
+
+      verifiedAt:
+        null
+    };
+
+    updateLocationDetails();
+
+    setLocationError(
+      getLocationErrorMessage(
+        error
+      )
+    );
+
+  } finally {
+    setButtonBusy(
+      DOM.verifyLocation,
+      false
+    );
+  }
+}
+
+
+function getCurrentPosition() {
+  return new Promise(
+    (
+      resolve,
+      reject
+    ) => {
+      let bestPosition =
+        null;
+
+      let settled =
+        false;
+
+      let watchId =
+        null;
+
+      let timerId =
+        null;
+
+      const cleanup = () => {
+        if (
+          timerId !== null
+        ) {
+          window.clearTimeout(
+            timerId
+          );
+
+          timerId =
+            null;
+        }
+
+        if (
+          watchId !== null
+        ) {
+          navigator.geolocation.clearWatch(
+            watchId
+          );
+
+          watchId =
+            null;
+        }
+      };
+
+      const finish = (
+        position
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        resolve(
+          position
+        );
+      };
+
+      const fail = (
+        error
+      ) => {
+        if (
+          settled
+        ) {
+          return;
+        }
+
+        settled =
+          true;
+
+        cleanup();
+
+        reject(
+          error
+        );
+      };
+
+      const handlePosition = (
+        position
+      ) => {
+        const accuracy =
+          Number(
+            position &&
+            position.coords &&
+            position.coords.accuracy
+          );
+
+        if (
+          !Number.isFinite(
+            accuracy
+          ) ||
+          accuracy <= 0
+        ) {
+          return;
+        }
+
+        if (
+          !bestPosition ||
+          accuracy <
+            Number(
+              bestPosition.coords.accuracy
+            )
+        ) {
+          bestPosition =
+            position;
+        }
+
+        if (
+          accuracy <=
+          CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            position
+          );
+        }
+      };
+
+      const handleError = (
+        error
+      ) => {
+        if (
+          bestPosition &&
+          Number(
+            bestPosition.coords.accuracy
+          ) <=
+            CONFIG.MAX_LOCATION_ACCURACY_METERS
+        ) {
+          finish(
+            bestPosition
+          );
+          return;
+        }
+
+        fail(
+          error
+        );
+      };
+
+      timerId =
+        window.setTimeout(
+          () => {
+            if (
+              bestPosition &&
+              Number(
+                bestPosition.coords.accuracy
+              ) <=
+                CONFIG.MAX_LOCATION_ACCURACY_METERS
+            ) {
+              finish(
+                bestPosition
+              );
+              return;
+            }
+
+            fail(
+              new Error(
+                "Unable to obtain an accurate GPS location within 30 seconds. Please enable precise location and try again."
+              )
+            );
+          },
+          CONFIG.LOCATION_TIMEOUT_MS
+        );
+
+      try {
+        watchId =
+          navigator.geolocation.watchPosition(
+            handlePosition,
+            handleError,
+            {
+              enableHighAccuracy:
+                true,
+
+              timeout:
+                CONFIG.LOCATION_TIMEOUT_MS,
+
+              maximumAge:
+                0
+            }
+          );
+      } catch (error) {
+        fail(
+          error
+        );
+      }
+    }
+  );
+}
+
+
+
+
+function updateLocationDetails() {
+  if (
+    DOM.locationDetails
+  ) {
+    DOM.locationDetails.hidden =
+      !state.location.verified;
+  }
+
+  if (
+    DOM.locationLatitude
+  ) {
+    DOM.locationLatitude.textContent =
+      state.location.verified
+        ? formatCoordinate(
+            state.location.latitude
+          )
+        : "—";
+  }
+
+  if (
+    DOM.locationLongitude
+  ) {
+    DOM.locationLongitude.textContent =
+      state.location.verified
+        ? formatCoordinate(
+            state.location.longitude
+          )
+        : "—";
+  }
+
+  if (
+    DOM.locationVerifiedAt
+  ) {
+    DOM.locationVerifiedAt.textContent =
+      state.location.verified
+        ? formatDateTime(
+            state.location.verifiedAt
+          )
+        : "—";
+  }
+}
+
+
+function setLocationText(
+  message,
+  verified
+) {
+  if (
+    DOM.locationStatusText
+  ) {
+    DOM.locationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.locationStatus
+  ) {
+    DOM.locationStatus.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+
+    DOM.locationStatus.classList.toggle(
+      "is-error",
+      false
+    );
+  }
+
+  if (
+    DOM.locationStatusIndicator
+  ) {
+    DOM.locationStatusIndicator.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+  }
+}
+
+
+function setLocationError(
+  message
+) {
+  if (
+    DOM.locationStatusText
+  ) {
+    DOM.locationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.locationStatus
+  ) {
+    DOM.locationStatus.classList.remove(
+      "is-verified"
+    );
+
+    DOM.locationStatus.classList.add(
+      "is-error"
+    );
+  }
+
+  showToast(
+    message,
+    "error"
+  );
+}
+
+
+function formatCoordinate(
+  value
+) {
+  return Number(
+    value
+  ).toFixed(6);
+}
+
+
+function formatDateTime(
+  value
+) {
+  const date =
+    new Date(
+      value
+    );
+
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
+    return "—";
+  }
+
+  return date.toLocaleString(
+    "en-IN",
+    {
+      dateStyle:
+        "medium",
+
+      timeStyle:
+        "short"
+    }
+  );
+}
+
+
+/* =========================================================
+ * LOGO PREVIEW
+ * ========================================================= */
+
+
+function previewLogo() {
+  const requestId =
+    ++state.logoPreviewRequest;
+
+  const value =
+    normalizeText(
+      DOM.logoUrl
+        ? DOM.logoUrl.value
+        : "",
+      CONFIG.MAX_LOGO_URL_LENGTH
+    );
+
+  if (
+    !value ||
+    !isValidHttpsUrl(
+      value
+    )
+  ) {
+    hideLogoPreview();
+
+    return;
+  }
+
+  if (
+    !DOM.logoPreview ||
+    !DOM.logoPreviewImage
+  ) {
+    return;
+  }
+
+  DOM.logoPreview.hidden =
+    false;
+
+  DOM.logoPreviewImage.alt =
+    "Business logo preview";
+
+  DOM.logoPreviewImage.src =
+    "";
+
+  DOM.logoPreviewImage.onload =
+    () => {
+      if (
+        requestId !==
+        state.logoPreviewRequest
+      ) {
+        return;
+      }
+
+      DOM.logoPreview.hidden =
+        false;
+    };
+
+  DOM.logoPreviewImage.onerror =
+    () => {
+      if (
+        requestId !==
+        state.logoPreviewRequest
+      ) {
+        return;
+      }
+
+      hideLogoPreview();
+    };
+
+  DOM.logoPreviewImage.src =
+    value;
+}
+
+
+function hideLogoPreview() {
+  if (
+    DOM.logoPreview
+  ) {
+    DOM.logoPreview.hidden =
+      true;
+  }
+
+  if (
+    DOM.logoPreviewImage
+  ) {
+    DOM.logoPreviewImage.removeAttribute(
+      "src"
+    );
+  }
+}
+
+
+/* =========================================================
+ * VALIDATION
+ * ========================================================= */
+
+
+function validateBuilder() {
+  const errors = [];
+
+  const businessName =
+    getValue(
+      DOM.businessName
+    );
+
+  const tagline =
+    getValue(
+      DOM.tagline
+    );
+
+  const address =
+    getValue(
+      DOM.address
+    );
+
+  const mobile =
+    getValue(
+      DOM.mobile
+    );
+
+  const email =
+    getValue(
+      DOM.email
+    );
+
+  const whatsapp =
+    getValue(
+      DOM.whatsapp
+    );
+
+  const logoUrl =
+    getValue(
+      DOM.logoUrl
+    );
+
+  const subscriptionId =
+    getValue(
+      DOM.subscriptionId
+    );
+
+  const businessPassword =
+    DOM.businessPassword
+      ? DOM.businessPassword.value
+      : "";
+
+  if (
+    !state.selectedTemplate
+  ) {
+    errors.push(
+      "Please select a business app template."
+    );
+  }
+
+  if (
+    state.selectedTemplate !==
+    CONFIG.TEMPLATE_ID
+  ) {
+    errors.push(
+      "The selected application template is invalid."
+    );
+  }
+
+  if (!subscriptionId) {
+    errors.push(
+      "Please enter your Subscription ID."
+    );
+  }
+
+  if (!businessPassword) {
+    errors.push(
+      "Please create your Business Password."
+    );
+  }
+
+  if (!businessName) {
+    errors.push(
+      "Please enter the business name."
+    );
+  }
+
+  if (
+    !address
+  ) {
+    errors.push(
+      "Please enter the business address."
+    );
+  }
+
+  if (!mobile) {
+    errors.push(
+      "Please enter the business mobile number."
+    );
+  }
+
+  if (
+    email &&
+    !isValidEmail(
+      email
+    )
+  ) {
+    errors.push(
+      "Please enter a valid email address."
+    );
+  }
+
+  if (!whatsapp) {
+    errors.push(
+      "Please enter the Business WhatsApp number."
+    );
+  }
+
+  if (
+    logoUrl &&
+    !isValidHttpsUrl(
+      logoUrl
+    )
+  ) {
+    errors.push(
+      "Logo URL must be a valid HTTPS URL."
+    );
+  }
+
+  if (
+    !state.location.verified
+  ) {
+    errors.push(
+      "Please verify the business location."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.latitude
+    ) ||
+    !Number.isFinite(
+      state.location.longitude
+    )
+  ) {
+    errors.push(
+      "Valid business GPS coordinates are required."
+    );
+  }
+
+
+
+  if (
+    !Number.isFinite(
+      state.location.accuracy
+    ) ||
+    state.location.accuracy <= 0 ||
+    state.location.accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+  ) {
+    errors.push(
+      `Business GPS accuracy must be ${CONFIG.MAX_LOCATION_ACCURACY_METERS} metres or better.`
+    );
+  }
+
+
+
+
+  if (
+    state.categories.length ===
+    0
+  ) {
+    errors.push(
+      "Please add at least one category."
+    );
+  }
+
+  const totalItems =
+    getTotalItemCount();
+
+  if (
+    totalItems === 0
+  ) {
+    errors.push(
+      "Please add at least one item."
+    );
+  }
+
+  state.categories.forEach(
+    (category) => {
+      if (!category.name) {
+        errors.push(
+          "Every category must have a name."
+        );
+      }
+
+      if (
+        category.items.length >
+        CONFIG.MAX_ITEMS_PER_CATEGORY
+      ) {
+        errors.push(
+          `Category "${category.name}" exceeds the item limit.`
+        );
+      }
+
+      category.items.forEach(
+        (item) => {
+          if (!item.name) {
+            errors.push(
+              `An item in "${category.name}" is missing its name.`
+            );
+          }
+
+          if (
+            !Number.isFinite(
+              item.price
+            ) ||
+            item.price < 0
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid price.`
+            );
+          }
+
+          if (
+            !Number.isFinite(
+              item.quantity
+            ) ||
+            item.quantity < 0
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid quantity.`
+            );
+          }
+
+          if (
+            item.youtubeUrl &&
+            !isValidYoutubeUrl(
+              item.youtubeUrl
+            )
+          ) {
+            errors.push(
+              `Item "${item.name}" has an invalid YouTube URL.`
+            );
+          }
+        }
+      );
+    }
+  );
+
+  if (
+    totalItems >
+    CONFIG.MAX_TOTAL_ITEMS
+  ) {
+    errors.push(
+      `Maximum ${CONFIG.MAX_TOTAL_ITEMS} total items are allowed.`
+    );
+  }
+
+  return {
+    valid:
+      errors.length === 0,
+
+    errors:
+      uniqueStrings(
+        errors
+      )
+  };
+}
+
+
+function showValidation(
+  errors
+) {
+  if (
+    !DOM.validationSummary ||
+    !DOM.validationList
+  ) {
+    return;
+  }
+
+  DOM.validationList.replaceChildren();
+
+  errors.forEach(
+    (error) => {
+      const li =
+        document.createElement(
+          "li"
+        );
+
+      li.textContent =
+        error;
+
+      DOM.validationList.appendChild(
+        li
+      );
+    }
+  );
+
+  DOM.validationSummary.hidden =
+    false;
+
+  DOM.validationSummary.scrollIntoView(
+    {
+      behavior:
+        "smooth",
+
+      block:
+        "center"
+    }
+  );
+}
+
+
+function hideValidation() {
+  if (
+    DOM.validationSummary
+  ) {
+    DOM.validationSummary.hidden =
+      true;
+  }
+
+  if (
+    DOM.validationList
+  ) {
+    DOM.validationList.replaceChildren();
+  }
+}
+
+
+/* =========================================================
+ * PUBLISH
+ * ========================================================= */
+
+
+async function publishBusiness() {
+  if (state.publishing) return;
+
+  hideValidation();
+  hideSuccess();
+  clearSubscriptionError();
+
+  const validation = validateBuilder();
+
+  if (!validation.valid) {
+    showValidation(validation.errors);
+    showToast(
+      validation.errors[0] || "Please review the form.",
+      "error"
+    );
+    return;
+  }
+
+  const payload = buildPublishPayload();
+
+  state.publishing = true;
+  state.lastPublishedUrl = "";
+
+  setPublishBusy(true);
+  setPublishStatus(
+    "Verifying your subscription and creating your business app..."
+  );
+
+  showLoader(
+    "Verifying subscription and publishing your business app..."
+  );
+
+  try {
+    const result = await sendPublishRequest(payload);
+
+    if (!result || result.success !== true) {
+      throw new Error(
+        result && result.message
+          ? result.message
+          : "The business app could not be created."
+      );
+    }
+
+    if (!isValidHttpsUrl(result.url)) {
+      throw new Error(
+        "The Worker did not return a valid business app URL."
+      );
+    }
+
+    state.lastPublishedUrl = result.url;
+
+    hideLoader();
+
+    showSuccess(result);
+
+    setPublishStatus(
+      "Business app is being published..."
+    );
+
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app has been created. We are waiting for the public app files to become available.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Publishing your business app...";
+      DOM.deploymentStatus.classList.remove("is-live");
+      DOM.deploymentStatus.classList.add("is-waiting");
+    }
+
+    const deploymentReady =
+      await waitForDeployment(result.url);
+
+    if (!deploymentReady) {
+      if (DOM.deploymentStatus) {
+        DOM.deploymentStatus.textContent =
+          "The app is still being published. Please wait a little longer and try opening it again.";
+        DOM.deploymentStatus.classList.remove("is-live");
+        DOM.deploymentStatus.classList.add("is-waiting");
+      }
+
+      setPublishStatus(
+        "Business app is still being published."
+      );
+
+      return;
+    }
+
+    enablePublishedBusiness(result.url);
+
+    if (DOM.successDescription) {
+      DOM.successDescription.textContent =
+        "Your business app is live and ready to open.";
+    }
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        "Business app is live.";
+      DOM.deploymentStatus.classList.remove("is-waiting");
+      DOM.deploymentStatus.classList.add("is-live");
+    }
+
+    setPublishStatus(
+      "Business app created and published successfully."
+    );
+
+    showToast(
+      "Your business app is now live.",
+      "success"
+    );
+  } catch (error) {
+    hideLoader();
+
+    const message = getErrorMessage(error);
+
+    setPublishStatus(message);
+
+    showValidation([message]);
+
+    showToast(
+      message,
+      "error"
+    );
+  } finally {
+    state.publishing = false;
+    setPublishBusy(false);
+  }
+}
+
+
+async function waitForDeployment(url) {
+  const startedAt = Date.now();
+
+  while (
+    Date.now() - startedAt <
+    CONFIG.DEPLOYMENT_TIMEOUT_MS
+  ) {
+    if (await isDeploymentReady(url)) {
+      return true;
+    }
+
+    const elapsedSeconds =
+      Math.floor(
+        (Date.now() - startedAt) / 1000
+      );
+
+    const remainingSeconds = Math.max(
+      0,
+      Math.ceil(
+        (CONFIG.DEPLOYMENT_TIMEOUT_MS -
+          (Date.now() - startedAt)) /
+          1000
+      )
+    );
+
+    if (DOM.deploymentStatus) {
+      DOM.deploymentStatus.textContent =
+        `Publishing your business app... ${elapsedSeconds}s elapsed.`;
+    }
+
+    setPublishStatus(
+      `Waiting for your business app to become live... ${remainingSeconds}s remaining.`
+    );
+
+    await sleep(
+      CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS
+    );
+  }
+
+  return false;
+}
+
+
+async function isDeploymentReady(url) {
+  try {
+    const pageUrl = new URL(url);
+
+    const dataUrl = new URL(
+      "ecommerce.json",
+      pageUrl
+    );
+
+    const [pageResponse, dataResponse] =
+      await Promise.all([
+        fetchDeploymentResource(
+          pageUrl.href
+        ),
+        fetchDeploymentResource(
+          dataUrl.href
+        )
+      ]);
+
+    return (
+      pageResponse &&
+      pageResponse.ok &&
+      dataResponse &&
+      dataResponse.ok
+    );
+  } catch (error) {
+    return false;
+  }
+}
+
+
+async function fetchDeploymentResource(url) {
+  try {
+    const controller =
+      new AbortController();
+
+    const timeoutId =
+      setTimeout(
+        () => controller.abort(),
+        CONFIG.REQUEST_TIMEOUT_MS
+      );
+
+    const response = await fetch(
+      url,
+      {
+        method: "GET",
+        cache: "no-store",
+        credentials: "omit",
+        redirect: "follow",
+        signal: controller.signal
+      }
+    );
+
+    clearTimeout(timeoutId);
+
+    return response;
+  } catch (error) {
+    return null;
+  }
+}
+
+
+function enablePublishedBusiness(url) {
+  if (!isValidHttpsUrl(url)) {
+    return;
+  }
+
+  state.lastPublishedUrl = url;
+
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = url;
+    DOM.businessAppUrl.textContent = url;
+    DOM.businessAppUrl.dataset.url = url;
+
+    DOM.businessAppUrl.classList.remove(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "aria-disabled"
+    );
+
+    DOM.businessAppUrl.removeAttribute(
+      "tabindex"
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = false;
+  }
+}
+
+
+function sleep(milliseconds) {
+  return new Promise(
+    (resolve) => {
+      setTimeout(
+        resolve,
+        milliseconds
+      );
+    }
+  );
+}
+
+
+function buildPublishPayload() {
+  return {
+    template:
+      CONFIG.TEMPLATE_ID,
+
+    subscriptionId:
+      getValue(
+        DOM.subscriptionId
+      ),
+
+    businessPassword:
+      DOM.businessPassword
+        ? DOM.businessPassword.value
+        : "",
+
+    business: {
+      name:
+        getValue(
+          DOM.businessName
+        ),
+
+      tagline:
+        getValue(
+          DOM.tagline
+        ),
+
+      address:
+        getValue(
+          DOM.address
+        ),
+
+      mobile:
+        getValue(
+          DOM.mobile
+        ),
+
+      email:
+        getValue(
+          DOM.email
+        ),
+
+      whatsapp:
+        getValue(
+          DOM.whatsapp
+        ),
+
+      logoUrl:
+        getValue(
+          DOM.logoUrl
+        )
+    },
+
+    location: {
+      verified:
+        state.location.verified,
+
+      latitude:
+        state.location.latitude,
+
+      longitude:
+        state.location.longitude,
+
+      verifiedAt:
+        state.location.verifiedAt
+    },
+
+    categories:
+      state.categories.map(
+        (category) => ({
+          id:
+            category.id,
+
+          name:
+            category.name,
+
+          items:
+            category.items.map(
+              (item) => ({
+                id:
+                  item.id,
+
+                name:
+                  item.name,
+
+                price:
+                  item.price,
+
+                quantity:
+                  item.quantity,
+
+                unit:
+                  item.unit,
+
+                description:
+                  item.description,
+
+                youtubeUrl:
+                  item.youtubeUrl
+              })
+            )
+        })
+      )
+  };
+}
+
+
+async function sendPublishRequest(
+  payload
+) {
+  const workerUrl =
+    normalizeBaseUrl(
+      CONFIG.WORKER_URL
+    );
+
+  if (!workerUrl) {
+    throw new Error(
+      "Business Worker URL is not configured."
+    );
+  }
+
+  const controller =
+    new AbortController();
+
+  const timeoutId =
+    window.setTimeout(
+      () => {
+        controller.abort();
+      },
+      CONFIG.REQUEST_TIMEOUT_MS
+    );
+
+  try {
+    const response =
+      await fetch(
+        `${workerUrl}/publish`,
+        {
+          method:
+            "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            "Accept":
+              "application/json"
+          },
+
+          body:
+            JSON.stringify(
+              payload
+            ),
+
+          cache:
+            "no-store",
+
+          credentials:
+            "omit",
+
+          signal:
+            controller.signal
+        }
+      );
+
+    const contentType =
+      response.headers.get(
+        "content-type"
+      ) || "";
+
+    let result;
+
+    if (
+      contentType
+        .toLowerCase()
+        .includes(
+          "application/json"
+        )
+    ) {
+      try {
+        result =
+          await response.json();
+      } catch {
+        throw new Error(
+          "The Worker returned invalid JSON."
+        );
+      }
+    } else {
+      const text =
+        await response.text();
+
+      result = {
+        success:
+          false,
+
+        message:
+          text ||
+          `Worker returned HTTP ${response.status}.`
+      };
+    }
+
+    if (
+      !response.ok
+    ) {
+      throw new Error(
+        result &&
+        result.message
+          ? result.message
+          : `Worker returned HTTP ${response.status}.`
+      );
+    }
+
+    return result;
+
+  } catch (error) {
+    if (
+      error &&
+      error.name ===
+        "AbortError"
+    ) {
+      throw new Error(
+        "The request timed out. Please try again."
+      );
+    }
+
+    if (
+      error instanceof TypeError
+    ) {
+      throw new Error(
+        "Unable to connect to the Business Worker. Please check your internet connection and try again."
+      );
+    }
+
+    throw error;
+
+  } finally {
+    window.clearTimeout(
+      timeoutId
+    );
+  }
+}
+
+
+/* =========================================================
+ * SUCCESS
+ * ========================================================= */
+
+
+function showSuccess(result) {
+  if (!DOM.successSection) return;
+
+  const url =
+    typeof result.url === "string"
+      ? result.url.trim()
+      : "";
+
+  state.lastPublishedUrl = url;
+
+  if (DOM.successDescription) {
+    DOM.successDescription.textContent =
+      "Your business app has been created. We are waiting for the public app files to become available.";
+  }
+
+  if (DOM.businessAppUrl) {
+    DOM.businessAppUrl.href = "#";
+    DOM.businessAppUrl.textContent =
+      "Preparing Business App...";
+    DOM.businessAppUrl.dataset.url = "";
+
+    DOM.businessAppUrl.classList.add(
+      "is-pending"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "aria-disabled",
+      "true"
+    );
+
+    DOM.businessAppUrl.setAttribute(
+      "tabindex",
+      "-1"
+    );
+  }
+
+  if (DOM.openBusinessApp) {
+    DOM.openBusinessApp.disabled = true;
+  }
+
+  if (DOM.deploymentStatus) {
+    DOM.deploymentStatus.textContent =
+      "Publishing your business app...";
+    DOM.deploymentStatus.classList.remove(
+      "is-live"
+    );
+    DOM.deploymentStatus.classList.add(
+      "is-waiting"
+    );
+  }
+
+  DOM.successSection.hidden = false;
+
+  DOM.successSection.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function hideSuccess() {
+  if (
+    DOM.successSection
+  ) {
+    DOM.successSection.hidden =
+      true;
+  }
+}
+
+
+function openPublishedBusiness() {
+  const url =
+    state.lastPublishedUrl ||
+    (
+      DOM.businessAppUrl
+        ? DOM.businessAppUrl.dataset.url ||
+          ""
+        : ""
+    );
+
+  if (!isValidHttpsUrl(url)) {
+    showToast(
+      "Your business app is not live yet. Please wait for publishing to finish.",
+      "error"
+    );
+    return;
+  }
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+
+
+function editBusiness() {
+  hideSuccess();
+
+  if (
+    DOM.ecommerceSection
+  ) {
+    DOM.ecommerceSection.hidden =
+      false;
+  }
+
+  if (
+    DOM.templateSection
+  ) {
+    DOM.templateSection.hidden =
+      true;
+  }
+
+  window.scrollTo({
+    top:
+      0,
+
+    behavior:
+      "smooth"
+  });
+}
+
+
+function createAnotherApp() {
+  resetBuilderData(
+    false
+  );
+
+  showTemplateSelection();
+
+  showToast(
+    "Ready to create another business app.",
+    "success"
+  );
+}
+
+
+/* =========================================================
+ * LOADING / BUTTON STATUS
+ * ========================================================= */
+
+
+function showLoader(
+  message
+) {
+  if (
+    DOM.loaderText
+  ) {
+    DOM.loaderText.textContent =
+      message ||
+      "Processing...";
+  }
+
+  if (
+    DOM.applicationLoader
+  ) {
+    DOM.applicationLoader.hidden =
+      false;
+  }
+}
+
+
+function hideLoader() {
+  if (
+    DOM.applicationLoader
+  ) {
+    DOM.applicationLoader.hidden =
+      true;
+  }
+}
+
+
+function setPublishBusy(
+  busy
+) {
+  if (
+    DOM.publishBusiness
+  ) {
+    DOM.publishBusiness.disabled =
+      busy;
+  }
+
+  if (
+    DOM.publishSpinner
+  ) {
+    DOM.publishSpinner.hidden =
+      !busy;
+  }
+
+  if (
+    DOM.publishButtonText
+  ) {
+    DOM.publishButtonText.textContent =
+      busy
+        ? "Creating Business App..."
+        : "Create Business App";
+  }
+}
+
+
+function setPublishStatus(
+  message
+) {
+  if (
+    DOM.publishStatus
+  ) {
+    DOM.publishStatus.textContent =
+      message || "";
+  }
+}
+
+
+/* =========================================================
+ * CONNECTION
+ * ========================================================= */
+
+
+function updateConnectionStatus() {
+  const online =
+    navigator.onLine;
+
+  if (
+    DOM.connectionText
+  ) {
+    DOM.connectionText.textContent =
+      online
+        ? "Ready"
+        : "Offline";
+  }
+
+  if (
+    DOM.connectionStatus
+  ) {
+    DOM.connectionStatus.classList.toggle(
+      "is-online",
+      online
+    );
+
+    DOM.connectionStatus.classList.toggle(
+      "is-offline",
+      !online
+    );
+  }
+}
+
+
+/* =========================================================
+ * MODALS
+ * ========================================================= */
+
+
+function showModal(
+  modal
+) {
+  if (!modal) {
+    return;
+  }
+
+  modal.hidden =
+    false;
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add(
+    "modal-open"
+  );
+}
+
+
+function hideModal(
+  modal
+) {
+  if (!modal) {
+    return;
+  }
+
+  modal.hidden =
+    true;
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  if (
+    DOM.categoryModal &&
+    DOM.itemModal &&
+    DOM.websiteContentModal &&
+    DOM.categoryModal.hidden &&
+    DOM.itemModal.hidden &&
+    DOM.websiteContentModal.hidden
+  ) {
+    document.body.classList.remove(
+      "modal-open"
+    );
+  }
+}
+
+
+function handleModalBackdrop(
+  event
+) {
+  if (
+    event.target !==
+    event.currentTarget
+  ) {
+    return;
+  }
+
+  const closeTarget =
+    event.target.closest(
+      "[data-modal-close]"
+    );
+
+  if (!closeTarget) {
+    return;
+  }
+
+  const modalId =
+    closeTarget.dataset.modalClose;
+
+  if (
+    modalId ===
+    "category-modal"
+  ) {
+    closeCategoryModal();
+  }
+
+  if (
+    modalId ===
+    "item-modal"
+  ) {
+    closeItemModal();
+  }
+
+  if (
+    modalId ===
+    "website-content-modal"
+  ) {
+    closeWebsiteContentModal();
+  }
+
+
+}
+
+
+function handleKeyboard(
+  event
+) {
+  if (
+    event.key !==
+    "Escape"
+  ) {
+    return;
+  }
+
+  if (
+    DOM.categoryModal &&
+    !DOM.categoryModal.hidden
+  ) {
+    closeCategoryModal();
+
+    return;
+  }
+
+  if (
+    DOM.itemModal &&
+    !DOM.itemModal.hidden
+  ) {
+    closeItemModal();
+
+    return;
+  }
+
+  if (
+    DOM.websiteContentModal &&
+    !DOM.websiteContentModal.hidden
+  ) {
+    closeWebsiteContentModal();
+  }
+}
+
+
+/* =========================================================
+ * GLOBAL WEBSITE BUILDER
+ * ========================================================= */
+
+const WEBSITE_MAX_SECTIONS = 100;
+
+const WEBSITE_MAX_BLOCKS_PER_SECTION = 100;
+
+const WEBSITE_MAX_IMAGES_PER_BLOCK = 50;
+
+const WEBSITE_MAX_VIDEOS_PER_BLOCK = 50;
+
+const WEBSITE_MAX_LINKS_PER_BLOCK = 50;
+
+const WEBSITE_MAX_FOOTER_LINKS = 50;
+
+const WEBSITE_MAX_TEXT_LENGTH = 10000;
+
+const WEBSITE_MAX_URL_LENGTH = 2000;
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PASSWORD
+ * --------------------------------------------------------- */
+
+function toggleWebsitePassword() {
+  if (
+    !DOM.websitePassword ||
+    !DOM.websitePasswordToggle
+  ) {
+    return;
+  }
+
+  const icon =
+    DOM.websitePasswordToggle.querySelector(
+      ".password-toggle__icon"
+    );
+
+  const hidden =
+    DOM.websitePassword.type === "password";
+
+  DOM.websitePassword.type =
+    hidden
+      ? "text"
+      : "password";
+
+  DOM.websitePasswordToggle.setAttribute(
+    "aria-label",
+    hidden
+      ? "Hide password"
+      : "Show password"
+  );
+
+  DOM.websitePasswordToggle.setAttribute(
+    "aria-pressed",
+    hidden
+      ? "true"
+      : "false"
+  );
+
+  if (icon) {
+    icon.textContent =
+      hidden
+        ? "◉"
+        : "👁";
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE LOGO
+ * --------------------------------------------------------- */
+
+function previewWebsiteLogo() {
+  if (
+    !DOM.websiteLogo ||
+    !DOM.websiteLogoPreview ||
+    !DOM.websiteLogoPreviewImage
+  ) {
+    return;
+  }
+
+  const url =
+    getValue(
+      DOM.websiteLogo
+    );
+
+  if (
+    !url ||
+    !isValidHttpsUrl(url)
+  ) {
+    DOM.websiteLogoPreview.hidden =
+      true;
+
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+
+    return;
+  }
+
+  const requestId =
+    ++state.logoPreviewRequest;
+
+  const image =
+    new Image();
+
+  image.onload = () => {
+    if (
+      requestId !==
+      state.logoPreviewRequest
+    ) {
+      return;
+    }
+
+    DOM.websiteLogoPreviewImage.src =
+      url;
+
+    DOM.websiteLogoPreview.hidden =
+      false;
+  };
+
+  image.onerror = () => {
+    if (
+      requestId !==
+      state.logoPreviewRequest
+    ) {
+      return;
+    }
+
+    DOM.websiteLogoPreview.hidden =
+      true;
+
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+  };
+
+  image.referrerPolicy =
+    "no-referrer";
+
+  image.src =
+    url;
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE LOCATION
+ * --------------------------------------------------------- */
+
+async function verifyWebsiteLocation() {
+  if (
+    !navigator.geolocation
+  ) {
+    setWebsiteLocationText(
+      "Location services are not supported by this browser.",
+      false
+    );
+
+    return;
+  }
+
+  setButtonBusy(
+    DOM.websiteVerifyLocation,
+    true,
+    "Verifying..."
+  );
+
+  setWebsiteLocationText(
+    "Getting an accurate GPS location. Please wait...",
+    false
+  );
+
+  try {
+    const position =
+      await getCurrentPosition();
+
+    const latitude =
+      Number(
+        position.coords.latitude
+      );
+
+    const longitude =
+      Number(
+        position.coords.longitude
+      );
+
+    const accuracy =
+      Number(
+        position.coords.accuracy
+      );
+
+    if (
+      !Number.isFinite(latitude) ||
+      !Number.isFinite(longitude) ||
+      latitude < -90 ||
+      latitude > 90 ||
+      longitude < -180 ||
+      longitude > 180
+    ) {
+      throw new Error(
+        "The browser returned invalid GPS coordinates."
+      );
+    }
+
+    if (
+      !Number.isFinite(accuracy) ||
+      accuracy <= 0
+    ) {
+      throw new Error(
+        "The device could not determine GPS accuracy. Please enable precise location and try again."
+      );
+    }
+
+    if (
+      accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+    ) {
+      throw new Error(
+        `Location accuracy is too low (approximately ${Math.round(
+          accuracy
+        )} metres). Please enable precise location, stay at the business location, and try again.`
+      );
+    }
+
+    state.location = {
+      verified:
+        true,
+
+      latitude:
+        latitude,
+
+      longitude:
+        longitude,
+
+      accuracy:
+        accuracy,
+
+      verifiedAt:
+        new Date()
+          .toISOString()
+    };
+
+    updateWebsiteLocationDetails();
+
+    setWebsiteLocationText(
+      `Business location verified. Accuracy: approximately ${Math.round(
+        accuracy
+      )} metres.`,
+      true
+    );
+
+    showToast(
+      "Business location verified.",
+      "success"
+    );
+
+  } catch (error) {
+    state.location = {
+      verified:
+        false,
+
+      latitude:
+        null,
+
+      longitude:
+        null,
+
+      accuracy:
+        null,
+
+      verifiedAt:
+        null
+    };
+
+    updateWebsiteLocationDetails();
+
+    setWebsiteLocationText(
+      getLocationErrorMessage(
+        error
+      ),
+      false
+    );
+
+  } finally {
+    setButtonBusy(
+      DOM.websiteVerifyLocation,
+      false
+    );
+  }
+}
+
+
+function setWebsiteLocationText(
+  message,
+  verified
+) {
+  if (
+    DOM.websiteLocationStatusText
+  ) {
+    DOM.websiteLocationStatusText.textContent =
+      message;
+  }
+
+  if (
+    DOM.websiteLocationStatusIndicator
+  ) {
+    DOM.websiteLocationStatusIndicator.classList.toggle(
+      "is-verified",
+      Boolean(verified)
+    );
+  }
+}
+
+
+function updateWebsiteLocationDetails() {
+  const location =
+    state.location;
+
+  if (
+    DOM.websiteLocationLatitude
+  ) {
+    DOM.websiteLocationLatitude.textContent =
+      Number.isFinite(
+        location.latitude
+      )
+        ? location.latitude.toFixed(6)
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationLongitude
+  ) {
+    DOM.websiteLocationLongitude.textContent =
+      Number.isFinite(
+        location.longitude
+      )
+        ? location.longitude.toFixed(6)
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationVerifiedAt
+  ) {
+    DOM.websiteLocationVerifiedAt.textContent =
+      location.verifiedAt
+        ? new Date(
+            location.verifiedAt
+          ).toLocaleString(
+            "en-IN"
+          )
+        : "—";
+  }
+
+  if (
+    DOM.websiteLocationDetails
+  ) {
+    DOM.websiteLocationDetails.hidden =
+      !location.verified;
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE STORAGE
+ * --------------------------------------------------------- */
+
+function saveWebsiteData() {
+  try {
+    localStorage.setItem(
+      CONFIG.WEBSITE_STORAGE_KEY,
+      JSON.stringify({
+        sections:
+          state.website.sections,
+
+        footer:
+          state.website.footer
+      })
+    );
+  } catch (error) {
+    console.warn(
+      "Could not save Website data.",
+      error
+    );
+  }
+}
+
+
+function loadWebsiteData() {
+  try {
+    const stored =
+      localStorage.getItem(
+        CONFIG.WEBSITE_STORAGE_KEY
+      );
+
+    if (!stored) {
+      state.website = {
+        sections: [],
+        footer: {
+          items: []
+        }
+      };
+
+      return false;
+    }
+
+    const parsed =
+      JSON.parse(
+        stored
+      );
+
+    if (
+      !parsed ||
+      !Array.isArray(
+        parsed.sections
+      )
+    ) {
+      return false;
+    }
+
+    state.website = {
+      sections:
+        sanitizeWebsiteSections(
+          parsed.sections
+        ),
+
+      footer: {
+        items:
+          sanitizeWebsiteFooter(
+            parsed.footer &&
+            Array.isArray(
+              parsed.footer.items
+            )
+              ? parsed.footer.items
+              : []
+          )
+      }
+    };
+
+    return true;
+
+  } catch (error) {
+    console.warn(
+      "Could not load Website data.",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+function clearWebsiteData() {
+  try {
+    localStorage.removeItem(
+      CONFIG.WEBSITE_STORAGE_KEY
+    );
+  } catch (error) {
+    console.warn(
+      "Could not clear Website data.",
+      error
+    );
+  }
+
+  state.website = {
+    sections: [],
+
+    footer: {
+      items: []
+    }
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SANITIZATION
+ * --------------------------------------------------------- */
+
+function sanitizeWebsiteSections(
+  sections
+) {
+  return sections
+    .slice(
+      0,
+      WEBSITE_MAX_SECTIONS
+    )
+    .map(
+      (section, index) => ({
+        id:
+          typeof section.id === "string" &&
+          section.id
+            ? section.id
+            : createId(
+                "section"
+              ),
+
+        heading:
+          normalizeText(
+            section.heading,
+            300
+          ) ||
+          `Section ${index + 1}`,
+
+        blocks:
+          sanitizeWebsiteBlocks(
+            Array.isArray(
+              section.blocks
+            )
+              ? section.blocks
+              : []
+          )
+      })
+    );
+}
+
+
+function sanitizeWebsiteBlocks(
+  blocks
+) {
+  return blocks
+    .slice(
+      0,
+      WEBSITE_MAX_BLOCKS_PER_SECTION
+    )
+    .map(
+      (block) => {
+        if (
+          !block ||
+          typeof block.type !== "string"
+        ) {
+          return null;
+        }
+
+        if (
+          block.type ===
+          "paragraph"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "paragraph",
+
+            text:
+              normalizeText(
+                block.text,
+                WEBSITE_MAX_TEXT_LENGTH
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "subparagraph"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "subparagraph",
+
+            text:
+              normalizeText(
+                block.text,
+                WEBSITE_MAX_TEXT_LENGTH
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "images"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "images",
+
+            items:
+              sanitizeUrlItems(
+                block.items,
+                WEBSITE_MAX_IMAGES_PER_BLOCK
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "videos"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "videos",
+
+            items:
+              sanitizeUrlItems(
+                block.items,
+                WEBSITE_MAX_VIDEOS_PER_BLOCK
+              )
+          };
+        }
+
+        if (
+          block.type ===
+          "links"
+        ) {
+          return {
+            id:
+              typeof block.id === "string"
+                ? block.id
+                : createId(
+                    "block"
+                  ),
+
+            type:
+              "links",
+
+            items:
+              Array.isArray(
+                block.items
+              )
+                ? block.items
+                    .slice(
+                      0,
+                      WEBSITE_MAX_LINKS_PER_BLOCK
+                    )
+                    .map(
+                      (item) => ({
+                        id:
+                          item &&
+                          typeof item.id === "string" &&
+                          item.id
+                            ? item.id
+                            : createId(
+                                "link"
+                              ),
+
+                        name:
+                          normalizeText(
+                            item &&
+                            item.name,
+                            150
+                          ),
+
+                        url:
+                          normalizeText(
+                            item &&
+                            item.url,
+                            WEBSITE_MAX_URL_LENGTH
+                          )
+                      })
+                    )
+                    .filter(
+                      (item) =>
+                        item.name ||
+                        item.url
+                    )
+                : []
+          };
+        }
+
+        return null;
+      }
+    )
+    .filter(Boolean);
+}
+
+
+function sanitizeUrlItems(
+  items,
+  max
+) {
+  if (
+    !Array.isArray(items)
+  ) {
+    return [];
+  }
+
+  return items
+    .slice(
+      0,
+      max
+    )
+    .map(
+      (item) =>
+        typeof item === "string"
+          ? item
+          : item &&
+            typeof item.url === "string"
+            ? item.url
+            : ""
+    )
+    .map(
+      (url) =>
+        normalizeText(
+          url,
+          WEBSITE_MAX_URL_LENGTH
+        )
+    )
+    .filter(Boolean);
+}
+
+
+function sanitizeWebsiteFooter(
+  items
+) {
+  return items
+    .slice(
+      0,
+      WEBSITE_MAX_FOOTER_LINKS
+    )
+    .map(
+      (item) => ({
+        id:
+          typeof item.id === "string"
+            ? item.id
+            : createId(
+                "footer"
+              ),
+
+        name:
+          normalizeText(
+            item.name,
+            150
+          ),
+
+        url:
+          normalizeText(
+            item.url,
+            WEBSITE_MAX_URL_LENGTH
+          )
+      })
+    )
+    .filter(
+      (item) =>
+        item.name ||
+        item.url
+    );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SECTIONS
+ * --------------------------------------------------------- */
+
+function addWebsiteSection() {
+  if (
+    state.website.sections.length >=
+    WEBSITE_MAX_SECTIONS
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_SECTIONS} sections are allowed.`,
+      "error"
+    );
+
+    return;
+  }
+
+  const heading =
+    window.prompt(
+      "Enter section heading:"
+    );
+
+  if (
+    heading === null
+  ) {
+    return;
+  }
+
+  const cleanHeading =
+    normalizeText(
+      heading,
+      300
+    );
+
+  if (!cleanHeading) {
+    showToast(
+      "Please enter a section heading.",
+      "error"
+    );
+
+    return;
+  }
+
+  state.website.sections.push({
+    id:
+      createId(
+        "section"
+      ),
+
+    heading:
+      cleanHeading,
+
+    blocks:
+      []
+  });
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website section added.",
+    "success"
+  );
+}
+
+
+function editWebsiteSection(
+  sectionId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const heading =
+    window.prompt(
+      "Edit section heading:",
+      section.heading
+    );
+
+  if (
+    heading === null
+  ) {
+    return;
+  }
+
+  const cleanHeading =
+    normalizeText(
+      heading,
+      300
+    );
+
+  if (!cleanHeading) {
+    showToast(
+      "Section heading cannot be empty.",
+      "error"
+    );
+
+    return;
+  }
+
+  section.heading =
+    cleanHeading;
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Section updated.",
+    "success"
+  );
+}
+
+
+function moveWebsiteSection(
+  sectionId,
+  direction
+) {
+  const index =
+    state.website.sections.findIndex(
+      (section) =>
+        section.id ===
+        sectionId
+    );
+
+  if (
+    index < 0
+  ) {
+    return;
+  }
+
+  const targetIndex =
+    direction === "up"
+      ? index - 1
+      : index + 1;
+
+  if (
+    targetIndex < 0 ||
+    targetIndex >=
+      state.website.sections.length
+  ) {
+    return;
+  }
+
+  const current =
+    state.website.sections[index];
+
+  state.website.sections[index] =
+    state.website.sections[
+      targetIndex
+    ];
+
+  state.website.sections[
+    targetIndex
+  ] = current;
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+}
+
+
+function deleteWebsiteSection(
+  sectionId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete section "${section.heading}"?`
+    )
+  ) {
+    return;
+  }
+
+  state.website.sections =
+    state.website.sections.filter(
+      (entry) =>
+        entry.id !==
+        sectionId
+    );
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website section deleted.",
+    "success"
+  );
+}
+
+
+function findWebsiteSection(
+  sectionId
+) {
+  return (
+    state.website.sections.find(
+      (section) =>
+        section.id ===
+        sectionId
+    ) ||
+    null
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE SECTION RENDER
+ * --------------------------------------------------------- */
+
+function renderWebsiteSections() {
+  if (
+    !DOM.websiteSections
+  ) {
+    return;
+  }
+
+  DOM.websiteSections.replaceChildren();
+
+  const sections =
+    state.website.sections;
+
+  if (
+    DOM.websiteSectionsEmpty
+  ) {
+    DOM.websiteSectionsEmpty.hidden =
+      sections.length > 0;
+  }
+
+  sections.forEach(
+    (
+      section,
+      index
+    ) => {
+      const card =
+        document.createElement(
+          "article"
+        );
+
+      card.className =
+        "website-section-card";
+
+      const header =
+        document.createElement(
+          "div"
+        );
+
+      header.className =
+        "website-section-card__header";
+
+      const title =
+        document.createElement(
+          "div"
+        );
+
+      title.className =
+        "website-section-card__title";
+
+      const heading =
+        document.createElement(
+          "h4"
+        );
+
+      const order =
+        document.createElement(
+          "span"
+        );
+
+      order.className =
+        "website-section-order";
+
+      order.textContent =
+        String(
+          index + 1
+        );
+
+      heading.appendChild(
+        order
+      );
+
+      heading.appendChild(
+        document.createTextNode(
+          section.heading
+        )
+      );
+
+      title.appendChild(
+        heading
+      );
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "website-section-card__actions";
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "Edit",
+          "edit-section",
+          section.id
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "↑",
+          "move-up",
+          section.id,
+          index === 0
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "↓",
+          "move-down",
+          section.id,
+          index ===
+            sections.length - 1
+        )
+      );
+
+      actions.appendChild(
+        createWebsiteActionButton(
+          "Delete",
+          "delete-section",
+          section.id
+        )
+      );
+
+      header.appendChild(
+        title
+      );
+
+      header.appendChild(
+        actions
+      );
+
+      const body =
+        document.createElement(
+          "div"
+        );
+
+      body.className =
+        "website-section-card__body";
+
+      const content =
+        document.createElement(
+          "div"
+        );
+
+      content.className =
+        "website-section-card__content";
+
+      section.blocks.forEach(
+        (block) => {
+          content.appendChild(
+            renderWebsiteBlock(
+              section,
+              block
+            )
+          );
+        }
+      );
+
+      if (
+        section.blocks.length ===
+        0
+      ) {
+        const empty =
+          document.createElement(
+            "div"
+          );
+
+        empty.className =
+          "website-content-empty";
+
+        empty.textContent =
+          "No content added yet. Use Add Content below.";
+
+        content.appendChild(
+          empty
+        );
+      }
+
+      body.appendChild(
+        content
+      );
+
+      const addContent =
+        document.createElement(
+          "div"
+        );
+
+      addContent.className =
+        "website-add-content";
+
+      [
+        ["Paragraph", "paragraph"],
+        ["Sub-paragraph", "subparagraph"],
+        ["Images", "images"],
+        ["YouTube Videos", "videos"],
+        ["Link Buttons", "links"]
+      ].forEach(
+        ([label, type]) => {
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.type =
+            "button";
+
+          button.className =
+            "secondary-button secondary-button--small";
+
+          button.dataset.websiteAction =
+            "add-content";
+
+          button.dataset.sectionId =
+            section.id;
+
+          button.dataset.contentType =
+            type;
+
+          button.textContent =
+            `+ ${label}`;
+
+          addContent.appendChild(
+            button
+          );
+        }
+      );
+
+      body.appendChild(
+        addContent
+      );
+
+      card.appendChild(
+        header
+      );
+
+      card.appendChild(
+        body
+      );
+
+      DOM.websiteSections.appendChild(
+        card
+      );
+    }
+  );
+}
+
+
+function createWebsiteActionButton(
+  text,
+  action,
+  sectionId,
+  disabled = false
+) {
+  const button =
+    document.createElement(
+      "button"
+    );
+
+  button.type =
+    "button";
+
+  button.className =
+    "secondary-button secondary-button--small";
+
+  button.dataset.websiteAction =
+    action;
+
+  button.dataset.sectionId =
+    sectionId;
+
+  button.textContent =
+    text;
+
+  button.disabled =
+    disabled;
+
+  return button;
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE BLOCKS
+ * --------------------------------------------------------- */
+
+function renderWebsiteBlock(
+  section,
+  block
+) {
+  const card =
+    document.createElement(
+      "div"
+    );
+
+  card.className =
+    "website-content-block";
+
+  const header =
+    document.createElement(
+      "div"
+    );
+
+  header.className =
+    "website-content-block__header";
+
+  const type =
+    document.createElement(
+      "span"
+    );
+
+  type.className =
+    "website-content-block__type";
+
+  type.textContent =
+    getWebsiteBlockLabel(
+      block.type
+    );
+
+  const actions =
+    document.createElement(
+      "div"
+    );
+
+  actions.className =
+    "website-content-block__actions";
+
+  const edit =
+    document.createElement(
+      "button"
+    );
+
+  edit.type =
+    "button";
+
+  edit.textContent =
+    "Edit";
+
+  edit.className =
+    "secondary-button secondary-button--small";
+
+  edit.dataset.websiteAction =
+    "edit-block";
+
+  edit.dataset.sectionId =
+    section.id;
+
+  edit.dataset.blockId =
+    block.id;
+
+  const remove =
+    document.createElement(
+      "button"
+    );
+
+  remove.type =
+    "button";
+
+  remove.textContent =
+    "Delete";
+
+  remove.className =
+    "secondary-button secondary-button--small";
+
+  remove.dataset.websiteAction =
+    "delete-block";
+
+  remove.dataset.sectionId =
+    section.id;
+
+  remove.dataset.blockId =
+    block.id;
+
+  actions.appendChild(
+    edit
+  );
+
+  actions.appendChild(
+    remove
+  );
+
+  header.appendChild(
+    type
+  );
+
+  header.appendChild(
+    actions
+  );
+
+  const preview =
+    document.createElement(
+      "div"
+    );
+
+  preview.className =
+    "website-block-preview";
+
+  renderWebsiteBlockPreview(
+    preview,
+    block
+  );
+
+  card.appendChild(
+    header
+  );
+
+  card.appendChild(
+    preview
+  );
+
+  return card;
+}
+
+
+function getWebsiteBlockLabel(
+  type
+) {
+  const labels = {
+    paragraph:
+      "Paragraph",
+
+    subparagraph:
+      "Sub-paragraph",
+
+    images:
+      "Images",
+
+    videos:
+      "YouTube Videos",
+
+    links:
+      "Link Buttons"
+  };
+
+  return (
+    labels[type] ||
+    "Content"
+  );
+}
+
+
+function renderWebsiteBlockPreview(
+  container,
+  block
+) {
+  if (
+    block.type ===
+    "paragraph"
+  ) {
+    const p =
+      document.createElement(
+        "p"
+      );
+
+    p.textContent =
+      block.text ||
+      "Empty paragraph.";
+
+    container.appendChild(
+      p
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "subparagraph"
+  ) {
+    const p =
+      document.createElement(
+        "p"
+      );
+
+    p.style.fontSize =
+      "0.95rem";
+
+    p.style.color =
+      "var(--text-secondary)";
+
+    p.textContent =
+      block.text ||
+      "Empty sub-paragraph.";
+
+    container.appendChild(
+      p
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "images"
+  ) {
+    const list =
+      document.createElement(
+        "div"
+      );
+
+    list.className =
+      "website-image-list";
+
+    block.items.forEach(
+      (url) => {
+        const image =
+          document.createElement(
+            "img"
+          );
+
+        image.src =
+          url;
+
+        image.alt =
+          "Website image";
+
+        image.loading =
+          "lazy";
+
+        image.referrerPolicy =
+          "no-referrer";
+
+        list.appendChild(
+          image
+        );
+      }
+    );
+
+    if (
+      block.items.length ===
+      0
+    ) {
+      list.textContent =
+        "No images added.";
+    }
+
+    container.appendChild(
+      list
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "videos"
+  ) {
+    const list =
+      document.createElement(
+        "div"
+      );
+
+    list.className =
+      "website-video-list";
+
+    block.items.forEach(
+      (url) => {
+        const embed =
+          getYoutubeEmbedData(
+            url
+          );
+
+        if (!embed) {
+          return;
+        }
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+        wrapper.className =
+          "website-video-preview";
+
+        if (
+          embed.short
+        ) {
+          wrapper.classList.add(
+            "website-video-preview--short"
+          );
+        }
+
+        const iframe =
+          document.createElement(
+            "iframe"
+          );
+
+        iframe.src =
+          embed.url;
+
+        iframe.title =
+          "YouTube video";
+
+        iframe.loading =
+          "lazy";
+
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+        iframe.allowFullscreen =
+          true;
+
+        wrapper.appendChild(
+          iframe
+        );
+
+        list.appendChild(
+          wrapper
+        );
+      }
+    );
+
+    if (
+      list.children.length ===
+      0
+    ) {
+      list.textContent =
+        "No valid YouTube videos added.";
+    }
+
+    container.appendChild(
+      list
+    );
+
+    return;
+  }
+
+  if (
+    block.type ===
+    "links"
+  ) {
+    block.items.forEach(
+      (item) => {
+        if (
+          !item.name ||
+          !isValidHttpsUrl(
+            item.url
+          )
+        ) {
+          return;
+        }
+
+        const link =
+          document.createElement(
+            "a"
+          );
+
+        link.className =
+          "website-link-preview";
+
+        link.href =
+          item.url;
+
+        link.target =
+          "_blank";
+
+        link.rel =
+          "noopener noreferrer";
+
+        link.textContent =
+          item.name;
+
+        container.appendChild(
+          link
+        );
+      }
+    );
+
+    if (
+      container.children.length ===
+      0
+    ) {
+      container.textContent =
+        "No valid links added.";
+    }
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE ACTIONS
+ * --------------------------------------------------------- */
+
+function handleWebsiteSectionAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-website-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.websiteAction;
+
+  const sectionId =
+    button.dataset.sectionId;
+
+  if (
+    action ===
+    "edit-section"
+  ) {
+    editWebsiteSection(
+      sectionId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "move-up"
+  ) {
+    moveWebsiteSection(
+      sectionId,
+      "up"
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "move-down"
+  ) {
+    moveWebsiteSection(
+      sectionId,
+      "down"
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "delete-section"
+  ) {
+    deleteWebsiteSection(
+      sectionId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "add-content"
+  ) {
+    addWebsiteContent(
+      sectionId,
+      button.dataset.contentType
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "edit-block"
+  ) {
+    editWebsiteContent(
+      sectionId,
+      button.dataset.blockId
+    );
+
+    return;
+  }
+
+  if (
+    action ===
+    "delete-block"
+  ) {
+    deleteWebsiteContent(
+      sectionId,
+      button.dataset.blockId
+    );
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT EDITOR
+ * --------------------------------------------------------- */
+
+let websiteContentModalState = {
+  mode: "add",
+  sectionId: null,
+  blockId: null,
+  type: null
+};
+
+
+function openWebsiteContentModal(
+  sectionId,
+  type,
+  block = null
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  websiteContentModalState = {
+    mode:
+      block
+        ? "edit"
+        : "add",
+
+    sectionId:
+      sectionId,
+
+    blockId:
+      block
+        ? block.id
+        : null,
+
+    type:
+      type
+  };
+
+  clearWebsiteContentModal();
+
+  const isText =
+    type === "paragraph" ||
+    type === "subparagraph";
+
+  const isImages =
+    type === "images";
+
+  const isVideos =
+    type === "videos";
+
+  const isLinks =
+    type === "links";
+
+  const label =
+    getWebsiteBlockLabel(
+      type
+    );
+
+  if (
+    DOM.websiteContentModalTitle
+  ) {
+    DOM.websiteContentModalTitle.textContent =
+      websiteContentModalState.mode ===
+      "edit"
+        ? `Edit ${label}`
+        : `Add ${label}`;
+  }
+
+  if (
+    DOM.websiteContentModalDescription
+  ) {
+    DOM.websiteContentModalDescription.textContent =
+      isText
+        ? "Write your content clearly and comfortably. Long paragraphs are supported."
+        : isImages
+        ? "Add one or more HTTPS image URLs."
+        : isVideos
+        ? "Add YouTube video or YouTube Shorts URLs."
+        : isLinks
+        ? "Create one or more professional link buttons."
+        : "Add website content.";
+  }
+
+  if (
+    DOM.websiteContentTextField
+  ) {
+    DOM.websiteContentTextField.hidden =
+      !isText;
+  }
+
+  if (
+    DOM.websiteContentRepeatableField
+  ) {
+    DOM.websiteContentRepeatableField.hidden =
+      isText;
+  }
+
+  if (isText) {
+    if (
+      DOM.websiteContentTextLabel
+    ) {
+      DOM.websiteContentTextLabel.innerHTML =
+        `${label} <span class="required-mark">*</span>`;
+    }
+
+    if (
+      DOM.websiteContentText
+    ) {
+      DOM.websiteContentText.value =
+        block &&
+        typeof block.text ===
+          "string"
+          ? block.text
+          : "";
+
+      DOM.websiteContentText.placeholder =
+        type === "paragraph"
+          ? "Write your paragraph here..."
+          : "Write your sub-paragraph here...";
+    }
+  }
+
+  if (!isText) {
+    configureWebsiteRepeatableModal(
+      type,
+      block
+    );
+  }
+
+  if (
+    DOM.websiteContentSave
+  ) {
+    DOM.websiteContentSave.textContent =
+      websiteContentModalState.mode ===
+      "edit"
+        ? `Save ${label}`
+        : `Add ${label}`;
+  }
+
+  showModal(
+    DOM.websiteContentModal
+  );
+
+  if (isText) {
+    requestAnimationFrame(
+      () => {
+        if (
+          DOM.websiteContentText
+        ) {
+          DOM.websiteContentText.focus();
+        }
+      }
+    );
+  }
+}
+
+
+function clearWebsiteContentModal() {
+  if (
+    DOM.websiteContentText
+  ) {
+    DOM.websiteContentText.value =
+      "";
+  }
+
+  if (
+    DOM.websiteContentRowList
+  ) {
+    DOM.websiteContentRowList.replaceChildren();
+  }
+
+  clearWebsiteContentModalError();
+}
+
+
+function clearWebsiteContentModalError() {
+  if (
+    DOM.websiteContentFormError
+  ) {
+    DOM.websiteContentFormError.hidden =
+      true;
+
+    DOM.websiteContentFormError.textContent =
+      "";
+  }
+}
+
+
+function showWebsiteContentModalError(
+  message
+) {
+  if (
+    DOM.websiteContentFormError
+  ) {
+    DOM.websiteContentFormError.hidden =
+      false;
+
+    DOM.websiteContentFormError.textContent =
+      message;
+  }
+}
+
+
+function closeWebsiteContentModal() {
+  websiteContentModalState = {
+    mode: "add",
+    sectionId: null,
+    blockId: null,
+    type: null
+  };
+
+  hideModal(
+    DOM.websiteContentModal
+  );
+}
+
+
+function configureWebsiteRepeatableModal(
+  type,
+  block
+) {
+  let label =
+    "Items";
+
+  let help =
+    "Add one or more items.";
+
+  if (
+    type === "images"
+  ) {
+    label =
+      "Image URLs";
+
+    help =
+      "Use HTTPS image URLs. Add as many images as you need.";
+  }
+
+  if (
+    type === "videos"
+  ) {
+    label =
+      "YouTube URLs";
+
+    help =
+      "You can add normal YouTube videos and YouTube Shorts.";
+  }
+
+  if (
+    type === "links"
+  ) {
+    label =
+      "Link Buttons";
+
+    help =
+      "Give each button a clear name and destination URL.";
+  }
+
+  if (
+    DOM.websiteContentRepeatableLabel
+  ) {
+    DOM.websiteContentRepeatableLabel.innerHTML =
+      `${label} <span class="required-mark">*</span>`;
+  }
+
+  if (
+    DOM.websiteContentRepeatableHelp
+  ) {
+    DOM.websiteContentRepeatableHelp.textContent =
+      help;
+  }
+
+  const items =
+    block &&
+    Array.isArray(
+      block.items
+    )
+      ? block.items
+      : [];
+
+  if (
+    items.length === 0
+  ) {
+    addWebsiteContentModalRow();
+    return;
+  }
+
+  items.forEach(
+    (item) => {
+      addWebsiteContentModalRow(
+        item
+      );
+    }
+  );
+}
+
+
+function addWebsiteContentModalRow(
+  value = null
+) {
+  if (
+    !DOM.websiteContentRowList
+  ) {
+    return;
+  }
+
+  const type =
+    websiteContentModalState.type;
+
+  const currentRows =
+    DOM.websiteContentRowList.children.length;
+
+  let maximum =
+    WEBSITE_MAX_IMAGES_PER_BLOCK;
+
+  if (
+    type === "videos"
+  ) {
+    maximum =
+      WEBSITE_MAX_VIDEOS_PER_BLOCK;
+  }
+
+  if (
+    type === "links"
+  ) {
+    maximum =
+      WEBSITE_MAX_LINKS_PER_BLOCK;
+  }
+
+  if (
+    currentRows >=
+    maximum
+  ) {
+    showWebsiteContentModalError(
+      `Maximum ${maximum} items are allowed.`
+    );
+
+    return;
+  }
+
+  const row =
+    document.createElement(
+      "div"
+    );
+
+  row.className =
+    type === "links"
+      ? "website-link-row"
+      : type === "images"
+      ? "website-image-row"
+      : "website-video-row";
+
+  if (
+    type === "links" &&
+    value &&
+    typeof value === "object" &&
+    typeof value.id === "string" &&
+    value.id
+  ) {
+    row.dataset.linkId =
+      value.id;
+  }
+
+  if (
+    type === "links"
+  ) {
+    row.innerHTML = `
+      <div class="form-group">
+        <label class="form-label">
+          Button Name
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="text"
+          class="form-input website-modal-link-name"
+          maxlength="150"
+          placeholder="e.g. Contact Us"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          Button URL
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="url"
+          class="form-input website-modal-link-url"
+          maxlength="${WEBSITE_MAX_URL_LENGTH}"
+          placeholder="https://example.com"
+          inputmode="url"
+          autocomplete="url"
+        >
+      </div>
+
+      <button
+        type="button"
+        class="secondary-button website-field-row__remove"
+        data-website-modal-remove-row
+        aria-label="Remove link button"
+        title="Remove"
+      >
+        −
+      </button>
+    `;
+
+    const nameInput =
+      row.querySelector(
+        ".website-modal-link-name"
+      );
+
+    const urlInput =
+      row.querySelector(
+        ".website-modal-link-url"
+      );
+
+    if (
+      value &&
+      typeof value ===
+        "object"
+    ) {
+      nameInput.value =
+        typeof value.name ===
+        "string"
+          ? value.name
+          : "";
+
+      urlInput.value =
+        typeof value.url ===
+        "string"
+          ? value.url
+          : "";
+    }
+  } else {
+    const placeholder =
+      type === "images"
+        ? "https://example.com/image.jpg"
+        : "https://youtube.com/watch?v=...";
+
+    const label =
+      type === "images"
+        ? "Image URL"
+        : "YouTube URL";
+
+    row.innerHTML = `
+      <div class="form-group">
+        <label class="form-label">
+          ${label}
+          <span class="required-mark">*</span>
+        </label>
+
+        <input
+          type="url"
+          class="form-input website-modal-url"
+          maxlength="${WEBSITE_MAX_URL_LENGTH}"
+          placeholder="${placeholder}"
+          inputmode="url"
+          autocomplete="url"
+        >
+      </div>
+
+      <button
+        type="button"
+        class="secondary-button website-field-row__remove"
+        data-website-modal-remove-row
+        aria-label="Remove item"
+        title="Remove"
+      >
+        −
+      </button>
+    `;
+
+    const input =
+      row.querySelector(
+        ".website-modal-url"
+      );
+
+    if (
+      typeof value ===
+      "string"
+    ) {
+      input.value =
+        value;
+    }
+  }
+
+  DOM.websiteContentRowList.appendChild(
+    row
+  );
+
+  clearWebsiteContentModalError();
+}
+
+
+function handleWebsiteContentModalRowAction(
+  event
+) {
+  const removeButton =
+    event.target.closest(
+      "[data-website-modal-remove-row]"
+    );
+
+  if (!removeButton) {
+    return;
+  }
+
+  const row =
+    removeButton.closest(
+      ".website-image-row, .website-video-row, .website-link-row"
+    );
+
+  if (!row) {
+    return;
+  }
+
+  row.remove();
+
+  if (
+    DOM.websiteContentRowList.children.length ===
+    0
+  ) {
+    addWebsiteContentModalRow();
+  }
+}
+
+
+function saveWebsiteContentModal() {
+  clearWebsiteContentModalError();
+
+  const section =
+    findWebsiteSection(
+      websiteContentModalState.sectionId
+    );
+
+  if (!section) {
+    closeWebsiteContentModal();
+    return;
+  }
+
+  const type =
+    websiteContentModalState.type;
+
+  if (
+    type === "paragraph" ||
+    type === "subparagraph"
+  ) {
+    const text =
+      normalizeText(
+        DOM.websiteContentText
+          ? DOM.websiteContentText.value
+          : "",
+        WEBSITE_MAX_TEXT_LENGTH
+      );
+
+    if (!text) {
+      showWebsiteContentModalError(
+        "Please enter your content."
+      );
+
+      if (
+        DOM.websiteContentText
+      ) {
+        DOM.websiteContentText.focus();
+      }
+
+      return;
+    }
+
+    if (
+      websiteContentModalState.mode ===
+      "edit"
+    ) {
+      const block =
+        section.blocks.find(
+          (entry) =>
+            entry.id ===
+            websiteContentModalState.blockId
+        );
+
+      if (!block) {
+        closeWebsiteContentModal();
+        return;
+      }
+
+      block.text =
+        text;
+    } else {
+      section.blocks.push({
+        id:
+          createId(
+            "block"
+          ),
+
+        type:
+          type,
+
+        text:
+          text
+      });
+    }
+
+    finishWebsiteContentModalSave(
+      websiteContentModalState.mode ===
+        "edit"
+        ? "Website content updated."
+        : "Paragraph added."
+    );
+
+    return;
+  }
+
+  const rows =
+    Array.from(
+      DOM.websiteContentRowList
+        ? DOM.websiteContentRowList.children
+        : []
+    );
+
+  if (
+    rows.length ===
+    0
+  ) {
+    showWebsiteContentModalError(
+      "Please add at least one item."
+    );
+
+    return;
+  }
+
+  if (
+    type === "images"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const input =
+              row.querySelector(
+                ".website-modal-url"
+              );
+
+            return input
+              ? input.value.trim()
+              : "";
+          }
+        )
+        .filter(Boolean);
+
+    const invalid =
+      items.filter(
+        (url) =>
+          !isValidHttpsUrl(
+            url
+          )
+      );
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please add at least one image URL."
+      );
+
+      return;
+    }
+
+    if (
+      invalid.length > 0
+    ) {
+      showWebsiteContentModalError(
+        "Every image URL must be a valid HTTPS URL."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "images",
+      items
+    );
+
+    return;
+  }
+
+  if (
+    type === "videos"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const input =
+              row.querySelector(
+                ".website-modal-url"
+              );
+
+            return input
+              ? input.value.trim()
+              : "";
+          }
+        )
+        .filter(Boolean);
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please add at least one YouTube URL."
+      );
+
+      return;
+    }
+
+    const invalid =
+      items.filter(
+        (url) =>
+          !isValidYoutubeUrl(
+            url
+          )
+      );
+
+    if (
+      invalid.length > 0
+    ) {
+      showWebsiteContentModalError(
+        "Please enter valid YouTube video or YouTube Shorts URLs."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "videos",
+      items
+    );
+
+    return;
+  }
+
+  if (
+    type === "links"
+  ) {
+    const items =
+      rows
+        .map(
+          (row) => {
+            const nameInput =
+              row.querySelector(
+                ".website-modal-link-name"
+              );
+
+            const urlInput =
+              row.querySelector(
+                ".website-modal-link-url"
+              );
+
+            const name =
+              normalizeText(
+                nameInput
+                  ? nameInput.value
+                  : "",
+                150
+              );
+
+            const url =
+              normalizeText(
+                urlInput
+                  ? urlInput.value
+                  : "",
+                WEBSITE_MAX_URL_LENGTH
+              );
+
+            if (
+              !name ||
+              !isValidHttpsUrl(
+                url
+              )
+            ) {
+              return null;
+            }
+
+            return {
+              id:
+                row.dataset.linkId ||
+                createId(
+                  "link"
+                ),
+
+              name,
+              url
+            };
+          }
+        )
+        .filter(Boolean);
+
+    if (
+      items.length ===
+      0
+    ) {
+      showWebsiteContentModalError(
+        "Please enter at least one valid button name and HTTPS URL."
+      );
+
+      return;
+    }
+
+    if (
+      items.length !==
+      rows.length
+    ) {
+      showWebsiteContentModalError(
+        "Please complete every link button with a valid name and HTTPS URL."
+      );
+
+      return;
+    }
+
+    saveWebsiteRepeatableBlock(
+      section,
+      "links",
+      items
+    );
+  }
+}
+
+
+function saveWebsiteRepeatableBlock(
+  section,
+  type,
+  items
+) {
+  if (
+    websiteContentModalState.mode ===
+    "edit"
+  ) {
+    const block =
+      section.blocks.find(
+        (entry) =>
+          entry.id ===
+          websiteContentModalState.blockId
+      );
+
+    if (!block) {
+      closeWebsiteContentModal();
+      return;
+    }
+
+    block.items =
+      items;
+  } else {
+    section.blocks.push({
+      id:
+        createId(
+          "block"
+        ),
+
+      type:
+        type,
+
+      items:
+        items
+    });
+  }
+
+  finishWebsiteContentModalSave(
+    websiteContentModalState.mode ===
+      "edit"
+      ? "Website content updated."
+      : `${getWebsiteBlockLabel(type)} added.`
+  );
+}
+
+
+function finishWebsiteContentModalSave(
+  message
+) {
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  closeWebsiteContentModal();
+
+  showToast(
+    message,
+    "success"
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT CREATION
+ * --------------------------------------------------------- */
+
+function addWebsiteContent(
+  sectionId,
+  type
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  if (
+    section.blocks.length >=
+    WEBSITE_MAX_BLOCKS_PER_SECTION
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_BLOCKS_PER_SECTION} content blocks are allowed in one section.`,
+      "error"
+    );
+
+    return;
+  }
+
+  openWebsiteContentModal(
+    sectionId,
+    type
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE CONTENT EDIT / DELETE
+ * --------------------------------------------------------- */
+
+function editWebsiteContent(
+  sectionId,
+  blockId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const block =
+    section.blocks.find(
+      (entry) =>
+        entry.id ===
+        blockId
+    );
+
+  if (!block) {
+    return;
+  }
+
+  openWebsiteContentModal(
+    sectionId,
+    block.type,
+    block
+  );
+}
+
+function deleteWebsiteContent(
+  sectionId,
+  blockId
+) {
+  const section =
+    findWebsiteSection(
+      sectionId
+    );
+
+  if (!section) {
+    return;
+  }
+
+  const block =
+    section.blocks.find(
+      (entry) =>
+        entry.id ===
+        blockId
+    );
+
+  if (!block) {
+    return;
+  }
+
+  if (
+    !window.confirm(
+      `Delete this ${getWebsiteBlockLabel(
+        block.type
+      ).toLowerCase()} block?`
+    )
+  ) {
+    return;
+  }
+
+  section.blocks =
+    section.blocks.filter(
+      (entry) =>
+        entry.id !==
+        blockId
+    );
+
+  saveWebsiteData();
+
+  renderWebsiteSections();
+
+  showToast(
+    "Website content deleted.",
+    "success"
+  );
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE FOOTER
+ * --------------------------------------------------------- */
+
+function addWebsiteFooterLink() {
+  if (
+    state.website.footer.items.length >=
+    WEBSITE_MAX_FOOTER_LINKS
+  ) {
+    showToast(
+      `Maximum ${WEBSITE_MAX_FOOTER_LINKS} footer links are allowed.`,
+      "error"
+    );
+
+    return;
+  }
+
+  const name =
+    window.prompt(
+      "Enter footer link name:"
+    );
+
+  if (
+    name === null
+  ) {
+    return;
+  }
+
+  const cleanName =
+    normalizeText(
+      name,
+      150
+    );
+
+  const url =
+    window.prompt(
+      "Enter footer link URL:"
+    );
+
+  if (
+    url === null
+  ) {
+    return;
+  }
+
+  const cleanUrl =
+    normalizeText(
+      url,
+      WEBSITE_MAX_URL_LENGTH
+    );
+
+  if (
+    !cleanName ||
+    !isValidHttpsUrl(
+      cleanUrl
+    )
+  ) {
+    showToast(
+      "Please enter a valid link name and HTTPS URL.",
+      "error"
+    );
+
+    return;
+  }
+
+  state.website.footer.items.push({
+    id:
+      createId(
+        "footer"
+      ),
+
+    name:
+      cleanName,
+
+    url:
+      cleanUrl
+  });
+
+  saveWebsiteData();
+
+  renderWebsiteFooter();
+
+  showToast(
+    "Footer link added.",
+    "success"
+  );
+}
+
+
+function renderWebsiteFooter() {
+  if (
+    !DOM.websiteFooterLinks
+  ) {
+    return;
+  }
+
+  DOM.websiteFooterLinks.replaceChildren();
+
+  const items =
+    state.website.footer.items;
+
+  if (
+    DOM.websiteFooterEmpty
+  ) {
+    DOM.websiteFooterEmpty.hidden =
+      items.length > 0;
+  }
+
+  items.forEach(
+    (item) => {
+      const card =
+        document.createElement(
+          "div"
+        );
+
+      card.className =
+        "website-footer-link-card";
+
+      const info =
+        document.createElement(
+          "div"
+        );
+
+      info.className =
+        "website-footer-link-card__info";
+
+      const name =
+        document.createElement(
+          "p"
+        );
+
+      name.className =
+        "website-footer-link-card__name";
+
+      name.textContent =
+        item.name;
+
+      const url =
+        document.createElement(
+          "p"
+        );
+
+      url.className =
+        "website-footer-link-card__url";
+
+      url.textContent =
+        item.url;
+
+      info.appendChild(
+        name
+      );
+
+      info.appendChild(
+        url
+      );
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "website-footer-link-card__actions";
+
+      const edit =
+        document.createElement(
+          "button"
+        );
+
+      edit.type =
+        "button";
+
+      edit.className =
+        "secondary-button secondary-button--small";
+
+      edit.textContent =
+        "Edit";
+
+      edit.dataset.websiteFooterAction =
+        "edit";
+
+      edit.dataset.footerId =
+        item.id;
+
+      const remove =
+        document.createElement(
+          "button"
+        );
+
+      remove.type =
+        "button";
+
+      remove.className =
+        "secondary-button secondary-button--small";
+
+      remove.textContent =
+        "Delete";
+
+      remove.dataset.websiteFooterAction =
+        "delete";
+
+      remove.dataset.footerId =
+        item.id;
+
+      actions.appendChild(
+        edit
+      );
+
+      actions.appendChild(
+        remove
+      );
+
+      card.appendChild(
+        info
+      );
+
+      card.appendChild(
+        actions
+      );
+
+      DOM.websiteFooterLinks.appendChild(
+        card
+      );
+    }
+  );
+}
+
+
+function handleWebsiteFooterAction(
+  event
+) {
+  const button =
+    event.target.closest(
+      "[data-website-footer-action]"
+    );
+
+  if (!button) {
+    return;
+  }
+
+  const action =
+    button.dataset.websiteFooterAction;
+
+  const footerId =
+    button.dataset.footerId;
+
+  const item =
+    state.website.footer.items.find(
+      (entry) =>
+        entry.id ===
+        footerId
+    );
+
+  if (!item) {
+    return;
+  }
+
+  if (
+    action === "delete"
+  ) {
+    if (
+      !window.confirm(
+        `Delete footer link "${item.name}"?`
+      )
+    ) {
+      return;
+    }
+
+    state.website.footer.items =
+      state.website.footer.items.filter(
+        (entry) =>
+          entry.id !==
+          footerId
+      );
+
+    saveWebsiteData();
+
+    renderWebsiteFooter();
+
+    return;
+  }
+
+  if (
+    action === "edit"
+  ) {
+    const name =
+      window.prompt(
+        "Edit footer link name:",
+        item.name
+      );
+
+    if (
+      name === null
+    ) {
+      return;
+    }
+
+    const url =
+      window.prompt(
+        "Edit footer link URL:",
+        item.url
+      );
+
+    if (
+      url === null
+    ) {
+      return;
+    }
+
+    const cleanName =
+      normalizeText(
+        name,
+        150
+      );
+
+    const cleanUrl =
+      normalizeText(
+        url,
+        WEBSITE_MAX_URL_LENGTH
+      );
+
+    if (
+      !cleanName ||
+      !isValidHttpsUrl(
+        cleanUrl
+      )
+    ) {
+      showToast(
+        "Please enter a valid link name and HTTPS URL.",
+        "error"
+      );
+
+      return;
+    }
+
+    item.name =
+      cleanName;
+
+    item.url =
+      cleanUrl;
+
+    saveWebsiteData();
+
+    renderWebsiteFooter();
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE VALIDATION
+ * --------------------------------------------------------- */
+
+function validateWebsiteBuilder() {
+  const errors = [];
+
+  const subscriptionId =
+    getValue(
+      DOM.websiteSubscriptionId
+    );
+
+  const businessName =
+    getValue(
+      DOM.websiteBusinessName
+    );
+
+  const address =
+    getValue(
+      DOM.websiteAddress
+    );
+
+  const tagline =
+    getValue(
+      DOM.websiteTagline
+    );
+
+  const mobile =
+    getValue(
+      DOM.websiteMobile
+    );
+
+  const email =
+    getValue(
+      DOM.websiteEmail
+    );
+
+  const whatsapp =
+    getValue(
+      DOM.websiteWhatsapp
+    );
+
+  const password =
+    DOM.websitePassword
+      ? DOM.websitePassword.value
+      : "";
+
+  const logo =
+    getValue(
+      DOM.websiteLogo
+    );
+
+  if (!subscriptionId) {
+    errors.push(
+      "Please enter your Subscription ID."
+    );
+  }
+
+  if (!password) {
+    errors.push(
+      "Please create your Business Password."
+    );
+  }
+
+  if (!businessName) {
+    errors.push(
+      "Please enter the business name."
+    );
+  }
+
+  if (!address) {
+    errors.push(
+      "Please enter the business address."
+    );
+  }
+
+  if (!mobile) {
+    errors.push(
+      "Please enter the business mobile number."
+    );
+  }
+
+  if (
+    email &&
+    !isValidEmail(
+      email
+    )
+  ) {
+    errors.push(
+      "Please enter a valid email address."
+    );
+  }
+
+  if (!whatsapp) {
+    errors.push(
+      "Please enter the Business WhatsApp number."
+    );
+  }
+
+  if (
+    logo &&
+    !isValidHttpsUrl(
+      logo
+    )
+  ) {
+    errors.push(
+      "Logo URL must be a valid HTTPS URL."
+    );
+  }
+
+  if (
+    !state.location.verified
+  ) {
+    errors.push(
+      "Please verify the business location."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.latitude
+    ) ||
+    !Number.isFinite(
+      state.location.longitude
+    )
+  ) {
+    errors.push(
+      "Valid business GPS coordinates are required."
+    );
+  }
+
+  if (
+    !Number.isFinite(
+      state.location.accuracy
+    ) ||
+    state.location.accuracy <= 0 ||
+    state.location.accuracy >
+      CONFIG.MAX_LOCATION_ACCURACY_METERS
+  ) {
+    errors.push(
+      `Business GPS accuracy must be ${CONFIG.MAX_LOCATION_ACCURACY_METERS} metres or better.`
+    );
+  }
+
+  if (
+    state.website.sections.length ===
+    0
+  ) {
+    errors.push(
+      "Please add at least one website section."
+    );
+  }
+
+  state.website.sections.forEach(
+    (section) => {
+      if (
+        !section.heading
+      ) {
+        errors.push(
+          "Every website section must have a heading."
+        );
+      }
+
+      if (
+        !Array.isArray(
+          section.blocks
+        )
+      ) {
+        errors.push(
+          `Section "${section.heading}" has invalid content.`
+        );
+      }
+
+      section.blocks.forEach(
+        (block) => {
+          if (
+            block.type ===
+              "paragraph" ||
+            block.type ===
+              "subparagraph"
+          ) {
+            if (
+              !block.text
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains empty text content.`
+              );
+            }
+          }
+
+          if (
+            block.type ===
+            "images"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty image block.`
+              );
+            }
+
+            block.items.forEach(
+              (url) => {
+                if (
+                  !isValidHttpsUrl(
+                    url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid image URL.`
+                  );
+                }
+              }
+            );
+          }
+
+          if (
+            block.type ===
+            "videos"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty video block.`
+              );
+            }
+
+            block.items.forEach(
+              (url) => {
+                if (
+                  !isValidYoutubeUrl(
+                    url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid YouTube URL.`
+                  );
+                }
+              }
+            );
+          }
+
+          if (
+            block.type ===
+            "links"
+          ) {
+            if (
+              block.items.length ===
+              0
+            ) {
+              errors.push(
+                `Section "${section.heading}" contains an empty link block.`
+              );
+            }
+
+            block.items.forEach(
+              (item) => {
+                if (
+                  !item.name ||
+                  !isValidHttpsUrl(
+                    item.url
+                  )
+                ) {
+                  errors.push(
+                    `Section "${section.heading}" contains an invalid link.`
+                  );
+                }
+              }
+            );
+          }
+        }
+      );
+    }
+  );
+
+  state.website.footer.items.forEach(
+    (item) => {
+      if (
+        !item.name ||
+        !isValidHttpsUrl(
+          item.url
+        )
+      ) {
+        errors.push(
+          "Every footer link must have a name and valid HTTPS URL."
+        );
+      }
+    }
+  );
+
+  return {
+    valid:
+      errors.length ===
+      0,
+
+    errors:
+      uniqueStrings(
+        errors
+      )
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE VALIDATION UI
+ * --------------------------------------------------------- */
+
+function showWebsiteValidation(
+  errors
+) {
+  if (
+    !DOM.websiteValidationSummary ||
+    !DOM.websiteValidationList
+  ) {
+    return;
+  }
+
+  DOM.websiteValidationList.replaceChildren();
+
+  errors.forEach(
+    (error) => {
+      const li =
+        document.createElement(
+          "li"
+        );
+
+      li.textContent =
+        error;
+
+      DOM.websiteValidationList.appendChild(
+        li
+      );
+    }
+  );
+
+  DOM.websiteValidationSummary.hidden =
+    false;
+
+  DOM.websiteValidationSummary.scrollIntoView({
+    behavior:
+      "smooth",
+
+    block:
+      "center"
+  });
+}
+
+
+function hideWebsiteValidation() {
+  if (
+    DOM.websiteValidationSummary
+  ) {
+    DOM.websiteValidationSummary.hidden =
+      true;
+  }
+
+  if (
+    DOM.websiteValidationList
+  ) {
+    DOM.websiteValidationList.replaceChildren();
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PAYLOAD
+ * --------------------------------------------------------- */
+
+function buildWebsitePublishPayload() {
+  return {
+    template:
+      "WEB",
+
+    subscriptionId:
+      getValue(
+        DOM.websiteSubscriptionId
+      ),
+
+    businessPassword:
+      DOM.websitePassword
+        ? DOM.websitePassword.value
+        : "",
+
+    business: {
+      name:
+        getValue(
+          DOM.websiteBusinessName
+        ),
+
+      address:
+        getValue(
+          DOM.websiteAddress
+        ),
+
+      tagline:
+        getValue(
+          DOM.websiteTagline
+        ),
+
+      mobile:
+        getValue(
+          DOM.websiteMobile
+        ),
+
+      email:
+        getValue(
+          DOM.websiteEmail
+        ),
+
+      whatsapp:
+        getValue(
+          DOM.websiteWhatsapp
+        ),
+
+      logoUrl:
+        getValue(
+          DOM.websiteLogo
+        )
+    },
+
+    location: {
+      verified:
+        state.location.verified,
+
+      latitude:
+        state.location.latitude,
+
+      longitude:
+        state.location.longitude,
+
+      accuracy:
+        state.location.accuracy,
+
+      verifiedAt:
+        state.location.verifiedAt
+    },
+
+    sections:
+      state.website.sections.map(
+        (section) => ({
+          id:
+            section.id,
+
+          heading:
+            section.heading,
+
+          blocks:
+            section.blocks
+        })
+      ),
+
+    footer: {
+      items:
+        state.website.footer.items.map(
+          (item) => ({
+            id:
+              item.id,
+
+            name:
+              item.name,
+
+            url:
+              item.url
+          })
+        )
+    }
+  };
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE PUBLISH
+ * --------------------------------------------------------- */
+
+async function publishWebsite() {
+  if (
+    state.publishing
+  ) {
+    return;
+  }
+
+  hideWebsiteValidation();
+
+  const validation =
+    validateWebsiteBuilder();
+
+  if (
+    !validation.valid
+  ) {
+    showWebsiteValidation(
+      validation.errors
+    );
+
+    showToast(
+      validation.errors[0] ||
+        "Please review the website.",
+      "error"
+    );
+
+    return;
+  }
+
+  const payload =
+    buildWebsitePublishPayload();
+
+  state.publishing =
+    true;
+
+  setWebsitePublishBusy(
+    true
+  );
+
+  setWebsitePublishStatus(
+    "Verifying subscription and publishing your Global Website..."
+  );
+
+  try {
+    const result =
+      await sendPublishRequest(
+        payload
+      );
+
+    if (
+      !result ||
+      result.success !== true
+    ) {
+      throw new Error(
+        result &&
+        result.message
+          ? result.message
+          : "The Global Website could not be created."
+      );
+    }
+
+    if (
+      !isValidHttpsUrl(
+        result.url
+      )
+    ) {
+      throw new Error(
+        "The Worker did not return a valid website URL."
+      );
+    }
+
+    setWebsitePublishStatus(
+      "Website created. Waiting for the public files to become available..."
+    );
+
+    const ready =
+      await waitForWebsiteDeployment(
+        result.url
+      );
+
+    if (!ready) {
+      setWebsitePublishStatus(
+        "Website created, but the public files are still being published. Please try again shortly."
+      );
+
+      showToast(
+        "Website created and is still being published.",
+        "info"
+      );
+
+      return;
+    }
+
+    if (
+      DOM.websitePublishedUrl
+    ) {
+      DOM.websitePublishedUrl.href =
+        result.url;
+
+      DOM.websitePublishedUrl.textContent =
+        result.url;
+    }
+
+    if (
+      DOM.websitePublishResult
+    ) {
+      DOM.websitePublishResult.hidden =
+        false;
+    }
+
+    setWebsitePublishStatus(
+      "Your Global Website is live."
+    );
+
+    showToast(
+      "Your Global Website is now live.",
+      "success"
+    );
+
+  } catch (error) {
+    const message =
+      getErrorMessage(
+        error
+      );
+
+    setWebsitePublishStatus(
+      message
+    );
+
+    showWebsiteValidation([
+      message
+    ]);
+
+    showToast(
+      message,
+      "error"
+    );
+
+  } finally {
+    state.publishing =
+      false;
+
+    setWebsitePublishBusy(
+      false
+    );
+  }
+}
+
+
+async function waitForWebsiteDeployment(
+  url
+) {
+  const startedAt =
+    Date.now();
+
+  while (
+    Date.now() -
+      startedAt <
+    CONFIG.DEPLOYMENT_TIMEOUT_MS
+  ) {
+    if (
+      await isWebsiteDeploymentReady(
+        url
+      )
+    ) {
+      return true;
+    }
+
+    const remaining =
+      Math.max(
+        0,
+        Math.ceil(
+          (
+            CONFIG.DEPLOYMENT_TIMEOUT_MS -
+            (
+              Date.now() -
+              startedAt
+            )
+          ) /
+            1000
+        )
+      );
+
+    setWebsitePublishStatus(
+      `Waiting for website files to become live... ${remaining}s remaining.`
+    );
+
+    await sleep(
+      CONFIG.DEPLOYMENT_CHECK_INTERVAL_MS
+    );
+  }
+
+  return false;
+}
+
+
+async function isWebsiteDeploymentReady(
+  url
+) {
+  try {
+    const pageUrl =
+      new URL(
+        url
+      );
+
+    const dataUrl =
+      new URL(
+        "website.json",
+        pageUrl
+      );
+
+    const [
+      pageResponse,
+      dataResponse
+    ] =
+      await Promise.all([
+        fetchDeploymentResource(
+          pageUrl.href
+        ),
+
+        fetchDeploymentResource(
+          dataUrl.href
+        )
+      ]);
+
+    return Boolean(
+      pageResponse &&
+      pageResponse.ok &&
+      dataResponse &&
+      dataResponse.ok
+    );
+
+  } catch {
+    return false;
+  }
+}
+
+
+function setWebsitePublishBusy(
+  busy
+) {
+  if (
+    !DOM.websitePublish
+  ) {
+    return;
+  }
+
+  DOM.websitePublish.disabled =
+    busy;
+
+  DOM.websitePublish.setAttribute(
+    "aria-busy",
+    busy
+      ? "true"
+      : "false"
+  );
+
+  if (
+    DOM.websitePublishSpinner
+  ) {
+    DOM.websitePublishSpinner.hidden =
+      !busy;
+  }
+
+  if (
+    DOM.websitePublishButtonText
+  ) {
+    DOM.websitePublishButtonText.textContent =
+      busy
+        ? "Publishing..."
+        : "Create Website";
+  }
+}
+
+
+function setWebsitePublishStatus(
+  message
+) {
+  if (
+    DOM.websitePublishStatus
+  ) {
+    DOM.websitePublishStatus.textContent =
+      message ||
+      "";
+  }
+}
+
+
+/* ---------------------------------------------------------
+ * WEBSITE YOUTUBE
+ * --------------------------------------------------------- */
+
+function getYoutubeEmbedData(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    const hostname =
+      url.hostname
+        .toLowerCase()
+        .replace(
+          /^www\./,
+          ""
+        );
+
+    let id =
+      "";
+
+    let short =
+      false;
+
+    if (
+      hostname ===
+      "youtu.be"
+    ) {
+      id =
+        url.pathname
+          .split("/")
+          .filter(Boolean)[0] ||
+        "";
+    } else if (
+      hostname ===
+        "youtube.com" ||
+      hostname ===
+        "m.youtube.com"
+    ) {
+      if (
+        url.pathname.startsWith(
+          "/shorts/"
+        )
+      ) {
+        id =
+          url.pathname
+            .split("/")
+            .filter(Boolean)[1] ||
+          "";
+
+        short =
+          true;
+      } else if (
+        url.pathname ===
+        "/watch"
+      ) {
+        id =
+          url.searchParams.get(
+            "v"
+          ) ||
+          "";
+      } else if (
+        url.pathname.startsWith(
+          "/embed/"
+        )
+      ) {
+        id =
+          url.pathname
+            .split("/")
+            .filter(Boolean)[1] ||
+          "";
+      }
+    }
+
+    if (!id) {
+      return null;
+    }
+
+    return {
+      short,
+
+      url:
+        `https://www.youtube.com/embed/${encodeURIComponent(
+          id
+        )}?rel=0`
+    };
+
+  } catch {
+    return null;
+  }
+}
+
+
+/* =========================================================
+ * RESET
+ * ========================================================= */
+
+
+function resetBuilderData(
+  keepTemplate
+) {
+  if (
+    !keepTemplate
+  ) {
+    state.selectedTemplate =
+      null;
+  }
+
+  clearCategoryItemData();
+
+  clearWebsiteData();
+
+  state.categories =
+    [];
+
+  state.editingCategoryId =
+    null;
+
+  state.editingItemId =
+    null;
+
+  state.editingItemCategoryId =
+    null;
+
+  state.location = {
+    verified:
+      false,
+
+    latitude:
+      null,
+
+    longitude:
+      null,
+
+    accuracy:
+      null,
+
+    verifiedAt:
+      null
+  };
+
+  state.lastPublishedUrl =
+    "";
+
+  clearAllFormFields();
+
+  seedDefaultCategories();
+
+  renderCategories();
+  renderItems();
+  updateItemCategorySelect();
+  updateLocationDetails();
+
+  hideValidation();
+  hideSuccess();
+
+  clearSubscriptionError();
+
+  setPublishStatus(
+    ""
+  );
+}
+
+
+function clearAllFormFields() {
+  const fields = [
+    DOM.subscriptionId,
+    DOM.businessName,
+    DOM.tagline,
+    DOM.address,
+    DOM.mobile,
+    DOM.email,
+    DOM.whatsapp,
+    DOM.logoUrl,
+
+    DOM.websiteSubscriptionId,
+    DOM.websiteBusinessName,
+    DOM.websiteAddress,
+    DOM.websiteTagline,
+    DOM.websiteMobile,
+    DOM.websiteEmail,
+    DOM.websiteWhatsapp,
+    DOM.websitePassword,
+    DOM.websiteLogo
+  ];
+
+  fields.forEach(
+    (field) => {
+      if (field) {
+        field.value =
+          "";
+      }
+    }
+  );
+
+  hideLogoPreview();
+
+  if (
+    DOM.websiteLogoPreview
+  ) {
+    DOM.websiteLogoPreview.hidden =
+      true;
+  }
+
+  if (
+    DOM.websiteLogoPreviewImage
+  ) {
+    DOM.websiteLogoPreviewImage.removeAttribute(
+      "src"
+    );
+  }
+
+  renderWebsiteSections();
+
+  renderWebsiteFooter();
+
+  if (
+    DOM.websitePublishResult
+  ) {
+    DOM.websitePublishResult.hidden =
+      true;
+  }
+
+  setWebsitePublishStatus(
+    ""
+  );
+
+  hideWebsiteValidation();
+
+  if (
+    DOM.itemCategory
+  ) {
+    DOM.itemCategory.value =
+      "";
+  }
+
+  clearItemFields();
+
+  setLocationText(
+    "Location not verified",
+    false
+  );
+}
+
+
+function clearItemFields() {
+  setValue(
+    DOM.itemName,
+    ""
+  );
+
+  setValue(
+    DOM.itemPrice,
+    ""
+  );
+
+  setValue(
+    DOM.itemQuantity,
+    ""
+  );
+
+  setValue(
+    DOM.itemUnit,
+    ""
+  );
+
+  setValue(
+    DOM.itemCategory,
+    ""
+  );
+
+  setValue(
+    DOM.itemDescription,
+    ""
+  );
+
+  setValue(
+    DOM.itemYoutube,
+    ""
+  );
+}
+
+
+/* =========================================================
+ * FIELD ERRORS
+ * ========================================================= */
+
+
+function showCategoryError(
+  message
+) {
+  if (
+    DOM.categoryNameError
+  ) {
+    DOM.categoryNameError.textContent =
+      message;
+
+    DOM.categoryNameError.hidden =
+      false;
+  }
+}
+
+
+function clearCategoryError() {
+  if (
+    DOM.categoryNameError
+  ) {
+    DOM.categoryNameError.textContent =
+      "";
+
+    DOM.categoryNameError.hidden =
+      true;
+  }
+}
+
+
+function showItemError(
+  message
+) {
+  if (
+    DOM.itemFormError
+  ) {
+    DOM.itemFormError.textContent =
+      message;
+
+    DOM.itemFormError.hidden =
+      false;
+  }
+}
+
+
+function clearItemError() {
+  if (
+    DOM.itemFormError
+  ) {
+    DOM.itemFormError.textContent =
+      "";
+
+    DOM.itemFormError.hidden =
+      true;
+  }
+}
+
+
+function clearSubscriptionError() {
+  if (
+    DOM.subscriptionError
+  ) {
+    DOM.subscriptionError.textContent =
+      "";
+
+    DOM.subscriptionError.hidden =
+      true;
+  }
+}
+
+
+/* =========================================================
+ * TOAST
+ * ========================================================= */
+
+
+function showToast(
+  message,
+  type = "info"
+) {
+  if (
+    !DOM.toastContainer
+  ) {
+    return;
+  }
+
+  const toast =
+    document.createElement(
+      "div"
+    );
+
+  toast.className =
+    `toast toast--${type}`;
+
+  toast.setAttribute(
+    "role",
+    "status"
+  );
+
+  toast.textContent =
+    message ||
+    "Done.";
+
+  DOM.toastContainer.appendChild(
+    toast
+  );
+
+  window.setTimeout(
+    () => {
+      toast.remove();
+    },
+    4500
+  );
+}
+
+
+/* =========================================================
+ * DATA HELPERS
+ * ========================================================= */
+
+
+function findCategory(
+  categoryId
+) {
+  return state.categories.find(
+    (category) =>
+      category.id ===
+      categoryId
+  ) || null;
+}
+
+
+function findItem(
+  categoryId,
+  itemId
+) {
+  const category =
+    findCategory(
+      categoryId
+    );
+
+  if (!category) {
+    return null;
+  }
+
+  const item =
+    category.items.find(
+      (entry) =>
+        entry.id ===
+        itemId
+    );
+
+  if (!item) {
+    return null;
+  }
+
+  return {
+    category,
+    item
+  };
+}
+
+
+function getTotalItemCount() {
+  return state.categories.reduce(
+    (
+      total,
+      category
+    ) =>
+      total +
+      category.items.length,
+    0
+  );
+}
+
+
+/* =========================================================
+ * BUTTONS
+ * ========================================================= */
+
+
+function createButton(
+  text,
+  className,
+  action,
+  categoryId,
+  itemId = null
+) {
+  const button =
+    document.createElement(
+      "button"
+    );
+
+  button.type =
+    "button";
+
+  if (className) {
+    button.className =
+      className;
+  }
+
+  if (categoryId) {
+    button.dataset.categoryId =
+      categoryId;
+  }
+
+  if (itemId) {
+    button.dataset.itemId =
+      itemId;
+  }
+
+  if (
+    action === "add-item" ||
+    action === "edit" ||
+    action === "delete"
+  ) {
+    if (itemId) {
+      button.dataset.itemAction =
+        action;
+    } else {
+      button.dataset.categoryAction =
+        action;
+    }
+  }
+
+  button.textContent =
+    text;
+
+  return button;
+}
+
+
+function setButtonBusy(
+  button,
+  busy,
+  busyText
+) {
+  if (!button) {
+    return;
+  }
+
+  if (busy) {
+    if (
+      !button.dataset.originalText
+    ) {
+      button.dataset.originalText =
+        button.textContent;
+    }
+
+    button.disabled =
+      true;
+
+    button.setAttribute(
+      "aria-busy",
+      "true"
+    );
+
+    button.textContent =
+      busyText ||
+      "Please wait...";
+  } else {
+    button.disabled =
+      false;
+
+    button.removeAttribute(
+      "aria-busy"
+    );
+
+    if (
+      button.dataset.originalText
+    ) {
+      button.textContent =
+        button.dataset.originalText;
+
+      delete button.dataset.originalText;
+    }
+  }
+}
+
+
+/* =========================================================
+ * GENERAL HELPERS
+ * ========================================================= */
+
+
+function getValue(
+  element
+) {
+  return element
+    ? String(
+        element.value || ""
+      ).trim()
+    : "";
+}
+
+
+function setValue(
+  element,
+  value
+) {
+  if (!element) {
+    return;
+  }
+
+  element.value =
+    value === null ||
+    value === undefined
+      ? ""
+      : String(value);
+}
+
+
+function normalizeText(
+  value,
+  maxLength
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (
+    Number.isFinite(
+      maxLength
+    ) &&
+    text.length >
+      maxLength
+  ) {
+    return text.slice(
+      0,
+      maxLength
+    );
+  }
+
+  return text;
+}
+
+
+function parseNumber(
+  value
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (!text) {
+    return null;
+  }
+
+  const number =
+    Number(text);
+
+  if (
+    !Number.isFinite(
+      number
+    )
+  ) {
+    return null;
+  }
+
+  return number;
+}
+
+
+function formatNumber(
+  value
+) {
+  const number =
+    Number(value);
+
+  if (
+    !Number.isFinite(
+      number
+    )
+  ) {
+    return "0";
+  }
+
+  return number.toLocaleString(
+    "en-IN",
+    {
+      maximumFractionDigits:
+        2
+    }
+  );
+}
+
+
+function createId(
+  prefix
+) {
+  if (
+    window.crypto &&
+    typeof window.crypto
+      .randomUUID ===
+      "function"
+  ) {
+    return `${prefix}-${window.crypto.randomUUID()}`;
+  }
+
+  return (
+    `${prefix}-${Date.now()}-${Math.random()
+      .toString(36)
+      .slice(2, 10)}`
+  );
+}
+
+
+function focusElement(
+  element
+) {
+  if (!element) {
+    return;
+  }
+
+  try {
+    element.focus({
+      preventScroll:
+        false
+    });
+  } catch {
+    element.focus();
+  }
+}
+
+
+function uniqueStrings(
+  values
+) {
+  return [
+    ...new Set(
+      values.filter(
+        Boolean
+      )
+    )
+  ];
+}
+
+
+/* =========================================================
+ * URL VALIDATION
+ * ========================================================= */
+
+
+function isValidHttpsUrl(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    return (
+      url.protocol ===
+        "https:" &&
+      Boolean(
+        url.hostname
+      )
+    );
+  } catch {
+    return false;
+  }
+}
+
+
+function normalizeBaseUrl(
+  value
+) {
+  const text =
+    String(
+      value ?? ""
+    ).trim();
+
+  if (!text) {
+    return "";
+  }
+
+  try {
+    const url =
+      new URL(
+        text
+      );
+
+    if (
+      url.protocol !==
+      "https:"
+    ) {
+      return "";
+    }
+
+    return url.origin;
+  } catch {
+    return "";
+  }
+}
+
+
+function isValidEmail(
+  value
+) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    .test(
+      value
+    );
+}
+
+
+function isValidYoutubeUrl(
+  value
+) {
+  try {
+    const url =
+      new URL(
+        value
+      );
+
+    const hostname =
+      url.hostname
+        .toLowerCase()
+        .replace(
+          /^www\./,
+          ""
+        );
+
+    if (
+      hostname ===
+      "youtu.be"
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[0]
+      );
+    }
+
+    if (
+      hostname !==
+        "youtube.com" &&
+      hostname !==
+        "m.youtube.com"
+    ) {
+      return false;
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/shorts/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    if (
+      url.pathname ===
+      "/watch"
+    ) {
+      return Boolean(
+        url.searchParams.get(
+          "v"
+        )
+      );
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/embed/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    if (
+      url.pathname.startsWith(
+        "/v/"
+      )
+    ) {
+      return Boolean(
+        url.pathname
+          .split("/")
+          .filter(
+            Boolean
+          )[1]
+      );
+    }
+
+    return false;
+
+  } catch {
+    return false;
+  }
+}
+
+
+/* =========================================================
+ * ERROR HANDLING
+ * ========================================================= */
+
+
+function getErrorMessage(
+  error
+) {
+  if (!error) {
+    return "Something went wrong. Please try again.";
+  }
+
+  if (
+    error.name ===
+    "AbortError"
+  ) {
+    return "The request timed out. Please try again.";
+  }
+
+  if (
+    error.message
+  ) {
+    return error.message;
+  }
+
+  return "Something went wrong. Please try again.";
+}
+
+
+function getLocationErrorMessage(
+  error
+) {
+  if (
+    !error
+  ) {
+    return "Unable to verify your location.";
+  }
+
+  switch (
+    error.code
+  ) {
+    case 1:
+      return "Location permission was denied. Please allow location access and try again.";
+
+    case 2:
+      return "Your current location could not be determined. Please try again.";
+
+    case 3:
+      return "Location request timed out. Please try again.";
+
+    default:
+      return (
+        error.message ||
+        "Unable to verify your location."
+      );
+  }
+}
